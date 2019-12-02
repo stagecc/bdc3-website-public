@@ -1,0 +1,14 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Montserrat", sans-serif;
+    color: #444;
+    font-size: 12pt;
+}
+
+:root {
+    --color-crimson: #C1272D;
+    --color-eggplant: #323268;
+};
