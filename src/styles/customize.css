@@ -1,0 +1,19 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Montserrat", sans-serif;
+    color: #444;
+    font-size: 13pt;
+}
+
+a {
+    color: var(--color-eggplant);
+}
+
+:root {
+    --color-grey: #606264;
+    --color-crimson: #B33243;
+    --color-eggplant: #323268;
+};

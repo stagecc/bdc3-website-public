@@ -1,0 +1,5 @@
+---
+title: Can my institution or I opt out of having my study's data in BioData Catalyst?
+---
+
+Pursuant to NIH policy on sharing of research data ([NOT-OD-03-032](https://grants.nih.gov/grants/guide/notice-files/not-od-03-032.html)) and the NIH Genomic Data Sharing Policy ([NOT-OD-14-124](https://grants.nih.gov/grants/guide/notice-files/not-od-14-124.html) and [NOT-OD-19-023](https://grants.nih.gov/grants/guide/notice-files/NOT-OD-19-023.html)), the NHLBI has classified BioData Catalyst as an NIH-designated repository. Therefore, in general a PI or Institution cannot opt out of having their study’s data in BioData Catalyst. Under certain circumstances where there is a specific sensitivity or risk, investigators are encouraged to discuss any concerns with the NHLBI BioData Catalyst team and/or NHLBI DAC. 

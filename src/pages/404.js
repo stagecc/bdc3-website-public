@@ -1,14 +1,13 @@
 import React from 'react'
-
-import { DefaultLayout as Layout } from '../components/layout'
+import { PageContent } from '../components/layout'
 import { SEO } from '../components/seo'
 
 const NotFoundPage = () => (
-    <Layout>
+    <PageContent width="95%" maxWidth="1080px" center gutters>
         <SEO title="404: Not found" />
         <h1>NOT FOUND</h1>
         <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-    </Layout>
+    </PageContent>
 )
 
 export default NotFoundPage
