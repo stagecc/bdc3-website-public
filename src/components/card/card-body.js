@@ -33,12 +33,12 @@ CardBodyContents.defaultProps = {
     bgColor: '#fff',
 }
 
-export const CardBody = ({ children, image }) => {
+export const CardBody = ({ children, image, style }) => {
     return (
         <CardBodyWrapper>
-            <Hidden xs>{ image && image.path && image.placement === 'left' && <CardBodyGraphic imagePath={ image.path } /> }</Hidden>
-            <CardBodyContents>{ children }</CardBodyContents>
-            <Hidden xs>{ image && image.path && image.placement === 'right' && <CardBodyGraphic imagePath={ image.path } /> }</Hidden>
+            <Hidden xs>{ image && image.path && image.placement === 'left' ? <CardBodyGraphic imagePath={ image.path } /> : <br/> }</Hidden>
+            <CardBodyContents style={ style }>{ children }</CardBodyContents>
+            <Hidden xs>{ image && image.path && image.placement === 'right' ? <CardBodyGraphic imagePath={ image.path } /> : <br/> }</Hidden>
         </CardBodyWrapper>
     )
 }

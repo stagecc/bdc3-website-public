@@ -5,7 +5,7 @@ import { PageContent } from '../../components/layout'
 import { Title } from '../../components/typography'
 
 const ResourcesPage = () => (
-    <PageContent width="95%" maxWidth="1080px" center gutters>
+    <PageContent width="95%" maxWidth="1200px" center gutters>
         <SEO
             title="Available Resources"
             description=""

@@ -9,6 +9,7 @@ export const Paragraph = styled.p`
     ${ props => props.left && 'text-align: left;' }
     ${ props => props.center && 'text-align: center;' }
     ${ props => props.right && 'text-align: right;' }
+    ${ props => props.firstLineStyle ? `&::first-line { ${ props.firstLineStyle } }` : undefined }
 `
 
 Paragraph.propTypes = {

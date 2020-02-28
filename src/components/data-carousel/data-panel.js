@@ -3,9 +3,10 @@ import styled from 'styled-components'
 import { animated } from 'react-spring'
 
 export const DataPanel = styled.div`
-    flex: ${ props => props.flexSize };
     height: 100%;
     width: 100%;
+    flex: ${ props => props.compact ? '1 0 50%' : '1' };
+    max-width: ${ props => props.compact ? 'none' : '400px' };
     background-color: #00000066;
     text-align: center;
 `

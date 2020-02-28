@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { Container as Grid, Row, Col, Visible } from 'react-grid-system'
-import { Header, Brand, Main, Footer, Container, StickyWrapper, LineBreak } from '../components/layout'
+import { Header, Brand, Main, Footer, Subfooter, Container, StickyWrapper, LineBreak } from '../components/layout'
 import { Heading, Paragraph } from '../components/typography'
 import { Menu, MobileMenu } from '../components/menus'
 import { menuItems } from '../data/menu'
@@ -11,7 +11,7 @@ import { List, ListItem } from '../components/list'
 import { useWindowWidth } from '../hooks'
 import hexBackgroundLeftSvg from '../images/hex-background-left.svg'
 import hexBackgroundRightSvg from '../images/hex-background-right.svg'
-import { Button } from '../components/buttons'
+import { ButtonExternalLink } from '../components/buttons'
 import { ExternalLink } from '../components/link'
 
 import '../styles/normalize.css'
@@ -42,7 +42,7 @@ const LayoutWrapper = styled.div`
             : `
                 background-image: url(${ hexBackgroundLeftSvg }), url(${ hexBackgroundRightSvg });
                 background-position: -4rem 0, calc(100% + 4rem) 0;
-                background-size: 400px, 400px;
+                background-size: 400px;
                 background-repeat: repeat-y, repeat-y;
                 background-attachment: fixed;
             `
@@ -52,10 +52,6 @@ const LayoutWrapper = styled.div`
 
 export const DefaultLayout = ({ children }) => {
     const { isCompact } = useWindowWidth()
-
-    // useEffect(() => {
-    //     setStuckHeader(scrollPosition > toolbarElement.current.getBoundingClientRect().height)
-    // }, [scrollPosition])
 
     return typeof isCompact === 'boolean' && (
         <LayoutWrapper compact={ isCompact }>
@@ -78,19 +74,19 @@ export const DefaultLayout = ({ children }) => {
                     <Grid fluid>
                         <Row>
                             <Col xs={ 12 } md={ 5 } push={{ md: 7 }}>
-                                <List dense center={ isCompact } right={ !isCompact }>
+                                <List center={ isCompact } right={ !isCompact }>
                                     <ListItem primary={ <Link to="/faqs">FAQs</Link> } />
-                                    <ListItem primary={ <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/">Documentation</ExternalLink> } />
-                                    <ListItem primary={ <Link to="/legal">Legal</Link> } />
                                     <ListItem primary={ <Link to="/resources/learn">Support</Link> } />
-                                    <ListItem primary={ <Link to="/contact">Contact</Link> } />
+                                    <ListItem primary={ <Link to="/accessibility">Accessibility</Link> } />
+                                    <ListItem primary={ <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/">Documentation</ExternalLink> } />
+                                    <ListItem primary={ <Link to="/privacy">Privacy Policy</Link> } />
                                 </List>
                             </Col>
                             <Col xs={ 12 } md={ 7 } pull={{ md: 5 }}>
                                 <Paragraph center={ isCompact } left={ !isCompact }>
                                     BioData Catalyst is a product of the National Heart, Lung, and Blood Institute of the National Institutes of Health.
                                     <LineBreak count={ 2 } />
-                                    For general inquiries, email [NHLBI email redirects to <a href="mailto:bdc3@renci.org">bdc3@renci.org</a>].
+                                    For general inquiries, <Link to="/contact">contact us</Link>.
                                     <LineBreak count={ 2 } />
                                     &copy; { new Date().getFullYear() }
                                 </Paragraph>
@@ -98,13 +94,19 @@ export const DefaultLayout = ({ children }) => {
                         </Row>
                         <Row>
                             <Col xs={ 12 } style={{ textAlign: 'center' }}>
-                                <Heading center light noMargin>Consortium Members</Heading> <br/>
-                                <Button light><strong>Login</strong></Button>
+                                <Heading center light noMargin>Consortium Members</Heading> <br/><br/>
+                                <ButtonExternalLink light to="https://nhlbidatastage.org/Security/login"><strong>Login</strong></ButtonExternalLink>
                             </Col>
                         </Row>
                     </Grid>
                 </Container>
             </Footer>
+            <Subfooter compact={ isCompact }>
+                <ExternalLink to="https://www.hhs.gov/"> U.S. Department of Health & Human Services</ExternalLink>
+                <ExternalLink to="https://www.nih.gov/"> National Institutes of Health</ExternalLink>
+                <ExternalLink to="https://www.nhlbi.nih.gov/"> National Heart, Lung, and Blood Institute</ExternalLink>
+                <ExternalLink to="https://www.usa.gov/"> USA.gov</ExternalLink>
+            </Subfooter>
         </LayoutWrapper>
     )
 }

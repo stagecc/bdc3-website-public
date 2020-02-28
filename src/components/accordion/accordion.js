@@ -76,7 +76,7 @@ const AccordionContents = styled.div`
     margin: 2rem;
 `
 
-export const Accordion = ({ title, content, children }) => {
+export const Accordion = ({ title, children }) => {
     const [active, setActive] = useState(false)
     const [height, setHeight] = useState(0)
     const contentElement = useRef(null)

@@ -36,7 +36,7 @@ const HexInterior = styled.span`
     width: 60%;
     height: calc(1.118 * 60%);
     border-radius: 50%;
-    padding: 1rem;
+    padding: 0.5rem;
     z-index: 1;
     display: flex;
     justify-content: center;

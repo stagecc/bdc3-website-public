@@ -3,9 +3,6 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { CloseIcon, HamburgerIcon } from '../icons'
 import { Brand } from '../layout'
-import { ExternalLink } from '../link'
-import githubLogo from '../../images/icons/github-logo.png'
-import twitterLogo from '../../images/icons/twitter-logo.png'
 
 const Overlay = styled.div`
     position: fixed;
@@ -54,7 +51,7 @@ const MobileNav = styled.nav`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 2rem 0;
+    margin: 4rem 0 2rem 0;
     flex: 1;
 `
 
@@ -76,25 +73,6 @@ const MenuLink = styled(Link)`
     &:hover {
         color: #eee;
         background-color: #ffffff22;
-    }
-`
-
-const SocialLinks = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 2rem 0;
-    padding-left: 2rem;:
-`
-
-const SocialIcon = styled.img`
-    margin: 0 1rem;
-    padding: 0;
-    transition: filter 250ms;
-    filter: opacity(0.5);
-    &:hover {
-        filter: opacity(1.0);
     }
 `
 
@@ -124,9 +102,9 @@ export const MobileMenu = ({ items }) => {
             <Toggler onClick={ handleToggleMenu }>
                 { visible ? <CloseIcon size="36" fill="var(--color-crimson)" /> : <HamburgerIcon size="36" fill="var(--color-crimson)"  /> }
             </Toggler>
-            <MobileNavDrawer active={ visible } onKeyDown={ e => console.log(e) }>
-                <div style={{ marginLeft: '2rem' }}>
-                    <Brand white height="70" />
+            <MobileNavDrawer active={ visible }>
+                <div style={{ marginLeft: '1.5rem' }}>
+                    <Brand white width="66%" />
                 </div>
                 <MobileNav>
                     {
@@ -137,10 +115,6 @@ export const MobileMenu = ({ items }) => {
                         })
                     }
                 </MobileNav>
-                <SocialLinks>
-                    <ExternalLink to="tbd"><SocialIcon src={ twitterLogo } alt="Twitter Logo" /></ExternalLink> &nbsp;&nbsp;
-                    <ExternalLink to="tbd"><SocialIcon src={ githubLogo } alt="GitHub Octocat Logo" /></ExternalLink> &nbsp;&nbsp;
-                </SocialLinks>
             </MobileNavDrawer>
             <Overlay shaded={ visible } onClick={ handleCloseMenu } />
         </Wrapper>

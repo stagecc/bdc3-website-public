@@ -7,10 +7,10 @@ import { MenuItemDescription } from './hex-menu-descriptions'
 
 const carouselItems = [
     {
-        text: 'Tools',
+        text: 'Services',
         description: 'Take control of your data with customizable tools and workflows',
         icon: ToolsIcon,
-        path: '/resources/tools',
+        path: '/resources/services',
     },
     {
         text: 'Data',
@@ -26,7 +26,7 @@ const carouselItems = [
     },
     {
         text: 'BYOD',
-        description: 'Get the support you need to explore, analyze, and discover',
+        description: 'Use the BioData Catalyst ecosystem to build on your existing work',
         icon: ByodIcon,
         path: '/resources/byod',
     },

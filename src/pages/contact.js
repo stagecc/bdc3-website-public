@@ -1,15 +1,15 @@
 import React from 'react'
 import { SEO } from '../components/seo'
-import { PageContent, LineBreak } from '../components/layout'
+import { PageContent } from '../components/layout'
 import { Title, Paragraph } from '../components/typography'
 
 const ContactPage = () => (
-    <PageContent width="95%" maxWidth="1080px" center gutters>
-            <SEO
-                title="Contact"
-                description=""
-                keywords=""
-            />
+    <PageContent width="95%" maxWidth="1200px" center gutters>
+        <SEO
+            title="Contact"
+            description=""
+            keywords=""
+        />
 
         <Title>Contact</Title>
 
@@ -18,7 +18,7 @@ const ContactPage = () => (
         </Paragraph>
 
         <Paragraph center>
-            <strong>** Please do not use this form to share and sensitive data. **</strong>
+            <strong>** Please do not use this form to share any sensitive data. **</strong>
         </Paragraph>
 
         <script type="text/javascript" src="https://s3.amazonaws.com/assets.freshdesk.com/widget/freshwidget.js"></script>
@@ -27,8 +27,6 @@ const ContactPage = () => (
         </style>
         <iframe title="Feedback Form" class="freshwidget-embedded-form" id="freshwidget-embedded-form" src="https://bdcatalyst.freshdesk.com/widgets/feedback_widget/new?&widgetType=embedded&screenshot=No&captcha=yes" scrolling="no" height="650px" width="100%" frameborder="0" >
         </iframe>
-
-        <LineBreak count={ 8 } />
 
     </PageContent>
 )

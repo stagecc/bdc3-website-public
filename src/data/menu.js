@@ -16,12 +16,12 @@ export const menuItems = [
                 path: '/resources/data',
             },
             {
-                text: 'Tools',
-                path: '/resources/tools',
-            },
-            {
                 text: 'BYOD',
                 path: '/resources/byod',
+            },
+            {
+                text: 'Services',
+                path: '/resources/services',
             },
             {
                 text: 'Learn',
@@ -29,10 +29,6 @@ export const menuItems = [
             },
         ],
     },
-    // {
-    //     text: 'FAQ',
-    //     path: '/faq',
-    // },
     {
         text: 'Contact',
         path: '/contact',

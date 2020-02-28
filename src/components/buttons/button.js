@@ -2,12 +2,12 @@ import styled from 'styled-components'
 
 export const Button = styled.button`
     background-color: ${ props => props.light ? '#fff' : 'var(--color-crimson)' };
-    border-radius: 1rem;
+    border-radius: 4px;
     border: ${ props => props.light ? '2px solid var(--color-crimson)' : '0' };
-    color: ${ props => props.light ? 'var(--color-crimson)' : '#fff' };
-    padding: 0.5rem 1rem;
+    color: ${ props => props.light ? 'var(--color-crimson) !important' : '#fff' };
+    padding: 1rem 1.5rem;
     text-transform: uppercase;
-    text-decoration: none;
+    text-decoration: none !important;
     white-space: nowrap;
     cursor: pointer;
     // possibly extend to allow fullWidth prop?

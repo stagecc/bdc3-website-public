@@ -1,124 +1,99 @@
-import React, { Fragment, useState } from 'react'
-import axios from 'axios'
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
 import { SEO } from '../components/seo'
 import { PageContent } from '../components/layout'
-import { MonarchSearch } from '../components/form'
-import { Title, Heading, Paragraph } from '../components/typography'
-import { Container as Grid, Row, Col} from 'react-grid-system'
-import { DeleteIcon } from '../components/icons'
-import { ExternalLink } from '../components/link'
+import { Title, Paragraph } from '../components/typography'
+import algoliasearch from 'algoliasearch/lite'
+import { Highlight, Hits, InstantSearch, RefinementList, SearchBox } from 'react-instantsearch-dom'
 
-const initialState = {
-    rows: 10,
-    start: 0,
+const searchClient = algoliasearch(
+    'latency', // sppilication ID
+    '6be0576ff61c053d5f9a3225e2a90f76' // API key
+)
+
+const Wrapper = styled.div`
+    // border: 1px solid #f99; * { border: 1px solid #f99; }
+    display: flex;
+
+`
+
+const SearchFilters = styled.div`
+    min-width: 12rem;
+    margin-top: 4rem;
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+`
+
+const SearchResults = styled.div`
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+`
+
+const SearchFormContainer = styled(SearchBox)`
+    margin-bottom: 2rem;
+    & form {
+        display: flex;
+        & input {
+            flex: 1;
+            height: 2rem;
+        }
+        & button {
+            float: right;
+        }
+    }
+`
+
+const Hit = props => {
+    return (
+        <article>
+            <h2><Highlight attribute="name" hit={props.hit} /></h2>
+            <p><Highlight attribute="description" hit={props.hit} /></p>
+        </article>
+    );
 }
 
-const initialResponse = {
-    rows: 0,
-    start: 0,
-    data: [],
+Hit.propTypes = {
+    hit: PropTypes.object.isRequired,
 }
+
 
 const SearchPage = () => {
-    const [query, setQuery] = useState('')
-    const [searchOptions, setSearchOptions] = useState(initialState)
-    const [results, setResults] = useState(initialResponse)
-    const [loading, setLoading] = useState(false)
-
-    const handleChangeQuery = e => setQuery(e.target.value)
-
-    const handleChangeOption = property => e => {
-        setSearchOptions({ ...searchOptions, [property]: Math.max(0, +e.target.value) })
-    }
-
-    const handleSubmit = e => {
-        setLoading(true)
-        console.log('Searching...')
-        var params = new URLSearchParams()
-        params.append('rows', searchOptions.rows)
-        params.append('start', searchOptions.start)
-        params.append('highlight_class', 'hilite')
-        params.append('boost_q', 'category:genotype%5E-10')
-        params.append('prefix', 'HP')
-        params.append('prefix', 'MONDO')
-        params.append('prefix', 'EFO')
-        params.append('prefix', 'OBA')
-        params.append('prefix', 'NCIT')
-        params.append('prefix', '-OMIA')
-        const fetchResults = async () => await axios.get(`https://api-dev.monarchinitiative.org/api/search/entity/autocomplete/${ query }`, {
-            params: params
-        }).then(response => {
-                console.log(response.data)
-                setResults({
-                    rows: searchOptions.rows,
-                    start: searchOptions.start,
-                    data: response.data.docs,
-                })
-            })
-            .catch(error => console.error(error))
-        fetchResults()
-        setLoading(false)
-    }
-
     return (
-        <PageContent width="95%" maxWidth="1080px" center gutters>
+        <PageContent width="95%" maxWidth="1200px" center gutters>
             <SEO
-                title="Data Search"
+                title="DocSearch"
                 description=""
                 keywords=""
             />
 
-            <Title>Search</Title>
+            <Title>DocSearch</Title>
 
             <Paragraph>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ea dolorem natus unde aspernatur, rerum excepturi maiores nobis in iusto adipisci, voluptate quod quas fugit voluptatum. Nostrum maiores dignissimos deleniti.
-            </Paragraph>
-            
-            <Paragraph center>
-                <label htmlFor="search-results-start">Start:</label>
-                <input id="search-results-start" type="number" aria-label="Search results starting position" value={ searchOptions.start } onChange={ handleChangeOption('start') }/>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <label htmlFor="search-results-rows">Rows:</label>
-                <input id="search-results-rows" type="number" aria-label="Number of search results to render" value={ searchOptions.rows } onChange={ handleChangeOption('rows') }/>
+                This is a sample using an example from the Algolia docs to verify things work as expected. They do. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati dicta velit natus non saepe sint? Corporis provident, neque, eum corrupti laboriosam quisquam enim dolorum molestias ducimus quos sed. Numquam a, id consequatur laudantium unde!
             </Paragraph>
 
-            <MonarchSearch value={ query } onChange={ handleChangeQuery } onSubmit={ handleSubmit } />
-
-            <Grid fluid>
-                <Row>
-                    <Col xs={ 12 } sm={ 10 }>
-                        <Heading>
-                            Results &nbsp;
-                            { results.data.length > 0 && <span>({ results.start } - { -1 + results.start + results.data.length })</span> }
-                        </Heading>
-                    </Col>
-                    <Col xs={ 12 } sm={ 2 } style={{ textAlign: 'right' }}>
-                        <br/>
-                        <button onClick={ () => setResults([]) } aria-label="Search"><DeleteIcon size={ 32 } fill="var(--color-crimson)" /></button>
-                    </Col>
-                </Row>
-            </Grid>
-
-            {
-                loading ? (
-                    <div>Loading...</div>
-                ) : (
-                    <div>
-                        {
-                            results.data.length > 0 && results.data.map(item => {
-                                return (
-                                    <Fragment>
-                                        <ExternalLink to={ `https://monarch-initiative.github.io/HeliumPhenotypeSearch/${ item.id }` }>{ item.id }</ExternalLink>
-                                        <pre style={{ fontSize: '80%', padding: '2rem', backgroundColor: '#ccc', overflowX: 'scroll' }}>
-                                            { JSON.stringify(item, null, 2) }
-                                        </pre>
-                                    </Fragment>
-                                )
-                            })
-                        }
-                    </div>
-                )
-            }
+            <InstantSearch searchClient={searchClient} indexName="instant_search">
+                <Wrapper>
+                    <SearchFilters>
+                        <RefinementList attribute="brand" />
+                    </SearchFilters>
+                    <SearchResults>
+                        <SearchFormContainer />
+                        <Hits hitComponent={ Hit } />
+                    </SearchResults>
+                </Wrapper>
+            </InstantSearch>
 
         </PageContent>
     )

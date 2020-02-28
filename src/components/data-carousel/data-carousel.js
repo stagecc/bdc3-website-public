@@ -1,10 +1,9 @@
-import React, { Fragment, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
-import { Hero } from '../hero'
 import { useWindowWidth } from '../../hooks'
-import { animated, useTransition } from 'react-spring'
-import { DetailsPanel, DataDetail, Headline, Description } from './details-panel'
-import { DataPanel, Data, Datum, DatumValue, DatumName } from './data-panel'
+import { useTransition } from 'react-spring'
+import { DetailsPanel, DataDetail } from './details-panel'
+import { DataPanel, Data } from './data-panel'
 import { PauseIcon, PlayIcon } from '../icons'
 
 const INTERVAL = 2 * 1000
@@ -14,20 +13,20 @@ const WAIT_TIME = process.env.NODE_ENV === 'production' ? 5 * 1000 : 1 * 1000
 const carouselItems = [
     {
         key: 0,
-        headline: 'We have so much data!',
-        description: 'Take control of your data with customizable tools and workflows',
+        headline: 'Advancing access to TOPMed data',
+        description: 'BioData Catalyst provides one point of entry to the most TOPMed datasets, including Freeze 5b data.',
         data: [
-            { name: 'Participants', value: 54854 },
-            { name: 'Whole Genome Sequences', value: 3216 },
-            { name: 'Petabytes of Data', value: 3 },
+            { name: 'Participants', value: '73,223' },
+            { name: 'Whole Genome Sequences', value: '3,216' },
+            { name: 'Petabytes of Data', value: '1.8' },
         ],
     },
     {
         key: 1,
-        headline: 'Diverse data is a first-class priority',
-        description: 'BioData catalyst provides more diverse population data than any other resource',
+        headline: 'Prioritizing diverse data',
+        description: 'BioData Catalyst provides more diverse population data than any other resource.',
         data: [
-            { name: 'Phenotypes', value: 999 },
+            { name: 'Participants with phenotypes', value: '241,956' },
             { name: 'Interesting Value', value: 42 },
         ],
     }
@@ -138,17 +137,19 @@ export const DataCarousel = () => {
                 backgroundColor="#00abf5"
                 backgroundImage="https://i.picsum.photos/id/825/900/300.jpg"
                 onMouseOver={ () => setPlayingAnimations(false) }
+                onFocus={ () => setPlayingAnimations(false) }
                 onMouseLeave={ () => setPlayingAnimations(true) }
+                onBlur={ () => setPlayingAnimations(true) }
             >
                 <Overlay compact={ isCompact }>
-                    <DetailsPanel flexSize={ isCompact ? '1 0 50%' : '3' }>
+                    <DetailsPanel compact={ isCompact }>
                         {
                             detailsTransitions.map(({ item, props, key }) =>(
                                 <DataDetail key={ key } style={ props } item={ item } />
                             ))
                         }
                     </DetailsPanel>
-                    <DataPanel flexSize={ isCompact ? '1 0 50%' : '1' }>
+                    <DataPanel compact={ isCompact }>
                         {
                             dataTransitions.map(({ item, props, key }) => (
                                 <Data key={ key } style={ props } data={ item.data } />

@@ -1,0 +1,60 @@
+-
+  name: Renaissance Computing Institute
+  ota: 
+  image: ../images/logos/partners/renci.png
+-
+  name: RTI International
+  ota: 
+  image: ../images/logos/partners/rti-international.png
+-
+  name: Broad Institute
+  ota: 
+  image: ../images/logos/partners/broad-institute.png
+-
+  name: University of California Santa Cruz
+  ota: 
+  image: ../images/logos/partners/university-of-california-santa-cruz.png
+-
+  name: University of Chicago
+  ota: 
+  image: ../images/logos/partners/university-of-chicago.png
+-
+  name: Vanderbilt University Medical Center
+  ota: 
+  image: ../images/logos/partners/vanderbilt-university-medical-center.png
+-
+  name: Harvard Medical School
+  ota: OT3 HL142480
+  image: ../images/logos/partners/harvard-medical-school.png
+-
+  name: UNC at Chapel Hill
+  ota: 
+  image: ../images/logos/partners/unc-chapel-hill.png
+-
+  name: Lawrence Berkeley National Laboratory
+  ota: 
+  image: ../images/logos/partners/lawrence-berkeley-national-laboratory.png
+-
+  name: Oregon State University
+  ota: 
+  image: ../images/logos/partners/oregon-state-university.png
+-
+  name: University of New Mexico Health Sciences Center
+  ota: 
+  image: ../images/logos/partners/university-of-new-mexico-health-sciences-center.png
+-
+  name: Seven Bridges Genomics, Inc.
+  ota: OT3 HL142478-01
+  image: ../images/logos/partners/seven-bridges-genomics-inc.png
+-
+  name: US Department of Veterans Affairs
+  ota: 
+  image: ../images/logos/partners/united-states-department-of-veterans-affairs.png
+-
+  name: NHLBI Informatics Research Center
+  ota: 
+  image: ../images/blank.png
+- 
+  name: TOPMed Data Coordinating Center
+  ota: 
+  image: ../images/blank.png

@@ -1,3 +1,6 @@
+export * from './use-freshdesk'
 export * from './use-local-storage'
 export * from './use-scroll-position'
+export * from './use-partners'
+export * from './use-platforms'
 export * from './use-window-width'

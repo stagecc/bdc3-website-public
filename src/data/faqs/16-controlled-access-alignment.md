@@ -1,5 +1,0 @@
----
-title: I've heard that with BioData Catalyst there is the ability to query data and see what data is available before a Data Access Request is submitted? How does this align with controlled access?
----
-
-The NIH Genomic Data Sharing policy, via its guidance on [Genomic Summary Results](https://grants.nih.gov/grants/guide/notice-files/NOT-OD-19-023.html), encourages minimal barriers to access genomic summary results.  Therefore, investigators will be able to see and query data at the summary level within BioData Catalyst without an approved DAR. Logging in via an authorized account is required before a user can query the data. This will enable logging and monitoring of users and provide an opportunity to remind users of the three principles for responsible research use (no attempt to re-identify, use only for research or health purposes, and review of the responsible genomic data use informational materials).  In addition, minimum cell size restrictions, which are common across databases, will help protect the confidentiality of individuals.

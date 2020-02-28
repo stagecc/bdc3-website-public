@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { animated } from 'react-spring'
 
 export const DetailsPanel = styled.div`
-    flex: ${ props => props.flexSize };
+    flex: ${ props => props.compact ? '1 0 50%' : '3' };
     height: 100%;
     width: 100%;
     position: relative;
