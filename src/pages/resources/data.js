@@ -45,11 +45,11 @@ const DataPage = ({ data }) => {
                 Users log into BioData Catalyst platforms with their eRA Commons credentials and authentication is performed by iTrust.
             </Paragraph>
             
-            <Img style={{ width: '90%', margin: 'auto' }} fluid={ dataBucketsGraphic.childImageSharp.fluid } />
+            <Img style={{ width: '90%', margin: 'auto' }} fluid={ dataBucketsGraphic.childImageSharp.fluid } alt="Data access flow chart - see description that follows" />
             
             <br/>
             
-            <Subheading>Data access highlights</Subheading>
+            <Subheading>Data Access Highlights</Subheading>
 
             <BulletedList>
                 <ListItem primary={ `
