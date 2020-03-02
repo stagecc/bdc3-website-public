@@ -31,7 +31,7 @@ const ByodPage = () => (
         <br/>
 
         <Paragraph center>
-            <ButtonExternalLink to="https://f4c.readme.io/docs/upload-to-f4c">BYOD to BioDataCatalyst powered by Seven Bridges</ButtonExternalLink>
+            <ButtonExternalLink to="https://f4c.readme.io/v1.0/docs/upload-to-the-platform">BYOD to BioDataCatalyst powered by Seven Bridges</ButtonExternalLink>
         </Paragraph>
         
         <br/>
