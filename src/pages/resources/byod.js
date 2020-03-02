@@ -31,13 +31,13 @@ const ByodPage = () => (
         <br/>
 
         <Paragraph center>
-            <ButtonExternalLink to="https://f4c.readme.io/v1.0/docs/upload-to-the-platform">BYOD to BioDataCatalyst powered by Seven Bridges</ButtonExternalLink>
+            <ButtonExternalLink to="https://f4c.readme.io/v1.0/docs/upload-to-the-platform">BYOD to BioData Catalyst powered by Seven Bridges</ButtonExternalLink>
         </Paragraph>
         
         <br/>
 
         <Paragraph center>
-            <ButtonExternalLink to="https://support.terra.bio/hc/en-us/articles/360024056512-Uploading-to-a-workspace-Google-bucket">BYOD to BioDataCatalyst powered by Terra</ButtonExternalLink>
+            <ButtonExternalLink to="https://support.terra.bio/hc/en-us/articles/360024056512-Uploading-to-a-workspace-Google-bucket">BYOD to BioData Catalyst powered by Terra</ButtonExternalLink>
         </Paragraph>
 
     </PageContent>
