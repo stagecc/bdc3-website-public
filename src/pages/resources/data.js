@@ -77,7 +77,7 @@ const DataPage = ({ data }) => {
             </Paragraph>
 
             <Paragraph center>
-                <ButtonExternalLink to="https://gen3.datastage.io/user/oauth2/authorize?idp=fence&client_id=xMhuXjGdk9zpzdJjufEinh3nKzOUKOTFZcwzU5xT&redirect_uri=https%3A%2F%2Fbdc-mockup.netlify.com&response_type=id_token+token&scope=openid+user&nonce=2bfe151af238d21f48d818bf8bbec408838c8dc0ace6b4c5621ac9dfa157798b">Check my Access</ButtonExternalLink>
+                <ButtonExternalLink to="https://gen3.biodatacatalyst.nhlbi.nih.gov/user/oauth2/authorize?idp=fence&client_id=xMhuXjGdk9zpzdJjufEinh3nKzOUKOTFZcwzU5xT&redirect_uri=https%3A%2F%2Fbiodatacatalyst.nhlbi.nih.gov&response_type=id_token+token&scope=openid+user&nonce=2bfe151af238d21f48d818bf8bbec408838c8dc0ace6b4c5621ac9dfa157798b">Check my Access</ButtonExternalLink>
             </Paragraph>
 
         </PageContent>
