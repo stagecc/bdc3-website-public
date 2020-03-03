@@ -30,6 +30,10 @@ export const menuItems = [
         ],
     },
     {
+        text: 'Fellows',
+        path: '/fellows',
+    },
+    {
         text: 'Contact',
         path: '/contact',
     },

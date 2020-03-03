@@ -2,6 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
+export const OrderedList = styled.ol`
+    line-height: ${ props => props.dense ? '1.0' : '2.0' };
+`
+
 export const UnorderedList = styled.ul`
     list-style-type: none;
     margin: 0 0 2rem 0;
