@@ -4,5 +4,8 @@ export const Main = styled.main`
     background-color: inherit;
     color: inherit;
     flex: 1;
-    margin-bottom: 3rem;
+    margin: 0 1rem;
+    @media screen and (min-width: 767px) {
+        margin: 0;
+    }
 `
