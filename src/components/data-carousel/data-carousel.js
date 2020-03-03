@@ -17,7 +17,6 @@ const carouselItems = [
         description: 'BioData Catalyst provides one point of entry to the most TOPMed datasets, including Freeze 5b data.',
         data: [
             { name: 'Participants', value: '73,223' },
-            { name: 'Whole Genome Sequences', value: '3,216' },
             { name: 'Petabytes of Data', value: '1.8' },
         ],
     },
@@ -27,7 +26,6 @@ const carouselItems = [
         description: 'BioData Catalyst provides more diverse population data than any other resource.',
         data: [
             { name: 'Participants with phenotypes', value: '241,956' },
-            { name: 'Interesting Value', value: 42 },
         ],
     }
 ]
