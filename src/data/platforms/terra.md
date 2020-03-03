@@ -4,7 +4,7 @@ path: /platforms/terra
 logo: ../../images/logos/platforms/terra.png
 links: 
     homepage: https://terra.bio
-    launch: https://datastage.terra.bio/
+    launch: https://terra.biodatacatalyst.nhlbi.nih.gov
     documentation: https://support.terra.bio/hc/en-us/categories/360002177552
 teaser: BioData Catalyst powered by Terra is a secure and scalable platform for biomedical researchers to import and access data, run analysis tools, and collaborate easily with others, in a secure environment.
 service: Share and compute across large genomic and genomic-related datasets. Terra offers a stand-alone computational workspace model that provides a secure collaborative place to organize data, run and monitor Workflow Description Language (WDL) analysis pipelines, and perform interactive analysis using applications such as Jupyter Notebooks and the Hail GWAS tool.

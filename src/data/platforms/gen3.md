@@ -4,7 +4,7 @@ path: /platforms/gen3
 logo: ../../images/logos/platforms/gen3.png
 links: 
     homepage: https://gen3.org
-    launch: http://gen3.biodatacatalyst.nhlbi.nih.gov/
+    launch: https://gen3.biodatacatalyst.nhlbi.nih.gov
     documentation: https://gen3.org/get-started/
 teaser: The Gen3 software stack is a collection of microservices that enable the standing-up of data commons, which allows different partner organizations to pool data and grants approved researchers access to harmonized datasets in a scalable, reproducible, and secure manner.
 service: Search and filter harmonized TOPMed variables and their value ranges, and export the selected cohorts to analytical workspaces. Gen3 also allows users to search study-specific genomic and phenotypic data files broken down by consent groups, and discover new studies to apply for access through dbGaP.
