@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
-import Img from 'gatsby-image'
 import { Link } from 'gatsby'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import { SEO } from '../../components/seo'
@@ -59,7 +58,6 @@ const Separator = styled.div`
 `
 
 const ServicesPage = ({ data }) => {
-    const { platformsAndServicesGraphic } = data
     const platforms = usePlatforms()
     
     const services = [
@@ -114,8 +112,6 @@ const ServicesPage = ({ data }) => {
                             several platforms and services to explore and analyze both private and publicly-hosted datasets
                             in the cloud using pre-built and custom workflows.
                         </Paragraph>
-
-                        <Img style={{ width: '90%', margin: 'auto' }} fluid={ platformsAndServicesGraphic.childImageSharp.fluid } />
 
                         <br/>
                         
@@ -202,15 +198,3 @@ const ServicesPage = ({ data }) => {
 }
 
 export default ServicesPage
-
-export const query = graphql`
-    {
-        platformsAndServicesGraphic: file(relativePath: {eq: "platforms-and-services.png"}) {
-            childImageSharp {
-                fluid {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-    }
-`
