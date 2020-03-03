@@ -47,6 +47,7 @@ const AboutPage = () => {
                                 <ListItem primary={ <AnchorLink to="/about#who-we-are">Who we Are</AnchorLink> } />
                                 <ListItem primary={ <AnchorLink to="/about#ecosystem">Our Ecosystem</AnchorLink> } />
                                 <ListItem primary={ <AnchorLink to="/about#contributing">Contribute</AnchorLink> } />
+                                <ListItem primary={ <AnchorLink to="/about#data-protection">Data Protection</AnchorLink> } />
                             </List>
                         </Col>
                     </Hidden>
@@ -155,6 +156,16 @@ const AboutPage = () => {
                                 <li>Ongoing submission and upvoting of ideas via the <ExternalLink to="https://biodatacatalyst.ideascale.com/">NHLBI BioDataCatalyst Ideascale</ExternalLink>.</li>
                                 <li>Periodic Requests for Comment (RFC) solicitations.</li>
                             </ol>
+                        </section>
+
+                        <section id="data-protection">
+                            <Heading>Data Protection</Heading>
+                            
+                            <Paragraph>
+                                The NHLBI BioData Catalyst ecosystem responsibly stewards access to hosted datasets,
+                                requires researchers bringing their own data to respect and protect the interests of research participants,
+                                and takes measures to secure the BioData Catalyst ecosystem. <Link to="/data-protection">Read more about how we do this</Link>.
+                            </Paragraph>
                         </section>
 
                     </Col>

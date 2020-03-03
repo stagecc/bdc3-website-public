@@ -79,7 +79,7 @@ export const DefaultLayout = ({ children }) => {
                                     <ListItem primary={ <Link to="/resources/learn">Support</Link> } />
                                     <ListItem primary={ <Link to="/accessibility">Accessibility</Link> } />
                                     <ListItem primary={ <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/">Documentation</ExternalLink> } />
-                                    <ListItem primary={ <Link to="/privacy">Privacy Policy</Link> } />
+                                    <ListItem primary={ <Link to="/data-protection">Data Protection</Link> } />
                                 </List>
                             </Col>
                             <Col xs={ 12 } md={ 7 } pull={{ md: 5 }}>

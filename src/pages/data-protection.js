@@ -4,15 +4,15 @@ import { SEO } from '../components/seo'
 import { Title, Heading, Paragraph } from '../components/typography'
 import { ExternalLink } from '../components/link'
 
-const AccessibilityPage = () => (
+const DataProtectionPage = () => (
     <PageContent width="95%" maxWidth="1200px" center gutters>
         <SEO
-            title="Data and Participant Privacy Protection"
+            title="Data Protection"
             description=""
             keywords=""
         />
         
-        <Title>Data and Participant Privacy Protection</Title>
+        <Title>Data Protection</Title>
  
         <Paragraph>
             In addition to its useful tools, applications, and workflows, NHLBI BioData Catalyst increases access to NHLBI datasets, allows researchers to bring their own data, and offers secure collaboration workspaces. BioData Catalyst, therefore, must responsibly steward access to hosted datasets, require researchers bringing their own data to respect and protect the interests of research participants, and take measures to secure the BioData Catalyst ecosystem.
@@ -51,4 +51,4 @@ const AccessibilityPage = () => (
     </PageContent>
 )
 
-export default AccessibilityPage
+export default DataProtectionPage
