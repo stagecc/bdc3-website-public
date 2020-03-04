@@ -77,6 +77,7 @@ export const DefaultLayout = ({ children }) => {
                                 <List center={ isCompact } right={ !isCompact }>
                                     <ListItem primary={ <Link to="/faqs">FAQs</Link> } />
                                     <ListItem primary={ <Link to="/resources/learn">Support</Link> } />
+                                    <ListItem primary={ <ExternalLink to="https://www.nhlbi.nih.gov/about/foia-fee-for-service-office">Freedom of Information Act (FOIA)</ExternalLink> } / >
                                     <ListItem primary={ <Link to="/accessibility">Accessibility</Link> } />
                                     <ListItem primary={ <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/">Documentation</ExternalLink> } />
                                     <ListItem primary={ <Link to="/data-protection">Data Protection</Link> } />
@@ -102,10 +103,10 @@ export const DefaultLayout = ({ children }) => {
                 </Container>
             </Footer>
             <Subfooter compact={ isCompact }>
-                <ExternalLink to="https://www.hhs.gov/"> U.S. Department of Health & Human Services</ExternalLink>
-                <ExternalLink to="https://www.nih.gov/"> National Institutes of Health</ExternalLink>
-                <ExternalLink to="https://www.nhlbi.nih.gov/"> National Heart, Lung, and Blood Institute</ExternalLink>
-                <ExternalLink to="https://www.usa.gov/"> USA.gov</ExternalLink>
+                <ExternalLink to="https://www.hhs.gov/">U.S. Department of Health & Human Services</ExternalLink>
+                <ExternalLink to="https://www.nih.gov/">National Institutes of Health</ExternalLink>
+                <ExternalLink to="https://www.nhlbi.nih.gov/">National Heart, Lung, and Blood Institute</ExternalLink>
+                <ExternalLink to="https://www.usa.gov/">USA.gov</ExternalLink>
             </Subfooter>
         </LayoutWrapper>
     )

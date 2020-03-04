@@ -16,6 +16,10 @@ const resources = [
         description: 'Find step-by-step instructions on how to use BioData Catalyst services and tools.',
         links: [
             {
+                text: 'BioData Catalyst Documentation',
+                url: 'https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/'
+            },
+            {
                 text: 'SevenBridges Documentation',
                 url: 'https://f4c.readme.io/docs'
             },
@@ -44,7 +48,7 @@ const resources = [
         links: [
             {
                 text: 'Gen3 Videos',
-                url: 'https://forums.gen3.org',
+                url: 'https://gen3.org/community/webinars/',
             },
             {
                 text: 'Dockstore Videos',

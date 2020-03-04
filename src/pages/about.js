@@ -55,15 +55,15 @@ const AboutPage = () => {
                         <Title>About BioData Catalyst</Title>
             
                         <section id="what-we-are">
-                            <Heading>What We Are</Heading>
+                            <Heading>What We Offer</Heading>
             
                             <Paragraph>
-                                For research investigators who need to find, access, share, store, cross-link, and compute on large scale data sets,
+                                For research investigators who need to find, access, share, store, cross-link, and compute on large scale datasets,
                                 NHLBI BioData Catalyst serves as a cloud-based ecosystem providing tools, applications, and workflows to enable these capabilities in secure workspaces. 
                             </Paragraph>
             
                             <Paragraph>
-                                NHLBI BioData Catalyst increases access to NHLBI data sets and innovative data analysis capabilities and accelerates efficient biomedical research
+                                NHLBI BioData Catalyst increases access to NHLBI datasets and innovative data analysis capabilities and accelerates efficient biomedical research
                                 that drives discovery and scientific advancement, leading to novel diagnostic tools, therapeutic options, and prevention strategies for heart, lung, blood, and sleep disorders.
                             </Paragraph>
                         </section>
@@ -79,14 +79,14 @@ const AboutPage = () => {
                             </Paragraph>
             
                             <Paragraph>
-                                The BioData Catalyst ecosystem is funded by the National Heart, Lung, and Blood Institute (NHLBI) designed
-                                to be nimble and responsive to the ever-changing conditions of the data and biomedical science community.  
+                                The BioData Catalyst ecosystem is funded by the National Heart, Lung, and Blood Institute (NHLBI).
+                                It is designed to be nimble and responsive to the ever-changing conditions of the data and biomedical science community.  
                             </Paragraph>
 
                             <Subheading>Partners Powering Our Ecosystem</Subheading>
 
                             <Paragraph>
-                                Researchers and other professionals from the following institutions have received funding from NHLBI to work on the BioData Catalyst ecosystem
+                                Researchers and other professionals from the following institutions have received funding from NHLBI to work on the BioData Catalyst ecosystem:
                             </Paragraph>
 
                             <List dense>
@@ -135,7 +135,7 @@ const AboutPage = () => {
 
                             <Paragraph>
                                 Once researchers have completed their searches and created cohorts, they can use one of three platforms integrated into BioData Catalyst to analyze data at scale in cloud-based environments
-                                &mdash; SevenBridges (interactive analysis using Jupyterlab or RStudio), Dockstore (reproducible workflows, CWL, WDL, NFL), and Terra (Interactive Analysis using Jupyter notebooks).
+                                &mdash; Seven Bridges (interactive analysis using Jupyterlab or RStudio), Dockstore (reproducible workflows, CWL, WDL, NFL), and Terra (Interactive Analysis using Jupyter notebooks).
                             </Paragraph>
 
                             <Paragraph>

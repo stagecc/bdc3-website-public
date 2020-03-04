@@ -134,10 +134,10 @@ const ServicesPage = ({ data }) => {
                                                                         { platform.frontmatter.service }
                                                                     </Paragraph>
                                                                     <ToolLinks>
-                                                                        <ExternalToolLink to={ platform.frontmatter.links.launch }>Launch</ExternalToolLink>
-                                                                        | 
-                                                                        <ExternalToolLink to={ platform.frontmatter.links.documentation }>Documentation</ExternalToolLink>
-                                                                        | 
+                                                                        { platform.frontmatter.links.launch && <ExternalToolLink to={ platform.frontmatter.links.launch }>Launch</ExternalToolLink> }
+                                                                        { platform.frontmatter.links.launch && '|' }
+                                                                        { platform.frontmatter.links.documentation && <ExternalToolLink to={ platform.frontmatter.links.documentation }>Documentation</ExternalToolLink> }
+                                                                        { platform.frontmatter.links.documentation && '|' }
                                                                         <InternalToolLink to={ platform.frontmatter.path }>Learn</InternalToolLink>
                                                                     </ToolLinks>
                                                                 </Col>
@@ -179,11 +179,11 @@ const ServicesPage = ({ data }) => {
                                         The server offers imputation from various reference panels including the TOPMed reference panel. 
                                     </Paragraph>
                                     <ToolLinks>
-                                        <ExternalToolLink to="http://imputation.biodatacatalyst.nhlbi.nih.gov">Launch</ExternalToolLink>
-                                        | 
+                                        <ExternalToolLink to="https://topmed.imputationserver.org/">Launch</ExternalToolLink>
+                                        |
                                         <ExternalToolLink to="https://imputationserver.readthedocs.io/en/latest/">Documentation</ExternalToolLink>
                                         | 
-                                        <InternalToolLink to="https://pubmed.ncbi.nlm.nih.gov/27571263-next-generation-genotype-imputation-service-and-methods/">Learn</InternalToolLink>
+                                        <ExternalToolLink to="https://pubmed.ncbi.nlm.nih.gov/27571263-next-generation-genotype-imputation-service-and-methods/">Learn</ExternalToolLink>
                                     </ToolLinks>
                                 </CardBody>
                             </Card>

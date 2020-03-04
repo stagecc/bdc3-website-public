@@ -17,7 +17,7 @@ const FellowsPage = () => (
 
         <Title>Fellows Program</Title>
         
-        <Heading>Fellows Program Call for Proposals</Heading>
+        <Heading>About the BioData Catalyst Fellows Program</Heading>
 
         <Paragraph>
             The NHLBI BioData Catalyst Fellows Program provides researchers, especially early-career researchers,
@@ -75,19 +75,19 @@ const FellowsPage = () => (
         <Table>
             <tbody>
                 <tr>
-                    <td>December 20, 2019</td>
+                    <td>June 5, 2020</td>
                     <td>Application Process Opens </td>
                 </tr>
                 <tr>
-                    <td>January 17, 2020  11:59 PM Eastern Time</td>
+                    <td>July 3, 2020  11:59 PM Eastern Time</td>
                     <td>Application Deadline</td>
                 </tr>
                 <tr>
-                    <td>February 24, 2020</td>
+                    <td>August 3, 2020</td>
                     <td>Successful Proposals Announced</td>
                 </tr>
                 <tr>
-                    <td>March 20, 2020 (Anticipated)</td>
+                    <td>September 2020 (Anticipated)</td>
                     <td>Fellows Program Begins</td>
                 </tr>
             </tbody>
