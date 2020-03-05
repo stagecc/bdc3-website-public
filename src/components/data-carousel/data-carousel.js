@@ -133,7 +133,7 @@ export const DataCarousel = () => {
             <Wrapper
                 compact={ isCompact }
                 backgroundColor="#00abf5"
-                backgroundImage="https://i.picsum.photos/id/825/900/300.jpg"
+                backgroundImage="https://i.picsum.photos/id/825/1200/400.jpg"
                 onMouseOver={ () => setPlayingAnimations(false) }
                 onFocus={ () => setPlayingAnimations(false) }
                 onMouseLeave={ () => setPlayingAnimations(true) }
