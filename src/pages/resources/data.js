@@ -23,12 +23,13 @@ const DataPage = ({ data }) => {
                 <Heading>About BioData Catalyst Datasets</Heading>
     
                 <Paragraph>
-                    The BioData Catalyst ecosystem currently hosts a number of controlled datasets:
+                    The BioData Catalyst ecosystem currently hosts a number of controlled and open datasets:
                 </Paragraph>
     
                 <BulletedList dense>
-                    <ListItem primary={ <span>The Trans-omics for Precision Medicine (<ExternalLink to="https://www.nhlbiwgs.org/">TOPMed</ExternalLink>) initiative</span> } />
-                    <ListItem primary={ <span>The Chronic Obstructive Pulmonary Disease (<ExternalLink to="http://www.copdgene.org/">COPD</ExternalLink>) Gene Study</span> } />
+                    <ListItem primary={ <span><ExternalLink to="https://www.nhlbiwgs.org/">TOPMed</ExternalLink>) Freeze 5b</span> } />
+                    <ListItem primary={ <span>Parent Studies <ExternalLink to="https://www.ncbi.nlm.nih.gov/gap/">dbGaP</ExternalLink></span> } />
+                    <ListItem primary={ <span><ExternalLink to="https://www.internationalgenome.org/">1000 Genomes Project</ExternalLink></span> } />
                 </BulletedList>
             </section>
 
