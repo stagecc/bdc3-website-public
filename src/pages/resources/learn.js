@@ -20,6 +20,14 @@ const resources = [
                 url: 'https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/'
             },
             {
+                text: 'Dockstore Documentation',
+                url: 'https://docs.dockstore.org/en/develop/'
+            },
+            {
+                text: 'Gen3 Documentation',
+                url: 'https://gen3.org/get-started/'
+            },
+            {
                 text: 'SevenBridges Documentation',
                 url: 'https://f4c.readme.io/docs'
             },
@@ -31,14 +39,6 @@ const resources = [
                 text: 'Terra Quickstart',
                 url: 'https://support.terra.bio/hc/en-us/categories/360002177552'
             },
-            {
-                text: 'Gen3 Documentation',
-                url: 'https://gen3.org/get-started/'
-            },
-            {
-                text: 'Dockstore Documentation',
-                url: 'https://docs.dockstore.org/en/develop/'
-            },
         ]
     },
     {
@@ -47,12 +47,12 @@ const resources = [
         description: 'BioData Catalyst webinars, workshops, and how to videos.',
         links: [
             {
-                text: 'Gen3 Videos',
-                url: 'https://gen3.org/community/webinars/',
-            },
-            {
                 text: 'Dockstore Videos',
                 url: 'https://www.youtube.com/watch?v=-JuKsSQja3g',
+            },
+            {
+                text: 'Gen3 Videos',
+                url: 'https://gen3.org/community/webinars/',
             },
             {
                 text: 'Terra Workshop Videos',
@@ -66,16 +66,16 @@ const resources = [
         description: 'Find answers to frequently asked questions from BioData Catalyst users',
         links: [
             {
+                text: 'Dockstore FAQs',
+                url: 'https://docs.dockstore.org/en/develop/faq.html',
+            },
+            {
                 text: 'Gen3 FAQs',
                 url: 'https://gen3.org/resources/faq/',
             },
             {
                 text: 'Terra (Free Credits) FAQs',
                 url: 'https://support.terra.bio/hc/en-us/articles/360027940952-Free-credits-FAQs',
-            },
-            {
-                text: 'Dockstore FAQs',
-                url: 'https://docs.dockstore.org/en/develop/faq.html',
             },
         ]
     },
@@ -85,16 +85,16 @@ const resources = [
         description: 'Connect with others using the BioData Catalyst and learn how they are using it.',
         links: [
             {
-                text: 'Terra Forum',
-                url: 'https://support.terra.bio/hc/en-us/community/topics',
-            },
-            {
                 text: 'Dockstore Forum',
                 url: 'https://gitter.im/ga4gh/dockstore',
             },
             {
                 text: 'Gen3 Forum',
                 url: 'https://forums.gen3.org/',
+            },
+            {
+                text: 'Terra Forum',
+                url: 'https://support.terra.bio/hc/en-us/community/topics',
             },
         ]
     },
@@ -103,6 +103,10 @@ const resources = [
         icon: <BlogIcon size={ 64 } fill="var(--color-crimson)" />,
         description: 'Learn about how the BioData Catalyst is evolving and how to use the system from the community.',
         links: [
+            {
+                text: 'SevenBridges Blog (Releases)',
+                url: 'https://f4c.readme.io/blog',
+            },
             {
                 text: 'Terra Tutorials',
                 url: 'https://datastage.terra.bio/#library/showcase',
@@ -114,10 +118,6 @@ const resources = [
             {
                 text: 'Terra Release Notes & Service Notifications',
                 url: 'https://support.terra.bio/hc/en-us/categories/360000693572',
-            },
-            {
-                text: 'SevenBridges Blog (Releases)',
-                url: 'https://f4c.readme.io/blog',
             },
         ]
     },
