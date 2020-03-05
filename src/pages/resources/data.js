@@ -1,26 +1,35 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import styled from 'styled-components'
 import { SEO } from '../../components/seo'
 import { PageContent } from '../../components/layout'
 import { Title, Heading, Subheading, Paragraph } from '../../components/typography'
+import { Container as Grid, Row, Col } from 'react-grid-system'
 import { BulletedList, ListItem } from '../../components/list'
 import { ExternalLink } from '../../components/link'
 import { Visible } from 'react-grid-system'
+import { DataAccess } from '../../components/data-access'
 
-const DataPage = ({ data }) => {
+const DataPage = ({ data, location }) => {
     const { dataBucketsGraphic, dataBucketsGraphicMobile } = data
 
     return (
-        <PageContent width="95%" maxWidth="1200px" center gutters>
+        <PageContent width="95%" maxWidth="1200px" center gutters style={{ position: 'relative' }}>
             <SEO
                 title="BioData Catalyst Data Access"
                 description=""
                 keywords=""
             />
-
-            <Title>Accessing BioData Catalyst Data</Title>
             
+            <Title>Accessing BioData Catalyst Data</Title>
+
+            <br/>
+            
+            <DataAccess location={ location } />
+
+            <br/>
+
             <section>
                 <Heading>About BioData Catalyst Datasets</Heading>
     
@@ -80,6 +89,8 @@ const DataPage = ({ data }) => {
                     ` }/>
                 </BulletedList>
             </section>
+
+            <br/>
 
         </PageContent>
     )
