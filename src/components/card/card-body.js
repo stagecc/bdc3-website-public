@@ -10,6 +10,7 @@ const CardBodyWrapper = styled.div`
 
 const CardBodyGraphic = styled.div`
     background-image: url(${ props => props.imagePath });
+    background-position: 50% 0;
     background-size: cover;
     width: 25%;
     min-width: 100px;
