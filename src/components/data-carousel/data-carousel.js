@@ -5,6 +5,7 @@ import { useTransition } from 'react-spring'
 import { DetailsPanel, DataDetail } from './details-panel'
 import { DataPanel, Data } from './data-panel'
 import { PauseIcon, PlayIcon } from '../icons'
+import backgroundImage from '../../images/stars-long-exposure.png'
 
 const INTERVAL = 2 * 1000
 // speed up animation time in dev, leave appropriate wait time in prod
@@ -133,7 +134,7 @@ export const DataCarousel = () => {
             <Wrapper
                 compact={ isCompact }
                 backgroundColor="#00abf5"
-                backgroundImage="https://i.picsum.photos/id/825/1200/400.jpg"
+                backgroundImage={ backgroundImage }
                 onMouseOver={ () => setPlayingAnimations(false) }
                 onFocus={ () => setPlayingAnimations(false) }
                 onMouseLeave={ () => setPlayingAnimations(true) }
