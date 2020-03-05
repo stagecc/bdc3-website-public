@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const Subfooter = styled.footer`
     background-color: #222;
     color: #999;
+    font-size: 80%;
     padding: 2rem;
     filter: drop-shadow(0 0 0.25rem rgba(0, 0, 0, 0.5));
     display: flex;
