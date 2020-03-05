@@ -14,6 +14,10 @@ a {
 
 :root {
     --color-grey: #606264;
-    --color-crimson: #B33243;
+    --color-crimson: #b33243;
     --color-eggplant: #323268;
+    --color-blueberry: #21568a;
+    --color-peach: #f2b5a7;
+    --color-gold: #f2dd72;
+    --color-sea: #4d868c;
 }
