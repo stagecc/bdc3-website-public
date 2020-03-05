@@ -4,7 +4,6 @@ import { SEO } from '../components/seo'
 import { PageContent } from '../components/layout'
 import { Title, Heading, Subheading, Paragraph } from '../components/typography'
 import { BulletedList, OrderedList, ListItem } from '../components/list'
-import { ExternalLink } from '../components/link'
 import { Table } from '../components/table'
 
 const FellowsPage = () => (

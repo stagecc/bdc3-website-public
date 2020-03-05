@@ -4,7 +4,6 @@ import { SEO } from '../../components/seo'
 import { PageContent } from '../../components/layout'
 import { Title, Heading, Subheading, Paragraph } from '../../components/typography'
 import { BulletedList, ListItem } from '../../components/list'
-import { ButtonExternalLink } from '../../components/buttons'
 import { ExternalLink } from '../../components/link'
 
 const DataPage = ({ data }) => {
