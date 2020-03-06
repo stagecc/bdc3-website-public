@@ -5,9 +5,10 @@ import { PageContent } from '../../components/layout'
 import { Title, Heading, Subheading, Paragraph } from '../../components/typography'
 import { BulletedList, ListItem } from '../../components/list'
 import { ExternalLink } from '../../components/link'
+import { Visible } from 'react-grid-system'
 
 const DataPage = ({ data }) => {
-    const { dataBucketsGraphic } = data
+    const { dataBucketsGraphic, dataBucketsGraphicMobile } = data
 
     return (
         <PageContent width="95%" maxWidth="1200px" center gutters>
@@ -27,7 +28,7 @@ const DataPage = ({ data }) => {
                 </Paragraph>
     
                 <BulletedList dense>
-                    <ListItem primary={ <span><ExternalLink to="https://www.nhlbiwgs.org/">TOPMed</ExternalLink>) Freeze 5b</span> } />
+                    <ListItem primary={ <span><ExternalLink to="https://www.nhlbiwgs.org/">TOPMed</ExternalLink> Freeze 5b</span> } />
                     <ListItem primary={ <span>Parent Studies <ExternalLink to="https://www.ncbi.nlm.nih.gov/gap/">dbGaP</ExternalLink></span> } />
                     <ListItem primary={ <span><ExternalLink to="https://www.internationalgenome.org/">1000 Genomes Project</ExternalLink></span> } />
                 </BulletedList>
@@ -48,7 +49,13 @@ const DataPage = ({ data }) => {
                     Users log into BioData Catalyst platforms with their eRA Commons credentials and authentication is performed by iTrust.
                 </Paragraph>
                 
-                <Img style={{ width: '90%', margin: 'auto' }} fluid={ dataBucketsGraphic.childImageSharp.fluid } alt="Data access flow chart - see description that follows" />
+                <Visible xs sm>
+                    <Img style={{ width: '95%', margin: 'auto' }} fluid={ dataBucketsGraphicMobile.childImageSharp.fluid } alt="Data access flow chart - see description that follows" />
+                </Visible>
+
+                <Visible md lg xl>
+                    <Img style={{ width: '95%', margin: 'auto' }} fluid={ dataBucketsGraphic.childImageSharp.fluid } alt="Data access flow chart - see description that follows" />
+                </Visible>
             </section>
             
             <br/>
@@ -83,6 +90,13 @@ export default DataPage
 export const query = graphql`
     {
         dataBucketsGraphic: file(relativePath: {eq: "data-buckets.png"}) {
+            childImageSharp {
+                fluid {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+        dataBucketsGraphicMobile: file(relativePath: {eq: "data-buckets-mobile.png"}) {
             childImageSharp {
                 fluid {
                     ...GatsbyImageSharpFluid
