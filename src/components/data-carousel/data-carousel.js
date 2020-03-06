@@ -74,12 +74,10 @@ const Wrapper = styled.div`
         left: 0;
         height: 100%;
         width: 100%;
-        background-color: ${ props => props.backgroundColor };
+        background-color: #005489;
         background-image: url(${ props => props.backgroundImage });
         background-position: center;
         background-size: cover;
-        background-blend-mode: multiply;
-        filter: brightness(1.5);
     }
     &:hover ${ StateNote } {
         filter: opacity(0.80);
