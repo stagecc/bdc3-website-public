@@ -43,7 +43,7 @@ const AboutPage = () => {
                     <Hidden xs sm>
                         <Col md={ 3 }>
                             <List style={{ position: 'sticky', top: '16rem', paddingRight: '2rem' }} right>
-                                <ListItem primary={ <AnchorLink to="/about#what-we-are">What we Are</AnchorLink> } />
+                                <ListItem primary={ <AnchorLink to="/about#what-we-offer">What we Offer</AnchorLink> } />
                                 <ListItem primary={ <AnchorLink to="/about#who-we-are">Who we Are</AnchorLink> } />
                                 <ListItem primary={ <AnchorLink to="/about#ecosystem">Our Ecosystem</AnchorLink> } />
                                 <ListItem primary={ <AnchorLink to="/about#contributing">Contribute</AnchorLink> } />
@@ -54,7 +54,7 @@ const AboutPage = () => {
                     <Col md={ 9 }>
                         <Title>About BioData Catalyst</Title>
             
-                        <section id="what-we-are">
+                        <section id="what-we-offer">
                             <Heading>What We Offer</Heading>
             
                             <Paragraph>
@@ -98,7 +98,7 @@ const AboutPage = () => {
                             <LogoCloud>
                                 {
                                     platforms.map(platform => (
-                                        <Link key={ platform.title } to={ platform.path }>
+                                        <Link key={ platform.title } to={ platform.path } syle={{ width: '100%' }}>
                                             <PlatformImage fixed={ platform.logo.childImageSharp.fixed } alt={ `View details about ${ platform.title.replace('-', ' ') }` } />
                                         </Link>
                                     ))
