@@ -9,16 +9,10 @@ links:
 teaser: The Gen3 software stack is a collection of microservices that enable the standing-up of data commons, which allows different partner organizations to pool data and grants approved researchers access to harmonized datasets in a scalable, reproducible, and secure manner.
 service: Search and filter harmonized TOPMed variables and their value ranges, and export the selected cohorts to analytical workspaces. Gen3 also allows users to search study-specific genomic and phenotypic data files broken down by consent groups, and discover new studies to apply for access through dbGaP.
 ---
-- Private, secure, workspaces (projects) for running analyses at scale
-- Collaboration features with the ability to set granular permissions on project members
-- Direct access to BioData Catalyst without needing to set up a Google or AWS billing account
-- Access hosted TOPMed studies all in one place and analyze data on the cloud at scale
-- Tools and features for performing multiple-variant and single-variant association studies including:
-    + Annotation Explorer for variant aggregations
-    + Cloud-optimized Genesis R package workflows in Common Workflow Language
-- Cohort creation by searching phenotype data
-    + Use PIC-SURE API for searching phenotype data 
-    + Search by known dbGaP identifiers
-- Perform easy interactive analysis and manipulation of phenotype data using Rstudio and Jupyterlab Notebooks built directly into the platform
-- Hosted TOPMed data  you can combine with your own data on AWS or Google Cloud
-- Billing and administrative controls to help your research funding go further &mdash; avoid forgotten instances, abort infinite loops, get usage breakdowns by project.
+- Use one of the microservices or community tools to submit data objects and metadata to a Gen3 Commons. Or develop your own tools specific to your user community. 
+- Gen3 will automatically index your data and provide globally unique identifiers (GUIDs). GUIDs can also be resolved at dataguids.org to find out where a data object lives within your data ecosystem. 
+- Engage Gen3’s broad user community. Ask a question, answer a question, request a new feature, or see if anyone else has approached a technical or scientific problem like yours in their Gen3 data commons. 
+- Gen3’s UI includes a data exploration tool you can customize for your data. You can choose the queries or faceted searches your user community wants; decide whether the data is able to leave the cloud or not; or develop your own apps over Gen3 APIs. 
+- Gen3 can be deployed with various levels of security and compliance. Deploy your data commons or ecosystem with the controls needed for your data and your user 
+- You can leave your data open to the Internet or control access at deeper levels within your own data use ontology, from the core data to the data objects
+
