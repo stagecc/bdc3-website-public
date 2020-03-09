@@ -41,8 +41,8 @@ const AboutPage = ({ data }) => {
 
             <Grid fluid>
                 <Row>
-                    <Visible md lg xl>
-                        <Col md={ 3 }>
+                    <Visible lg xl>
+                        <Col lg={ 3 }>
                             <List style={{ position: 'sticky', top: '16rem', paddingRight: '2rem' }} right>
                                 <ListItem primary={ <AnchorLink to="/about#what-we-offer">What we Offer</AnchorLink> } />
                                 <ListItem primary={ <AnchorLink to="/about#who-we-are">Who we Are</AnchorLink> } />
@@ -52,7 +52,7 @@ const AboutPage = ({ data }) => {
                             </List>
                         </Col>
                     </Visible>
-                    <Col lg={ 9 }>
+                    <Col xs={ 12 } lg={ 9 }>
                         <Title>About BioData Catalyst</Title>
             
                         <section id="what-we-offer">

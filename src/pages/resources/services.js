@@ -5,7 +5,7 @@ import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import { SEO } from '../../components/seo'
 import { PageContent } from '../../components/layout'
 import { Title, Heading, Paragraph } from '../../components/typography'
-import { Container as Grid, Row, Col, Visible, Hidden } from 'react-grid-system'
+import { Container as Grid, Row, Col, Visible } from 'react-grid-system'
 import { Card, CardHeader, CardBody } from '../../components/card'
 import { List, ListItem } from '../../components/list'
 import { ExternalLink } from '../../components/link'
@@ -91,18 +91,18 @@ const ServicesPage = ({ data }) => {
                 description=""
                 keywords=""
             />
-            <Grid>
+            <Grid fluid>
                 <Row>
-                    <Hidden xs sm>
-                        <Col md={ 3 }>
+                    <Visible lg xl>
+                        <Col lg={ 3 }>
                             <List style={{ position: 'sticky', top: '16rem', paddingRight: '2rem' }} right>
                                 <ListItem primary={ <AnchorLink to="/resources/services#ecosystem">Our Ecosystem</AnchorLink> } />
                                 <ListItem primary={ <AnchorLink to="/resources/services#actions">What Do You Want To Do Today?</AnchorLink> } />
                                 <ListItem primary={ <AnchorLink to="/resources/services#imputation-server">Imputation Server</AnchorLink> } />
                             </List>
                         </Col>
-                    </Hidden>
-                    <Col>
+                    </Visible>
+                    <Col xs={ 12 } lg={ 9 }>
                         <Title>Platforms and Services</Title>
 
                         <Heading id="ecosystem">Explore the BioData Catalyst Ecosystem</Heading>
