@@ -21,24 +21,26 @@ const ByodPage = () => (
         
         <br/>
         
-        <Heading>Build on Your Existing Work</Heading>
+        <section>
+            <Heading>Build on Your Existing Work</Heading>
 
-        <Paragraph>
-            As described in the BioData Catalyst Data Use Policy, users can upload data for which they have the appropriate approval,
-            provided that they do not violate the terms of their Data Use Agreements, Limitations, or Institutional Review Board policies and guidelines.
-        </Paragraph>
+            <Paragraph>
+                As described in the BioData Catalyst Data Use Policy, users can upload data for which they have the appropriate approval,
+                provided that they do not violate the terms of their Data Use Agreements, Limitations, or Institutional Review Board policies and guidelines.
+            </Paragraph>
 
-        <br/>
+            <br/>
 
-        <Paragraph center>
-            <ButtonExternalLink to="https://f4c.readme.io/docs/upload-to-f4c">BYOD to BioData Catalyst powered by Seven Bridges</ButtonExternalLink>
-        </Paragraph>
-        
-        <br/>
+            <Paragraph center>
+                <ButtonExternalLink to="https://f4c.readme.io/docs/upload-to-f4c">BYOD to BioData Catalyst powered by Seven Bridges</ButtonExternalLink>
+            </Paragraph>
+            
+            <br/>
 
-        <Paragraph center>
-            <ButtonExternalLink to="https://support.terra.bio/hc/en-us/articles/360024056512-Uploading-to-a-workspace-Google-bucket">BYOD to BioData Catalyst powered by Terra</ButtonExternalLink>
-        </Paragraph>
+            <Paragraph center>
+                <ButtonExternalLink to="https://support.terra.bio/hc/en-us/articles/360024056512-Uploading-to-a-workspace-Google-bucket">BYOD to BioData Catalyst powered by Terra</ButtonExternalLink>
+            </Paragraph>
+        </section>
 
     </PageContent>
 )

@@ -104,68 +104,72 @@ const ServicesPage = ({ data }) => {
                     <Col xs={ 12 } lg={ 9 }>
                         <Title>Platforms and Services</Title>
 
-                        <Heading id="ecosystem">Explore the BioData Catalyst Ecosystem</Heading>
-                        
-                        <Paragraph>
-                            For heart, lung, blood, and sleep researchers, the BioData Catalyst ecosystem offers
-                            several platforms and services to explore and analyze both private and publicly-hosted datasets
-                            in the cloud using pre-built and custom workflows.
-                        </Paragraph>
+                        <section id="ecosystem">
+                            <Heading>Explore the BioData Catalyst Ecosystem</Heading>
+                            
+                            <Paragraph>
+                                For heart, lung, blood, and sleep researchers, the BioData Catalyst ecosystem offers
+                                several platforms and services to explore and analyze both private and publicly-hosted datasets
+                                in the cloud using pre-built and custom workflows.
+                            </Paragraph>
+                        </section>
 
                         <br/>
                         
-                        <Heading id="actions">What Do You Want to Do Today?</Heading>
+                        <section id="actions">
+                            <Heading>What Do You Want to Do Today?</Heading>
 
-                        {
-                            services.map((service, i) => (
-                                <Row key={ i }>
-                                    <Card key={ service.cardTitle }>
-                                        <CardHeader>{ service.cardTitle }</CardHeader>
-                                        <CardBody>
-                                            <Grid fluid>
-                                                <Row gutterWidth={ 0 }>
-                                                    {
-                                                        service.cardItems.map((platform, i) => (
-                                                            <Fragment key={ i }>
-                                                                <Col xs={ 12 } lg={ 5 } style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                                                                    <h3 style={{ textAlign: 'center' }}>BioData Catalyst powered by { platform.frontmatter.title }</h3>
-                                                                    <Paragraph>
-                                                                        { platform.frontmatter.service }
-                                                                    </Paragraph>
-                                                                    <ToolLinks>
-                                                                        { platform.frontmatter.links.launch && <ExternalToolLink to={ platform.frontmatter.links.launch }>Launch</ExternalToolLink> }
-                                                                        { platform.frontmatter.links.launch && '|' }
-                                                                        { platform.frontmatter.links.documentation && <ExternalToolLink to={ platform.frontmatter.links.documentation }>Documentation</ExternalToolLink> }
-                                                                        { platform.frontmatter.links.documentation && '|' }
-                                                                        <InternalToolLink to={ platform.frontmatter.path }>Learn</InternalToolLink>
-                                                                    </ToolLinks>
-                                                                </Col>
-                                                                {
-                                                                    i + 1 < service.cardItems.length && (
-                                                                        <Fragment>
-                                                                            <Visible lg xl>
-                                                                                <Col md={ 2 }>
-                                                                                    <Separator vertical />
-                                                                                </Col>
-                                                                            </Visible>
-                                                                            <Visible xs sm md>
-                                                                                <Col xs={ 12 }>
-                                                                                    <Separator horizontal />
-                                                                                </Col>
-                                                                            </Visible>                                                
-                                                                        </Fragment>
-                                                                    )
-                                                                }
-                                                            </Fragment>
-                                                        ))
-                                                    }
-                                                </Row>
-                                            </Grid>
-                                        </CardBody>
-                                    </Card>
-                                </Row>
-                            ))
-                        }
+                            {
+                                services.map((service, i) => (
+                                    <Row key={ i }>
+                                        <Card key={ service.cardTitle }>
+                                            <CardHeader>{ service.cardTitle }</CardHeader>
+                                            <CardBody>
+                                                <Grid fluid>
+                                                    <Row gutterWidth={ 0 }>
+                                                        {
+                                                            service.cardItems.map((platform, i) => (
+                                                                <Fragment key={ i }>
+                                                                    <Col xs={ 12 } lg={ 5 } style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                                                                        <h3 style={{ textAlign: 'center' }}>BioData Catalyst powered by { platform.frontmatter.title }</h3>
+                                                                        <Paragraph>
+                                                                            { platform.frontmatter.service }
+                                                                        </Paragraph>
+                                                                        <ToolLinks>
+                                                                            { platform.frontmatter.links.launch && <ExternalToolLink to={ platform.frontmatter.links.launch }>Launch</ExternalToolLink> }
+                                                                            { platform.frontmatter.links.launch && '|' }
+                                                                            { platform.frontmatter.links.documentation && <ExternalToolLink to={ platform.frontmatter.links.documentation }>Documentation</ExternalToolLink> }
+                                                                            { platform.frontmatter.links.documentation && '|' }
+                                                                            <InternalToolLink to={ platform.frontmatter.path }>Learn</InternalToolLink>
+                                                                        </ToolLinks>
+                                                                    </Col>
+                                                                    {
+                                                                        i + 1 < service.cardItems.length && (
+                                                                            <Fragment>
+                                                                                <Visible lg xl>
+                                                                                    <Col md={ 2 }>
+                                                                                        <Separator vertical />
+                                                                                    </Col>
+                                                                                </Visible>
+                                                                                <Visible xs sm md>
+                                                                                    <Col xs={ 12 }>
+                                                                                        <Separator horizontal />
+                                                                                    </Col>
+                                                                                </Visible>                                                
+                                                                            </Fragment>
+                                                                        )
+                                                                    }
+                                                                </Fragment>
+                                                            ))
+                                                        }
+                                                    </Row>
+                                                </Grid>
+                                            </CardBody>
+                                        </Card>
+                                    </Row>
+                                ))
+                            }
+                        </section>
 
                         <section id="imputation-server">
                             <Heading id="actions">Imputation Server</Heading>
