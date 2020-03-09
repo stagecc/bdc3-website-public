@@ -29,7 +29,7 @@ const resources = [
             },
             {
                 text: 'SevenBridges Documentation',
-                url: 'https://f4c.readme.io/docs'
+                url: 'https://sb-biodatacatalyst.readme.io/docs'
             },
             {
                 text: 'Terra Documentation',
