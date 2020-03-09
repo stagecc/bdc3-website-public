@@ -25,8 +25,16 @@ const ContactPage = () => (
         <style type="text/css" media="screen, projection">
             @import url(https://s3.amazonaws.com/assets.freshdesk.com/widget/freshwidget.css);
         </style>
-        <iframe title="Feedback Form" class="freshwidget-embedded-form" id="freshwidget-embedded-form" src="https://bdcatalyst.freshdesk.com/widgets/feedback_widget/new?&widgetType=embedded&screenshot=No&captcha=yes" scrolling="no" height="650px" width="100%" frameborder="0" >
-        </iframe>
+        <iframe
+            title="Feedback Form"
+            className="freshwidget-embedded-form"
+            id="freshwidget-embedded-form"
+            src="https://bdcatalyst.freshdesk.com/widgets/feedback_widget/new?&widgetType=embedded&screenshot=No&captcha=yes"
+            scrolling="no"
+            height="650px"
+            width="100%"
+            frameBorder="0"
+        ></iframe>
 
     </PageContent>
 )

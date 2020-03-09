@@ -91,7 +91,7 @@ const AboutPage = ({ data }) => {
                             </Paragraph>
 
                             <List dense>
-                                { partners.map(partner => <ListItem primary={ partner.name } />) }
+                                { partners.map(partner => <ListItem key={ partner.name } primary={ partner.name } />) }
                             </List>
 
                             <Subheading>Platforms Powering Our Ecosystem</Subheading>
