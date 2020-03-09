@@ -8,7 +8,7 @@ import { PageContent } from '../components/layout'
 import { Title, Heading, Subheading, Paragraph } from '../components/typography'
 import { List, ListItem } from '../components/list'
 import { ExternalLink } from '../components/link'
-import { Container as Grid, Row, Col, Hidden } from 'react-grid-system'
+import { Container as Grid, Row, Col, Visible } from 'react-grid-system'
 import { usePartners, usePlatforms } from '../hooks'
 
 const LogoCloud = styled.div`
@@ -24,7 +24,8 @@ const PlatformImage = styled(Img)`
     margin: 2rem;
 `
 
-const AboutPage = () => {
+const AboutPage = ({ data }) => {
+    const { ecosystemGraphic, ecosystemGraphicMobile } = data
     const partners = usePartners()
         .sort((p,q) => p.name > q.name)
     const platforms = usePlatforms()
@@ -38,9 +39,9 @@ const AboutPage = () => {
                 keywords=""
             />
 
-            <Grid>
+            <Grid fluid>
                 <Row>
-                    <Hidden xs sm>
+                    <Visible md lg xl>
                         <Col md={ 3 }>
                             <List style={{ position: 'sticky', top: '16rem', paddingRight: '2rem' }} right>
                                 <ListItem primary={ <AnchorLink to="/about#what-we-offer">What we Offer</AnchorLink> } />
@@ -50,8 +51,8 @@ const AboutPage = () => {
                                 <ListItem primary={ <AnchorLink to="/about#data-protection">Data Protection</AnchorLink> } />
                             </List>
                         </Col>
-                    </Hidden>
-                    <Col md={ 9 }>
+                    </Visible>
+                    <Col lg={ 9 }>
                         <Title>About BioData Catalyst</Title>
             
                         <section id="what-we-offer">
@@ -116,6 +117,16 @@ const AboutPage = () => {
                                 both private and publicly-hosted datasets in the cloud using pre-built and custom workflows.
                             </Paragraph>
 
+                            <Visible xs sm>
+                                <Img style={{ width: '95%', margin: 'auto' }} fluid={ ecosystemGraphicMobile.childImageSharp.fluid } alt="BioData Catalyst Ecosystem flow chart - see description that follows" />
+                            </Visible>
+
+                            <Visible md lg xl>
+                                <Img style={{ width: '95%', margin: 'auto' }} fluid={ ecosystemGraphic.childImageSharp.fluid } alt="BioData Catalyst Ecosystem flow chart - see description that follows" />
+                            </Visible>
+
+                            <br/>
+
                             <Subheading>Want to understand more about the BioData Catalyst Ecosystem?</Subheading>
 
                             <Paragraph>
@@ -177,3 +188,23 @@ const AboutPage = () => {
 }
 
 export default AboutPage
+
+
+export const query = graphql`
+    {
+        ecosystemGraphic: file(relativePath: {eq: "ecosystem.png"}) {
+            childImageSharp {
+                fluid {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+        ecosystemGraphicMobile: file(relativePath: {eq: "ecosystem-mobile.png"}) {
+            childImageSharp {
+                fluid {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+    }
+`
