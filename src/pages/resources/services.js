@@ -96,7 +96,6 @@ const ServicesPage = ({ data }) => {
                     <Visible lg xl>
                         <Col lg={ 3 }>
                             <List style={{ position: 'sticky', top: '16rem', paddingRight: '2rem' }} right>
-                                <ListItem primary={ <AnchorLink to="/resources/services#ecosystem">Our Ecosystem</AnchorLink> } />
                                 <ListItem primary={ <AnchorLink to="/resources/services#actions">What Do You Want To Do Today?</AnchorLink> } />
                                 <ListItem primary={ <AnchorLink to="/resources/services#imputation-server">Imputation Server</AnchorLink> } />
                             </List>
