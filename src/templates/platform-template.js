@@ -44,7 +44,7 @@ export default ({ data }) => {
             <Heading center>Powered by { frontmatter.title }</Heading>
             
             <LinkList center>
-                <ExternalLink to={ frontmatter.links.homepage }>Website</ExternalLink> | 
+                <ExternalLink to={ frontmatter.links.launch }>Website</ExternalLink> | 
                 <ExternalLink to={ frontmatter.links.documentation }>Documentation</ExternalLink>
             </LinkList>
 
@@ -68,7 +68,7 @@ export const platformQuery = graphql`
             frontmatter {
                 title
                 links {
-                    homepage
+                    launch
                     documentation
                 }
                 teaser
