@@ -101,21 +101,10 @@ const ServicesPage = ({ data }) => {
                             </List>
                         </Col>
                     </Visible>
+                    
                     <Col xs={ 12 } lg={ 9 }>
                         <Title>Platforms and Services</Title>
 
-                        <section id="ecosystem">
-                            <Heading>Explore the BioData Catalyst Ecosystem</Heading>
-                            
-                            <Paragraph>
-                                For heart, lung, blood, and sleep researchers, the BioData Catalyst ecosystem offers
-                                several platforms and services to explore and analyze both private and publicly-hosted datasets
-                                in the cloud using pre-built and custom workflows.
-                            </Paragraph>
-                        </section>
-
-                        <br/>
-                        
                         <section id="actions">
                             <Heading>What Do You Want to Do Today?</Heading>
 
