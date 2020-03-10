@@ -28,7 +28,7 @@ const resources = [
                 url: 'https://gen3.org/get-started/'
             },
             {
-                text: 'SevenBridges Documentation',
+                text: 'Seven Bridges Documentation',
                 url: 'https://sb-biodatacatalyst.readme.io/docs'
             },
             {
@@ -104,7 +104,7 @@ const resources = [
         description: 'Learn about how the BioData Catalyst is evolving and how to use the system from the community.',
         links: [
             {
-                text: 'SevenBridges Blog (Releases)',
+                text: 'Seven Bridges Blog (Releases)',
                 url: 'https://f4c.readme.io/blog',
             },
             {
