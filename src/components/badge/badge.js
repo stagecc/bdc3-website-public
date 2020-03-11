@@ -46,7 +46,7 @@ const HexInterior = styled.span`
 export const HexBadge = ({ children }) => {
     return (
         <HexWrapper>
-            <HexInterior>{ children }</HexInterior>
+            { children }
         </HexWrapper>
     )
 }
