@@ -109,7 +109,7 @@ const resources = [
             },
             {
                 text: 'Terra Tutorials',
-                url: 'https://datastage.terra.bio/#library/showcase',
+                url: 'https://terra.biodatacatalyst.nhlbi.nih.gov/#library/showcase',
             },
             {
                 text: 'Terra Blog',
