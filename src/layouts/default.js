@@ -74,13 +74,14 @@ export const DefaultLayout = ({ children }) => {
                     <Grid fluid>
                         <Row>
                             <Col xs={ 12 } md={ 5 } push={{ md: 7 }}>
-                                <List center={ isCompact } right={ !isCompact }>
+                                <List center={ isCompact } right={ !isCompact } dense>
                                     <ListItem primary={ <Link to="/faqs">FAQs</Link> } />
                                     <ListItem primary={ <Link to="/resources/learn">Support</Link> } />
                                     <ListItem primary={ <ExternalLink to="https://www.nhlbi.nih.gov/about/foia-fee-for-service-office">Freedom of Information Act (FOIA)</ExternalLink> } / >
                                     <ListItem primary={ <Link to="/accessibility">Accessibility</Link> } />
                                     <ListItem primary={ <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/">Documentation</ExternalLink> } />
                                     <ListItem primary={ <Link to="/data-protection">Data Protection</Link> } />
+                                    <ListItem primary={ <Link to="/privacy">Privacy Policy</Link> } />
                                 </List>
                             </Col>
                             <Col xs={ 12 } md={ 7 } pull={{ md: 5 }}>
