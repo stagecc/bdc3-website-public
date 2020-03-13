@@ -8,7 +8,7 @@ export const Subfooter = styled.footer`
     filter: drop-shadow(0 0 0.25rem rgba(0, 0, 0, 0.5));
     display: flex;
     flex-direction: ${ props => props.compact ? 'column' : 'row' };
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     & a {
         color: #fff;
