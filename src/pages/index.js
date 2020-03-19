@@ -8,7 +8,7 @@ import { HexMenu } from '../components/menus'
 import { BulletedList, ListItem } from '../components/list'
 import { Hidden } from 'react-grid-system'
 import SickleCellImage from '../images/sickle-cell.jpg'
-import EkgPrintoutImage from '../images/ekg-printout.jpg'
+import BlurChartCheckUpCurve from '../images/blur-chart-check-up-curve.jpg'
 
 const IndexPage = () => {
     return (
@@ -49,9 +49,9 @@ const IndexPage = () => {
                     <CardHeader size="large">
                         What can BioData Catalyst do for you?
                     </CardHeader>
-                    <CardBody image={{ placement: 'left', path: EkgPrintoutImage }}>
+                    <CardBody image={{ placement: 'left', path: BlurChartCheckUpCurve }}>
                         <Paragraph>
-                            BioData Catalyst allows researchers to find, access, share, store, cross-link, and compute on large scale datasets.
+                            BioData Catalyst allows researchers to find, access, share, store, and compute on large scale datasets.
                             In this ecosystem, researchers are able to:
                         </Paragraph>
                         <BulletedList>

@@ -60,7 +60,7 @@ const AboutPage = ({ data }) => {
                             <Heading>What We Offer</Heading>
             
                             <Paragraph>
-                                For research investigators who need to find, access, share, store, cross-link, and compute on large scale datasets,
+                                For research investigators who need to find, access, share, store, and compute on large scale datasets,
                                 NHLBI BioData Catalyst serves as a cloud-based ecosystem providing tools, applications, and workflows to enable these capabilities in secure workspaces. 
                             </Paragraph>
             

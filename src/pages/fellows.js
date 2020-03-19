@@ -21,12 +21,12 @@ const FellowsPage = () => (
     
             <Paragraph>
                 The NHLBI BioData Catalyst Fellows Program provides researchers, especially early-career researchers,
-                the opportunity to receive funding to help support research on novel and innovative data science and data-focused research problems.
+                the opportunity to receive funding to support research on novel and innovative data science and data-focused research problems.
                 The program is open to academic disciplines conducting biomedical research or related research in heart, lung, blood, and sleep domains. 
             </Paragraph>
     
             <Paragraph>
-                The first BioData Catalyst Design Principle is "meet user needs and incorporate feedback."
+                A primary goal of the BioData Catalyst development team is to meet user needs and incorporate feedback.
                 The BioData Catalyst Fellows Program offers one mechanism for researchers to engage with the Consortium
                 as partners in the BioData Catalyst endeavor.
             </Paragraph>
@@ -52,7 +52,7 @@ const FellowsPage = () => (
             <Heading>Fellowship Eligibility</Heading>
             
             <Paragraph>
-                Applicants must be authorized to work in the USA and preferably affiliated with a research academic institution.
+                Applicants must be authorized to work in the USA and affiliated with a research academic institution.
                 Preference will be given to early-career researchers (graduate students, postdocs, and junior faculty). 
             </Paragraph>
 
@@ -108,10 +108,8 @@ const FellowsPage = () => (
             <Heading>Fellowship Application Process</Heading>
 
             <Paragraph>
-                Applicants submit proposals during the open application window for whichever round of fellowships they are applying to.
-                Proposals should address the requirements below and any additional questions via the Fellows Program Application Form.
-                The proposal should be understandable to readers from outside the field of study and must clearly spell out
-                the project aims, past studies, methods, materials, and engagement plan.
+                During an open application window, applicants should submit proposals which address the requirements below.
+                The proposal should be understandable to readers from outside the field of study and must clearly spell out the project aims, past studies, methods, materials, and engagement plan.
             </Paragraph>
         </section>
 
@@ -123,12 +121,12 @@ const FellowsPage = () => (
             <OrderedList>
                 <ListItem primary="Profile information &ndash; Provide your name, organization, department, position title, research area, email address, and your personal profile web page." />
                 <ListItem primary="Letters of support &ndash; Two letters of support from mentors or key collaborators are required. Letters for projects arising from TOPMed Working Groups should demonstrate the applicant’s critical participation in a relevant working group and confirm that the applicant has (or will have) access to the appropriate data and that the proposed project is supported by the Working Group.  Letters of support should include contact information (full name, position title, organization, email/phone number, and signature) of the reference. " />
-                <ListItem primary="Biographical sketch &ndash; A biographical sketch or (NIH) biosketch (not to exceed 5 pages) is required." />
+                <ListItem primary="Biographical sketch &ndash; A biographical sketch or NIH biosketch (not to exceed 5 pages) is required." />
                 <ListItem primary="Abstract &ndash; Provide an abstract on your research question and how your proposed project will address the goals of the Fellows Program. (100 words maximum)" />
-                <ListItem primary="Project aims &ndash; Describe concisely the specific research approach you intend to take, specifically outlining aims, goals, deliverables, and timelines for the year. (350 words maximum)" />
-                <ListItem primary="Prior studies &ndash; Using examples of work, by you or others, please outline how your proposed project would align with past studies. Please provide sufficient background to demonstrate project feasibility, and that your project can be completed successfully in the duration of the year. (150 words maximum)" />
+                <ListItem primary="Project aims &ndash; Describe concisely the specific research approach you intend to take, outlining aims, goals, deliverables, and timelines for the year. (350 words maximum)" />
+                <ListItem primary="Prior studies &ndash; Using examples of work, by you or others, please outline how your proposed project aligns with past studies. Please provide sufficient background to demonstrate project feasibility, and that your project can be completed successfully in the duration of the year. (150 words maximum)" />
                 <ListItem primary="Expertise &ndash; Describe your familiarity with genomic analysis, statistical programming, and cloud based computation. (100 words maximum)" />
-                <ListItem primary="Methods and materials &ndash; Explain what methods and material are to be used in the project such as protocols, data, software, analysis; and how you plan to use the BioData Catalyst ecosystem to enhance your proposed project. Provide details on the status of your access to the relevant datasets (e.g. IRB approval, data use agreements), whether you are currently engaged with working groups (e.g. TOPMED), and/or outline plans to obtain data access during the Fellows Program. Include an estimate of the scale of the proposed analyses (e.g., the sample size, number of proposed analyses, and types data expected to be used). (150 words maximum)" />
+                <ListItem primary="Methods and materials &ndash; Explain what methods and material are to be used in the project such as protocols, data, software, analysis; and how you plan to use the BioData Catalyst ecosystem to enhance your proposed project. Provide details on the status of your access to the relevant datasets (e.g. IRB approval, data use agreements), whether you are currently engaged with working groups (e.g., TOPMed), and/or outline plans to obtain data access during the Fellows Program. Include an estimate of the scale of the proposed analyses (e.g., the sample size, number of proposed analyses, and types data expected to be used). (150 words maximum)" />
                 <ListItem primary="Engagement &ndash; Indicate how you will engage and collaborate with Consortium members, Fellows peer group, and the broader community. (75 words maximum)" />
                 <ListItem primary="Budget estimate &ndash; Provide a budget estimate including expected research costs and costs for travel, training, publication, and conference fees. (50 words maximum)" />
                 <ListItem primary="References &ndash; Provide a list of references cited in the previous questions here (100 words maximum) " />
@@ -148,7 +146,7 @@ const FellowsPage = () => (
             <BulletedList>
                 <ListItem primary="The proposal is relevant to the research topic and speaks to novel approaches to challenges in the research area." />
                 <ListItem primary="The proposal addresses an important scientific question that can be usefully answered using the BioData Catalyst ecosystem along with the available data resources and in the 1-year timeframe." />
-                <ListItem primary="The applicant has obtained IRB approval, data use agreements (e.g. dbGaP), is participating in working groups (e.g. TOPMED), and/or is in the process of obtaining data access and dbGaP data use agreements before applying." />
+                <ListItem primary="The applicant has obtained IRB approval, data use agreements (e.g. dbGaP), is participating in working groups (e.g., TOPMed), and/or is in the process of obtaining data access and dbGaP data use agreements." />
                 <ListItem primary="The applicant has demonstrated the necessary background and capabilities to accomplish the proposed work." />
                 <ListItem primary="The application describes approaches that will benefit the functionality of the BioData Catalyst ecosystem." />
                 <ListItem primary="The applicant has a willingness to engage and collaborate with the Consortium, Fellows peer group, and the broader community." />

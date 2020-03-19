@@ -104,8 +104,8 @@ const resources = [
         description: 'Learn about how the BioData Catalyst is evolving and how to use the system from the community.',
         links: [
             {
-                text: 'Seven Bridges Blog (Releases)',
-                url: 'https://f4c.readme.io/blog',
+                text: 'Seven Bridges Blog',
+                url: 'https://www.sevenbridges.com/blog/',
             },
             {
                 text: 'Terra Tutorials',
