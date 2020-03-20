@@ -2,7 +2,10 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 const platformsQuery = graphql`
     {
-        platforms: allMarkdownRemark(sort: {fields: frontmatter___logo___relativePath}) {
+        platforms: allMarkdownRemark(
+            sort: {fields: frontmatter___logo___relativePath}
+            filter: {fileAbsolutePath: {regex: "/data/platforms/"}}
+        ) {
             edges {
                 node {
                     frontmatter {

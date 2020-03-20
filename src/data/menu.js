@@ -32,6 +32,16 @@ export const menuItems = [
     {
         text: 'Fellows',
         path: '/fellows',
+        submenu: [
+            {
+                text: 'Program',
+                path: '/fellows/program',
+            },
+            {
+                text: 'Cohort I',
+                path: '/fellows/cohort1',
+            },
+        ],
     },
     {
         text: 'Contact',

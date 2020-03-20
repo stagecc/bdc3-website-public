@@ -5,10 +5,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const platformTemplate = path.resolve(`src/templates/platform-template.js`)
     const result = await graphql(`
         {
-            allMarkdownRemark(
-                sort: { order: DESC, fields: [frontmatter___title] }
-                limit: 10
-            ) {
+            allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___title]}, limit: 10, filter: {fileAbsolutePath: {regex: "/data/platforms/"}}) {
                 edges {
                     node {
                         frontmatter {

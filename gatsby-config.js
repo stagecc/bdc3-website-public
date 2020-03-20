@@ -25,7 +25,22 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `./src/data/`,
+        path: `${ __dirname }/src/data/partners.yaml`,
+        name: 'partners',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${ __dirname }/src/data/platforms`,
+        name: 'platforms',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./src/data/fellows`,
+        name: 'fellows',
       },
     },
     `gatsby-transformer-remark`,
@@ -41,6 +56,13 @@ module.exports = {
       options: {
         name: `logos`,
         path: `${ __dirname }/src/images/logos`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `fellows`,
+        path: `${ __dirname }/src/images/fellows/cohort-1`,
       },
     },
     `gatsby-transformer-sharp`,

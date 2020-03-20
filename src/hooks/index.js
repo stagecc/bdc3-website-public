@@ -1,3 +1,4 @@
+export * from './use-fellows'
 export * from './use-freshdesk'
 export * from './use-local-storage'
 export * from './use-scroll-position'
