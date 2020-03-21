@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { CloseIcon, HamburgerIcon } from '../icons'
 import { Brand } from '../layout'
+import { ExpandDownIcon } from '../icons'
 
 const Overlay = styled.div`
     position: fixed;
@@ -52,7 +53,7 @@ const MobileNav = styled.nav`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 4rem 0 2rem 0;
+    margin: 3rem 0 2rem 0;
     flex: 1;
 `
 
@@ -61,12 +62,12 @@ const MenuLink = styled(Link)`
     width: 100%;
     color: #eef;
     letter-spacing: 2px;
-    font-size: 125%;
+    font-size: 110%;
     font-weight: bold;
     text-decoration: none;
     transform: translateX(0);
-    transition: color 250ms, background-color 250ms;
     text-transform: uppercase;
+    transition: color 250ms, background-color 250ms;
     &.active {
         background-color: #ffffff33;
         color: #eee;
@@ -77,15 +78,70 @@ const MenuLink = styled(Link)`
     }
 `
 
+const SubmenuHeader = styled.a.attrs({ href: '' })`
+    padding: 1rem 2rem;
+    width: 100%;
+    color: #eef;
+    letter-spacing: 2px;
+    font-size: 110%;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    &:hover {
+        color: #eee;
+        background-color: #ffffff22;
+        & svg {
+            opacity: ${ props => props.active ? '1.0' : '0.75' };;
+        }
+    }
+    & svg {
+        transition: opacity 250ms, transform 500ms;
+        opacity: ${ props => props.active ? '1.0' : '0.35' };
+    }
+`
+
+const Submenu = styled.nav`
+    display: ${ props => props.open ? 'block' : 'none' };
+    max-height: ${ props => props.open ? '100%' : '0' };
+    transition: max-height 500ms;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    ${ MenuLink } {
+        padding: 1rem 2rem 1rem 2rem;
+        &::before {
+            content: "- ";
+        }
+    }
+`
+
 export const MobileMenu = ({ items }) => {
     const [visible, setVisible] = useState(false)
-    
+    const [activeIndex, setActiveIndex] = useState(-1)
+
     const handleToggleMenu = () => setVisible(!visible)
     const handleCloseMenu = () => setVisible(false)
+    const handleToggleSubmenu = newIndex => event => {
+        event.preventDefault()
+        setActiveIndex(newIndex === activeIndex ? -1 : newIndex)
+    }
+    const handleSubmenuKeyDown = newIndex => event => {
+        if ([13,32].includes(event.keyCode)) { // space or enter
+            event.preventDefault()
+            setActiveIndex(newIndex === activeIndex ? -1 : newIndex)
+        }
+    }
 
     useEffect(() => {
         const escapeHatch = e => {
-            if (e.keyCode === 27) {
+            if (e.keyCode === 27) { // escaoe
                 handleCloseMenu()
             }
         }
@@ -109,9 +165,28 @@ export const MobileMenu = ({ items }) => {
                 </div>
                 <MobileNav>
                     {
-                        items.map(item => {
+                        items.map((item, currentIndex) => {
                             return item.submenu
-                            ? item.submenu.map(subitem => <MenuLink to={ subitem.path } key={ subitem.text } activeClassName="active" onClick={ handleCloseMenu }>{ subitem.text }</MenuLink>)
+                            ? (
+                                <Fragment key={ currentIndex }>
+                                    <SubmenuHeader
+                                        onClick={ handleToggleSubmenu(currentIndex) }
+                                        onKeyDown={ handleSubmenuKeyDown(currentIndex) }
+                                        active={ activeIndex === currentIndex }
+                                        aria-expanded={ activeIndex === currentIndex }
+                                        aria-controls={ `submenu-${ currentIndex }` }
+                                    >
+                                        <span>{ item.text }</span>
+                                        &nbsp;&nbsp;
+                                        <ExpandDownIcon size="20" fill="#fff" />
+                                    </SubmenuHeader>
+                                    <Submenu open={ activeIndex === currentIndex } id={ `submenu-${ currentIndex }` } role="menu">
+                                        {
+                                            item.submenu.map(subitem => <MenuLink to={ subitem.path } key={ subitem.text } activeClassName="active" onClick={ handleCloseMenu } role="menuitem">{ subitem.text }</MenuLink>)
+                                        }
+                                    </Submenu>
+                                </Fragment>
+                            )
                             : <MenuLink to={ item.path } key={ item.text } activeClassName="active" onClick={ handleCloseMenu }>{ item.text }</MenuLink>
                         })
                     }
