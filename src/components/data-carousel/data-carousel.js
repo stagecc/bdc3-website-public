@@ -24,7 +24,7 @@ const carouselItems = [
     {
         key: 1,
         headline: 'Prioritizing diverse data',
-        description: 'BioData Catalyst provides more diverse population data than any other resource.',
+        description: 'BioData Catalyst provides access to the highly diverse TOPMed dataset.',
         data: [
             { name: 'Participants with phenotypes', value: '241,956' },
         ],

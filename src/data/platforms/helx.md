@@ -3,12 +3,13 @@ title: HeLx
 path: /platforms/helx
 logo: ../../images/logos/platforms/helx.png
 links: 
-    homepage: https://helx.commonsshare.org
-    launch: https://helx.biodatacatalyst.nhlbi.nih.gov/
+    homepage: #
+    launch: #
     documentation: #
-teaser: HeLx is a web based platform for collaborative open science. It provides metadata-aware data management capabilities with extensive support for sharing and access control. The AppStore also presents tools that can be dynamically launched for each user.
+teaser: This tool will be available in a future release.
 service: Use the HeLx web-based platform for collaborative open science. It provides metadata aware data management capabilities with extensive support for sharing and access control. The AppStore also presents tools that can be dynamically launched for each user.
 ---
+
 - Share your data and workflows with colleagues 
 - Manage who has access to the content that you share
 - Share, access, visualize and reuse a broad set of data types and workflows 

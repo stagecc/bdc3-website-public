@@ -127,7 +127,7 @@ const FellowsPage = () => (
                 <ListItem primary="Prior studies &ndash; Using examples of work, by you or others, please outline how your proposed project aligns with past studies. Please provide sufficient background to demonstrate project feasibility, and that your project can be completed successfully in the duration of the year. (150 words maximum)" />
                 <ListItem primary="Expertise &ndash; Describe your familiarity with genomic analysis, statistical programming, and cloud based computation. (100 words maximum)" />
                 <ListItem primary="Methods and materials &ndash; Explain what methods and material are to be used in the project such as protocols, data, software, analysis; and how you plan to use the BioData Catalyst ecosystem to enhance your proposed project. Provide details on the status of your access to the relevant datasets (e.g. IRB approval, data use agreements), whether you are currently engaged with working groups (e.g., TOPMed), and/or outline plans to obtain data access during the Fellows Program. Include an estimate of the scale of the proposed analyses (e.g., the sample size, number of proposed analyses, and types data expected to be used). (150 words maximum)" />
-                <ListItem primary="Engagement &ndash; Indicate how you will engage and collaborate with Consortium members, Fellows peer group, and the broader community. (75 words maximum)" />
+                <ListItem primary="Engagement &ndash; Indicate how you will engage and collaborate with Consortium members, other Fellows, and the broader community. (75 words maximum)" />
                 <ListItem primary="Budget estimate &ndash; Provide a budget estimate including expected research costs and costs for travel, training, publication, and conference fees. (50 words maximum)" />
                 <ListItem primary="References &ndash; Provide a list of references cited in the previous questions here (100 words maximum) " />
             </OrderedList>
@@ -149,7 +149,7 @@ const FellowsPage = () => (
                 <ListItem primary="The applicant has obtained IRB approval, data use agreements (e.g. dbGaP), is participating in working groups (e.g., TOPMed), and/or is in the process of obtaining data access and dbGaP data use agreements." />
                 <ListItem primary="The applicant has demonstrated the necessary background and capabilities to accomplish the proposed work." />
                 <ListItem primary="The application describes approaches that will benefit the functionality of the BioData Catalyst ecosystem." />
-                <ListItem primary="The applicant has a willingness to engage and collaborate with the Consortium, Fellows peer group, and the broader community." />
+                <ListItem primary="The applicant has a willingness to engage and collaborate with the Consortium, other Fellows, and the broader community." />
             </BulletedList>
         </section>
 
@@ -159,12 +159,9 @@ const FellowsPage = () => (
             <Heading>Notification</Heading>
 
             <Paragraph>
-                Applicants are notified of their status approximately one month after the submission window closes
-                (see the timeline above for this round’s anticipated dates).
-                Awardees will be expected to present a prospective outline of their research plans at the start of the fellowship,
-                a mid-year status report, and to submit an end-of-term summary.
-                Fellows are also expected to attend NHLBI BioData Catalyst Consortium quarterly face-to-face meetings
-                and are encouraged to attend related meetings
+                Applicants are notified of their status approximately one month after the submission window closes (see the timeline above for this round’s anticipated dates).
+                Awardees will be expected submit a prospective outline of their research plans at the start of the fellowship, a mid-year status report, and an end-of-term summary.
+                Fellows are also expected to attend NHLBI BioData Catalyst Consortium quarterly face-to-face meetings and are encouraged to attend related meetings
                 (<em>e.g.</em>, working groups) and events applicable to their project proposals.
             </Paragraph>
         </section>
@@ -175,7 +172,7 @@ const FellowsPage = () => (
             <Heading>Questions</Heading>
 
             <Paragraph>
-                Questions may be directed to the NHLBI BioData Catalyst Coordinating Center at <a href="mailto:bdc3@renci.org">bdc3@renci.org</a>.
+                Questions may be directed to the NHLBI BioData Catalyst Coordinating Center at <a href="mailto:biodatacatalyst@nhlbi.nih.gov">biodatacatalyst@nhlbi.nih.gov</a>.
             </Paragraph>
             
             <Paragraph>
