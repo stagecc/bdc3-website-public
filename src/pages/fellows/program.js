@@ -174,10 +174,6 @@ const FellowsPage = () => (
             <Paragraph>
                 Questions may be directed to the NHLBI BioData Catalyst Coordinating Center at <a href="mailto:biodatacatalyst@nhlbi.nih.gov">biodatacatalyst@nhlbi.nih.gov</a>.
             </Paragraph>
-            
-            <Paragraph>
-                A list of Frequently Asked Questions can be viewed at <Link to="/faqs">https://biodatacatalyst.nhlbi.nih.gov/faqs</Link>
-            </Paragraph>
         </section>
 
     </PageContent>
