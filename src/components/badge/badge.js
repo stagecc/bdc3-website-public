@@ -30,18 +30,18 @@ const HexWrapper = styled.span`
     align-items: center;
 `
 
-const HexInterior = styled.span`
-    display: inline-block;
-    background: #fff;
-    width: 60%;
-    height: calc(1.118 * 60%);
-    border-radius: 50%;
-    padding: 0.5rem;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
+// const HexInterior = styled.span`
+//     display: inline-block;
+//     background: #fff;
+//     width: 60%;
+//     height: calc(1.118 * 60%);
+//     border-radius: 50%;
+//     padding: 0.5rem;
+//     z-index: 1;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// `
 
 export const HexBadge = ({ children }) => {
     return (

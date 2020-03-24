@@ -1,12 +1,9 @@
 import React from 'react'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
-import { Link } from 'gatsby'
 import { SEO } from '../../components/seo'
 import { PageContent } from '../../components/layout'
 import { Title, Heading, Subheading, Paragraph } from '../../components/typography'
-import { BulletedList, OrderedList, ListItem } from '../../components/list'
-import { Table } from '../../components/table'
 import { useFellows, useWindowWidth } from '../../hooks'
 
 const FellowHeading = styled(Subheading)`
