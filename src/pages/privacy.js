@@ -9,8 +9,8 @@ const PrivacyPage = () => (
     <PageContent width="95%" maxWidth="1200px" center gutters>
         <SEO
             title="Privacy Policy"
-            description="
-            keywords="
+            description=""
+            keywords=""
         />
         
         <Title>Privacy Policy</Title>

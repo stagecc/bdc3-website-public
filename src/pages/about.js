@@ -26,7 +26,7 @@ const PlatformImage = styled(Img)`
 `
 
 const AboutPage = ({ data }) => {
-    const { ecosystemGraphic, ecosystemGraphicMobile } = data
+    // const { ecosystemGraphic, ecosystemGraphicMobile } = data
     const partners = usePartners()
         .sort((p,q) => p.name > q.name)
     const platforms = usePlatforms()

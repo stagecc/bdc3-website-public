@@ -1,29 +1,11 @@
 import React, { Fragment } from 'react'
-import { useLocation } from 'gatsby'
 import styled from 'styled-components'
 import { useFence, useWindowWidth } from '../../hooks'
 import { Dots as LoadingDots } from '../../components/loading'
-import { Alert } from '../../components/alert'
-import { DownloadIcon, UserIcon } from '../../components/icons'
+import { DownloadIcon } from '../../components/icons'
 import { Button } from '../../components/buttons'
-import { Title, Heading, Subheading, Paragraph } from '../../components/typography'
-import { Card, CardHeader, CardBody, CardFooter } from '../../components/card'
-
-const parseHash = hash => {
-    const hashReducer = (object, item) => {
-        const [key, value] = item.split('=')
-        object[key] = value
-        return object
-    }
-    const returnObject = hash.split('&').reduce(hashReducer, {})
-    return returnObject
-}
-
-const LoggedInNote = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
+import { Subheading, Paragraph } from '../../components/typography'
+import { Card, CardHeader, CardBody } from '../../components/card'
 
 const ProjectList = styled.select`
     width: 100%;
@@ -49,9 +31,9 @@ const DownloadButton = styled(Button)`
 `
 
 export const DataAccess = ({ location }) => {
-    const { authed, user, projects, isLoading, error } = useFence(location)
+    const { user, projects, isLoading } = useFence(location)
     const { isCompact } = useWindowWidth()
-    const fenceCheckAccessUrl = `${ process.env.GATSBY_FENCE_AUTH_ROOT }/user/oauth2/authorize?idp=fence&client_id=${ process.env.GATSBY_FENCE_CLIENT_ID }&redirect_uri=${ location.origin }/resources/data&response_type=id_token+token&scope=openid+user&nonce=2bfe151af238d21f48d8a8bf8bbec408838c8dc0ace6b4c5621ac9dfa157798b`
+    const fenceCheckAccessUrl = `${ process.env.GATSBY_FENCE_AUTH_ROOT }/user/oauth2/authorize?idp=fence&client_id=${ process.env.GATSBY_FENCE_CLIENT_ID }&redirect_uri=${ process.env.NODE_ENV === 'production' ? location.origin : 'https://staging.biodatacatalyst.nhlbi.nih.gov' }/resources/data&response_type=id_token+token&scope=openid+user&nonce=2bfe151af238d21f48d8a8bf8bbec408838c8dc0ace6b4c5621ac9dfa157798b`
 
     const handleDownload = () => {
         const csvData = `Project\n${ projects.join(`\n`) }`

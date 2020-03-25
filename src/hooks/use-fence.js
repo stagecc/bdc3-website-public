@@ -25,7 +25,6 @@ export const useFence = location => {
     const [authParams, setAuthParams] = useState()
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState()
-    const [nonce, setNonce] = useState()
     const [authed, setAuthed] = useState(false)
     const [user, setUser] = useState()
     const [projects, setProjects] = useState()
@@ -62,7 +61,6 @@ export const useFence = location => {
                 }
             } catch {
                 setAuthed(false)
-                setError('Sorry &mdash; an error occurred during authentication!')
             }
         }
         // if fence query params are present
@@ -83,23 +81,8 @@ export const useFence = location => {
                 setError('Sorry &mdash; an error occurred during authentication!')
             }
         }
-        // // check url
-        // if (authParams && authParams.hasOwnProperty('access_token')) {
-        //     const jwt = jwtDecode(authParams.id_token)
-        //     const { exp } = jwt
-        //     const now = new Date()
-        //     const expirationDate = new Date(exp)
-        //     if (expirationDate < now) {
-        //         const { context: user } = jwt
-        //         setUser(user)
-        //         fetchProjects(authParams.access_token)
-        //         setFenceUser({user: user, projects: fetchProjects(authParams.access_token)})
-        //     }
-        // } else {
-        //     setUser(null)
-        // }
         setIsLoading(false)
-    }, [authParams])
+    }, [authParams, fenceUser])
     
     return { authed, user, projects, isLoading, error }
 }
