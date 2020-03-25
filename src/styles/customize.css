@@ -20,4 +20,8 @@ a {
     --color-peach: #f2b5a7;
     --color-gold: #f2dd72;
     --color-sea: #4d868c;
+    --color-note: #1d568c;
+    --color--error: orange;
+    --color--warning: darkorange;
+    --color--danger: red;
 }
