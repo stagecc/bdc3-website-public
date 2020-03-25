@@ -3,19 +3,21 @@ import styled from 'styled-components'
 import { WarningIcon } from '../icons'
 
 const colors = {
-    error: 'orange',
-    warning: 'darkorange',
-    danger: 'red',
+    note: 'var(--color-note)',
+    error: 'var(--color-error)',
+    warning: 'var(--color-warning)',
+    danger: 'var(--color-danger)',
 }
 
 const Wrapper = styled.div(({ color }) => `
     display: flex;
+    margin: 1rem 0 2rem 0;
     justify-content: center;
     align-items: center;
     border-width: 1px;
     border-style: solid;
     padding: 1rem;
-    border-radius: 5px;
+    border-radius: 4px;
     color: ${ color };
     border-color: ${ color };
     background-color: #ffffff99;
@@ -30,7 +32,9 @@ const Message = styled.span(({ color }) => `
 export const Alert = ({ type, message }) => {
     return (
         <Wrapper color={ colors[type] }>
-            <WarningIcon fill={ colors[type] } size="24" />
+            { type === 'warning' && <WarningIcon fill={ colors[type] } size="24" /> }
+            { type === 'error' && <WarningIcon fill={ colors[type] } size="24" /> }
+            { type === 'danger' && <WarningIcon fill={ colors[type] } size="24" /> }
             <Message color={ colors[type] }>
                 { message }
             </Message>
