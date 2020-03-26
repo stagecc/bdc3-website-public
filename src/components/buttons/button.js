@@ -15,4 +15,9 @@ export const Button = styled.button`
     // justify-content: center;
     // align-items: center;
     ${ props => props.fullWidth ? `width: 100%;` : undefined }
+    position: relative;
+    transition: filter 250ms;
+    &:hover, &:focus {
+        filter: brightness(1.2);
+    }
 `
