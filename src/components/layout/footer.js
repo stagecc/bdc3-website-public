@@ -10,6 +10,11 @@ export const Footer = styled.footer`
         color: #fff;
         text-decoration: none;
         text-decoration: underline;
+        text-decoration-color: #eeeeee99;
+        &:hover, a:active {
+            text-decoration-color: #eee;
+        }
+    }
     }
     position: relative;
     &::before {

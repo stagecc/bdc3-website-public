@@ -10,12 +10,19 @@ html {
 
 a {
     color: var(--color-eggplant);
+    text-decoration-color: var(--color-eggplant-light);
+    transition: text-decoration-color 250ms;
+    text-underline-offset: 0.1em;
+}
+a:hover, a:active {
+    text-decoration-color: var(--color-eggplant);
 }
 
 :root {
     --color-grey: #606264;
     --color-crimson: #b33243;
     --color-eggplant: #323268;
+    --color-eggplant-light: #32326866;
     --color-blueberry: #21568a;
     --color-peach: #f2b5a7;
     --color-gold: #f2dd72;

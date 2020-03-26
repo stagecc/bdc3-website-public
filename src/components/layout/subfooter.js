@@ -15,5 +15,9 @@ export const Subfooter = styled.footer`
         text-decoration: none;
         text-decoration: underline;
         padding: 1rem;
+        text-decoration-color: #eeeeee66;
+        &:hover, a:active {
+            text-decoration-color: #eee;
+        }
     }
 `
