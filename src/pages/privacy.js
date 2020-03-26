@@ -63,9 +63,7 @@ const PrivacyPage = () => (
             <Heading>Cookies</Heading>
 
             <Paragraph>
-                The Office of Management and Budget Memo
-                <ExternalLink to="https://www.nih.gov/sites/default/files/misc/m10-22.pdf">M-10-22, Guidance for Online Use of Web Measurement and Customization Technologies</ExternalLink>
-                allows Federal agencies to use session and persistent cookies.
+                The Office of Management and Budget Memo <ExternalLink to="https://www.nih.gov/sites/default/files/misc/m10-22.pdf">M-10-22, Guidance for Online Use of Web Measurement and Customization Technologies</ExternalLink> allows Federal agencies to use session and persistent cookies.
             </Paragraph>
             
             <Paragraph>
