@@ -23,7 +23,7 @@ const AccessibilityPage = () => (
         <Paragraph>
             For questions about our continuing efforts to make the information on the BioData Catalyst ecosystem accessible to all users,
             or to report an accessibility problem on any of our pages, please complete the form on our <Link to ="/contact">Contact page</Link>.
-            If you have difficulty using the form, you may also send an e-mail to <a href="biodatacatalyst@nhlbi.nih.gov">biodatacatalyst@nhlbi.nih.gov</a>.
+            If you have difficulty using the form, you may also send an e-mail to <a href="mailto:biodatacatalyst@nhlbi.nih.gov">biodatacatalyst@nhlbi.nih.gov</a>.
         </Paragraph>
 
     </PageContent>
