@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { CloseIcon, HamburgerIcon } from '../icons'
 import { Brand } from '../layout'
-import { ExpandDownIcon } from '../icons'
+import { ChevronDownIcon } from '../icons'
 
 const Overlay = styled.div`
     position: fixed;
@@ -178,7 +178,7 @@ export const MobileMenu = ({ items }) => {
                                     >
                                         <span>{ item.text }</span>
                                         &nbsp;&nbsp;
-                                        <ExpandDownIcon size="20" fill="#fff" />
+                                        <ChevronDownIcon size="20" fill="#fff" />
                                     </SubmenuHeader>
                                     <Submenu open={ activeIndex === currentIndex } id={ `submenu-${ currentIndex }` } role="menu">
                                         {
