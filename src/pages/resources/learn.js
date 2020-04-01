@@ -20,6 +20,10 @@ const resources = [
                 url: 'https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/'
             },
             {
+                text: 'BioData Catalyst Release Notes',
+                url: 'https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/biodata-catalyst-release-notes/2020-04-02-biodata-catalyst-ecosystem-release-notes'
+            },
+            {
                 text: 'Dockstore Documentation',
                 url: 'https://docs.dockstore.org/en/develop/'
             },
