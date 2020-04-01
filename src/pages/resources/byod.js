@@ -42,6 +42,22 @@ const ByodPage = () => (
             </Paragraph>
         </section>
 
+        <br/>
+
+        <section>
+            <Heading>Data Use Policy Statement</Heading>
+
+            <Paragraph>
+                BioData Catalyst adheres to internationally recognized policies for data access and release that have been developed
+                to enable broad access to data on the BioData Catalyst ecosystem.
+                Data available on the BioData Catalyst ecosystem are subject to both general and data-set specific data use policies,
+                and access to controlled data are restricted to authorized users.
+                As a BioData Catalyst user, you are solely responsible for adhering to Data Use Agreement(s),
+                Institutional Review Board policies and guidelines, and other Data Use Limitations when uploading
+                or downloading data on the BioData Catalyst ecosystem. 
+            </Paragraph>
+        </section>
+
     </PageContent>
 )
 

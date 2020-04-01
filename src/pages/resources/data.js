@@ -63,11 +63,7 @@ const DataPage = ({ data, location }) => {
                 <Visible md lg xl>
                     <Img style={{ width: '95%', margin: 'auto' }} fluid={ dataBucketsGraphic.childImageSharp.fluid } alt="Data access flow chart - see description that follows" />
                 </Visible>
-            </section>
-            
-            <br/>
-            
-            <section>
+
                 <Subheading>Data Access Highlights</Subheading>
 
                 <BulletedList>
@@ -86,6 +82,22 @@ const DataPage = ({ data, location }) => {
                         In addition, external collaborators will need to obtain DAR approval for those at their institutions.
                     ` }/>
                 </BulletedList>
+            </section>
+            
+            <br/>
+            
+            <section>
+                <Heading>Data Use Policy Statement</Heading>
+
+                <Paragraph>
+                    BioData Catalyst adheres to internationally recognized policies for data access and release that have been developed
+                    to enable broad access to data on the BioData Catalyst ecosystem.
+                    Data available on the BioData Catalyst ecosystem are subject to both general and data-set specific data use policies,
+                    and access to controlled data are restricted to authorized users.
+                    As a BioData Catalyst user, you are solely responsible for adhering to Data Use Agreement(s),
+                    Institutional Review Board policies and guidelines, and other Data Use Limitations when uploading
+                    or downloading data on the BioData Catalyst ecosystem. 
+                </Paragraph>
             </section>
 
             <br/>
