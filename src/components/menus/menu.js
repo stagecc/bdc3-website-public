@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react'
 import { Match } from '@reach/router'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import { ExpandDownIcon } from '../icons'
+import { ChevronDownIcon } from '../icons'
 
 export const MenuContainer = styled.nav`
     display: flex;
@@ -125,7 +125,7 @@ export const Menu = ({ items, showBrand }) => {
                                                     return (
                                                         <SubmenuHeader active={ thisSubmenuIsActive } open={ openSubmenu === currentIndex }>
                                                             { item.text } &nbsp;
-                                                            <ExpandDownIcon size="16" />
+                                                            <ChevronDownIcon size="16" />
                                                         </SubmenuHeader>
                                                     )
                                                 }
