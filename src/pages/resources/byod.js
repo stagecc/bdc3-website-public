@@ -38,7 +38,7 @@ const ByodPage = () => (
             <br/>
 
             <Paragraph center>
-                <ButtonExternalLink to="https://support.terra.bio/hc/en-us/articles/360024056512-Uploading-to-a-workspace-Google-bucket">BYOD to BioData Catalyst powered by Terra</ButtonExternalLink>
+                <ButtonExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/analyze-data/terra/using-your-own-data-with-terra">BYOD to BioData Catalyst powered by Terra</ButtonExternalLink>
             </Paragraph>
         </section>
 

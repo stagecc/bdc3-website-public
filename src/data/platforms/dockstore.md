@@ -5,7 +5,7 @@ logo: ../../images/logos/platforms/dockstore.png
 links: 
     homepage: https://dockstore.org
     launch: https://dockstore.org
-    documentation: https://docs.dockstore.org/en/develop/
+    documentation: https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/analyze-data/dockstore
 teaser: Dockstore is an open platform used by the Global Alliance for Genomics and Health (GA4GH) for sharing Docker-based tools described with either the Common Workflow Language (CWL), the Workflow Description Language (WDL), or Nextflow (NFL).
 service: Search from a catalog of high-quality Docker-based workflows that export to Terra or Seven Bridges. Explore organization pages to find collections of workflows from labs, institutions, and consortiums or create a page to share your work with the wider bioinformatics community.
 ---

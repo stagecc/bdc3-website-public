@@ -5,7 +5,7 @@ logo: ../../images/logos/platforms/gen3.png
 links: 
     homepage: https://gen3.org
     launch: https://gen3.biodatacatalyst.nhlbi.nih.gov
-    documentation: https://gen3.org/get-started/
+    documentation: https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/explore_data/gen3-discovering-data
 teaser: The Gen3 software stack is a collection of microservices that enable the standing-up of data commons, which allows different partner organizations to pool data and grants approved researchers access to harmonized datasets in a scalable, reproducible, and secure manner.
 service: Gen3 is a collection of microservices which enables  a data commons where partner organizations and grant approved researchers can share and access harmonized datasets in a scalable, reproducible, and secure manner.
 ---

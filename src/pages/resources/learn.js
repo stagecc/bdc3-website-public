@@ -25,11 +25,11 @@ const resources = [
             },
             {
                 text: 'Dockstore Documentation',
-                url: 'https://docs.dockstore.org/en/develop/'
+                url: 'https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/analyze-data/dockstore'
             },
             {
                 text: 'Gen3 Documentation',
-                url: 'https://gen3.org/get-started/'
+                url: 'https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/explore_data/gen3-discovering-data'
             },
             {
                 text: 'Seven Bridges Documentation',
@@ -37,11 +37,7 @@ const resources = [
             },
             {
                 text: 'Terra Documentation',
-                url: 'https://support.terra.bio/hc/en-us/categories/360001399872'
-            },
-            {
-                text: 'Terra Quickstart',
-                url: 'https://support.terra.bio/hc/en-us/categories/360002177552'
+                url: 'https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/analyze-data/terra'
             },
         ]
     },
@@ -52,7 +48,7 @@ const resources = [
         links: [
             {
                 text: 'Dockstore Videos',
-                url: 'https://www.youtube.com/watch?v=-JuKsSQja3g',
+                url: 'https://www.youtube.com/watch?v=1JWOVGzzgMc',
             },
             {
                 text: 'Gen3 Videos',
@@ -60,7 +56,7 @@ const resources = [
             },
             {
                 text: 'Terra Workshop Videos',
-                url: 'https://support.terra.bio/hc/en-us/articles/360028444332-Terra-workshop-at-BroadE-May-22-2019',
+                url: 'https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/analyze-data/terra/videos',
             },
         ]
     },
@@ -75,11 +71,11 @@ const resources = [
             },
             {
                 text: 'Gen3 FAQs',
-                url: 'https://gen3.org/resources/faq/',
+                url: 'https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/explore_data/gen3-discovering-data',
             },
             {
-                text: 'Terra (Free Credits) FAQs',
-                url: 'https://support.terra.bio/hc/en-us/articles/360027940952-Free-credits-FAQs',
+                text: 'Terra FAQs',
+                url: 'https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/analyze-data/terra/frequently-asked-questions',
             },
         ]
     },
@@ -113,7 +109,7 @@ const resources = [
             },
             {
                 text: 'Terra Tutorials',
-                url: 'https://terra.biodatacatalyst.nhlbi.nih.gov/#library/showcase',
+                url: 'https://bdcatalyst.gitbook.io/biodata-catalyst-tutorials/tutorials/terra-tutorials',
             },
             {
                 text: 'Terra Blog',
