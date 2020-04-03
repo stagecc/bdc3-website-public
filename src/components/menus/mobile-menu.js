@@ -178,7 +178,7 @@ export const MobileMenu = ({ items }) => {
                                     >
                                         <span>{ item.text }</span>
                                         &nbsp;&nbsp;
-                                        <ChevronDownIcon size="20" fill="#fff" />
+                                        <ChevronDownIcon size={ 20 } fill="#fff" />
                                     </SubmenuHeader>
                                     <Submenu open={ activeIndex === currentIndex } id={ `submenu-${ currentIndex }` } role="menu">
                                         {
