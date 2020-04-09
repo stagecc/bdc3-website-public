@@ -4,10 +4,7 @@
 
 This is the public-facing website for the BioData Catalyst Coordinating Center. This site is built with [Gatsby](https://www.gatsbyjs.org), which is a free and open source framework based on [React](https://reactjs.org). Sites built with Gatsby are modern and _fast_.
 
-## Requesting Changes
-
-
-### Project Structure
+## Project Structure
 
 The portion of the project one mostly interacts with lives within the `src` directory. Its structure is shown below, and the directories described in this document are expanded to their state at the time of its writing.
 
@@ -43,7 +40,7 @@ $ tree -L 2
     └── templates
 ```
 
-### Source Data
+## Source Data
 
 Much of the static content lives directly in the pages themselves (React components in the `./pages` directory). Because Gatsby is capable of [sourcing data](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map) from almost any location _at build time_, the content relating to partner organizations and service platforms lives in Markdown, YAML, JSON, and JavaScript files in the `./data` directory for injection into the site during the build process.
 
@@ -62,7 +59,7 @@ src/data/
     └── terra.md
 ```
 
-#### Partners
+### Partners
 
 The BioData Catlyst partner data lives in an array in YAML in the file `./src/data/partners.yaml`. Each entry in the platforms array consists of its name and its logo. The beginning of this file looks like the following:
 
@@ -86,7 +83,7 @@ The BioData Catlyst partner data lives in an array in YAML in the file `./src/da
 
 The partners are rendered in a list on the About page in alphabetical order.
 
-#### Platforms
+### Platforms
 
 Platform-specific data is sourced from Markdown files in the `./src/data/platforms` directory, which describe each of the platforms that integrate with BioData Catalyst.
 
@@ -99,37 +96,30 @@ path: /platforms/gen3
 logo: ../../images/logos/platforms/gen3.png
 links: 
     homepage: https://gen3.org
-    launch: https://gen3.datastage.io/
-    documentation: https://gen3.org/get-started/
-teaser: The Gen3 software stack is a collection of microservices that enable the standing-up of data commons, which allows different partner organizations to pool data and grants-approved researchers access to harmonized datasets in a scalable, reproducible, and secure manner.
-service: The Gen3 platform lets users search and filter over harmonized TOPMed variables and their value ranges, and export the selected cohorts to analytical workspaces. Gen3 also allows users to search over study-specific genomic and phenotypic data files broken down by consent groups, and discover new studies to apply for access through dbGaP.
+    launch: https://gen3.biodatacatalyst.nhlbi.nih.gov
+    documentation: https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/explore_data/gen3-discovering-data
+teaser: The Gen3 software stack is a collection of microservices that enable the standing-up of data commons, which allows different partner organizations to pool data and grants approved researchers access to harmonized datasets in a scalable, reproducible, and secure manner.
+service: Gen3 is a software platform that allows partner organizations and grant approved researchers to search and access harmonized datasets. Users can search over project and study-specific genomic and phenotypic data and export selected cohorts to analytical workspaces in a scalable, reproducible, and secure manner.
 ---
-- Private, secure, workspaces (projects) for running analyses at scale
-- Collaboration features with the ability to set granular permissions on project members
-- Directly access BDC without needing to set up a Google or AWS billing account
-- Access to hosted TOPMed studies all in one place and the ability to analyze data on the cloud at scale
-- Tools and features for performing multiple-variant and single-variant association studies including:
-    + Annotation Explorer for variant aggregations
-    + Cloud-optimized Genesis R package workflows in Common Workflow Language
-+ Cohort creation by searching phenotype data
-    + Use PIC-SURE API for searching phenotype data 
-    + Search by known dbGaP identifiers
-    + Rstudio and Jupyterlab Notebooks built directly into the platform for easy interactive analysis and manipulation of phenotype data
-- Ability to analyze hosted TOPMed Data in combination with your own data on AWS or Google Cloud
-- Billing and administrative controls to help your research funding go further - avoid forgotten instances, abort infinite loops, get usage breakdowns by project.
+- Use one of the microservices or community tools to submit data objects and metadata to a Gen3 Commons. Or develop your own tools specific to your user community. 
+- Gen3 will automatically index your data and provide globally unique identifiers (GUIDs). GUIDs can also be resolved at dataguids.org to find out where a data object lives within your data ecosystem. 
+- Engage Gen3’s broad user community. Ask a question, answer a question, request a new feature, or see if anyone else has approached a technical or scientific problem like yours in their Gen3 data commons. 
+- Gen3’s UI includes a data exploration tool you can customize for your data. You can choose the queries or faceted searches your user community wants; decide whether the data is able to leave the cloud or not; or develop your own apps over Gen3 APIs. 
+- Gen3 can be deployed with various levels of security and compliance. Deploy your data commons or ecosystem with the controls needed for your data and your user 
+- You can leave your data open to the Internet or control access at deeper levels within your own data use ontology, from the core data to the data objects
 ```
 
 The platform source files consist of two portions: the _frontmatter_ and the _content_ portion. The _frontmatter_ lives between the pair of `---`s and contains metadata about the platform, while the content portion resides below it and consists of the content used to generate the platform-specific pages on the BioData Catalyst Website.
 
 Note that the frontmatter consists of the fields `title`, `path`, `logo`, `links`, `teaser`, and `service`, and the `links` field is an array defining links associated with each platform: `homepage`, `launch`, and `documentation`. These links should be external to the the BioData Catlyst website and managed by each of the respective platforms.
 
-The content portion of the source file can contain Markdown and HTML syntax. The above file is used to generate For example, see [this page](https://biodatacatalyst.nhlbi.nih.gov/platforms/gen3) at build time. In addition, the metadata is injected as necessary into various other locations around the site.
+The content portion of the source file can contain Markdown and HTML syntax. The above file is used to generate [this page](https://biodatacatalyst.nhlbi.nih.gov/platforms/gen3) at build time. In addition, the metadata is injected as necessary into various other locations around the site.
 
-For exmaple, this metadata is used to generate the logo cloud on the [About page](https://bdc-mockup.netlify.com/about) and the services described on the [Services page](https://bdc-mockup.netlify.com/resources/services).
+For example, this metadata is used to generate the logo cloud on the [About page](https://bdc-mockup.netlify.com/about) and the services described on the [Services page](https://bdc-mockup.netlify.com/resources/services).
 
-## Dynamic Data
+### Dynamic Data
 
-Although much of the power of Gatsby lies in its ability to source data (from internal and external sources) at build time, it retains the capability of handling dyanmic data at run time like one would expect from a traditional React application.
+Although much of the power of Gatsby lies in its ability to source data (from internal and external sources) at build time, it retains the capability of handling dynamic data (that is, data obtained at run time) like one would expect from a traditional React application.
 
 For example, this site pulls in FAQs for [this page](https://biodatacatalyst.nhlbi.nih.gov/faqs/) from our [Freshdesk knowledge base](https://bdcatalyst.freshdesk.com/support/home) ensuring data consistency.
 
@@ -137,25 +127,25 @@ For example, this site pulls in FAQs for [this page](https://biodatacatalyst.nhl
 
 Portions of the content on this website will change frequently and often without the knowledge of overseeing bodies, so it is imperative that associated teams, partners, and platforms take part in keeping it up-to-date.
 
-Please follow the following procedures for requesting changes. Once changes have been made, they will be deployed to [staging.biodatacatalyst.nhlbi.nih.gov](staging.biodatacatalyst.nhlbi.nih.gov) for review while the changes converge to their desired final result. Once at relevant parties are in agreement to the changes, they will be pulled into the master branch and deployed on a reasonable time schedule.
+Please follow the following procedures for requesting changes to the site. Once a change has been made, it will be deployed to [staging.biodatacatalyst.nhlbi.nih.gov](staging.biodatacatalyst.nhlbi.nih.gov) for review. Once at relevant parties are in agreement, the change will be pulled into the master branch and deployed to the production site on a reasonable time schedule.
 
 ### Content Change Requests
 
 There are a couple efficient ways to request changes on the BioData Catalyst website content.
 
-1. You may create an [issue](https://github.com/stagecc/bdc3-website-public/issues) with the label: `content`. Be sure detail specifically what content needs to be changed.
+1. Create an [issue](https://github.com/stagecc/bdc3-website-public/issues) with the label `content`. Be sure detail specifically what content needs to be changed.
 
-2. If you are comfortable with the above description of how content data is managed for this webite, feel free to locate and edit the appropriate files ([partners](https://github.com/stagecc/bdc3-website-public/blob/master/src/data/partners.yaml) or [platforms]https://github.com/stagecc/bdc3-website-public/blob/master/src/data/platforms)) and submit a pull request.
+2. If you are comfortable with the above description of how content data is managed for this website, feel free to locate and edit the appropriate files ([partners](https://github.com/stagecc/bdc3-website-public/blob/master/src/data/partners.yaml) or [platforms](https://github.com/stagecc/bdc3-website-public/blob/master/src/data/platforms)) and submit a pull request.
 
 ### Feature Requests
 
-Please create an [issue](https://github.com/stagecc/bdc3-website-public/issues) with the label `feature`.
+Additional features require a bit more thgouht and time to implement than content changes, but they still should follow the same procedue: please create an [issue](https://github.com/stagecc/bdc3-website-public/issues) with the label `feature`.
 
-### Development
+## Development
 
-If you would like to contribute to the development of this site, feel free to propose changes with pull requests. As the `master` branch will always represent the deployed production version of the site, please branch feature branches off this branch. The `staging` branch will used to demo new features and will not be a reliable source branch, as it will likely experience forced pushes and rebases while those features converge.
+If you would like to contribute to the development of this site, feel free to propose changes with pull requests. As the `master` branch will always represent the deployed production version of the site, please branch feature branches off this branch. The `staging` branch will used to demo new features and will not be a reliable source branch, as it will likely experience forced pushes and rebases while those features converge to their final states.
 
-For local development you will need `node` and the `gatsby-cli`. Once you've cloned this repo, execute `gatsby develop` from the project root to spin up the development server which can be accessed on port 8000. With live-reloading, you'll be able to see changes as they are made to the source code.
+For local development you will need `node` and the `gatsby-cli`. Once you've cloned this repo, execute `gatsby develop` from the project root to spin up the development server which can be accessed on port 8000 by default. With the development server's built-in hot module reloading, you'll be able to see changes as they are made to the source code.
 
 Before submitting a pull request, please ensure your changes will build successfully. To test this execute
 
