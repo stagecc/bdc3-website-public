@@ -41,6 +41,10 @@ export const menuItems = [
                 text: 'Cohort I',
                 path: '/fellows/cohort1',
             },
+            {
+                text: 'FAQs',
+                path: '/fellows/faqs',
+            },
         ],
     },
     {
