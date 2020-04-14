@@ -125,7 +125,7 @@ export const Menu = ({ items, showBrand }) => {
                                                     return (
                                                         <SubmenuHeader active={ thisSubmenuIsActive } open={ openSubmenu === currentIndex }>
                                                             { item.text } &nbsp;
-                                                            <ChevronDownIcon size="16" />
+                                                            <ChevronDownIcon size={ 16 } />
                                                         </SubmenuHeader>
                                                     )
                                                 }
