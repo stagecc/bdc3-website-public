@@ -106,10 +106,13 @@ const FellowsPage = () => {
                                     { !isCompact && <span>&nbsp;-&nbsp;</span> }
                                     <FellowOrganization center={ isCompact }>{ fellow.university }</FellowOrganization>
                                 </FellowHeading>
-                                <FellowProject center={ isCompact }>
-                                    <strong>Project Title:</strong> { fellow.abstract }
-                                </FellowProject>
                                 <FellowBio dangerouslySetInnerHTML={{ __html: fellow.bio }} />
+                                <FellowProject center={ isCompact }>
+                                    <h4>Project: { fellow.project.title }</h4>
+                                    <Paragraph>
+                                        Abstract: { fellow.project.abstract }
+                                    </Paragraph>
+                                </FellowProject>
                             </FellowDetails>
                         </Profile>
                     ))
