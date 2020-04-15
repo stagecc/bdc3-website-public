@@ -3,14 +3,20 @@ import Img from 'gatsby-image'
 import styled from 'styled-components'
 import { SEO } from '../../components/seo'
 import { PageContent } from '../../components/layout'
-import { Title, Heading, Subheading, Paragraph } from '../../components/typography'
+import { Title, Heading, Subheading, Subsubheading, Paragraph } from '../../components/typography'
 import { useFellows, useWindowWidth } from '../../hooks'
+import { Collapser } from '../../components/collapser'
+import { kebabCase } from '../../utils'
 
 const FellowHeading = styled(Subheading)`
     margin-bottom: 1rem;
     display: flex;
     flex-direction: ${ props => props.compact ? 'column' : 'row' };
     justify-content: flex-start;
+`
+
+const FellowAbstractTitle = styled(Subsubheading)`
+    margin: 0;
 `
 
 const FellowName = styled.span`
@@ -96,7 +102,7 @@ const FellowsPage = () => {
                 <Heading>Meet the Fellows</Heading>
                 {
                     fellows.map(fellow => (
-                        <Profile compact={ isCompact }>
+                        <Profile key={ kebabCase(fellow.project.title.slice(0, 20)) } compact={ isCompact }>
                             <PhotoWrapper>
                                 <FellowPhoto fixed={ fellow.photo.childImageSharp.fixed } />
                             </PhotoWrapper>
@@ -107,12 +113,14 @@ const FellowsPage = () => {
                                     <FellowOrganization center={ isCompact }>{ fellow.university }</FellowOrganization>
                                 </FellowHeading>
                                 <FellowBio dangerouslySetInnerHTML={{ __html: fellow.bio }} />
-                                <FellowProject center={ isCompact }>
-                                    <h4>Project: { fellow.project.title }</h4>
+                                <Collapser
+                                    title={ <FellowAbstractTitle>Project: { fellow.project.title }</FellowAbstractTitle> }
+                                    ariaId={ `${ kebabCase(fellow.project.title.slice(0, 20)) }_abstract` }
+                                >
                                     <Paragraph>
                                         Abstract: { fellow.project.abstract }
                                     </Paragraph>
-                                </FellowProject>
+                                </Collapser>
                             </FellowDetails>
                         </Profile>
                     ))
