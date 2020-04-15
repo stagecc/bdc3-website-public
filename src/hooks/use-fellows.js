@@ -12,7 +12,10 @@ const fellowsQuery = graphql`
                     frontmatter {
                         name
                         university
-                        abstract
+                        project {
+                            title
+                            abstract
+                        }
                         bio
                         photo {
                             childImageSharp {
