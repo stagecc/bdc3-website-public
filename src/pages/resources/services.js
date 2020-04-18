@@ -171,7 +171,7 @@ const ServicesPage = ({ data }) => {
                                         The server offers imputation from various reference panels including the TOPMed reference panel. 
                                     </Paragraph>
                                     <ToolLinks>
-                                        <ExternalToolLink to="https://www.google.com/url?q=https://imputation.biodatacatalyst.nhlbi.nih.gov/&sa=D&ust=1586192812766000&usg=AFQjCNH9F_qX9VQjdB4R7ejeH6VsSxjskg" aria-label="Launch imputation server">Launch</ExternalToolLink>
+                                        <ExternalToolLink to="https://imputation.biodatacatalyst.nhlbi.nih.gov/" aria-label="Launch imputation server">Launch</ExternalToolLink>
                                         |
                                         <ExternalToolLink to="https://imputationserver.readthedocs.io/en/latest/" aria-label="View imputation server documentation">Documentation</ExternalToolLink>
                                     </ToolLinks>
