@@ -123,7 +123,7 @@ export const Menu = ({ items, showBrand }) => {
                                                     // This substring check is how the value of the "active" prop is determined below. 
                                                     // console.log(props.location.pathname, 'contains', item.path, ':', props.location.pathname.includes(item.path))
                                                     return (
-                                                        <SubmenuHeader active={ thisSubmenuIsActive } open={ openSubmenu === currentIndex }>
+                                                        <SubmenuHeader active={ thisSubmenuIsActive } open={ openSubmenu === currentIndex } aria-label={ `${ item.text } submenu` }>
                                                             { item.text } &nbsp;
                                                             <ChevronDownIcon size={ 16 } />
                                                         </SubmenuHeader>

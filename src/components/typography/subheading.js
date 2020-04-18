@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 // 
 
 export const Subheading = styled.h3`
-    color: #779;
+    color: var(--color-eggplant);
     color: ${ props => props.light ? '#dde' : '#779' };
     text-align: center;
     @media screen and (min-width: 767px) {

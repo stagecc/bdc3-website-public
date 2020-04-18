@@ -125,11 +125,11 @@ const ServicesPage = ({ data }) => {
                                                                             { platform.frontmatter.service }
                                                                         </Paragraph>
                                                                         <ToolLinks>
-                                                                            { platform.frontmatter.links.launch && <ExternalToolLink to={ platform.frontmatter.links.launch }>Launch</ExternalToolLink> }
+                                                                            { platform.frontmatter.links.launch && <ExternalToolLink to={ platform.frontmatter.links.launch } aria-label={ `Launch ${ platform.frontmatter.title }` }>Launch</ExternalToolLink> }
                                                                             { platform.frontmatter.links.launch && '|' }
-                                                                            { platform.frontmatter.links.documentation && <ExternalToolLink to={ platform.frontmatter.links.documentation }>Documentation</ExternalToolLink> }
+                                                                            { platform.frontmatter.links.documentation && <ExternalToolLink to={ platform.frontmatter.links.documentation }aria-label={ `View ${ platform.frontmatter.title } documentation` }>Documentation</ExternalToolLink> }
                                                                             { platform.frontmatter.links.documentation && '|' }
-                                                                            <InternalToolLink to={ platform.frontmatter.path }>Learn</InternalToolLink>
+                                                                            <InternalToolLink to={ platform.frontmatter.path } aria-label={ `Learn more about ${ platform.frontmatter.title }` }>Learn</InternalToolLink>
                                                                         </ToolLinks>
                                                                     </Col>
                                                                     {
@@ -171,9 +171,9 @@ const ServicesPage = ({ data }) => {
                                         The server offers imputation from various reference panels including the TOPMed reference panel. 
                                     </Paragraph>
                                     <ToolLinks>
-                                        <ExternalToolLink to="https://www.google.com/url?q=https://imputation.biodatacatalyst.nhlbi.nih.gov/&sa=D&ust=1586192812766000&usg=AFQjCNH9F_qX9VQjdB4R7ejeH6VsSxjskg">Launch</ExternalToolLink>
+                                        <ExternalToolLink to="https://www.google.com/url?q=https://imputation.biodatacatalyst.nhlbi.nih.gov/&sa=D&ust=1586192812766000&usg=AFQjCNH9F_qX9VQjdB4R7ejeH6VsSxjskg" aria-label="Launch imputation server">Launch</ExternalToolLink>
                                         |
-                                        <ExternalToolLink to="https://imputationserver.readthedocs.io/en/latest/">Documentation</ExternalToolLink>
+                                        <ExternalToolLink to="https://imputationserver.readthedocs.io/en/latest/" aria-label="View imputation server documentation">Documentation</ExternalToolLink>
                                     </ToolLinks>
                                 </CardBody>
                             </Card>

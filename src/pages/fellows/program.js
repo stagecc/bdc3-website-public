@@ -80,6 +80,12 @@ const FellowsPage = () => (
             <Heading>Round 2 Fellows Program Timeline</Heading>
 
             <Table>
+                <thead>
+                    <tr>
+                        <th style={{ padding: '0.5rem' }}>Date</th>
+                        <th style={{ padding: '0.5rem' }}>Event</th>
+                    </tr>
+                </thead>
                 <tbody>
                     <tr>
                         <td>June 5, 2020</td>
@@ -110,11 +116,9 @@ const FellowsPage = () => (
                 During an open application window, applicants should submit proposals which address the requirements below.
                 The proposal should be understandable to readers from outside the field of study and must clearly spell out the project aims, past studies, methods, materials, and engagement plan.
             </Paragraph>
-        </section>
 
-        <br/>
+            <br/>
 
-        <section>
             <Subheading>Proposal Requirements</Subheading>
 
             <OrderedList>
@@ -130,11 +134,9 @@ const FellowsPage = () => (
                 <ListItem primary="Budget estimate &ndash; Provide a budget estimate including expected research costs and costs for travel, training, publication, and conference fees. (50 words maximum)" />
                 <ListItem primary="References &ndash; Provide a list of references cited in the previous questions here (100 words maximum) " />
             </OrderedList>
-        </section>
 
-        <br/>
+            <br/>
 
-        <section>
             <Subheading>Selection Criteria</Subheading>
     
             <Paragraph>

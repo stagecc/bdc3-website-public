@@ -15,9 +15,9 @@ const AccessibilityPage = () => (
         <Title>Accessibility</Title>
         
         <Paragraph>
-             We are committed to making BioData Catalyst accessible to all users, regardless of special need.
-             We are committed to designing our sites to be compatible with screen readers and other assistive devices.
-             However, this is an ongoing process and it is possible that some users may encounter problems accessing some pages.
+            We are committed to making BioData Catalyst accessible to all users, regardless of special need.
+            We are committed to designing our sites to be compatible with screen readers and other assistive devices.
+            However, this is an ongoing process and it is possible that some users may encounter problems accessing some pages.
         </Paragraph>
         
         <Paragraph>

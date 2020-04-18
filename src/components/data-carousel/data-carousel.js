@@ -33,7 +33,7 @@ const carouselItems = [
 
 const StateNote = styled.span`
     color: #eee;
-    background-color: #00000066;
+    background-color: #000000;
     position: absolute;
     top: 1rem;
     left: 0;
@@ -80,7 +80,7 @@ const Wrapper = styled.div`
         background-size: cover;
     }
     &:hover ${ StateNote } {
-        filter: opacity(0.80);
+        filter: opacity(1.0);
     }
 `
 
