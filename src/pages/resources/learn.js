@@ -48,7 +48,7 @@ const resources = [
         links: [
             {
                 text: 'Dockstore Videos',
-                url: 'https://www.youtube.com/watch?v=1JWOVGzzgMc',
+                url: 'https://www.youtube.com/channel/UCFWNYqxQvVLAuZq8rdOSE4g/videos',
             },
             {
                 text: 'Gen3 Videos',
@@ -65,6 +65,10 @@ const resources = [
         icon: <FaqsIcon size={ 42 } fill="#fff" />,
         description: 'Find answers to frequently asked questions from BioData Catalyst users',
         links: [
+            {
+                text: 'BioData Catalyst FAQs',
+                url: 'https://bdcatalyst.freshdesk.com/support/solutions',
+            },
             {
                 text: 'Dockstore FAQs',
                 url: 'https://docs.dockstore.org/en/develop/faq.html',
@@ -84,6 +88,10 @@ const resources = [
         icon: <CommunityIcon size={ 42 } fill="#fff" />,
         description: 'Connect with others using the BioData Catalyst and learn how they are using it.',
         links: [
+            {
+                text: 'BioData Catalyst Forum',
+                url: 'https://bdcatalyst.freshdesk.com/support/discussions/60000024585',
+            },
             {
                 text: 'Dockstore Forum',
                 url: 'https://gitter.im/ga4gh/dockstore',
