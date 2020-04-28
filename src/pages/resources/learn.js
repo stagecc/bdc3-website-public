@@ -116,6 +116,10 @@ const resources = [
                 url: 'https://www.sevenbridges.com/blog/',
             },
             {
+                text: 'Seven Bridges Tutorials',
+                url: 'https://bdcatalyst.gitbook.io/biodata-catalyst-tutorials/tutorials/seven-bridges-tutorials',
+            },
+            {
                 text: 'Terra Tutorials',
                 url: 'https://bdcatalyst.gitbook.io/biodata-catalyst-tutorials/tutorials/terra-tutorials',
             },
