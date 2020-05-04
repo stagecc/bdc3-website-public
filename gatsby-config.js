@@ -103,7 +103,7 @@ module.exports = {
         // Documented
         //  here: https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#create
         // and here: https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/
-        sampleRate: 5, // Specifies what percentage of users should be tracked. This defaults to 100 (no users are sampled out) but large sites may need to use a lower sample rate to stay within Google Analytics processing limits.
+        // sampleRate: 5, // Specifies what percentage of users should be tracked. This defaults to 100 (no users are sampled out) but large sites may need to use a lower sample rate to stay within Google Analytics processing limits.
         siteSpeedSampleRate: 10, // This setting determines how often site speed beacons will be sent. By default, 1% of users will be automatically be tracked.
         cookieDomain: "biodatacatalyst.nhlbi.nih.gov", // Specifies the domain used to store the analytics cookie. Setting this to 'none' sets the cookie without specifying a domain.
       },
