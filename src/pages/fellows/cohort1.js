@@ -3,6 +3,7 @@ import Img from 'gatsby-image'
 import styled from 'styled-components'
 import { SEO } from '../../components/seo'
 import { PageContent } from '../../components/layout'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import { Title, Heading, Subheading, Subsubheading, Paragraph } from '../../components/typography'
 import { useFellows, useWindowWidth } from '../../hooks'
 import { Collapser } from '../../components/collapser'
@@ -73,6 +74,28 @@ const Profile = styled.article`
         filter: saturate(1.0);
         transform: scale(1.02);
     }
+    &::before { 
+        content: " ";
+        display: block; 
+        height: 150px;
+        margin-top: -150px;
+        visibility: hidden;
+    }
+}`
+
+const AnchorLinkCloud = styled.ul.attrs({ center: true })`
+    text-align: center;
+    margin: 2rem auto;
+    padding: 0;
+    width: 90%;
+    max-width: 900px;
+    list-style-type: none;
+    line-height: 1.5;
+    & > li {
+        margin: 0 1rem;
+        display: inline-block;
+        white-space: nowrap;
+    }
 `
 
 const FellowsPage = () => {
@@ -97,12 +120,28 @@ const FellowsPage = () => {
                     Cohort I Fellows will work on the BioData Catalyst Ecosystem from March 2020 to March 2021.
                 </Paragraph>
             </section>
+            
 
             <section id="fellows">
                 <Heading>Meet the Fellows</Heading>
+
+                <AnchorLinkCloud>
+                    {
+                        fellows.map(fellow => (
+                            <li key={ kebabCase(fellow.name.replace(/, Ph\.D\.$/, '')) }>
+                                <AnchorLink to={ `/fellows/cohort1#${ kebabCase(fellow.name.replace(/, Ph\.D\.$/, '')) }` }>{ fellow.name }</AnchorLink>
+                            </li>
+                        ))
+                    }
+                </AnchorLinkCloud>
+
                 {
                     fellows.map(fellow => (
-                        <Profile key={ kebabCase(fellow.project.title.slice(0, 20)) } compact={ isCompact }>
+                        <Profile
+                            key={ kebabCase(fellow.name.replace(/, Ph\.D\.$/, '')) }
+                            id={ kebabCase(fellow.name.replace(/, Ph\.D\.$/, '')) }
+                            compact={ isCompact }
+                        >
                             <PhotoWrapper>
                                 <FellowPhoto fixed={ fellow.photo.childImageSharp.fixed } />
                             </PhotoWrapper>
