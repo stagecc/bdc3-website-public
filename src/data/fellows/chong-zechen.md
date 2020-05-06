@@ -1,5 +1,5 @@
 ---
-name: Zechen Chong, PhD
+name: Zechen Chong, Ph.D.
 university: University of Alabama at Birmingham
 photo: ../../images/fellows/cohort-1/chong-zechen.jpg
 project:

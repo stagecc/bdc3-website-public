@@ -1,5 +1,5 @@
 ---
-name: Harrison Brand Ph.D.
+name: Harrison Brand, Ph.D.
 university: Massachusetts General Hospital
 photo: ../../images/fellows/cohort-1/brand-harrison.jpg
 project: 

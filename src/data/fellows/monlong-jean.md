@@ -1,5 +1,5 @@
 ---
-name: Jean Monlong, PhD
+name: Jean Monlong, Ph.D.
 university: University of California, Santa Cruz
 photo: ../../images/fellows/cohort-1/monlong-jean.jpg
 project:

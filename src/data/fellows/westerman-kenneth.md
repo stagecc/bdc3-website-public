@@ -1,5 +1,5 @@
 ---
-name: Kenneth Westerman, PhD
+name: Kenneth Westerman, Ph.D.
 university: Massachusetts General Hospital
 photo: ../../images/fellows/cohort-1/westerman-kenneth.jpg
 project:

@@ -1,5 +1,5 @@
 ---
-name: Seung Hoan Choi Ph.D.
+name: Seung Hoan Choi, Ph.D.
 university: Broad Institute of MIT and Harvard
 photo: ../../images/fellows/cohort-1/choi-seung-hoan.jpg
 project:

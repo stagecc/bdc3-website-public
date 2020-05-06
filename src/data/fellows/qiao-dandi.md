@@ -1,5 +1,5 @@
 ---
-name: Dandi Qiao, PhD
+name: Dandi Qiao, Ph.D.
 university: Brigham and Women's Hospital
 photo: ../../images/fellows/cohort-1/qiao-dandi.jpg
 project:

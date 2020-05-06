@@ -1,5 +1,5 @@
 ---
-name: Pietro Nardelli, PhD
+name: Pietro Nardelli, Ph.D.
 university: Harvard Medical School
 photo: ../../images/fellows/cohort-1/nardelli-pietro.jpg
 project:

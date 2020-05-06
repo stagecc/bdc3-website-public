@@ -1,5 +1,5 @@
 ---
-name: Sheila Gaynor, PhD
+name: Sheila Gaynor, Ph.D.
 university: Harvard University
 photo: ../../images/fellows/cohort-1/gaynor-sheila.jpg
 project:

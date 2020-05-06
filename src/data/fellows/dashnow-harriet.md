@@ -1,5 +1,5 @@
 ---
-name: Harriet Dashnow, PhD
+name: Harriet Dashnow, Ph.D.
 university: University of Utah
 photo: ../../images/fellows/cohort-1/dashnow-harriet.jpg
 project:

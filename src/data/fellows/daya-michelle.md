@@ -1,5 +1,5 @@
 ---
-name: Michelle Daya, PhD
+name: Michelle Daya, Ph.D.
 university: University of Colorado
 photo: ../../images/fellows/cohort-1/daya-michelle.jpg
 project:

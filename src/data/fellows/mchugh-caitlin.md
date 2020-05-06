@@ -1,5 +1,5 @@
 ---
-name: Caitlin McHugh, PhD
+name: Caitlin McHugh, Ph.D.
 university: University of Washington
 photo: ../../images/fellows/cohort-1/mchugh-caitlin.jpg
 project:

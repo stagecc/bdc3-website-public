@@ -1,5 +1,5 @@
 ---
-name: Fayuan Wen, PhD
+name: Fayuan Wen, Ph.D.
 university: Howard University
 photo: ../../images/fellows/cohort-1/wen-fayuan.jpg
 project:

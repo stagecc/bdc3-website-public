@@ -1,5 +1,5 @@
 ---
-name: Stephanie Gogarten, PhD
+name: Stephanie Gogarten, Ph.D.
 university: University of Washington
 photo: ../../images/fellows/cohort-1/gogarten-stephanie.jpg
 project:

@@ -1,5 +1,5 @@
 ---
-name: Laura Raffield, PhD
+name: Laura Raffield, Ph.D.
 university: University of North Carolina at Chapel Hill
 photo: ../../images/fellows/cohort-1/raffield-laura.jpg
 project:

@@ -1,5 +1,5 @@
 ---
-name: Zilin Li, PhD
+name: Zilin Li, Ph.D.
 university: Harvard University
 photo: ../../images/fellows/cohort-1/li-zilin.jpg
 project:
