@@ -9,13 +9,15 @@ const ChevronIcon = ({ size, fill, children, ...rest }) => (
 
 export const ChevronUpIcon = props => (
     <ChevronIcon { ...props }>
-        <path d="M 7.9984227,4.229289 2.3415685,9.886143 3.0486752,10.59325 7.9984227,5.643503 12.948169,10.59325 13.655276,9.886143 Z" />
+        <path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/>
+        <path d="M0 0h24v24H0z" fill="none"/>
     </ChevronIcon>
 )
 
 export const ChevronDownIcon = props => (
     <ChevronIcon { ...props }>
-        <path d="M 7.9984218,10.59325 13.655276,4.936396 12.948169,4.229289 7.9984218,9.179036 3.0486755,4.229289 2.3415685,4.936396 Z" />
+        <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/>
+        <path d="M0 0h24v24H0z" fill="none"/>
     </ChevronIcon>
 )
 
