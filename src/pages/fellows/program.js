@@ -27,14 +27,14 @@ const FellowsPage = () => (
             </Paragraph>
     
             <Paragraph>
-                As a BioData Catalyst Fellow, you will 
+                BioData Catalyst Fellows will:
             </Paragraph>
     
             <BulletedList>
-                <ListItem primary="Have dedicated time to work with TOPMed data and other data sources to accelerate your research productivity." />
-                <ListItem primary="Improve the NHLBI BioData Catalyst ecosystem based on your feedback. Fellows are among the first users on this cyberinfrastructure, chosen to have projects that can benefit from, and be of benefit to, BioData Catalyst." />
-                <ListItem primary="Be our collaborators: as partners, we will test and expand the BioData Catalyst ecosystem with new tools, data, and capabilities." />
-                <ListItem primary="Act as our ambassadors in your communities to help onboard others." />
+                <ListItem primary="Improve the NHLBI BioData Catalyst ecosystem based on their feedback. Fellows are among the first users of the ecosystem, chosen in part because they have projects that can benefit from, and be of benefit to, BioData Catalyst." />
+                <ListItem primary="Be our collaborators. Together we will test and expand the BioData Catalyst ecosystem with new tools, data, and capabilities." />
+                <ListItem primary="Have dedicated time to work with TOPMed data and other data sources to accelerate their research productivity." />
+                <ListItem primary="Act as our ambassadors in their communities to help onboard others." />
             </BulletedList>
         </section>
 
