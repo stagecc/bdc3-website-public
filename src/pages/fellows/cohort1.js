@@ -3,14 +3,21 @@ import Img from 'gatsby-image'
 import styled from 'styled-components'
 import { SEO } from '../../components/seo'
 import { PageContent } from '../../components/layout'
-import { Title, Heading, Subheading, Paragraph } from '../../components/typography'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
+import { Title, Heading, Subheading, Subsubheading, Paragraph } from '../../components/typography'
 import { useFellows, useWindowWidth } from '../../hooks'
+import { Collapser } from '../../components/collapser'
+import { kebabCase } from '../../utils'
 
 const FellowHeading = styled(Subheading)`
     margin-bottom: 1rem;
     display: flex;
     flex-direction: ${ props => props.compact ? 'column' : 'row' };
     justify-content: flex-start;
+`
+
+const FellowAbstractTitle = styled(Subsubheading)`
+    margin: 0;
 `
 
 const FellowName = styled.span`
@@ -67,6 +74,28 @@ const Profile = styled.article`
         filter: saturate(1.0);
         transform: scale(1.02);
     }
+    &::before { 
+        content: " ";
+        display: block; 
+        height: 150px;
+        margin-top: -150px;
+        visibility: hidden;
+    }
+}`
+
+const AnchorLinkCloud = styled.ul.attrs({ center: true })`
+    text-align: center;
+    margin: 2rem auto;
+    padding: 0;
+    width: 90%;
+    max-width: 900px;
+    list-style-type: none;
+    line-height: 1.5;
+    & > li {
+        margin: 0 1rem;
+        display: inline-block;
+        white-space: nowrap;
+    }
 `
 
 const FellowsPage = () => {
@@ -91,12 +120,28 @@ const FellowsPage = () => {
                     Cohort I Fellows will work on the BioData Catalyst Ecosystem from March 2020 to March 2021.
                 </Paragraph>
             </section>
+            
 
             <section id="fellows">
                 <Heading>Meet the Fellows</Heading>
+
+                <AnchorLinkCloud>
+                    {
+                        fellows.map(fellow => (
+                            <li key={ kebabCase(fellow.name.replace(/, Ph\.D\.$/, '')) }>
+                                <AnchorLink to={ `/fellows/cohort1#${ kebabCase(fellow.name.replace(/, Ph\.D\.$/, '')) }` }>{ fellow.name }</AnchorLink>
+                            </li>
+                        ))
+                    }
+                </AnchorLinkCloud>
+
                 {
                     fellows.map(fellow => (
-                        <Profile compact={ isCompact }>
+                        <Profile
+                            key={ kebabCase(fellow.name.replace(/, Ph\.D\.$/, '')) }
+                            id={ kebabCase(fellow.name.replace(/, Ph\.D\.$/, '')) }
+                            compact={ isCompact }
+                        >
                             <PhotoWrapper>
                                 <FellowPhoto fixed={ fellow.photo.childImageSharp.fixed } />
                             </PhotoWrapper>
@@ -106,10 +151,15 @@ const FellowsPage = () => {
                                     { !isCompact && <span>&nbsp;-&nbsp;</span> }
                                     <FellowOrganization center={ isCompact }>{ fellow.university }</FellowOrganization>
                                 </FellowHeading>
-                                <FellowProject center={ isCompact }>
-                                    <strong>Project Title:</strong> { fellow.abstract }
-                                </FellowProject>
                                 <FellowBio dangerouslySetInnerHTML={{ __html: fellow.bio }} />
+                                <Collapser
+                                    title={ <FellowAbstractTitle>Project: { fellow.project.title }</FellowAbstractTitle> }
+                                    ariaId={ `${ kebabCase(fellow.project.title.slice(0, 20)) }_abstract` }
+                                >
+                                    <Paragraph>
+                                        Abstract: { fellow.project.abstract }
+                                    </Paragraph>
+                                </Collapser>
                             </FellowDetails>
                         </Profile>
                     ))

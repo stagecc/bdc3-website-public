@@ -76,6 +76,12 @@ module.exports = {
       }
     },
     {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -110
+      }
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `biodata-catalyst`,
