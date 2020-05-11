@@ -85,6 +85,7 @@ const FaqPage = () => {
 
             <Paragraph>
                 If unanswered questions remain, view our complete <ExternalLink to="https://bdcatalyst.freshdesk.com/">Knowledge Base</ExternalLink> or submit a <Link to="/contact">help request</Link> to receive assistance.
+                Questions regarding the Fellows Program may be directed to the NHLBI BioData Catalyst Help Desk and by selecting the Fellows Program type from the contact form.
             </Paragraph>
 
         </PageContent>
