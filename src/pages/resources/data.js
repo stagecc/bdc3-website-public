@@ -57,11 +57,11 @@ const DataPage = ({ data, location }) => {
                 </Paragraph>
                 
                 <Visible xs sm>
-                    <Img style={{ width: '95%', margin: 'auto' }} fluid={ dataBucketsGraphicMobile.childImageSharp.fluid } alt="Data access flow chart - see description that follows" />
+                    <Img style={{ width: '95%', maxWidth: '800px', margin: 'auto' }} fluid={ dataBucketsGraphicMobile.childImageSharp.fluid } alt="Data access flow chart - see description that follows" />
                 </Visible>
 
                 <Visible md lg xl>
-                    <Img style={{ width: '95%', margin: 'auto' }} fluid={ dataBucketsGraphic.childImageSharp.fluid } alt="Data access flow chart - see description that follows" />
+                    <Img style={{ width: '95%', maxWidth: '800px', margin: 'auto' }} fluid={ dataBucketsGraphic.childImageSharp.fluid } alt="Data access flow chart - see description that follows" />
                 </Visible>
 
                 <Subheading>Data Access Highlights</Subheading>
@@ -110,14 +110,14 @@ export default DataPage
 
 export const query = graphql`
     {
-        dataBucketsGraphic: file(relativePath: {eq: "data-buckets.png"}) {
+        dataBucketsGraphic: file(relativePath: {eq: "data-buckets.webp"}) {
             childImageSharp {
                 fluid {
                     ...GatsbyImageSharpFluid
                 }
             }
         }
-        dataBucketsGraphicMobile: file(relativePath: {eq: "data-buckets-mobile.png"}) {
+        dataBucketsGraphicMobile: file(relativePath: {eq: "data-buckets-mobile.webp"}) {
             childImageSharp {
                 fluid {
                     ...GatsbyImageSharpFluid
