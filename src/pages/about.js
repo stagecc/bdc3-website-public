@@ -1,5 +1,4 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import { Link } from 'gatsby'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
@@ -26,7 +25,6 @@ const PlatformImage = styled(Img)`
 `
 
 const AboutPage = ({ data }) => {
-    // const { ecosystemGraphic, ecosystemGraphicMobile } = data
     const partners = usePartners()
         .sort((p,q) => p.name > q.name)
     const platforms = usePlatforms()
@@ -142,23 +140,3 @@ const AboutPage = ({ data }) => {
 }
 
 export default AboutPage
-
-
-export const query = graphql`
-    {
-        ecosystemGraphic: file(relativePath: {eq: "ecosystem.png"}) {
-            childImageSharp {
-                fluid {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-        ecosystemGraphicMobile: file(relativePath: {eq: "ecosystem-mobile.png"}) {
-            childImageSharp {
-                fluid {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-    }
-`
