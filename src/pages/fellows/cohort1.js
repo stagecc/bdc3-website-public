@@ -8,6 +8,7 @@ import { Title, Heading, Subheading, Subsubheading, Paragraph } from '../../comp
 import { useFellows, useWindowWidth } from '../../hooks'
 import { Collapser } from '../../components/collapser'
 import { kebabCase } from '../../utils'
+import { Container as Grid, Row, Col } from 'react-grid-system'
 
 const FellowHeading = styled(Subheading)`
     margin-bottom: 1rem;
@@ -83,18 +84,15 @@ const Profile = styled.article`
     }
 }`
 
-const AnchorLinkCloud = styled.ul.attrs({ center: true })`
-    text-align: center;
+const FellowsLinkList = styled.div`
+    -moz-columns: 250px 3;
+    -webkit-columns: 250px 3;
+    columns: 250px 4;
     margin: 2rem auto;
     padding: 0;
-    width: 90%;
-    max-width: 900px;
-    list-style-type: none;
     line-height: 1.5;
-    & > li {
-        margin: 0 1rem;
-        display: inline-block;
-        white-space: nowrap;
+    @media (max-width: 768px) {
+        text-align: center;
     }
 `
 
@@ -125,15 +123,15 @@ const FellowsPage = () => {
             <section id="fellows">
                 <Heading>Meet the Fellows</Heading>
 
-                <AnchorLinkCloud>
+                <FellowsLinkList>
                     {
                         fellows.map(fellow => (
-                            <li key={ kebabCase(fellow.name.replace(/, Ph\.D\.$/, '')) }>
+                            <div key={ kebabCase(fellow.name.replace(/, Ph\.D\.$/, '')) }>
                                 <AnchorLink to={ `/fellows/cohort1#${ kebabCase(fellow.name.replace(/, Ph\.D\.$/, '')) }` }>{ fellow.name }</AnchorLink>
-                            </li>
+                            </div>
                         ))
                     }
-                </AnchorLinkCloud>
+                </FellowsLinkList>
 
                 {
                     fellows.map(fellow => (
