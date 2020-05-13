@@ -23,7 +23,7 @@ const FellowsPage = () => (
             </Paragraph>
     
             <Paragraph>
-                The vision for the BioData Catalyst is to be a community-driven ecosystem implementing data science solutions, democratizing data and computational access, extending services such as TOPMed and dbGaP, and advancing HLBS science. The BioData Catalyst Fellows Program offers a mechanism for early career researchers to engage with the Consortium as partners in the BioData Catalyst endeavor.
+                The vision for the BioData Catalyst is to be a community-driven ecosystem implementing data science solutions, democratizing data and computational access, extending services such as TOPMed and dbGaP, and advancing HLBS science. The BioData Catalyst Fellows Program offers a mechanism for early-career researchers to engage with the Consortium as partners in the BioData Catalyst endeavor.
             </Paragraph>
     
             <Paragraph>
@@ -44,11 +44,11 @@ const FellowsPage = () => (
             <Heading>Fellowship Eligibility</Heading>
             
             <Paragraph>
-                Preference will be given to proposals that leverage the strengths of the ecosystem to enable cutting edge research and also test the capabilities of the ecosystem. Consideration will be given to early-career applicants, especially those who will bring diversity to the BioData Catalyst community, and preferably affiliated with a US research academic institution.  
+                Preference will be given to proposals that leverage the strengths of the ecosystem to enable cutting edge research and also test the capabilities of the ecosystem. Consideration will be given to early-career applicants, especially those who will bring diversity to the BioData Catalyst community. 
             </Paragraph>
 
             <Paragraph>
-                Cohort 2 fellowship funding period will run 12 months, from September 2020 - September 2021, with a brief project report due six months into the project (February 2021) and a final report due at the end (September 2021). All Fellows will be expected to be involved in NHLBI BioData Catalyst activities during the year, including attending quarterly consortium meetings and participating in monthly Fellows meetings. Fellows will also be encouraged to make their workflows and tools more widely available within the ecosystem and the broader research community and to welcome and help onboard new users to the community.
+                The Cohort 2 fellowship funding period will run 12 months, from September 2020 - September 2021, with a brief project report due six months into the project (February 2021) and a final report due at the end (September 2021). All Fellows will be expected to be involved in NHLBI BioData Catalyst activities during the year, including attending quarterly consortium meetings and participating in monthly Fellows meetings. Fellows will also be encouraged to make their workflows and tools more widely available within the ecosystem and the broader research community and to welcome and help onboard new users to the community.
             </Paragraph>
         </section>
 
@@ -58,7 +58,7 @@ const FellowsPage = () => (
             <Heading>Fellowship Financial Stipend</Heading>
 
             <Paragraph>
-               Awardees will receive a stipend of up to $69,733, which includes costs for salary, travel, training, publication, and conference fees.  As part of the Uniform Guidance, fellowships are not subject to indirect costs and these should not be budgeted. Reasonable cloud costs will be covered by NHLBI, and should not be included in your budget. 
+               Awardees will receive a stipend of up to $69,733, which includes costs for salary, travel, training, publication, and conference fees.  As part of the Uniform Guidance, fellowships are not subject to indirect costs, and these should not be budgeted. Reasonable cloud costs will be covered by NHLBI and should not be included in your budget. 
             </Paragraph>
         </section>
 
@@ -84,7 +84,7 @@ const FellowsPage = () => (
                         <td>Application Deadline</td>
                     </tr>
                     <tr>
-                        <td>July 27, 2020</td>
+                        <td>July 27, 2020 (Anticipated)</td>
                         <td>Award notices released</td>
                     </tr>
                     <tr>
