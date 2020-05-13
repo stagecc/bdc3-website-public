@@ -40,7 +40,7 @@ const DataPage = ({ data, location }) => {
                     <ListItem primary={ <span>Parent Studies <ExternalLink to="https://www.ncbi.nlm.nih.gov/gap/">dbGaP</ExternalLink></span> } />
                 </BulletedList>
 
-                For more complete study information, download <ExternalLink to="https://docs.google.com/spreadsheets/d/1gBQdmCtg6YMmBNhgBrw3J4JEsn4LW8-6/edit#gid=656243906">this table</ExternalLink>.
+                For more complete study information, download <ExternalLink to="https://drive.google.com/file/d/1936teBZlvBKbQf1hmdx5JImAxJFbVoIx/view?usp=sharing">this table</ExternalLink>.
             </section>
 
             <br/>
