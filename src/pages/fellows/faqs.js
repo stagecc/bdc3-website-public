@@ -1,13 +1,13 @@
 import React from 'react'
-import { SEO } from '../components/seo'
+import { SEO } from '../../components/seo'
 import { Link } from 'gatsby'
-import { PageContent } from '../components/layout'
-import { Title, Heading, Paragraph, ErrorMessage } from '../components/typography'
-import { Card, CardHeader, CardBody } from '../components/card'
+import { PageContent } from '../../components/layout'
+import { Title, Heading, Paragraph, ErrorMessage } from '../../components/typography'
+import { Card, CardHeader, CardBody } from '../../components/card'
 // import { Accordion } from '../components/accordion'
-import { ExternalLink } from '../components/link'
-import { Dots as LoadingDots } from '../components/loading'
-import { useFreshdesk } from '../hooks'
+import { ExternalLink } from '../../components/link'
+import { Dots as LoadingDots } from '../../components/loading'
+import { useFreshdesk } from '../../hooks'
 import { Accordion, Panel } from '@mwatson/react-accessible-accordion'
 
 const panelStyles = {
@@ -18,7 +18,7 @@ const panelStyles = {
 }
 
 const FaqPage = () => {
-    const { isLoading, folders, error } = useFreshdesk('GENERAL')
+    const { isLoading, folders, error } = useFreshdesk('FELLOWS')
 
     return (
         <PageContent width="95%" maxWidth="1200px" center gutters>
@@ -28,11 +28,11 @@ const FaqPage = () => {
                 keywords=""
             />
         
-            <Title>Frequently Asked Questions</Title>
+            <Title>Fellows Program FAQs</Title>
 
             <Paragraph>
-                This page includes answers to our most Frequently Asked Questions.
-                View the <Link to="/fellows/faqs">BioData Catalyst Fellows Program FAQs here</Link>.
+                This page includes collections of answers to our most Frequently Asked Questions about the BioData Catalyst Fellows Program.
+                View the <Link to="/faqs">BioData Catalyst General FAQs here</Link>.
             </Paragraph>
             
             {
@@ -85,6 +85,7 @@ const FaqPage = () => {
 
             <Paragraph>
                 If unanswered questions remain, view our complete <ExternalLink to="https://bdcatalyst.freshdesk.com/">Knowledge Base</ExternalLink> or submit a <Link to="/contact">help request</Link> to receive assistance.
+                Questions regarding the Fellows Program may be directed to the NHLBI BioData Catalyst Help Desk and by selecting the <strong>Fellows Program</strong> type from the <Link to="/contact/">contact form</Link>.
             </Paragraph>
 
         </PageContent>
