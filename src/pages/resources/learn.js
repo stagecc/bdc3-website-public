@@ -55,7 +55,7 @@ const resources = [
                 url: 'https://gen3.org/community/webinars/',
             },
             {
-                text: 'Terra Workshop Videos',
+                text: 'Terra Videos',
                 url: 'https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/analyze-data/terra/videos',
             },
         ]
