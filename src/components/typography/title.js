@@ -7,7 +7,7 @@ export const Title = styled.h1`
     // border: 1px solid #f09;
     margin: 2rem 0 0 0;
     line-height: 4rem;
-    color: #333;
+    color: var(--color-eggplant-dark);
     text-align: center;
     @media screen and (min-width: 767px) {
         text-align: left;

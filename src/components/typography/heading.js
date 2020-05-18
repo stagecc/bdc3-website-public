@@ -4,8 +4,7 @@ import PropTypes from 'prop-types'
 // 
 
 export const Heading = styled.h2`
-    color: #668;
-    color: ${ props => props.light ? '#eef' : '#668' };
+    color: ${ props => props.light ? '#eef' : 'var(--color-blueberry)' };
     text-align: center;
     @media screen and (min-width: 767px) {
         text-align: left;
