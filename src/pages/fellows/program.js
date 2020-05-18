@@ -79,7 +79,7 @@ const FellowsPage = () => {
                 
                 <Paragraph>
                     Preference will be given to proposals that leverage the strengths of the ecosystem to enable cutting edge research and also test the capabilities of the ecosystem.
-                    Consideration will be given to early-career applicants, especially those who will bring diversity to the BioData Catalyst community. 
+                    Consideration will be given to early-career applicants (graduate students, postdocs, junior faculty, and others), especially those who will bring diversity to the BioData Catalyst community. 
                 </Paragraph>
     
                 <Paragraph>
