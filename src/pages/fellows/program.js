@@ -143,7 +143,7 @@ const FellowsPage = () => {
     
                 <Paragraph>
                     Applicants submit proposals during the open Cohort 2 application window.
-                    Proposals should address the requirements below and any additional questions via the <a href="">Fellows Program Application Form</a>.
+                    Proposals should address the requirements below and any additional questions via the <a href="/fellows/apply">Fellows Program Application Form</a>.
                     The proposal should be understandable to readers from outside the field of study and must clearly spell out
                     the project aims, past studies, methods, materials, and BioData Catalyst engagement plan.
                 </Paragraph>
