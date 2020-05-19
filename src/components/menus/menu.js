@@ -28,7 +28,7 @@ export const MenuLink = styled(Link)`
     height: 100%;
     font-weight: 400;
     transition: color 500ms, background-color 150ms;
-    &:hover {
+    &:hover, &:focus {
         background-color: #ccc;
     }
     &.active {

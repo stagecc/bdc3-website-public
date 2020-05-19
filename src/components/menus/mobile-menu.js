@@ -72,7 +72,7 @@ const MenuLink = styled(Link)`
         background-color: #ffffff33;
         color: #eee;
     }
-    &:hover {
+    &:hover, &:focus {
         color: #eee;
         background-color: #ffffff22;
     }
