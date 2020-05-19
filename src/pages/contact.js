@@ -2,7 +2,7 @@ import React from 'react'
 import { SEO } from '../components/seo'
 import { PageContent } from '../components/layout'
 import { Title, Paragraph } from '../components/typography'
-
+import { ExternalLink } from '../components/link'
 const ContactPage = () => (
     <PageContent width="95%" maxWidth="1200px" center gutters>
         <SEO
@@ -15,6 +15,8 @@ const ContactPage = () => (
 
         <Paragraph>
             Use the form below to let us know your questions or concerns.
+            Do you need help with where to direct your question?
+            Please see the <ExternalLink to="https://bdcatalyst.freshdesk.com/support/solutions/articles/60000666868-where-do-i-direct-my-question-regarding-biodata-catalyst-and-the-help-desk-">help desk directory</ExternalLink> to understand the best option for directing your request.
         </Paragraph>
 
         <Paragraph center>
