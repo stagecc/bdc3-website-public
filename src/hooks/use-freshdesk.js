@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios'
 
-const GENERAL = 'GENERAL'
+// const GENERAL = 'GENERAL'
 const FELLOWS = 'FELLOWS'
 const FRESHDESK_API_ROOT = 'https://bdcatalyst.freshdesk.com/api/v2'
 const FRESHDESK_GENERAL_FAQS_CATEGORY_ID = '60000157358'
@@ -47,7 +47,7 @@ export const useFreshdesk = category => {
                 })
         }
         fetchArticles()
-    }, [])
+    }, [category])
     
     return { isLoading, folders, error }
 }

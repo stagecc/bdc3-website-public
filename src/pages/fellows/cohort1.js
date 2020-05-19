@@ -8,7 +8,6 @@ import { Title, Heading, Subheading, Subsubheading, Paragraph } from '../../comp
 import { useFellows, useWindowWidth } from '../../hooks'
 import { Collapser } from '../../components/collapser'
 import { kebabCase } from '../../utils'
-import { Container as Grid, Row, Col } from 'react-grid-system'
 
 const FellowHeading = styled(Subheading)`
     margin-bottom: 1rem;
@@ -27,11 +26,6 @@ const FellowName = styled.span`
 const FellowOrganization = styled.span`
     font-style: italic;
     font-weight: normal;
-`
-
-const FellowProject = styled.div`
-    margin-bottom: 1rem;
-    color: var(--color-eggplant);
 `
 
 const FellowBio = styled(Paragraph)`

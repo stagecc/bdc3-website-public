@@ -6,11 +6,9 @@ import { Title, Heading, Subheading, Paragraph } from '../../components/typograp
 import { BulletedList, OrderedList, ListItem } from '../../components/list'
 import { Table } from '../../components/table'
 import { Button } from '../../components/buttons'
-import { ExternalLink } from '../../components/link'
-import { Alert } from '../../components/alert'
 
 const FellowsPage = () => {
-    const [now, setNow] = useState(new Date())
+    const [now, ] = useState(new Date())
     const [acceptingApplications, setAcceptingApplications] = useState(false)
 
     const applicationWindow = {
@@ -20,7 +18,7 @@ const FellowsPage = () => {
 
     useEffect(() => {
         setAcceptingApplications(applicationWindow.startDate <= now && now <= applicationWindow.endDate)
-    }, [])
+    }, [now, applicationWindow.startDate, applicationWindow.endDate])
 
     return (
         <PageContent width="95%" maxWidth="1200px" center gutters>
