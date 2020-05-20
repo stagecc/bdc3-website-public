@@ -38,6 +38,10 @@ export const menuItems = [
                 path: '/fellows/program',
             },
             {
+                text: 'Apply',
+                path: '/fellows/apply',
+            },
+            {
                 text: 'Cohort I',
                 path: '/fellows/cohort1',
             },
