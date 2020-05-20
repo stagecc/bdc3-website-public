@@ -1,0 +1,22 @@
+# Number of days of inactivity before an issue becomes stale
+daysUntilStale: 30
+# Number of days of inactivity before a stale issue is closed
+daysUntilClose: 7
+# Issues with these labels will never be considered stale
+exemptLabels:
+  - pinned
+  - security
+# Label to use when marking an issue as stale
+staleLabel: stale?
+# Comment to post when marking an issue as stale. Set to `false` to disable
+markComment: >
+  Bleep, blorp... I'm a bot, and it looks like this issue has gone stale from inacivity.
+  It will be closed automatically if no further activity occurs.
+  Thanks for your contributions.
+# Comment to post when closing a stale issue. Set to `false` to disable
+closeComment: >
+  Bleep, blorp... Hey, it's me again!
+  It looks like this issue is still inactive, so I'm going to close it.
+  I’m only a robot, so if this has been closed in error, I do apologize.
+  Please feel free to reopen this issue or create a new one if it's needed.
+  Thanks for your contributions.
