@@ -58,11 +58,10 @@ const MobileNav = styled.nav`
 `
 
 const MenuLink = styled(Link)`
-    padding: 1rem 2rem;
+    padding: 0.5rem 1rem;
     width: 100%;
     color: #eef;
     letter-spacing: 2px;
-    font-size: 110%;
     font-weight: bold;
     text-decoration: none;
     transform: translateX(0);
@@ -79,7 +78,7 @@ const MenuLink = styled(Link)`
 `
 
 const SubmenuHeader = styled.a.attrs({ href: '' })`
-    padding: 1rem 2rem;
+    padding: 0.5rem 1rem;
     width: 100%;
     color: #eef;
     letter-spacing: 2px;
@@ -115,7 +114,7 @@ const Submenu = styled.nav`
     justify-content: flex-start;
     align-items: flex-start;
     ${ MenuLink } {
-        padding: 1rem 2rem 1rem 2rem;
+        padding: 0.5rem 1rem 0.5rem 2rem;
         &::before {
             content: "- ";
         }
