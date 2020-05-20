@@ -5,6 +5,7 @@ import { SEO } from '../../components/seo'
 import { PageContent } from '../../components/layout'
 import { Title, Heading, Subheading, Paragraph } from '../../components/typography'
 import { BulletedList, ListItem } from '../../components/list'
+import { Button } from '../../components/buttons'
 import { ExternalLink } from '../../components/link'
 import { Visible } from 'react-grid-system'
 import { DataAccess } from '../../components/data-access'
@@ -40,8 +41,14 @@ const DataPage = ({ data, location }) => {
                     <ListItem primary={ <span>Parent Studies <ExternalLink to="https://www.ncbi.nlm.nih.gov/gap/">dbGaP</ExternalLink></span> } />
                 </BulletedList>
                 
+                <Paragraph>
+                    For more complete study information, download a detailed spreadhsheet using the link below.
+                </Paragraph>
+                
+                <br/>
+                
                 <Paragraph center>
-                    <strong>For more complete study information, download <ExternalLink to="https://drive.google.com/file/d/1936teBZlvBKbQf1hmdx5JImAxJFbVoIx/view?usp=sharing">this table</ExternalLink>.</strong>
+                    <Button as="a" target="_blank" rel="noopener noreferrer" light href="https://drive.google.com/file/d/1936teBZlvBKbQf1hmdx5JImAxJFbVoIx/view?usp=sharing">Download Study Details</Button>
                 </Paragraph>
             </section>
 
