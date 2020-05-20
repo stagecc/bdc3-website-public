@@ -143,9 +143,9 @@ const AboutPage = ({ data }) => {
                                 If you wish to cite the BioData Catalyst ecosystem in your research, please use the following citation:
                             </Paragraph>
 
-                            <code style={{ display: 'block', margin: 'auto', width: '90%' }}>
-                                BioData Catalyst Consortium. (2020). The NHLBI BioData Catalyst. Zenodo. http://doi.org/10.5281/zenodo.3822858
-                            </code>
+                            <div style={{ display: 'block', margin: 'auto', width: '90%', whiteSpace: 'pre-wrap' }}>
+                                BioData Catalyst Consortium. (2020). The NHLBI BioData Catalyst. Zenodo. <a href="http://doi.org/10.5281/zenodo.3822858" target="_blank" rel="noreferrer noopener">http://doi.org/10.5281/zenodo.3822858</a>
+                            </div>
                         </section>
 
                     </Col>
