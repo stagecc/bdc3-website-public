@@ -47,6 +47,7 @@ const AboutPage = ({ data }) => {
                                 <ListItem primary={ <AnchorLink to="/about#who-we-are">Who we Are</AnchorLink> } />
                                 <ListItem primary={ <AnchorLink to="/about#contributing">Contribute</AnchorLink> } />
                                 <ListItem primary={ <AnchorLink to="/about#data-protection">Data Protection</AnchorLink> } />
+                                <ListItem primary={ <AnchorLink to="/about#citation">Citation</AnchorLink> } />
                             </List>
                         </Col>
                     </Visible>
@@ -121,6 +122,8 @@ const AboutPage = ({ data }) => {
                             </ol>
                         </section>
 
+                        <br/>
+
                         <section id="data-protection">
                             <Heading>Data Protection</Heading>
                             
@@ -129,6 +132,20 @@ const AboutPage = ({ data }) => {
                                 requires researchers bringing their own data to respect and protect the interests of research participants,
                                 and takes measures to secure the BioData Catalyst ecosystem. <Link to="/data-protection">Read more about how we do this</Link>.
                             </Paragraph>
+                        </section>
+
+                        <br/>
+
+                        <section id="citation">
+                            <Heading>How to Cite Us</Heading>
+                            
+                            <Paragraph>
+                                If you wish to cite the BioData Catalyst ecosystem in your research, please use the following citation:
+                            </Paragraph>
+
+                            <code style={{ display: 'block', margin: 'auto', width: '90%' }}>
+                                BioData Catalyst Consortium. (2020). The NHLBI BioData Catalyst. Zenodo. http://doi.org/10.5281/zenodo.3822858
+                            </code>
                         </section>
 
                     </Col>
