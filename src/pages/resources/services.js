@@ -13,7 +13,7 @@ import { usePlatforms } from '../../hooks'
 
 const ToolLinks = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     margin: 0 0 2rem 0;
 `
 
@@ -23,6 +23,7 @@ const InternalToolLink = styled(Link)`
 
 const ExternalToolLink = styled(ExternalLink)`
     margin: 0 0.5rem;
+    white-space: nowrap;
 `
 
 const Separator = styled.div`
@@ -91,97 +92,80 @@ const ServicesPage = ({ data }) => {
                 description=""
                 keywords=""
             />
-            <Grid fluid>
-                <Row>
-                    <Visible lg xl>
-                        <Col lg={ 3 }>
-                            <List style={{ position: 'sticky', top: '16rem', paddingRight: '2rem' }} right>
-                                <ListItem primary={ <AnchorLink to="/resources/services#actions">What Do You Want To Do Today?</AnchorLink> } />
-                                <ListItem primary={ <AnchorLink to="/resources/services#imputation-server">Imputation Server</AnchorLink> } />
-                            </List>
-                        </Col>
-                    </Visible>
-                    
-                    <Col xs={ 12 } lg={ 9 }>
-                        <Title>Platforms and Services</Title>
 
-                        <section id="actions">
-                            <Heading>What Do You Want to Do Today?</Heading>
+            <Title>Platforms and Services</Title>
 
-                            {
-                                services.map((service, i) => (
-                                    <Row key={ i }>
-                                        <Card key={ service.cardTitle }>
-                                            <CardHeader>{ service.cardTitle }</CardHeader>
-                                            <CardBody>
-                                                <Grid fluid>
-                                                    <Row gutterWidth={ 0 }>
-                                                        {
-                                                            service.cardItems.map((platform, i) => (
-                                                                <Fragment key={ i }>
-                                                                    <Col xs={ 12 } lg={ 5 } style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                                                                        <h3 style={{ textAlign: 'center' }}>BioData Catalyst powered by { platform.frontmatter.title }</h3>
-                                                                        <Paragraph>
-                                                                            { platform.frontmatter.service }
-                                                                        </Paragraph>
-                                                                        <ToolLinks>
-                                                                            { platform.frontmatter.links.launch && <ExternalToolLink to={ platform.frontmatter.links.launch } aria-label={ `Launch ${ platform.frontmatter.title }` }>Launch</ExternalToolLink> }
-                                                                            { platform.frontmatter.links.launch && '|' }
-                                                                            { platform.frontmatter.links.documentation && <ExternalToolLink to={ platform.frontmatter.links.documentation }aria-label={ `View ${ platform.frontmatter.title } documentation` }>Documentation</ExternalToolLink> }
-                                                                            { platform.frontmatter.links.documentation && '|' }
-                                                                            <InternalToolLink to={ platform.frontmatter.path } aria-label={ `Learn more about ${ platform.frontmatter.title }` }>Learn</InternalToolLink>
-                                                                        </ToolLinks>
+            <section>
+                <Heading>What Do You Want to Do Today?</Heading>
+
+                {
+                    services.map((service, i) => (
+                        <Card key={ service.cardTitle }>
+                            <CardHeader>{ service.cardTitle }</CardHeader>
+                            <CardBody>
+                                <Grid fluid>
+                                    <Row gutterWidth={ 0 }>
+                                        {
+                                            service.cardItems.map((platform, i) => (
+                                                <Fragment key={ i }>
+                                                    <Col xs={ 12 } lg={ 5 } style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                                                        <h3 style={{ textAlign: 'center' }}>BioData Catalyst powered by { platform.frontmatter.title }</h3>
+                                                        <Paragraph>
+                                                            { platform.frontmatter.service }
+                                                        </Paragraph>
+                                                        <ToolLinks>
+                                                            { platform.frontmatter.links.launch && <ExternalToolLink to={ platform.frontmatter.links.launch } aria-label={ `Launch ${ platform.frontmatter.title }` }>Launch</ExternalToolLink> }
+                                                            { platform.frontmatter.links.launch && '|' }
+                                                            { platform.frontmatter.links.documentation && <ExternalToolLink to={ platform.frontmatter.links.documentation }aria-label={ `View ${ platform.frontmatter.title } documentation` }>Documentation</ExternalToolLink> }
+                                                            { platform.frontmatter.links.documentation && '|' }
+                                                            <InternalToolLink to={ platform.frontmatter.path } aria-label={ `Learn more about ${ platform.frontmatter.title }` }>Learn</InternalToolLink>
+                                                        </ToolLinks>
+                                                    </Col>
+                                                    {
+                                                        i + 1 < service.cardItems.length && (
+                                                            <Fragment>
+                                                                <Visible lg xl>
+                                                                    <Col md={ 2 }>
+                                                                        <Separator vertical />
                                                                     </Col>
-                                                                    {
-                                                                        i + 1 < service.cardItems.length && (
-                                                                            <Fragment>
-                                                                                <Visible lg xl>
-                                                                                    <Col md={ 2 }>
-                                                                                        <Separator vertical />
-                                                                                    </Col>
-                                                                                </Visible>
-                                                                                <Visible xs sm md>
-                                                                                    <Col xs={ 12 }>
-                                                                                        <Separator horizontal />
-                                                                                    </Col>
-                                                                                </Visible>                                                
-                                                                            </Fragment>
-                                                                        )
-                                                                    }
-                                                                </Fragment>
-                                                            ))
-                                                        }
-                                                    </Row>
-                                                </Grid>
-                                            </CardBody>
-                                        </Card>
+                                                                </Visible>
+                                                                <Visible xs sm md>
+                                                                    <Col xs={ 12 }>
+                                                                        <Separator horizontal />
+                                                                    </Col>
+                                                                </Visible>                                                
+                                                            </Fragment>
+                                                        )
+                                                    }
+                                                </Fragment>
+                                            ))
+                                        }
                                     </Row>
-                                ))
-                            }
-                        </section>
+                                </Grid>
+                            </CardBody>
+                        </Card>
+                    ))
+                }
+            </section>
 
-                        <section id="imputation-server">
-                            <Heading id="actions">Imputation Server</Heading>
-                            <Card>
-                                <CardHeader>Access the Imputation Server</CardHeader>
-                                <CardBody>
-                                    <h3 style={{ textAlign: 'center' }}> Imputation Server developed by the University of Michigan</h3>
-                                    <Paragraph>
-                                        Upload your own phased or unphased GWAS genotypes to the server and receive phased and imputed genomes in return.
-                                        The server offers imputation from various reference panels including the TOPMed reference panel. 
-                                    </Paragraph>
-                                    <ToolLinks>
-                                        <ExternalToolLink to="https://imputation.biodatacatalyst.nhlbi.nih.gov/" aria-label="Launch imputation server">Launch</ExternalToolLink>
-                                        |
-                                        <ExternalToolLink to="https://imputationserver.readthedocs.io/en/latest/" aria-label="View imputation server documentation">Documentation</ExternalToolLink>
-                                    </ToolLinks>
-                                </CardBody>
-                            </Card>
-                        </section>
-
-                    </Col>
-                </Row>    
-            </Grid>
+            <section>
+                <Heading>Imputation Server</Heading>
+                <Card>
+                    <CardHeader>Access the Imputation Server</CardHeader>
+                    <CardBody>
+                        <h3 style={{ textAlign: 'center' }}> Imputation Server developed by the University of Michigan</h3>
+                        <Paragraph>
+                            Upload your own phased or unphased GWAS genotypes to the server and receive phased and imputed genomes in return.
+                            The server offers imputation from various reference panels including the TOPMed reference panel. 
+                        </Paragraph>
+                        <ToolLinks>
+                            <ExternalToolLink to="https://imputation.biodatacatalyst.nhlbi.nih.gov/" aria-label="Launch imputation server">Launch</ExternalToolLink>
+                            |
+                            <ExternalToolLink to="https://imputationserver.readthedocs.io/en/latest/" aria-label="View imputation server documentation">Documentation</ExternalToolLink>
+                        </ToolLinks>
+                    </CardBody>
+                </Card>
+            </section>
             
         </PageContent>
     )

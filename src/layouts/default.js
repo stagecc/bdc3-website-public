@@ -11,7 +11,6 @@ import { List, ListItem } from '../components/list'
 import { useWindowWidth } from '../hooks'
 import hexBackgroundLeftSvg from '../images/hex-background-left.svg'
 import hexBackgroundRightSvg from '../images/hex-background-right.svg'
-import { ButtonExternalLink } from '../components/buttons'
 import { ExternalLink } from '../components/link'
 
 import '../styles/normalize.css'
@@ -79,8 +78,8 @@ export const DefaultLayout = ({ children }) => {
                                     <ListItem primary={ <Link to="/accessibility">Accessibility</Link> } />
                                     <ListItem primary={ <Link to="/privacy">Privacy Policy</Link> } />
                                     <ListItem primary={ <Link to="/data-protection">Data Protection</Link> } />
-                                    <ListItem primary={ <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/">Documentation</ExternalLink> } />
-                                    <ListItem primary={ <ExternalLink to="https://www.nhlbi.nih.gov/about/foia-fee-for-service-office">Freedom of Information Act (FOIA)</ExternalLink> } / >
+                                    <ListItem primary={ <ExternalLink lightIcon to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/">Documentation</ExternalLink> } />
+                                    <ListItem primary={ <ExternalLink to="https://www.nhlbi.nih.gov/about/foia-fee-for-service-office">Freedom of Information Act (FOIA)</ExternalLink> } />
                                 </List>
                             </Col>
                             <Col xs={ 12 } md={ 7 } pull={{ md: 5 }}>
@@ -95,8 +94,11 @@ export const DefaultLayout = ({ children }) => {
                         </Row>
                         <Row>
                             <Col xs={ 12 } style={{ textAlign: 'center' }}>
-                                <Heading center light noMargin>Consortium Members</Heading> <br/><br/>
-                                <ButtonExternalLink light to="https://nhlbidatastage.org/Security/login"><strong>Login</strong></ButtonExternalLink>
+                                <strong style={{ textTransform: 'uppercase' }}>
+                                    <ExternalLink lightIcon to="https://nhlbidatastage.org/Security/login">
+                                        Consortium Member Portal
+                                    </ExternalLink>
+                                </strong>
                             </Col>
                         </Row>
                     </Grid>

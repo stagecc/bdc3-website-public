@@ -187,7 +187,7 @@ const LearnPage = () => (
                         <Col key={ resource.title } xs={ 12 } md={ 6 } xl={ 4 } style={{ margin: '3rem 0' }}>
                             <ResourceCard title={ resource.title } icon={ resource.icon || 'ICON' }>
                                 <Paragraph>{ resource.description }</Paragraph>
-                                <BulletedList dense>
+                                <BulletedList>
                                     {
                                         resource.links.map(link => (
                                             <ListItem key={ link.text } primary={ <ExternalLink to={ link.url }>{ link.text }</ExternalLink> } />

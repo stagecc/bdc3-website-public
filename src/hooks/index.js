@@ -1,3 +1,4 @@
+export * from './use-dialog'
 export * from './use-fellows'
 export * from './use-fence'
 export * from './use-freshdesk'

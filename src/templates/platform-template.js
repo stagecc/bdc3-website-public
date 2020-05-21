@@ -17,11 +17,7 @@ const KeyFeaturesList = styled.div`
     }
 `
 
-const LinkList = styled(Paragraph)`
-    & ${ ExternalLink } {
-        margin: 0 1rem;
-    }
-`
+const LinkList = styled(Paragraph)``
 
 const LogoContainer = styled.div`
     min-width: 300px;
@@ -44,8 +40,7 @@ export default ({ data }) => {
             <Heading center>Powered by { frontmatter.title }</Heading>
             
             <LinkList center>
-                <ExternalLink to={ frontmatter.links.launch }>Website</ExternalLink> | 
-                <ExternalLink to={ frontmatter.links.documentation }>Documentation</ExternalLink>
+                <ExternalLink to={ frontmatter.links.launch }>Website</ExternalLink> | <ExternalLink to={ frontmatter.links.documentation }>Documentation</ExternalLink>
             </LinkList>
 
             <Heading>About { frontmatter.title }</Heading>

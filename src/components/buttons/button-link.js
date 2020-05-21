@@ -15,7 +15,7 @@ export const ButtonLink = styled(Button).attrs({ as: Link })`
     ${ transitionBrightness }
 `
 
-export const ButtonExternalLink = styled(Button).attrs({ as: ExternalLink })`
+export const ButtonExternalLink = styled(Button)`
     ${ transitionBrightness }
 `
 
