@@ -4,16 +4,8 @@ import { SEO } from '../components/seo'
 import { Title, Heading, Subheading, Paragraph } from '../components/typography'
 import { ExternalLink } from '../components/link'
 import { BulletedList, ListItem } from '../components/list'
-import { useDialog } from '../hooks'
 
 const PrivacyPage = () => {
-    const dialog = useDialog()
-    
-    dialog.setTitle('TEST TEST')
-    dialog.setInnerHTML(`
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati voluptatem facere magnam.</p>
-    `)
-
     return (
         <PageContent width="95%" maxWidth="1200px" center gutters>
             <SEO
@@ -24,8 +16,6 @@ const PrivacyPage = () => {
             
             <Title>Privacy Policy</Title>
 
-            <button onClick={ dialog.open }>dialog</button>
-     
             <Paragraph>
                 The <ExternalLink to="https://www.nhlbi.nih.gov/">National Heart Lung and Blood Institute</ExternalLink> (NHLBI) operates the BioData Catalyst website . Protecting your privacy is very important to us.
                 The following information establishes how the BioData Catalyst website will use information gathered from your visit.
