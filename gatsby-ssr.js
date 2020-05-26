@@ -15,7 +15,7 @@ export const wrapPageElement = ({ element, props }) => {
 
 export function onRenderBody({ setPostBodyComponents }) {
     setPostBodyComponents([
-        <script
+        <script key="0" type="text/javascript"
             dangerouslySetInnerHTML={{ __html: `
                 window.fwSettings={
                     'widget_id': 60000000998
@@ -23,6 +23,9 @@ export function onRenderBody({ setPostBodyComponents }) {
                 !function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}() 
             `}}
         />,
-        <script type='text/javascript' src='https://widget.freshworks.com/widgets/60000000998.js' async defer></script>,
+        <script key="1" type="text/javascript" src='https://widget.freshworks.com/widgets/60000000998.js' async defer></script>,
+        <script key="2" type="text/javascript" dangerouslySetInnerHTML={{ __html: `
+            FreshworksWidget('hide', 'ticketForm', ['name']);
+        ` }}></script>
   ]);
 }
