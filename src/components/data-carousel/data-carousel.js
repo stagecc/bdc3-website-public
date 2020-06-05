@@ -67,6 +67,7 @@ const Wrapper = styled.div`
     margin-bottom: 4rem;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% calc(100% - 5vw));
     position: relative;
+    transition: filter 250ms;
     &::before {
         content: "";
         position: absolute;
@@ -81,6 +82,10 @@ const Wrapper = styled.div`
     }
     &:hover ${ StateNote } {
         filter: opacity(1.0);
+    }
+    &:focus {
+        border: 1px dashed var(--color-crimson);
+        filter: saturate(0.75);
     }
 `
 
@@ -110,6 +115,13 @@ export const DataCarousel = () => {
         }
     }, [carouselIndex, playingAnimations])
 
+    const handleKeyDown = event => {
+        if (event.keyCode === 32) {
+            event.preventDefault()
+            setPlayingAnimations(!playingAnimations)
+        }
+    }
+
     const detailsTransitions = useTransition(carouselItems[carouselIndex], item => item.key, {
         from: { opacity: 0, transform: 'perspective(600px) translate3d(0, -80%, -300px)' },
         enter: { opacity: 1, transform: 'perspective(600px) translate3d(0, 0, 0)' },
@@ -133,10 +145,10 @@ export const DataCarousel = () => {
                 compact={ isCompact }
                 backgroundColor="#00abf5"
                 backgroundImage={ backgroundImage }
+                tabIndex="0"
                 onMouseOver={ () => setPlayingAnimations(false) }
-                onFocus={ () => setPlayingAnimations(false) }
                 onMouseLeave={ () => setPlayingAnimations(true) }
-                onBlur={ () => setPlayingAnimations(true) }
+                onKeyDown={ handleKeyDown }
             >
                 <Overlay compact={ isCompact }>
                     <DetailsPanel compact={ isCompact }>
@@ -155,7 +167,7 @@ export const DataCarousel = () => {
                     </DataPanel>
                     {
                         <StateNote>
-                            <span style={{ marginRight: '0.5rem' }}>Animations pause while hovering</span>
+                            <span style={{ marginRight: '0.5rem' }}>Animations paused</span>
                             { playingAnimations ? <PlayIcon size={ 16 } fill="#fff"/> : <PauseIcon size={ 16 } fill="#fff"/> }
                         </StateNote>
                     }
