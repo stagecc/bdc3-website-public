@@ -49,11 +49,26 @@ const LayoutWrapper = styled.div`
     }
 `
 
+const SkipLink = styled.a`
+    display: block;
+    position: absolute;
+    background-color: var(--color-crimson);
+    color: #eee;
+    padding: 0.5rem;
+    z-index: 999;
+    transition: transform 250ms;
+    transform: translateY(-100%);
+    &:focus {
+        transform: translateY(0%);
+    }
+`
+
 export const DefaultLayout = ({ children }) => {
     const { isCompact } = useWindowWidth()
 
     return typeof isCompact === 'boolean' && (
         <LayoutWrapper compact={ isCompact }>
+            <SkipLink href="#main-content">Skip to main content</SkipLink>
             <StickyWrapper stuck={ true }>
                 <Header>
                     <Brand width="380px" style={{ padding: '0 1rem', transition: 'transform 250ms', transform: `translateX(${ isCompact ? '-34%' : '0' })` }} />
@@ -65,7 +80,7 @@ export const DefaultLayout = ({ children }) => {
                     </Visible>
                 </Header>
             </StickyWrapper>
-            <Main>
+            <Main id="main-content">
                 { children }
             </Main>
             <Footer>
