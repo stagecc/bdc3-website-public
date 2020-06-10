@@ -6,6 +6,7 @@ import { Title, Heading, Subheading, Paragraph } from '../../components/typograp
 import { BulletedList, OrderedList, ListItem } from '../../components/list'
 import { Table } from '../../components/table'
 import { Button } from '../../components/buttons'
+import { ExternalLink } from '../../components/link'
 
 const FellowsPage = () => {
     const [now, ] = useState(new Date())
@@ -56,6 +57,10 @@ const FellowsPage = () => {
                     <ListItem primary="Have dedicated time to work with TOPMed data and other data sources to accelerate their research productivity." />
                     <ListItem primary="Act as our ambassadors in their communities to help onboard others." />
                 </BulletedList>
+
+                <Paragraph>
+                    Read what our <ExternalLink to="https://drive.google.com/file/d/1obNRHh3s0s8k4yJCctYvCHdZ5KsL6Uj_/view?usp=sharing">Cohort I Fellows have said</ExternalLink> about the NHLBI BioData Catalyst ecosystem.
+                </Paragraph>
 
                 {
                     acceptingApplications && (

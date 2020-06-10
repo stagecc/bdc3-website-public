@@ -7,6 +7,7 @@ import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import { Title, Heading, Subheading, Subsubheading, Paragraph } from '../../components/typography'
 import { useFellows, useWindowWidth } from '../../hooks'
 import { Collapser } from '../../components/collapser'
+import { ExternalLink } from '../../components/link'
 import { kebabCase } from '../../utils'
 
 const FellowHeading = styled(Subheading)`
@@ -110,6 +111,7 @@ const FellowsPage = () => {
                 </Paragraph>
                 <Paragraph>
                     Cohort I Fellows will work on the BioData Catalyst Ecosystem from March 2020 to March 2021.
+                    Read what our <ExternalLink to="https://drive.google.com/file/d/1obNRHh3s0s8k4yJCctYvCHdZ5KsL6Uj_/view?usp=sharing">Cohort I Fellows have said</ExternalLink> about the NHLBI BioData Catalyst ecosystem.
                 </Paragraph>
             </section>
             
