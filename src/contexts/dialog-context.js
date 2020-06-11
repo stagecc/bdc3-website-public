@@ -1,6 +1,6 @@
 import React, { Fragment, useCallback, useContext, useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
-import { Heading, Paragraph } from '../components/typography'
+import { Heading } from '../components/typography'
 import { Button, IconButton } from '../components/buttons'
 import { CloseIcon } from '../components/icons'
 import { animated, useSpring } from 'react-spring'
@@ -15,7 +15,7 @@ const Overlay = styled.div`
     z-index: 999;
 `
 
-const Wrapper = styled(animated.div)`
+const Wrapper = styled(animated.div).attrs({ role: 'dialog' })`
     width: 95%;
     max-width: 800px;
     position: fixed;
@@ -28,6 +28,8 @@ const Wrapper = styled(animated.div)`
     color: var(--color-eggplant);
     padding: 0;
     filter: drop-shadow(0 0 0.25rem rgba(0, 0, 0, 0.5));
+    overflow-y: auto;
+    max-height: calc(100vh - 2rem);
 `
 
 const Header = styled.div`
@@ -51,12 +53,11 @@ const Actions = styled.div`
     padding: 1rem;
     text-align: right;
     & button {
-        margin: 0 0.25rem;
+        margin: 0.25rem 0.5rem;
     }
 `
 
 const Dialog = ({ onContinue }) => {
-    console.log('in dialog', onContinue)
     const dialog = useContext(DialogContext)
     const dialogRef = useRef()
     const [focusableElements, setFocusableElements] = useState([])
@@ -95,8 +96,12 @@ const Dialog = ({ onContinue }) => {
     useEffect(() => {
         if (dialog.isOpen) {
             document.addEventListener('keydown', handleKeyDown)
+            document.body.style.position = 'fixed'
         }
-        return document.removeEventListener('keydown', handleKeyDown)
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown)
+            document.body.style.position = 'static'
+        }
     }, [dialog.isOpen])
 
     return (
@@ -105,15 +110,15 @@ const Dialog = ({ onContinue }) => {
             <Wrapper onKeyDown={ handleKeyDown } ref={ dialogRef } style={ animation }>
                 <Header>
                     <Title>{ dialog.title }</Title>
-                    <IconButton onClick={ dialog.close } >
-                        <CloseIcon size={ 24  } fill="var(--color-crimson)" />
+                    <IconButton autoFocus onClick={ dialog.close } >
+                        <CloseIcon size={ 24 } fill="var(--color-crimson)" />
                     </IconButton>
                 </Header>
                 <Body>
-                { dialog.contents }
+                    { dialog.contents }
                 </Body>
                 <Actions>
-                    <Button autoFocus onClick={ dialog.close } light>Cancel</Button>
+                    <Button onClick={ dialog.close } light>Cancel</Button>
                     <Button onClick={ onContinue }>Continue</Button>
                 </Actions>
             </Wrapper>
