@@ -7,8 +7,8 @@ import { DataCarousel } from '../components/data-carousel'
 import { HexMenu } from '../components/menus'
 import { BulletedList, ListItem } from '../components/list'
 import { Hidden } from 'react-grid-system'
-import SickleCellImage from '../images/sickle-cell.webp'
-import BlurChartCheckUpCurve from '../images/blur-chart-check-up-curve.webp'
+import SickleCellImage from '../images/sickle-cell.jpg'
+import BlurChartCheckUpCurve from '../images/blur-chart-check-up-curve.jpg'
 
 const IndexPage = () => {
     return (

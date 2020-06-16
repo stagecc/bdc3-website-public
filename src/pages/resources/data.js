@@ -121,14 +121,14 @@ export default DataPage
 
 export const query = graphql`
     {
-        dataBucketsGraphic: file(relativePath: {eq: "data-buckets.webp"}) {
+        dataBucketsGraphic: file(relativePath: {eq: "data-buckets.png"}) {
             childImageSharp {
                 fluid {
                     ...GatsbyImageSharpFluid
                 }
             }
         }
-        dataBucketsGraphicMobile: file(relativePath: {eq: "data-buckets-mobile.webp"}) {
+        dataBucketsGraphicMobile: file(relativePath: {eq: "data-buckets-mobile.png"}) {
             childImageSharp {
                 fluid {
                     ...GatsbyImageSharpFluid
