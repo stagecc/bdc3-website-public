@@ -9,6 +9,7 @@ import { Button } from '../../components/buttons'
 import { ExternalLink } from '../../components/link'
 import { Visible } from 'react-grid-system'
 import { DataAccess } from '../../components/data-access'
+import { DownloadIcon } from '../../components/icons'
 
 const DataPage = ({ data, location }) => {
     const { dataBucketsGraphic, dataBucketsGraphicMobile } = data
@@ -42,13 +43,24 @@ const DataPage = ({ data, location }) => {
                 </BulletedList>
                 
                 <Paragraph>
-                    For more complete study information, download a detailed spreadhsheet using the link below.
+                    Download BioData Catalyst Release Notes and Study Details (TOPMed phs numbers with genomic data) below.
                 </Paragraph>
                 
                 <br/>
                 
                 <Paragraph center>
-                    <Button as="a" target="_blank" rel="noopener noreferrer" light href="https://drive.google.com/file/d/1936teBZlvBKbQf1hmdx5JImAxJFbVoIx/view?usp=sharing">Download Study Details</Button>
+                    <Button light as="a" target="_blank" rel="noopener noreferrer"
+                        href="https://drive.google.com/file/d/1936teBZlvBKbQf1hmdx5JImAxJFbVoIx/view?usp=sharing"
+                        style={{ margin: '1rem', display: 'inline-flex', alignItems: 'center' }}
+                    >
+                        Study Details &nbsp;&nbsp; <DownloadIcon fill="var(--color-crimson)" size={ 24 } />
+                    </Button>
+                    <Button light as="a" target="_blank" rel="noopener noreferrer"
+                        href="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/biodata-catalyst-release-notes/2020-04-02-biodata-catalyst-ecosystem-release-notes"
+                        style={{ margin: '1rem', display: 'inline-flex', alignItems: 'center' }}
+                    >
+                        Release Notes &nbsp;&nbsp; <DownloadIcon fill="var(--color-crimson)" size={ 24 } />
+                    </Button>
                 </Paragraph>
             </section>
 
