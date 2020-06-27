@@ -14,7 +14,7 @@ const FellowsPage = () => {
 
     const applicationWindow = {
         startDate: new Date('May 14, 2020 00:00:00'),
-        endDate: new Date('July 26, 2020 23:59:59'),
+        endDate: new Date('June 26, 2020 23:59:59'),
     }
 
     useEffect(() => {
@@ -148,7 +148,7 @@ const FellowsPage = () => {
     
                 <Paragraph>
                     Applicants submit proposals during the open Cohort 2 application window.
-                    Proposals should address the requirements below and any additional questions via the <a href="/fellows/apply">Fellows Program Application Form</a>.
+                    Proposals should address the requirements below and any additional questions via the Fellows Program Application Form.
                     The proposal should be understandable to readers from outside the field of study and must clearly spell out
                     the project aims, past studies, methods, materials, and BioData Catalyst engagement plan.
                 </Paragraph>
