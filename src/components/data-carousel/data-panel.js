@@ -44,14 +44,6 @@ export const Datum = styled.span`
     transform: translateX(${ props => props.active ? '0%' : '100%' });
     &:first-child { padding-top: 1rem; }
     &:last-child { padding-bottom: 1rem; }
-    ${ DatumValue } {
-        transition: opacity 1500ms 0ms;
-        opacity: ${ props => props.active ? '1.0' : '0.0' };
-    }
-    ${ DatumName } {
-        transition: opacity 1500ms 100ms;
-        opacity: ${ props => props.active ? '1.0' : '0.0' };
-    }
 `
 
 export const Data = ({ data, style }) => {
