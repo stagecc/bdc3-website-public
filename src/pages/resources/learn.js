@@ -47,6 +47,10 @@ const resources = [
         description: 'BioData Catalyst webinars, workshops, and how to videos.',
         links: [
             {
+                text: 'BioData Catalyst Demonstration (1:02:53)',
+                url: 'https://videocast.nih.gov/watch=37703',
+            },
+            {
                 text: 'Dockstore Videos',
                 url: 'https://www.youtube.com/channel/UCFWNYqxQvVLAuZq8rdOSE4g/videos',
             },
