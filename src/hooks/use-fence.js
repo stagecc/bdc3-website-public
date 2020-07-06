@@ -38,6 +38,7 @@ export const useFence = location => {
         const fetchProjects = async accessToken => {
             await axios.get(fenceUserinfoUrl, { headers: { 'Authorization': `Bearer ${ accessToken }` } })
                 .then(response => {
+                    console.log(response)
                     setUser(response.data)
                     setProjects(extractProjects(response.data).sort())
                 })
