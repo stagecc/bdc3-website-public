@@ -2,5 +2,13 @@
   {
     "from": "/fellows/apply",
     "to": "https://share.hsforms.com/1PMo1E2oRT0Cb0DzwHD9-9Q3ry9k"
+  },
+  {
+    "from": "/resources/",
+    "to": "/resources/data"
+  },
+  {
+    "from": "/fellows/",
+    "to": "/fellows/program"
   }
 ]
