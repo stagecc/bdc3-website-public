@@ -1,6 +1,7 @@
 export default ({ data }) => {
     const { redirectsJson } = data
     window.location.replace(redirectsJson.to)
+    return null
 }
 
 export const redirectQuery = graphql`
