@@ -38,14 +38,13 @@ export const useFence = location => {
         const fetchProjects = async accessToken => {
             await axios.get(fenceUserinfoUrl, { headers: { 'Authorization': `Bearer ${ accessToken }` } })
                 .then(response => {
-                    console.log(response)
                     setUser(response.data)
                     setProjects(extractProjects(response.data).sort())
                 })
                 .catch(error => { setError(error) })
         }
         // if fence user found in local storage
-        if (fenceUser) {
+        if (fenceUser && !authed) {
             setIsLoading(true)
             try {
                 const jwt = jwtDecode(fenceUser.id_token)
@@ -61,11 +60,12 @@ export const useFence = location => {
                     throw new Error('nope')
                 }
             } catch {
+                setIsLoading(false)
                 setAuthed(false)
             }
         }
         // if fence query params are present
-        if (authParams && authParams.hasOwnProperty('id_token')) {
+        if (authParams && authParams.hasOwnProperty('id_token') && !authed) {
             setIsLoading(true)
             const jwt = jwtDecode(authParams.id_token)
             const { exp } = jwt

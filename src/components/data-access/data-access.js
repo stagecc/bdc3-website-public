@@ -83,7 +83,7 @@ export const DataAccess = ({ location }) => {
                             </Paragraph>
                                 
                             <Paragraph center style={{ margin: '2rem' }}>
-                                <Button as="a" href="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/data-access/check-my-access-to-data" target="_blank" rel="noopener noreferrer">Check My Access</Button>
+                                <Button as="a" href={ fenceCheckAccessUrl }>Check My Access</Button>
                             </Paragraph>
                         </Fragment>
                     )
