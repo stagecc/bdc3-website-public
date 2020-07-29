@@ -59,6 +59,10 @@ const resources = [
                 url: 'https://gen3.org/community/webinars/',
             },
             {
+                text: 'Seven Bridges',
+                url: 'https://www.sevenbridges.com/webinars/',
+            },
+            {
                 text: 'Terra Videos',
                 url: 'https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/analyze-data/terra/videos',
             },
@@ -149,10 +153,6 @@ const resources = [
             {
                 text: 'Gen3 Announcements',
                 url: 'https://forums.gen3.org/c/announcements/6',
-            },
-            {
-                text: 'Gen3 Webinars',
-                url: 'https://gen3.org/community/webinars/',
             },
             {
                 text: 'Terra Community Events',
