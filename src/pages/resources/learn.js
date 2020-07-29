@@ -33,7 +33,7 @@ const resources = [
             },
             {
                 text: 'Seven Bridges Documentation',
-                url: 'https://sb-biodatacatalyst.readme.io/docs'
+                url: 'https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/analyze-data/seven-bridges'
             },
             {
                 text: 'Terra Documentation',
