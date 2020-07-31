@@ -7,7 +7,7 @@ import { Card, CardHeader, CardBody } from '../components/card'
 // import { Accordion } from '../components/accordion'
 import { ExternalLink } from '../components/link'
 import { Dots as LoadingDots } from '../components/loading'
-import { useFreshdesk } from '../hooks'
+import { useFreshdeskFaqs } from '../hooks'
 import { Accordion, Panel } from '@mwatson/react-accessible-accordion'
 
 const panelStyles = {
@@ -18,7 +18,7 @@ const panelStyles = {
 }
 
 const FaqPage = () => {
-    const { isLoading, folders, error } = useFreshdesk('GENERAL')
+    const { isLoading, folders, error } = useFreshdeskFaqs('GENERAL')
 
     return (
         <PageContent width="95%" maxWidth="1200px" center gutters>

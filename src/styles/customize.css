@@ -19,6 +19,7 @@ a:hover, a:active {
 }
 
 :root {
+    --color-lightgrey: #a0a2a4;
     --color-grey: #606264;
     --color-crimson: #b33243;
     --color-eggplant: #323268;
