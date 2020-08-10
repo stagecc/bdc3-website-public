@@ -43,6 +43,7 @@ const ErrorMessage = () => {
 
 export const CloudCreditsForm = () => {
     const [platformOptions, setPlatformOptions] = useState([])
+    const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [estimate, setEstimate] = useState(1)
     const [platform, setPlatform] = useState('')
@@ -68,7 +69,8 @@ export const CloudCreditsForm = () => {
         let prefix = (window.location.hostname.includes('staging.') || window.location.hostname.includes('localhost'))
             ? '[TEST] '
             : ''
-        const description = `Email Address: ${ email } ~~~~~ `
+        const description = `Name: ${ name } ~~~~~ `
+                    + `Email Address: ${ email } ~~~~~ `
                     + `Estimate of Cloud Credits Needed: $${ estimate } ~~~~~ `
                     + `Platform/Service: ${ platform } ~~~~~ `
                     + `Justification for Credits: ${ justification } ~~~~~ `
@@ -79,6 +81,7 @@ export const CloudCreditsForm = () => {
             description: prefix + description,
             priority: 1,
             status: 2,
+            name: name,
             email: email,
             custom_fields: {
                 cf_estimated_cloud_credits_requested: +estimate,
@@ -103,6 +106,7 @@ export const CloudCreditsForm = () => {
         submitTicket()
     }
 
+    const handleChangeName = event => setName(event.target.value)
     const handleChangeEmail = event => setEmail(event.target.value)
     const handleChangeEstimate = event => setEstimate(event.target.value)
     const handleChangePlatform = event => setPlatform(event.target.value)
@@ -118,6 +122,13 @@ export const CloudCreditsForm = () => {
                 {
                     !wasSubmitted && platformOptions.length > 0 && (
                         <Form onSubmit={ handleSubmit }>
+                            <FormControl>
+                                <label htmlFor="name">Your Name</label>
+                                <TextInput type="text" required
+                                    id="name" name="name"
+                                    value={ name } onChange={ handleChangeName }
+                                />
+                            </FormControl>
                             <FormControl>
                                 <label htmlFor="email">Email Address</label>
                                 <TextInput type="email" required

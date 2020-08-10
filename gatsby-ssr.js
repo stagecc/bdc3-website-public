@@ -24,8 +24,5 @@ export function onRenderBody({ setPostBodyComponents }) {
             `}}
         />,
         <script key="1" type="text/javascript" src='https://widget.freshworks.com/widgets/60000000998.js' async defer></script>,
-        <script key="2" type="text/javascript" dangerouslySetInnerHTML={{ __html: `
-            FreshworksWidget('hide', 'ticketForm', ['name']);
-        ` }}></script>
   ]);
 }
