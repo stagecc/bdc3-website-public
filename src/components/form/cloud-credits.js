@@ -6,6 +6,7 @@ import { Button } from '../buttons'
 import { Card, CardHeader, CardBody } from '../card'
 import { Dots as LoadingDots } from '../loading'
 import { ExternalLink } from '../link'
+import { Form, FormControl, TextInput, HelpText, AdornedInput, Select, Option, TextArea } from './inputs'
 
 const FRESHDESK_API_KEY = process.env.GATSBY_FRESHDESK_API_KEY
 const FRESHDESK_API_CREATE_TICKET_URL = `${ process.env.GATSBY_FRESHDESK_API_ROOT_URL }/tickets`
@@ -15,76 +16,6 @@ const requestOptions = {
     'Content-Type': 'application/json',
     auth: { username: FRESHDESK_API_KEY, password: 'X' },
 }
-
-const inputStyle = `
-    flex: 1;
-    padding: 0.5rem;
-    outline: none;
-    border-radius: 4px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: var(--color-lightgrey);
-    transition: boroder-color 250ms, filter 250ms;
-    &:focus {
-        border-color: var(--color-eggplant);
-        filter: drop-shadow(0 0 0.1rem var(--color-eggplant));
-    }
-`
-
-const Form = styled.form`
-    padding: 1rem 0.5rem;
-`
-
-const FormControl = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin: 1rem 0;
-    & > label {
-        padding: 0.5rem 0;
-        font-weight: bold;
-    }
-`
-
-const TextInput = styled.input.attrs(props => ({ type: props.type }))`
-    ${ inputStyle }
-`
-
-const Adornment = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    // border: 1px solid #f99;
-    min-height: 100%;
-    width: 1.5rem;
-`
-
-const AdornedInput = ({ adornment, ...props}) => {
-    return (
-        <div style={{ flex: 1, display: 'flex', justifyContent: 'stretch' }}>
-            { adornment && <Adornment>{ adornment }</Adornment> }
-            <TextInput { ...props } style={{ flex: 1, width: '100%' }}/>
-        </div>
-    )
-}
-
-const Select = styled.select`
-    ${ inputStyle }
-`
-
-const Option = styled.option``
-
-const TextArea = styled.textarea`
-    resize: vertical;
-    height: 200px;
-    min-height: 200px;
-    max-height: 800px;
-    ${ inputStyle }
-`
-
-const HelpText = styled.small`
-    padding: 0.25rem 0;
-    font-style: italic;
-`
 
 const SubmitButton = styled(Button).attrs({ type: 'submit', value: 'Submit' })``
 
