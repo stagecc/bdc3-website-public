@@ -23,10 +23,6 @@ const ContactPage = () => (
             <strong>** Please do not use this form to share any sensitive data. **</strong>
         </Paragraph>
 
-        <script type="text/javascript" src="https://s3.amazonaws.com/assets.freshdesk.com/widget/freshwidget.js"></script>
-        <style type="text/css" media="screen, projection">
-            @import url(https://s3.amazonaws.com/assets.freshdesk.com/widget/freshwidget.css);
-        </style>
         <iframe
             title="Feedback Form"
             className="freshwidget-embedded-form"
