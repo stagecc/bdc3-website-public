@@ -30,7 +30,7 @@ a:hover, a:active {
     --color-gold: #f2dd72;
     --color-sea: #4d868c;
     --color-note: #1d568c;
-    --color--error: orange;
-    --color--warning: darkorange;
-    --color--danger: red;
+    --color-error: orange;
+    --color-warning: darkorange;
+    --color-danger: red;
 }

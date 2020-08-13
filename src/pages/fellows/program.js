@@ -7,6 +7,7 @@ import { BulletedList, OrderedList, ListItem } from '../../components/list'
 import { Table } from '../../components/table'
 import { Button } from '../../components/buttons'
 import { ExternalLink } from '../../components/link'
+import { Alert } from '../../components/alert'
 
 const FellowsPage = () => {
     const [now, ] = useState(new Date())
@@ -30,6 +31,12 @@ const FellowsPage = () => {
             />
     
             <Title>Fellows Program Call for Proposals</Title>
+
+            <Alert
+                type="info" center
+                message="Please note applications to the BioData Catalyst Fellowship Program are currently closed. Applications to join the third Cohort are anticipated to open in October 2020."
+                style={{ width: '75%', margin: '2rem auto' }}
+            />
             
             <section>
                 <Heading>About the BioData Catalyst Fellows Program</Heading>
