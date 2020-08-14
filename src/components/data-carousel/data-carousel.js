@@ -147,6 +147,7 @@ export const DataCarousel = () => {
                 backgroundImage={ backgroundImage }
                 tabIndex="0"
                 onMouseOver={ () => setPlayingAnimations(false) }
+                onFocus={ () => setPlayingAnimations(false) }
                 onMouseLeave={ () => setPlayingAnimations(true) }
                 onKeyDown={ handleKeyDown }
             >

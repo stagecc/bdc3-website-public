@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { Button } from './button'
-import { ExternalLink } from '../link'
 
 const transitionBrightness = `
     transition: filter 250ms;

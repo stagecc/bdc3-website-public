@@ -1,13 +1,11 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import { SEO } from '../../components/seo'
 import { PageContent } from '../../components/layout'
 import { Title, Heading, Paragraph } from '../../components/typography'
 import { Container as Grid, Row, Col, Visible } from 'react-grid-system'
 import { Card, CardHeader, CardBody } from '../../components/card'
-import { List, ListItem } from '../../components/list'
 import { ExternalLink } from '../../components/link'
 import { usePlatforms } from '../../hooks'
 

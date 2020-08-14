@@ -1,7 +1,7 @@
 import React from 'react'
 import { SEO } from '../components/seo'
 import { PageContent } from '../components/layout'
-import { Title, Heading, Paragraph } from '../components/typography'
+import { Title, Paragraph } from '../components/typography'
 import { ExternalLink } from '../components/link'
 import { CloudCreditsForm } from '../components/form'
 

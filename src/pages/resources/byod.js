@@ -2,7 +2,6 @@ import React from 'react'
 import { SEO } from '../../components/seo'
 import { PageContent } from '../../components/layout'
 import { Title, Heading, Paragraph } from '../../components/typography'
-import { Button } from '../../components/buttons'
 import { ExternalLink } from '../../components/link'
 
 const ByodPage = () => (

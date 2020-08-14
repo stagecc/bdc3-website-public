@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
 import { useDialog } from '../../hooks'
 import { ExternalLinkIcon } from '../icons'
-import { Button } from '../buttons'
 
 export const ExternalLink = ({ to, asButton, noIcon, lightIcon, children, ...props }) => {
     const dialog = useDialog()

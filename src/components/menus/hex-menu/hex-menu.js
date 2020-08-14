@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { DataBoltIcon, EducationIcon, ToolsIcon, ByodIcon, ReceiptIcon } from '../../icons'
+import { DataBoltIcon, EducationIcon, ToolsIcon, ByodIcon } from '../../icons'
 import { useWindowWidth } from '../../../hooks'
 import { Hexagon } from './hexagon'
 import { MenuItemDescription } from './hex-menu-descriptions'

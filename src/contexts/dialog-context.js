@@ -77,7 +77,7 @@ const Dialog = ({ onContinue }) => {
         if (dialogRef.current) {
             setFocusableElements(dialogRef.current.querySelectorAll('button'))
         }
-    }, [dialogRef.current])
+    }, [dialogRef])
 
     const handleKeyDown = useCallback(event => {
         if (event.keyCode === 27) { // esc
@@ -91,7 +91,7 @@ const Dialog = ({ onContinue }) => {
             focusableElements[focusableElements.length - 1].focus()
             event.preventDefault()
         }
-    }, [focusableElements])
+    }, [dialog, focusableElements])
     
     useEffect(() => {
         if (dialog.isOpen) {
@@ -102,7 +102,7 @@ const Dialog = ({ onContinue }) => {
             document.removeEventListener('keydown', handleKeyDown)
             document.body.style.position = 'static'
         }
-    }, [dialog.isOpen])
+    }, [dialog.isOpen, handleKeyDown])
 
     return (
         <Fragment>
@@ -110,7 +110,7 @@ const Dialog = ({ onContinue }) => {
             <Wrapper onKeyDown={ handleKeyDown } ref={ dialogRef } style={ animation }>
                 <Header>
                     <Title>{ dialog.title }</Title>
-                    <IconButton autoFocus onClick={ dialog.close } >
+                    <IconButton onClick={ dialog.close } >
                         <CloseIcon size={ 24 } fill="var(--color-crimson)" />
                     </IconButton>
                 </Header>
@@ -118,7 +118,7 @@ const Dialog = ({ onContinue }) => {
                     { dialog.contents }
                 </Body>
                 <Actions>
-                    <Button onClick={ dialog.close } light>Cancel</Button>
+                    <Button onClick={ dialog.close } light autoFocus>Cancel</Button>
                     <Button onClick={ onContinue }>Continue</Button>
                 </Actions>
             </Wrapper>

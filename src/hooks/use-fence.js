@@ -83,7 +83,7 @@ export const useFence = location => {
             }
         }
         setIsLoading(false)
-    }, [authParams, fenceUser, setFenceUser])
+    }, [authParams, fenceUser, setFenceUser, authed])
     
     return { authed, user, projects, isLoading, error }
 }

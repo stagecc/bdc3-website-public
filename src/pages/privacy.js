@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { PageContent } from '../components/layout'
 import { SEO } from '../components/seo'
 import { Title, Heading, Subheading, Paragraph } from '../components/typography'
