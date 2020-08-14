@@ -153,25 +153,15 @@ export const DataCarousel = () => {
             >
                 <Overlay compact={ isCompact }>
                     <DetailsPanel compact={ isCompact }>
-                        {
-                            detailsTransitions.map(({ item, props, key }) =>(
-                                <DataDetail key={ key } style={ props } item={ item } />
-                            ))
-                        }
+                        { detailsTransitions.map(({ item, props, key }) => <DataDetail key={ key } style={ props } item={ item } />) }
                     </DetailsPanel>
                     <DataPanel compact={ isCompact }>
-                        {
-                            dataTransitions.map(({ item, props, key }) => (
-                                <Data key={ key } style={ props } data={ item.data } />
-                            ))
-                        }
+                        { dataTransitions.map(({ item, props, key }) => <Data key={ key } style={ props } data={ item.data } />) }
                     </DataPanel>
-                    {
-                        <StateNote>
-                            <span style={{ marginRight: '0.5rem' }}>Animations paused</span>
-                            { playingAnimations ? <PlayIcon size={ 16 } fill="#fff"/> : <PauseIcon size={ 16 } fill="#fff"/> }
-                        </StateNote>
-                    }
+                    <StateNote>
+                        <span style={{ marginRight: '0.5rem' }}>Animations paused</span>
+                        { playingAnimations ? <PlayIcon size={ 16 } fill="#fff"/> : <PauseIcon size={ 16 } fill="#fff"/> }
+                    </StateNote>
                 </Overlay>
             </Wrapper>
         </Border>
