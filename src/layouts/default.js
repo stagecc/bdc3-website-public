@@ -110,7 +110,7 @@ export const DefaultLayout = ({ children }) => {
                         <Row>
                             <Col xs={ 12 } style={{ textAlign: 'center' }}>
                                 <strong style={{ textTransform: 'uppercase' }}>
-                                    <ExternalLink lightIcon to="https://nhlbidatastage.org/Security/login">
+                                    <ExternalLink lightIcon to="http://www.biodatacatalyst.org/Security/login">
                                         Consortium Member Portal
                                     </ExternalLink>
                                 </strong>
