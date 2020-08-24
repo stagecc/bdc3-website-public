@@ -21,7 +21,7 @@ const resources = [
             },
             {
                 text: 'BioData Catalyst Release Notes',
-                url: 'https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/biodata-catalyst-release-notes/2020-04-02-biodata-catalyst-ecosystem-release-notes'
+                url: 'https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/biodata-catalyst-release-notes'
             },
             {
                 text: 'Dockstore Documentation',

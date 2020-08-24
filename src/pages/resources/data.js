@@ -56,7 +56,7 @@ const DataPage = ({ data, location }) => {
                         Study Details &nbsp;&nbsp; <DownloadIcon fill="var(--color-crimson)" size={ 24 } />
                     </Button>
                     <Button light as="a" target="_blank" rel="noopener noreferrer"
-                        href="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/biodata-catalyst-release-notes/2020-04-02-biodata-catalyst-ecosystem-release-notes"
+                        href="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/biodata-catalyst-release-notes"
                         style={{ margin: '1rem', display: 'inline-flex', alignItems: 'center' }}
                     >
                         Release Notes &nbsp;&nbsp; <DownloadIcon fill="var(--color-crimson)" size={ 24 } />
