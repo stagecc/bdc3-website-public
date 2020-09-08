@@ -10,10 +10,11 @@ teaser: The BioData Catalyst powered by Gen3 platform provides data commons serv
 service: Gen3 is a software platform that allows partner organizations and grant approved researchers to search and access harmonized datasets. Users can search over project and study-specific genomic and phenotypic data and export selected cohorts to analytical workspaces in a scalable, reproducible, and secure manner.
 ---
 
-- Authentication (AuthN) and authorization (AuthZ) services that utilize OpenID Connect flow to generate tokens for clients. The service supports Identify Providers (IDPs) including Google and NIH iTrust
+- Authentication (AuthN) and authorization (AuthZ) services that utilize OpenID Connect flow to generate tokens for clients. The service supports Identify Providers (IDPs) including Google and NIH iTrust.
 
-- Indexing service that automatically assigns permanent digital IDs, or globally unique identifiers (GUIDs), to object files. These IDs can be used to retrieve data or query the metadata associated with the object
+- Indexing service that automatically assigns permanent digital IDs, or globally unique identifiers (GUIDs), to object files. These IDs can be used to retrieve data or query the metadata associated with the object.
 
-- An interactive data exploration portal that allows users to search and filter through study-specific clinical and genomic data. Users can export their selected cohorts to analytical workspaces
+- An interactive data exploration portal that allows users to search and filter through study-specific clinical and genomic data. Users can export their selected cohorts to analytical workspaces.
 
-- Lightweight workspaces that allow users to run analytical tools and applications such as Jupyter notebooks and RStudio
+- Workspaces that allow users to run analytical tools and applications such as Jupyter notebooks and RStudio.
+
