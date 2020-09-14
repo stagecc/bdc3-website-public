@@ -3,30 +3,30 @@ import { SEO } from '../../components/seo'
 import { PageContent } from '../../components/layout'
 import { Title, Heading, Paragraph } from '../../components/typography'
 import { useFellows, useWindowWidth } from '../../hooks'
-import { ExternalLink } from '../../components/link'
 import { kebabCase } from '../../utils'
 import { FellowsLinkList, FellowsLinkListItem, FellowsProfile } from '../../components/fellows'
 
-const FellowsCohort1Page = () => {
-    const { cohortOne } = useFellows()
+
+const FellowsCohort2Page = () => {
+    const { cohortTwo } = useFellows()
 
     return (
         <PageContent width="95%" maxWidth="1200px" center gutters>
             <SEO
-                title="Cohort I Fellows"
+                title="Cohort II Fellows"
                 description=""
                 keywords=""
             />
 
-            <Title>Cohort I Fellows</Title>
+            <Title>Cohort II Fellows</Title>
             
             <section id="overview">
                 <Paragraph>
-                    The NHLBI BioData Catalyst Fellows Program provides researchers, especially early-career researchers, the opportunity to receive funding to support research on novel and innovative data science and data-focused research problems. 
+                    The NHLBI BioData Catalyst Fellows Program provides researchers, especially early-career researchers,
+                    the opportunity to receive funding to support research on novel and innovative data science and data-focused research problems. 
                 </Paragraph>
                 <Paragraph>
-                    Cohort I Fellows will work on the BioData Catalyst Ecosystem from March 2020 to March 2021.
-                    Read what our <ExternalLink to="https://drive.google.com/file/d/1obNRHh3s0s8k4yJCctYvCHdZ5KsL6Uj_/view?usp=sharing">Cohort I Fellows have said</ExternalLink> about the NHLBI BioData Catalyst ecosystem.
+                    Cohort 2 Fellows will work on the BioData Catalyst Ecosystem from September 2020-September 2021.
                 </Paragraph>
             </section>
             
@@ -36,9 +36,9 @@ const FellowsCohort1Page = () => {
 
                 <FellowsLinkList>
                     {
-                        cohortOne.map(fellow => (
+                        cohortTwo.map(fellow => (
                             <FellowsLinkListItem key={ kebabCase(fellow.name.replace(/,.+$/, '')) }
-                                path={ `/fellows/cohort1#${ kebabCase(fellow.name.replace(/,.+$/, '')) }` }
+                                path={ `/fellows/cohort2#${ kebabCase(fellow.name.replace(/,.+$/, '')) }` }
                                 text={ fellow.name }
                             />
                         ))
@@ -46,7 +46,7 @@ const FellowsCohort1Page = () => {
                 </FellowsLinkList>
 
                 {
-                    cohortOne.map(fellow => (
+                    cohortTwo.map(fellow => (
                         <FellowsProfile
                             key={ kebabCase(fellow.name.replace(/, Ph\.D\.$/, '')) }
                             name={ fellow.name }
@@ -64,4 +64,4 @@ const FellowsCohort1Page = () => {
     )
 }
 
-export default FellowsCohort1Page
+export default FellowsCohort2Page

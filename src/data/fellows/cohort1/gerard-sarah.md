@@ -1,7 +1,7 @@
 ---
 name: Sarah Gerard, PhD
 university: Harvard Medical School
-photo: ../../images/fellows/cohort-1/gerard-sarah.jpg
+photo: ../../../images/fellows/cohort-1/gerard-sarah.jpg
 project:
     title: Ventilation Prediction from Pulmonary CT Using Deep Learning 
     abstract: >

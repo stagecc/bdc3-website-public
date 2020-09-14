@@ -1,7 +1,7 @@
 ---
-name: Caitlin McHugh, Ph.D.
+name: Caitlin McHugh, PhD
 university: University of Washington
-photo: ../../images/fellows/cohort-1/mchugh-caitlin.jpg
+photo: ../../../images/fellows/cohort-1/mchugh-caitlin.jpg
 project:
     title: "A Mixed Model Approach to Testing Multiple Correlated Traits in Large Samples: An Application to the TOPMed Hematology Phenotypes"
     abstract: >

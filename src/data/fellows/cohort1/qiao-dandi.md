@@ -1,7 +1,7 @@
 ---
-name: Dandi Qiao, Ph.D.
+name: Dandi Qiao, PhD
 university: Brigham and Women's Hospital
-photo: ../../images/fellows/cohort-1/qiao-dandi.jpg
+photo: ../../../images/fellows/cohort-1/qiao-dandi.jpg
 project:
     title: Whole Genome-Sequencing Analyses of Imaging Phenotypes of Chronic Obstructive Pulmonary Disease (COPD)
     abstract: >

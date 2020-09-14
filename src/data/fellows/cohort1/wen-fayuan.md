@@ -1,7 +1,7 @@
 ---
-name: Fayuan Wen, Ph.D.
+name: Fayuan Wen, PhD
 university: Howard University
-photo: ../../images/fellows/cohort-1/wen-fayuan.jpg
+photo: ../../../images/fellows/cohort-1/wen-fayuan.jpg
 project:
     title: Association Study of Iron Overload in Sickle Cell Disease Population Using NHLBI WGS from TOPMed
     abstract: >

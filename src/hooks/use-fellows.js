@@ -1,30 +1,47 @@
 import { graphql, useStaticQuery } from 'gatsby'
 
+export const fellowFragment = graphql`
+    fragment FellowDetails on MarkdownRemark {
+        id
+        frontmatter {
+            name
+            university
+            project {
+                title
+                abstract
+            }
+            bio
+            photo {
+                childImageSharp {
+                    fixed(fit: CONTAIN, height: 300) {
+                        ...GatsbyImageSharpFixed
+                    }
+                }
+            }
+        }
+
+    }
+`
+
 const fellowsQuery = graphql`
     {
-        fellows: allMarkdownRemark(
+        cohortOne: allMarkdownRemark(
             sort: {fields: fileAbsolutePath, order: ASC}
-            filter: {fileAbsolutePath: {regex: "/data/fellows/"}}
+            filter: {fileAbsolutePath: {regex: "/data/fellows/cohort1/"}}
         ) {
             edges {
                 node {
-                    id
-                    frontmatter {
-                        name
-                        university
-                        project {
-                            title
-                            abstract
-                        }
-                        bio
-                        photo {
-                            childImageSharp {
-                                fixed(fit: CONTAIN, height: 300) {
-                                    ...GatsbyImageSharpFixed
-                                }
-                            }
-                        }
-                    }
+                    ...FellowDetails
+                }
+            }
+        }
+        cohortTwo: allMarkdownRemark(
+            sort: {fields: fileAbsolutePath, order: ASC}
+            filter: {fileAbsolutePath: {regex: "/data/fellows/cohort2/"}}
+        ) {
+            edges {
+                node {
+                    ...FellowDetails
                 }
             }
         }
@@ -32,6 +49,9 @@ const fellowsQuery = graphql`
 `
 
 export const useFellows = () => {
-    const { fellows } = useStaticQuery(fellowsQuery)
-    return fellows.edges.map(({ node }) => ({ id: node.id, ...node.frontmatter }))
+    const { cohortOne, cohortTwo } = useStaticQuery(fellowsQuery)
+    return {
+        cohortOne: cohortOne.edges.map(({ node }) => ({ id: node.id, ...node.frontmatter })),
+        cohortTwo: cohortTwo.edges.map(({ node }) => ({ id: node.id, ...node.frontmatter })),
+    }
 }
