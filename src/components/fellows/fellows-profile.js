@@ -2,7 +2,7 @@ import React from 'react'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 import { useWindowWidth } from '../../hooks'
-import { Title, Heading, Subheading, Subsubheading, Paragraph } from '../typography'
+import { Subheading, Subsubheading, Paragraph } from '../typography'
 import { Collapser } from '../collapser'
 import { kebabCase } from '../../utils'
 

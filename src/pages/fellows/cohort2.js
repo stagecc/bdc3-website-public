@@ -2,7 +2,7 @@ import React from 'react'
 import { SEO } from '../../components/seo'
 import { PageContent } from '../../components/layout'
 import { Title, Heading, Paragraph } from '../../components/typography'
-import { useFellows, useWindowWidth } from '../../hooks'
+import { useFellows } from '../../hooks'
 import { kebabCase } from '../../utils'
 import { FellowsLinkList, FellowsLinkListItem, FellowsProfile } from '../../components/fellows'
 
