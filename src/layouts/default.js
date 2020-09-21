@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
@@ -12,6 +12,7 @@ import { useWindowWidth } from '../hooks'
 import hexBackgroundLeftSvg from '../images/hex-background-left.svg'
 import hexBackgroundRightSvg from '../images/hex-background-right.svg'
 import { ExternalLink } from '../components/link'
+import { logLogo } from '../utils'
 
 import '../styles/normalize.css'
 import '../styles/customize.css'
@@ -65,6 +66,8 @@ const SkipLink = styled.a`
 
 export const DefaultLayout = ({ children }) => {
     const { isCompact } = useWindowWidth()
+
+    useEffect(() => logLogo(), [])
 
     return typeof isCompact === 'boolean' && (
         <LayoutWrapper compact={ isCompact }>
