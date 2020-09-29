@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
+//
+
 export const OrderedList = styled.ol`
     line-height: ${ props => props.dense ? '1.0' : '1.5' };
 `
@@ -16,13 +18,24 @@ export const UnorderedList = styled.ul`
     line-height: ${ props => props.dense ? '0.75' : '1.25' };
 `
 
-export const BulletedList = styled(UnorderedList)`
-    list-style-type: disc;
-    margin: 0 0 2rem 1rem;
-`
+//
 
-export const ListTitle = styled.h4`
-`
+export const BulletedList = styled(UnorderedList)(({ bullet }) => `
+    list-style-type: ${ bullet };
+    margin: 0 0 2rem 1rem;
+`)
+
+BulletedList.propTypes = {
+    bullet: PropTypes.string.isRequired,
+}
+
+BulletedList.defaultProps = {
+    bullet: 'disc',
+}
+
+//
+
+export const ListTitle = styled.h4``
 
 export const ListItemContainer = styled.li`
     margin: 0;
@@ -52,6 +65,8 @@ ListItem.propTypes = {
     primary: PropTypes.node.isRequired,
     secondary: PropTypes.node,
 }
+
+//
 
 export const List = ({ children, ...props }) => {
     return (

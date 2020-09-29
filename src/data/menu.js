@@ -20,6 +20,10 @@ export const menuItems = [
                 path: '/resources/byod',
             },
             {
+                text: 'Cloud Credits',
+                path: '/resources/cloud-credits',
+            },
+            {
                 text: 'Services',
                 path: '/resources/services',
             },
