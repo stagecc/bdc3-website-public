@@ -10,6 +10,7 @@ const platformsQuery = graphql`
                 node {
                     frontmatter {
                         title
+                        serviceTitle
                         path
                         links {
                             homepage

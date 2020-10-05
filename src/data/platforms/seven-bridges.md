@@ -1,5 +1,6 @@
 ---
 title: Seven Bridges
+serviceTitle: BioData Catalyst powered by Seven Bridges
 path: /platforms/seven-bridges
 logo: ../../images/logos/platforms/seven-bridges.png
 links: 

@@ -1,5 +1,6 @@
 ---
 title: Dockstore
+serviceTitle: Dockstore
 path: /platforms/dockstore
 logo: ../../images/logos/platforms/dockstore.png
 links: 

@@ -107,7 +107,7 @@ const ServicesPage = ({ data }) => {
                                             service.cardItems.map((platform, i) => (
                                                 <Fragment key={ i }>
                                                     <Col xs={ 12 } lg={ 5 } style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                                                        <h3 style={{ textAlign: 'center' }}>BioData Catalyst powered by { platform.frontmatter.title }</h3>
+                                                        <h3 style={{ textAlign: 'center' }}>{ platform.frontmatter.serviceTitle }</h3>
                                                         <Paragraph>
                                                             { platform.frontmatter.service }
                                                         </Paragraph>

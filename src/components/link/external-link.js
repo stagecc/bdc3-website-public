@@ -26,8 +26,8 @@ export const ExternalLink = ({ to, asButton, noIcon, lightIcon, children, ...pro
                     next to a link within the NHLBI BioData Catalyst ecosystem indicates that the link leads to another site that is not a federal government website.
                 </p>
                 <p>NHLBI cannot attest to the accuracy of information provided on external websites.</p>
-                <p>Linking to a non-federal website does not constitute an endorsement by NHLBI of the sponsors or of the information and products presentated on the website.</p>
-                <p>You will be subject to the destination's privacy policy when you follow the link</p>
+                <p>Linking to a non-federal website does not constitute an endorsement by NHLBI of the sponsors or of the information and products presented on the website.</p>
+                <p>You will be subject to the destination's privacy policy when you follow the link.</p>
                 <p>Are you sure you want to navigate to this site?</p>
             </div>)
         dialog.setContinueHandler(() => () => window.open(to, '_blank'))

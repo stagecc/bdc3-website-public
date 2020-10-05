@@ -20,7 +20,12 @@ const ContactPage = () => (
         </Paragraph>
 
         <Paragraph center>
-            <strong>** Please do not use this form to share any sensitive data. **</strong>
+            <strong>
+                In order to protect your privacy and the privacy of study participants,
+                you MUST NOT include any personally identifiable information or personal health information in a helpdesk request.
+                If access to such information is needed in order to resolve your request, you may send that information securely,
+                through external means such as US mail.
+            </strong>
         </Paragraph>
 
         <iframe

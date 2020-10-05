@@ -1,6 +1,7 @@
 ---
 title: PIC-SURE
 path: /platforms/pic-sure
+serviceTitle: BioData Catalyst powered by PIC-SURE
 logo: ../../images/logos/platforms/pic-sure.png
 links: 
     homepage: https://pic-sure.org/

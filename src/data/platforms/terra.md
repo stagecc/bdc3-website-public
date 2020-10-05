@@ -1,5 +1,6 @@
 ---
 title: Terra
+serviceTitle: BioData Catalyst powered by Terra
 path: /platforms/terra
 logo: ../../images/logos/platforms/terra.png
 links: 
