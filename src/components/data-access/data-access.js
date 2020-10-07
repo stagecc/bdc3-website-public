@@ -6,6 +6,7 @@ import { DownloadIcon } from '../../components/icons'
 import { Button } from '../../components/buttons'
 import { Subheading, Paragraph } from '../../components/typography'
 import { Card, CardHeader, CardBody } from '../../components/card'
+import { ExternalLink } from '../../components/link'
 
 const ProjectList = styled.select`
     width: 100%;
@@ -80,6 +81,10 @@ export const DataAccess = ({ location }) => {
                         <Fragment>
                             <Paragraph>
                                 Log in with your eRA Commons credentials to determine which datasets to which you currently have access.
+                            </Paragraph>
+                            <Paragraph>
+                                For additional guidance on How to check what data you have access to on BioData Catalyst, see a page dedicated to this topic
+                                in our <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/data-access/check-my-access-to-data">BioData Catalyst documentation</ExternalLink>.
                             </Paragraph>
                                 
                             <Paragraph center style={{ margin: '2rem' }}>
