@@ -36,6 +36,23 @@ const CloudCreditsPage = () => (
         </section>
 
         <section>
+            <Heading>Choosing a Workspace</Heading>
+
+            <Paragraph>
+                Users of BioData Catalyst workspaces will need to choose either
+                the <em>Powered by Seven Bridges</em> or <em>Powered by Terra</em> workspace environments
+                to receive Pilot Funding cloud credits and/or request additional cloud credits.
+                To learn more about what each workspace has to offer, follow the links below:
+            </Paragraph>
+
+            <BulletedList>
+                <ListItem primary={ <ExternalLink to="https://biodatacatalyst.nhlbi.nih.gov/platforms/terra">BioData Catalyst Powered by Terra</ExternalLink>} />
+                <ListItem primary={ <ExternalLink to="https://biodatacatalyst.nhlbi.nih.gov/platforms/seven-bridges">BioData Catalyst Powered by Seven Bridges</ExternalLink>} />
+            </BulletedList>
+
+        </section>
+
+        <section>
             <Heading>Pilot Funding</Heading>
 
             <Paragraph>
