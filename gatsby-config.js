@@ -21,7 +21,12 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-json`,
-    `gatsby-transformer-csv`,
+    {
+      resolve: `gatsby-transformer-csv`,
+      options: {
+        typeName: () => `Studies`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
