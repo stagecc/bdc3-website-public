@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import { SEO } from '../../components/seo'
@@ -10,6 +11,36 @@ import { ExternalLink } from '../../components/link'
 import { Visible } from 'react-grid-system'
 import { DataAccess } from '../../components/data-access'
 import { DownloadIcon } from '../../components/icons'
+import { useTable } from 'react-table'
+
+const Styles = styled.div`
+  padding: 1rem;
+
+  table {
+    border-spacing: 0;
+    border: 1px solid black;
+
+    tr {
+      :last-child {
+        td {
+          border-bottom: 0;
+        }
+      }
+    }
+
+    th,
+    td {
+      margin: 0;
+      padding: 0.5rem;
+      border-bottom: 1px solid black;
+      border-right: 1px solid black;
+
+      :last-child {
+        border-right: 0;
+      }
+    }
+  }
+`
 
 const columns = [
     { id: 'Study_Accession', humanReadableName: 'Study Accession' },
@@ -28,7 +59,7 @@ const columns = [
 ]
 
 const DataPage = ({ data }) => {
-    const studies = data.allStudiesCsv.edges.map(({ node }) => node)
+    const studies = data.allStudies.edges.map(({ node }) => node)
     return (
         <PageContent width="95%" maxWidth="1200px" center gutters style={{ position: 'relative' }}>
             <SEO
@@ -65,7 +96,7 @@ const DataPage = ({ data }) => {
 export default DataPage
 
 export const query = graphql`{
-    allStudiesCsv {
+    allStudies {
         edges {
             node {
                 Study_Accession
