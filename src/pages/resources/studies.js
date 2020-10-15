@@ -1,46 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
 import { SEO } from '../../components/seo'
 import { PageContent } from '../../components/layout'
-import { Title, Heading, Subheading, Paragraph } from '../../components/typography'
-import { BulletedList, ListItem } from '../../components/list'
-import { Button } from '../../components/buttons'
-import { ExternalLink } from '../../components/link'
-import { Visible } from 'react-grid-system'
-import { DataAccess } from '../../components/data-access'
-import { DownloadIcon } from '../../components/icons'
-import { useTable } from 'react-table'
-
-const Styles = styled.div`
-  padding: 1rem;
-
-  table {
-    border-spacing: 0;
-    border: 1px solid black;
-
-    tr {
-      :last-child {
-        td {
-          border-bottom: 0;
-        }
-      }
-    }
-
-    th,
-    td {
-      margin: 0;
-      padding: 0.5rem;
-      border-bottom: 1px solid black;
-      border-right: 1px solid black;
-
-      :last-child {
-        border-right: 0;
-      }
-    }
-  }
-`
+import { Title } from '../../components/typography'
+import { DataTable } from '../../components/data-table'
 
 const columns = [
     { id: 'Study_Accession', humanReadableName: 'Study Accession' },
@@ -72,22 +36,8 @@ const DataPage = ({ data }) => {
 
             <br/>
 
-            <div style={{ height: '800px', overflow: 'scroll' }}>
-                <table border="1" cellspacing="0">
-                    <tr>
-                        <th>#</th>
-                        { columns.map(column => <th>{ column.humanReadableName }</th>) }
-                    </tr>
-                    {
-                        studies.map((study, i) => (
-                            <tr key={ i + 1 }>
-                                <th>{ i + 1 }</th>
-                                { columns.map(column => <td>{ study[column.id] }</td>) }
-                            </tr>
-                        ))
-                    }
-                </table>
-            </div>
+            <DataTable columns={ columns } data={ studies }/>
+
 
         </PageContent>
     )
