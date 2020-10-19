@@ -39,6 +39,7 @@ const DataPage = ({ data, location }) => {
     
                 <BulletedList dense>
                     <ListItem primary={ <span><ExternalLink to="https://www.nhlbiwgs.org/">TOPMed</ExternalLink> Freeze 5b</span> } />
+                    <ListItem primary={ <span>Subset of <ExternalLink to="https://www.nhlbiwgs.org/">TOPMed</ExternalLink> Freeze 8 Data</span> } />
                     <ListItem primary={ <span>Parent Studies <ExternalLink to="https://www.ncbi.nlm.nih.gov/gap/">dbGaP</ExternalLink></span> } />
                 </BulletedList>
                 
