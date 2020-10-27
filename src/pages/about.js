@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Img from 'gatsby-image'
 import { Link } from 'gatsby'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
@@ -104,6 +104,35 @@ const AboutPage = ({ data }) => {
                                     ))
                                 }
                             </LogoCloud>
+
+                            <Subheading>NIH Cloud Ecosystem Collaborations</Subheading>
+
+                            <Paragraph>
+                                NHLBI BioData Catalyst partners with others in the cloud computing domain to help
+                                build our community of practice and accelerate progress in the data and biomedical community.
+                                Current partners are:
+                            </Paragraph>
+
+                            <List>
+                                <ListItem primary={
+                                    <Fragment>
+                                        <ExternalLink to="https://anvilproject.org/ncpi">NCPI</ExternalLink> &ndash;
+                                        The NIH Cloud Platform Interoperability Effort (NCPI) is establishing and implementing guidelines and technical standards to empower end-user analyses across participating platforms and facilitate the realization of a trans-NIH, federated data ecosystem. NHLBI BioData Catalyst is participating in the NCPI - along with AnVIL, the Cancer Research Data Commons, and the Kids First Data Resource Center - to enable cross-platform data sharing and analysis.
+                                    </Fragment>
+                                } />
+                                <ListItem primary={
+                                    <Fragment>
+                                        <ExternalLink to="https://datascience.nih.gov/strides">STRIDES</ExternalLink> &ndash;
+                                        The NIH Science and Technology Research Infrastructure for Discovery, Experimentation, and Sustainability (STRIDES) Initiative allows NIH to provide cost-effective access to industry-leading partners to help advance biomedical research. These partnerships enable access to rich datasets and advanced computational infrastructure, tools, and services. NHLBI BioData Catalyst leverages STRIDES to enhance efficiency of data storage and computation.
+                                    </Fragment>
+                                } />
+                                <ListItem primary={
+                                    <Fragment>
+                                        <ExternalLink to="https://datascience.nih.gov/data-infrastructure">ODSS</ExternalLink> &ndash;
+                                        The NIH Office of Data Science Strategy (ODSS) supports efficient and effective biomedical research data infrastructure to achieve NIH’s mission of applying knowledge gained through research to improve health. NHLBI BioData Catalyst works with ODSS to facilitate secure data storage and broad access to biomedical datasets. 
+                                    </Fragment>
+                                } />
+                            </List>
                         </section>
 
                         <br/>
