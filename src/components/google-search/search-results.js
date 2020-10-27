@@ -17,14 +17,18 @@ export const SearchResults = () => {
 
   return (
     <Wrapper>
-      <PaginationTray
-        currentPage={ currentPage }
-        pageCount={ pageCount }
-        goToFirstPageHandler={ handleGoToFirstPage }
-        goToPreviousPageHandler={ handleGoToPreviousPage }
-        goToNextPageHandler={ handleGoToNextPage }
-        goToLastPageHandler={ handleGoToLastPage }
-      />
+      {
+        totalResults > 0 && (
+          <PaginationTray
+            currentPage={ currentPage }
+            pageCount={ pageCount }
+            goToFirstPageHandler={ handleGoToFirstPage }
+            goToPreviousPageHandler={ handleGoToPreviousPage }
+            goToNextPageHandler={ handleGoToNextPage }
+            goToLastPageHandler={ handleGoToLastPage }
+          />
+        )
+      }
 
       <hr />
 

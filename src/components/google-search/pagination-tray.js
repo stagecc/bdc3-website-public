@@ -15,15 +15,14 @@ const Wrapper = styled.div`
   }
 `
 
-const PaginationIconButton = styled(IconButton)`
-  &:disabled {
-    cursor: default;
-    pointer-events: none;
-    & svg {
-      fill: var(--color-lightgrey);
-    }
-  }
-`
+const PaginationIconButton = ({ icon, clickHandler, disabled }) => {
+  const PaginationIcon = icon
+  return (
+    <IconButton disabled={ disabled } onClick={ disabled ? null : clickHandler }>
+      <PaginationIcon size={ 36 } fill={ disabled ? 'var(--color-lightgrey)' : 'var(--color-crimson)' } />
+    </IconButton>
+  )
+}
 
 export const PaginationTray = ({ currentPage, pageCount, goToFirstPageHandler, goToPreviousPageHandler, goToNextPageHandler, goToLastPageHandler }) => {
   return (
@@ -32,18 +31,26 @@ export const PaginationTray = ({ currentPage, pageCount, goToFirstPageHandler, g
         Page { currentPage } of { pageCount } <br />
       </div>
       <div className="actions">
-        <PaginationIconButton onClick={ currentPage > 1 ? goToFirstPageHandler : null } disabled={ currentPage === 1 }>
-          <FirstPageIcon size={ 24 } fill="var(--color-crimson)" />
-        </PaginationIconButton>
-        <PaginationIconButton onClick={ currentPage > 1 ? goToPreviousPageHandler : null } disabled={ currentPage === 1 }>
-          <PreviousResultsIcon size={ 24 } fill="var(--color-crimson)" />
-        </PaginationIconButton>
-        <PaginationIconButton onClick={ currentPage < pageCount - 1 ? goToNextPageHandler : null } disabled={ currentPage === pageCount }>
-          <NextResultsIcon size={ 24 } fill="var(--color-crimson)" />
-        </PaginationIconButton>
-        <PaginationIconButton onClick={ currentPage < pageCount - 1 ? goToLastPageHandler : null } disabled={ currentPage === pageCount }>
-          <LastPageIcon size={ 24 } fill="var(--color-crimson)" />
-        </PaginationIconButton>
+        <PaginationIconButton
+          icon={ FirstPageIcon }
+          clickHandler={ goToFirstPageHandler }
+          disabled={ currentPage === 1 }
+        />
+        <PaginationIconButton
+          icon={ PreviousResultsIcon }
+          clickHandler={ goToPreviousPageHandler }
+          disabled={ currentPage === 1 }
+        />
+        <PaginationIconButton
+          icon={ NextResultsIcon }
+          clickHandler={ goToNextPageHandler }
+          disabled={ currentPage === pageCount }
+        />
+        <PaginationIconButton
+          icon={ LastPageIcon }
+          clickHandler={ goToLastPageHandler }
+          disabled={ currentPage === pageCount }
+        />
       </div>
     </Wrapper>
   )
