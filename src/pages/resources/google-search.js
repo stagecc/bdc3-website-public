@@ -1,10 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { SEO } from '../../components/seo'
 import { PageContent } from '../../components/layout'
 import { Title } from '../../components/typography'
 import { GoogleSearch, SearchForm, SearchResults } from '../../components/google-search'
-import { Dots as LoadingDots } from '../../components/loading'
-import { Alert } from '../../components/alert'
 
 const GoogleSearchPage = () => {
     return (

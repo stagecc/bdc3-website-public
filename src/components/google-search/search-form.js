@@ -1,18 +1,22 @@
 import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
-import { GoogleSearch } from './search-context'
-const Wrapper = styled.form``
+import { SearchContext } from './search-context'
+
+const Wrapper = styled.div``
 
 export const SearchForm = () => {
-  const [query, setQuery] = useState('')
-  const { doSearch } = useContext(GoogleSearch)
+  const { query, handleChangeQuery, doSearch } = useContext(SearchContext)
 
-  const handleChangeQuery = event => setQuery(event.target.value)
+  const handleKeyDown = event => {
+    if (event.keyCode === 13) {
+      doSearch()
+    }
+  }
 
   return (
     <Wrapper>
-      <input type="text" value={ query } onChange={ handleChangeQuery } />
-      <button onClick={ () => doSearch(query) }>Search</button>
+      <input type="text" value={ query } onChange={ handleChangeQuery } onKeyDown={ handleKeyDown } />
+      <button onClick={ () => doSearch() }>Search</button>
     </Wrapper>
   )
 }

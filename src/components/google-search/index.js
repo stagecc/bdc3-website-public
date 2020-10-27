@@ -1,4 +1,5 @@
 export * from './result'
 export * from './search-form'
+export * from './search-context'
 export * from './search-results'
 export * from './use-google-search'
