@@ -17,6 +17,11 @@ export const GoogleSearch = ({ children }) => {
 
   const handleChangeQuery = event => setQuery(event.target.value)
 
+  const handleGoToNextPage = () => doSearch(Math.max(0, currentPage - 1))
+  const handleGoToPreviousPage = () => doSearch(Math.min(pageCount - 1, currentPage + 1))
+  const handleGoToFirstPage = () => doSearch(0)
+  const handleGoToLastPage = () => doSearch(pageCount - 1)
+
   const doSearch = (pageNumber = 1) => {
     const startIndex = (pageNumber - 1) * 10 + 1
     const fetchResults = async () => {
@@ -45,7 +50,13 @@ export const GoogleSearch = ({ children }) => {
   }
 
   return (
-    <SearchContext.Provider value={{ handleChangeQuery, doSearch, results, totalResults, pageCount, currentPage, error, loading }}>
+    <SearchContext.Provider value={{
+      handleChangeQuery, doSearch,
+      results, totalResults,
+      pageCount, currentPage,
+      handleGoToNextPage, handleGoToPreviousPage, handleGoToFirstPage, handleGoToLastPage,
+      error, loading,
+ }}>
       { children }
     </SearchContext.Provider>
   )
