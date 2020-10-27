@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Result } from './result'
 import { SearchContext } from './search-context'
 import { Dots as LoadingDots } from '../loading'
+import { ChevronLeftIcon, ChevronRightIcon, FirstPageIcon, LastPageIcon, MoreHorizontalIcon } from '../icons'
 
 const Wrapper = styled.section``
 
