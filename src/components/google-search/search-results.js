@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Result } from './result'
 import { SearchContext } from './search-context'
 import { Dots as LoadingDots } from '../loading'
-import { ChevronLeftIcon, ChevronRightIcon, FirstPageIcon, LastPageIcon, MoreHorizontalIcon } from '../icons'
+import { PaginationTray } from './pagination-tray'
 
 const Wrapper = styled.section``
 
@@ -17,12 +17,14 @@ export const SearchResults = () => {
 
   return (
     <Wrapper>
-      Current Page: { currentPage } / { pageCount } <br />
-
-      <button onClick={ currentPage > 0 ? handleGoToFirstPage : null }>first</button>
-      <button onClick={ currentPage > 0 ? handleGoToPreviousPage : null }>prev</button>
-      <button onClick={ currentPage < pageCount - 1 ? handleGoToNextPage : null }>next</button>
-      <button onClick={ currentPage < pageCount - 1 ? handleGoToLastPage : null }>last</button>
+      <PaginationTray
+        currentPage={ currentPage }
+        pageCount={ pageCount }
+        goToFirstPageHandler={ handleGoToFirstPage }
+        goToPreviousPageHandler={ handleGoToPreviousPage }
+        goToNextPageHandler={ handleGoToNextPage }
+        goToLastPageHandler={ handleGoToLastPage }
+      />
 
       <hr />
 

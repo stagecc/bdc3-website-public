@@ -21,6 +21,7 @@ export * from './help-desk-icon'
 export * from './info-icon'
 export * from './magnifying-glass-icon'
 export * from './microscope-icon'
+export * from './more-icons'
 export * from './pause-icon'
 <<<<<<< HEAD
 export * from './pie-chart-icon'
