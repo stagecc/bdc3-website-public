@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import axios from 'axios'
 
 const GOOGLE_SEARCH_API_KEY = process.env.GATSBY_GOOGLE_SEARCH_API_KEY
@@ -18,10 +18,10 @@ export const GoogleSearch = ({ children }) => {
 
   const handleChangeQuery = event => setQuery(event.target.value)
 
-  const handleGoToNextPage = () => doSearch(Math.max(0, currentPage - 1))
-  const handleGoToPreviousPage = () => doSearch(Math.min(pageCount - 1, currentPage + 1))
-  const handleGoToFirstPage = () => doSearch(0)
-  const handleGoToLastPage = () => doSearch(pageCount - 1)
+  const handleGoToFirstPage = () => setCurrentPage(1)
+  const handleGoToPreviousPage = () => setCurrentPage(Math.max(0, currentPage - 1))
+  const handleGoToNextPage = () => setCurrentPage(Math.min(pageCount, currentPage + 1))
+  const handleGoToLastPage = () => setCurrentPage(pageCount)
 
   const doSearch = (pageNumber = 1) => {
     const startIndex = (pageNumber - 1) * 10 + 1
@@ -39,8 +39,7 @@ export const GoogleSearch = ({ children }) => {
           console.log(response.data)
           setResults(response.data.items)
           setTotalResults(response.data.searchInformation.totalResults)
-          // setPageCount(response.data.pageCount)
-          // setCurrentPage(response.data.currentPage)
+          setPageCount(Math.ceil(response.data.searchInformation.totalResults / 10))
         } else {
           setError(error)
         }
@@ -52,6 +51,10 @@ export const GoogleSearch = ({ children }) => {
     }
     fetchResults()
   }
+
+  useEffect(() => {
+    doSearch(currentPage)
+  }, [currentPage])
 
   return (
     <SearchContext.Provider value={{

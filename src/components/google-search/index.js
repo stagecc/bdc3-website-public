@@ -1,4 +1,4 @@
-export * from './result'
+export * from './search-result'
 export * from './pagination-tray'
 export * from './search-context'
 export * from './search-form'
