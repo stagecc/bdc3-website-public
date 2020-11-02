@@ -12,7 +12,7 @@ export const SearchResults = () => {
     results, totalResults,
     currentPage, pageCount,
     doSearch, loading,
-    handleGoToNextPage, handleGoToPreviousPage, handleGoToFirstPage, handleGoToLastPage,
+    handleGoToNextPage, handleGoToPreviousPage, handleGoToPage, handleGoToFirstPage, handleGoToLastPage,
   } = useContext(SearchContext)
 
   return (
@@ -24,6 +24,7 @@ export const SearchResults = () => {
             pageCount={ pageCount }
             goToFirstPageHandler={ handleGoToFirstPage }
             goToPreviousPageHandler={ handleGoToPreviousPage }
+            goToPageHandler={ handleGoToPage }
             goToNextPageHandler={ handleGoToNextPage }
             goToLastPageHandler={ handleGoToLastPage }
           />
@@ -47,6 +48,7 @@ export const SearchResults = () => {
             pageCount={ pageCount }
             goToFirstPageHandler={ handleGoToFirstPage }
             goToPreviousPageHandler={ handleGoToPreviousPage }
+            goToPageHandler={ handleGoToPage }
             goToNextPageHandler={ handleGoToNextPage }
             goToLastPageHandler={ handleGoToLastPage }
           />

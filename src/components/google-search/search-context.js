@@ -20,6 +20,7 @@ export const GoogleSearch = ({ children }) => {
 
   const handleGoToFirstPage = () => setCurrentPage(1)
   const handleGoToPreviousPage = () => setCurrentPage(Math.max(0, currentPage - 1))
+  const handleGoToPage = pageNumber => event => setCurrentPage(pageNumber)
   const handleGoToNextPage = () => setCurrentPage(Math.min(pageCount, currentPage + 1))
   const handleGoToLastPage = () => setCurrentPage(pageCount)
 
@@ -61,7 +62,7 @@ export const GoogleSearch = ({ children }) => {
       handleChangeQuery, doSearch,
       results, totalResults,
       pageCount, currentPage,
-      handleGoToNextPage, handleGoToPreviousPage, handleGoToFirstPage, handleGoToLastPage,
+      handleGoToNextPage, handleGoToPreviousPage, handleGoToPage, handleGoToFirstPage, handleGoToLastPage,
       error, loading,
  }}>
       { children }
