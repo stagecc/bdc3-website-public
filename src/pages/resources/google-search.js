@@ -17,7 +17,13 @@ const GoogleSearchPage = () => {
 
             <GoogleSearch>
                 <SearchForm />
+
+                <br/><br/><br/>
+
                 <SearchResults />
+
+                <br/><br/><br/>
+                
             </GoogleSearch>
             
 

@@ -30,11 +30,6 @@ export const ResultsCardTitle = styled.span`
     flex: 1;
 `
 
-export const ResultsCount = styled.span`
-    flex: 1;
-    text-align: center;
-`
-
 export const SearchResults = () => {
   const {
     results, totalResults,
@@ -45,7 +40,6 @@ export const SearchResults = () => {
 
   return (
     <Wrapper>
-
       {
         totalResults > 0 && (
           <PaginationTray
@@ -62,9 +56,10 @@ export const SearchResults = () => {
 
       <ResultsCard>
         <ResultsCardHeader>
-          Page { currentPage } of { pageCount }
+          { totalResults > 0 && <span>Page { currentPage } of { pageCount }</span> }
         </ResultsCardHeader>
         <ResultsCardBody>
+          Use the text box above to search for BioData Catalyst data.
           {
             loading
               ? <LoadingDots color="var(--color-crimson)" text="Searching..." textPlacement="bottom" />
@@ -72,7 +67,7 @@ export const SearchResults = () => {
           }
         </ResultsCardBody>
         <ResultsCardFooter>
-          Page { currentPage } of { pageCount }
+          { totalResults > 0 && <span>Page { currentPage } of { pageCount }</span> }
         </ResultsCardFooter>
       </ResultsCard>
 
