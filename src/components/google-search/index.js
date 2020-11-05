@@ -1,6 +1,5 @@
-export * from './search-result'
 export * from './pagination-tray'
 export * from './search-context'
 export * from './search-form'
+export * from './search-result'
 export * from './search-results'
-export * from './use-google-search'

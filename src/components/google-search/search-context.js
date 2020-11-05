@@ -1,11 +1,17 @@
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 
 const GOOGLE_SEARCH_API_KEY = process.env.GATSBY_GOOGLE_SEARCH_API_KEY
 const GOOGLE_SEARCH_URL = `https://customsearch.googleapis.com/customsearch/v1`
 const GOOGLE_SEARCH_ID = process.env.GATSBY_GOOGLE_SEARCH_ID
 
+//
+
 export const SearchContext = createContext({})
+
+export const useGoogleSearch = () => useContext(SearchContext)
+
+//
 
 export const GoogleSearch = ({ children }) => {
   const [query, setQuery] = useState('')
@@ -64,8 +70,9 @@ export const GoogleSearch = ({ children }) => {
       pageCount, currentPage,
       handleGoToNextPage, handleGoToPreviousPage, handleGoToPage, handleGoToFirstPage, handleGoToLastPage,
       error, loading,
- }}>
+    }}>
       { children }
     </SearchContext.Provider>
   )
 }
+

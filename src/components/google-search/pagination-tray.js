@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { ChevronLeftIcon as PreviousResultsIcon, ChevronRightIcon as NextResultsIcon, FirstPageIcon, LastPageIcon, MoreHorizontalIcon } from '../icons'
 import { Button, IconButton } from '../buttons'
-import { SearchContext } from './search-context'
+import { useGoogleSearch } from './search-context'
 
 const Wrapper = styled.div`
   & .state {
@@ -35,7 +35,7 @@ export const PaginationTray = () => {
     currentPage, pageCount,
     doSearch, loading,
     handleGoToNextPage, handleGoToPreviousPage, handleGoToPage, handleGoToFirstPage, handleGoToLastPage,
-  } = useContext(SearchContext)
+  } = useGoogleSearch()
   return (
     <Wrapper>
       <div className="state">

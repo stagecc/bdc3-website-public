@@ -1,11 +1,11 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import { SearchContext } from './search-context'
+import { useGoogleSearch } from './search-context'
 
 const Wrapper = styled.div``
 
 export const SearchForm = () => {
-  const { query, handleChangeQuery, doSearch } = useContext(SearchContext)
+  const { query, handleChangeQuery, doSearch } = useGoogleSearch()
 
   const handleKeyDown = event => {
     if (event.keyCode === 13) {

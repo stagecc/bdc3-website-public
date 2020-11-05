@@ -1,7 +1,7 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Result } from './search-result'
-import { SearchContext } from './search-context'
+import { useGoogleSearch } from './search-context'
 import { Dots as LoadingDots } from '../loading'
 import { PaginationTray } from './pagination-tray'
 
@@ -13,7 +13,7 @@ export const SearchResults = () => {
     currentPage, pageCount,
     doSearch, loading,
     handleGoToNextPage, handleGoToPreviousPage, handleGoToPage, handleGoToFirstPage, handleGoToLastPage,
-  } = useContext(SearchContext)
+  } = useGoogleSearch()
 
   return (
     <Wrapper>
