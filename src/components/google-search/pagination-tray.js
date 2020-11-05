@@ -5,9 +5,9 @@ import { Button, IconButton } from '../buttons'
 import { useGoogleSearch } from './search-context'
 
 const Wrapper = styled.div`
-  & .state {
-    text-align: center;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
   & .actions {
     margin: auto;
     display: flex;
@@ -38,9 +38,6 @@ export const PaginationTray = () => {
   } = useGoogleSearch()
   return (
     <Wrapper>
-      <div className="state">
-        Page { currentPage } of { pageCount } <br />
-      </div>
       <div className="actions">
         <PaginationIconButton icon={ FirstPageIcon } clickHandler={ handleGoToFirstPage } disabled={ currentPage === 1 } />
         <PaginationIconButton icon={ PreviousResultsIcon } clickHandler={ handleGoToPreviousPage } disabled={ currentPage === 1 } />

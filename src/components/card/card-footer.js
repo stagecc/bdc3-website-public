@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export const CardFooter = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     color: ${ props => props.fgColor ? props.fgColor : 'inherit' };
     background-color: ${ props => props.bgColor ? props.bgColor : 'inherit' };
