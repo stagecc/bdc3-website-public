@@ -59,7 +59,6 @@ export const SearchResults = () => {
           { totalResults > 0 && <span>Page { currentPage } of { pageCount }</span> }
         </ResultsCardHeader>
         <ResultsCardBody>
-          Use the text box above to search for BioData Catalyst data.
           {
             loading
               ? <LoadingDots color="var(--color-crimson)" text="Searching..." textPlacement="bottom" />
