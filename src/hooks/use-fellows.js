@@ -45,13 +45,24 @@ const fellowsQuery = graphql`
                 }
             }
         }
+        cohortThree: allMarkdownRemark(
+            sort: {fields: fileAbsolutePath, order: ASC}
+            filter: {fileAbsolutePath: {regex: "/data/fellows/cohort3/"}}
+        ) {
+            edges {
+                node {
+                    ...FellowDetails
+                }
+            }
+        }
     }
 `
 
 export const useFellows = () => {
-    const { cohortOne, cohortTwo } = useStaticQuery(fellowsQuery)
+    const { cohortOne, cohortTwo, cohortThree } = useStaticQuery(fellowsQuery)
     return {
         cohortOne: cohortOne.edges.map(({ node }) => ({ id: node.id, ...node.frontmatter })),
         cohortTwo: cohortTwo.edges.map(({ node }) => ({ id: node.id, ...node.frontmatter })),
+        cohortThree: cohortThree.edges.map(({ node }) => ({ id: node.id, ...node.frontmatter })),
     }
 }
