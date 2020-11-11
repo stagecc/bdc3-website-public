@@ -4,23 +4,49 @@ import { graphql } from 'gatsby'
 import { SEO } from '../../components/seo'
 import { PageContent } from '../../components/layout'
 import { Title } from '../../components/typography'
-import { DataTable } from '../../components/data-table'
+import DataTable from 'react-data-table-component'
 
 const columns = [
-    { id: 'Study_Accession', humanReadableName: 'Study Accession' },
-    { id: 'Study_Cohort_Abbreviation', humanReadableName: 'Study/Cohort Abbreviation' },
-    { id: 'Study_Name__dbGaP_Link_', humanReadableName: 'Study Name (dbGaP Link)' },
-    { id: 'Study_Description__Verbose_', humanReadableName: 'Study Description (Verbose)' },
-    { id: 'Study_Description__Short_', humanReadableName: 'Study Description (Short)' },
-    { id: 'Primary_Research_Focus', humanReadableName: 'Primary Research Focus' },
-    { id: 'Total_Number_of_Variables', humanReadableName: 'Total Number of Variables' },
-    { id: 'dbGaP_Listed_Variable', humanReadableName: 'dbGaP Listed Variable' },
-    { id: 'Study_Type', humanReadableName: 'Study Type' },
-    { id: 'Study_Reported_Population_s_', humanReadableName: 'Study-Reported Population(s)' },
-    { id: 'Study_Consent', humanReadableName: 'Study Consent' },
-    { id: 'Type_of_Molecular_Data_Available', humanReadableName: 'Type of Molecular Data Available' },
-    { id: 'Primary_Data_Dictionary_Link', humanReadableName: 'Primary Data Dictionary Link' },
+    {
+        name: 'Study Accession', sortable: true,
+        selector: 'Study_Accession',
+        style: {
+            maxWidth: '200px',
+        }
+    },
+    {
+        name: 'Study Name (dbGaP Link)', sortable: true,
+        selector: 'Study_Name__dbGaP_Link_',
+    },
+    { name: 'Study/Cohort Abbreviation', sortable: true, selector: 'Study_Cohort_Abbreviation', },
+    { name: 'Study Description (Verbose)', sortable: true, selector: 'Study_Description__Verbose_', },
+    { name: 'Study Description (Short)', sortable: true, selector: 'Study_Description__Short_', },
+    { name: 'Primary Research Focus', sortable: true, selector: 'Primary_Research_Focus', },
+    { name: 'Total Number of Variables', sortable: true, selector: 'Total_Number_of_Variables', },
+    { name: 'dbGaP Listed Variable', sortable: true, selector: 'dbGaP_Listed_Variable', },
+    { name: 'Study Type', sortable: true, selector: 'Study_Type', },
+    { name: 'Study-Reported Population(s)', sortable: true, selector: 'Study_Reported_Population_s_', },
+    { name: 'Study Consent', sortable: true, selector: 'Study_Consent', },
+    { name: 'Type of Molecular Data Available', sortable: true, selector: 'Type_of_Molecular_Data_Available', },
+    { name: 'Primary Data Dictionary Link', sortable: true, selector: 'Primary_Data_Dictionary_Link', },
 ]
+
+const columnsToShow = columns.filter(column => [
+    'Study_Accession',
+    'Study_Name__dbGaP_Link_',
+].includes(column.selector))
+
+const ExpansionPanel = ({ columns, data }) => (
+    <div>
+        {
+            columns.map(column => (
+                <div>
+                  <strong>{ column.name }</strong>: { data[column.selector] }
+                </div>
+            ))
+        }
+    </div>
+)
 
 const DataPage = ({ data }) => {
     const studies = data.allStudies.edges.map(({ node }) => node)
@@ -36,7 +62,14 @@ const DataPage = ({ data }) => {
 
             <br/>
 
-            <DataTable columns={ columns } data={ studies }/>
+            <DataTable
+                title="Data Table Component"
+                columns={ columnsToShow }
+                data={ studies }
+                expandableRows
+                expandableRowsComponent={ <ExpansionPanel columns={ columns } /> }
+                expandOnRowClicked
+            />
 
 
         </PageContent>
