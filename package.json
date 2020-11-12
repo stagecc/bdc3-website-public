@@ -6,6 +6,8 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@mwatson/react-accessible-accordion": "^1.0.2",
+    "@nivo/bar": "^0.64.0",
+    "@nivo/pie": "^0.64.0",
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.19.4",
     "gatsby-image": "^2.2.30",
