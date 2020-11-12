@@ -4,8 +4,10 @@ import ReactDataTable from 'react-data-table-component'
 import { Card, CardHeader, CardBody, CardFooter } from '../card'
 import { CloseIcon, FullscreenIcon } from '../icons'
 import { IconButton } from '../buttons'
+import { DownloadIcon } from '../icons'
 import { PieChart } from '../charts'
 import { Stat } from './stat'
+import { downloadCSV } from '../../utils'
 
 const FilterComponent = ({ filterText, onFilter, onClear }) => (
   <Fragment>
@@ -13,6 +15,8 @@ const FilterComponent = ({ filterText, onFilter, onClear }) => (
     <button type="button" onClick={ onClear }>X</button>
   </Fragment>
 )
+
+const ExportButton = ({ onExport }) => <button onClick={ e => onExport(e.target.value) }>Export</button>
 
 export const DataTable = props => {
   const [fullScreen, setFullScreen] = useState(false)
@@ -32,9 +36,6 @@ export const DataTable = props => {
     height: '100vh',
     zIndex: '99',
   }
-
-  const sumValues = key => filteredStudies.reduce((total, study) => total + parseInt(study[key]), 0)
-
 
   useEffect(() => {
     const countValues = key => {
@@ -72,16 +73,20 @@ export const DataTable = props => {
     setFilteredStudies(props.data.filter(item => item.Study_Name__dbGaP_Link_ && item.Study_Name__dbGaP_Link_.toLowerCase().includes(query.toLowerCase())))
   }, [query])
 
-  const toggleFullScreen = () => setFullScreen(!fullScreen)
+  // const toggleFullScreen = () => setFullScreen(!fullScreen)
 
   const memoizedSubHeaderComponent = useMemo(() => {
     const handleClearQuery = () => setQuery('')
     return <FilterComponent onFilter={ e => setQuery(e.target.value)} onClear={ handleClearQuery } filterText={ query } />
   }, [query])
 
+  const memoizedActions = useMemo(() => <ExportButton onExport={() => downloadCSV(filteredStudies)} />, [filteredStudies])
+
   return (
     <Card style={ fullScreen ? fullScreenStyles : null }>
-      <CardHeader>&nbsp;</CardHeader>
+      <CardHeader style={{ display: 'flex', justifyContent: 'flex-end' }}>
+        
+      </CardHeader>
       <CardBody>
         <div style={{ display: 'flex', justifyContent: 'space-around' }}>
           <Stat name="Studies" value={ filteredStudies.length } />
@@ -105,6 +110,7 @@ export const DataTable = props => {
         data={ filteredStudies }
         subHeader
         subHeaderComponent={ memoizedSubHeaderComponent }
+        actions={ memoizedActions }
       />
       <CardFooter>&nbsp;</CardFooter>
     </Card>
