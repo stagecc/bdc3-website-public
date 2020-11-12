@@ -1,12 +1,21 @@
 import React from 'react'
-import { ResponsivePie } from '@nivo/pie'
+import { Pie } from '@nivo/pie'
 import { Subheading } from '../typography'
 
 export const PieChart = ({ title = '', data, height = 500 }) => {
   return (
-    <div style={{ height: `${ height }px`, flex: '1 1 400px' }}>
+    <div style={{
+      height: `${ height }px`,
+      flex: '1 1 400px',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'flex-start',
+      alignItems: 'center'
+    }} >
       { title && <Subheading center>{ title }</Subheading> }
-      <ResponsivePie
+      <Pie
+        height={ height }
+        width={ height }
         data={ data }
         margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
         innerRadius={ 0.5 }
