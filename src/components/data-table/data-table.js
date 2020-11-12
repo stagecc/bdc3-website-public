@@ -85,25 +85,25 @@ export const DataTable = props => {
   return (
     <Card style={ fullScreen ? fullScreenStyles : null }>
       <CardHeader style={{ display: 'flex', justifyContent: 'flex-end' }}>
-        
+        &nbsp;
       </CardHeader>
-      <CardBody>
-        <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-          <Stat name="Studies" value={ filteredStudies.length } />
-          <Stat name="Variables" value={ variablesCount } />
-        </div>
-        <hr />
-        <details>
-          <summary style={{ cursor: 'pointer' }}>Charts</summary>
-          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-            <PieChart data={ typeCounts } />
-            <PieChart data={ focusCounts } />
-            <PieChart data={ listedVariableCounts } />
-            <PieChart data={ populationCounts } />
+      <details>
+        <summary style={{ cursor: 'pointer', backgroundColor: '#eee', padding: '1rem' }}>Stats</summary>
+        <CardBody>
+          <hr />
+          <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+            <Stat name="Studies" value={ filteredStudies.length } />
+            <Stat name="Variables" value={ variablesCount } />
           </div>
-        </details>
-        <hr />
-      </CardBody>
+          <hr />
+          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+            <PieChart title="Study Type" data={ typeCounts } height="550" />
+            <PieChart title="Primary Focus" data={ focusCounts } height="550" />
+            <PieChart title="Listed Variable" data={ listedVariableCounts } height="550" />
+            <PieChart title="Population" data={ populationCounts } height="550" />
+          </div>
+        </CardBody>
+      </details>
 
       <ReactDataTable
         { ...props }
