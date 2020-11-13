@@ -1,8 +1,11 @@
 import React from 'react'
 import { Pie } from '@nivo/pie'
 import { Subheading } from '../typography'
+import { Dots as LoadingDots } from '../loading'
 
 export const PieChart = ({ title = '', data, height = 500 }) => {
+  if (typeof window === 'undefined') return <LoadingDots color="var(--color-crimson)" text="Loading..." textPlacement="top" />
+
   return (
     <div style={{
       height: `${ height }px`,
@@ -11,7 +14,7 @@ export const PieChart = ({ title = '', data, height = 500 }) => {
       flexDirection: 'column',
       justifyContent: 'flex-start',
       alignItems: 'center'
-    }} >
+    }}>
       { title && <Subheading center>{ title }</Subheading> }
       <Pie
         height={ height }
