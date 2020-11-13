@@ -1,5 +1,5 @@
 import React from 'react'
-import { Pie } from '@nivo/pie'
+import { ResponsivePie } from '@nivo/pie'
 import { Subheading } from '../typography'
 
 export const PieChart = ({ title = '', data, height = 500 }) => {
@@ -13,7 +13,7 @@ export const PieChart = ({ title = '', data, height = 500 }) => {
       alignItems: 'center'
     }}>
       { title && <Subheading center>{ title }</Subheading> }
-      <Pie
+      <ResponsivePie
         height={ height }
         width={ height }
         data={ data }
