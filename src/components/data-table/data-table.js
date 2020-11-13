@@ -1,10 +1,6 @@
 import React, { Fragment, useEffect, useMemo, useState } from 'react'
-import styled from 'styled-components'
 import ReactDataTable from 'react-data-table-component'
 import { Card, CardHeader, CardBody, CardFooter } from '../card'
-import { CloseIcon, FullscreenIcon } from '../icons'
-import { IconButton } from '../buttons'
-import { DownloadIcon } from '../icons'
 import { PieChart } from '../charts'
 import { Stat } from './stat'
 import { downloadCSV } from '../../utils'
@@ -19,7 +15,6 @@ const FilterComponent = ({ filterText, onFilter, onClear }) => (
 const ExportButton = ({ onExport }) => <button onClick={ e => onExport(e.target.value) }>Export</button>
 
 export const DataTable = props => {
-  const [fullScreen, setFullScreen] = useState(false)
   const [query, setQuery] = useState('')
   const [filteredStudies, setFilteredStudies] = useState(props.data)
   const [typeCounts, setTypeCounts] = useState([])
@@ -27,15 +22,6 @@ export const DataTable = props => {
   const [variablesCount, setVariablesCount] = useState(0)
   const [focusCounts, setFocusCounts] = useState(0)
   const [listedVariableCounts, setListedVariableCounts] = useState([])
-
-  const fullScreenStyles = {
-    position: 'fixed',
-    left: '0',
-    top: '0',
-    width: '100vw',
-    height: '100vh',
-    zIndex: '99',
-  }
 
   useEffect(() => {
     const countValues = key => {
@@ -73,8 +59,6 @@ export const DataTable = props => {
     setFilteredStudies(props.data.filter(item => item.Study_Name__dbGaP_Link_ && item.Study_Name__dbGaP_Link_.toLowerCase().includes(query.toLowerCase())))
   }, [query])
 
-  // const toggleFullScreen = () => setFullScreen(!fullScreen)
-
   const memoizedSubHeaderComponent = useMemo(() => {
     const handleClearQuery = () => setQuery('')
     return <FilterComponent onFilter={ e => setQuery(e.target.value)} onClear={ handleClearQuery } filterText={ query } />
@@ -83,7 +67,7 @@ export const DataTable = props => {
   const memoizedActions = useMemo(() => <ExportButton onExport={() => downloadCSV(filteredStudies)} />, [filteredStudies])
 
   return (
-    <Card style={ fullScreen ? fullScreenStyles : null }>
+    <Card>
       <CardHeader style={{ display: 'flex', justifyContent: 'flex-end' }}>
         &nbsp;
       </CardHeader>
