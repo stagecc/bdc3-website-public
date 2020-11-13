@@ -97,10 +97,10 @@ export const DataTable = props => {
           </div>
           <hr />
           <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-            { typeCounts.length && <PieChart title="Study Type" data={ typeCounts } height="550" /> }
-            { focusCounts && <PieChart title="Primary Focus" data={ focusCounts } height="550" /> }
-            { listedVariableCounts.length && <PieChart title="Listed Variable" data={ listedVariableCounts } height="550" /> }
-            { populationCounts.length && <PieChart title="Population" data={ populationCounts } height="550" /> }
+            { typeCounts.length && <PieChart title="Study Type" data={ typeCounts } height={ 550 } /> }
+            { focusCounts && <PieChart title="Primary Focus" data={ focusCounts } height={ 550 } /> }
+            { listedVariableCounts.length && <PieChart title="Listed Variable" data={ listedVariableCounts } height={ 550 } /> }
+            { populationCounts.length && <PieChart title="Population" data={ populationCounts } height={ 550 } /> }
           </div>
         </CardBody>
       </details>

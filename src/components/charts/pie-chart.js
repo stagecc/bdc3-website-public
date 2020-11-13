@@ -5,15 +5,13 @@ import { Subheading } from '../typography'
 export const PieChart = ({ title = '', data, height = 500 }) => {
   return (
     <div style={{
-      height: `${ height }px`,
+      height: `${ height + 50 }px`,
       flex: '1 1 400px',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'flex-start',
-      alignItems: 'center'
+      textAlign: 'center',
     }}>
       { title && <Subheading center>{ title }</Subheading> }
       <ResponsivePie
+        style={{ display: 'block' }}
         height={ height }
         width={ height }
         data={ data }
