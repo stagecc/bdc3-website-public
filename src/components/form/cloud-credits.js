@@ -156,18 +156,21 @@ export const CloudCreditsForm = props => {
         <Card { ...props }>
             <CardHeader>Cloud Credits Request</CardHeader>
             <CardBody>
+                <Paragraph right noMargin>
+                    * <em>All fields are required.</em>
+                </Paragraph>
                 {
                     !wasSubmitted && platformOptions.length > 0 && (
                         <Form onSubmit={ handleSubmit }>
                             <FormControl>
-                                <label htmlFor="name">Your Name</label>
+                                <label htmlFor="name" required>Your Name *</label>
                                 <TextInput type="text" required
                                     id="name" name="name"
                                     value={ name } onChange={ handleChangeName }
                                 />
                             </FormControl>
                             <FormControl>
-                                <label htmlFor="email">Email Address</label>
+                                <label htmlFor="email">Email Address *</label>
                                 <TextInput type="email" required
                                     id="email" name="email"
                                     value={ email } onChange={ handleChangeEmail }
@@ -175,23 +178,23 @@ export const CloudCreditsForm = props => {
                                 <HelpText>Please use an organizational email address.</HelpText>
                             </FormControl>
                             <FormControl>
-                                <label htmlFor="role">Your Role</label>
+                                <label htmlFor="role">Your Role *</label>
                                 <TextInput type="role" required id="role" name="role" value={ role } onChange={ handleChangeRole } />
                             </FormControl>
                             <FormControl>
-                                <label htmlFor="organization">Your Organization</label>
+                                <label htmlFor="organization">Your Organization *</label>
                                 <TextInput type="organization" required id="organization" name="organization" value={ organization } onChange={ handleChangeOrganization } />
                             </FormControl>
                             <FormControl>
-                                <label htmlFor="collaborators">Collaborators</label>
+                                <label htmlFor="collaborators">Collaborators *</label>
                                 <TextArea required id="collaborators" name="collaborators" placeholder={`Enter each collaborator's name, email, role, and organization.`}
                                     value={ collaborators } onChange={ handleChangeCollaborators }
                                 />
                                 <HelpText>Please list&mdash;one per line&mdash;the Name, Email, Role, and Organization of each PI, Collaborator, and Student.</HelpText>
                             </FormControl>
                             <FormControl>
-                                <label htmlFor="project">Project Name & Description</label>
-                                <TextArea id="project" name="project" placeholder={`Enter project name and a brief description.`}
+                                <label htmlFor="project">Project Name & Description *</label>
+                                <TextArea required id="project" name="project" placeholder={`Enter project name and a brief description.`}
                                     value={ project } onChange={ handleChangeProject } maxLength="3000"
                                 />
                                 <HelpText>
@@ -200,7 +203,7 @@ export const CloudCreditsForm = props => {
                                 </HelpText>
                             </FormControl>
                             <FormControl>
-                                <label htmlFor="previous-funding">Have you submitted a cloud credits request before?</label>
+                                <label htmlFor="previous-funding">Have you submitted a cloud credits request before? *</label>
                                 <Select required id="previous-funding" name="previous-funding" value={ previousFunding } onChange={ handleChangePreviousFunding }>
                                     <Option value="">Select One</Option>
                                     <Option value="Yes">Yes</Option>
@@ -208,9 +211,9 @@ export const CloudCreditsForm = props => {
                                 </Select>
                             </FormControl>
                             <FormControl>
-                                <label htmlFor="previous-funding-details">Use of Initial Pilot Credits</label>
+                                <label htmlFor="previous-funding-details">Use of Initial Pilot Credits { previousFunding === 'Yes' ? '*' : '' }</label>
                                 <TextArea id="previous-funding-details" name="previous-funding-details" placeholder={ previousFunding !== 'Yes' ? `N/A` : `Briefly outline your use of previous cloud credit funding.` }
-                                    value={ previousFundingDetails } onChange={ handleChangePreviousFundingDetails } maxLength="3000" disabled={ previousFunding !== 'Yes' } required={ previousFunding === 'yes' }
+                                    value={ previousFundingDetails } onChange={ handleChangePreviousFundingDetails } maxLength="3000" disabled={ previousFunding !== 'Yes' } required={ previousFunding === 'Yes' }
                                 />
                                 <HelpText>
                                     Briefly outline your use of previous cloud credit funding. Limit your response to 3000 characters.
@@ -218,14 +221,14 @@ export const CloudCreditsForm = props => {
                                 </HelpText>
                             </FormControl>
                             <FormControl>
-                                <label htmlFor="justification">Justification for Credits</label>
-                                <TextArea id="justification" name="justification" placeholder={`Enter a brief justification for your request.`}
+                                <label htmlFor="justification">Justification for Credits *</label>
+                                <TextArea required id="justification" name="justification" placeholder={`Enter a brief justification for your request.`}
                                     value={ justification } onChange={ handleChangeJustification } maxLength="6000"
                                 />
                                 <HelpText>
                                     Reviewers will be interested in:
                                         1.) Significance and goals of the project;
-                                        2.)  Datasets, tools, types of analysis to be used;
+                                        2.) Datasets, tools, types of analysis to be used;
                                         3.) Experience using cloud platforms;
                                         4.) Anticipated timeline for the work;
                                         5.) Whether workflows/pipelines have been optimized and/or if guidance/consultation from the platforms has been sought;
@@ -237,14 +240,14 @@ export const CloudCreditsForm = props => {
                                 </HelpText>
                             </FormControl>
                             <FormControl>
-                                <label htmlFor="estimate">Estimate of Cloud Credits Needed</label>
+                                <label htmlFor="estimate">Estimate of Cloud Credits Needed *</label>
                                 <AdornedInput type="number" required min="1" id="estimate" name="estimate" value={ estimate } onChange={ handleChangeEstimate } adornment="$" />
                                 <HelpText>
                                     Please enter your estimate in US Dollars. Round up to the nearest $100 and add a $300 buffer for troubleshooting and testing.
                                 </HelpText>
                             </FormControl>
                             <FormControl>
-                                <label htmlFor="platform">Preferred Platform/Service</label>
+                                <label htmlFor="platform">Preferred Platform/Service *</label>
                                 <Select required id="platform" name="platform" value={ platform } onChange={ handleChangePlatform }>
                                     <Option value="">Select One</Option>
                                     { platformOptions.map(option => <Option key={ option } value={ option }>{ option }</Option>) }
