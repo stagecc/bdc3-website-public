@@ -203,14 +203,14 @@ export const CloudCreditsForm = props => {
                                 <label htmlFor="previous-funding">Have you submitted a cloud credits request before?</label>
                                 <Select required id="previous-funding" name="previous-funding" value={ previousFunding } onChange={ handleChangePreviousFunding }>
                                     <Option value="">Select One</Option>
-                                    <Option value="yes">Yes</Option>
-                                    <Option value="no">No</Option>
+                                    <Option value="Yes">Yes</Option>
+                                    <Option value="No">No</Option>
                                 </Select>
                             </FormControl>
                             <FormControl>
                                 <label htmlFor="previous-funding-details">Use of Initial Pilot Credits</label>
-                                <TextArea id="previous-funding-details" name="previous-funding-details" placeholder={ previousFunding !== 'yes' ? `N/A` : `Briefly outline your use of previous cloud credit funding.` }
-                                    value={ previousFundingDetails } onChange={ handleChangePreviousFundingDetails } maxLength="3000" disabled={ previousFunding !== 'yes' } required={ previousFunding === 'yes' }
+                                <TextArea id="previous-funding-details" name="previous-funding-details" placeholder={ previousFunding !== 'Yes' ? `N/A` : `Briefly outline your use of previous cloud credit funding.` }
+                                    value={ previousFundingDetails } onChange={ handleChangePreviousFundingDetails } maxLength="3000" disabled={ previousFunding !== 'Yes' } required={ previousFunding === 'yes' }
                                 />
                                 <HelpText>
                                     Briefly outline your use of previous cloud credit funding. Limit your response to 3000 characters.
