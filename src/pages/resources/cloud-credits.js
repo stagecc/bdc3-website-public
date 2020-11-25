@@ -28,8 +28,9 @@ const CloudCreditsPage = () => (
             </Paragraph>
 
             <Paragraph>
-                Users of BioData Catalyst workspace environments Powered by Seven Bridges and Powered by Terra can incur both computation and storage cloud costs,
-                the amount of which is based on the size of each AWS or Google compute instance and the duration for which it is used.
+                Users of BioData Catalyst workspace environments Powered by Seven Bridges and Powered by Terra can incur both computation and storage cloud costs.
+                Computation costs are influenced by compute instance size, the duration for which the instance is used, and the cloud providers' pricing of the compute instance at the time of execution.
+                Storage costs are influenced by file size, the duration the file is stored, and the cloud providers' pricing of the storage class.
                 Users can delete result files once they are no longer needed to avoid unnecessary storage costs.
                 BioData Catalyst users who upload/import their own data to the system incur storage costs for these uploaded files as well.
             </Paragraph>
@@ -62,9 +63,10 @@ const CloudCreditsPage = () => (
             </Paragraph>
 
             <Paragraph>
-                If the anticipated costs are in excess of $500, users can cover those costs using their own AWS and/or Google accounts which can be brought to BioData Catalyst.
+                If the anticipated costs are in excess of $500, users on BioData Catalyst Powered by Terra can cover costs using their own Google accounts.
+                Users of BioData Catalyst Powered by Seven Bridges can cover additional costs by providing a credit card or purchase order number.
                 Alternatively, users can apply for additional credits via the NHLBI BioData Catalyst Cloud Credit Program
-                (<AnchorLink to="/resources/cloud-credits#cloud-credits-form">see form below</AnchorLink>)
+                (<AnchorLink to="/resources/cloud-credits#cloud-credits-form">see form below</AnchorLink>).
             </Paragraph>
         </section>
 
@@ -72,12 +74,10 @@ const CloudCreditsPage = () => (
             <Heading>NHLBI BioData Catalyst Cloud Credit Program</Heading>
 
             <Paragraph>
-                The NHLBI BioData Catalyst Cloud Credit Program offers users the opportunity to apply for additional cloud credits
-                to support research projects in the heart, lung, blood, and sleep fields.
-                Cloud credits are awarded on a per project basis, so if multiple users are working together
-                on a larger project the group should submit one application.
-                All individuals involved in a project will be able to make use of awarded cloud credits
-                through a shared billing group on either BioData Catalyst Powered by Seven Bridges or BioData Catalyst Powered by Terra.
+                The NHLBI BioData Catalyst Cloud Credit Program offers users the opportunity to apply for additional cloud credits to support research projects in the heart, lung, blood, and sleep fields.
+                Cloud credits are awarded on a per project basis, so if multiple users are working together on a larger project the group should submit one application.
+                All individuals involved in a project will be able to make use of awarded cloud credits through a shared billing group on either
+                BioData Catalyst Powered by Seven Bridges or BioData Catalyst Powered by Terra.
                 Users can submit an application using the <AnchorLink to="/resources/cloud-credits#cloud-credits-form">Cloud Credit Request Form</AnchorLink> below.
             </Paragraph>
 
@@ -101,7 +101,7 @@ const CloudCreditsPage = () => (
 
             <Paragraph>
                 If you need additional assistance with understanding cloud costs,
-                please reach out to the <Link to="/contact">help desk</Link> with your question(s) and choose the type "<strong>Cloud Credits</strong>".
+                please reach out to the <Link to="/contact">help desk</Link> with your question(s) and choose the type "Cloud Credits."
             </Paragraph>
         </section>
 
@@ -110,8 +110,8 @@ const CloudCreditsPage = () => (
 
             <Paragraph>
                 Cloud credits recipients agree to acknowledge the funding for the NHLBI BioData Catalyst
-                in all publications and external presentations,
-                as noted in the <Link to="/about">How to Cite Us section on this page</Link>.
+                in all publications and external presentations, as noted in
+                the <Link to="/about">How to Cite Us section on this page</Link>.
             </Paragraph>
         </section>
 
