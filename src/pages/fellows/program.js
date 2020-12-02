@@ -122,7 +122,7 @@ const FellowsPage = () => {
             <br/>
     
             <section>
-                <Heading>Cohort 2 Fellows Program Timeline</Heading>
+                <Heading>Cohort 3 Fellows Program Timeline</Heading>
     
                 <Table>
                     <thead>
