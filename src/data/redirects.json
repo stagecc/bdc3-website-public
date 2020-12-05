@@ -1,9 +1,5 @@
 [
   {
-    "from": "/fellows/apply",
-    "to": "https://share.hsforms.com/1DNqEOxDrRISdk-_Ixnqbhg3ry9k"
-  },
-  {
     "from": "/resources/",
     "to": "/resources/data"
   },

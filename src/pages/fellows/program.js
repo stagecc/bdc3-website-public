@@ -36,7 +36,7 @@ const FellowsPage = () => {
                 !acceptingApplications && (
                     <Alert
                         type="info" center
-                        message="Please note applications to the BioData Catalyst Fellowship Program are currently closed. Applications to join the third Cohort are anticipated to open in October 2020."
+                        message="Please note applications to the BioData Catalyst Fellowship Program are currently closed."
                         style={{ width: '75%', margin: '2rem auto' }}
                     />
                 )
