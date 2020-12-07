@@ -100,6 +100,8 @@ const CloudCreditsPage = () => (
             </BulletedList>
 
             <Paragraph>
+                For community guidance on estimating cloud credits, please see feedback from users in the
+                following <ExternalLink to="https://bdcatalyst.freshdesk.com/support/discussions/topics/60000405803">BioData Catalyst Forum post</ExternalLink>.
                 If you need additional assistance with understanding cloud costs,
                 please reach out to the <Link to="/contact">help desk</Link> with your question(s) and choose the type "Cloud Credits."
             </Paragraph>
