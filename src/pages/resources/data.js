@@ -51,7 +51,7 @@ const DataPage = ({ data, location }) => {
                 
                 <Paragraph center>
                     <Button light as="a" target="_blank" rel="noopener noreferrer"
-                        href="https://drive.google.com/file/d/1bRv9hhPJw4BqzTkW_1Xm1fVNgzM6S88f/view?usp=sharing"
+                        href="https://drive.google.com/file/d/1iQn1UtAn6-EamKPP5zIrK6IpEpN10iCR/view?ts=5fce6531"
                         style={{ margin: '1rem', display: 'inline-flex', alignItems: 'center' }}
                     >
                         Study Details &nbsp;&nbsp; <DownloadIcon fill="var(--color-crimson)" size={ 24 } />
