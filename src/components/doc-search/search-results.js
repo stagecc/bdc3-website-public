@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import styled from 'styled-components'
 import { Result } from './search-result'
-import { useGoogleSearch } from './search-context'
+import { useDocSearch } from './search-context'
 import { Dots as LoadingDots } from '../loading'
 import { PaginationTray } from './pagination-tray'
 import { Card, CardHeader, CardBody, CardFooter } from '../card'
@@ -36,7 +36,7 @@ export const SearchResults = () => {
     currentPage, pageCount,
     doSearch, loading, error,
     handleGoToNextPage, handleGoToPreviousPage, handleGoToPage, handleGoToFirstPage, handleGoToLastPage,
-  } = useGoogleSearch()
+  } = useDocSearch()
 
   return (
     <Wrapper>

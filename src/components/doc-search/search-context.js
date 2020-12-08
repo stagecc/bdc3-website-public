@@ -9,11 +9,11 @@ const GOOGLE_SEARCH_ID = process.env.GATSBY_GOOGLE_SEARCH_ID
 
 export const SearchContext = createContext({})
 
-export const useGoogleSearch = () => useContext(SearchContext)
+export const useDocSearch = () => useContext(SearchContext)
 
 //
 
-export const GoogleSearch = ({ children }) => {
+export const DocSearch = ({ children }) => {
   const [query, setQuery] = useState('')
   const [results, setResults] = useState([])
   const [totalResults, setTotalResults] = useState(0)

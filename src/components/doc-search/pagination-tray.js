@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { ChevronLeftIcon as PreviousResultsIcon, ChevronRightIcon as NextResultsIcon, FirstPageIcon, LastPageIcon, MoreHorizontalIcon } from '../icons'
 import { Button, IconButton } from '../buttons'
-import { useGoogleSearch } from './search-context'
+import { useDocSearch } from './search-context'
 
 const Wrapper = styled.div`
   display: flex;
@@ -36,7 +36,7 @@ export const PaginationTray = () => {
     currentPage, pageCount,
     doSearch, loading,
     handleGoToNextPage, handleGoToPreviousPage, handleGoToPage, handleGoToFirstPage, handleGoToLastPage,
-  } = useGoogleSearch()
+  } = useDocSearch()
   return (
     <Wrapper>
       <div className="actions">
