@@ -14,10 +14,11 @@ const Wrapper = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    & ${ Button } {
-      margin: 0 0.25rem;
-    }
   }
+`
+
+const PaginationPageButton = styled(Button)`
+  margin: 0 0.25rem;
 `
 
 const PaginationIconButton = ({ icon, clickHandler, disabled }) => {
@@ -41,7 +42,7 @@ export const PaginationTray = () => {
       <div className="actions">
         <PaginationIconButton icon={ FirstPageIcon } clickHandler={ handleGoToFirstPage } disabled={ currentPage === 1 } />
         <PaginationIconButton icon={ PreviousResultsIcon } clickHandler={ handleGoToPreviousPage } disabled={ currentPage === 1 } />
-        { [...Array(pageCount).keys()].map(i => <Button light={ currentPage !== i + 1 } small onClick={ handleGoToPage(i + 1) }>{ i + 1 }</Button>) }
+        { [...Array(pageCount).keys()].map(i => <PaginationPageButton light={ currentPage !== i + 1 } small onClick={ handleGoToPage(i + 1) }>{ i + 1 }</PaginationPageButton>) }
         <PaginationIconButton icon={ NextResultsIcon } clickHandler={ handleGoToNextPage } disabled={ currentPage === pageCount } />
         <PaginationIconButton icon={ LastPageIcon } clickHandler={ handleGoToLastPage } disabled={ currentPage === pageCount } />
       </div>
