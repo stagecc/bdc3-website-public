@@ -1,0 +1,102 @@
+[
+  {
+    "Name": "Outcomes Related to COVID-19 Treated With Hydroxychloroquine Among In-patients With Symptomatic Disease (ORCHID)",
+    "Short Name": "ORCHID",
+    "Description": "ORCHID is a multicenter, blinded, placebo-controlled, randomized clinical trial evaluating hydroxychloroquine for the treatment of adults hospitalized with COVID-19. Patients, treating clinicians, and study personnel will all be blinded to study group assignment.",
+    "Type": "Interventional (Clinical Trial)",
+    "Link": "https://clinicaltrials.gov/ct2/show/NCT04332991",
+    "Network": "PETAL Network",
+    "Responsible Party": "Boyd Taylor Thompson, Massachusetts General Hospital",
+    "Status": "Completed"
+  },
+  {
+    "Name": "Colchicine Coronavirus SARS-CoV2 Trial (COLCORONA)",
+    "Short Name": "COLCORONA",
+    "Description": "This is a phase 3, multi-center, randomized, double-blind, placebo-controlled multicenter study to evaluate the efficacy and safety of colchicine in adult patients diagnosed with COVID-19 infection and have at least one high-risk criterion. Approximately 6000 subjects meeting all inclusion and no exclusion criteria will be randomized to receive either colchicine or placebo tablets for 30 days.",
+    "Type": "Interventional (Clinical Trial)",
+    "Link": "https://clinicaltrials.gov/ct2/show/NCT04322682",
+    "Network": "",
+    "Responsible Party": "Montreal Heart Institute",
+    "Status": "Recruiting"
+  },
+  {
+    "Name": "Trial of Early Therapies During Non-hospitalized Outpatient Window (TREAT NOW) for COVID-19",
+    "Short Name": "TREATNOW",
+    "Description": "Blinded, multicenter, placebo-controlled, randomized clinical trial evaluating lopinavir/ritonavir vs placebo in early outpatient treatment of adults with COVID-19",
+    "Type": "Interventional (Clinical Trial)",
+    "Link": "https://clinicaltrials.gov/ct2/show/NCT04372628",
+    "Network": "",
+    "Responsible Party": "Todd Rice, Vanderbilt University Medical Center",
+    "Status": "Recruiting"
+  },
+  {
+    "Name": "Convalescent Plasma in Outpatients With COVID-19 (C3PO)",
+    "Short Name": "C3PO",
+    "Description": "The overarching goal of this project is to confirm or refute the role of passive immunization as a safe and efficacious therapy in preventing the progression from mild to severe/critical COVID-19 illness and to understand the immunologic kinetics of anti-SARS-CoV-2 antibodies after passive immunization.",
+    "Type": "Interventional (Clinical Trial)",
+    "Link": "https://clinicaltrials.gov/ct2/show/NCT04355767",
+    "Network": "SIREN Network",
+    "Responsible Party": "Stanford University",
+    "Status": "Enrolling by invitation" 
+  },
+  {
+    "Name": "COVID-19 Outpatient Thrombosis Prevention Trial: A Multi-center Adaptive Randomized Placebo-controlled Platform Trial Evaluating the Efficacy and Safety of Anti-thrombotic Strategies in COVID-19 Adults Not Requiring Hospitalization at Time of Diagnosis",
+    "Short Name": "",
+    "Description": "Blinded, multicenter, placebo-controlled, randomized clinical trial evaluating lopinavir/ritonavir vs placebo in early outpatient treatment of adults with COVID-19",
+    "Type": "Interventional (Clinical Trial)",
+    "Link": "https://clinicaltrials.gov/ct2/show/NCT04498273",
+    "Network": "ACTIV4-Outpatient",
+    "Responsible Party": "Frank C Sciurba, University of Pittsburgh",
+    "Status": "Not yet recruiting"
+  },
+  {
+    "Name": "A Multicenter, Adaptive, Randomized, Blinded Controlled Trial of the Safety and Efficacy of Investigational Therapeutics for Hospitalized Patients With COVID-19",
+    "Short Name": "TICO",
+    "Description": "This study looks at the safety and effectiveness of different drugs in treating COVID-19 in people who have been hospitalized with the infection. Participants in the study will be treated with either a study drug plus current standard of care (SOC), or with placebo plus current SOC.",
+    "Type": "Interventional (Clinical Trial)",
+    "Link": "https://clinicaltrials.gov/ct2/show/NCT04501978",
+    "Network": "ACTIV-3",
+    "Responsible Party": "National Institute of Allergy and Infectious Diseases (NIAID)",
+    "Status": "Recruiting"
+  },
+  {
+    "Name": "Adaptive Platform Treatment Trial for Outpatients With COVID-19 (Adapt Out COVID)",
+    "Short Name": "Adapt Out COVID",
+    "Description": "This study looks at the safety and effectiveness of different drugs in treating COVID-19 in outpatients. Participants in the study will be treated with either a study drug or with placebo",
+    "Type": "Interventional (Clinical Trial)",
+    "Link": "https://clinicaltrials.gov/ct2/show/NCT04518410",
+    "Network": "ACTIV-2",
+    "Responsible Party": "National Institute of Allergy and Infectious Diseases (NIAID)",
+    "Status": "Recruiting"
+  },
+  {
+    "Name": "A Multicenter, Adaptive, Randomized Controlled Platform Trial of the Safety and Efficacy of Antithrombotic Strategies in Hospitalized Adults With COVID-19",
+    "Short Name": "",
+    "Description": "This is a randomized, open label, adaptive platform trial to compare the effectiveness of antithrombotic strategies for prevention of adverse outcomes in COVID-19 positive inpatients",
+    "Type": "Interventional (Clinical Trial)",
+    "Link": "https://clinicaltrials.gov/ct2/show/NCT04505774",
+    "Network": "ACTIV-4 ACUTE",
+    "Responsible Party": "Matthew Neal MD, University of Pittsburgh",
+    "Status": "Recruiting"
+  },
+  {
+    "Name": "RED CORAL: PETAL Repository of Electronic Data COVID-19 Observational Study",
+    "Short Name": "RED CORAL",
+    "Description": "We will identify acute and critically ill patients with COVID-19 and collect detailed data from their hospital stay. We will contribute data to the WHO/ ISARIC COVID registry and to the scientific community in order to advance United States participation in studies of global epidemiology. We will use the data to increase understanding of the clinical course of COVID-19.",
+    "Type": "Observational (clinical data from manual review of EHRs and entered into REDCap) but will have imaging data as well",
+    "Link": "https://petalnet.org/studies/public/redcoral",
+    "Network": "PETAL Network",
+    "Responsible Party": "",
+    "Status": ""
+  },
+  {
+    "Name": "MIS-C Study",
+    "Short Name": "",
+    "Description": "Understand clinical manifestations of SARS CoV-2/ COVID-19 in children; Understand the etiology and clinical manifestations of MIS-C; Determine the risk profiles for MIS-C and Severe COVID-19; Understand the variations in immune response underlying the range of manifestations of children infected and identiy predctive and prognostic immune biomarkers; Understand long-term consequences of SARS-CoV-2, COVID-19",
+    "Type": "1) Recruit large pediatric cohort of at-risk patients;  2) MIS-C Chohort Studies; 3) Long-term follow-up; 4) CDC Survellance ",
+    "Link": "",
+    "Network": "",
+    "Responsible Party": "",
+    "Status": "Recruiting/ Fi  ting molecular data; GMKF FHIR data; IMMPORT immunology-  data moved into NIH AWS buckets. Coordination through a Data Management Committee (subcommittees). Protocols and data types might have different embargo periods. Hoping to get data directly from sequencing centers into platforms and that investigators do analysis in platform (maybe). CRFs for MUSIC are in development. MUSIC will be registered in dbGaP. EKG and cardiac MRIs will be included."
+   }
+]

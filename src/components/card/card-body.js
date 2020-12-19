@@ -36,7 +36,7 @@ CardBodyContents.defaultProps = {
 
 export const CardBody = ({ children, image, style }) => {
     return (
-        <CardBodyWrapper>
+        <CardBodyWrapper style={ style }>
             <Hidden xs>{ image && image.path && image.placement === 'left' ? <CardBodyGraphic imagePath={ image.path } /> : <br/> }</Hidden>
             <CardBodyContents style={ style }>{ children }</CardBodyContents>
             <Hidden xs>{ image && image.path && image.placement === 'right' ? <CardBodyGraphic imagePath={ image.path } /> : <br/> }</Hidden>

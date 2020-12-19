@@ -49,6 +49,13 @@ module.exports = {
         name: 'fellows',
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./src/data/studies`,
+        name: 'studies',
+      },
+    },
     `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,

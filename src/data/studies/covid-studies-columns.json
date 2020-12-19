@@ -1,0 +1,53 @@
+[
+  {
+    "name": "Short Name",
+    "selector": "Short_Name",
+    "type": "string",
+    "omit": false,
+    "groupable": false
+  },
+  {
+    "name": "Study Name",
+    "selector": "Name",
+    "type": "string",
+    "sortable": true,
+    "grow": 8,
+    "maxWidth": "1000px",
+    "groupable": false
+  },
+  {
+    "name": "Description",
+    "selector": "Description",
+    "type": "string",
+    "omit": true,
+    "groupable": false
+  },
+  {
+    "name": "Study Type",
+    "selector": "Type",
+    "type": "string",
+    "omit": true,
+    "groupable": true
+  },
+  {
+    "name": "Link",
+    "selector": "Link",
+    "type": "string",
+    "omit": true,
+    "groupable": false
+  },
+  {
+    "name": "Responsible Party",
+    "selector": "Responsible_Party",
+    "type": "string",
+    "omit": true,
+    "groupable": false
+  },
+  {
+    "name": "Status",
+    "selector": "Status",
+    "type": "string",
+    "omit": true,
+    "groupable": true
+  }
+]

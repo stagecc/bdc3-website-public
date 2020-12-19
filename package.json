@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@mwatson/react-accessible-accordion": "^1.0.2",
+    "@nivo/pie": "^0.64.0",
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.26.1",
     "gatsby-image": "^2.2.30",
@@ -26,10 +27,12 @@
     "jwt-decode": "^2.2.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
+    "react-data-table-component": "^6.11.5",
     "react-dom": "^16.12.0",
     "react-grid-system": "^6.0.3",
     "react-helmet": "^6.0.0",
     "react-spring": "^8.0.27",
+    "react-table": "^7.6.0",
     "styled-components": "^4.4.1"
   },
   "devDependencies": {
