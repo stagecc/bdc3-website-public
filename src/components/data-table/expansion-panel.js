@@ -77,17 +77,21 @@ export const ExpansionPanel = ({ data }) => {
 export const CovidExpansionPanel = ({ data }) => {
   return (
     <Wrapper>
-      <Subheading>
-        { data.Name }
-      </Subheading>
-      <hr />
-      <strong>Short Name:</strong> { data.Short_Name }<br /><br />
-      <strong>Study Description:</strong> { data.Description }<br /><br />
-      <strong>Study Type:</strong> { data.Type }<br /><br />
-      <strong>Study Link:</strong> { data.Study_Link }<br /><br />
-      <strong>Network:</strong> { data.Network }<br /><br />
-      <strong>Responsible Party:</strong> { data.Responsible_Party }<br /><br />
-      <strong>Status:</strong> { data.Status }<br />
+      <Header>
+        <Subheading>{ data.Name }</Subheading>
+      </Header>
+
+      <Body>
+        <strong>Short Name:</strong> { data.Short_Name }<br /><br />
+        <strong>Study Description:</strong> { data.Description }<br /><br />
+        <strong>Study Type:</strong> { data.Type }<br /><br />
+        <strong>Study Link:</strong> <ExternalLink to={ data.Link }>{ data.Link }</ExternalLink><br /><br />
+        <strong>Network:</strong> { data.Network }<br /><br />
+        <strong>Responsible Party:</strong> { data.Responsible_Party }<br /><br />
+        <strong>Status:</strong> { data.Status }<br />
+      </Body>
+
+      <Footer />
     </Wrapper>
   )
 }

@@ -99,7 +99,7 @@ export const DataTable = ({ columns, data, ...props }) => {
 
   useEffect(() => {
     if (filteredStudies) {
-      setFilteredStudies(data.filter(study => isFiltered(study, 'Accession', filters.Accession) && isFiltered(study, 'Name', filters.Name)))
+      setFilteredStudies(data.filter(study => isFiltered(study, 'Name', filters.Name)))
     }
   }, [filters])
 

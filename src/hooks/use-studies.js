@@ -70,7 +70,7 @@ export const useStudies = () => {
   return {
     studies: studies.edges.map(({ node }) => node),
     studiesColumns: studiesColumns.edges.map(({ node }) => node),
-    covidStudiesColumns: covidStudiesColumns.edges.map(({ node }) => node),
     covidStudies: covidStudies.edges.map(({ node }) => node),
+    covidStudiesColumns: covidStudiesColumns.edges.map(({ node }) => node),
   }
 }

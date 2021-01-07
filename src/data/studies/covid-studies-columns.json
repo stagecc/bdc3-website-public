@@ -1,18 +1,18 @@
 [
   {
-    "name": "Short Name",
-    "selector": "Short_Name",
-    "type": "string",
-    "omit": false,
-    "groupable": false
-  },
-  {
     "name": "Study Name",
     "selector": "Name",
     "type": "string",
     "sortable": true,
     "grow": 8,
     "maxWidth": "1000px",
+    "groupable": false
+  },
+  {
+    "name": "Short Name",
+    "selector": "Short_Name",
+    "type": "string",
+    "omit": false,
     "groupable": false
   },
   {
