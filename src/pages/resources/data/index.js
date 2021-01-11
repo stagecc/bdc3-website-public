@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 import { SEO } from '../../../components/seo'
 import { PageContent } from '../../../components/layout'
@@ -41,6 +41,7 @@ const DataPage = ({ data, location }) => {
           <ListItem primary={ <span><ExternalLink to="https://www.nhlbiwgs.org/">TOPMed</ExternalLink> Freeze 5b</span> } />
           <ListItem primary={ <span><ExternalLink to="https://www.nhlbiwgs.org/">TOPMed</ExternalLink> Freeze 8 Data</span> } />
           <ListItem primary={ <span>Parent Studies <ExternalLink to="https://www.ncbi.nlm.nih.gov/gap/">dbGaP</ExternalLink></span> } />
+          <ListItem primary={ <span>COVID-19 data <Link to="/covid-19">(ORCHID)</Link></span> } />
         </BulletedList>
         
         <Paragraph>
@@ -52,6 +53,9 @@ const DataPage = ({ data, location }) => {
         <Paragraph center>
           <ButtonLink light download to="/resources/data/studies" style={{ margin: '1rem', display: 'inline-flex', alignItems: 'center' }}>
             Explore Studies &nbsp;&nbsp; <MagnifyingGlassIcon fill="var(--color-crimson)" size={ 24 } />
+          </ButtonLink>
+          <ButtonLink light download to="/covid-19" style={{ margin: '1rem', display: 'inline-flex', alignItems: 'center' }}>
+            Explore COVID-19 Studies &nbsp;&nbsp; <MagnifyingGlassIcon fill="var(--color-crimson)" size={ 24 } />
           </ButtonLink>
           <Button light as="a" target="_blank" rel="noopener noreferrer"
             href="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/biodata-catalyst-release-notes"
