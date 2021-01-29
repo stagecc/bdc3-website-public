@@ -5,7 +5,7 @@ export const Button = styled.button(({ small, light, fullWidth }) => `
     background-color: ${ light ? '#fff' : 'var(--color-crimson)' };
     border-radius: 4px;
     display: inline-block;
-    border: ${ light ? '2px solid var(--color-crimson)' : '0' };
+    border: ${ light ? '1px solid var(--color-crimson)' : '0' };
     color: ${ light ? 'var(--color-crimson) !important' : '#fff' };
     padding: ${ small ? '0.5rem 1rem' : '1rem 1.5rem' };
     font-size: ${ small ? '80%' : '100%' };

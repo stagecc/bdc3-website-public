@@ -40,20 +40,10 @@ export const SearchResults = () => {
 
   return (
     <Wrapper>
-      {
-        totalResults > 0 && (
-          <PaginationTray
-            currentPage={ currentPage }
-            pageCount={ pageCount }
-            goToFirstPageHandler={ handleGoToFirstPage }
-            goToPreviousPageHandler={ handleGoToPreviousPage }
-            goToPageHandler={ handleGoToPage }
-            goToNextPageHandler={ handleGoToNextPage }
-            goToLastPageHandler={ handleGoToLastPage }
-          />
-        )
-      }
+      { totalResults > 0 && <PaginationTray  /> }
 
+      <br/>
+      
       <ResultsCard>
         <ResultsCardHeader>
           { totalResults > 0 && <span>Page { currentPage } of { pageCount }</span> }
@@ -70,19 +60,9 @@ export const SearchResults = () => {
         </ResultsCardFooter>
       </ResultsCard>
 
-        {
-          totalResults > 0 && (
-            <PaginationTray
-              currentPage={ currentPage }
-              pageCount={ pageCount }
-              goToFirstPageHandler={ handleGoToFirstPage }
-              goToPreviousPageHandler={ handleGoToPreviousPage }
-              goToPageHandler={ handleGoToPage }
-              goToNextPageHandler={ handleGoToNextPage }
-              goToLastPageHandler={ handleGoToLastPage }
-            />
-          )
-        }
+      <br/>
+      
+      { totalResults > 0 && <PaginationTray  /> }
 
     </Wrapper>
   )

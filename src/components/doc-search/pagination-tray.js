@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ChevronLeftIcon as PreviousResultsIcon, ChevronRightIcon as NextResultsIcon, FirstPageIcon, LastPageIcon, MoreHorizontalIcon } from '../icons'
+import { ChevronLeftIcon as PreviousResultsIcon, ChevronRightIcon as NextResultsIcon, FirstPageIcon, LastPageIcon, EllipsisIcon } from '../icons'
 import { Button, IconButton } from '../buttons'
 import { useDocSearch } from './search-context'
 
@@ -25,7 +25,7 @@ const PaginationIconButton = ({ icon, clickHandler, disabled }) => {
   const PaginationIcon = icon
   return (
     <IconButton disabled={ disabled } onClick={ disabled ? null : clickHandler }>
-      <PaginationIcon size={ 36 } fill={ disabled ? 'var(--color-lightgrey)' : 'var(--color-crimson)' } />
+      <PaginationIcon size={ 24 } fill={ disabled ? 'var(--color-lightgrey)' : 'var(--color-crimson)' } />
     </IconButton>
   )
 }
@@ -33,7 +33,7 @@ const PaginationIconButton = ({ icon, clickHandler, disabled }) => {
 export const PaginationTray = () => {
   const {
     results, totalResults,
-    currentPage, pageCount,
+    currentPage, pageCount, paginationRadius,
     doSearch, loading,
     handleGoToNextPage, handleGoToPreviousPage, handleGoToPage, handleGoToFirstPage, handleGoToLastPage,
   } = useDocSearch()
@@ -42,7 +42,36 @@ export const PaginationTray = () => {
       <div className="actions">
         <PaginationIconButton icon={ FirstPageIcon } clickHandler={ handleGoToFirstPage } disabled={ currentPage === 1 } />
         <PaginationIconButton icon={ PreviousResultsIcon } clickHandler={ handleGoToPreviousPage } disabled={ currentPage === 1 } />
-        { [...Array(pageCount).keys()].map(i => <PaginationPageButton light={ currentPage !== i + 1 } small onClick={ handleGoToPage(i + 1) }>{ i + 1 }</PaginationPageButton>) }
+        <EllipsisIcon fill={ currentPage > paginationRadius + 1 ? '#ccc' : 'transparent' } size={ 24 } />
+        &nbsp;&nbsp;
+        {
+          [...Array(pageCount + 1).keys()].map(i => {
+            // we only want three page links on either side f the current link if possible
+            // for pages 1, 2, 3, this means shifting the viewing window accordingly:
+            //  page 2: [1, (2), 3, 4, 5, 6, 7]
+            //  page 3: [1, 2, (3), 4, 5, 6, 7]
+            //  page 4: [1, 2, 3, (4), 5, 6, 7]
+            //  page 5: [2, 3, 4, (5), 6, 7, 8]
+            //  page 6: [3, 4, 5, (6), 7, 8, 9]
+            let minPage = currentPage - paginationRadius
+            let maxPage = currentPage + paginationRadius
+            
+            // are we low in the pages?
+            if (currentPage <= paginationRadius) { [minPage, maxPage] = [1, 2 * paginationRadius + 1] }
+            
+            // are we near the end?
+            if (currentPage >= pageCount - paginationRadius) { [minPage, maxPage] = [pageCount - 2 * paginationRadius, pageCount]}
+            
+            // omit page links outsie out viewing window
+            if (i < minPage || maxPage < i ) {
+              return null
+            }
+            
+            return <PaginationPageButton small light={ currentPage !== i} key={ `page-${ i }` } onClick={ handleGoToPage(i) }>{ i }</PaginationPageButton>
+          })
+        }
+        &nbsp;&nbsp;
+        <EllipsisIcon fill={ pageCount > 2 * paginationRadius - 1 && currentPage < pageCount - paginationRadius ? '#ccc' : 'transparent' } size={ 24 } />
         <PaginationIconButton icon={ NextResultsIcon } clickHandler={ handleGoToNextPage } disabled={ currentPage === pageCount } />
         <PaginationIconButton icon={ LastPageIcon } clickHandler={ handleGoToLastPage } disabled={ currentPage === pageCount } />
       </div>

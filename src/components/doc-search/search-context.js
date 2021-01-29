@@ -1,9 +1,15 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import axios from 'axios'
+import { useWindowWidth } from '../../hooks'
 
 const GOOGLE_SEARCH_URL = `https://customsearch.googleapis.com/customsearch/v1`
 const GOOGLE_SEARCH_API_KEY = process.env.GATSBY_GOOGLE_SEARCH_API_KEY
 const GOOGLE_SEARCH_ID = process.env.GATSBY_GOOGLE_SEARCH_ID
+
+const PAGINATION_RADIUS = {
+  mobile: 2,
+  desktop: 3,
+}
 
 //
 
@@ -14,6 +20,7 @@ export const useDocSearch = () => useContext(SearchContext)
 //
 
 export const DocSearch = ({ children }) => {
+  const { isCompact } = useWindowWidth()
   const [query, setQuery] = useState('')
   const [results, setResults] = useState([])
   const [totalResults, setTotalResults] = useState(0)
@@ -21,6 +28,11 @@ export const DocSearch = ({ children }) => {
   const [currentPage, setCurrentPage] = useState(1)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState()
+  const [paginationRadius, setPaginationRadius] = useState(PAGINATION_RADIUS.mobile)
+
+  useEffect(() => {
+    setPaginationRadius(isCompact ? PAGINATION_RADIUS.mobile : PAGINATION_RADIUS.desktop)
+  }, [isCompact])
 
   const handleChangeQuery = event => setQuery(event.target.value)
 
@@ -67,7 +79,7 @@ export const DocSearch = ({ children }) => {
     <SearchContext.Provider value={{
       handleChangeQuery, doSearch,
       results, totalResults,
-      pageCount, currentPage,
+      pageCount, currentPage, paginationRadius,
       handleGoToNextPage, handleGoToPreviousPage, handleGoToPage, handleGoToFirstPage, handleGoToLastPage,
       error, loading,
     }}>
