@@ -2,10 +2,10 @@
   {
     "key": 0,
     "headline": "Advancing access to TOPMed data",
-    "description": "BioData Catalyst provides one point of entry to the most TOPMed datasets, including Freeze 5b data.",
+    "description": "BioData Catalyst provides one point of entry to the most TOPMed datasets, including Freeze 8 data.",
     "data": [
-      { "name": "Participants", "value": "73,223" },
-      { "name": "Petabytes of Data", "value": "2.82" }
+      { "name": "Participants", "value": "406,853" },
+      { "name": "Petabytes of Data", "value": "3.42" }
     ]
   },
   {
@@ -13,7 +13,7 @@
     "headline": "Prioritizing diverse data",
     "description": "BioData Catalyst provides access to the highly diverse TOPMed dataset.",
     "data": [
-      { "name": "Participants with phenotypes", "value": "241,956" }
+      { "name": "Participants with phenotypes", "value": "285,093" }
     ]
   }
 ]

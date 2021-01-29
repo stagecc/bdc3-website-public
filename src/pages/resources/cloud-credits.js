@@ -42,7 +42,7 @@ const CloudCreditsPage = () => (
             <Paragraph>
                 Users of BioData Catalyst workspaces will need to choose either
                 the <em>Powered by Seven Bridges</em> or <em>Powered by Terra</em> workspace environments
-                to receive Pilot Funding cloud credits and/or request additional cloud credits.
+                to apply for Pilot Funding cloud credits and/or request additional cloud credits.
                 To learn more about what each workspace has to offer, follow the links below:
             </Paragraph>
 
@@ -57,7 +57,7 @@ const CloudCreditsPage = () => (
             <Heading>Pilot Funding</Heading>
 
             <Paragraph>
-                The NHLBI provides $500 in cloud credits to new users of BioData Catalyst, and many analyses can be completed for that amount or less.
+                New users of BioData Catalyst may apply for an initial $500 in cloud credits, and many analyses can be completed for that amount or less.
                 Others may use the $500 in cloud credits to test and evaluate BioData Catalyst for their research needs,
                 for example piloting pipelines on smaller samples and estimating how much full analysis will cost. 
             </Paragraph>
