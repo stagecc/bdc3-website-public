@@ -23,11 +23,8 @@ export * from './magnifying-glass-icon'
 export * from './microscope-icon'
 export * from './more-icons'
 export * from './pause-icon'
-<<<<<<< HEAD
 export * from './pie-chart-icon'
-=======
 export * from './pagination-icons'
->>>>>>> d1c8567... add pagination icons
 export * from './play-icon'
 export * from './receipt-icon'
 export * from './slack-icon'
