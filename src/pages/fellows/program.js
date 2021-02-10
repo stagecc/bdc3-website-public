@@ -65,7 +65,7 @@ const FellowsPage = () => {
                 </BulletedList>
 
                 <Paragraph>
-                    Read what our <ExternalLink to="https://drive.google.com/file/d/1obNRHh3s0s8k4yJCctYvCHdZ5KsL6Uj_/view?usp=sharing">Cohort I Fellows have said</ExternalLink> about
+                    Read what our <ExternalLink to="https://drive.google.com/file/d/12MdA9L_0Ouf6CI08zVFxlAOQuN8Wxh_9/view?usp=sharing">Cohort I Fellows have said</ExternalLink> about
                     the NHLBI BioData Catalyst ecosystem and view the projects
                     from <Link to="/fellows/cohort1">Cohort 1</Link> and <Link to="/fellows/cohort2">Cohort 2</Link>.
                 </Paragraph>
