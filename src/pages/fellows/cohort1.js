@@ -26,7 +26,7 @@ const FellowsCohort1Page = () => {
                 </Paragraph>
                 <Paragraph>
                     Cohort I Fellows will work on the BioData Catalyst Ecosystem from March 2020 to March 2021.
-                    Read what our <ExternalLink to="https://drive.google.com/file/d/1obNRHh3s0s8k4yJCctYvCHdZ5KsL6Uj_/view?usp=sharing">Cohort I Fellows have said</ExternalLink> about the NHLBI BioData Catalyst ecosystem.
+                    Read what our <ExternalLink to="https://drive.google.com/file/d/12MdA9L_0Ouf6CI08zVFxlAOQuN8Wxh_9/view?usp=sharing">Cohort I Fellows have said</ExternalLink> about the NHLBI BioData Catalyst ecosystem.
                 </Paragraph>
             </section>
             
