@@ -2,7 +2,7 @@
 title: Terra
 serviceTitle: BioData Catalyst powered by Terra
 path: /platforms/terra
-logo: ../../images/logos/platforms/terra.png
+logo: terra.png
 links: 
     homepage: https://terra.bio
     launch: https://terra.biodatacatalyst.nhlbi.nih.gov

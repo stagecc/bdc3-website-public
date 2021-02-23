@@ -31,7 +31,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${ __dirname }/src/data/partners.yaml`,
+        path: `${ __dirname }/src/data/partners`,
         name: 'partners',
       },
     },
@@ -62,13 +62,6 @@ module.exports = {
       options: {
         name: `images`,
         path: `${ __dirname }/src/images`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `logos`,
-        path: `${ __dirname }/src/images/logos`,
       },
     },
     {

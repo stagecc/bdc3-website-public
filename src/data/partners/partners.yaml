@@ -1,0 +1,60 @@
+-
+  name: Renaissance Computing Institute
+  ota: null
+  image: renci.png
+-
+  name: RTI International
+  ota: null
+  image: rti-international.png
+-
+  name: Broad Institute
+  ota: null
+  image: broad-institute.png
+-
+  name: University of California Santa Cruz
+  ota: null
+  image: university-of-california-santa-cruz.png
+-
+  name: University of Chicago
+  ota: null
+  image: university-of-chicago.png
+-
+  name: Vanderbilt University Medical Center
+  ota: null
+  image: vanderbilt-university-medical-center.png
+-
+  name: Harvard Medical School
+  ota: OT3 HL142480null
+  image: harvard-medical-school.png
+-
+  name: University of North Carolina at Chapel Hill
+  ota: null
+  image: unc-chapel-hill.png
+-
+  name: Lawrence Berkeley National Laboratory
+  ota: null
+  image: lawrence-berkeley-national-laboratory.png
+-
+  name: Oregon State University
+  ota: null
+  image: oregon-state-university.png
+-
+  name: University of New Mexico Health Sciences Center
+  ota: null
+  image: university-of-new-mexico-health-sciences-center.png
+-
+  name: Seven Bridges Genomics, Inc.
+  ota: OT3 HL142478-01null
+  image: seven-bridges.png
+-
+  name: US Department of Veterans Affairs
+  ota: null
+  image: united-states-department-of-veterans-affairs.png
+-
+  name: NHLBI Informatics Research Center
+  ota: null
+  image: ../images/blank.png
+- 
+  name: TOPMed Data Coordinating Center
+  ota: null
+  image: ../images/blank.png

@@ -2,7 +2,7 @@
 title: Gen3
 serviceTitle: BioData Catalyst powered by Gen3
 path: /platforms/gen3
-logo: ../../images/logos/platforms/gen3.png
+logo: gen3.png
 links: 
     homepage: https://gen3.org
     launch: https://gen3.biodatacatalyst.nhlbi.nih.gov
