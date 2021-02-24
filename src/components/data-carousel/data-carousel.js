@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 import { useWindowWidth } from '../../hooks'
 import { useTransition } from 'react-spring'
 import { DetailsPanel, DataDetail } from './details-panel'
@@ -95,7 +95,7 @@ export const DataCarousel = () => {
       timer = setInterval(() => setCarouselIndex((indexRef.current + 1) % carouselItems.length), INTERVAL + WAIT_TIME)
       return () => clearInterval(timer)
     }
-  }, [carouselItems, carouselIndex, playingAnimations])
+  }, [carouselIndex, playingAnimations])
 
   const handleKeyDown = event => {
     if (event.keyCode === 32) {
@@ -149,18 +149,3 @@ export const DataCarousel = () => {
     </Border>
   )
 }
-
-const dataCarouselQuery = graphql`{
-  allDataCarouselJson {
-    edges {
-      node {
-        headline
-        description
-        data {
-          name
-          value
-        }
-      }
-    }
-  }
-}`
