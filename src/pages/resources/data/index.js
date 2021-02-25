@@ -138,7 +138,7 @@ const DataPage = ({ data, location }) => {
         </Paragraph>
 
         <BulletedList>
-          <ListItem primary={ <ExternalLink to="https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-M4o-T2TtZu3VJD4bwYj%2F-MGPgtPRR9hN7XGSYL0h%2F-MGPhPuJOeVgzm30gkhM%2FBioData-Catalyst-Data-Management-Strategy-V1.0.pdf?alt=media&token=b7aa04e6-32a1-4b0d-9403-0ac043371e09">Data Management Strategy V1.0</ExternalLink> } />
+          <ListItem primary={ <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/biodata-catalyst-data-management-strategy">Data Management Strategy V1.0</ExternalLink> } />
           <ListItem primary={ <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/data-generators/biodata-catalyst-data-generator-guidance">Data Generators Guidance V1.0</ExternalLink> } />
         </BulletedList>
 
