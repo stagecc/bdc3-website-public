@@ -140,9 +140,8 @@ export const DataTable = ({ columns, data, ...props }) => {
   }
 
   const handleSelectionChange = useCallback(data => {
-    console.log(data.selectedRows)
     setSelectedStudies(data.selectedRows)
-  }, [selectedStudies])
+  }, [data.selectedRows])
 
   const memoizedSubheaderComponent = useMemo(() => {
     return (
