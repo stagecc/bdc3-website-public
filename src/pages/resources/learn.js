@@ -64,7 +64,7 @@ const resources = [
             },
             {
                 text: 'Terra Videos',
-                url: 'https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/analyze-data/terra/videos',
+                url: 'https://www.youtube.com/channel/UCkXAqpR5Hk1ZmNd2-1K2l5Q',
             },
         ]
     },
@@ -84,10 +84,6 @@ const resources = [
             {
                 text: 'Gen3 FAQs',
                 url: 'https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/explore_data/gen3-discovering-data',
-            },
-            {
-                text: 'Terra FAQs',
-                url: 'https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/analyze-data/terra/frequently-asked-questions',
             },
         ]
     },
@@ -133,7 +129,7 @@ const resources = [
             },
             {
                 text: 'Terra Blog',
-                url: 'https://support.terra.bio/hc/en-us/sections/360005942552',
+                url: 'https://terra.bio/blog/',
             },
             {
                 text: 'Terra Release Notes & Service Notifications',
