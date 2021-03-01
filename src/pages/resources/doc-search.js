@@ -13,7 +13,7 @@ const DocSearchPage = () => {
                 keywords=""
             />
 
-            <Title>Search BioData Catalyst</Title>
+            <Title>BioData Catalyst Documentation Search</Title>
 
             <DocSearch>
                 <SearchForm />
