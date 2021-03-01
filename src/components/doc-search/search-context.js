@@ -55,7 +55,6 @@ export const DocSearch = ({ children }) => {
         }
         const response = await axios.get(GOOGLE_SEARCH_URL, { params })
         if (response.status === 200 && response.data.items) {
-          console.log(response.data)
           setResults(response.data.items)
           setTotalResults(response.data.searchInformation.totalResults)
           setPageCount(Math.ceil(response.data.searchInformation.totalResults / 10))

@@ -41,19 +41,18 @@ const Divider = styled.div`
   }
 `
 
-export const Result = ({ index, title, displayLink, link, htmlSnippet, snippet, pagemap }) => {
-  const imageURL = pagemap.cse_thumbnail[0].src
+export const Result = ({ index, title, displayLink, link, htmlSnippet, snippet, imageURL }) => {
   
   return (
     <Fragment>
       <Wrapper>
         <Index>{ index }.</Index>
-        <Thumbnail url={ imageURL } />
         <Content>
           <Title><ExternalLink to={ link }>{ title }</ExternalLink></Title>
           <em>{ displayLink }</em>
           <p dangerouslySetInnerHTML={{ __html: htmlSnippet }} />
         </Content>
+        <Thumbnail url={ imageURL } />
       </Wrapper>
       <Divider />
     </Fragment>

@@ -52,7 +52,24 @@ export const SearchResults = () => {
           {
             loading
               ? <LoadingDots color="var(--color-crimson)" text="Searching..." textPlacement="bottom" />
-              : results.map((result, i) => <Result key={ result.cacheId } index={ (currentPage - 1) * 10 + i + 1 } { ...result } />)
+              : results.map((result, i) => {
+                let thumbnailURL = ''
+                if (result?.pagemap?.cse_thumbnail) {
+                  thumbnailURL = result?.pagemap?.cse_thumbnail[0].src
+                }
+                return (
+                  <Result
+                    key={ result.cacheId }
+                    index={ (currentPage - 1) * 10 + i + 1 }
+                    title={ result.title }
+                    displayLink={ result.displayLink }
+                    link={ result.link }
+                    htmlSnippet={ result.htmlSnippet }
+                    snippet={ result.snippet }
+                    imageURL={ thumbnailURL }
+                  />
+                )
+              })
           }
         </ResultsCardBody>
         <ResultsCardFooter>

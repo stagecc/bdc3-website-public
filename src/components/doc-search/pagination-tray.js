@@ -40,12 +40,12 @@ export const PaginationTray = () => {
   return (
     <Wrapper>
       <div className="actions">
-        <PaginationIconButton icon={ FirstPageIcon } clickHandler={ handleGoToFirstPage } disabled={ currentPage === 1 } />
-        <PaginationIconButton icon={ PreviousResultsIcon } clickHandler={ handleGoToPreviousPage } disabled={ currentPage === 1 } />
+        <PaginationIconButton icon={ FirstPageIcon } clickHandler={ handleGoToFirstPage } disabled={ currentPage <= 1 } />
+        <PaginationIconButton icon={ PreviousResultsIcon } clickHandler={ handleGoToPreviousPage } disabled={ currentPage <= 1 } />
         <EllipsisIcon fill={ currentPage > paginationRadius + 1 ? '#ccc' : 'transparent' } size={ 24 } />
         &nbsp;&nbsp;
         {
-          [...Array(pageCount + 1).keys()].map(i => {
+          [...Array(pageCount).keys()].map(i => {
             // we only want three page links on either side f the current link if possible
             // for pages 1, 2, 3, this means shifting the viewing window accordingly:
             //  page 2: [1, (2), 3, 4, 5, 6, 7]
@@ -63,11 +63,11 @@ export const PaginationTray = () => {
             if (currentPage >= pageCount - paginationRadius) { [minPage, maxPage] = [pageCount - 2 * paginationRadius, pageCount]}
             
             // omit page links outsie out viewing window
-            if (i < minPage || maxPage < i ) {
+            if (i + 1 < minPage || maxPage < i + 1) {
               return null
             }
             
-            return <PaginationPageButton small light={ currentPage !== i} key={ `page-${ i }` } onClick={ handleGoToPage(i) }>{ i }</PaginationPageButton>
+            return <PaginationPageButton small light={ currentPage !== i + 1 } key={ `page-${ i }` } onClick={ handleGoToPage(i + 1) }>{ i + 1 }</PaginationPageButton>
           })
         }
         &nbsp;&nbsp;
