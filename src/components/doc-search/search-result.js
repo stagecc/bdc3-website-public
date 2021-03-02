@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import { Subheading } from '../typography'
 import { ExternalLink } from '../link'
+import { Visible } from 'react-grid-system'
 
 const Wrapper = styled.article`
   display: flex;
@@ -50,9 +51,11 @@ export const Result = ({ index, title, displayLink, link, htmlSnippet, snippet, 
         <Content>
           <Title><ExternalLink to={ link }>{ title }</ExternalLink></Title>
           <em>{ displayLink }</em>
-          <p dangerouslySetInnerHTML={{ __html: htmlSnippet }} />
+          <p dangerouslySetInnerHTML={{ __html: htmlSnippet.replace('<br>', '') }} />
         </Content>
-        <Thumbnail url={ imageURL } />
+        <Visible lg xl>
+          <Thumbnail url={ imageURL } />
+        </Visible>
       </Wrapper>
       <Divider />
     </Fragment>
