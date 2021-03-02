@@ -14,7 +14,7 @@ export const SearchForm = () => {
   }
 
   return (
-    <InputGroup>
+    <InputGroup style={{ width: '100%', maxWidth: '800px', margin: 'auto' }}>
       <TextInput type="text" value={ query } onChange={ handleChangeQuery } onKeyDown={ handleKeyDown } />
       <Button onClick={ () => doSearch() }>Search</Button>
     </InputGroup>
