@@ -20,10 +20,10 @@ export const ResultsCardHeader = styled(CardHeader)`
 export const ResultsCardBody = styled(CardBody)``
 
 export const ResultsCardFooter = styled(CardFooter)`
-    display: flex;
-    align-items: center;
-    padding-left: 0;
-    padding-right: 0;
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+  padding-right: 0;
 `
 
 export const ResultsCardTitle = styled.span`
@@ -37,6 +37,10 @@ export const SearchResults = () => {
     doSearch, loading, error,
     handleGoToNextPage, handleGoToPreviousPage, handleGoToPage, handleGoToFirstPage, handleGoToLastPage,
   } = useDocSearch()
+
+  if (!results.length) {
+    return null
+  }
 
   return (
     <Wrapper>
@@ -55,11 +59,11 @@ export const SearchResults = () => {
               : results.map((result, i) => {
                 let thumbnailURL = ''
                 if (result?.pagemap?.cse_thumbnail) {
-                  thumbnailURL = result?.pagemap?.cse_thumbnail[0].src
+                  thumbnailURL = result.pagemap.cse_thumbnail[0].src
                 }
                 return (
                   <Result
-                    key={ result.cacheId }
+                    key={ `${ i }_${ result.cacheId }` }
                     index={ (currentPage - 1) * 10 + i + 1 }
                     title={ result.title }
                     displayLink={ result.displayLink }
