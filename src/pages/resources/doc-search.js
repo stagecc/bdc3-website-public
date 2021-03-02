@@ -16,6 +16,9 @@ const DocSearchPage = () => {
             <Title>BioData Catalyst Documentation Search</Title>
 
             <DocSearch>
+                
+                <br/><br/>
+
                 <SearchForm />
 
                 <br/><br/><br/>
