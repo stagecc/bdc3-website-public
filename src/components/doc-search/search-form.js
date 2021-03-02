@@ -16,7 +16,7 @@ export const SearchForm = () => {
   return (
     <InputGroup>
       <TextInput type="text" value={ query } onChange={ handleChangeQuery } onKeyDown={ handleKeyDown } />
-      <Button onClick={ doSearch }>Search</Button>
+      <Button onClick={ () => doSearch() }>Search</Button>
     </InputGroup>
   )
 }
