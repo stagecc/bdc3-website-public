@@ -59,7 +59,7 @@ export const DocSearch = ({ children }) => {
           setTotalResults(response.data.searchInformation.totalResults)
           setPageCount(Math.ceil(response.data.searchInformation.totalResults / 10))
         } else {
-          setError(error)
+          setError({ message: 'An error occurred!' })
         }
         setLoading(false)
       } catch (error) {
@@ -71,7 +71,9 @@ export const DocSearch = ({ children }) => {
   }
 
   useEffect(() => {
-    doSearch(currentPage)
+    if (query.trim().length > 1) {
+      doSearch(currentPage)
+    }
   }, [currentPage])
 
   return (
