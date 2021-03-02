@@ -7,7 +7,7 @@ const GOOGLE_SEARCH_API_KEY = process.env.GATSBY_GOOGLE_SEARCH_API_KEY
 const GOOGLE_SEARCH_ID = process.env.GATSBY_GOOGLE_SEARCH_ID
 
 const PAGINATION_RADIUS = {
-  mobile: 2,
+  mobile: 1,
   desktop: 3,
 }
 
