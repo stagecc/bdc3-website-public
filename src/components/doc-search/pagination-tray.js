@@ -72,8 +72,8 @@ export const PaginationTray = () => {
         }
         &nbsp;&nbsp;
         <EllipsisIcon fill={ pageCount > 2 * paginationRadius - 1 && currentPage < pageCount - paginationRadius ? '#ccc' : 'transparent' } size={ 24 } />
-        <PaginationIconButton icon={ NextResultsIcon } clickHandler={ handleGoToNextPage } disabled={ currentPage === pageCount } />
-        <PaginationIconButton icon={ LastPageIcon } clickHandler={ handleGoToLastPage } disabled={ currentPage === pageCount } />
+        <PaginationIconButton icon={ NextResultsIcon } clickHandler={ handleGoToNextPage } disabled={ currentPage >= pageCount } />
+        <PaginationIconButton icon={ LastPageIcon } clickHandler={ handleGoToLastPage } disabled={ currentPage >= pageCount } />
       </div>
     </Wrapper>
   )
