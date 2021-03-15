@@ -1,7 +1,7 @@
 ---
 name: Sheila Gaynor, PhD
 university: Harvard University
-photo: ../../../images/fellows/cohort-1/gaynor-sheila.jpg
+photo: gaynor-sheila.jpg
 project:
     title: Scalable Statistical and Computational Methods for Integrating Functional Data in Rare Variant Analysis of Large Whole Genome Sequencing Data
     abstract: >

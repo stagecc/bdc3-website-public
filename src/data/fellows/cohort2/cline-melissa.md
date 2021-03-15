@@ -1,7 +1,7 @@
 ---
 name: Melissa Cline, PhD
 university: University of California, Santa Cruz
-photo: ../../../images/fellows/cohort-2/cline-melissa.jpg
+photo: cline-melissa.jpg
 project:
     title: Elucidating the genetic risk of heritable cardiomyopathies through variant co-occurrence analysis
     abstract: >

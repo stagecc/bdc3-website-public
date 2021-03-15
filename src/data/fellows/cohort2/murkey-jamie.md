@@ -1,7 +1,7 @@
 ---
 name: Jamie Murkey, MPH
 university: New York University School of Global Public Health
-photo: ../../../images/fellows/cohort-2/murkey-jamie.jpg
+photo: murkey-jamie.jpg
 project:
     title: Examining the Role of Racial Discrimination Related Psychosocial Stress in Subclinical Cardiovascular Disease (CVD) and Incident CVD Cases from the Multi-ethnic Study of Atherosclerosis (MESA)
     abstract: >

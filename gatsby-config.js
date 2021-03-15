@@ -64,13 +64,6 @@ module.exports = {
         path: `${ __dirname }/src/images`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `fellows`,
-        path: `${ __dirname }/src/images/fellows`,
-      },
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

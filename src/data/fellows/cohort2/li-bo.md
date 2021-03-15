@@ -1,7 +1,7 @@
 ---
 name: Bo Li, PhD
 university: Massachusetts General Hospital
-photo: ../../../images/fellows/cohort-2/li-bo.jpg
+photo: li-bo.jpg
 project:
     title: Detailed characterization of the 1.5-million-cell human Immune Cell Atlas single-cell RNA-seq data provides a valuable healthy reference for COVID-19 research
     abstract: >
