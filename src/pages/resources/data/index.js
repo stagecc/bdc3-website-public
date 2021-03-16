@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 import { SEO } from '../../../components/seo'
@@ -38,10 +38,14 @@ const DataPage = ({ data, location }) => {
         </Paragraph>
   
         <BulletedList dense>
-          <ListItem primary={ <span><ExternalLink to="https://www.nhlbiwgs.org/">TOPMed</ExternalLink> Freeze 5b</span> } />
-          <ListItem primary={ <span><ExternalLink to="https://www.nhlbiwgs.org/">TOPMed</ExternalLink> Freeze 8 Data</span> } />
-          <ListItem primary={ <span>Parent Studies <ExternalLink to="https://www.ncbi.nlm.nih.gov/gap/">dbGaP</ExternalLink></span> } />
-          <ListItem primary={ <span>COVID-19 data <Link to="/covid-19">(ORCHID)</Link></span> } />
+          <ListItem primary={
+            <Fragment>
+              <ExternalLink to="https://www.nhlbiwgs.org/">Trans-omics for Precision Medicine (TOPMed)</ExternalLink> - 
+              includes CRAM files, multi-sample VCF files (Freeze8 and Freeze5), study phenotypes, and harmonized phenotypes.
+            </Fragment>
+          } />
+          <ListItem primary={ `1000 Genomes Project` } />
+          <ListItem primary={ <Fragment>COVID-19 data <Link to="/covid-19">(ORCHID)</Link></Fragment> } />
         </BulletedList>
         
         <Paragraph>
