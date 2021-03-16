@@ -1,5 +1,5 @@
 ---
-name: Stephanie Cook, DrPH, MPH
+name: Stephanie Cook, MPH, DrPH
 university: New York University
 photo: cook-stephanie.jpg
 project: 
