@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
+import React from 'react'
 import { useDocSearch } from './search-context'
 import { TextInput, InputGroup } from '../form'
 import { Button } from '../buttons'
