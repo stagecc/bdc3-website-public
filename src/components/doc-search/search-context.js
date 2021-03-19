@@ -22,6 +22,7 @@ export const useDocSearch = () => useContext(SearchContext)
 export const DocSearch = ({ children }) => {
   const { isCompact } = useWindowWidth()
   const [query, setQuery] = useState('')
+  const [searchedQuery, setSearchedQuery] = useState('')
   const [results, setResults] = useState([])
   const [totalResults, setTotalResults] = useState(0)
   const [pageCount, setPageCount] = useState(1)
@@ -46,6 +47,8 @@ export const DocSearch = ({ children }) => {
     const startIndex = (pageNumber - 1) * 10 + 1
     const fetchResults = async () => {
       setLoading(true)
+      setError(null)
+      setSearchedQuery(query.trim())
       try {
         const params = {
           key: GOOGLE_SEARCH_API_KEY,
@@ -54,16 +57,23 @@ export const DocSearch = ({ children }) => {
           start: startIndex,
         }
         const response = await axios.get(GOOGLE_SEARCH_URL, { params })
-        if (response.status === 200 && response.data.items) {
-          setResults(response.data.items)
-          setTotalResults(response.data.searchInformation.totalResults)
-          setPageCount(Math.ceil(response.data.searchInformation.totalResults / 10))
+        if (response.status === 200) {
+          if (response.data.items) {
+            setResults(response.data.items)
+            setTotalResults(response.data.searchInformation.totalResults)
+            setPageCount(Math.ceil(response.data.searchInformation.totalResults / 10))
+          } else {
+            setResults([])
+            setTotalResults(0)
+            setPageCount(0)
+          }
         } else {
           setError({ message: 'An error occurred!' })
         }
         setLoading(false)
       } catch (error) {
         setError({ message: 'An error occurred!' })
+        console.log(error)
         setLoading(false)
       }
     }
@@ -71,18 +81,18 @@ export const DocSearch = ({ children }) => {
   }
 
   useEffect(() => {
-    if (query.trim().length > 1) {
+    if (searchedQuery) {
       doSearch(currentPage)
     }
   }, [currentPage])
 
   return (
     <SearchContext.Provider value={{
-      handleChangeQuery, doSearch,
+      searchedQuery, handleChangeQuery, doSearch,
+      error, loading,
       results, totalResults,
       pageCount, currentPage, paginationRadius,
       handleGoToNextPage, handleGoToPreviousPage, handleGoToPage, handleGoToFirstPage, handleGoToLastPage,
-      error, loading,
     }}>
       { children }
     </SearchContext.Provider>
