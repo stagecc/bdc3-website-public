@@ -13,6 +13,7 @@ export const ResultsCard = styled(Card)``
 
 export const ResultsCardHeader = styled(CardHeader)`
     display: flex;
+    justify-content: center;
     align-items: center;
     padding-left: 0;
     padding-right: 0;
@@ -54,7 +55,9 @@ const ResultsList = () => {
   return (
     <ResultsCard>
       <ResultsCardHeader>
-        { totalResults > 0 && <span>Page { currentPage } of { pageCount }</span> }
+        {
+          totalResults > 0 && <span>Page { currentPage } of { pageCount }</span>
+        }
       </ResultsCardHeader>
       <ResultsCardBody>
         {
@@ -95,9 +98,6 @@ export const SearchResults = () => {
 
   return (
     <Wrapper>
-      { totalResults > 0 && <PaginationTray  /> }
-
-      <br/>
       
       {
         loading
