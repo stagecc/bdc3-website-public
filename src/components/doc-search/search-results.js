@@ -46,6 +46,10 @@ const ResultsList = () => {
     )
   }
 
+  if (!searchedQuery) {
+    return null
+  }
+
   // there are results, so show them
   return (
     <ResultsCard>
