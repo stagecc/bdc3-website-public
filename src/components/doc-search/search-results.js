@@ -6,6 +6,7 @@ import { Dots as LoadingDots } from '../loading'
 import { PaginationTray } from './pagination-tray'
 import { Card, CardHeader, CardBody, CardFooter } from '../card'
 import { Paragraph } from '../typography'
+import { ExternalLink } from '../link'
 
 const Wrapper = styled.section``
 
@@ -36,7 +37,19 @@ const ResultsList = () => {
   const { currentPage, error, pageCount, results, searchedQuery, totalResults } = useDocSearch()
 
   // if there is an error
-  if (error) { return <Paragraph center>We're sorry! { error.message }</Paragraph> }
+  if (error) {
+    return (
+      <section style={{ width: '650px', margin: 'auto' }}>
+        <Paragraph center>
+          We're so sorry! { error.message }
+        </Paragraph>
+        <Paragraph center>
+          However, you're in luck. The BioData Catalyst Documentation Search can also be accessed
+          at <ExternalLink to="https://cse.google.com/cse?cx=f67468621577c356b">https://cse.google.com/cse?cx=f67468621577c356b</ExternalLink>.
+        </Paragraph>
+      </section>
+    )
+  }
 
   // if no error, but there are no results for a non-empty query, show note to user
   if (searchedQuery && totalResults === 0) {
