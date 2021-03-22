@@ -25,7 +25,7 @@ const FellowsCohort1Page = () => {
                     The NHLBI BioData Catalyst Fellows Program provides researchers, especially early-career researchers, the opportunity to receive funding to support research on novel and innovative data science and data-focused research problems. 
                 </Paragraph>
                 <Paragraph>
-                    Cohort I Fellows will work on the BioData Catalyst Ecosystem from March 2020 to March 2021.
+                    Cohort I Fellows will work on the BioData Catalyst Ecosystem from March 2020 to June 2021.
                     Read what our <ExternalLink to="https://drive.google.com/file/d/12MdA9L_0Ouf6CI08zVFxlAOQuN8Wxh_9/view?usp=sharing">Cohort I Fellows have said</ExternalLink> about the NHLBI BioData Catalyst ecosystem.
                 </Paragraph>
             </section>
