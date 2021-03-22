@@ -7,13 +7,23 @@ import { useDocSearch } from './search-context'
 
 const SavedIndicator = styled(Link)`
   position: relative;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
   filter: saturate(0.0);
   transition: filter 250ms;
+  & .link-text {
+    transition: filter 250ms;
+    filter: opacity(0.0);
+  }
+  &:hover .link-text {
+    filter: opacity(1.0);
+  }
   & .icon-overlay {
     position: absolute;
-    left: 50%;
-    top: 50%;
+    right: 0;
+    bottom: 0;
     background-color: var(--color-crimson);
     padding: 4px 6px;
     font-size: 85%;
@@ -31,7 +41,8 @@ export const SavedDocs = () => {
 
   return (
     <Fragment>
-      <SavedIndicator to="/resources/doc-search/saved">
+      <SavedIndicator to="/resources/doc-search/#saved">
+        <span className="link-text">View saved results</span>
         <FolderIcon size={ 56 } fill="var(--color-crimson)" />
         <span className="icon-overlay">{ savedResults.length }</span>
       </SavedIndicator>

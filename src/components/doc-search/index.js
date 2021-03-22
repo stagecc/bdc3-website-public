@@ -1,5 +1,6 @@
 export * from './pagination-tray'
 export * from './saved-docs'
+export * from './saved-search-list'
 export * from './search-context'
 export * from './search-form'
 export * from './search-result'
