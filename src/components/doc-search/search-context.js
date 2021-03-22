@@ -37,13 +37,14 @@ export const DocSearch = ({ children }) => {
 
   const handleChangeQuery = event => setQuery(event.target.value)
 
-  const handleGoToFirstPage = () => setCurrentPage(1)
-  const handleGoToPreviousPage = () => setCurrentPage(Math.max(0, currentPage - 1))
-  const handleGoToPage = pageNumber => event => setCurrentPage(pageNumber)
-  const handleGoToNextPage = () => setCurrentPage(Math.min(pageCount, currentPage + 1))
-  const handleGoToLastPage = () => setCurrentPage(pageCount)
+  const handleGoToFirstPage = () => doSearch(1)
+  const handleGoToPreviousPage = () => doSearch(Math.max(0, currentPage - 1))
+  const handleGoToPage = pageNumber => event => doSearch(pageNumber)
+  const handleGoToNextPage = () => doSearch(Math.min(pageCount, currentPage + 1))
+  const handleGoToLastPage = () => doSearch(pageCount)
 
   const doSearch = (pageNumber = 1) => {
+    console.log(pageNumber)
     const startIndex = (pageNumber - 1) * 10 + 1
     const fetchResults = async () => {
       setLoading(true)
@@ -59,12 +60,14 @@ export const DocSearch = ({ children }) => {
         const response = await axios.get(GOOGLE_SEARCH_URL, { params })
         if (response.status === 200) {
           if (response.data.items) {
+            setCurrentPage(pageNumber)
             setResults(response.data.items)
             setTotalResults(response.data.searchInformation.totalResults)
             setPageCount(Math.ceil(response.data.searchInformation.totalResults / 10))
           } else {
             setResults([])
             setTotalResults(0)
+            setCurrentPage(0)
             setPageCount(0)
           }
         } else {
@@ -80,11 +83,11 @@ export const DocSearch = ({ children }) => {
     fetchResults()
   }
 
-  useEffect(() => {
-    if (searchedQuery) {
-      doSearch(currentPage)
-    }
-  }, [currentPage])
+  // useEffect(() => {
+  //   if (searchedQuery) {
+  //     doSearch(currentPage)
+  //   }
+  // }, [currentPage])
 
   return (
     <SearchContext.Provider value={{

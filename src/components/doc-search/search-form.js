@@ -9,7 +9,7 @@ export const SearchForm = () => {
 
   const handleKeyDown = event => {
     if (event.keyCode === 13) {
-      doSearch()
+      doSearch(1)
     }
   }
 
@@ -20,9 +20,9 @@ export const SearchForm = () => {
   }, [input.current])
 
   return (
-    <InputGroup style={{ width: '100%', maxWidth: '800px', margin: 'auto' }}>
+    <InputGroup style={{ width: '100%' }}>
       <TextInput ref={ input } type="text" value={ query } onChange={ handleChangeQuery } onKeyDown={ handleKeyDown } />
-      <Button onClick={ () => doSearch() }>Search</Button>
+      <Button onClick={ () => doSearch(1) }>Search</Button>
     </InputGroup>
   )
 }
