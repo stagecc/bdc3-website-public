@@ -4,7 +4,7 @@ import { useDocSearch } from './search-context'
 import { Subheading } from '../typography'
 import { ExternalLink } from '../link'
 import { IconButton } from '../buttons'
-import { DeleteIcon, SaveIcon } from '../icons'
+import { DeleteIcon, StarIcon } from '../icons'
 import { Visible } from 'react-grid-system'
 
 const Wrapper = styled.article`
@@ -65,19 +65,7 @@ export const Result = ({ index, result }) => {
     thumbnailURL = result.pagemap.cse_thumbnail[0].src
   }
 
-  const MemoizedActions = useMemo(() => {
-    const alreadySaved = savedResults.find(savedResult => savedResult.cacheId === result.cacheId) ? true : false
-    console.log(result.cacheId, alreadySaved)
-    return (
-      <Actions>
-        {
-          alreadySaved
-            ? <IconButton onClick={ () => removeResult(result) }><DeleteIcon size={ 24 } /></IconButton>
-            : <IconButton onClick={ () => saveResult(result) }><SaveIcon size={ 24 } /></IconButton>
-        }
-      </Actions>
-    )
-  }, [result, savedResults])
+  const alreadySaved = useMemo(() => savedResults.find(savedResult => savedResult.cacheId === result.cacheId) ? true : false, [result, savedResults, savedResults.length])
 
   return (
     <Fragment>
@@ -91,7 +79,13 @@ export const Result = ({ index, result }) => {
         <Visible lg xl>
           <Thumbnail url={ imageURL } />
         </Visible>
-        { MemoizedActions }
+        <Actions>
+          {
+            alreadySaved
+              ? <IconButton onClick={ () => removeResult(result) }><StarIcon fill="var(--color-crimson)" size={ 24 } /></IconButton>
+              : <IconButton onClick={ () => saveResult(result) }><StarIcon fill="var(--color-lightgrey)" size={ 24 } /></IconButton>
+          }
+        </Actions>
       </Wrapper>
       <Divider />
     </Fragment>
