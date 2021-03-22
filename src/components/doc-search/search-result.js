@@ -1,13 +1,17 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
+import { useDocSearch } from './search-context'
 import { Subheading } from '../typography'
 import { ExternalLink } from '../link'
+import { IconButton } from '../buttons'
+import { CloseIcon } from '../icons'
 import { Visible } from 'react-grid-system'
 
 const Wrapper = styled.article`
   display: flex;
   gap: 2rem;
   margin: 2rem 0;
+  position: relative;
 `
 
 const Index = styled.span`
@@ -42,8 +46,15 @@ const Divider = styled.div`
   }
 `
 
+const SaveButton = styled(IconButton)`
+  // position: absolute;
+  // top: 1rem;
+  // right: 1rem;
+  border: 10px solid red;
+`
+
 export const Result = ({ index, title, displayLink, link, htmlSnippet, snippet, imageURL }) => {
-  
+  const { saveResult } = useDocSearch()
   return (
     <Fragment>
       <Wrapper>
@@ -57,6 +68,9 @@ export const Result = ({ index, title, displayLink, link, htmlSnippet, snippet, 
           <Thumbnail url={ imageURL } />
         </Visible>
       </Wrapper>
+      <SaveButton>
+        <CloseIcon size={ 24 } />
+      </SaveButton>
       <Divider />
     </Fragment>
   )

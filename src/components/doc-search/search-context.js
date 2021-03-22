@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import axios from 'axios'
-import { useWindowWidth } from '../../hooks'
+import { useLocalStorage, useWindowWidth } from '../../hooks'
 
 const GOOGLE_SEARCH_URL = `https://customsearch.googleapis.com/customsearch/v1`
 const GOOGLE_SEARCH_API_KEY = process.env.GATSBY_GOOGLE_SEARCH_API_KEY
@@ -30,6 +30,7 @@ export const DocSearch = ({ children }) => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState()
   const [paginationRadius, setPaginationRadius] = useState(PAGINATION_RADIUS.mobile)
+  const [savedResults, setSavedResults] = useLocalStorage('results')
 
   useEffect(() => {
     setPaginationRadius(isCompact ? PAGINATION_RADIUS.mobile : PAGINATION_RADIUS.desktop)
@@ -43,8 +44,19 @@ export const DocSearch = ({ children }) => {
   const handleGoToNextPage = () => doSearch(Math.min(pageCount, currentPage + 1))
   const handleGoToLastPage = () => doSearch(pageCount)
 
+  const saveResult = () => {
+    if (typeof savedResults === 'number') {
+      setSavedResults(savedResults => parseInt(savedResults) + 1)
+    } else {
+      setSavedResults(0)
+    }
+  }
+
+  const clearResults = () => {
+    setSavedResults(0)
+  }
+
   const doSearch = (pageNumber = 1) => {
-    console.log(pageNumber)
     const startIndex = (pageNumber - 1) * 10 + 1
     const fetchResults = async () => {
       setLoading(true)
@@ -96,6 +108,7 @@ export const DocSearch = ({ children }) => {
       results, totalResults,
       pageCount, currentPage, paginationRadius,
       handleGoToNextPage, handleGoToPreviousPage, handleGoToPage, handleGoToFirstPage, handleGoToLastPage,
+      saveResult, clearResults,
     }}>
       { children }
     </SearchContext.Provider>

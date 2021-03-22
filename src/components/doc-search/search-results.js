@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import { Result } from './search-result'
 import { useDocSearch } from './search-context'
@@ -34,7 +34,7 @@ export const ResultsCardTitle = styled.span`
 `
 
 const ResultsList = () => {
-  const { currentPage, error, pageCount, results, searchedQuery, totalResults } = useDocSearch()
+  const { currentPage, error, pageCount, results, searchedQuery, totalResults, saveResult, clearResults } = useDocSearch()
 
   // if there is an error
   if (error) {
