@@ -13,10 +13,13 @@ const DocSearchPage = () => {
         keywords=""
       />
 
-      <Title style={{ flex: 1 }}>BioData Catalyst Documentation Search</Title>
-      
+
       <DocSearch>
-      
+        <div style={{ display: 'flex', alignItems: 'flex-end' }}>
+          <Title style={{ flex: 1 }}>BioData Catalyst Documentation Search</Title>
+          <SavedDocs />
+        </div>
+
         <br/><br/>
         
         <SearchForm />
