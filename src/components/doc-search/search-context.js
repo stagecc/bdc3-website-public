@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react'
+import React, { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import axios from 'axios'
 import { useLocalStorage, useWindowWidth } from '../../hooks'
 
@@ -30,7 +30,7 @@ export const DocSearch = ({ children }) => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState()
   const [paginationRadius, setPaginationRadius] = useState(PAGINATION_RADIUS.mobile)
-  const [savedResults, setSavedResults] = useLocalStorage('results')
+  const [savedResults, setSavedResults] = useState([])
 
   useEffect(() => {
     setPaginationRadius(isCompact ? PAGINATION_RADIUS.mobile : PAGINATION_RADIUS.desktop)
@@ -44,16 +44,28 @@ export const DocSearch = ({ children }) => {
   const handleGoToNextPage = () => doSearch(Math.min(pageCount, currentPage + 1))
   const handleGoToLastPage = () => doSearch(pageCount)
 
-  const saveResult = () => {
-    if (typeof savedResults === 'number') {
-      setSavedResults(savedResults => parseInt(savedResults) + 1)
-    } else {
-      setSavedResults(0)
-    }
+  useEffect(() => {
+    console.log('---')
+    console.log('(search-context) saved results:', savedResults.map(r => r.cacheId).join(', '))
+    console.log('---')
+  }, [savedResults])
+
+  const saveResult = newResult => {
+    console.log('saving result', newResult.cacheId)
+    const newResults = new Set([...savedResults, newResult])
+    console.log(newResults)
+    setSavedResults([...newResults])
   }
 
-  const clearResults = () => {
-    setSavedResults(0)
+  const removeResult = resultToRemove => {
+    console.log('removing result', resultToRemove.cacheId)
+    const newResults = savedResults.filter(savedResult => savedResult.cacheId !== resultToRemove.cacheId)
+    setSavedResults([...newResults])
+  }
+
+  const clearSavedResults = () => {
+    console.log('clearing results')
+    setSavedResults([])
   }
 
   const doSearch = (pageNumber = 1) => {
@@ -108,7 +120,7 @@ export const DocSearch = ({ children }) => {
       results, totalResults,
       pageCount, currentPage, paginationRadius,
       handleGoToNextPage, handleGoToPreviousPage, handleGoToPage, handleGoToFirstPage, handleGoToLastPage,
-      saveResult, clearResults,
+      savedResults, saveResult, removeResult, clearSavedResults,
     }}>
       { children }
     </SearchContext.Provider>

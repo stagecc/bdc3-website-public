@@ -34,7 +34,7 @@ export const ResultsCardTitle = styled.span`
 `
 
 const ResultsList = () => {
-  const { currentPage, error, pageCount, results, searchedQuery, totalResults, saveResult, clearResults } = useDocSearch()
+  const { currentPage, error, pageCount, results, searchedQuery, totalResults } = useDocSearch()
 
   // if there is an error
   if (error) {
@@ -75,20 +75,11 @@ const ResultsList = () => {
       <ResultsCardBody>
         {
           results.map((result, i) => {
-            let thumbnailURL = ''
-            if (result?.pagemap?.cse_thumbnail) {
-              thumbnailURL = result.pagemap.cse_thumbnail[0].src
-            }
             return (
               <Result
-                key={ `${ i }_${ result.cacheId }` }
+                key={ `result-${ i }_${ searchedQuery }_${ result.cacheId }` }
                 index={ (currentPage - 1) * 10 + i + 1 }
-                title={ result.title }
-                displayLink={ result.displayLink }
-                link={ result.link }
-                htmlSnippet={ result.htmlSnippet }
-                snippet={ result.snippet }
-                imageURL={ thumbnailURL }
+                result={ result }
               />
             )
           })

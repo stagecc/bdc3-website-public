@@ -2,36 +2,36 @@ import React from 'react'
 import { SEO } from '../../components/seo'
 import { PageContent } from '../../components/layout'
 import { Title } from '../../components/typography'
-import { DocSearch, SearchForm, SearchResults } from '../../components/doc-search'
+import { DocSearch, SavedDocs, SearchForm, SearchResults } from '../../components/doc-search'
 
 const DocSearchPage = () => {
-    return (
-        <PageContent width="95%" maxWidth="1200px" center gutters>
-            <SEO
-                title="Search BioData Catalyst"
-                description=""
-                keywords=""
-            />
+  return (
+    <PageContent width="95%" maxWidth="1200px" center gutters>
+      <SEO
+        title="Search BioData Catalyst"
+        description=""
+        keywords=""
+      />
 
-            <Title>BioData Catalyst Documentation Search</Title>
+      <Title style={{ flex: 1 }}>BioData Catalyst Documentation Search</Title>
+      
+      <DocSearch>
+      
+        <br/><br/>
+        
+        <SearchForm />
 
-            <DocSearch>
-                
-                <br/><br/>
+        <br/><br/><br/>
 
-                <SearchForm />
+        <SearchResults />
 
-                <br/><br/><br/>
+        <br/><br/><br/>
+        
+      </DocSearch>
+      
 
-                <SearchResults />
-
-                <br/><br/><br/>
-                
-            </DocSearch>
-            
-
-        </PageContent>
-    )
+    </PageContent>
+  )
 }
 
 export default DocSearchPage

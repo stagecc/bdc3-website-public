@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useMemo } from 'react'
 import styled from 'styled-components'
 import { useDocSearch } from './search-context'
 import { Subheading } from '../typography'
 import { ExternalLink } from '../link'
 import { IconButton } from '../buttons'
-import { CloseIcon } from '../icons'
+import { DeleteIcon, SaveIcon } from '../icons'
 import { Visible } from 'react-grid-system'
 
 const Wrapper = styled.article`
@@ -46,15 +46,39 @@ const Divider = styled.div`
   }
 `
 
-const SaveButton = styled(IconButton)`
-  // position: absolute;
-  // top: 1rem;
-  // right: 1rem;
-  border: 10px solid red;
+const Actions = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  & svg {
+    fill: var(--color-crimson);
+  }
 `
 
-export const Result = ({ index, title, displayLink, link, htmlSnippet, snippet, imageURL }) => {
-  const { saveResult } = useDocSearch()
+export const Result = ({ index, result }) => {
+  const { savedResults, saveResult, removeResult } = useDocSearch()
+  const { title, displayLink, link, htmlSnippet, snippet, imageURL } = result
+  
+  let thumbnailURL = ''
+  if (result?.pagemap?.cse_thumbnail) {
+    thumbnailURL = result.pagemap.cse_thumbnail[0].src
+  }
+
+  const MemoizedActions = useMemo(() => {
+    const alreadySaved = savedResults.find(savedResult => savedResult.cacheId === result.cacheId) ? true : false
+    console.log(result.cacheId, alreadySaved)
+    return (
+      <Actions>
+        {
+          alreadySaved
+            ? <IconButton onClick={ () => removeResult(result) }><DeleteIcon size={ 24 } /></IconButton>
+            : <IconButton onClick={ () => saveResult(result) }><SaveIcon size={ 24 } /></IconButton>
+        }
+      </Actions>
+    )
+  }, [result, savedResults])
+
   return (
     <Fragment>
       <Wrapper>
@@ -67,10 +91,8 @@ export const Result = ({ index, title, displayLink, link, htmlSnippet, snippet, 
         <Visible lg xl>
           <Thumbnail url={ imageURL } />
         </Visible>
+        { MemoizedActions }
       </Wrapper>
-      <SaveButton>
-        <CloseIcon size={ 24 } />
-      </SaveButton>
       <Divider />
     </Fragment>
   )

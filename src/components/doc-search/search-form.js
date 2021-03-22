@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import { useDocSearch } from './search-context'
 import { TextInput, InputGroup } from '../form'
 import { Button } from '../buttons'
+import { SavedDocs } from './saved-docs'
 
 export const SearchForm = () => {
   const { query, handleChangeQuery, doSearch } = useDocSearch()
@@ -23,6 +24,7 @@ export const SearchForm = () => {
     <InputGroup style={{ width: '100%' }}>
       <TextInput ref={ input } type="text" value={ query } onChange={ handleChangeQuery } onKeyDown={ handleKeyDown } />
       <Button onClick={ () => doSearch(1) }>Search</Button>
+      <SavedDocs />
     </InputGroup>
   )
 }
