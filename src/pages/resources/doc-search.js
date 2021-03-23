@@ -15,27 +15,13 @@ const Actions = styled.div`
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    & .link-text {
-      transition: filter 250ms;
-      filter: opacity(0.8);
-    }
-    &:hover .link-text {
-      filter: opacity(1.0);
-    }
   }
 `
 
-const SavedResultsLink = styled(Link)(({ dim }) => `
+const SavedResultsLink = styled(Link)(({ dim = false}) => `
   position: relative;
   filter: saturate(0.5) opacity(${ dim ? 0.5 : 1.0 });
   transition: filter 250ms;
-  & .link-text {
-    transition: filter 250ms;
-    filter: opacity(0.0);
-  }
-  &:hover .link-text {
-    filter: opacity(1.0);
-  }
   & .icon-overlay {
     position: absolute;
     right: 0;
@@ -87,17 +73,7 @@ const DocSearchPage = () => {
         <div style={{ display: 'flex', alignItems: 'flex-end' }}>
           <Title style={{ flex: 1 }}>BioData Catalyst Documentation Search</Title>
           <Actions>
-            {
-              location.hash === '#saved' ? (
-                <Fragment>
-                    <ReturnToSearchLink />
-                </Fragment>
-              ) : (
-                <Fragment>
-                    <ViewSavedResultsLink />
-                </Fragment>
-              )
-            }
+            { location.hash === '#saved' ? <ReturnToSearchLink /> : <ViewSavedResultsLink /> }
           </Actions>
         </div>
 
