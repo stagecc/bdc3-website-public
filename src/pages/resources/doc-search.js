@@ -4,9 +4,9 @@ import styled from 'styled-components'
 import { useLocation } from '@reach/router'
 import { PageContent } from '../../components/layout'
 import { Title, Heading } from '../../components/typography'
-import { DocSearch, SavedDocs, SearchForm, SearchResults, SavedSearchList } from '../../components/doc-search'
 import { Link } from 'gatsby'
-import { UndoIcon } from '../../components/icons'
+import { FolderIcon, UndoIcon } from '../../components/icons'
+import { DocSearch, SearchForm, SearchResults, SavedSearchList, useDocSearch } from '../../components/doc-search'
 
 const Actions = styled.div`
   & > a {
@@ -23,12 +23,56 @@ const Actions = styled.div`
   }
 `
 
-const BackToSearchLink = () => {
+const SavedIndicator = styled(Link)`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  filter: saturate(0.0);
+  transition: filter 250ms;
+  & .link-text {
+    transition: filter 250ms;
+    filter: opacity(0.0);
+  }
+  &:hover .link-text {
+    filter: opacity(1.0);
+  }
+  & .icon-overlay {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-crimson);
+    padding: 2px 4px;
+    font-size: 85%;
+    border-radius: 8px;
+    color: #fff;
+  }
+  &:hover {
+    filter: saturate(1.0);
+  }
+`
+
+const SavedDocs = () => {
+  const { savedResults, clearSavedResults } = useDocSearch()
+
   return (
-    <Link to="/resources/doc-search" style={{ display: 'flex', gap: '1rem' }}>
-      <span className="link-text">Back to Search</span> 
-      <UndoIcon fill="var(--color-crimson)" size={ 36 } />
-    </Link>
+    <Fragment>
+      <SavedIndicator to="/resources/doc-search/#saved">
+        <FolderIcon size={ 36 } fill="var(--color-crimson)" />
+        <span className="icon-overlay">{ savedResults.length }</span>
+      </SavedIndicator>
+    </Fragment>
+  )
+}
+
+const ReturnToSearchLink = () => {
+  return (
+    <Fragment>
+      <Link to="/resources/doc-search" style={{ display: 'flex', gap: '1rem' }} aria-label="Return to Search">
+        <UndoIcon fill="var(--color-crimson)" size={ 36 } />
+      </Link>
+    </Fragment>
   )
 }
 
@@ -57,7 +101,7 @@ const DocSearchPage = () => {
           <Actions>
             {
               location.hash === '#saved'
-                ? <BackToSearchLink />
+                ? <ReturnToSearchLink />
                 : <SavedDocs />
             }
           </Actions>
@@ -65,21 +109,13 @@ const DocSearchPage = () => {
 
         <br/><br/>
         
-      {
-        location.hash === '#saved' ? (
-          <SavedSearchList />
-        ) : (
-          <Fragment>
-            <SearchForm />
+        <SearchForm />
 
-            <br/><br/><br/>
+        <br/><br/><br/>
+ 
+        { location.hash === '#saved' ? <SavedSearchList /> : <SearchResults /> }
 
-            <SearchResults />
-
-            <br/><br/><br/>
-          </Fragment>
-        )
-      }
+        <br/><br/><br/>
         
       </DocSearch>
       

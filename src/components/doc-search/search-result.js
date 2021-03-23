@@ -4,8 +4,9 @@ import { useDocSearch } from './search-context'
 import { Subheading } from '../typography'
 import { ExternalLink } from '../link'
 import { IconButton } from '../buttons'
-import { DeleteIcon, StarIcon } from '../icons'
+import { DeleteIcon, PlusIcon } from '../icons'
 import { Visible } from 'react-grid-system'
+import ReactTooltip from 'react-tooltip'
 
 const Wrapper = styled.article`
   display: flex;
@@ -67,6 +68,29 @@ export const Result = ({ index, result }) => {
 
   const alreadySaved = useMemo(() => savedResults.find(savedResult => savedResult.cacheId === result.cacheId) ? true : false, [result, savedResults, savedResults.length])
 
+  const MemoizedSaveButton = useMemo(() => (
+    <Actions>
+      {
+        alreadySaved
+        ? (
+          <Fragment>
+            <p data-tip="Unsave this result">
+              <IconButton onClick={ () => removeResult(result) }><PlusIcon fill="var(--color-crimson)" size={ 24 } /></IconButton>
+            </p>
+            <ReactTooltip place="bottom" type="dark" effect="solid"/>
+          </Fragment>
+        ) : (
+          <Fragment>
+            <p data-tip="Save this result">
+              <IconButton onClick={ () => saveResult(result) }><PlusIcon fill="var(--color-lightgrey)" size={ 24 } /></IconButton>
+            </p>
+            <ReactTooltip place="bottom" type="dark" effect="solid"/>
+          </Fragment>
+        )
+    }
+  </Actions>
+), [alreadySaved])
+
   return (
     <Fragment>
       <Wrapper>
@@ -79,13 +103,7 @@ export const Result = ({ index, result }) => {
         <Visible lg xl>
           <Thumbnail url={ imageURL } />
         </Visible>
-        <Actions>
-          {
-            alreadySaved
-              ? <IconButton onClick={ () => removeResult(result) }><StarIcon fill="var(--color-crimson)" size={ 24 } /></IconButton>
-              : <IconButton onClick={ () => saveResult(result) }><StarIcon fill="var(--color-lightgrey)" size={ 24 } /></IconButton>
-          }
-        </Actions>
+        { MemoizedSaveButton }
       </Wrapper>
       <Divider />
     </Fragment>
