@@ -5,7 +5,7 @@ import { useLocation } from '@reach/router'
 import { PageContent } from '../../components/layout'
 import { Title, Heading } from '../../components/typography'
 import { Link } from 'gatsby'
-import { FolderIcon, UndoIcon } from '../../components/icons'
+import { FolderIcon, FolderFullIcon, UndoIcon } from '../../components/icons'
 import { DocSearch, SearchForm, SearchResults, SavedSearchList, useDocSearch } from '../../components/doc-search'
 
 const Actions = styled.div`
@@ -53,11 +53,11 @@ const SavedResultsLink = styled(Link)`
   }
 `
 
-const SavedDocs = () => {
+const ViewSavedResultsLink = () => {
   const { savedResults, clearSavedResults } = useDocSearch()
   return (
     <SavedResultsLink to="/resources/doc-search/#saved" aria-label="View saved search results">
-      <FolderIcon size={ 36 } fill="var(--color-crimson)" />
+      { savedResults.length === 0 ? <FolderIcon size={ 36 } fill="var(--color-crimson)" /> : <FolderFullIcon size={ 36 } fill="var(--color-crimson)" /> }
       <span className="icon-overlay">{ savedResults.length }</span>
     </SavedResultsLink>
   )
@@ -90,7 +90,7 @@ const DocSearchPage = () => {
             {
               location.hash === '#saved'
                 ? <ReturnToSearchLink />
-                : <SavedDocs />
+                : <ViewSavedResultsLink />
             }
           </Actions>
         </div>

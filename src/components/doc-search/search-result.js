@@ -73,14 +73,14 @@ export const Result = ({ index, result }) => {
       {
         alreadySaved ? (
           <Fragment>
-            <p data-tip={ `Unsave this result ${ result.cacheId }` }>
+            <p data-tip="Remove this result from your folder">
               <IconButton onClick={ () => removeResult(result) }><DocumentRemoveIcon fill="var(--color-crimson)" size={ 24 } /></IconButton>
             </p>
             <ReactTooltip place="left" type="dark" effect="solid"/>
           </Fragment>
         ) : (
           <Fragment>
-            <p data-tip={ `Save this result ${ result.cacheId }` }>
+            <p data-tip="Add this result to your folder">
               <IconButton onClick={ () => saveResult(result) }><DocumentAddIcon fill="var(--color-lightgrey)" size={ 24 } /></IconButton>
             </p>
             <ReactTooltip place="left" type="dark" effect="solid"/>
