@@ -4,7 +4,7 @@ import { useDocSearch } from './search-context'
 import { Subheading } from '../typography'
 import { ExternalLink } from '../link'
 import { IconButton } from '../buttons'
-import { DocumentAddIcon } from '../icons'
+import { DocumentRemoveIcon, DocumentAddIcon } from '../icons'
 import { Visible } from 'react-grid-system'
 import ReactTooltip from 'react-tooltip'
 
@@ -74,7 +74,7 @@ export const Result = ({ index, result }) => {
         alreadySaved ? (
           <Fragment>
             <p data-tip={ `Unsave this result ${ result.cacheId }` }>
-              <IconButton onClick={ () => removeResult(result) }><DocumentAddIcon fill="var(--color-crimson)" size={ 24 } /></IconButton>
+              <IconButton onClick={ () => removeResult(result) }><DocumentRemoveIcon fill="var(--color-crimson)" size={ 24 } /></IconButton>
             </p>
             <ReactTooltip place="left" type="dark" effect="solid"/>
           </Fragment>
