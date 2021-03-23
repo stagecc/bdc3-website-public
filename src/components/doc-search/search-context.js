@@ -31,6 +31,13 @@ export const DocSearch = ({ children }) => {
   const [error, setError] = useState()
   const [paginationRadius, setPaginationRadius] = useState(PAGINATION_RADIUS.mobile)
   const [savedResults, setSavedResults] = useState([])
+  const [storedResults, setStoredResults] = useLocalStorage('savedResults')
+
+  useEffect(() => {
+    if (storedResults.length) {
+      setSavedResults(storedResults)
+    }
+  }, [])
 
   useEffect(() => {
     setPaginationRadius(isCompact ? PAGINATION_RADIUS.mobile : PAGINATION_RADIUS.desktop)
@@ -45,6 +52,7 @@ export const DocSearch = ({ children }) => {
   const handleGoToLastPage = () => doSearch(pageCount)
 
   useEffect(() => {
+    setStoredResults(savedResults)
   }, [savedResults])
 
   const saveResult = newResult => {
