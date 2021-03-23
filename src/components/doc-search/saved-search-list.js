@@ -18,7 +18,7 @@ export const SavedSearchList = () => {
         <CardBody>
           {
             savedResults.length
-              ? savedResults.map((result, i) => <Result key={ `saved-result-${ i }_${ result.cacheId }` } result={ result } />)
+              ? savedResults.map((result, i) => <Result key={ `saved-result-${ i }_${ result.cacheId }` } index={ i + 1 } result={ result } />)
               : (
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem' }}>
                   <FolderIcon size={ 48 } fill="var(--color-lightgrey)" /> <span>Your saved searches folder is empty.</span>

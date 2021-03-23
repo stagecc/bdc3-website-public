@@ -90,20 +90,20 @@ const DocSearchPage = () => {
           <Actions>
             {
               location.hash === '#saved' ? (
-                  <Fragment>
-                    <p data-tip="Return to search">
-                      <ReturnToSearchLink />
-                    </p>
-                    <ReactTooltip place="left" type="dark" effect="solid"/>
-                  </Fragment>
-                ) : (
-                  <Fragment>
-                    <p data-tip="View saved results folder">
-                      <ViewSavedResultsLink />
-                    </p>
-                    <ReactTooltip place="left" type="dark" effect="solid"/>
-                  </Fragment>
-                )
+                <Fragment>
+                  <p data-tip="Return to search">
+                    <ReturnToSearchLink />
+                  </p>
+                  <ReactTooltip place="left" type="dark" effect="solid"/>
+                </Fragment>
+              ) : (
+                <Fragment>
+                  <p data-tip="View saved results folder">
+                    <ViewSavedResultsLink />
+                  </p>
+                  <ReactTooltip place="left" type="dark" effect="solid"/>
+                </Fragment>
+              )
             }
           </Actions>
         </div>
