@@ -31,7 +31,7 @@ export const DocSearch = ({ children }) => {
   const [error, setError] = useState()
   const [paginationRadius, setPaginationRadius] = useState(PAGINATION_RADIUS.mobile)
   const [savedResults, setSavedResults] = useState([])
-  const [storedResults, setStoredResults] = useLocalStorage('savedResults')
+  const [storedResults, setStoredResults] = useLocalStorage('savedResults', [])
 
   useEffect(() => {
     if (storedResults.length) {
