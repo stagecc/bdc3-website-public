@@ -71,8 +71,7 @@ export const Result = ({ index, result }) => {
   const MemoizedSaveButton = useMemo(() => (
     <Actions>
       {
-        alreadySaved
-        ? (
+        alreadySaved ? (
           <Fragment>
             <p data-tip={ `Unsave this result ${ result.cacheId }` }>
               <IconButton onClick={ () => removeResult(result) }><DocumentAddIcon fill="var(--color-crimson)" size={ 24 } /></IconButton>
