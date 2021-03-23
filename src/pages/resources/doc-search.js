@@ -7,6 +7,7 @@ import { Title, Heading } from '../../components/typography'
 import { Link } from 'gatsby'
 import { FolderIcon, FolderFullIcon, UndoIcon } from '../../components/icons'
 import { DocSearch, SearchForm, SearchResults, SavedSearchList, useDocSearch } from '../../components/doc-search'
+import ReactTooltip from 'react-tooltip'
 
 const Actions = styled.div`
   & > a {
@@ -88,9 +89,21 @@ const DocSearchPage = () => {
           <Title style={{ flex: 1 }}>BioData Catalyst Documentation Search</Title>
           <Actions>
             {
-              location.hash === '#saved'
-                ? <ReturnToSearchLink />
-                : <ViewSavedResultsLink />
+              location.hash === '#saved' ? (
+                  <Fragment>
+                    <p data-tip="Return to search">
+                      <ReturnToSearchLink />
+                    </p>
+                    <ReactTooltip place="left" type="dark" effect="solid"/>
+                  </Fragment>
+                ) : (
+                  <Fragment>
+                    <p data-tip="View saved results folder">
+                      <ViewSavedResultsLink />
+                    </p>
+                    <ReactTooltip place="left" type="dark" effect="solid"/>
+                  </Fragment>
+                )
             }
           </Actions>
         </div>
