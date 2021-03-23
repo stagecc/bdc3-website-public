@@ -86,7 +86,7 @@ const ResultsList = () => {
         }
       </ResultsCardBody>
       <ResultsCardFooter>
-        { totalResults > 0 && <span>Page { currentPage } of { pageCount }</span> }
+        { totalResults > 0 ? <span>Page { currentPage } of { pageCount }</span> : <span>&nbsp;</span> }
       </ResultsCardFooter>
     </ResultsCard>
   )

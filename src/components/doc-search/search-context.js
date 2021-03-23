@@ -5,7 +5,7 @@ import { useLocalStorage, useWindowWidth } from '../../hooks'
 const GOOGLE_SEARCH_URL = `https://customsearch.googleapis.com/customsearch/v1`
 const GOOGLE_SEARCH_API_KEY = process.env.GATSBY_GOOGLE_SEARCH_API_KEY
 const GOOGLE_SEARCH_ID = process.env.GATSBY_GOOGLE_SEARCH_ID
-
+const DOC_SEARCH_PATH = '/resources/doc-search'
 const PAGINATION_RADIUS = {
   mobile: 1,
   desktop: 2,
@@ -45,26 +45,17 @@ export const DocSearch = ({ children }) => {
   const handleGoToLastPage = () => doSearch(pageCount)
 
   useEffect(() => {
-    console.log('---')
-    console.log('(search-context) saved results:', savedResults.map(r => r.cacheId).join(', '))
-    console.log('---')
   }, [savedResults])
 
   const saveResult = newResult => {
-    console.log('saving result', newResult.cacheId)
-    const newResults = new Set([...savedResults, newResult])
-    console.log(newResults)
-    setSavedResults([...newResults])
+    setSavedResults(savedResults => [...new Set([...savedResults, newResult])])
   }
 
   const removeResult = resultToRemove => {
-    console.log('removing result', resultToRemove.cacheId)
-    const newResults = savedResults.filter(savedResult => savedResult.cacheId !== resultToRemove.cacheId)
-    setSavedResults([...newResults])
+    setSavedResults(savedResults => savedResults.filter(r => r.cacheId !== resultToRemove.cacheId))
   }
 
   const clearSavedResults = () => {
-    console.log('clearing results')
     setSavedResults([])
   }
 
@@ -115,6 +106,7 @@ export const DocSearch = ({ children }) => {
 
   return (
     <SearchContext.Provider value={{
+      docSearchPath: DOC_SEARCH_PATH,
       searchedQuery, handleChangeQuery, doSearch,
       error, loading,
       results, totalResults,

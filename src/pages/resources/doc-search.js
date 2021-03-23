@@ -23,7 +23,7 @@ const Actions = styled.div`
   }
 `
 
-const SavedIndicator = styled(Link)`
+const SavedResultsLink = styled(Link)`
   position: relative;
   display: flex;
   justify-content: center;
@@ -55,38 +55,26 @@ const SavedIndicator = styled(Link)`
 
 const SavedDocs = () => {
   const { savedResults, clearSavedResults } = useDocSearch()
-
   return (
-    <Fragment>
-      <SavedIndicator to="/resources/doc-search/#saved">
-        <FolderIcon size={ 36 } fill="var(--color-crimson)" />
-        <span className="icon-overlay">{ savedResults.length }</span>
-      </SavedIndicator>
-    </Fragment>
+    <SavedResultsLink to="/resources/doc-search/#saved" aria-label="View saved search results">
+      <FolderIcon size={ 36 } fill="var(--color-crimson)" />
+      <span className="icon-overlay">{ savedResults.length }</span>
+    </SavedResultsLink>
   )
 }
 
 const ReturnToSearchLink = () => {
+  const { docSearchPath } = useDocSearch()
   return (
-    <Fragment>
-      <Link to="/resources/doc-search" style={{ display: 'flex', gap: '1rem' }} aria-label="Return to Search">
-        <UndoIcon fill="var(--color-crimson)" size={ 36 } />
-      </Link>
-    </Fragment>
+    <Link to={ docSearchPath } aria-label="Return to search">
+      <UndoIcon size={ 36 } fill="var(--color-crimson)" />
+    </Link>
   )
 }
 
 const DocSearchPage = () => {
   const location = useLocation()
 
-  useEffect(() => {
-    console.log(location.hash)
-    // if (location.hash === '#saved') {
-
-    // }
-  }, [location.hash])
-
-  
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters>
       <SEO
