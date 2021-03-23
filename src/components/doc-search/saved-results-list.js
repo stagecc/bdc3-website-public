@@ -4,16 +4,26 @@ import { Paragraph } from '../typography'
 import { useDocSearch } from './search-context'
 import { Result } from './search-result'
 import { Card, CardHeader, CardBody, CardFooter } from '../card'
-import { FolderIcon } from '../icons'
+import { IconButton } from '../buttons'
+import { DeleteIcon, FolderIcon } from '../icons'
+import ReactTooltip from 'react-tooltip'
 
 export const SavedSearchList = () => {
-  const { savedResults } = useDocSearch()
+  const { clearSavedResults, savedResults } = useDocSearch()
 
   return (
     <Fragment>
       <Card>
         <CardHeader>
-          { savedResults.length } saved result{ savedResults.length !== 1 ? 's' : '' }
+          <span style={{ flex: 1 }}>
+            { savedResults.length } saved result{ savedResults.length !== 1 ? 's' : '' }
+          </span>
+          <p data-tip="Clear saved searches" style={{ margin: 0 }}>
+            <IconButton onClick={ clearSavedResults }>
+              <DeleteIcon size={ 24 } fill="#fff" />
+            </IconButton>
+          </p>
+          <ReactTooltip place="left" type="dark" effect="solid"/>
         </CardHeader>
         <CardBody>
           {

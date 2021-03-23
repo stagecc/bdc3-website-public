@@ -14,9 +14,10 @@ const Actions = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
     & .link-text {
       transition: filter 250ms;
-      filter: opacity(0.0);
+      filter: opacity(0.8);
     }
     &:hover .link-text {
       filter: opacity(1.0);
@@ -24,13 +25,9 @@ const Actions = styled.div`
   }
 `
 
-const SavedResultsLink = styled(Link)`
+const SavedResultsLink = styled(Link)(({ dim }) => `
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  filter: saturate(0.0);
+  filter: saturate(0.5) opacity(${ dim ? 0.5 : 1.0 });
   transition: filter 250ms;
   & .link-text {
     transition: filter 250ms;
@@ -52,12 +49,13 @@ const SavedResultsLink = styled(Link)`
   &:hover {
     filter: saturate(1.0);
   }
-`
+`)
 
 const ViewSavedResultsLink = () => {
   const { savedResults, clearSavedResults } = useDocSearch()
   return (
-    <SavedResultsLink to="/resources/doc-search/#saved" aria-label="View saved search results">
+    <SavedResultsLink to="/resources/doc-search/#saved" aria-label="View saved search results" dim={ savedResults.length === 0 }>
+      <span className="link-text">View saved results</span>
       { savedResults.length === 0 ? <FolderIcon size={ 36 } fill="var(--color-crimson)" /> : <FolderFullIcon size={ 36 } fill="var(--color-crimson)" /> }
       <span className="icon-overlay">{ savedResults.length }</span>
     </SavedResultsLink>
@@ -68,6 +66,7 @@ const ReturnToSearchLink = () => {
   const { docSearchPath } = useDocSearch()
   return (
     <Link to={ docSearchPath } aria-label="Return to search">
+      <span className="link-text">Return to search</span>
       <UndoIcon size={ 36 } fill="var(--color-crimson)" />
     </Link>
   )
@@ -91,17 +90,11 @@ const DocSearchPage = () => {
             {
               location.hash === '#saved' ? (
                 <Fragment>
-                  <p data-tip="Return to search">
                     <ReturnToSearchLink />
-                  </p>
-                  <ReactTooltip place="left" type="dark" effect="solid"/>
                 </Fragment>
               ) : (
                 <Fragment>
-                  <p data-tip="View saved results folder">
                     <ViewSavedResultsLink />
-                  </p>
-                  <ReactTooltip place="left" type="dark" effect="solid"/>
                 </Fragment>
               )
             }
