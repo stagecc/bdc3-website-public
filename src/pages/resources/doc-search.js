@@ -18,7 +18,7 @@ const Actions = styled.div`
   }
 `
 
-const SavedResultsLink = styled(Link)(({ dim = false}) => `
+const SavedResultsLink = styled(Link)(({ dim = 0 }) => `
   position: relative;
   filter: saturate(0.75) opacity(${ dim ? 0.75 : 1.0 });
   transition: filter 250ms;
@@ -40,7 +40,7 @@ const SavedResultsLink = styled(Link)(({ dim = false}) => `
 const ViewSavedResultsLink = () => {
   const { savedResults, clearSavedResults } = useDocSearch()
   return (
-    <SavedResultsLink to="/resources/doc-search/#saved" aria-label="View saved search results" dim={ savedResults.length === 0 }>
+    <SavedResultsLink to="/resources/doc-search/#saved" aria-label="View saved search results" dim={ savedResults.length === 0 ? 1 : 0 }>
       <span className="link-text">View saved results</span>
       { savedResults.length === 0 ? <FolderIcon size={ 36 } fill="var(--color-crimson)" /> : <FolderFullIcon size={ 36 } fill="var(--color-crimson)" /> }
       <span className="icon-overlay">{ savedResults.length }</span>
