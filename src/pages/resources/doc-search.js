@@ -71,7 +71,7 @@ const DocSearchPage = () => {
 
       <DocSearch>
         <div style={{ display: 'flex', alignItems: 'flex-end' }}>
-          <Title style={{ flex: 1 }}>BioData Catalyst Documentation Search</Title>
+          <Title style={{ flex: 1 }}>Documentation Search</Title>
           <Actions>
             { location.hash === '#saved' ? <ReturnToSearchLink /> : <ViewSavedResultsLink /> }
           </Actions>
