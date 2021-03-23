@@ -12,7 +12,7 @@ import ReactTooltip from 'react-tooltip'
 const Actions = styled.div`
   & > a {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     gap: 1rem;
   }
@@ -20,7 +20,7 @@ const Actions = styled.div`
 
 const SavedResultsLink = styled(Link)(({ dim = false}) => `
   position: relative;
-  filter: saturate(0.5) opacity(${ dim ? 0.5 : 1.0 });
+  filter: saturate(0.75) opacity(${ dim ? 0.75 : 1.0 });
   transition: filter 250ms;
   & .icon-overlay {
     position: absolute;
