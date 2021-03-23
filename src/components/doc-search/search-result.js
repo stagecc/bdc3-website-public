@@ -6,7 +6,6 @@ import { ExternalLink } from '../link'
 import { IconButton } from '../buttons'
 import { DocumentRemoveIcon, DocumentAddIcon } from '../icons'
 import { Visible } from 'react-grid-system'
-import ReactTooltip from 'react-tooltip'
 
 const Wrapper = styled.article`
   display: flex;
@@ -70,23 +69,13 @@ export const Result = ({ index, result }) => {
 
   const MemoizedSaveButton = useMemo(() => (
     <Actions>
-      {
-        alreadySaved ? (
-          <Fragment>
-            <p data-tip="Remove this result from your folder">
-              <IconButton onClick={ () => removeResult(result) }><DocumentRemoveIcon fill="var(--color-crimson)" size={ 24 } /></IconButton>
-            </p>
-            <ReactTooltip place="left" type="dark" effect="solid"/>
-          </Fragment>
-        ) : (
-          <Fragment>
-            <p data-tip="Add this result to your folder">
-              <IconButton onClick={ () => saveResult(result) }><DocumentAddIcon fill="var(--color-lightgrey)" size={ 24 } /></IconButton>
-            </p>
-            <ReactTooltip place="left" type="dark" effect="solid"/>
-          </Fragment>
-        )
-    }
+      <p data-tip={ alreadySaved ? 'Remove this result from your folder' : 'Add this result to your folder' }>
+        {
+          alreadySaved
+          ? <IconButton onClick={ () => removeResult(result) }><DocumentRemoveIcon fill="var(--color-crimson)" size={ 24 } /></IconButton>
+          : <IconButton onClick={ () => saveResult(result) }><DocumentAddIcon fill="var(--color-lightgrey)" size={ 24 } /></IconButton>
+        }
+      </p>
   </Actions>
 ), [alreadySaved])
 

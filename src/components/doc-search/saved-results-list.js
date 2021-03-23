@@ -18,12 +18,18 @@ export const SavedSearchList = () => {
           <span style={{ flex: 1 }}>
             { savedResults.length } saved result{ savedResults.length !== 1 ? 's' : '' }
           </span>
-          <p data-tip="Clear saved searches" style={{ margin: 0 }}>
-            <IconButton onClick={ clearSavedResults }>
-              <DeleteIcon size={ 24 } fill="#fff" />
-            </IconButton>
-          </p>
-          <ReactTooltip place="left" type="dark" effect="solid"/>
+          {
+            savedResults.length > 0 && (
+              <Fragment>
+                <p data-tip="Clear saved searches" style={{ margin: 0 }} key={ 'asd'}>
+                  <IconButton onClick={ clearSavedResults }>
+                    <DeleteIcon size={ 24 } fill="#fff" />
+                  </IconButton>
+                </p>
+                <ReactTooltip place="left" type="dark" effect="solid"/>
+              </Fragment>
+            )
+          }
         </CardHeader>
         <CardBody>
           {
