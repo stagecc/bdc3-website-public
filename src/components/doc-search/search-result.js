@@ -6,6 +6,7 @@ import { ExternalLink } from '../link'
 import { IconButton } from '../buttons'
 import { DocumentRemoveIcon, DocumentAddIcon } from '../icons'
 import { Visible } from 'react-grid-system'
+import ReactTooltip from 'react-tooltip'
 
 const Wrapper = styled.article`
   display: flex;
@@ -76,6 +77,7 @@ export const Result = ({ index, result }) => {
           : <IconButton onClick={ () => saveResult(result) }><DocumentAddIcon fill="var(--color-lightgrey)" size={ 24 } /></IconButton>
         }
       </p>
+      <ReactTooltip place="left" type="dark" effect="solid"/>
   </Actions>
 ), [alreadySaved])
 

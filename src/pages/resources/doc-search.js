@@ -7,7 +7,6 @@ import { Title, Heading } from '../../components/typography'
 import { Link } from 'gatsby'
 import { FolderIcon, FolderFullIcon, UndoIcon } from '../../components/icons'
 import { DocSearch, SearchForm, SearchResults, SavedSearchList, useDocSearch } from '../../components/doc-search'
-import ReactTooltip from 'react-tooltip'
 
 const Actions = styled.div`
   & > a {
