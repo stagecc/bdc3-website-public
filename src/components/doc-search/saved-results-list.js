@@ -26,7 +26,6 @@ export const SavedSearchList = () => {
                     <DeleteIcon size={ 24 } fill="#fff" />
                   </IconButton>
                 </p>
-                <ReactTooltip place="left" type="dark" effect="solid"/>
               </Fragment>
             )
           }
