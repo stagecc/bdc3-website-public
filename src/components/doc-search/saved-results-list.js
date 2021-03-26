@@ -14,7 +14,7 @@ export const SavedSearchList = () => {
   return (
     <Fragment>
       <Card>
-        <CardHeader>
+        <CardHeader style={{ backgroundColor: 'var(--color-blueberry)' }}>
           {
             savedResults.length > 0 && (
               <Fragment>
@@ -30,18 +30,18 @@ export const SavedSearchList = () => {
             { savedResults.length } saved result{ savedResults.length !== 1 ? 's' : '' }
           </span>
         </CardHeader>
-        <CardBody style={{ padding: 0 }}>
+        <CardBody style={{ padding: 0, border: 0 }}>
           {
             savedResults.length
               ? savedResults.map((result, i) => <Result key={ `saved-result-${ i }_${ result.cacheId }` } index={ i + 1 } result={ result } />)
               : (
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', margin: '4rem 0' }}>
                   <FolderIcon size={ 48 } fill="var(--color-lightgrey)" /> <span>Your saved searches folder is empty.</span>
                 </div>
               )
           }
         </CardBody>
-        <CardFooter>
+        <CardFooter style={{ backgroundColor: 'var(--color-blueberry)' }}>
           { savedResults.length } saved result{ savedResults.length !== 1 ? 's' : '' }
         </CardFooter>
       </Card>

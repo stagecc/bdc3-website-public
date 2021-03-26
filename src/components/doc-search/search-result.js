@@ -14,7 +14,7 @@ const Wrapper = styled.article(({ highlight }) => `
   padding: 2rem 1rem;
   position: relative;
   justify-content: space-between;
-  transition: background-color 250ms;
+  transition: background-color 250ms, border-color 250ms;
   border: 2px solid ${ highlight ? `var(--color-blueberry)` : 'transparent' };
   &:hover  {
     background-color: #e8ecef;
