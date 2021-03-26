@@ -40,7 +40,6 @@ export const PaginationTray = () => {
   return (
     <Wrapper>
       <div className="actions">
-        <PaginationIconButton icon={ FirstPageIcon } clickHandler={ handleGoToFirstPage } disabled={ currentPage <= 1 } />
         <PaginationIconButton icon={ PreviousResultsIcon } clickHandler={ handleGoToPreviousPage } disabled={ currentPage <= 1 } />
         <EllipsisIcon fill={ currentPage > paginationRadius + 1 ? '#ccc' : 'transparent' } size={ 24 } />
         &nbsp;&nbsp;
