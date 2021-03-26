@@ -102,7 +102,7 @@ export const Result = ({ index, result }) => {
         <Content>
           <Title><ExternalLink to={ link }>{ title }</ExternalLink></Title>
           <em>{ displayLink }</em>
-          <p dangerouslySetInnerHTML={{ __html: htmlSnippet.replace('<br>', '') }} />
+          <p dangerouslySetInnerHTML={{ __html: htmlSnippet.replace('<br>', '').replace(/n?\\n/gm, '') }} />
         </Content>
         <Visible lg xl>
           <Thumbnail url={ thumbnailURL } />
