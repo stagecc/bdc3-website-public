@@ -40,7 +40,7 @@ const ViewSavedResultsLink = () => {
   const { savedResults, clearSavedResults } = useDocSearch()
   return (
     <SavedResultsLink to="/resources/doc-search/#saved" aria-label="View saved search results" dim={ savedResults.length === 0 ? 1 : 0 }>
-      <span className="link-text">View saved results</span>
+      <span className="link-text">View my saved results</span>
       { savedResults.length === 0 ? <FolderIcon size={ 36 } fill="var(--color-crimson)" /> : <FolderFullIcon size={ 36 } fill="var(--color-crimson)" /> }
       <span className="icon-overlay">{ savedResults.length }</span>
     </SavedResultsLink>

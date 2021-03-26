@@ -11,19 +11,25 @@ import ReactTooltip from 'react-tooltip'
 const Wrapper = styled.article`
   display: flex;
   gap: 2rem;
-  margin: 2rem 0;
+  margin: 2rem 1rem;
   position: relative;
+  justify-content: space-between;
+  & .search-result__actions {
+  }
+  &:hover .search-result__actions {
+  }
 `
 
 const Index = styled.span`
+  min-width: 3rem;
+  text-align: right;
 `
 
 const Thumbnail = styled.div(({ url }) => `
   width: 100px;
-  width: 100px;
   background-image: url(${ url });
   background-size: contain;
-  background-position: 50% 0;
+  background-position: 50% 50%;
   background-repeat: no-repeat;
 `)
 
@@ -39,22 +45,19 @@ const Divider = styled.div`
   position: relative;
   height: 1px;
   width: 100%;
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid var(--color-lightgrey);
   opacity: 0.5;
   &:not(:last-child) {
-    border-image: linear-gradient(to right, transparent 0%, var(--color-crimson) 10% 90%, transparent 100%) 1 1;
     margin: 0;
   }
 `
 
-const Actions = styled.div`
+const Actions = styled.div.attrs({ className: 'search-result__actions' })`
   position: absolute;
-  top: 1.9rem;
-  left: -1.25rem;
+  top: 2rem;
+  left: 1rem;
   display: flex;
   padding: 0;
-  // border: 1px solid blue;
-  // background-color: var(--color-lightgrey);
   & p {
     margin: 0;
   }
@@ -76,7 +79,7 @@ export const Result = ({ index, result }) => {
 
   const MemoizedSaveButton = useMemo(() => (
     <Actions>
-      <p data-tip={ alreadySaved ? 'Remove this result from your folder' : 'Add this result to your folder' }>
+      <p data-tip={ alreadySaved ? 'Remove this result from my folder' : 'Add this result to my folder' }>
         {
           alreadySaved
           ? <IconButton onClick={ () => removeResult(result) }><DocumentRemoveIcon fill="var(--color-crimson)" size={ 36 } /></IconButton>

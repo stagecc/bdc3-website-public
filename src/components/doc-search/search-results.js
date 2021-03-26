@@ -20,7 +20,7 @@ export const ResultsCardHeader = styled(CardHeader)`
     padding-right: 0;
 `
 
-export const ResultsCardBody = styled(CardBody)``
+export const ResultsCardBody = styled.div``
 
 export const ResultsCardFooter = styled(CardFooter)`
   display: flex;
