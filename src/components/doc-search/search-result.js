@@ -49,10 +49,12 @@ const Divider = styled.div`
 
 const Actions = styled.div`
   position: absolute;
-  top: 1.5rem;
-  left: -0.75rem;
+  top: 1.9rem;
+  left: -0.9rem;
   display: flex;
   padding: 0;
+  // border: 1px solid blue;
+  // background-color: var(--color-lightgrey);
   & p {
     margin: 0;
   }
