@@ -31,6 +31,7 @@ const Thumbnail = styled.div(({ url }) => `
   background-size: contain;
   background-position: 50% 50%;
   background-repeat: no-repeat;
+  margin-right: 2rem;
 `)
 
 const Content = styled.div`
@@ -54,8 +55,8 @@ const Divider = styled.div`
 
 const Actions = styled.div.attrs({ className: 'search-result__actions' })`
   position: absolute;
-  top: 2rem;
-  left: 1rem;
+  top: 2.25rem;
+  left: 20px;
   display: flex;
   padding: 0;
   & p {
