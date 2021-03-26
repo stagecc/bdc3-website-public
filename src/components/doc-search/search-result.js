@@ -8,13 +8,14 @@ import { DocumentRemoveIcon, DocumentAddIcon } from '../icons'
 import { Visible } from 'react-grid-system'
 import ReactTooltip from 'react-tooltip'
 
-const Wrapper = styled.article`
+const Wrapper = styled.article(({ highlight }) => `
   display: flex;
   gap: 2rem;
   padding: 2rem 1rem;
   position: relative;
   justify-content: space-between;
   transition: background-color 250ms;
+  border: 2px solid ${ highlight ? `var(--color-blueberry)` : 'transparent' };
   &:hover  {
     background-color: #e8ecef;
   }
@@ -22,7 +23,7 @@ const Wrapper = styled.article`
   }
   &:hover .search-result__actions {
   }
-`
+`)
 
 const Index = styled.span`
   min-width: 2.5rem;
@@ -57,19 +58,17 @@ const Divider = styled.div`
   }
 `
 
-const Actions = styled.div.attrs({ className: 'search-result__actions' })`
+const Actions = styled.div.attrs({ className: 'search-result__actions' })(({ selected }) => `
   position: absolute;
-  top: 6.25rem;
-  left: 26px;
+  bottom: 0.5rem;
+  left: 0.5rem;
   display: flex;
   padding: 0;
+  opacity: ${ selected ? 1 : 0.25 };
   & p {
     margin: 0;
   }
-  & svg {
-    fill: var(--color-crimson);
-  }
-`
+`)
 
 export const Result = ({ index, result }) => {
   const { savedResults, saveResult, removeResult } = useDocSearch()
@@ -83,12 +82,12 @@ export const Result = ({ index, result }) => {
   const alreadySaved = useMemo(() => savedResults.find(savedResult => savedResult.cacheId === result.cacheId) ? true : false, [result, savedResults, savedResults.length])
 
   const MemoizedSaveButton = useMemo(() => (
-    <Actions>
+    <Actions selected={ alreadySaved }>
       <p data-tip={ alreadySaved ? 'Remove this result from my folder' : 'Add this result to my folder' }>
         {
           alreadySaved
-          ? <IconButton onClick={ () => removeResult(result) }><DocumentRemoveIcon fill="var(--color-crimson)" size={ 36 } /></IconButton>
-          : <IconButton onClick={ () => saveResult(result) }><DocumentAddIcon fill="var(--color-lightgrey)" size={ 36 } /></IconButton>
+          ? <IconButton onClick={ () => removeResult(result) }><DocumentRemoveIcon fill="var(--color-blueberry)" size={ 36 } /></IconButton>
+          : <IconButton onClick={ () => saveResult(result) }><DocumentAddIcon fill="var(--color-blueberry)" size={ 36 } /></IconButton>
         }
       </p>
       <ReactTooltip place="left" type="dark" effect="solid"/>
@@ -97,7 +96,7 @@ export const Result = ({ index, result }) => {
 
   return (
     <Fragment>
-      <Wrapper>
+      <Wrapper highlight={ alreadySaved }>
         <Index>{ index }.</Index>
         <Content>
           <Title><ExternalLink to={ link }>{ title }</ExternalLink></Title>
