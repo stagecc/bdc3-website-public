@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Header = styled.header`
+export const Header = styled.header(({ squish }) => `
     background-color: #fff;
     color: #333;
     padding: 0;
@@ -8,6 +8,7 @@ export const Header = styled.header`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    height: 6rem;
-`
+    align-items: stretch;
+    transition: min-height 250ms;
+    min-height: ${ squish ? '4rem' : '6rem' };
+`)
