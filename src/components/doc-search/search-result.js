@@ -49,9 +49,13 @@ const Divider = styled.div`
 
 const Actions = styled.div`
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 1.5rem;
+  left: -0.75rem;
   display: flex;
+  padding: 0;
+  & p {
+    margin: 0;
+  }
   & svg {
     fill: var(--color-crimson);
   }
@@ -91,7 +95,7 @@ export const Result = ({ index, result }) => {
           <p dangerouslySetInnerHTML={{ __html: htmlSnippet.replace('<br>', '') }} />
         </Content>
         <Visible lg xl>
-          <Thumbnail url={ imageURL } />
+          <Thumbnail url={ thumbnailURL } />
         </Visible>
         { MemoizedSaveButton }
       </Wrapper>
