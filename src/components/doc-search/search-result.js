@@ -50,7 +50,7 @@ const Divider = styled.div`
 const Actions = styled.div`
   position: absolute;
   top: 1.9rem;
-  left: -0.9rem;
+  left: -1.25rem;
   display: flex;
   padding: 0;
   // border: 1px solid blue;
@@ -79,8 +79,8 @@ export const Result = ({ index, result }) => {
       <p data-tip={ alreadySaved ? 'Remove this result from your folder' : 'Add this result to your folder' }>
         {
           alreadySaved
-          ? <IconButton onClick={ () => removeResult(result) }><DocumentRemoveIcon fill="var(--color-crimson)" size={ 24 } /></IconButton>
-          : <IconButton onClick={ () => saveResult(result) }><DocumentAddIcon fill="var(--color-lightgrey)" size={ 24 } /></IconButton>
+          ? <IconButton onClick={ () => removeResult(result) }><DocumentRemoveIcon fill="var(--color-crimson)" size={ 36 } /></IconButton>
+          : <IconButton onClick={ () => saveResult(result) }><DocumentAddIcon fill="var(--color-lightgrey)" size={ 36 } /></IconButton>
         }
       </p>
       <ReactTooltip place="left" type="dark" effect="solid"/>
