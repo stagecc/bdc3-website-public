@@ -15,9 +15,6 @@ export const SavedSearchList = () => {
     <Fragment>
       <Card>
         <CardHeader>
-          <span style={{ flex: 1 }}>
-            { savedResults.length } saved result{ savedResults.length !== 1 ? 's' : '' }
-          </span>
           {
             savedResults.length > 0 && (
               <Fragment>
@@ -29,6 +26,9 @@ export const SavedSearchList = () => {
               </Fragment>
             )
           }
+          <span style={{ flex: 1 }}>
+            { savedResults.length } saved result{ savedResults.length !== 1 ? 's' : '' }
+          </span>
         </CardHeader>
         <CardBody style={{ padding: 0 }}>
           {
