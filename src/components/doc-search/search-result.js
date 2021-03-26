@@ -11,9 +11,13 @@ import ReactTooltip from 'react-tooltip'
 const Wrapper = styled.article`
   display: flex;
   gap: 2rem;
-  margin: 2rem 1rem;
+  padding: 2rem 1rem;
   position: relative;
   justify-content: space-between;
+  transition: background-color 250ms;
+  &:hover  {
+    background-color: #e8ecef;
+  }
   & .search-result__actions {
   }
   &:hover .search-result__actions {
@@ -21,7 +25,7 @@ const Wrapper = styled.article`
 `
 
 const Index = styled.span`
-  min-width: 3rem;
+  min-width: 2.5rem;
   text-align: right;
 `
 
@@ -55,8 +59,8 @@ const Divider = styled.div`
 
 const Actions = styled.div.attrs({ className: 'search-result__actions' })`
   position: absolute;
-  top: 2.25rem;
-  left: 20px;
+  top: 6.25rem;
+  left: 26px;
   display: flex;
   padding: 0;
   & p {

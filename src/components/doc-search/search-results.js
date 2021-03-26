@@ -20,7 +20,7 @@ export const ResultsCardHeader = styled(CardHeader)`
     padding-right: 0;
 `
 
-export const ResultsCardBody = styled.div``
+export const ResultsCardBody = styled(CardBody)``
 
 export const ResultsCardFooter = styled(CardFooter)`
   display: flex;
@@ -72,7 +72,7 @@ const ResultsList = () => {
           totalResults > 0 && <span>Page { currentPage } of { pageCount }</span>
         }
       </ResultsCardHeader>
-      <ResultsCardBody>
+      <ResultsCardBody style={{ padding: 0 }}>
         {
           results.map((result, i) => {
             return (

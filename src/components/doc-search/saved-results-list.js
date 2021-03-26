@@ -30,7 +30,7 @@ export const SavedSearchList = () => {
             )
           }
         </CardHeader>
-        <CardBody>
+        <CardBody style={{ padding: 0 }}>
           {
             savedResults.length
               ? savedResults.map((result, i) => <Result key={ `saved-result-${ i }_${ result.cacheId }` } index={ i + 1 } result={ result } />)
