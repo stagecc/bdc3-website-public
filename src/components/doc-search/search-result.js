@@ -18,7 +18,7 @@ const Wrapper = styled.article(({ highlight }) => `
   border: 1px solid ${ highlight ? `var(--color-blueberry)` : 'transparent' };
   background-color: ${ highlight ? `var(--color-sky)` : 'transparent' };
   &:hover  {
-    background-color: var(--color-sky);
+    background-color: ${ highlight ? `var(--color-sky)` : '#eee' };
   }
   & .search-result__actions {
   }
