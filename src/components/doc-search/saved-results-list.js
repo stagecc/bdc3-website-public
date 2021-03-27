@@ -48,10 +48,10 @@ export const SavedSearchList = () => {
       
       <br/><br/>
       
-      <Paragraph center style={{ width: '800px', margin: 'auto' }}>
+      <Paragraph center style={{ width: '90%', maxWidth: '800px', margin: 'auto' }}>
         The contents of your results folder is stored in your browser,
         so they will be readily available when you return here later, in this browser.
-        However, your folder's contents will not be available in another browser.
+        However, your folder's contents will not be available if you access this site in another browser.
       </Paragraph>
     </Fragment>
   )
