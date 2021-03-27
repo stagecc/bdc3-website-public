@@ -60,10 +60,7 @@ const DownloadButton = styled(Button)`
   justify-content: center;
   align-items: center;
   background-color: var(--color-blueberry);
-  // color: var(--color-crimson);
-  // border: 1px solid var(--color-crimson);
   text-transform: none;
-  // padding: 0.25rem;
 `
 
 const DownloadCSVButton = ({ onExport }) => <DownloadButton small onClick={ e => onExport(e.target.value) }><DownloadIcon fill="var(--color-white)" size={ 16 }/> CSV</DownloadButton>

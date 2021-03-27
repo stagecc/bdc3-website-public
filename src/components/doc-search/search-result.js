@@ -15,9 +15,10 @@ const Wrapper = styled.article(({ highlight }) => `
   position: relative;
   justify-content: space-between;
   transition: background-color 250ms, border-color 250ms;
-  border: 2px solid ${ highlight ? `var(--color-blueberry)` : 'transparent' };
+  border: 1px solid ${ highlight ? `var(--color-blueberry)` : 'transparent' };
+  background-color: ${ highlight ? `var(--color-sky)` : 'transparent' };
   &:hover  {
-    background-color: #e8ecef;
+    background-color: var(--color-sky);
   }
   & .search-result__actions {
   }
