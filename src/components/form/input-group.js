@@ -1,7 +1,9 @@
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-export const InputGroup = styled.div(({ theme }) => `
+export const InputGroup = styled.div(({ theme, flexDirection }) => `
   display: flex;
+  flex-direction: ${ flexDirection };
   & > * {
     border-radius: 0;
   }
@@ -14,3 +16,11 @@ export const InputGroup = styled.div(({ theme }) => `
     border-bottom-right-radius: 4px;
   }
 `)
+
+InputGroup.propTypes = {
+  flexDirection: PropTypes.oneOf(['row', 'column']),
+}
+
+InputGroup.defaultProps = {
+  flexDirection: 'row',
+}

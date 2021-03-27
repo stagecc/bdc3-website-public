@@ -3,10 +3,12 @@ import { useDocSearch } from './search-context'
 import { TextInput, InputGroup } from '../form'
 import { Button } from '../buttons'
 import { navigate, useLocation } from '@reach/router'
+import { useWindowWidth } from '../../hooks'
 
 export const SearchForm = () => {
   const location = useLocation
   const { query, handleChangeQuery, doSearch } = useDocSearch()
+  const { isCompact } = useWindowWidth()
   const input = useRef()
 
   const handleSearch = () => {
@@ -29,7 +31,7 @@ export const SearchForm = () => {
   }, [input.current])
 
   return (
-    <InputGroup style={{ width: '100%' }}>
+    <InputGroup style={{ width: '100%' }} flexDirection={ isCompact ? 'column' : 'row' }>
       <TextInput ref={ input } type="text" value={ query } onChange={ handleChangeQuery } onKeyDown={ handleKeyDown } />
       <Button onClick={ handleSearch }>Search</Button>
     </InputGroup>

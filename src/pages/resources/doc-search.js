@@ -7,6 +7,7 @@ import { Title, Heading } from '../../components/typography'
 import { Link } from 'gatsby'
 import { FolderIcon, FolderFullIcon, UndoIcon } from '../../components/icons'
 import { DocSearch, SearchForm, SearchResults, SavedSearchList, useDocSearch } from '../../components/doc-search'
+import { useWindowWidth } from '../../hooks'
 
 const Actions = styled.div`
   position: relative;
@@ -115,6 +116,7 @@ const ReturnToSearchLink = () => {
 
 const DocSearchPage = () => {
   const location = useLocation()
+  const { isCompact } = useWindowWidth()
 
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters>
@@ -125,7 +127,7 @@ const DocSearchPage = () => {
       />
 
       <DocSearch>
-        <div style={{ display: 'flex', alignItems: 'flex-end' }}>
+        <div style={{ display: 'flex', flexDirection: isCompact ? 'column' : 'row', alignItems: isCompact ? 'center' : 'flex-end' }}>
           <Title style={{ flex: 1 }}>Documentation Search</Title>
           <Actions>
             { location.hash === '#saved' ? <ReturnToSearchLink /> : <ViewSavedResultsLink /> }
