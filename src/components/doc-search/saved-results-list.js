@@ -45,6 +45,14 @@ export const SavedSearchList = () => {
           { savedResults.length } saved result{ savedResults.length !== 1 ? 's' : '' }
         </CardFooter>
       </Card>
+      
+      <br/><br/>
+      
+      <Paragraph center style={{ width: '800px', margin: 'auto' }}>
+        The contents of your results folder is stored in your browser,
+        so they will be readily available when you return here later, in this browser.
+        However, your folder's contents will not be available in another browser.
+      </Paragraph>
     </Fragment>
   )
 }
