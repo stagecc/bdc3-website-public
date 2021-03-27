@@ -46,6 +46,7 @@ const Content = styled.div`
 
 const Title = styled(Subheading)`
   margin-top: 0;
+  font-weight: normal;
 `
 
 const Divider = styled.div`
