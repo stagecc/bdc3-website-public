@@ -10,8 +10,8 @@ import ReactTooltip from 'react-tooltip'
 
 const Wrapper = styled.article(({ highlight }) => `
   display: flex;
-  gap: 2rem;
-  padding: 2rem 0.5rem;
+  gap: 1.25rem;
+  padding: 1.5rem 0.5rem 0.5rem 0.75rem;
   position: relative;
   justify-content: space-between;
   transition: background-color 250ms, border-color 250ms;
@@ -28,7 +28,7 @@ const Wrapper = styled.article(({ highlight }) => `
 const Actions = styled.div.attrs({ className: 'search-result__actions' })(({ selected }) => `
   opacity: ${ selected ? 1 : 0.25 };
   position: absolute;
-  top: -1px;
+  bottom: -1px;
   right: -1px;
   transition: opacity 500ms;
   & p {
@@ -38,8 +38,9 @@ const Actions = styled.div.attrs({ className: 'search-result__actions' })(({ sel
 `)
 
 const Index = styled.span`
-  min-width: 2.5rem;
+  min-width: 1.75rem;
   text-align: right;
+  padding-top: 3px;
 `
 
 const Thumbnail = styled.div(({ url }) => `
