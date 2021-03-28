@@ -11,7 +11,7 @@ import ReactTooltip from 'react-tooltip'
 const Wrapper = styled.article(({ highlight }) => `
   display: flex;
   gap: 2rem;
-  padding: 2rem 1rem;
+  padding: 2rem 0.5rem;
   position: relative;
   justify-content: space-between;
   transition: background-color 250ms, border-color 250ms;
@@ -20,10 +20,21 @@ const Wrapper = styled.article(({ highlight }) => `
   &:hover  {
     background-color: ${ highlight ? `var(--color-sky)` : '#eee' };
   }
-  & .search-result__actions {
-  }
   &:hover .search-result__actions {
+    opacity: ${ highlight ? 1 : 0.5 };
   }
+`)
+
+const Actions = styled.div.attrs({ className: 'search-result__actions' })(({ selected }) => `
+  opacity: ${ selected ? 1 : 0.25 };
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  transition: opacity 500ms;
+  & p {
+    margin: 0;
+  }
+  background-color: var(--color-blueberry);
 `)
 
 const Index = styled.span`
@@ -51,7 +62,7 @@ const Title = styled(Subheading)`
 
 const Divider = styled.div`
   position: relative;
-  height: 1px;
+  height: 0;
   width: 100%;
   border-bottom: 1px solid var(--color-lightgrey);
   opacity: 0.5;
@@ -59,18 +70,6 @@ const Divider = styled.div`
     margin: 0;
   }
 `
-
-const Actions = styled.div.attrs({ className: 'search-result__actions' })(({ selected }) => `
-  position: absolute;
-  bottom: 0.5rem;
-  left: 0.5rem;
-  display: flex;
-  padding: 0;
-  opacity: ${ selected ? 1 : 0.25 };
-  & p {
-    margin: 0;
-  }
-`)
 
 export const Result = ({ index, result }) => {
   const { savedResults, saveResult, removeResult } = useDocSearch()
@@ -88,8 +87,8 @@ export const Result = ({ index, result }) => {
       <p data-tip={ alreadySaved ? 'Remove this result from my folder' : 'Add this result to my folder' }>
         {
           alreadySaved
-          ? <IconButton onClick={ () => removeResult(result) }><DocumentRemoveIcon fill="var(--color-blueberry)" size={ 36 } /></IconButton>
-          : <IconButton onClick={ () => saveResult(result) }><DocumentAddIcon fill="var(--color-blueberry)" size={ 36 } /></IconButton>
+          ? <IconButton onClick={ () => removeResult(result) }><DocumentRemoveIcon fill="var(--color-white)" size={ 24 } /></IconButton>
+          : <IconButton onClick={ () => saveResult(result) }><DocumentAddIcon fill="var(--color-white)" size={ 24 } /></IconButton>
         }
       </p>
       <ReactTooltip place="left" type="dark" effect="solid"/>
@@ -98,6 +97,7 @@ export const Result = ({ index, result }) => {
 
   return (
     <Fragment>
+      <Divider />
       <Wrapper highlight={ alreadySaved }>
         <Index>{ index }.</Index>
         <Content>
