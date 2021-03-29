@@ -11,6 +11,7 @@ import { useWindowWidth } from '../../hooks'
 
 const Actions = styled.div`
   position: relative;
+  margin: 0.5rem 0;
   & > a {
     display: flex;
     justify-content: flex-end;
@@ -127,8 +128,8 @@ const DocSearchPage = () => {
       />
 
       <DocSearch>
-        <div style={{ display: 'flex', flexDirection: isCompact ? 'column' : 'row', alignItems: isCompact ? 'center' : 'flex-end' }}>
-          <Title style={{ flex: 1 }}>Documentation Search</Title>
+        <div style={{ display: 'flex', flexDirection: isCompact ? 'column' : 'row', alignItems: isCompact ? 'center' : 'flex-end', borderBottom: '1px solid #ccc' }}>
+          <Title style={{ flex: 1, border: 0, marginBottom: 0 }}>Documentation Search</Title>
           <Actions>
             { location.hash === '#saved' ? <ReturnToSearchLink /> : <ViewSavedResultsLink /> }
           </Actions>
