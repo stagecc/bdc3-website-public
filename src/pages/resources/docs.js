@@ -79,7 +79,7 @@ const SavedResultsLink = styled(Link).attrs({
 `)
 
 const ViewSavedResultsLink = () => {
-  const { savedResults, clearSavedResults } = useDocSearch()
+  const { savedResults, clearSavedResults, docSearchPath } = useDocSearch()
   const wiggler = useRef()
     
   useEffect(() => {
@@ -94,7 +94,7 @@ const ViewSavedResultsLink = () => {
   }, [savedResults.length])
   
   return (
-    <SavedResultsLink to="/resources/doc-search/#saved" aria-label="View saved search results" dim={ savedResults.length === 0 ? 1 : 0 }>
+    <SavedResultsLink to={ `${ docSearchPath }/#saved` } aria-label="View saved search results" dim={ savedResults.length === 0 ? 1 : 0 }>
       <span className="link-text">View saved results</span>
       <span ref={ wiggler }>
         { savedResults.length === 0 ? <FolderIcon size={ 36 } fill="var(--color-blueberry)" /> : <FolderFullIcon size={ 36 } fill="var(--color-blueberry)" /> }

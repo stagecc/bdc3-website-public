@@ -7,14 +7,14 @@ import { useWindowWidth } from '../../hooks'
 
 export const SearchForm = () => {
   const location = useLocation
-  const { query, handleChangeQuery, doSearch } = useDocSearch()
+  const { query, handleChangeQuery, doSearch, docSearchPath } = useDocSearch()
   const { isCompact } = useWindowWidth()
   const input = useRef()
 
   const handleSearch = () => {
     doSearch(1)
-    if (location.pathname !== '/resources/doc-search') {
-      navigate('/resources/doc-search')
+    if (location.pathname !== docSearchPath) {
+      navigate(docSearchPath)
     }
   }
 
