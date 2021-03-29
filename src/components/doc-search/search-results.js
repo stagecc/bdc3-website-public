@@ -69,7 +69,7 @@ const ResultsList = () => {
     <ResultsCard>
       <ResultsCardHeader>
         { totalResults > 0 && <span>Results { (currentPage - 1) * 10 + 1 } to { Math.min(currentPage * 10, totalResults) }</span> }
-        { totalResults > 0 && <span>{ totalResults } { (totalResults - (currentPage - 1) * 10 - 1 > 10) && `estimated`} results</span> }
+        { totalResults > 0 && <span>{ totalResults } { (totalResults - (currentPage - 1) * 10 - 1 > 10) && `estimated` } results</span> }
       </ResultsCardHeader>
       <ResultsCardBody style={{ padding: 0 }}>
         {
@@ -85,7 +85,7 @@ const ResultsList = () => {
         }
       </ResultsCardBody>
       <ResultsCardFooter>
-        { totalResults > 0 ? <span>Page { currentPage } of { pageCount } estimated pages</span> : <span>&nbsp;</span> }
+        { totalResults > 0 ? <span>Page { currentPage } of { pageCount } { (totalResults - (currentPage - 1) * 10 - 1 > 10) && `estimated` } pages</span> : <span>&nbsp;</span> }
       </ResultsCardFooter>
     </ResultsCard>
   )
