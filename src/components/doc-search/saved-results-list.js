@@ -18,8 +18,8 @@ export const SavedSearchList = () => {
           {
             savedResults.length > 0 && (
               <Fragment>
-                <p data-tip="Clear saved searches" style={{ margin: 0 }} key={ 'asd'}>
-                  <IconButton onClick={ clearSavedResults }>
+                <p data-tip="Clear saved searches" style={{ margin: 0 }} key={ 'asd' } role="tooltip" id="clear-folder-tooltip">
+                  <IconButton onClick={ clearSavedResults } aria-labelledby="clear-folder-tooltip">
                     <DeleteIcon size={ 24 } fill="#fff" />
                   </IconButton>
                 </p>

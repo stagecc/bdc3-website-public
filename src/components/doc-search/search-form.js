@@ -31,8 +31,17 @@ export const SearchForm = () => {
   }, [input.current])
 
   return (
-    <InputGroup style={{ width: '100%' }} flexDirection={ isCompact ? 'column' : 'row' }>
-      <TextInput ref={ input } type="text" value={ query } onChange={ handleChangeQuery } onKeyDown={ handleKeyDown } />
+    <InputGroup style={{ width: '100%' }} flexDirection={ isCompact ? 'column' : 'row' } role="search">
+      <label for="search-query" hidden>Search Query</label>
+      <TextInput
+        id="search-query"
+        ref={ input }
+        type="text"
+        placeholder="Enter search query"
+        value={ query }
+        onChange={ handleChangeQuery }
+        onKeyDown={ handleKeyDown }
+      />
       <Button onClick={ handleSearch }>Search</Button>
     </InputGroup>
   )

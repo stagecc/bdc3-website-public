@@ -86,11 +86,11 @@ export const Result = ({ index, result }) => {
 
   const MemoizedSaveButton = useMemo(() => (
     <Actions selected={ alreadySaved }>
-      <p data-tip={ alreadySaved ? 'Remove this result from my folder' : 'Add this result to my folder' }>
+      <p role="tooltip" id={ `${ result.cacheId }-tooltip` } data-tip={ alreadySaved ? 'Remove this result from my folder' : 'Add this result to my folder' }>
         {
           alreadySaved
-          ? <IconButton onClick={ () => removeResult(result) }><DocumentRemoveIcon fill="var(--color-white)" size={ 24 } /></IconButton>
-          : <IconButton onClick={ () => saveResult(result) }><DocumentAddIcon fill="var(--color-white)" size={ 24 } /></IconButton>
+          ? <IconButton onClick={ () => removeResult(result) } aria-describedby={ `${ result.cacheId }-tooltip` }><DocumentRemoveIcon fill="var(--color-white)" size={ 24 } /></IconButton>
+          : <IconButton onClick={ () => saveResult(result) } aria-describedby={ `${ result.cacheId }-tooltip` }><DocumentAddIcon fill="var(--color-white)" size={ 24 } /></IconButton>
         }
       </p>
       <ReactTooltip place="left" type="dark" effect="solid"/>

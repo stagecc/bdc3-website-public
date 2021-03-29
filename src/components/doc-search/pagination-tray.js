@@ -38,9 +38,9 @@ export const PaginationTray = () => {
     handleGoToNextPage, handleGoToPreviousPage, handleGoToPage, handleGoToFirstPage, handleGoToLastPage,
   } = useDocSearch()
   return (
-    <Wrapper>
+    <Wrapper aria-label="pagination">
       <div className="actions">
-        <PaginationIconButton icon={ PreviousResultsIcon } clickHandler={ handleGoToPreviousPage } disabled={ currentPage <= 1 } />
+        <PaginationIconButton icon={ PreviousResultsIcon } clickHandler={ handleGoToPreviousPage } disabled={ currentPage <= 1 } aria-disabled={ currentPage <= 1 } />
         <EllipsisIcon fill={ currentPage > paginationRadius + 1 ? '#ccc' : 'transparent' } size={ 24 } />
         &nbsp;&nbsp;
         {
@@ -66,12 +66,22 @@ export const PaginationTray = () => {
               return null
             }
             
-            return <PaginationPageButton small light={ currentPage !== i + 1 } key={ `page-${ i }` } onClick={ handleGoToPage(i + 1) }>{ i + 1 }</PaginationPageButton>
+            return (
+              <PaginationPageButton
+                small
+                light={ currentPage !== i + 1 }
+                key={ `page-${ i }` }
+                onClick={ handleGoToPage(i + 1) }
+                aria-current={ currentPage === i + 1 ? 'page' : '' }
+              >
+                { i + 1 }
+              </PaginationPageButton>
+            )
           })
         }
         &nbsp;&nbsp;
         <EllipsisIcon fill={ pageCount > 2 * paginationRadius - 1 && currentPage < pageCount - paginationRadius ? '#ccc' : 'transparent' } size={ 24 } />
-        <PaginationIconButton icon={ NextResultsIcon } clickHandler={ handleGoToNextPage } disabled={ currentPage >= pageCount } />
+        <PaginationIconButton icon={ NextResultsIcon } clickHandler={ handleGoToNextPage } disabled={ currentPage >= pageCount } aria-disabled={ currentPage >= 1 } />
       </div>
     </Wrapper>
   )
