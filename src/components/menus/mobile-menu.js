@@ -27,7 +27,6 @@ const Toggler = styled.button`
   border: 0;
   z-index: 3;
   margin-right: 1rem;
-  border: 1px solid blue;
   height: 100%;
 `
 
