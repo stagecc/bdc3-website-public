@@ -28,7 +28,7 @@ const Wrapper = styled.article(({ highlight }) => `
 const Actions = styled.div.attrs({ className: 'search-result__actions' })(({ selected }) => `
   opacity: ${ selected ? 1 : 0.25 };
   position: absolute;
-  bottom: -2px;
+  bottom: -1px;
   right: -1px;
   border-top-left-radius: 4px;
   transition: opacity 500ms;

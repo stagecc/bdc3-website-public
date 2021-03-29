@@ -7,7 +7,7 @@ export const CardFooter = styled.div`
     align-items: center;
     color: ${ props => props.fgColor ? props.fgColor : 'inherit' };
     background-color: ${ props => props.bgColor ? props.bgColor : 'inherit' };
-    padding: 1rem;
+    padding: 2rem;
     height: 4rem;
 `
 

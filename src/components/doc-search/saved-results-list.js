@@ -16,6 +16,9 @@ export const SavedSearchList = () => {
       <Card>
         <CardHeader style={{ backgroundColor: 'var(--color-blueberry)' }}>
           {
+            savedResults.length > 0 && <span style={{ flex: 1, textAlign: 'left' }}>{ savedResults.length } saved result{ savedResults.length !== 1 ? 's' : '' }</span>
+          }
+          {
             savedResults.length > 0 && (
               <Fragment>
                 <p data-tip="Clear saved searches" style={{ margin: 0 }} key={ 'asd' } role="tooltip" id="clear-folder-tooltip">
@@ -26,9 +29,6 @@ export const SavedSearchList = () => {
               </Fragment>
             )
           }
-          <span style={{ flex: 1 }}>
-            { savedResults.length } saved result{ savedResults.length !== 1 ? 's' : '' }
-          </span>
         </CardHeader>
         <CardBody style={{ padding: 0, border: 0 }}>
           {
@@ -42,7 +42,9 @@ export const SavedSearchList = () => {
           }
         </CardBody>
         <CardFooter style={{ backgroundColor: 'var(--color-blueberry)' }}>
-          { savedResults.length } saved result{ savedResults.length !== 1 ? 's' : '' }
+          {
+            savedResults.length > 0 && <span style={{ flex: 1, textAlign: 'left' }}>{ savedResults.length } saved result{ savedResults.length !== 1 ? 's' : '' }</span>
+          }
         </CardFooter>
       </Card>
       
