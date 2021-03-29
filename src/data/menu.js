@@ -28,12 +28,12 @@ export const menuItems = [
         path: '/resources/docs',
       },
       {
-        text: 'Services',
-        path: '/resources/services',
-      },
-      {
         text: 'Learn',
         path: '/resources/learn',
+      },
+      {
+        text: 'Services',
+        path: '/resources/services',
       },
     ],
   },
