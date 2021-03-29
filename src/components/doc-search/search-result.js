@@ -44,16 +44,17 @@ const Index = styled.span`
 `
 
 const Thumbnail = styled.div(({ url }) => `
-  width: 100px;
+  width: 150px;
   background-image: url(${ url });
   background-size: contain;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  margin: 0 4rem 0 2rem;
+  margin: 0 4rem 0 0;
 `)
 
 const Content = styled.div`
   flex: 1;
+  margin-right: 3rem;
 `
 
 const Title = styled(Subheading)`
