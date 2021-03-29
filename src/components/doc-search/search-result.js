@@ -49,7 +49,7 @@ const Thumbnail = styled.div(({ url }) => `
   background-size: contain;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  margin-right: 2rem;
+  margin: 0 4rem 0 2rem;
 `)
 
 const Content = styled.div`
