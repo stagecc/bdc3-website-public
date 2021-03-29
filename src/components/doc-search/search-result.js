@@ -30,6 +30,7 @@ const Actions = styled.div.attrs({ className: 'search-result__actions' })(({ sel
   position: absolute;
   bottom: -2px;
   right: -1px;
+  border-top-left-radius: 4px;
   transition: opacity 500ms;
   & p {
     margin: 0;
