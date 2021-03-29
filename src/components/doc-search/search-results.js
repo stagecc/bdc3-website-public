@@ -68,7 +68,6 @@ const ResultsList = () => {
   return (
     <ResultsCard>
       <ResultsCardHeader>
-        { totalResults > 0 && <span>Results { (currentPage - 1) * 10 + 1 } to { Math.min(currentPage * 10, totalResults) }</span> }
         { totalResults > 0 && <span>{ totalResults } { (totalResults - (currentPage - 1) * 10 - 1 > 10) && `estimated` } results</span> }
       </ResultsCardHeader>
       <ResultsCardBody style={{ padding: 0 }}>
