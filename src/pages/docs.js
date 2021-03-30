@@ -1,13 +1,13 @@
 import React, { Fragment, useEffect, useRef } from 'react'
-import { SEO } from '../../components/seo'
+import { SEO } from '../components/seo'
 import styled, { css, keyframes } from 'styled-components'
 import { useLocation } from '@reach/router'
-import { PageContent } from '../../components/layout'
-import { Title, Heading } from '../../components/typography'
+import { PageContent } from '../components/layout'
+import { Title, Heading } from '../components/typography'
 import { Link } from 'gatsby'
-import { FolderIcon, FolderFullIcon, UndoIcon } from '../../components/icons'
-import { DocSearch, SearchForm, SearchResults, SavedSearchList, useDocSearch } from '../../components/doc-search'
-import { useWindowWidth } from '../../hooks'
+import { FolderIcon, FolderFullIcon, UndoIcon } from '../components/icons'
+import { DocSearch, SearchForm, SearchResults, SavedSearchList, useDocSearch } from '../components/doc-search'
+import { useWindowWidth } from '../hooks'
 
 const Actions = styled.div`
   position: relative;

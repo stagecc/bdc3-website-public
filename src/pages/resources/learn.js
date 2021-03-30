@@ -178,7 +178,7 @@ const LearnPage = () => (
     </Paragraph>
 
     <Paragraph>
-      Alternatively, <Link to="/resources/docs">search documentation across our entire ecosystem</Link>.
+      Alternatively, <Link to="/docs">search documentation across our entire ecosystem</Link>.
     </Paragraph>
 
     <Paragraph>
