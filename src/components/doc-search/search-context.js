@@ -5,7 +5,7 @@ import { useLocalStorage, useWindowWidth } from '../../hooks'
 const GOOGLE_SEARCH_URL = `https://www.googleapis.com/customsearch/v1/siterestrict` // https://customsearch.googleapis.com/customsearch/v1`
 const GOOGLE_SEARCH_API_KEY = process.env.GATSBY_GOOGLE_SEARCH_API_KEY
 const GOOGLE_SEARCH_ID = process.env.GATSBY_GOOGLE_SEARCH_ID
-const DOC_SEARCH_PATH = '/resources/docs'
+const DOC_SEARCH_PATH = '/docs'
 const PAGINATION_RADIUS = {
   mobile: 1,
   desktop: 2,
