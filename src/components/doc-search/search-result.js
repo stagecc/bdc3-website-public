@@ -10,8 +10,8 @@ import ReactTooltip from 'react-tooltip'
 
 const Wrapper = styled.article(({ highlight }) => `
   display: flex;
-  gap: 1.25rem;
-  padding: 1.5rem 0.5rem 0.5rem 0.75rem;
+  gap: 1rem;
+  padding: 1.5rem 0rem 0.5rem 0rem;
   position: relative;
   justify-content: space-between;
   transition: background-color 250ms, border-color 250ms;
@@ -55,12 +55,13 @@ const Thumbnail = styled.div(({ url }) => `
 
 const Content = styled.div`
   flex: 1;
-  margin-right: 3rem;
+  margin-right: 2rem;
 `
 
 const Title = styled(Subheading)`
   margin-top: 0;
   font-weight: normal;
+  text-align: left;
 `
 
 const Divider = styled.div`
