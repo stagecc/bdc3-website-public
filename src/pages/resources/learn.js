@@ -173,7 +173,12 @@ const LearnPage = () => (
     </Paragraph>
 
     <Paragraph>
-      Get started on the BioData Catalyst ecosystem with this collection of documentation, videos, FAQs, community forums, tutorials, blog posts, upcoming events, and more from our ecosystem partners. 
+      Get started on the BioData Catalyst ecosystem with this collection of documentation, videos, FAQs, community forums, tutorials,
+      blog posts, upcoming events, and more from our ecosystem partners. 
+    </Paragraph>
+
+    <Paragraph>
+      Alternatively, <Link to="/resources/docs">search documentation across our entire ecosystem</Link>.
     </Paragraph>
 
     <Paragraph>
