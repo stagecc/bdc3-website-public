@@ -24,10 +24,6 @@ export const menuItems = [
         path: '/resources/cloud-credits',
       },
       {
-        text: 'Documentation',
-        path: '/resources/docs',
-      },
-      {
         text: 'Learn',
         path: '/resources/learn',
       },
