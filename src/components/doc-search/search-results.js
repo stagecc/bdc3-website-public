@@ -44,7 +44,7 @@ const ResultsList = () => {
           We're so sorry! { error.message }
         </Paragraph>
         <Paragraph center>
-          However, you're in luck. The BioData Catalyst Documentation Search can also be accessed
+          However, you're in luck. The BioData Catalyst Documentation Search can be accessed
           at <ExternalLink to="https://cse.google.com/cse?cx=f67468621577c356b">https://cse.google.com/cse?cx=f67468621577c356b</ExternalLink>.
         </Paragraph>
       </section>
