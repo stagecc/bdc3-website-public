@@ -17,7 +17,9 @@ const CardBodyGraphic = styled.div`
     max-width: 300px;
 `
 
-const CardBodyContents = styled.div`
+const CardBodyContents = styled.div.attrs({
+    className: 'card-body__contents'
+})`
     flex: 1;
     padding: 1rem 2rem;
     background-color: ${ props => props.bgColor };

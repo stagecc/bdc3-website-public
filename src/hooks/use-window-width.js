@@ -16,8 +16,8 @@ export const useWindowWidth = (initialWidth = defaultWidth) => {
     const [isCompact, setIsCompact] = useState(null)
     
     useEffect(() => {
-        const determineConpactness = () => width < COMPACT_THRESHOLD
-        setIsCompact(determineConpactness())
+        const determineCompactness = () => width < COMPACT_THRESHOLD
+        setIsCompact(determineCompactness())
     }, [width])
 
     useEffect(() => {

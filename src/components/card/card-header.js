@@ -7,7 +7,7 @@ export const CardHeader = styled.div`
     align-items: center;
     color: ${ props => props.fgColor ? props.fgColor : 'inherit' };
     background-color: ${ props => props.bgColor ? props.bgColor : 'inherit' };
-    font-weight: bold;
+    // font-weight: bold;
     text-align: center;
     padding: 0.5rem 2rem;
     position: relative;

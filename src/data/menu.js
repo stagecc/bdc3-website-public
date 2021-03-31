@@ -24,12 +24,12 @@ export const menuItems = [
         path: '/resources/cloud-credits',
       },
       {
-        text: 'Services',
-        path: '/resources/services',
-      },
-      {
         text: 'Learn',
         path: '/resources/learn',
+      },
+      {
+        text: 'Services',
+        path: '/resources/services',
       },
     ],
   },
