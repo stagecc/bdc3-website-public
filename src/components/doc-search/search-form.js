@@ -32,7 +32,7 @@ export const SearchForm = () => {
 
   return (
     <InputGroup style={{ width: '100%' }} flexDirection={ isCompact ? 'column' : 'row' } role="search">
-      <label for="search-query" hidden>Search Query</label>
+      <label htmlFor="search-query" hidden>Search Query</label>
       <TextInput
         id="search-query"
         ref={ input }
