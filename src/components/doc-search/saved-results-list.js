@@ -21,7 +21,7 @@ export const SavedSearchList = () => {
           {
             savedResults.length > 0 && (
               <Fragment>
-                <p data-tip="Clear saved searches" style={{ margin: 0 }} key={ 'asd' } role="tooltip" id="clear-folder-tooltip">
+                <p data-tip="Clear saved search results" style={{ margin: 0 }} key={ 'asd' } role="tooltip" id="clear-folder-tooltip">
                   <IconButton onClick={ clearSavedResults } aria-labelledby="clear-folder-tooltip">
                     <DeleteIcon size={ 24 } fill="#fff" />
                   </IconButton>
@@ -36,7 +36,7 @@ export const SavedSearchList = () => {
               ? savedResults.map((result, i) => <Result key={ `saved-result-${ i }_${ result.cacheId }` } index={ i + 1 } result={ result } />)
               : (
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', margin: '4rem 0' }}>
-                  <FolderIcon size={ 48 } fill="var(--color-lightgrey)" /> <span>Your saved searches folder is empty.</span>
+                  <FolderIcon size={ 48 } fill="var(--color-lightgrey)" /> <span>Your saved results folder is empty.</span>
                 </div>
               )
           }
