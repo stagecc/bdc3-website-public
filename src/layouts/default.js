@@ -69,11 +69,6 @@ export const DefaultLayout = ({ children }) => {
 
   useEffect(() => logLogo(), [])
 
-  const squishedHeader = useMemo(() => {
-    console.log(scrollPosition)
-    return scrollPosition > 100
-  }, [scrollPosition])
-
   return typeof isCompact === 'boolean' && (
     <LayoutWrapper compact={ isCompact }>
       <SkipLink href="#main-content">Skip to main content</SkipLink>
@@ -84,8 +79,8 @@ export const DefaultLayout = ({ children }) => {
             Get updated information on&nbsp;<Link to="/covid-19">COVID-19 data available on NHLBI BioData Catalyst</Link>.
           </Paragraph>
         </Banner>
-        <Header squish={ squishedHeader }>
-          <Brand width={ squishedHeader ? '300px' : '380px' } compact={ isCompact } />
+        <Header>
+          <Brand width="380px" compact={ isCompact } />
           <Visible xs sm md>
             <MobileMenu items={ menuItems } />
           </Visible>
