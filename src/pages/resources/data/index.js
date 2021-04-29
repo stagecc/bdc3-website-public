@@ -56,7 +56,7 @@ const DataPage = ({ data, location }) => {
             Explore COVID-19 Studies &nbsp;&nbsp; <MagnifyingGlassIcon fill="var(--color-crimson)" size={ 24 } />
           </ButtonLink>
           <Button light as="a" target="_blank" rel="noopener noreferrer"
-            href="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/biodata-catalyst-release-notes"
+            href="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/release-notes"
             style={{ margin: '1rem', display: 'inline-flex', alignItems: 'center' }}
           >
             Release Notes &nbsp;&nbsp; <DownloadIcon fill="var(--color-crimson)" size={ 24 } />
@@ -138,8 +138,8 @@ const DataPage = ({ data, location }) => {
         </Paragraph>
 
         <BulletedList>
-          <ListItem primary={ <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/biodata-catalyst-data-management-strategy">Data Management Strategy V1.0</ExternalLink> } />
-          <ListItem primary={ <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/data-generators/biodata-catalyst-data-generator-guidance">Data Generators Guidance V1.0</ExternalLink> } />
+          <ListItem primary={ <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/data-management/data-management-strategy">Data Management Strategy V1.0</ExternalLink> } />
+          <ListItem primary={ <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/data-management/biodata-catalyst-data-generator-guidance">Data Generators Guidance V1.0</ExternalLink> } />
         </BulletedList>
 
         <Paragraph>
