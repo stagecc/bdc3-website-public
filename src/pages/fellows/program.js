@@ -162,7 +162,7 @@ const FellowsPage = () => {
                 <Heading>Fellowship Application Process</Heading>
     
                 <Paragraph>
-                    Applicants submit proposals during the open Cohort 3 application window. Proposals should address the requirements below and any additional questions via the <Link to="/fellows/apply">Fellows Program Application Form</Link>. The proposal should be understandable to readers from outside the field of study and must clearly spell out the project aims, past studies, methods, materials, and BioData Catalyst engagement plan.
+                    Applicants submit proposals during the open Cohort 3 application window. Proposals should address the requirements below and any additional questions via the Fellows Program Application Form. The proposal should be understandable to readers from outside the field of study and must clearly spell out the project aims, past studies, methods, materials, and BioData Catalyst engagement plan.
                 </Paragraph>
     
                 <br/>
