@@ -78,12 +78,16 @@ export const CovidExpansionPanel = ({ data }) => {
   return (
     <Wrapper>
       <Header>
-        <Subheading>{ data.Name }</Subheading>
+        <Subheading>
+          <ExternalLink to={ `https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=${ data.dbGaP_Accession_ID }` }>{ data.Name }</ExternalLink>
+        </Subheading>
       </Header>
 
       <Body>
         <strong>Short Name:</strong> { data.Short_Name }<br /><br />
         <strong>Study Description:</strong> { data.Description }<br /><br />
+        <strong>dbGaP Accession ID:</strong> { data.dbGaP_Accession_ID }<br /><br />
+        <strong>BioLINCC Study Page:</strong> { data.BioLINCC_Study_Page }<br /><br />
         <strong>Study Type:</strong> { data.Type }<br /><br />
         <strong>Study Link:</strong> <ExternalLink to={ data.Link }>{ data.Link }</ExternalLink><br /><br />
         <strong>Network:</strong> { data.Network }<br /><br />
