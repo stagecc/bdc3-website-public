@@ -23,6 +23,20 @@
     "groupable": false
   },
   {
+    "name": "dbGaP Accession ID",
+    "selector": "dbGaP_Accession_ID",
+    "type": "string",
+    "omit": true,
+    "groupable": false
+  },
+  {
+    "name": "BioLINCC Study Page",
+    "selector": "BioLINCC_Study_Page",
+    "type": "string",
+    "omit": true,
+    "groupable": false
+  },
+  {
     "name": "Study Type",
     "selector": "Type",
     "type": "string",
