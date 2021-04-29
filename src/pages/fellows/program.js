@@ -36,7 +36,7 @@ const FellowsPage = () => {
                 !acceptingApplications && (
                     <Alert
                         type="info" center
-                        message="Please note applications to the BioData Catalyst Fellowship Program are currently closed. Applications to join the third Cohort are anticipated to open in October 2020."
+                        message="Please note applications to the BioData Catalyst Fellowship Program are currently closed."
                         style={{ width: '75%', margin: '2rem auto' }}
                     />
                 )
@@ -65,7 +65,7 @@ const FellowsPage = () => {
                 </BulletedList>
 
                 <Paragraph>
-                    Read what our <ExternalLink to="https://drive.google.com/file/d/1obNRHh3s0s8k4yJCctYvCHdZ5KsL6Uj_/view?usp=sharing">Cohort I Fellows have said</ExternalLink> about
+                    Read what our <ExternalLink to="https://drive.google.com/file/d/12MdA9L_0Ouf6CI08zVFxlAOQuN8Wxh_9/view?usp=sharing">Cohort I Fellows have said</ExternalLink> about
                     the NHLBI BioData Catalyst ecosystem and view the projects
                     from <Link to="/fellows/cohort1">Cohort 1</Link> and <Link to="/fellows/cohort2">Cohort 2</Link>.
                 </Paragraph>
@@ -122,7 +122,7 @@ const FellowsPage = () => {
             <br/>
     
             <section>
-                <Heading>Cohort 2 Fellows Program Timeline</Heading>
+                <Heading>Cohort 3 Fellows Program Timeline</Heading>
     
                 <Table>
                     <thead>

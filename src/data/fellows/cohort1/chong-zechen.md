@@ -1,7 +1,7 @@
 ---
 name: Zechen Chong, PhD
 university: University of Alabama at Birmingham
-photo: ../../../images/fellows/cohort-1/chong-zechen.jpg
+photo: chong-zechen.jpg
 project:
     title: Contribution of Structural Variations to Cardiovascular Diseases on the BioData Catalyst Ecosystem
     abstract: >

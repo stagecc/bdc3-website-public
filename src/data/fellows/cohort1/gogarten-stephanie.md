@@ -1,7 +1,7 @@
 ---
 name: Stephanie Gogarten, PhD
 university: University of Washington
-photo: ../../../images/fellows/cohort-1/gogarten-stephanie.jpg
+photo: gogarten-stephanie.jpg
 project:
     title: Leveraging Population Diversity in TOPMed for Maximum Analytical Power and Efficient Use of Computational Resources
     abstract: >

@@ -1,7 +1,7 @@
 ---
 name: Zilin Li, PhD
 university: Harvard University
-photo: ../../../images/fellows/cohort-1/li-zilin.jpg
+photo: li-zilin.jpg
 project:
     title: A Powerful and Resource-Efficient Rare Variant Meta-Analysis Workflow for Large-Scale Multi-Ethnic Sequencing Association Studies Using Summary Statistics and Functional Annotations
     abstract: >

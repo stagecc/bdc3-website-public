@@ -1,7 +1,7 @@
 ---
 name: Diego Mazzotti, PhD
 university: University of Kansas Medical Center Research Institute
-photo: ../../../images/fellows/cohort-2/mazzotti-diego.jpg
+photo: mazzotti-diego.jpg
 project:
     title: Cloud-based Infrastructure for Integration and Analysis of Polysomnography Data Supporting Translational Sleep Medicine
     abstract: >

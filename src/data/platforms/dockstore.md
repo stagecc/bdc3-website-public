@@ -2,7 +2,7 @@
 title: Dockstore
 serviceTitle: Dockstore
 path: /platforms/dockstore
-logo: ../../images/logos/platforms/dockstore.png
+logo: dockstore.png
 links: 
     homepage: https://dockstore.org
     launch: https://dockstore.org

@@ -1,7 +1,7 @@
 ---
 name: Yaling Tang, MD
 university: Joslin Diabetes Center
-photo: ../../../images/fellows/cohort-2/tang-yaling.jpg
+photo: tang-yaling.jpg
 project:
     title: Transcriptome-wide association study of heart failure in diabetes
     abstract: >

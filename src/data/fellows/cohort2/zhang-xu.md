@@ -1,7 +1,7 @@
 ---
 name: Xu Zhang, PhD
 university: University of Illinois at Chicago
-photo: ../../../images/fellows/cohort-2/zhang-xu.jpg
+photo: zhang-xu.jpg
 project:
     title: Genetic and biomarker prediction of cardiopulmonary dysfunction and rates of hemolysis in sickle cell disease
     abstract: >

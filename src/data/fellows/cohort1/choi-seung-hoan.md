@@ -1,7 +1,7 @@
 ---
 name: Seung Hoan Choi, PhD
 university: Broad Institute of MIT and Harvard
-photo: ../../../images/fellows/cohort-1/choi-seung-hoan.jpg
+photo: choi-seung-hoan.jpg
 project:
     title: Genetic Architecture and Contribution of Rare Mutations to Atrial Fibrillation Risk
     abstract: >

@@ -1,7 +1,7 @@
 ---
 name: Ravi Mathur, PhD
 university: RTI International
-photo: ../../../images/fellows/cohort-2/mathur-ravi.jpg
+photo: mathur-ravi.jpg
 project:
     title: A novel approach for matching whole genome sequencing data as population controls for new genome wide association studies
     abstract: >

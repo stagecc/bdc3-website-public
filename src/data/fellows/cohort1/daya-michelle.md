@@ -1,7 +1,7 @@
 ---
 name: Michelle Daya, PhD
 university: University of Colorado
-photo: ../../../images/fellows/cohort-1/daya-michelle.jpg
+photo: daya-michelle.jpg
 project:
     title: HLA and Genome-Wide Association Studies of Total Serum IgE Levels
     abstract: >

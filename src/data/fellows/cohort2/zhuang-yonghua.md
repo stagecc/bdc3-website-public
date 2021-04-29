@@ -1,7 +1,7 @@
 ---
 name: Yonghua Zhuang, PhD
 university: University of Colorado Anschutz Medical Campus
-photo: ../../../images/fellows/cohort-2/zhuang-yonghua.jpg
+photo: zhuang-yonghua.jpg
 project:
     title: Deep Learning on Graphs for Multi-omics Classification of COPD
     abstract: >

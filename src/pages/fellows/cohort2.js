@@ -26,7 +26,7 @@ const FellowsCohort2Page = () => {
                     the opportunity to receive funding to support research on novel and innovative data science and data-focused research problems. 
                 </Paragraph>
                 <Paragraph>
-                    Cohort 2 Fellows will work on the BioData Catalyst Ecosystem from September 2020-September 2021.
+                    Cohort 2 Fellows will work on the BioData Catalyst Ecosystem from September 2020 to September 2021.
                 </Paragraph>
             </section>
             

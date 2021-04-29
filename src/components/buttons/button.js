@@ -1,12 +1,16 @@
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
-export const Button = styled.button`
-    background-color: ${ props => props.light ? '#fff' : 'var(--color-crimson)' };
+export const Button = styled.button(({ small, light, fullWidth }) => `
+    background-color: ${ light ? '#fff' : 'var(--color-crimson)' };
     border-radius: 4px;
     display: inline-block;
-    border: ${ props => props.light ? '2px solid var(--color-crimson)' : '0' };
-    color: ${ props => props.light ? 'var(--color-crimson) !important' : '#fff' };
-    padding: 1rem 1.5rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: ${ light ? 'var(--color-crimson)' : 'transparent' };
+    color: ${ light ? 'var(--color-crimson) !important' : '#fff' };
+    padding: ${ small ? '0.5rem 1rem' : '1rem 1.5rem' };
+    font-size: ${ small ? '80%' : '100%' };
     text-transform: uppercase;
     text-decoration: none !important;
     white-space: nowrap;
@@ -15,10 +19,22 @@ export const Button = styled.button`
     // display: flex;
     // justify-content: center;
     // align-items: center;
-    ${ props => props.fullWidth ? `width: 100%;` : undefined }
+    ${ fullWidth ? `width: 100%;` : undefined }
     position: relative;
     transition: filter 250ms;
     &:hover, &:focus {
         filter: brightness(1.2);
     }
-`
+`)
+
+Button.propTypes = {
+    light: PropTypes.bool.isRequired,
+    small: PropTypes.bool.isRequired,
+    fullWidth: PropTypes.bool.isRequired,
+}
+
+Button.defaultProps = {
+    light: false,
+    small: false,
+    fullWidth: false,
+}

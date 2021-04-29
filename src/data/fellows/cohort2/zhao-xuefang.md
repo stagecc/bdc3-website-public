@@ -1,7 +1,7 @@
 ---
 name: Xuefang Zhao, PhD
 university: Massachusetts General Hospital
-photo: ../../../images/fellows/cohort-2/zhao-xuefang.jpg
+photo: zhao-xuefang.jpg
 project:
     title: Defining the Impact of Canonical and Complex Structural Variation on Plasma Lipid Levels
     abstract: >

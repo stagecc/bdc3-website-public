@@ -2,7 +2,7 @@
 title: Seven Bridges
 serviceTitle: BioData Catalyst powered by Seven Bridges
 path: /platforms/seven-bridges
-logo: ../../images/logos/platforms/seven-bridges.png
+logo: seven-bridges.png
 links: 
     homepage: https://f4c.readme.io
     launch: https://platform.sb.biodatacatalyst.nhlbi.nih.gov

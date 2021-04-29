@@ -1,7 +1,7 @@
 ---
 name: Einat Granot-Hershkovitz, PhD
 university: Brigham and Women's Hospital, Harvard Medical School
-photo: ../../../images/fellows/cohort-2/granot-hershkovitz-einat.jpg
+photo: granot-hershkovitz-einat.jpg
 project:
     title: Identification of ancestry-enriched genetic variants in the U.S. Latino/Hispanic population modifying the effect of APOE alleles on neurocognitive and cardiovascular risk traits
     abstract: >

@@ -1,7 +1,7 @@
 ---
 name: Sarah Gerard, PhD
 university: University of Iowa
-photo: ../../../images/fellows/cohort-1/gerard-sarah.jpg
+photo: gerard-sarah.jpg
 project:
     title: Ventilation Prediction from Pulmonary CT Using Deep Learning 
     abstract: >
