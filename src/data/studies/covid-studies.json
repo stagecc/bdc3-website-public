@@ -4,11 +4,11 @@
     "Short Name": "ORCHID",
     "Description": "ORCHID is a multicenter, blinded, placebo-controlled, randomized clinical trial evaluating hydroxychloroquine for the treatment of adults hospitalized with COVID-19. Patients, treating clinicians, and study personnel will all be blinded to study group assignment.",
     "dbGaP Accession ID": "phs002299.v1.p1",
-    "BioLINCC Study Page": "https://biolincc.nhlbi.nih.gov/studies/petal_orchid/",
     "Type": "Interventional (Clinical Trial)",
     "Link": "https://clinicaltrials.gov/ct2/show/NCT04332991",
     "Network": "PETAL Network",
     "Responsible Party": "Boyd Taylor Thompson, Massachusetts General Hospital",
-    "Status": "Completed"
+    "Status": "Completed",
+    "Other Information": "Access to ORCHID data requires data access approvals from the NLM Database of Genotypes and Phenotypes (dbGaP) system. ORCHID data is also available to those with appropriate access permission on BioLINCC (https://biodatacatalyst.nhlbi.nih.gov/data-protection), where they may download the data.",
   }
 ]
