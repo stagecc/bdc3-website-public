@@ -53,24 +53,6 @@ const Covid19Page = () => {
         )
       }
 
-      <Heading>Accessing ORCHID Trial Data</Heading>
-
-      <Paragraph>
-        At this time, BioData Catalyst has available ORCHID (Outcomes Related to COVID-19 treated with Hydroxychloroquine among In-patients with symptomatic Disease) trial data.
-        Access to ORCHID data requires data access approvals from the NLM Database of Genotypes and Phenotypes
-        (<ExternalLink to="https://dbgap.ncbi.nlm.nih.gov/aa/wga.cgi?page=login">dbGaP</ExternalLink>) system.
-        ORCHID data is also available to those with appropriate access permission
-        on <ExternalLink to="https://biolincc.nhlbi.nih.gov/studies/petal_orchid/ ">BioLINCC</ExternalLink>,
-        where they may download the data. ORCHID and other hosted data on BioData Catalyst may not be downloaded
-        (see the <ExternalLink to="https://biodatacatalyst.nhlbi.nih.gov/data-protection">BioData Catalyst Data Protection webpage</ExternalLink>).
-      </Paragraph>
-
-      <Paragraph>
-        To learn more about data access and data use on the BioData Catalyst system,
-        visit our <ExternalLink to="https://biodatacatalyst.nhlbi.nih.gov/resources/data">Data webpage</ExternalLink>.
-        With dbGaP approval, users are able to:
-      </Paragraph>
-
       <Heading>Getting Started on BioData Catalyst</Heading>
 
       <List ordered>
