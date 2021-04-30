@@ -30,13 +30,6 @@
     "groupable": false
   },
   {
-    "name": "BioLINCC Study Page",
-    "selector": "BioLINCC_Study_Page",
-    "type": "string",
-    "omit": true,
-    "groupable": false
-  },
-  {
     "name": "Study Type",
     "selector": "Type",
     "type": "string",
@@ -63,5 +56,12 @@
     "type": "string",
     "omit": true,
     "groupable": true
-  }
+  },
+  {
+    "name": "Other Information",
+    "selector": "Other_Information",
+    "type": "string",
+    "omit": true,
+    "groupable": false
+  },
 ]
