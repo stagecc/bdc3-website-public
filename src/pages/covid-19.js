@@ -24,20 +24,20 @@ const Covid19Page = () => {
       <Paragraph>
         NHLBI's response to the public health threat posed by COVID-19 includes
         a <ExternalLink to="https://www.nhlbi.nih.gov/directors-messages/coronavirus-covid-19-nhlbi-response">multi-pronged research strategy</ExternalLink>,
-        which includes translational research, clinical trials, clinical epidemiology, and population science.
-        The NHLBI will also leverage its cyberinfrastructure, namely the BioData Catalyst ecosystem,
-        to help coordinate various data management needs among many of the COVID-19 efforts.
+        which consists of translational research, clinical trials, clinical epidemiology, and population science.
+        The NHLBI is also leveraging its cyberinfrastructure, namely the BioData Catalyst ecosystem,
+        to help coordinate various data management needs of many of the COVID-19 efforts.
      </Paragraph>
 
       <Paragraph>
-        BioData Catalyst is supporting data aggregation, rapid and broad access, and computation for NHLBI-funded COVID-19 datasets.
+        BioData Catalyst is supporting data aggregation, rapid and broad access, and computation for several NIH-funded COVID-19 datasets.
         In an effort to drive more impactful analyses, BioData Catalyst will be interoperable with other COVID-19 data resources.
       </Paragraph>
 
       <Heading>Available COVID-19 Data</Heading>
 
       <Paragraph>
-        The table below provides metadata on the ORCHID study in the BioData Catalyst ecosystem. 
+        The table below provides metadata on the SARS-CoV-2 studies in the BioData Catalyst ecosystem. 
       </Paragraph>
 
       {
@@ -52,23 +52,29 @@ const Covid19Page = () => {
           />
         )
       }
+      
+      <Heading>Access COVID-19 Data</Heading>
 
-      <Heading>Getting Started on BioData Catalyst</Heading>
+      <Paragraph>
+        Access to COVID-19 data on BioData Catalyst requires data access approvals from the NLM Database of Genotypes and Phenotypes (<ExternalLink to="https://dbgap.ncbi.nlm.nih.gov/aa/wga.cgi?page=login">dbGaP</ExternalLink>) system. To learn more about data access and data use on the BioData Catalyst system, visit our <ExternalLink to="https://biodatacatalyst.nhlbi.nih.gov/resources/data">Data webpage</ExternalLink>.
+      </Paragraph>
+      
+      <Heading>Get Started on BioData Catalyst</Heading>
 
       <List ordered>
         <ListItem primary={
           <span>
             Obtain or confirm you already have an <ExternalLink to="https://era.nih.gov/eracommons-timeline.htm">eRA Commons account</ExternalLink>,
-            the credentials for which will be used as part of the login process.
+            the credentials which will be used as part of the login process.
           </span>
         } />
         <ListItem primary={
           <div>
-            Request dbGaP access to ORCHID study data by: <br /><br />
+            Request dbGaP access to the data from the studies of interest: <br /><br />
             <List>
               <ListItem primary={
                 <span>
-                  (a) Going to the <ExternalLink to="https://dbgap.ncbi.nlm.nih.gov/aa/wga.cgi?page=login">controlled-access login page for dbGaP</ExternalLink> and clicking on the "Login" link on the upper right right side of the page. 
+                  (a) Going to the <ExternalLink to="https://dbgap.ncbi.nlm.nih.gov/aa/wga.cgi?page=login">controlled-access login page for dbGaP</ExternalLink> and clicking on the "Login" link on the upper right side of the page. 
                 </span>
               }/>
               <ListItem primary={
@@ -78,7 +84,7 @@ const Covid19Page = () => {
               }/>
               <ListItem primary={
                 <span>
-                  (c) Clicking on the “my projects” tab and then the link for new data requests, where you will be asked to complete the 424 (R&R)
+                  (c) Clicking on the “my projects” tab and then the link for new data requests, where you will be asked to complete the SF 424 (R&R)
                 </span>
               }/>
             </List>
@@ -99,7 +105,7 @@ const Covid19Page = () => {
             Prepare for cloud storage costs (incurred from computation and storage of derived results) which may be paid via
             users’ <ExternalLink to="https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc">Amazon</ExternalLink> and &nbsp;
             <ExternalLink to="https://cloud.google.com/free/?utm_source=google&utm_medium=cpc&utm_campaign=na-US-all-en-dr-SKWS-all-all-trial-b-dr-1009135&utm_content=text-ad-none-any-DEV_c-CRE_265893083938-ADGP_Hybrid%20%7C%20AW%20SEM%20%7C%20BKWS%20%7C%20US%20%7C%20en%20%7C%20BMM%20~%20Google%20Cloud%20Free%20Tier-KWID_43700032443110077-kwd-326209943198&utm_term=KW_%2Bfree%20%2Bgoogle%20%2Bcloud-ST_%2Bfree%20%2Bgoogle%20%2Bcloud&gclid=CjwKCAiAz4b_BRBbEiwA5XlVVtvMK1vgUhmeGn4U0YiiGRlYUHeefMx0xvs_ot5mwkbNLe7ytcdefxoCebAQAvD_BwE">Google</ExternalLink> accounts.
-            Cloud credits may be available for those conducting concrete heart, lung, blood, or sleep research.
+            Cloud credits may be available for those conducting heart, lung, blood, or sleep research.
             Visit the <Link to="/resources/cloud-credits">Cloud Credits page</Link> for more information.
           </span>
         } />
@@ -112,17 +118,7 @@ const Covid19Page = () => {
         }/>
       </List>
 
-      <Paragraph>
-        Researchers using ORCHID data may find helpful the reproducible code originally used by the ORCHID research team to arrive at their results.
-        It is available in BioData Catalyst Powered by PIC-SURE for which <ExternalLink to="https://github.com/hms-dbmi/Access-to-Data-using-PIC-SURE-API/blob/master/NHLBI_BioData_Catalyst/R/ORCHID_COVID19.ipynb">there is more information in a Jupyter notebook</ExternalLink>.
-      </Paragraph>
-
       <Heading>Related Resources</Heading>
-
-      <List>
-        <ListItem primary={ <ExternalLink to="https://github.com/hms-dbmi/Access-to-Data-using-PIC-SURE-API/blob/master/NHLBI_BioData_Catalyst/R/ORCHID_COVID19.ipynb">ORCHID Clinical Trial: statistical analysis reproduction</ExternalLink> } />
-        <ListItem primary={ <ExternalLink to="https://biolincc.nhlbi.nih.gov/studies/petal_orchid/">Downloadable PETAL ORCHID data (BioLINCC)</ExternalLink> } />
-      </List>
 
     </PageContent>
   )
