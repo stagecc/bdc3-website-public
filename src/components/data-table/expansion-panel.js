@@ -86,7 +86,7 @@ export const CovidExpansionPanel = ({ data }) => {
       <Body>
         <strong>Short Name:</strong> { data.Short_Name }<br /><br />
         <strong>Study Description:</strong> { data.Description }<br /><br />
-        <strong>dbGaP Accession ID:</strong> { data.dbGaP_Accession_ID }<br /><br />
+        <strong>dbGaP Accession ID:</strong> { data.Accession }<br /><br />
         <strong>Study Type:</strong> { data.Type }<br /><br />
         <strong>Study Link:</strong> <ExternalLink to={ data.Link }>{ data.Link }</ExternalLink><br /><br />
         <strong>Network:</strong> { data.Network }<br /><br />
