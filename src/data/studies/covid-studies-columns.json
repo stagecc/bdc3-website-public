@@ -1,17 +1,18 @@
 [
   {
     "name": "Accession",
-    "selector": "dbGaP_Accession_ID",
+    "selector": "Accession",
     "type": "string",
     "omit": false,
-    "groupable": false
+    "groupable": false,
+    "grow": 1
   },
   {
     "name": "Study Name",
     "selector": "Name",
     "type": "string",
     "sortable": true,
-    "grow": 8,
+    "grow": 6,
     "maxWidth": "1000px",
     "groupable": false
   },
