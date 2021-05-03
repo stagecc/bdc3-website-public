@@ -1,5 +1,12 @@
 [
   {
+    "name": "Accession",
+    "selector": "dbGaP_Accession_ID",
+    "type": "string",
+    "omit": false,
+    "groupable": false
+  },
+  {
     "name": "Study Name",
     "selector": "Name",
     "type": "string",
@@ -18,13 +25,6 @@
   {
     "name": "Description",
     "selector": "Description",
-    "type": "string",
-    "omit": true,
-    "groupable": false
-  },
-  {
-    "name": "dbGaP Accession ID",
-    "selector": "dbGaP_Accession_ID",
     "type": "string",
     "omit": true,
     "groupable": false
