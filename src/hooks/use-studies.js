@@ -38,6 +38,7 @@ const studiesQuery = graphql`{
   covidStudies: allCovidStudiesJson {
     edges {
       node {
+        Accession
         Name
         Short_Name
         Description
