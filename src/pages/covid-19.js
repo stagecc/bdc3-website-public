@@ -118,8 +118,6 @@ const Covid19Page = () => {
         }/>
       </List>
 
-      <Heading>Related Resources</Heading>
-
     </PageContent>
   )
 }
