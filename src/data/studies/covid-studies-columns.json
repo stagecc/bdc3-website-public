@@ -52,13 +52,6 @@
     "groupable": false
   },
   {
-    "name": "Status",
-    "selector": "Status",
-    "type": "string",
-    "omit": true,
-    "groupable": true
-  },
-  {
     "name": "Other Information",
     "selector": "Other_Information",
     "type": "string",

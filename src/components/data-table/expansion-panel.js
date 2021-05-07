@@ -91,7 +91,6 @@ export const CovidExpansionPanel = ({ data }) => {
         <strong>Study Link:</strong> <ExternalLink to={ data.Link }>{ data.Link }</ExternalLink><br /><br />
         <strong>Network:</strong> { data.Network }<br /><br />
         <strong>Responsible Party:</strong> { data.Responsible_Party }<br /><br />
-        <strong>Status:</strong> { data.Status }<br /><br />
         <strong>Other Information:</strong> { data.Other_Information }<br /><br />
       </Body>
 
