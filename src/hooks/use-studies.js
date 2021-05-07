@@ -46,7 +46,6 @@ const studiesQuery = graphql`{
         Link
         Network
         Responsible_Party
-        Status
         Other_Information
       }
     }
