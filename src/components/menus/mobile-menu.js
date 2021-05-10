@@ -59,7 +59,7 @@ const MobileNav = styled.nav`
 `
 
 const MenuLink = styled(Link)`
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.5rem;
   width: 100%;
   color: #eef;
   letter-spacing: 2px;
@@ -79,7 +79,7 @@ const MenuLink = styled(Link)`
 `
 
 const SubmenuHeader = styled.a.attrs({ href: '' })`
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.5rem;
   width: 100%;
   color: #eef;
   letter-spacing: 2px;
@@ -160,8 +160,8 @@ export const MobileMenu = ({ items }) => {
         { visible ? <CloseIcon size="36" fill="var(--color-crimson)" /> : <HamburgerIcon size="36" fill="var(--color-crimson)"  /> }
       </Toggler>
       <MobileNavDrawer active={ visible }>
-        <div style={{ marginLeft: '1.5rem' }}>
-          <Brand white width="66%" />
+        <div style={{ width: '220px' }}>
+          <Brand white />
         </div>
         <MobileNav>
           {

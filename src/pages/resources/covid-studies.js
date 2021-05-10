@@ -7,6 +7,8 @@ import { useStudies } from '../../hooks'
 
 const CovidStudiesPage = () => {
   const { covidStudies, covidStudiesColumns } = useStudies()
+
+  console.log({ covidStudies, covidStudiesColumns })
   
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters style={{ position: 'relative' }}>
