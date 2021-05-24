@@ -1,13 +1,13 @@
 ---
 title: Gen3
-serviceTitle: BioData Catalyst powered by Gen3
+serviceTitle: BioData Catalyst Powered by Gen3
 path: /platforms/gen3
 logo: gen3.png
 links: 
     homepage: https://gen3.org
     launch: https://gen3.biodatacatalyst.nhlbi.nih.gov
     documentation: https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/explore_data/gen3-discovering-data
-teaser: The BioData Catalyst powered by Gen3 platform provides data commons services through authentication/authorization, object file indexing, interactive data search and export, and analytical workspaces services. Partner organizations and approved researchers can search and access hosted genomic and phenotypic data, and export selected cohorts to analytical workspaces in a scalable, reproducible, and secure manner.
+teaser: The BioData Catalyst Powered by Gen3 platform provides data commons services through authentication/authorization, object file indexing, interactive data search and export, and analytical workspaces services. Partner organizations and approved researchers can search and access hosted genomic and phenotypic data, and export selected cohorts to analytical workspaces in a scalable, reproducible, and secure manner.
 service: Gen3 is a software platform that allows partner organizations and grant approved researchers to search and access harmonized datasets. Users can search over project and study-specific genomic and phenotypic data and export selected cohorts to analytical workspaces in a scalable, reproducible, and secure manner.
 ---
 
