@@ -8,37 +8,32 @@ import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { EcoSystemForm } from "../../components/form";
 import { BulletedList, ListItem } from "../../components/list";
 
-const CloudCreditsPage = () => (
+const RegistrationPage = () => (
   <PageContent width="95%" maxWidth="1200px" center gutters>
-    <SEO title="Cloud Credits" description="" keywords="" />
+    <SEO title="NHLBI BioData Catalyst Access" description="" keywords="" />
 
-    <Title>Cloud Credits</Title>
+    <Title>Register for NHLBI BioData Catalyst Access</Title>
 
     <section>
-      <Heading>Cloud Costs on BioData Catalyst</Heading>
-
       <Paragraph>
-        BioData Catalyst hosts a number of datasets available for analysis to
-        users with appropriate data access approvals. Users are not charged for
-        the storage of these hosted datasets; however, if hosted data is used in
-        analyses users incur costs for computation and storage of derived
-        results.
-      </Paragraph>
-
-      <Paragraph>
-        Users of BioData Catalyst workspace environments Powered by Seven
-        Bridges and Powered by Terra can incur both computation and storage
-        cloud costs. Computation costs are influenced by compute instance size,
-        the duration for which the instance is used, and the cloud providers'
-        pricing of the compute instance at the time of execution. Storage costs
-        are influenced by file size, the duration the file is stored, and the
-        cloud providers' pricing of the storage class. Users can delete result
-        files once they are no longer needed to avoid unnecessary storage costs.
-        BioData Catalyst users who upload/import their own data to the system
-        incur storage costs for these uploaded files as well.
+        Thank you for your interest in joining the NHLBI BioData Catalyst
+        community of practice. The ecosystem provides{" "}
+        <ExternalLink to="https://biodatacatalyst.nhlbi.nih.gov/resources/services/">
+          tools, applications, and workflows
+        </ExternalLink>{" "}
+        in secure workspaces to support data analysis on a range of{" "}
+        <ExternalLink to="https://biodatacatalyst.nhlbi.nih.gov/resources/data/">
+          hosted datasets.{" "}
+        </ExternalLink>
+        <b>
+          We developed this{" "}
+          <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/">
+            overview
+          </ExternalLink>{" "}
+          to help you get started.
+        </b>
       </Paragraph>
     </section>
-
     <section>
       <Heading>Choosing a Workspace</Heading>
 
@@ -66,31 +61,46 @@ const CloudCreditsPage = () => (
           }
         />
       </BulletedList>
-    </section>
-
-    <section>
-      <Heading>Pilot Funding</Heading>
-
-      <Paragraph>
-        New users of BioData Catalyst may apply for an initial $500 in cloud
-        credits, and many analyses can be completed for that amount or less.
-        Others may use the $500 in cloud credits to test and evaluate BioData
-        Catalyst for their research needs, for example piloting pipelines on
-        smaller samples and estimating how much full analysis will cost.
-      </Paragraph>
-
-      <Paragraph>
-        If the anticipated costs are in excess of $500, users on BioData
-        Catalyst Powered by Terra can cover costs using their own Google
-        accounts. Users of BioData Catalyst Powered by Seven Bridges can cover
-        additional costs by providing a credit card or purchase order number.
-        Alternatively, users can apply for additional credits via the NHLBI
-        BioData Catalyst Cloud Credit Program (
-        <AnchorLink to="/resources/cloud-credits#cloud-credits-form">
-          see form below
-        </AnchorLink>
-        ).
-      </Paragraph>
+      <Paragraph>Note on registration process:</Paragraph>
+      <BulletedList>
+        <ListItem
+          primary={
+            "This registration process provides login credentials for the NHLBI BioData Catalyst Help Desk system, but not for all components of the BioData Catalyst ecosystem."
+          }
+        />
+        <ListItem
+          primary={
+            <span>
+              Users need to create separate accounts to access different
+              workspace environments, such as{" "}
+              <em>BioData Catalyst Powered by Seven Bridges</em> or{" "}
+              <em>BioData Catalyst Powered by Terra.</em>
+            </span>
+          }
+        />
+        <ListItem
+          primary={
+            <span>
+              Your eRA Commons ID is the common authentication method used
+              throughout the ecosystem. To learn more about eRA Commons IDs,
+              follow this{" "}
+              <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/analyze-data/terra/account-setup/managing-costs">
+                link.
+              </ExternalLink>
+            </span>
+          }
+        />
+        <ListItem
+          primary={
+            "Information on this form is considered Personally Identifiable Information (PII). If you wish to protect your privacy, you may send this information securely through external means such as US mail. "
+          }
+        />
+        <ListItem
+          primary={
+            "During monitoring, information may be examined, recorded, copied and used for authorized purposes. All information placed on or sent over this system may be monitored."
+          }
+        />
+      </BulletedList>
     </section>
 
     <section>
@@ -117,72 +127,26 @@ const CloudCreditsPage = () => (
         soon as possible.
       </Paragraph>
     </section>
-
     <section>
-      <Heading>Understanding Cloud Costs</Heading>
+      <Heading>Registration Form</Heading>
 
       <Paragraph>
-        Links to resources that provide helpful information about cloud costs
-        can be found below with additional guidance forthcoming.
-      </Paragraph>
-
-      <BulletedList>
-        <ListItem
-          primary={
-            <span>
-              <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/analyze-data/terra/account-setup/managing-costs">
-                Controlling your cloud costs
-              </ExternalLink>{" "}
-              (BioData Catalyst powered by Terra)
-            </span>
-          }
-        />
-        <ListItem
-          primary={
-            <span>
-              <ExternalLink to="https://sb-biodatacatalyst.readme.io/docs/cloud-infrastructure-pricing">
-                Cloud infrastructure pricing
-              </ExternalLink>{" "}
-              (BioData Catalyst powered by Seven Bridges)
-            </span>
-          }
-        />
-        <ListItem
-          primary={
-            <span>
-              <ExternalLink to="https://sb-biodatacatalyst.readme.io/page/comprehensive-tips-for-reliable-and-efficient-analysis-set-up">
-                Comprehensive tips for reliable and efficient analysis set-up
-              </ExternalLink>{" "}
-              (BioData Catalyst Powered by Seven Bridges)
-            </span>
-          }
-        />
-      </BulletedList>
-
-      <Paragraph>
-        If you need additional assistance with understanding cloud costs, please
-        reach out to the <Link to="/contact">help desk</Link> with your
-        question(s) and choose the type "Cloud Credits."
-      </Paragraph>
-    </section>
-
-    <section>
-      <Heading>Citing NHLBI BioData Catalyst</Heading>
-
-      <Paragraph>
-        Cloud credits recipients agree to acknowledge the funding for the NHLBI
-        BioData Catalyst in all publications and external presentations, as
-        noted in the{" "}
-        <Link to="/about">How to Cite Us section on this page</Link>.
+        By completing this form you are agreeing to the policies and usage
+        agreements represented on the{" "}
+        <ExternalLink to="https://biodatacatalyst.nhlbi.nih.gov/about">
+          NHLBI BioData Catalyst website
+        </ExternalLink>{" "}
+        and documentation. This includes, but is not limited to, a prohibition
+        against sharing account names and passwords.
       </Paragraph>
     </section>
 
     <br />
 
     <section>
-      <EcoSystemForm id="cloud-credits-form" />
+      <EcoSystemForm id="ecosystem-form" />
     </section>
   </PageContent>
 );
 
-export default CloudCreditsPage;
+export default RegistrationPage;
