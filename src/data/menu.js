@@ -60,8 +60,13 @@ export const menuItems = [{
         text: "Contact",
         path: "/contact",
         submenu: [{
-            text: "Join the Ecosystem",
-            path: "/contact/ecosystem",
-        }, ],
+                text: "Ask a Question",
+                path: "/contact",
+            },
+            {
+                text: "Join the Ecosystem",
+                path: "/contact/ecosystem",
+            },
+        ],
     },
 ];

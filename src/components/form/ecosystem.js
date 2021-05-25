@@ -1,0 +1,313 @@
+import React, { Fragment, useEffect, useState } from "react";
+import styled from "styled-components";
+import axios from "axios";
+import { Paragraph } from "../typography";
+import { Button } from "../buttons";
+import { Card, CardHeader, CardBody } from "../card";
+import { Dots as LoadingDots } from "../loading";
+import { ExternalLink } from "../link";
+import {
+  Form,
+  FormControl,
+  TextInput,
+  HelpText,
+  AdornedInput,
+  Select,
+  Option,
+  TextArea,
+} from "./inputs";
+
+// const FRESHDESK_API_KEY = process.env.GATSBY_FRESHDESK_API_KEY;
+// const FRESHDESK_API_ROOT_URL = process.env.GATSBY_FRESHDESK_API_ROOT_URL;
+// const FRESHDESK_API_CREATE_TICKET_URL = `${FRESHDESK_API_ROOT_URL}/tickets`;
+// const FRESHDESK_API_TICKET_FIELDS_URL = `${FRESHDESK_API_ROOT_URL}/ticket_fields`;
+
+// const requestOptions = {
+//   "Content-Type": "application/json",
+//   auth: { username: FRESHDESK_API_KEY, password: "X" },
+// };
+
+const SubmitButton = styled(Button).attrs({
+  type: "submit",
+  value: "Submit",
+})``;
+
+const ThankYouMessage = () => {
+  return (
+    <Paragraph center>
+      Thanks &mdash; your request has been submitted!
+    </Paragraph>
+  );
+};
+
+const ErrorMessage = () => {
+  return (
+    <Fragment>
+      <Paragraph center>
+        Sorry &mdash; an error occurred while submitting your request!
+      </Paragraph>
+      <Paragraph center>
+        Please submit submit your request on{" "}
+        <ExternalLink to="https://bdcatalyst.freshdesk.com">
+          our help desk
+        </ExternalLink>{" "}
+        while we resolve this issue. Thanks!
+      </Paragraph>
+    </Fragment>
+  );
+};
+
+export const EcoSystemForm = (props) => {
+    // Added a 1 to the otjherwise empty array in order to show it in development before getting this automatically filled in from the freshdesk api
+    const [platformOptions, setPlatformOptions] = useState([1]);
+    // ------------------
+    const [name, setName] = useState("");
+    const [commons, setCommons] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [organization, setOrganization] = useState("");
+  const [referral, setReferralSource] = useState("");
+  const [other, setOther] = useState("");
+  const [field, setField] = useState("");
+  const [wasSubmitted, setWasSubmitted] = useState(false);
+  const [error, setError] = useState();
+
+  const testSubmission = ["staging", "localhost"].includes(
+    window.location.hostname
+  );
+
+//   useEffect(() => {
+//     // before rendering the form, fetch the options for the Platform select dropown
+//     const fetchPlatformOptions = async () => {
+//       await axios
+//         .get(FRESHDESK_API_TICKET_FIELDS_URL, requestOptions)
+//         .then((response) => {
+//           const platformField = response.data.find(
+//             (field) => field.name === "cf_what_bdcatalyst_service_will_you_use"
+//           );
+//           setPlatformOptions(platformField.choices);
+//         })
+//         .catch((error) => console.error(error));
+//     };
+//     fetchPlatformOptions();
+//   }, []);
+
+    const handleSubmit = (event) => {
+      console.log(event)
+    // event.preventDefault();
+    // let prefix = testSubmission ? "[TEST] " : "";
+    // const description =
+    //   `Name: ${name} ~~~~~ ` +
+    //   `Email Address: ${email} ~~~~~ ` +
+    //   `Role: $${role} ~~~~~ ` +
+    //   `Company/Organization: ${organization} ~~~~~ ` +
+    //   `Collaborators: ${collaborators} ~~~~~ ` +
+    //   `Project Name & Description: ${project} ~~~~~ ` +
+    //   `Justification for Credits: ${justification} ~~~~~ ` +
+    //   `Previous Requested Cloud Credits: ${previousFunding} ~~~~~ ` +
+    //   `Use of Initial Pilot Credits: ${previousFundingDetails} ~~~~~ ` +
+    //   `Estimate of Cloud Credits Needed: $${estimate} ~~~~~ ` +
+    //   `Platform/Service: ${platform} ~~~~~ ` +
+    //   `~~~~~ ~~~~~ (This ticket was submitted from ${window.location.href}.)`;
+    // const payload = {
+    //   type: "Cloud Credits",
+    //   subject: prefix + "Cloud Credits Request",
+    //   description: prefix + description,
+    //   priority: 1,
+    //   status: 2,
+    //   name: name,
+    //   email: email,
+    //   custom_fields: {
+    //     cf_cloud_credits_collaborator_information: collaborators,
+    //     cf_cloud_credits_project_namedescription: project,
+    //     cf_justification_for_credits: justification,
+    //     cf_cloud_credits_previous_request: previousFunding,
+    //     cf_cloud_credits_use_of_initial_pilot_credits: previousFundingDetails,
+    //     cf_estimated_cloud_credits_requested: +estimate,
+    //     cf_what_bdcatalyst_service_will_you_use: platform,
+    //   },
+    // };
+
+    // const submitTicket = async () => {
+    //   console.log("Submitting", payload);
+    //   setWasSubmitted(true);
+    //   await axios
+    //     .post(FRESHDESK_API_CREATE_TICKET_URL, payload, requestOptions)
+    //     .then((response) => {
+    //       console.log(response);
+    //       console.log(response.status);
+    //       if (![200, 201].includes(response.status)) {
+    //         throw new Error(`Unsuccessful HTTP response, ${response.status}`);
+    //       }
+    //     })
+    //     .catch((error) => {
+    //       console.log(error);
+    //       setError(error);
+    //     });
+    // };
+    // submitTicket();
+  };
+
+    const handleChangeName = (event) => setName(event.target.value);
+    const handleChangeCommons = (event) => setCommons(event.target.value);
+  const handleChangeEmail = (event) => setEmail(event.target.value);
+  const handleChangePassword = (event) => setPassword(event.target.value);
+  const handleChangeOrganization = (event) =>
+    setOrganization(event.target.value);
+  const handleChangeRefferal = (event) =>
+    setReferralSource(event.target.value);
+  const handleChangeOther = (event) => {
+    setOther(event.target.value);
+  };
+
+  const handleChangeField = (event) =>
+    setField(event.target.value);
+
+  return (
+    <Card {...props}>
+      <CardHeader>Join the Ecosystem </CardHeader>
+      <CardBody>
+        <Paragraph right noMargin>
+          * <em>All fields are required.</em>
+        </Paragraph>
+        {!wasSubmitted && platformOptions.length > 0 && (
+          <Form onSubmit={handleSubmit}>
+            <FormControl>
+              <label htmlFor="name" required>
+                Your Name *
+              </label>
+              <TextInput
+                type="text"
+                required
+                id="name"
+                name="name"
+                value={name}
+                onChange={handleChangeName}
+              />
+            </FormControl>
+            <FormControl>
+              <label htmlFor="commons">eRA Commons ID *</label>
+              <TextInput
+                type="commons"
+                required
+                id="commons"
+                name="commons"
+                value={commons}
+                onChange={handleChangeCommons}
+              />
+            </FormControl>
+            <FormControl>
+              <label htmlFor="email">Email Address *</label>
+              <TextInput
+                type="email"
+                required
+                id="email"
+                name="email"
+                value={email}
+                onChange={handleChangeEmail}
+              />
+              <HelpText>Please use an organizational email address.</HelpText>
+            </FormControl>
+            <FormControl>
+              <label htmlFor="password">
+                NHLBI BioData Catalyst Password *
+              </label>
+              <TextInput
+                type="password"
+                required
+                id="password"
+                name="password"
+                value={password}
+                onChange={handleChangePassword}
+              />
+              <HelpText>
+                This will create a help desk account for you should you have
+                future questions about the ecosystem.
+              </HelpText>
+            </FormControl>
+            <FormControl>
+              <label htmlFor="organization">Your Organization *</label>
+              <TextInput
+                type="organization"
+                required
+                id="organization"
+                name="organization"
+                value={organization}
+                onChange={handleChangeOrganization}
+              />
+            </FormControl>
+            <FormControl>
+              <label htmlFor="field">
+                NHLBI Field of Study or Research Area *
+              </label>
+              <Select
+                required
+                id="field"
+                name="field"
+                value={field}
+                onChange={handleChangeField}
+              >
+                <Option value="">Select One</Option>
+                <Option value="Heart">Heart</Option>
+                <Option value="Lung">Lung</Option>
+                <Option value="Blood">Blood</Option>
+                <Option value="Sleep">Sleep</Option>
+                <Option value="Methods">Methods</Option>
+                <Option value="Sickle Cell Disease">Sickle Cell Disease</Option>
+                <Option value="Implementation Science">
+                  Implementation Science
+                </Option>
+                <Option value="Precision Medicine">Precision Medicine</Option>
+                <Option value="Clinical Trials Optimization">
+                  Clinical Trials Optimization
+                </Option>
+                <Option value="Small Business">Small Business</Option>
+                <Option value="HIV/AIDS">HIV/AIDS</Option>
+                <Option value="COVID-19">COVID-19</Option>
+                <Option value="Other">Other</Option>
+              </Select>
+            </FormControl>
+            <FormControl>
+              <label htmlFor="other">
+                If Other, please provide a brief description.
+              </label>
+              <TextArea
+                required
+                id="other"
+                name="other"
+                value={other}
+                onChange={handleChangeOther}
+                maxLength="3000"
+              />
+            </FormControl>
+            <FormControl>
+              <label htmlFor="referral">
+                How did you learn about BioData Catalyst? *
+              </label>
+              <TextArea
+                required
+                id="referral"
+                name="referral"
+                placeholder={`Colleague, website, organization`}
+                value={referral}
+                onChange={handleChangeRefferal}
+              />
+              <HelpText></HelpText>
+            </FormControl>
+            <br />
+            <SubmitButton>Submit</SubmitButton>
+          </Form>
+        )}
+        {!wasSubmitted && platformOptions.length === 0 && (
+          <LoadingDots
+            color="var(--color-crimson)"
+            text="Loading form..."
+            textPlacement="top"
+          />
+        )}
+        {wasSubmitted && !error && <ThankYouMessage />}
+        {wasSubmitted && error && <ErrorMessage />}
+      </CardBody>
+    </Card>
+  );
+};
