@@ -17,13 +17,14 @@ import {
   TextArea,
 } from "./inputs";
 
-const FRESHDESK_API_KEY = process.env.GATSBY_RESHDESK_API_KEY;
+const FRESHDESK_USER_NAME = process.env.GATSBY_FRESHDESK_USER_NAME;
+const FRESHDESK_PASSWORD = process.env.GATSBY_FRESHDESK_PASSWORD;
 const FRESHDESK_API_ROOT_URL = process.env.GATSBY_FRESHDESK_API_ROOT_URL;
 const FRESHDESK_API_CREATE_CONTACT = `${FRESHDESK_API_ROOT_URL}/contacts`;
 
 const requestOptions = {
   "Content-Type": "application/json",
-  auth: { username: FRESHDESK_API_KEY, password: "X" },
+  auth: { username: FRESHDESK_USER_NAME, password: FRESHDESK_PASSWORD },
 };
 
 const SubmitButton = styled(Button).attrs({
@@ -31,10 +32,10 @@ const SubmitButton = styled(Button).attrs({
   value: "Submit",
 })``;
 
-const ThankYouMessage = () => {
+const ThankYouMessage = ({ name }) => {
   return (
     <Paragraph center>
-      Thanks &mdash; your request has been submitted!
+      Thank You {name}, your request has been submitted!
     </Paragraph>
   );
 };
@@ -58,8 +59,8 @@ const ErrorMessage = () => {
 
 export const EcoSystemForm = (props) => {
   const [name, setName] = useState("");
-  const [commons, setCommons] = useState("");
   const [email, setEmail] = useState("");
+  const [commons, setCommons] = useState("");
   const [password, setPassword] = useState("");
   const [organization, setOrganization] = useState("");
   const [referral, setReferralSource] = useState("");
@@ -75,11 +76,11 @@ export const EcoSystemForm = (props) => {
       email: email,
       custom_fields: {
         era_commons_id: commons,
-        password: password,
-        organization: organization,
-        field: field,
-        referral: referral,
-        other: other,
+        contacts_password: password,
+        contacts_organization: organization,
+        contacts_field: field,
+        contacts_referral: referral,
+        contacts_other: other,
       },
     };
 
@@ -89,7 +90,7 @@ export const EcoSystemForm = (props) => {
       await axios
         .post(
           FRESHDESK_API_CREATE_CONTACT,
-          JSON.stringify(payload),
+          payload,
           requestOptions
         )
         .then((response) => {
@@ -255,7 +256,7 @@ export const EcoSystemForm = (props) => {
             <SubmitButton>Submit</SubmitButton>
           </Form>
         )}
-        {wasSubmitted && !error && <ThankYouMessage />}
+        {wasSubmitted && !error && <ThankYouMessage name={name} />}
         {wasSubmitted && error && <ErrorMessage />}
       </CardBody>
     </Card>
