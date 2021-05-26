@@ -102,31 +102,6 @@ const RegistrationPage = () => (
         />
       </BulletedList>
     </section>
-
-    <section>
-      <Heading>NHLBI BioData Catalyst Cloud Credit Program</Heading>
-
-      <Paragraph>
-        The NHLBI BioData Catalyst Cloud Credit Program offers users the
-        opportunity to apply for additional cloud credits to support research
-        projects in the heart, lung, blood, and sleep fields. Cloud credits are
-        awarded on a per project basis, so if multiple users are working
-        together on a larger project the group should submit one application.
-        All individuals involved in a project will be able to make use of
-        awarded cloud credits through a shared billing group on either BioData
-        Catalyst Powered by Seven Bridges or BioData Catalyst Powered by Terra.
-        Users can submit an application using the{" "}
-        <AnchorLink to="/resources/cloud-credits#cloud-credits-form">
-          Cloud Credit Request Form
-        </AnchorLink>{" "}
-        below.
-      </Paragraph>
-
-      <Paragraph>
-        Requests for additional cloud credits will be reviewed and decided as
-        soon as possible.
-      </Paragraph>
-    </section>
     <section>
       <Heading>Registration Form</Heading>
 

@@ -1,3 +1,3 @@
 module.exports = {
-    kebabCase: str => str.toLowerCase().replace(/ +/g, '-')
-}
+  kebabCase: str => str.toLowerCase().replace(/ +/g, "-")
+};

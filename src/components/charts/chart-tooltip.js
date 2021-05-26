@@ -1,9 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 //
 
-const Wrapper = styled.div(({ color }) => `
+const Wrapper = styled.div(
+  ({ color }) => `
   font-size: 90%;
   background-color: #fff;
   display: flex;
@@ -11,9 +12,10 @@ const Wrapper = styled.div(({ color }) => `
   filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.2));
   border-width: 0 0 0 1rem;
   border-style: solid;
-  border-color: ${ color };
+  border-color: ${color};
   overflow: hidden;
-`)
+`
+);
 
 const Details = styled.div`
   flex: 1;
@@ -31,17 +33,19 @@ const Details = styled.div`
   & .value {
     padding: 0.1rem 0.5rem 0.5rem 0.5rem;
   }
-`
+`;
 
 export const ChartTooltip = ({ datum, grouping }) => {
-  const { label, value, color } = datum
+  const { label, value, color } = datum;
   return (
-    <Wrapper color={ color }>
+    <Wrapper color={color}>
       <Details>
-        <div className="grouping">{ grouping }</div>
-        <div className="label">{ label }</div>
-        <div className="value">{ value } { value === 1 ? 'study' : 'studies' }</div>
+        <div className="grouping">{grouping}</div>
+        <div className="label">{label}</div>
+        <div className="value">
+          {value} {value === 1 ? "study" : "studies"}
+        </div>
       </Details>
     </Wrapper>
-  )
-}
+  );
+};

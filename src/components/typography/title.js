@@ -1,7 +1,7 @@
-import styled from 'styled-components'
-import PropTypes from 'prop-types'
+import styled from "styled-components";
+import PropTypes from "prop-types";
 
-// 
+//
 
 export const Title = styled.h1`
   // border: 1px solid #f09;
@@ -12,11 +12,11 @@ export const Title = styled.h1`
   border-bottom: 1px solid #ccc;
   @media screen and (min-width: 767px) {
     text-align: left;
-    ${ props => props.center && 'text-align: center;' }
-    ${ props => props.right && 'text-align: right;' }
+    ${props => props.center && "text-align: center;"}
+    ${props => props.right && "text-align: right;"}
   }
-`
+`;
 
 Title.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+  children: PropTypes.node.isRequired
+};

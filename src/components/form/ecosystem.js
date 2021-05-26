@@ -17,15 +17,14 @@ import {
   TextArea,
 } from "./inputs";
 
-// const FRESHDESK_API_KEY = process.env.GATSBY_FRESHDESK_API_KEY;
-// const FRESHDESK_API_ROOT_URL = process.env.GATSBY_FRESHDESK_API_ROOT_URL;
-// const FRESHDESK_API_CREATE_TICKET_URL = `${FRESHDESK_API_ROOT_URL}/tickets`;
-// const FRESHDESK_API_TICKET_FIELDS_URL = `${FRESHDESK_API_ROOT_URL}/ticket_fields`;
+const FRESHDESK_API_KEY = process.env.GATSBY_RESHDESK_API_KEY;
+const FRESHDESK_API_ROOT_URL = process.env.GATSBY_FRESHDESK_API_ROOT_URL;
+const FRESHDESK_API_CREATE_CONTACT = `${FRESHDESK_API_ROOT_URL}/contacts`;
 
-// const requestOptions = {
-//   "Content-Type": "application/json",
-//   auth: { username: FRESHDESK_API_KEY, password: "X" },
-// };
+const requestOptions = {
+  "Content-Type": "application/json",
+  auth: { username: FRESHDESK_API_KEY, password: "X" },
+};
 
 const SubmitButton = styled(Button).attrs({
   type: "submit",
@@ -58,11 +57,8 @@ const ErrorMessage = () => {
 };
 
 export const EcoSystemForm = (props) => {
-    // Added a 1 to the otjherwise empty array in order to show it in development before getting this automatically filled in from the freshdesk api
-    const [platformOptions, setPlatformOptions] = useState([1]);
-    // ------------------
-    const [name, setName] = useState("");
-    const [commons, setCommons] = useState("");
+  const [name, setName] = useState("");
+  const [commons, setCommons] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [organization, setOrganization] = useState("");
@@ -72,96 +68,57 @@ export const EcoSystemForm = (props) => {
   const [wasSubmitted, setWasSubmitted] = useState(false);
   const [error, setError] = useState();
 
-  const testSubmission = ["staging", "localhost"].includes(
-    window.location.hostname
-  );
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const payload = {
+      name: name,
+      email: email,
+      custom_fields: {
+        era_commons_id: commons,
+        password: password,
+        organization: organization,
+        field: field,
+        referral: referral,
+        other: other,
+      },
+    };
 
-//   useEffect(() => {
-//     // before rendering the form, fetch the options for the Platform select dropown
-//     const fetchPlatformOptions = async () => {
-//       await axios
-//         .get(FRESHDESK_API_TICKET_FIELDS_URL, requestOptions)
-//         .then((response) => {
-//           const platformField = response.data.find(
-//             (field) => field.name === "cf_what_bdcatalyst_service_will_you_use"
-//           );
-//           setPlatformOptions(platformField.choices);
-//         })
-//         .catch((error) => console.error(error));
-//     };
-//     fetchPlatformOptions();
-//   }, []);
-
-    const handleSubmit = (event) => {
-      console.log(event)
-    // event.preventDefault();
-    // let prefix = testSubmission ? "[TEST] " : "";
-    // const description =
-    //   `Name: ${name} ~~~~~ ` +
-    //   `Email Address: ${email} ~~~~~ ` +
-    //   `Role: $${role} ~~~~~ ` +
-    //   `Company/Organization: ${organization} ~~~~~ ` +
-    //   `Collaborators: ${collaborators} ~~~~~ ` +
-    //   `Project Name & Description: ${project} ~~~~~ ` +
-    //   `Justification for Credits: ${justification} ~~~~~ ` +
-    //   `Previous Requested Cloud Credits: ${previousFunding} ~~~~~ ` +
-    //   `Use of Initial Pilot Credits: ${previousFundingDetails} ~~~~~ ` +
-    //   `Estimate of Cloud Credits Needed: $${estimate} ~~~~~ ` +
-    //   `Platform/Service: ${platform} ~~~~~ ` +
-    //   `~~~~~ ~~~~~ (This ticket was submitted from ${window.location.href}.)`;
-    // const payload = {
-    //   type: "Cloud Credits",
-    //   subject: prefix + "Cloud Credits Request",
-    //   description: prefix + description,
-    //   priority: 1,
-    //   status: 2,
-    //   name: name,
-    //   email: email,
-    //   custom_fields: {
-    //     cf_cloud_credits_collaborator_information: collaborators,
-    //     cf_cloud_credits_project_namedescription: project,
-    //     cf_justification_for_credits: justification,
-    //     cf_cloud_credits_previous_request: previousFunding,
-    //     cf_cloud_credits_use_of_initial_pilot_credits: previousFundingDetails,
-    //     cf_estimated_cloud_credits_requested: +estimate,
-    //     cf_what_bdcatalyst_service_will_you_use: platform,
-    //   },
-    // };
-
-    // const submitTicket = async () => {
-    //   console.log("Submitting", payload);
-    //   setWasSubmitted(true);
-    //   await axios
-    //     .post(FRESHDESK_API_CREATE_TICKET_URL, payload, requestOptions)
-    //     .then((response) => {
-    //       console.log(response);
-    //       console.log(response.status);
-    //       if (![200, 201].includes(response.status)) {
-    //         throw new Error(`Unsuccessful HTTP response, ${response.status}`);
-    //       }
-    //     })
-    //     .catch((error) => {
-    //       console.log(error);
-    //       setError(error);
-    //     });
-    // };
-    // submitTicket();
+    const submitContact = async () => {
+      console.log("Submitting", payload);
+      setWasSubmitted(true);
+      await axios
+        .post(
+          FRESHDESK_API_CREATE_CONTACT,
+          JSON.stringify(payload),
+          requestOptions
+        )
+        .then((response) => {
+          console.log(response);
+          console.log(response.status);
+          if (![200, 201].includes(response.status)) {
+            throw new Error(`Unsuccessful HTTP response, ${response.status}`);
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          setError(error);
+        });
+    };
+    submitContact();
   };
 
-    const handleChangeName = (event) => setName(event.target.value);
-    const handleChangeCommons = (event) => setCommons(event.target.value);
+  const handleChangeName = (event) => setName(event.target.value);
+  const handleChangeCommons = (event) => setCommons(event.target.value);
   const handleChangeEmail = (event) => setEmail(event.target.value);
   const handleChangePassword = (event) => setPassword(event.target.value);
   const handleChangeOrganization = (event) =>
     setOrganization(event.target.value);
-  const handleChangeRefferal = (event) =>
-    setReferralSource(event.target.value);
+  const handleChangeRefferal = (event) => setReferralSource(event.target.value);
   const handleChangeOther = (event) => {
     setOther(event.target.value);
   };
 
-  const handleChangeField = (event) =>
-    setField(event.target.value);
+  const handleChangeField = (event) => setField(event.target.value);
 
   return (
     <Card {...props}>
@@ -170,7 +127,7 @@ export const EcoSystemForm = (props) => {
         <Paragraph right noMargin>
           * <em>All fields are required.</em>
         </Paragraph>
-        {!wasSubmitted && platformOptions.length > 0 && (
+        {!wasSubmitted && (
           <Form onSubmit={handleSubmit}>
             <FormControl>
               <label htmlFor="name" required>
@@ -297,13 +254,6 @@ export const EcoSystemForm = (props) => {
             <br />
             <SubmitButton>Submit</SubmitButton>
           </Form>
-        )}
-        {!wasSubmitted && platformOptions.length === 0 && (
-          <LoadingDots
-            color="var(--color-crimson)"
-            text="Loading form..."
-            textPlacement="top"
-          />
         )}
         {wasSubmitted && !error && <ThankYouMessage />}
         {wasSubmitted && error && <ErrorMessage />}

@@ -94,18 +94,19 @@ As an example, below is the Markdown file for Gen3.
 title: Gen3
 path: /platforms/gen3
 logo: ../../images/logos/platforms/gen3.png
-links: 
-    homepage: https://gen3.org
-    launch: https://gen3.biodatacatalyst.nhlbi.nih.gov
-    documentation: https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/explore_data/gen3-discovering-data
+links:
+  homepage: https://gen3.org
+  launch: https://gen3.biodatacatalyst.nhlbi.nih.gov
+  documentation: https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/explore_data/gen3-discovering-data
 teaser: The Gen3 software stack is a collection of microservices that enable the standing-up of data commons, which allows different partner organizations to pool data and grants approved researchers access to harmonized datasets in a scalable, reproducible, and secure manner.
 service: Gen3 is a software platform that allows partner organizations and grant approved researchers to search and access harmonized datasets. Users can search over project and study-specific genomic and phenotypic data and export selected cohorts to analytical workspaces in a scalable, reproducible, and secure manner.
 ---
-- Use one of the microservices or community tools to submit data objects and metadata to a Gen3 Commons. Or develop your own tools specific to your user community. 
-- Gen3 will automatically index your data and provide globally unique identifiers (GUIDs). GUIDs can also be resolved at dataguids.org to find out where a data object lives within your data ecosystem. 
-- Engage Gen3’s broad user community. Ask a question, answer a question, request a new feature, or see if anyone else has approached a technical or scientific problem like yours in their Gen3 data commons. 
-- Gen3’s UI includes a data exploration tool you can customize for your data. You can choose the queries or faceted searches your user community wants; decide whether the data is able to leave the cloud or not; or develop your own apps over Gen3 APIs. 
-- Gen3 can be deployed with various levels of security and compliance. Deploy your data commons or ecosystem with the controls needed for your data and your user 
+
+- Use one of the microservices or community tools to submit data objects and metadata to a Gen3 Commons. Or develop your own tools specific to your user community.
+- Gen3 will automatically index your data and provide globally unique identifiers (GUIDs). GUIDs can also be resolved at dataguids.org to find out where a data object lives within your data ecosystem.
+- Engage Gen3’s broad user community. Ask a question, answer a question, request a new feature, or see if anyone else has approached a technical or scientific problem like yours in their Gen3 data commons.
+- Gen3’s UI includes a data exploration tool you can customize for your data. You can choose the queries or faceted searches your user community wants; decide whether the data is able to leave the cloud or not; or develop your own apps over Gen3 APIs.
+- Gen3 can be deployed with various levels of security and compliance. Deploy your data commons or ecosystem with the controls needed for your data and your user
 - You can leave your data open to the Internet or control access at deeper levels within your own data use ontology, from the core data to the data objects
 ```
 
@@ -164,18 +165,18 @@ This automated build and deployment are managed via the `buildspec.yml` file in 
 ## Resources
 
 - [AWS](https://aws.amazon.com/)
-    + [CodeBuild](https://aws.amazon.com/codebuild/)
-    + [S3](https://aws.amazon.com/s3/)
+  - [CodeBuild](https://aws.amazon.com/codebuild/)
+  - [S3](https://aws.amazon.com/s3/)
 - [React](https://reactjs.org/)
-    + [Gatsby](https://www.gatsbyjs.org/)
+  - [Gatsby](https://www.gatsbyjs.org/)
 - Data Sources
-    + [Markdown](https://www.markdownguide.org/basic-syntax/)
-    + [JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)
-    + [YAML](https://en.wikipedia.org/wiki/YAML)
+  - [Markdown](https://www.markdownguide.org/basic-syntax/)
+  - [JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)
+  - [YAML](https://en.wikipedia.org/wiki/YAML)
 - Remote Services
-    + [Freshdesk API](https://developers.freshdesk.com/api/)
+  - [Freshdesk API](https://developers.freshdesk.com/api/)
 - AWS
-    + [CodeBuild](https://aws.amazon.com/codebuild/)
-        * [Build Specification Reference](https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html)
-    + [Console](console.aws.amazon.com/)
-    + [S3](https://aws.amazon.com/s3/)
+  - [CodeBuild](https://aws.amazon.com/codebuild/)
+    - [Build Specification Reference](https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html)
+  - [Console](console.aws.amazon.com/)
+  - [S3](https://aws.amazon.com/s3/)

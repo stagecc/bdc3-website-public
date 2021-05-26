@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   display: flex;
@@ -16,13 +16,13 @@ const Wrapper = styled.div`
     font-style: italic;
     color: var(--color-blueberry);
   }
-`
+`;
 
 export const Stat = ({ name, value }) => {
   return (
     <Wrapper>
-      <div className="value">{ value }</div>
-      <div className="name">{ name }</div>
+      <div className="value">{value}</div>
+      <div className="name">{name}</div>
     </Wrapper>
-  )
-}
+  );
+};

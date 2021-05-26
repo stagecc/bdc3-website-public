@@ -1,81 +1,80 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
-import styled from 'styled-components'
-import { PageContent } from '../components/layout'
-import { Title, Heading, Paragraph } from '../components/typography'
-import { ExternalLink } from '../components/link'
+import React from "react";
+import { graphql } from "gatsby";
+import Img from "gatsby-image";
+import styled from "styled-components";
+import { PageContent } from "../components/layout";
+import { Title, Heading, Paragraph } from "../components/typography";
+import { ExternalLink } from "../components/link";
 
 const KeyFeaturesList = styled.div`
-    & p {
-        margin: 0;
-    }
-    & li {
-        margin: 0;
-        padding: 0;
-        line-height: 2;
-    }
-`
+  & p {
+    margin: 0;
+  }
+  & li {
+    margin: 0;
+    padding: 0;
+    line-height: 2;
+  }
+`;
 
-const LinkList = styled(Paragraph)``
+const LinkList = styled(Paragraph)``;
 
 const LogoContainer = styled.div`
-    min-width: 300px;
-    text-align: center;
-`
+  min-width: 300px;
+  text-align: center;
+`;
 
 export default ({ data }) => {
-    const { markdownRemark } = data
-    const { frontmatter, html } = markdownRemark
-    const platformLogoFixed = frontmatter.logo.childImageSharp.fixed
+  const { markdownRemark } = data;
+  const { frontmatter, html } = markdownRemark;
+  const platformLogoFixed = frontmatter.logo.childImageSharp.fixed;
 
-    return (
-        <PageContent width="95%" maxWidth="1080px" center gutters>
-            
-            <LogoContainer>
-                <Img fixed={ platformLogoFixed } />
-            </LogoContainer>
+  return (
+    <PageContent width="95%" maxWidth="1080px" center gutters>
+      <LogoContainer>
+        <Img fixed={platformLogoFixed} />
+      </LogoContainer>
 
-            <Title center>BioData Catalyst</Title>
-            <Heading center>Powered by { frontmatter.title }</Heading>
-            
-            <LinkList center>
-                <ExternalLink to={ frontmatter.links.launch }>Website</ExternalLink> | <ExternalLink to={ frontmatter.links.documentation }>Documentation</ExternalLink>
-            </LinkList>
+      <Title center>BioData Catalyst</Title>
+      <Heading center>Powered by {frontmatter.title}</Heading>
 
-            <Heading>About { frontmatter.title }</Heading>
+      <LinkList center>
+        <ExternalLink to={frontmatter.links.launch}>Website</ExternalLink> |{" "}
+        <ExternalLink to={frontmatter.links.documentation}>
+          Documentation
+        </ExternalLink>
+      </LinkList>
 
-            <Paragraph>
-                { frontmatter.teaser }
-            </Paragraph>
+      <Heading>About {frontmatter.title}</Heading>
 
-            <Heading>Key Features</Heading>
-            
-            <KeyFeaturesList dangerouslySetInnerHTML={{ __html: html }} />
+      <Paragraph>{frontmatter.teaser}</Paragraph>
 
-        </PageContent>
-    )
-}
+      <Heading>Key Features</Heading>
+
+      <KeyFeaturesList dangerouslySetInnerHTML={{ __html: html }} />
+    </PageContent>
+  );
+};
 
 export const platformQuery = graphql`
-    query($path: String!) {
-        markdownRemark(frontmatter: { path: { eq: $path } }) {
-            frontmatter {
-                title
-                links {
-                    launch
-                    documentation
-                }
-                teaser
-                logo {
-                    childImageSharp {
-                        fixed(fit: COVER, width: 300) {
-                            ...GatsbyImageSharpFixed
-                        }
-                    }
-                }
-            }
-            html
+  query($path: String!) {
+    markdownRemark(frontmatter: { path: { eq: $path } }) {
+      frontmatter {
+        title
+        links {
+          launch
+          documentation
         }
+        teaser
+        logo {
+          childImageSharp {
+            fixed(fit: COVER, width: 300) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+      }
+      html
     }
-`
+  }
+`;

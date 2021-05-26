@@ -1,1 +1,1 @@
-export * from './slide-tray'
+export * from "./slide-tray";

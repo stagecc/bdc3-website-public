@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from "gatsby";
 
 export const fellowFragment = graphql`
   fragment FellowDetails on MarkdownRemark {
@@ -19,56 +19,68 @@ export const fellowFragment = graphql`
         }
       }
     }
+  }
+`;
 
-  }
-`
-
-const fellowsQuery = graphql`{
-  avatar: file(relativePath: {regex: "/avatar.png/"}) {
-    childImageSharp {
-      fixed {
-        ...GatsbyImageSharpFixed
+const fellowsQuery = graphql`
+  {
+    avatar: file(relativePath: { regex: "/avatar.png/" }) {
+      childImageSharp {
+        fixed {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    cohortOne: allMarkdownRemark(
+      sort: { fields: fileAbsolutePath, order: ASC }
+      filter: { fileAbsolutePath: { regex: "/data/fellows/cohort1/" } }
+    ) {
+      edges {
+        node {
+          ...FellowDetails
+        }
+      }
+    }
+    cohortTwo: allMarkdownRemark(
+      sort: { fields: fileAbsolutePath, order: ASC }
+      filter: { fileAbsolutePath: { regex: "/data/fellows/cohort2/" } }
+    ) {
+      edges {
+        node {
+          ...FellowDetails
+        }
+      }
+    }
+    cohortThree: allMarkdownRemark(
+      sort: { fields: fileAbsolutePath, order: ASC }
+      filter: { fileAbsolutePath: { regex: "/data/fellows/cohort3/" } }
+    ) {
+      edges {
+        node {
+          ...FellowDetails
+        }
       }
     }
   }
-  cohortOne: allMarkdownRemark(
-    sort: {fields: fileAbsolutePath, order: ASC}
-    filter: {fileAbsolutePath: {regex: "/data/fellows/cohort1/"}}
-  ) {
-    edges {
-      node {
-        ...FellowDetails
-      }
-    }
-  }
-  cohortTwo: allMarkdownRemark(
-    sort: {fields: fileAbsolutePath, order: ASC}
-    filter: {fileAbsolutePath: {regex: "/data/fellows/cohort2/"}}
-  ) {
-    edges {
-      node {
-        ...FellowDetails
-      }
-    }
-  }
-  cohortThree: allMarkdownRemark(
-    sort: {fields: fileAbsolutePath, order: ASC}
-    filter: {fileAbsolutePath: {regex: "/data/fellows/cohort3/"}}
-  ) {
-    edges {
-      node {
-        ...FellowDetails
-      }
-    }
-  }
-}`
+`;
 
 export const useFellows = () => {
-  const { avatar, cohortOne, cohortTwo, cohortThree } = useStaticQuery(fellowsQuery)
+  const { avatar, cohortOne, cohortTwo, cohortThree } = useStaticQuery(
+    fellowsQuery
+  );
   return {
     avatar,
-    cohortOne: cohortOne.edges.map(({ node }) => ({ id: node.id, ...node.frontmatter })),
-    cohortTwo: cohortTwo.edges.map(({ node }) => ({ id: node.id, ...node.frontmatter })),
-    cohortThree: cohortThree.edges.map(({ node }) => ({ id: node.id, ...node.frontmatter })),
-  }
-}
+    cohortOne: cohortOne.edges.map(({ node }) => ({
+      id: node.id,
+      ...node.frontmatter
+    })),
+    cohortTwo: cohortTwo.edges.map(({ node }) => ({
+      id: node.id,
+      ...node.frontmatter
+    })),
+    cohortThree: cohortThree.edges.map(({ node }) => ({
+      id: node.id,
+      ...node.frontmatter
+    }))
+  };
+};
