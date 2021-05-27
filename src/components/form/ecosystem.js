@@ -274,7 +274,6 @@ export const EcoSystemForm = (props) => {
                 value={referral}
                 onChange={handleChangeRefferal}
               />
-              <HelpText></HelpText>
             </FormControl>
             <br />
             <SubmitButton>Submit</SubmitButton>
