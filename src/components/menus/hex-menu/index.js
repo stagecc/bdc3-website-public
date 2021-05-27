@@ -1,1 +1,1 @@
-export * from './hex-menu'
+export * from "./hex-menu";

@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
-import { IconButton } from '../buttons'
-import { CloseIcon } from '../icons'
+import React, { useState } from "react";
+import styled from "styled-components";
+import { IconButton } from "../buttons";
+import { CloseIcon } from "../icons";
 
 const Wrapper = styled.div`
   background-color: var(--color-peach);
@@ -22,33 +22,34 @@ const Wrapper = styled.div`
     transition: fill 250ms, opacity 250ms;
   }
   &:hover svg {
-    opacity: 1.0;
+    opacity: 1;
     &:hover {
       fill: var(--color-danger);
     }
   }
-`
+`;
 
 export const Banner = ({ children }) => {
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(true);
 
   const handleClose = () => {
-    setOpen(false)
-  }
+    setOpen(false);
+  };
 
   if (open) {
     return (
       <Wrapper>
-        <div className="banner-content">
-          { children }
-        </div>
-        <IconButton onClick={ handleClose } >
-          <CloseIcon className="banner-close" fill="var(--color-grey)" size={ 24 } />
+        <div className="banner-content">{children}</div>
+        <IconButton onClick={handleClose}>
+          <CloseIcon
+            className="banner-close"
+            fill="var(--color-grey)"
+            size={24}
+          />
         </IconButton>
       </Wrapper>
-    )
+    );
   }
 
-  return null
-}
-
+  return null;
+};

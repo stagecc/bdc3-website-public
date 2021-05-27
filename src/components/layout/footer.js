@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const Footer = styled.footer`
     background-color: var(--color-crimson);
@@ -28,4 +28,4 @@ export const Footer = styled.footer`
         height: calc(5vw + 2px);
         background-color: var(--color-crimson);
     }
-`
+`;

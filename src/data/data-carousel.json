@@ -12,8 +12,6 @@
     "key": 1,
     "headline": "Prioritizing diverse data",
     "description": "BioData Catalyst provides access to the highly diverse TOPMed dataset.",
-    "data": [
-      { "name": "Participants with phenotypes", "value": "285,093" }
-    ]
+    "data": [{ "name": "Participants with phenotypes", "value": "285,093" }]
   }
 ]

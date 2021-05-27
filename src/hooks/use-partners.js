@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from "gatsby";
 
 const partnersQuery = graphql`
   query {
@@ -20,9 +20,9 @@ const partnersQuery = graphql`
       }
     }
   }
-`
+`;
 
 export const usePartners = () => {
-  const { partners } = useStaticQuery(partnersQuery)
-  return partners.edges.map(({ node }) => node)
-}
+  const { partners } = useStaticQuery(partnersQuery);
+  return partners.edges.map(({ node }) => node);
+};
