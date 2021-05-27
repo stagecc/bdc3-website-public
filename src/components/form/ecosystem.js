@@ -15,6 +15,7 @@ import {
   Select,
   Option,
   TextArea,
+  ErrorText,
 } from "./inputs";
 
 const FRESHDESK_USER_NAME = process.env.GATSBY_FRESHDESK_USER_NAME;
@@ -62,6 +63,8 @@ export const EcoSystemForm = (props) => {
   const [email, setEmail] = useState("");
   const [commons, setCommons] = useState("");
   const [password, setPassword] = useState("");
+  const [confirm_password, setConfirmPassword] = useState("");
+  const [passwordError, setPasswordError] = useState(false);
   const [organization, setOrganization] = useState("");
   const [referral, setReferralSource] = useState("");
   const [other, setOther] = useState("");
@@ -112,6 +115,15 @@ export const EcoSystemForm = (props) => {
   const handleChangeCommons = (event) => setCommons(event.target.value);
   const handleChangeEmail = (event) => setEmail(event.target.value);
   const handleChangePassword = (event) => setPassword(event.target.value);
+  const handleConfirmPassword = (event) => {
+    const pw = event.target.value;
+    if (pw != password) {
+      setPasswordError(true);
+    } else {
+      setPasswordError(false);
+    }
+    setConfirmPassword(pw)
+  }
   const handleChangeOrganization = (event) =>
     setOrganization(event.target.value);
   const handleChangeRefferal = (event) => setReferralSource(event.target.value);
@@ -182,6 +194,18 @@ export const EcoSystemForm = (props) => {
                 This will create a help desk account for you should you have
                 future questions about the ecosystem.
               </HelpText>
+            </FormControl>
+            <FormControl>
+              <label htmlFor="confirm_password">Confirm Password *</label>
+              <TextInput
+                type="password"
+                required
+                id=""
+                name=""
+                value={confirm_password}
+                onChange={handleConfirmPassword}
+              />
+              {passwordError && <ErrorText>Passwords do not match</ErrorText>}
             </FormControl>
             <FormControl>
               <label htmlFor="organization">Your Organization *</label>
