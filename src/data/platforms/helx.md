@@ -1,6 +1,6 @@
 ---
 title: HeLx
-serviceTitle: BioData Catalyst powered by HeLx
+serviceTitle: BioData Catalyst Powered by HeLx
 path: /platforms/helx
 logo: helx.png
 links:
