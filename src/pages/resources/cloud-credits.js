@@ -94,8 +94,8 @@ const CloudCreditsPage = () => (
             </Paragraph>
             
             <BulletedList>
-                <ListItem primary={ <span><ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/analyze-data/terra/account-setup/managing-costs">Controlling your cloud costs</ExternalLink> (BioData Catalyst powered by Terra)</span> } />
-                <ListItem primary={ <span><ExternalLink to="https://sb-biodatacatalyst.readme.io/docs/cloud-infrastructure-pricing">Cloud infrastructure pricing</ExternalLink> (BioData Catalyst powered by Seven Bridges)</span> } />
+                <ListItem primary={ <span><ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/analyze-data/terra/account-setup/managing-costs">Controlling your cloud costs</ExternalLink> (BioData Catalyst Powered by Terra)</span> } />
+                <ListItem primary={ <span><ExternalLink to="https://sb-biodatacatalyst.readme.io/docs/cloud-infrastructure-pricing">Cloud infrastructure pricing</ExternalLink> (BioData Catalyst Powered by Seven Bridges)</span> } />
                 <ListItem primary={ <span><ExternalLink to="https://sb-biodatacatalyst.readme.io/page/comprehensive-tips-for-reliable-and-efficient-analysis-set-up">Comprehensive tips for reliable and efficient analysis set-up</ExternalLink> (BioData Catalyst Powered by Seven Bridges)</span> } />
             </BulletedList>
 

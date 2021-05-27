@@ -16,7 +16,7 @@ const ByodPage = () => (
     
     <Paragraph>
       To support flexibility and analysis, we allow researchers to bring their own data and workflows into the ecosystem.
-      Researchers can bring their own datasets into BioData Catalyst powered by Seven Bridges and BioData Catalyst powered by Terra.
+      Researchers can bring their own datasets into BioData Catalyst Powered by Seven Bridges and BioData Catalyst Powered by Terra.
     </Paragraph>
     
     <br/>
@@ -33,13 +33,13 @@ const ByodPage = () => (
 
       <Paragraph center>
         <ExternalLink to="https://sb-biodatacatalyst.readme.io/docs/upload-to-the-platform">
-          BYOD to BioData Catalyst powered by Seven Bridges
+          BYOD to BioData Catalyst Powered by Seven Bridges
         </ExternalLink>
 
         <br/><br/>
       
         <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/analyze-data/terra/bringing-data-into-a-workspace/using-your-own-data-with-terra">
-          BYOD to BioData Catalyst powered by Terra
+          BYOD to BioData Catalyst Powered by Terra
         </ExternalLink>
       </Paragraph>
     </section>
