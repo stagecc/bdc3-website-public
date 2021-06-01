@@ -57,7 +57,7 @@ const CloudCreditsPage = () => (
               BioData Catalyst Powered by Terra
             </ExternalLink>
           }
-        />
+        /></BulletedList>
 
         <Title>Cloud Credits</Title>
 
@@ -162,7 +162,7 @@ const CloudCreditsPage = () => (
         
         <section>
             <CloudCreditsForm id="cloud-credits-form"/>
-        </section>
+        </section></section>
     </PageContent>
 )
 
