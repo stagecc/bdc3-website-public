@@ -1,10 +1,8 @@
 import React from "react";
 import { SEO } from "../../components/seo";
-import { Link } from "gatsby";
 import { PageContent } from "../../components/layout";
 import { Title, Heading, Paragraph } from "../../components/typography";
 import { ExternalLink } from "../../components/link";
-import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { EcoSystemForm } from "../../components/form";
 import { BulletedList, ListItem } from "../../components/list";
 
@@ -26,41 +24,37 @@ const RegistrationPage = () => (
           hosted datasets.{" "}
         </ExternalLink>
       </Paragraph>
-      <Paragraph>
-        Joining this community will grant access to:
-        <br />
-        <br />
-        <BulletedList>
-          <ListItem
-            primary={
-              <span>
-                BioData Catalyst Ecosystem&nbsp;
-                <ExternalLink to="https://biodatacatalyst.nhlbi.nih.gov/platforms/terra">
-                  Help Desk
-                </ExternalLink>
-              </span>
-            }
-          />
-          <ListItem
-            primary={
-              <span>
-                BioData Catalyst Ecosystem&nbsp;
-                <ExternalLink to="https://biodatacatalyst.nhlbi.nih.gov/platforms/seven-bridges">
-                  Forums
-                </ExternalLink>
-              </span>
-            }
-          />{" "}
-          <ListItem
-            primary={
-              <span>
-                Future updates on new releases, tips and tricks, and events and
-                opportunities of interest
-              </span>
-            }
-          />
-        </BulletedList>
-      </Paragraph>
+      <Paragraph>Joining this community will grant access to:</Paragraph>
+      <BulletedList>
+        <ListItem
+          primary={
+            <span>
+              BioData Catalyst Ecosystem&nbsp;
+              <ExternalLink to="https://biodatacatalyst.nhlbi.nih.gov/platforms/terra">
+                Help Desk
+              </ExternalLink>
+            </span>
+          }
+        />
+        <ListItem
+          primary={
+            <span>
+              BioData Catalyst Ecosystem&nbsp;
+              <ExternalLink to="https://biodatacatalyst.nhlbi.nih.gov/platforms/seven-bridges">
+                Forums
+              </ExternalLink>
+            </span>
+          }
+        />{" "}
+        <ListItem
+          primary={
+            <span>
+              Future updates on new releases, tips and tricks, and events and
+              opportunities of interest
+            </span>
+          }
+        />
+      </BulletedList>
     </section>
     <section>
       <Heading>Sign up now</Heading>

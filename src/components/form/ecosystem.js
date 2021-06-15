@@ -69,6 +69,7 @@ export const EcoSystemForm = (props) => {
   const [referral, setReferralSource] = useState("");
   const [other, setOther] = useState("");
   const [field, setField] = useState("");
+  const [interest, setInterest] = useState("");
   const [wasSubmitted, setWasSubmitted] = useState(false);
   const [error, setError] = useState();
 
@@ -84,18 +85,14 @@ export const EcoSystemForm = (props) => {
         contacts_field: field,
         contacts_referral: referral,
         contacts_other: other,
+        contacts_interest: interest,
       },
     };
 
     const submitContact = async () => {
-      console.log("Submitting", payload);
       setWasSubmitted(true);
       await axios
-        .post(
-          FRESHDESK_API_CREATE_CONTACT,
-          payload,
-          requestOptions
-        )
+        .post(FRESHDESK_API_CREATE_CONTACT, payload, requestOptions)
         .then((response) => {
           console.log(response);
           console.log(response.status);
@@ -122,8 +119,8 @@ export const EcoSystemForm = (props) => {
     } else {
       setPasswordError(false);
     }
-    setConfirmPassword(pw)
-  }
+    setConfirmPassword(pw);
+  };
   const handleChangeOrganization = (event) =>
     setOrganization(event.target.value);
   const handleChangeRefferal = (event) => setReferralSource(event.target.value);
@@ -132,19 +129,20 @@ export const EcoSystemForm = (props) => {
   };
 
   const handleChangeField = (event) => setField(event.target.value);
+  const handleChangeInterest = (event) => setInterest(event.target.value);
 
   return (
     <Card {...props}>
       <CardHeader>Join the Ecosystem </CardHeader>
       <CardBody>
         <Paragraph right noMargin>
-          * <em>All fields are required.</em>
+          <em>Fields with an asterisk (*) are required.</em>
         </Paragraph>
         {!wasSubmitted && (
           <Form onSubmit={handleSubmit}>
             <FormControl>
               <label htmlFor="name" required>
-                Your Name *
+                Your Full Name *
               </label>
               <TextInput
                 type="text"
@@ -156,15 +154,20 @@ export const EcoSystemForm = (props) => {
               />
             </FormControl>
             <FormControl>
-              <label htmlFor="commons">eRA Commons ID *</label>
+              <label htmlFor="commons">eRA Commons ID</label>
               <TextInput
                 type="commons"
-                required
                 id="commons"
                 name="commons"
                 value={commons}
                 onChange={handleChangeCommons}
               />
+              <HelpText>
+                eRA Commons ID is a common way to authenticate throughout the
+                ecosystem. Please include your eRA Commons if you already have
+                one for ease of identification. If you do not yet have an eRA
+                Commons ID, you can still join the community.{" "}
+              </HelpText>
             </FormControl>
             <FormControl>
               <label htmlFor="email">Email Address *</label>
@@ -176,7 +179,10 @@ export const EcoSystemForm = (props) => {
                 value={email}
                 onChange={handleChangeEmail}
               />
-              <HelpText>Please use an organizational email address.</HelpText>
+              <HelpText>
+                Please use an organization email address. Your email address
+                will serve as your user account name.
+              </HelpText>
             </FormControl>
             <FormControl>
               <label htmlFor="password">
@@ -191,8 +197,8 @@ export const EcoSystemForm = (props) => {
                 onChange={handleChangePassword}
               />
               <HelpText>
-                This will create a help desk account for you should you have
-                future questions about the ecosystem.
+                This password will provide access to the BioData Catalyst
+                ecosystem help desk and forums.
               </HelpText>
             </FormControl>
             <FormControl>
@@ -208,7 +214,7 @@ export const EcoSystemForm = (props) => {
               {passwordError && <ErrorText>Passwords do not match</ErrorText>}
             </FormControl>
             <FormControl>
-              <label htmlFor="organization">Your Organization *</label>
+              <label htmlFor="organization">Organization *</label>
               <TextInput
                 type="organization"
                 required
@@ -254,13 +260,36 @@ export const EcoSystemForm = (props) => {
                 If Other, please provide a brief description.
               </label>
               <TextArea
-                required
                 id="other"
                 name="other"
                 value={other}
                 onChange={handleChangeOther}
                 maxLength="3000"
               />
+            </FormControl>
+            <FormControl>
+              <label htmlFor="interest">
+                NHLBI Field of Study or Research Area *
+              </label>
+              <Select
+                required
+                id="interest"
+                name="interest"
+                value={interest}
+                onChange={handleChangeInterest}
+              >
+                <Option value="">Select One</Option>
+                <Option value="I just want to keep up with the latest news on the ecosystem">
+                  I just want to keep up with the latest news on the ecosystem
+                </Option>
+                <Option value="I am hoping to learn how the ecosystem can help me with my research">
+                  I am hoping to learn how the ecosystem can help me with my
+                  research
+                </Option>
+                <Option value="I am ready to get started!">
+                  I am ready to get started!
+                </Option>
+              </Select>
             </FormControl>
             <FormControl>
               <label htmlFor="referral">
