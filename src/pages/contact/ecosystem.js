@@ -12,7 +12,7 @@ const RegistrationPage = () => (
   <PageContent width="95%" maxWidth="1200px" center gutters>
     <SEO title="NHLBI BioData Catalyst Access" description="" keywords="" />
 
-    <Title>Register for NHLBI BioData Catalyst Access</Title>
+    <Title>Join the NHLBI BioData Catalyst Community</Title>
 
     <section>
       <Paragraph>
@@ -25,13 +25,41 @@ const RegistrationPage = () => (
         <ExternalLink to="https://biodatacatalyst.nhlbi.nih.gov/resources/data/">
           hosted datasets.{" "}
         </ExternalLink>
-        <b>
-          We developed this{" "}
-          <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/">
-            overview
-          </ExternalLink>{" "}
-          to help you get started.
-        </b>
+      </Paragraph>
+      <Paragraph>
+        Joining this community will grant access to:
+        <br />
+        <br />
+        <BulletedList>
+          <ListItem
+            primary={
+              <span>
+                BioData Catalyst Ecosystem&nbsp;
+                <ExternalLink to="https://biodatacatalyst.nhlbi.nih.gov/platforms/terra">
+                  Help Desk
+                </ExternalLink>
+              </span>
+            }
+          />
+          <ListItem
+            primary={
+              <span>
+                BioData Catalyst Ecosystem&nbsp;
+                <ExternalLink to="https://biodatacatalyst.nhlbi.nih.gov/platforms/seven-bridges">
+                  Forums
+                </ExternalLink>
+              </span>
+            }
+          />{" "}
+          <ListItem
+            primary={
+              <span>
+                Future updates on new releases, tips and tricks, and events and
+                opportunities of interest
+              </span>
+            }
+          />
+        </BulletedList>
       </Paragraph>
     </section>
     <section>
