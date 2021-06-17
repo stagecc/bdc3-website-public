@@ -6,6 +6,7 @@ import { Button } from "../buttons";
 import { Card, CardHeader, CardBody } from "../card";
 import { Dots as LoadingDots } from "../loading";
 import { ExternalLink } from "../link";
+import { navigate } from "gatsby";
 import {
   Form,
   FormControl,
@@ -32,14 +33,6 @@ const SubmitButton = styled(Button).attrs({
   type: "submit",
   value: "Submit",
 })``;
-
-const ThankYouMessage = ({ name }) => {
-  return (
-    <Paragraph center>
-      Thank You {name}, your request has been submitted!
-    </Paragraph>
-  );
-};
 
 const ErrorMessage = () => {
   return (
@@ -94,10 +87,10 @@ export const EcoSystemForm = (props) => {
       await axios
         .post(FRESHDESK_API_CREATE_CONTACT, payload, requestOptions)
         .then((response) => {
-          console.log(response);
-          console.log(response.status);
           if (![200, 201].includes(response.status)) {
             throw new Error(`Unsuccessful HTTP response, ${response.status}`);
+          } else {
+            navigate("/contact/ecosuccess");
           }
         })
         .catch((error) => {
@@ -308,7 +301,6 @@ export const EcoSystemForm = (props) => {
             <SubmitButton>Submit</SubmitButton>
           </Form>
         )}
-        {wasSubmitted && !error && <ThankYouMessage name={name} />}
         {wasSubmitted && error && <ErrorMessage />}
       </CardBody>
     </Card>
