@@ -262,10 +262,9 @@ export const EcoSystemForm = (props) => {
             </FormControl>
             <FormControl>
               <label htmlFor="interest">
-                NHLBI Field of Study or Research Area *
+                Why are you interested in NHLBI BioData Catalyst?
               </label>
               <Select
-                required
                 id="interest"
                 name="interest"
                 value={interest}
