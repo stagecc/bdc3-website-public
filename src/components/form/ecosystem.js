@@ -4,7 +4,7 @@ import axios from "axios";
 import { Paragraph } from "../typography";
 import { Button } from "../buttons";
 import { Card, CardHeader, CardBody } from "../card";
-import { Dots as LoadingDots } from "../loading";
+// import { Dots as LoadingDots } from "../loading";
 import { ExternalLink } from "../link";
 import { navigate } from "gatsby";
 import {
@@ -12,11 +12,11 @@ import {
   FormControl,
   TextInput,
   HelpText,
-  AdornedInput,
+  // AdornedInput,
   Select,
   Option,
   TextArea,
-  ErrorText,
+  // ErrorText,
 } from "./inputs";
 
 const FRESHDESK_USER_NAME = process.env.GATSBY_FRESHDESK_USER_NAME;
@@ -41,7 +41,7 @@ const ErrorMessage = () => {
         Sorry &mdash; an error occurred while submitting your request!
       </Paragraph>
       <Paragraph center>
-        Please submit submit your request on{" "}
+        Please submit your request on{" "}
         <ExternalLink to="https://bdcatalyst.freshdesk.com">
           our help desk
         </ExternalLink>{" "}
@@ -56,8 +56,8 @@ export const EcoSystemForm = (props) => {
   const [email, setEmail] = useState("");
   const [commons, setCommons] = useState("");
   const [password, setPassword] = useState("");
-  const [confirm_password, setConfirmPassword] = useState("");
-  const [passwordError, setPasswordError] = useState(false);
+  // const [confirm_password, setConfirmPassword] = useState("");
+  // const [passwordError, setPasswordError] = useState(false);
   const [organization, setOrganization] = useState("");
   const [referral, setReferralSource] = useState("");
   const [other, setOther] = useState("");
@@ -73,7 +73,7 @@ export const EcoSystemForm = (props) => {
       email: email,
       custom_fields: {
         era_commons_id: commons,
-        contacts_password: password,
+        // contacts_password: password,
         contacts_organization: organization,
         contacts_field: field,
         contacts_referral: referral,
@@ -104,16 +104,16 @@ export const EcoSystemForm = (props) => {
   const handleChangeName = (event) => setName(event.target.value);
   const handleChangeCommons = (event) => setCommons(event.target.value);
   const handleChangeEmail = (event) => setEmail(event.target.value);
-  const handleChangePassword = (event) => setPassword(event.target.value);
-  const handleConfirmPassword = (event) => {
-    const pw = event.target.value;
-    if (pw != password) {
-      setPasswordError(true);
-    } else {
-      setPasswordError(false);
-    }
-    setConfirmPassword(pw);
-  };
+  // const handleChangePassword = (event) => setPassword(event.target.value);
+  // const handleConfirmPassword = (event) => {
+  //   const pw = event.target.value;
+  //   if (pw != password) {
+  //     setPasswordError(true);
+  //   } else {
+  //     setPasswordError(false);
+  //   }
+  //   setConfirmPassword(pw);
+  // };
   const handleChangeOrganization = (event) =>
     setOrganization(event.target.value);
   const handleChangeRefferal = (event) => setReferralSource(event.target.value);
@@ -177,7 +177,7 @@ export const EcoSystemForm = (props) => {
                 will serve as your user account name.
               </HelpText>
             </FormControl>
-            <FormControl>
+            {/* <FormControl>
               <label htmlFor="password">
                 NHLBI BioData Catalyst Password *
               </label>
@@ -193,8 +193,8 @@ export const EcoSystemForm = (props) => {
                 This password will provide access to the BioData Catalyst
                 ecosystem help desk and forums.
               </HelpText>
-            </FormControl>
-            <FormControl>
+            </FormControl> */}
+            {/* <FormControl>
               <label htmlFor="confirm_password">Confirm Password *</label>
               <TextInput
                 type="password"
@@ -205,7 +205,7 @@ export const EcoSystemForm = (props) => {
                 onChange={handleConfirmPassword}
               />
               {passwordError && <ErrorText>Passwords do not match</ErrorText>}
-            </FormControl>
+            </FormControl> */}
             <FormControl>
               <label htmlFor="organization">Organization *</label>
               <TextInput
