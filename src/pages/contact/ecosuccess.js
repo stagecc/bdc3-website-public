@@ -41,14 +41,30 @@ const SuccessPage = () => {
           <ListItem
             primary={
               <span>
+                <Paragraph>
+                  BioData Catalyst User Navigation
+                  <Link to="https://drive.google.com/file/d/19S_iGRHxg8JmupHawhz8e9qR3hF8ht3H/view">
+                    &nbsp;GUIDE:&nbsp;
+                  </Link>
+                  Walk through what the ecosystem offers based on your needs.
+                  Use our GUIDE to determine which platforms and services are
+                  right for you (please download for full functionality).{" "}
+                </Paragraph>
+              </span>
+            }
+          />
+          <ListItem
+            primary={
+              <span>
                 <Link to="https://staging.biodatacatalyst.nhlbi.nih.gov/resources/services">
                   What do you want to do today?
                 </Link>
               </span>
             }
           />
-          <ListItem primary={<span>GUIDE</span>} />
-          <ListItem primary={<span>Getting Started Checklist</span>} />
+          <ListItem
+            primary={<span>Getting Started Checklist (coming soon)</span>}
+          />
         </BulletedList>
 
         <Heading>STILL NOT SURE?</Heading>
@@ -76,8 +92,8 @@ const SuccessPage = () => {
               </span>
             }
           />
-          <ListItem primary={<span>Event calendar</span>} />
-          <ListItem primary={<span>Cloud Credits</span>} />
+          <ListItem primary={<span>Event calendar (coming soon)</span>} />
+          <ListItem primary={<span>Cloud Credits (coming soon)</span>} />
         </BulletedList>
 
         <Paragraph center>
