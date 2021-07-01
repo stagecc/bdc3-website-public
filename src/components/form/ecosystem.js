@@ -16,6 +16,8 @@ import {
   Select,
   Option,
   TextArea,
+  FieldSet,
+  CheckBoxLabel,
   // ErrorText,
 } from "./inputs";
 
@@ -121,7 +123,9 @@ export const EcoSystemForm = (props) => {
     setOther(event.target.value);
   };
 
-  const handleChangeField = (event) => setField(event.target.value);
+  const handleChangeField = (event) => {
+    setField([...field, event.target.value]);
+  };
   const handleChangeInterest = (event) => setInterest(event.target.value);
 
   return (
@@ -217,36 +221,84 @@ export const EcoSystemForm = (props) => {
                 onChange={handleChangeOrganization}
               />
             </FormControl>
-            <FormControl>
+            <FormControl onChange={handleChangeField}>
               <label htmlFor="field">
                 NHLBI Field of Study or Research Area *
               </label>
-              <Select
-                required
-                id="field"
-                name="field"
-                value={field}
-                onChange={handleChangeField}
-              >
-                <Option value="">Select One</Option>
-                <Option value="Heart">Heart</Option>
-                <Option value="Lung">Lung</Option>
-                <Option value="Blood">Blood</Option>
-                <Option value="Sleep">Sleep</Option>
-                <Option value="Methods">Methods</Option>
-                <Option value="Sickle Cell Disease">Sickle Cell Disease</Option>
-                <Option value="Implementation Science">
-                  Implementation Science
-                </Option>
-                <Option value="Precision Medicine">Precision Medicine</Option>
-                <Option value="Clinical Trials Optimization">
-                  Clinical Trials Optimization
-                </Option>
-                <Option value="Small Business">Small Business</Option>
-                <Option value="HIV/AIDS">HIV/AIDS</Option>
-                <Option value="COVID-19">COVID-19</Option>
-                <Option value="Other">Other</Option>
-              </Select>
+              <FieldSet>
+                <CheckBoxLabel>
+                  <TextInput type="checkbox" value="Heart" name="field" />
+                  &nbsp;Heart
+                </CheckBoxLabel>
+                <CheckBoxLabel>
+                  <TextInput type="checkbox" value="Lung" name="field" />
+                  &nbsp;Lung
+                </CheckBoxLabel>
+                <CheckBoxLabel>
+                  <TextInput type="checkbox" value="Blood" name="field" />
+                  &nbsp;Blood
+                </CheckBoxLabel>
+                <CheckBoxLabel>
+                  <TextInput type="checkbox" value="Sleep" name="field" />
+                  &nbsp;Sleep
+                </CheckBoxLabel>
+                <CheckBoxLabel>
+                  <TextInput type="checkbox" value="Methods" name="field" />
+                  &nbsp;Methods
+                </CheckBoxLabel>
+                <CheckBoxLabel>
+                  <TextInput
+                    type="checkbox"
+                    value="Sickle Cell Disease"
+                    name="field"
+                  />
+                  &nbsp;Sickle Cell Disease
+                </CheckBoxLabel>
+                <CheckBoxLabel>
+                  <TextInput
+                    type="checkbox"
+                    value="Implementation Science"
+                    name="field"
+                  />
+                  &nbsp;Implementation Science
+                </CheckBoxLabel>
+                <CheckBoxLabel>
+                  <TextInput
+                    type="checkbox"
+                    value="Precision Medicine"
+                    name="field"
+                  />
+                  &nbsp;Precision Medicine
+                </CheckBoxLabel>
+                <CheckBoxLabel>
+                  <TextInput
+                    type="checkbox"
+                    value="Clinical Trials Optimization"
+                    name="field"
+                  />
+                  &nbsp;Clinical Trials Optimization
+                </CheckBoxLabel>
+                <CheckBoxLabel>
+                  <TextInput
+                    type="checkbox"
+                    value="Small Business"
+                    name="field"
+                  />
+                  &nbsp;Small Business
+                </CheckBoxLabel>
+                <CheckBoxLabel>
+                  <TextInput type="checkbox" value="HIV/AIDS" name="field" />
+                  &nbsp;HIV/AIDS
+                </CheckBoxLabel>
+                <CheckBoxLabel>
+                  <TextInput type="checkbox" value="COVID-19" name="field" />
+                  &nbsp;COVID-19
+                </CheckBoxLabel>
+                <CheckBoxLabel>
+                  <TextInput type="checkbox" value="Other" name="field" />
+                  &nbsp;Other
+                </CheckBoxLabel>
+              </FieldSet>
             </FormControl>
             <FormControl>
               <label htmlFor="other">

@@ -30,7 +30,7 @@ export const FormControl = styled.div`
   }
 `;
 
-export const TextInput = styled.input.attrs(props => ({ type: props.type }))`
+export const TextInput = styled.input.attrs((props) => ({ type: props.type }))`
   ${inputStyle}
 `;
 
@@ -75,4 +75,20 @@ export const ErrorText = styled.small`
   padding: 0.25rem 0;
   font-style: italic;
   color: red;
+`;
+
+export const FieldSet = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+`;
+
+export const CheckBoxLabel = styled.p`
+  min-width: 50%;
+  @media (min-width: 900px) {
+    min-width: 33%;
+  }
+  @media (max-width: 700px) {
+    min-width: 100%;
+  }
 `;
