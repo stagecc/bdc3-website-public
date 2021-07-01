@@ -278,8 +278,8 @@ export const EcoSystemForm = (props) => {
                   I am hoping to learn how the ecosystem can help me with my
                   research
                 </Option>
-                <Option value="I am ready to get started!">
-                  I am ready to get started!
+                <Option value="I am ready to start using the ecosystem!">
+                  I am ready to start using the ecosystem!
                 </Option>
               </Select>
             </FormControl>

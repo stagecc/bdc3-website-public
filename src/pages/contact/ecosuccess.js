@@ -28,27 +28,61 @@ const SuccessPage = () => {
       />
       <Title>Thank you for joining the NHLBI BioData Catalyst Community</Title>
       <Paragraph>
-        We are happy to have you in our community! You can start getting to know
-        the Ecosystem through the methods listed below.
+        We are happy to welcome you to our community! The following resources
+        will help you become familiar with and get started using the NHLBI
+        BioData Catalyst ecosystem. <br></br>
+        <br></br>
+        You will also receive an email from us with these resources and a link
+        to create your password for the community help desk and forums.
       </Paragraph>
       <br></br>
       <section>
-        <Heading>DISCOVER THE ECOSYSTEM ELEMENTS</Heading>
-        <Paragraph>
-          Ready to deep dive into what the ecosystem has to offer?
-        </Paragraph>
+        <Heading>DISCOVER BIODATA CATALYST</Heading>
+
         <BulletedList dense>
           <ListItem
             primary={
               <span>
                 <Paragraph>
-                  BioData Catalyst User Navigation
+                  Use our BioData Catalyst User
                   <Link to="https://drive.google.com/file/d/19S_iGRHxg8JmupHawhz8e9qR3hF8ht3H/view">
                     &nbsp;GUIDE:&nbsp;
                   </Link>
-                  Walk through what the ecosystem offers based on your needs.
-                  Use our GUIDE to determine which platforms and services are
-                  right for you (please download for full functionality).{" "}
+                  to become familiar with BioData Catalyst’s platforms and
+                  services, how they interconnect, and which may be most helpful
+                  to your research. For example, the GUIDE may help you choose
+                  which workspace you want to start your analysis in.
+                </Paragraph>
+              </span>
+            }
+          />
+        </BulletedList>
+
+        <Heading>LEARN ABOUT THE HOSTED DATA</Heading>
+        <BulletedList dense>
+          <ListItem
+            primary={
+              <span>
+                <Paragraph>
+                  Explore our rich phenotypic data resources with
+                  <Link to="https://picsure.biodatacatalyst.nhlbi.nih.gov/psamaui/login">
+                    &nbsp;Open PIC-SURE&nbsp;
+                  </Link>{" "}
+                  (
+                  <Link to="https://docs.google.com/document/d/1oVmdBSETxHNpB2DIWAh05TH_uUMPeJQKgyFsAGXpQVU/edit#heading=h.nohmcs2v8hsa">
+                    &nbsp;view documentation here&nbsp;
+                  </Link>
+                  ). You will need an{" "}
+                  <Link to="https://era.nih.gov/register-accounts/understanding-era-commons-accounts.htm">
+                    eRA Commons
+                  </Link>{" "}
+                  to access Open PIC-SURE, but you do not need{" "}
+                  <Link to="https://dbgap.ncbi.nlm.nih.gov/aa/wga.cgi?page=login">
+                    dbGaP permissions &nbsp;
+                  </Link>
+                  to explore the available data. Use Open PIC-SURE to discover
+                  what data you would like to use, and then request dbGaP
+                  access.
                 </Paragraph>
               </span>
             }
@@ -56,45 +90,93 @@ const SuccessPage = () => {
           <ListItem
             primary={
               <span>
-                <Link to="https://staging.biodatacatalyst.nhlbi.nih.gov/resources/services">
-                  What do you want to do today?
-                </Link>
+                <Paragraph>
+                  <Link to="https://biodatacatalyst.nhlbi.nih.gov/resources/data/">
+                    &nbsp;Visit the Data page&nbsp;
+                  </Link>{" "}
+                  on our website for a brief overview of the data available in
+                  the BioData Catalyst Ecosystem and how to access it.
+                </Paragraph>
               </span>
             }
           />
-          <ListItem
-            primary={<span>Getting Started Checklist (coming soon)</span>}
-          />
         </BulletedList>
 
-        <Heading>STILL NOT SURE?</Heading>
-        <Paragraph>
-          We strive to support each other in our research endeavors. Reach out
-          to the community or to the BioData Catalyst Coordinating Center to ask
-          your question.
-        </Paragraph>
+        <Heading>GET CLOUD CREDITS AND RUN AN ANALYSIS</Heading>
         <BulletedList dense>
           <ListItem
             primary={
               <span>
-                <ExternalLink to="https://bdcatalyst.freshdesk.com/support/discussions/60000024585">
-                  Community Forums
-                </ExternalLink>
+                <Paragraph>
+                  <Link to="https://biodatacatalyst.nhlbi.nih.gov/resources/cloud-credits">
+                    Apply for Pilot Funding cloud credits &nbsp;
+                  </Link>
+                  to test and evaluate the analysis workspace(s) with your
+                  chosen data. Note that it can take a few business days for
+                  cloud credit requests to be approved and applied to the
+                  workspace(s) you choose.
+                </Paragraph>
               </span>
             }
           />
           <ListItem
             primary={
               <span>
-                <Link to="https://biodatacatalyst.nhlbi.nih.gov/contact/">
-                  BioData Catalyst Help Desk
-                </Link>
+                <Paragraph>
+                  Using the GUIDE above, pick a workspace environment to try out
+                  (
+                  <Link to="https://terra.biodatacatalyst.nhlbi.nih.gov/#workspaces">
+                    &nbsp;BioData Catalyst Powered by Terra&nbsp;
+                  </Link>{" "}
+                  and/or{" "}
+                  <Link to="https://accounts.sb.biodatacatalyst.nhlbi.nih.gov/auth/login?next=https%3A%2F%2Faccounts.sb.biodatacatalyst.nhlbi.nih.gov%2Foauth2%2Fauthorization%3Fresponse_type%3Dcode%26client_id%3D74735b722c33498cb981b6b6e24f659f%26redirect_uri%3Dhttps%253A%252F%252Fplatform.sb.biodatacatalyst.nhlbi.nih.gov%252Foauth2%252Fredirect%26state%3DYYGRQegjWMkiv8aBqE4gA9tl0pMgSc%26scope%3Dopenid%26nonce%3D56551633294225677721625106839">
+                    BioData Catalyst Powered by Seven Bridges
+                  </Link>
+                  ). You are welcome to work in one or both of the workspace
+                  environments.
+                </Paragraph>
               </span>
             }
           />
-          <ListItem primary={<span>Event calendar (coming soon)</span>} />
-          <ListItem primary={<span>Cloud Credits (coming soon)</span>} />
         </BulletedList>
+
+        <Heading>DEEP DIVE FOR MORE INFORMATION</Heading>
+        <BulletedList dense>
+          <ListItem
+            primary={
+              <span>
+                <Paragraph>
+                  Try the
+                  <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/getting-started">
+                    &nbsp;Getting Started Overview &nbsp;
+                  </Link>
+                  for step-by-step guidance on navigating the ecosystem.
+                </Paragraph>
+              </span>
+            }
+          />
+          <ListItem
+            primary={
+              <span>
+                <Paragraph>
+                  <Link to="https://biodatacatalyst.nhlbi.nih.gov/resources/learn/">
+                    &nbsp;Explore documentation&nbsp;
+                  </Link>
+                  for each of the ecosystem elements.
+                </Paragraph>
+              </span>
+            }
+          />
+        </BulletedList>
+        <Heading>STILL NOT SURE?</Heading>
+        <Paragraph>
+          We strive to support each other in our research endeavors. Contact the
+          BioData Catalyst CoordinatingCenter using the{" "}
+          <Link to="https://biodatacatalyst.nhlbi.nih.gov/contact/">
+            &nbsp;BioData Catalyst Help Desk&nbsp;
+          </Link>{" "}
+          if you would like help getting started.
+        </Paragraph>
 
         <Paragraph center>
           <Paragraph>
