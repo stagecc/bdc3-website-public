@@ -1,11 +1,11 @@
 export const menuItems = [
   {
     text: "Home",
-    path: "/"
+    path: "/",
   },
   {
     text: "About",
-    path: "/about"
+    path: "/about",
   },
   {
     text: "Resources",
@@ -13,25 +13,25 @@ export const menuItems = [
     submenu: [
       {
         text: "Data",
-        path: "/resources/data"
+        path: "/resources/data",
       },
       {
         text: "BYOD",
-        path: "/resources/byod"
+        path: "/resources/byod",
       },
       {
         text: "Cloud Credits",
-        path: "/resources/cloud-credits"
+        path: "/resources/cloud-credits",
       },
       {
         text: "Learn",
-        path: "/resources/learn"
+        path: "/resources/learn",
       },
       {
         text: "Services",
-        path: "/resources/services"
-      }
-    ]
+        path: "/resources/services",
+      },
+    ],
   },
   {
     text: "Fellows",
@@ -39,25 +39,25 @@ export const menuItems = [
     submenu: [
       {
         text: "Program",
-        path: "/fellows/program"
+        path: "/fellows/program",
       },
       {
         text: "Cohort I",
-        path: "/fellows/cohort1"
+        path: "/fellows/cohort1",
       },
       {
         text: "Cohort II",
-        path: "/fellows/cohort2"
+        path: "/fellows/cohort2",
       },
       {
         text: "Cohort III",
-        path: "/fellows/cohort3"
+        path: "/fellows/cohort3",
       },
       {
         text: "FAQs",
-        path: "/fellows/faqs"
-      }
-    ]
+        path: "/fellows/faqs",
+      },
+    ],
   },
   {
     text: "Contact",
@@ -65,12 +65,12 @@ export const menuItems = [
     submenu: [
       {
         text: "Ask a Question",
-        path: "/contact"
+        path: "/contact",
       },
       {
-        text: "Join the Ecosystem",
-        path: "/contact/ecosystem"
-      }
-    ]
-  }
+        text: "Join the Community",
+        path: "/contact/ecosystem",
+      },
+    ],
+  },
 ];
