@@ -30,7 +30,7 @@ const RegistrationPage = () => (
           primary={
             <span>
               BioData Catalyst Ecosystem&nbsp;
-              <ExternalLink to="https://biodatacatalyst.nhlbi.nih.gov/platforms/terra">
+              <ExternalLink to="https://biodatacatalyst.nhlbi.nih.gov/contact/">
                 Help Desk
               </ExternalLink>
             </span>
@@ -40,7 +40,7 @@ const RegistrationPage = () => (
           primary={
             <span>
               BioData Catalyst Ecosystem&nbsp;
-              <ExternalLink to="https://biodatacatalyst.nhlbi.nih.gov/platforms/seven-bridges">
+              <ExternalLink to="https://bdcatalyst.freshdesk.com/support/discussions/60000024585">
                 Forums
               </ExternalLink>
             </span>
