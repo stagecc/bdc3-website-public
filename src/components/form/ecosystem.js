@@ -57,7 +57,7 @@ export const EcoSystemForm = (props) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [commons, setCommons] = useState("");
-  const [password, setPassword] = useState("");
+  // const [password, setPassword] = useState("");
   // const [confirm_password, setConfirmPassword] = useState("");
   // const [passwordError, setPasswordError] = useState(false);
   const [organization, setOrganization] = useState("");
@@ -74,7 +74,7 @@ export const EcoSystemForm = (props) => {
       name: name,
       email: email,
       custom_fields: {
-        era_commons_id: commons,
+        // era_commons_id: commons,
         // contacts_password: password,
         contacts_organization: organization,
         contacts_field: field.toString(),
@@ -104,7 +104,7 @@ export const EcoSystemForm = (props) => {
   };
 
   const handleChangeName = (event) => setName(event.target.value);
-  const handleChangeCommons = (event) => setCommons(event.target.value);
+  // const handleChangeCommons = (event) => setCommons(event.target.value);
   const handleChangeEmail = (event) => setEmail(event.target.value);
   // const handleChangePassword = (event) => setPassword(event.target.value);
   // const handleConfirmPassword = (event) => {
@@ -150,7 +150,7 @@ export const EcoSystemForm = (props) => {
                 onChange={handleChangeName}
               />
             </FormControl>
-            <FormControl>
+            {/* <FormControl>
               <label htmlFor="commons">eRA Commons ID</label>
               <TextInput
                 type="commons"
@@ -165,7 +165,7 @@ export const EcoSystemForm = (props) => {
                 one for ease of identification. If you do not yet have an eRA
                 Commons ID, you can still join the community.{" "}
               </HelpText>
-            </FormControl>
+            </FormControl> */}
             <FormControl>
               <label htmlFor="email">Email Address *</label>
               <TextInput
