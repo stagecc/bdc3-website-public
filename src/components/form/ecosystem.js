@@ -225,6 +225,7 @@ export const EcoSystemForm = (props) => {
               <label htmlFor="field">
                 NHLBI Field of Study or Research Area *
               </label>
+              <HelpText>Select all that apply</HelpText>
               <FieldSet>
                 <CheckBoxLabel>
                   <TextInput type="checkbox" value="Heart" name="field" />
