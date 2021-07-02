@@ -203,10 +203,8 @@ export const CloudCreditsForm = (props) => {
                 name="name"
                 value={name}
                 onChange={handleChangeName}
-                placeholder={`Please use an organizational email address.`}
               />
             </FormControl>
-
             <FormControl>
               <label htmlFor="username" required>
                 Platform User Name
@@ -218,8 +216,8 @@ export const CloudCreditsForm = (props) => {
                 name="username"
                 value={username}
                 onChange={handleChangeUserName}
-                placeholder={`Seven Bridges users only`}
               />
+              <HelpText>Seven Bridges users only</HelpText>
             </FormControl>
 
             <FormControl>
