@@ -323,12 +323,11 @@ export const EcoSystemForm = (props) => {
                 onChange={handleChangeInterest}
               >
                 <Option value="">Select One</Option>
-                <Option value="I just want to keep up with the latest news on the ecosystem">
-                  I just want to keep up with the latest news on the ecosystem
+                <Option value="I want to keep up with the latest news on the ecosystem">
+                  I want to keep up with the latest news on the ecosystem
                 </Option>
-                <Option value="I am hoping to learn how the ecosystem can help me with my research">
-                  I am hoping to learn how the ecosystem can help me with my
-                  research
+                <Option value="I hope to learn how the ecosystem can help me with my research">
+                  I hope to learn how the ecosystem can help me with my research
                 </Option>
                 <Option value="I am ready to start using the ecosystem!">
                   I am ready to start using the ecosystem!
@@ -343,7 +342,7 @@ export const EcoSystemForm = (props) => {
                 required
                 id="referral"
                 name="referral"
-                placeholder={`Colleague, website, organization`}
+                placeholder={`For example, colleague, website, organization`}
                 value={referral}
                 onChange={handleChangeRefferal}
               />
