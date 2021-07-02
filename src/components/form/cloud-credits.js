@@ -211,7 +211,6 @@ export const CloudCreditsForm = (props) => {
               </label>
               <TextInput
                 type="text"
-                required
                 id="username"
                 name="username"
                 value={username}
