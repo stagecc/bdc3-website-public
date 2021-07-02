@@ -44,7 +44,7 @@ const ErrorMessage = () => {
       </Paragraph>
       <Paragraph center>
         Please submit your request on{" "}
-        <ExternalLink to="https://bdcatalyst.freshdesk.com">
+        <ExternalLink to="https://biodatacatalyst.nhlbi.nih.gov/contact">
           our help desk
         </ExternalLink>{" "}
         while we resolve this issue. Thanks!
@@ -77,7 +77,7 @@ export const EcoSystemForm = (props) => {
         era_commons_id: commons,
         // contacts_password: password,
         contacts_organization: organization,
-        contacts_field: field,
+        contacts_field: field.toString(),
         contacts_referral: referral,
         contacts_other: other,
         contacts_interest: interest,

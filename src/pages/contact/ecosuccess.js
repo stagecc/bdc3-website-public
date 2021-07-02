@@ -45,8 +45,11 @@ const SuccessPage = () => {
               <span>
                 <Paragraph>
                   Use our BioData Catalyst User
-                  <Link to="https://drive.google.com/file/d/19S_iGRHxg8JmupHawhz8e9qR3hF8ht3H/view">
-                    &nbsp;GUIDE:&nbsp;
+                  <Link
+                    target="_blank"
+                    to="https://drive.google.com/file/d/19S_iGRHxg8JmupHawhz8e9qR3hF8ht3H/view"
+                  >
+                    &nbsp;GUIDE&nbsp;
                   </Link>
                   to become familiar with BioData Catalyst’s platforms and
                   services, how they interconnect, and which may be most helpful
@@ -65,19 +68,31 @@ const SuccessPage = () => {
               <span>
                 <Paragraph>
                   Explore our rich phenotypic data resources with
-                  <Link to="https://picsure.biodatacatalyst.nhlbi.nih.gov/psamaui/login">
+                  <Link
+                    target="_blank"
+                    to="https://picsure.biodatacatalyst.nhlbi.nih.gov/psamaui/login"
+                  >
                     &nbsp;Open PIC-SURE&nbsp;
                   </Link>{" "}
                   (
-                  <Link to="https://docs.google.com/document/d/1oVmdBSETxHNpB2DIWAh05TH_uUMPeJQKgyFsAGXpQVU/edit#heading=h.nohmcs2v8hsa">
+                  <Link
+                    target="_blank"
+                    to="https://docs.google.com/document/d/1oVmdBSETxHNpB2DIWAh05TH_uUMPeJQKgyFsAGXpQVU/edit#heading=h.nohmcs2v8hsa"
+                  >
                     &nbsp;view documentation here&nbsp;
                   </Link>
                   ). You will need an{" "}
-                  <Link to="https://era.nih.gov/register-accounts/understanding-era-commons-accounts.htm">
+                  <Link
+                    target="_blank"
+                    to="https://era.nih.gov/register-accounts/understanding-era-commons-accounts.htm"
+                  >
                     eRA Commons
                   </Link>{" "}
                   to access Open PIC-SURE, but you do not need{" "}
-                  <Link to="https://dbgap.ncbi.nlm.nih.gov/aa/wga.cgi?page=login">
+                  <Link
+                    target="_blank"
+                    to="https://dbgap.ncbi.nlm.nih.gov/aa/wga.cgi?page=login"
+                  >
                     dbGaP permissions &nbsp;
                   </Link>
                   to explore the available data. Use Open PIC-SURE to discover
@@ -91,7 +106,10 @@ const SuccessPage = () => {
             primary={
               <span>
                 <Paragraph>
-                  <Link to="https://biodatacatalyst.nhlbi.nih.gov/resources/data/">
+                  <Link
+                    target="_blank"
+                    to="https://biodatacatalyst.nhlbi.nih.gov/resources/data/"
+                  >
                     &nbsp;Visit the Data page&nbsp;
                   </Link>{" "}
                   on our website for a brief overview of the data available in
@@ -108,7 +126,10 @@ const SuccessPage = () => {
             primary={
               <span>
                 <Paragraph>
-                  <Link to="https://biodatacatalyst.nhlbi.nih.gov/resources/cloud-credits">
+                  <Link
+                    target="_blank"
+                    to="https://biodatacatalyst.nhlbi.nih.gov/resources/cloud-credits"
+                  >
                     Apply for Pilot Funding cloud credits &nbsp;
                   </Link>
                   to test and evaluate the analysis workspace(s) with your
@@ -125,11 +146,17 @@ const SuccessPage = () => {
                 <Paragraph>
                   Using the GUIDE above, pick a workspace environment to try out
                   (
-                  <Link to="https://terra.biodatacatalyst.nhlbi.nih.gov/#workspaces">
+                  <Link
+                    target="_blank"
+                    to="https://terra.biodatacatalyst.nhlbi.nih.gov/#workspaces"
+                  >
                     &nbsp;BioData Catalyst Powered by Terra&nbsp;
                   </Link>{" "}
                   and/or{" "}
-                  <Link to="https://accounts.sb.biodatacatalyst.nhlbi.nih.gov/auth/login?next=https%3A%2F%2Faccounts.sb.biodatacatalyst.nhlbi.nih.gov%2Foauth2%2Fauthorization%3Fresponse_type%3Dcode%26client_id%3D74735b722c33498cb981b6b6e24f659f%26redirect_uri%3Dhttps%253A%252F%252Fplatform.sb.biodatacatalyst.nhlbi.nih.gov%252Foauth2%252Fredirect%26state%3DYYGRQegjWMkiv8aBqE4gA9tl0pMgSc%26scope%3Dopenid%26nonce%3D56551633294225677721625106839">
+                  <Link
+                    target="_blank"
+                    to="https://accounts.sb.biodatacatalyst.nhlbi.nih.gov/auth/login?next=https%3A%2F%2Faccounts.sb.biodatacatalyst.nhlbi.nih.gov%2Foauth2%2Fauthorization%3Fresponse_type%3Dcode%26client_id%3D74735b722c33498cb981b6b6e24f659f%26redirect_uri%3Dhttps%253A%252F%252Fplatform.sb.biodatacatalyst.nhlbi.nih.gov%252Foauth2%252Fredirect%26state%3DYYGRQegjWMkiv8aBqE4gA9tl0pMgSc%26scope%3Dopenid%26nonce%3D56551633294225677721625106839"
+                  >
                     BioData Catalyst Powered by Seven Bridges
                   </Link>
                   ). You are welcome to work in one or both of the workspace
@@ -147,7 +174,10 @@ const SuccessPage = () => {
               <span>
                 <Paragraph>
                   Try the
-                  <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/getting-started">
+                  <Link
+                    target="_blank"
+                    to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/getting-started"
+                  >
                     &nbsp;Getting Started Overview &nbsp;
                   </Link>
                   for step-by-step guidance on navigating the ecosystem.
@@ -159,7 +189,10 @@ const SuccessPage = () => {
             primary={
               <span>
                 <Paragraph>
-                  <Link to="https://biodatacatalyst.nhlbi.nih.gov/resources/learn/">
+                  <Link
+                    target="_blank"
+                    to="https://biodatacatalyst.nhlbi.nih.gov/resources/learn/"
+                  >
                     &nbsp;Explore documentation&nbsp;
                   </Link>
                   for each of the ecosystem elements.
@@ -172,7 +205,10 @@ const SuccessPage = () => {
         <Paragraph>
           We strive to support each other in our research endeavors. Contact the
           BioData Catalyst CoordinatingCenter using the{" "}
-          <Link to="https://biodatacatalyst.nhlbi.nih.gov/contact/">
+          <Link
+            target="_blank"
+            to="https://biodatacatalyst.nhlbi.nih.gov/contact/"
+          >
             &nbsp;BioData Catalyst Help Desk&nbsp;
           </Link>{" "}
           if you would like help getting started.
