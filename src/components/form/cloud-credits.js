@@ -79,11 +79,11 @@ export const CloudCreditsForm = (props) => {
     setRequestedSevenBridgesAmount,
   ] = useState(0);
 
-  const [justificationLength, setJustificationLength] = useState(0);
+  const [justificationLength, setJustificationLength] = useState();
   const [
     previousFundingDetailsLength,
     setPreviousFundingDetailsLength,
-  ] = useState(0);
+  ] = useState();
   const [projectLength, setProjectLength] = useState(0);
 
   const [wasSubmitted, setWasSubmitted] = useState(false);
@@ -93,21 +93,22 @@ export const CloudCreditsForm = (props) => {
     window.location.hostname
   );
 
-  // useEffect(() => {
-  //   // before rendering the form, fetch the options for the Platform select dropown
-  //   const fetchPlatformOptions = async () => {
-  //     await axios
-  //       .get(FRESHDESK_API_TICKET_FIELDS_URL, requestOptions)
-  //       .then((response) => {
-  //         const platformField = response.data.find(
-  //           (field) => field.name === "cf_what_bdcatalyst_service_will_you_use"
-  //         );
-  //         setPlatformOptions(platformField.choices);
-  //       })
-  //       .catch((error) => console.error(error));
-  //   };
-  //   fetchPlatformOptions();
-  // }, []);
+  useEffect(() => {
+    // before rendering the form, fetch the options for the Platform select dropown
+    const fetchPlatformOptions = async () => {
+      await axios
+        .get(FRESHDESK_API_TICKET_FIELDS_URL, requestOptions)
+        .then((response) => {
+          // const platformField = response.data.find(
+          //   (field) => field.name === "cf_what_bdcatalyst_service_will_you_use"
+          // );
+          // setPlatformOptions(platformField.choices);
+          // console.log(response);
+        })
+        .catch((error) => console.error(error));
+    };
+    fetchPlatformOptions();
+  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -133,21 +134,21 @@ export const CloudCreditsForm = (props) => {
       name: name,
       email: email,
       custom_fields: {
-        cf_what_bdcatalyst_service_will_you_use: platform,
-        cf_platform_user_name: username,
-        cf_role: role,
-        cf_organization: organization,
+        // cf_what_platform_will_you_use_the_credit_on: platform,
+        cf_name: username,
+        // cf_role: role,
+        // cf_organization: organization,
         cf_cloud_credits_collaborator_information: collaborators,
-        cf_is_related_research: relatedResearch,
-        cf_how_did_you_learn_about_bdc: how,
-        cf_cloud_credits_request_amount: cloudCreditsRequest,
-        cf_prefered_analysis_platform: preferedAnalysisPlatform,
+        // cf_is_related_research: relatedResearch,
+        // cf_how_did_you_learn_about_bdc: how,
+        // cf_cloud_credits_request_amount: cloudCreditsRequest,
+        // cf_prefered_analysis_platform: preferedAnalysisPlatform,
         cf_cloud_credits_project_namedescription: project,
         cf_cloud_credits_use_of_initial_pilot_credits: previousFundingDetails,
         cf_estimated_cloud_credits_requested: +estimate,
         cf_justification_for_credits: justification,
-        cf_requested_terra_amount: requestedTerraAmount,
-        cf_requested_seven_bridges_amount: requestedSevenBridgesAmount,
+        // cf_requested_terra_amount: requestedTerraAmount,
+        // cf_requested_seven_bridges_amount: requestedSevenBridgesAmount,
       },
     };
 
@@ -157,14 +158,14 @@ export const CloudCreditsForm = (props) => {
       await axios
         .post(FRESHDESK_API_CREATE_TICKET_URL, payload, requestOptions)
         .then((response) => {
-          console.log(response);
-          console.log(response.status);
+          // console.log(response);
+          // console.log(response.status);
           if (![200, 201].includes(response.status)) {
             throw new Error(`Unsuccessful HTTP response, ${response.status}`);
           }
         })
         .catch((error) => {
-          console.log(error);
+          // console.log(error);
           setError(error);
         });
     };
