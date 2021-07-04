@@ -58,7 +58,6 @@ const ErrorMessage = () => {
 };
 
 export const CloudCreditsForm = (props) => {
-  const [platformOptions, setPlatformOptions] = useState([]);
   const [name, setName] = useState("");
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
@@ -70,16 +69,15 @@ export const CloudCreditsForm = (props) => {
   const [relatedResearch, setRelatedResearch] = useState("");
   const [project, setProject] = useState("");
   const [justification, setJustification] = useState("");
-  const [previousFunding, setPreviousFunding] = useState(false);
   const [previousFundingDetails, setPreviousFundingDetails] = useState("");
-  const [estimate, setEstimate] = useState(1);
+  const [estimate, setEstimate] = useState();
   const [platform, setPlatform] = useState("");
   const [preferedAnalysisPlatform, setPreferedAnalysisPlatform] = useState("");
-  const [requestedTerraAmount, setRequestedTerraAmount] = useState("");
+  const [requestedTerraAmount, setRequestedTerraAmount] = useState(0);
   const [
     requestedSevenBridgesAmount,
     setRequestedSevenBridgesAmount,
-  ] = useState("");
+  ] = useState(0);
 
   const [justificationLength, setJustificationLength] = useState(0);
   const [
@@ -95,21 +93,21 @@ export const CloudCreditsForm = (props) => {
     window.location.hostname
   );
 
-  useEffect(() => {
-    // before rendering the form, fetch the options for the Platform select dropown
-    const fetchPlatformOptions = async () => {
-      await axios
-        .get(FRESHDESK_API_TICKET_FIELDS_URL, requestOptions)
-        .then((response) => {
-          const platformField = response.data.find(
-            (field) => field.name === "cf_what_bdcatalyst_service_will_you_use"
-          );
-          setPlatformOptions(platformField.choices);
-        })
-        .catch((error) => console.error(error));
-    };
-    fetchPlatformOptions();
-  }, []);
+  // useEffect(() => {
+  //   // before rendering the form, fetch the options for the Platform select dropown
+  //   const fetchPlatformOptions = async () => {
+  //     await axios
+  //       .get(FRESHDESK_API_TICKET_FIELDS_URL, requestOptions)
+  //       .then((response) => {
+  //         const platformField = response.data.find(
+  //           (field) => field.name === "cf_what_bdcatalyst_service_will_you_use"
+  //         );
+  //         setPlatformOptions(platformField.choices);
+  //       })
+  //       .catch((error) => console.error(error));
+  //   };
+  //   fetchPlatformOptions();
+  // }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -122,7 +120,6 @@ export const CloudCreditsForm = (props) => {
       `Collaborators: ${collaborators} ~~~~~ ` +
       `Project Name & Description: ${project} ~~~~~ ` +
       `Justification for Credits: ${justification} ~~~~~ ` +
-      `Previous Requested Cloud Credits: ${previousFunding} ~~~~~ ` +
       `Use of Initial Pilot Credits: ${previousFundingDetails} ~~~~~ ` +
       `Estimate of Cloud Credits Needed: $${estimate} ~~~~~ ` +
       `Platform/Service: ${platform} ~~~~~ ` +
@@ -136,18 +133,21 @@ export const CloudCreditsForm = (props) => {
       name: name,
       email: email,
       custom_fields: {
-        cf_cloud_credits_collaborator_information: collaborators,
-        cf_cloud_credits_project_namedescription: project,
-        cf_justification_for_credits: justification,
-        cf_cloud_credits_previous_request: previousFunding,
-        cf_cloud_credits_use_of_initial_pilot_credits: previousFundingDetails,
-        cf_estimated_cloud_credits_requested: +estimate,
         cf_what_bdcatalyst_service_will_you_use: platform,
         cf_platform_user_name: username,
+        cf_role: role,
+        cf_organization: organization,
+        cf_cloud_credits_collaborator_information: collaborators,
         cf_is_related_research: relatedResearch,
         cf_how_did_you_learn_about_bdc: how,
         cf_cloud_credits_request_amount: cloudCreditsRequest,
         cf_prefered_analysis_platform: preferedAnalysisPlatform,
+        cf_cloud_credits_project_namedescription: project,
+        cf_cloud_credits_use_of_initial_pilot_credits: previousFundingDetails,
+        cf_estimated_cloud_credits_requested: +estimate,
+        cf_justification_for_credits: justification,
+        cf_requested_terra_amount: requestedTerraAmount,
+        cf_requested_seven_bridges_amount: requestedSevenBridgesAmount,
       },
     };
 
@@ -187,8 +187,6 @@ export const CloudCreditsForm = (props) => {
     setJustification(event.target.value);
     setJustificationLength(event.target.value.length);
   };
-  // const handleChangePreviousFunding = (event) =>
-  //   setPreviousFunding(event.target.value);
   const handleChangePreviousFundingDetails = (event) => {
     setPreviousFundingDetails(event.target.value);
     setPreviousFundingDetailsLength(event.target.value.length);
@@ -335,7 +333,6 @@ export const CloudCreditsForm = (props) => {
               onChange={handleChangeCloudCreditsRequest}
             >
               <Option value="">Select One</Option>
-
               <Option
                 You
                 value={
@@ -350,7 +347,6 @@ export const CloudCreditsForm = (props) => {
               </Option>
             </Select>
           </FormControl>
-
           {cloudCreditsRequest ===
             "$500 in initial pilot cloud credits to begin a project or explore the ecosystem" && (
             <FormControl>
@@ -366,7 +362,6 @@ export const CloudCreditsForm = (props) => {
                 onChange={handleChangePreferedAnalysisPlatform}
               >
                 <Option value="">Select One</Option>
-
                 <Option You value={"$500 on Seven Bridges"}>
                   $500 on Seven Bridges
                 </Option>
@@ -502,6 +497,7 @@ export const CloudCreditsForm = (props) => {
                       adornment="$"
                       placeholder="Seven Bridges:"
                     />
+                    <HelpText>Seven Bridges</HelpText>
                     <AdornedInput
                       type="number"
                       required
@@ -513,6 +509,7 @@ export const CloudCreditsForm = (props) => {
                       adornment="$"
                       placeholder="Terra:"
                     />
+                    <HelpText>Terra</HelpText>
                   </FormControl>
                 </>
               )}
@@ -521,13 +518,13 @@ export const CloudCreditsForm = (props) => {
           <br />
           <SubmitButton>Submit</SubmitButton>
         </Form>
-        {!wasSubmitted && platformOptions.length === 0 && (
+        {/* {!wasSubmitted && platformOptions.length === 0 && (
           <LoadingDots
             color="var(--color-crimson)"
             text="Loading form..."
             textPlacement="top"
           />
-        )}
+        )} */}
         {wasSubmitted && !error && <ThankYouMessage />}
         {wasSubmitted && error && <ErrorMessage />}
       </CardBody>
