@@ -62,15 +62,24 @@ export const CloudCreditsForm = (props) => {
   const [name, setName] = useState("");
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
+  const [how, setHow] = useState("");
   const [role, setRole] = useState("");
+  const [cloudCreditsRequest, setCloudCreditsRequest] = useState("");
   const [organization, setOrganization] = useState("");
   const [collaborators, setCollaborators] = useState("");
+  const [relatedResearch, setRelatedResearch] = useState("");
   const [project, setProject] = useState("");
   const [justification, setJustification] = useState("");
   const [previousFunding, setPreviousFunding] = useState(false);
   const [previousFundingDetails, setPreviousFundingDetails] = useState("");
   const [estimate, setEstimate] = useState(1);
   const [platform, setPlatform] = useState("");
+  const [preferedAnalysisPlatform, setPreferedAnalysisPlatform] = useState("");
+  const [requestedTerraAmount, setRequestedTerraAmount] = useState("");
+  const [
+    requestedSevenBridgesAmount,
+    setRequestedSevenBridgesAmount,
+  ] = useState("");
 
   const [justificationLength, setJustificationLength] = useState(0);
   const [
@@ -135,6 +144,10 @@ export const CloudCreditsForm = (props) => {
         cf_estimated_cloud_credits_requested: +estimate,
         cf_what_bdcatalyst_service_will_you_use: platform,
         cf_platform_user_name: username,
+        cf_is_related_research: relatedResearch,
+        cf_how_did_you_learn_about_bdc: how,
+        cf_cloud_credits_request_amount: cloudCreditsRequest,
+        cf_prefered_analysis_platform: preferedAnalysisPlatform,
       },
     };
 
@@ -182,6 +195,17 @@ export const CloudCreditsForm = (props) => {
   };
   const handleChangeEstimate = (event) => setEstimate(event.target.value);
   const handleChangePlatform = (event) => setPlatform(event.target.value);
+  const handleChangeRelatedResearch = (event) =>
+    setRelatedResearch(event.target.value);
+  const handleChangeHow = (event) => setHow(event.target.value);
+  const handleChangeCloudCreditsRequest = (event) =>
+    setCloudCreditsRequest(event.target.value);
+  const handleChangePreferedAnalysisPlatform = (event) =>
+    setPreferedAnalysisPlatform(event.target.value);
+  const handleChangeRequestedSevenBridgesAmount = (event) =>
+    setRequestedSevenBridgesAmount(event.target.value);
+  const handleChangeRequestedTerraAmount = (event) =>
+    setRequestedTerraAmount(event.target.value);
 
   return (
     <Card {...props}>
@@ -190,210 +214,313 @@ export const CloudCreditsForm = (props) => {
         <Paragraph right noMargin>
           * <em>All fields are required.</em>
         </Paragraph>
-        {!wasSubmitted && platformOptions.length > 0 && (
-          <Form onSubmit={handleSubmit}>
-            <FormControl>
-              <label htmlFor="name" required>
-                Your Name *
-              </label>
-              <TextInput
-                type="text"
-                required
-                id="name"
-                name="name"
-                value={name}
-                onChange={handleChangeName}
-              />
-            </FormControl>
-            <FormControl>
-              <label htmlFor="username" required>
-                Platform User Name
-              </label>
-              <TextInput
-                type="text"
-                id="username"
-                name="username"
-                value={username}
-                onChange={handleChangeUserName}
-              />
-              <HelpText>Seven Bridges users only</HelpText>
-            </FormControl>
+        <Form onSubmit={handleSubmit}>
+          <FormControl>
+            <label htmlFor="name" required>
+              Your Name *
+            </label>
+            <TextInput
+              type="text"
+              required
+              id="name"
+              name="name"
+              value={name}
+              onChange={handleChangeName}
+            />
+          </FormControl>
+          <FormControl>
+            <label htmlFor="email">Email Address *</label>
+            <TextInput
+              type="email"
+              required
+              id="email"
+              name="email"
+              value={email}
+              onChange={handleChangeEmail}
+            />
+            <HelpText>Please use an organizational email address.</HelpText>
+          </FormControl>
+          <FormControl>
+            <label htmlFor="username">Platform User Name</label>
+            <TextInput
+              type="text"
+              id="username"
+              name="username"
+              value={username}
+              onChange={handleChangeUserName}
+            />
+            <HelpText>Seven Bridges users only</HelpText>
+          </FormControl>
+          <FormControl>
+            <label htmlFor="role">Your Role *</label>
+            <TextInput
+              type="role"
+              required
+              id="role"
+              name="role"
+              value={role}
+              onChange={handleChangeRole}
+            />
+          </FormControl>
+          <FormControl>
+            <label htmlFor="organization">Your Organization *</label>
+            <TextInput
+              type="organization"
+              required
+              id="organization"
+              name="organization"
+              value={organization}
+              onChange={handleChangeOrganization}
+            />
+          </FormControl>
+          <FormControl>
+            <label htmlFor="collaborators">Collaborators (if applicable)</label>
+            <TextArea
+              id="collaborators"
+              name="collaborators"
+              placeholder={`Enter each collaborator's name, email, role, and organization.`}
+              value={collaborators}
+              onChange={handleChangeCollaborators}
+            />
+            <HelpText>
+              Please list&mdash;one per line&mdash;the Name, Email, Role, and
+              Organization of each PI, Collaborator, and Student.
+            </HelpText>
+          </FormControl>
+          <FormControl>
+            <label htmlFor="relatedResearch">
+              Is your research related to HLBS? *
+            </label>
+            <Select
+              required
+              id="relatedResearch"
+              name="relatedResearch"
+              value={relatedResearch}
+              onChange={handleChangeRelatedResearch}
+            >
+              <Option value="">Select One</Option>
 
-            <FormControl>
-              <label htmlFor="email">Email Address *</label>
-              <TextInput
-                type="email"
-                required
-                id="email"
-                name="email"
-                value={email}
-                onChange={handleChangeEmail}
-              />
-              <HelpText>Please use an organizational email address.</HelpText>
-            </FormControl>
-            <FormControl>
-              <label htmlFor="role">Your Role *</label>
-              <TextInput
-                type="role"
-                required
-                id="role"
-                name="role"
-                value={role}
-                onChange={handleChangeRole}
-              />
-            </FormControl>
-            <FormControl>
-              <label htmlFor="organization">Your Organization *</label>
-              <TextInput
-                type="organization"
-                required
-                id="organization"
-                name="organization"
-                value={organization}
-                onChange={handleChangeOrganization}
-              />
-            </FormControl>
-            <FormControl>
-              <label htmlFor="collaborators">
-                Collaborators * (if applicable)
-              </label>
-              <TextArea
-                required
-                id="collaborators"
-                name="collaborators"
-                placeholder={`Enter each collaborator's name, email, role, and organization.`}
-                value={collaborators}
-                onChange={handleChangeCollaborators}
-              />
-              <HelpText>
-                Please list&mdash;one per line&mdash;the Name, Email, Role, and
-                Organization of each PI, Collaborator, and Student.
-              </HelpText>
-            </FormControl>
-            <FormControl>
-              <label htmlFor="project">Project Name & Description *</label>
-              <TextArea
-                required
-                id="project"
-                name="project"
-                placeholder={`Enter project name and a brief description.`}
-                value={project}
-                onChange={handleChangeProject}
-                maxLength="3000"
-              />
-              <HelpText>
-                Limit your response to 3000 characters. (Current length:{" "}
-                {projectLength} / 3000 characters.)
-              </HelpText>
-            </FormControl>
-            {/* <FormControl>
-              <label htmlFor="previous-funding">
-                Have you submitted a cloud credits request before? *
-              </label>
-              <Select
-                required
-                id="previous-funding"
-                name="previous-funding"
-                value={previousFunding}
-                onChange={handleChangePreviousFunding}
-              >
-                <Option value="">Select One</Option>
-                <Option value="Yes">Yes</Option>
-                <Option value="No">No</Option>
-              </Select>
-            </FormControl> */}
-            <FormControl>
-              <label htmlFor="previous-funding-details">
-                Use of Initial Pilot Credits{" "}
-                {previousFunding === "Yes" ? "*" : ""}
-              </label>
-              <TextArea
-                id="previous-funding-details"
-                name="previous-funding-details"
-                placeholder={
-                  previousFunding !== "Yes"
-                    ? `N/A`
-                    : `Briefly outline your use of previous cloud credit funding.`
+              <Option You value={"Yes"}>
+                Yes
+              </Option>
+              <Option You value={"No"}>
+                No
+              </Option>
+            </Select>
+            <HelpText>
+              Cloud Credits are available only to researchers of Heart, Lung,
+              Blood and Sleep (HLBS) disorders.
+            </HelpText>
+          </FormControl>
+          <FormControl>
+            <label htmlFor="how">
+              How did you learn about BioData Catalyst?
+            </label>
+            <TextArea
+              id="how"
+              name="how"
+              value={how}
+              onChange={handleChangeHow}
+            />
+          </FormControl>
+          <FormControl>
+            <label htmlFor="cloudCreditsRequest">
+              BioData Catalyst users may request one of the following: *
+            </label>
+            <Select
+              required
+              id="cloudCreditsRequest"
+              name="cloudCreditsRequest"
+              value={cloudCreditsRequest}
+              onChange={handleChangeCloudCreditsRequest}
+            >
+              <Option value="">Select One</Option>
+
+              <Option
+                You
+                value={
+                  "$500 in initial pilot cloud credits to begin a project or explore the ecosystem"
                 }
-                value={previousFundingDetails}
-                onChange={handleChangePreviousFundingDetails}
-                maxLength="3000"
-                disabled={previousFunding !== "Yes"}
-                required={previousFunding === "Yes"}
-              />
-              <HelpText>
-                Briefly outline your use of previous cloud credit funding. Limit
-                your response to 3000 characters. (Current length:{" "}
-                {previousFundingDetailsLength} / 3000 characters.)
-              </HelpText>
-            </FormControl>
+              >
+                $500 in initial pilot cloud credits to begin a project or
+                explore the ecosystem
+              </Option>
+              <Option You value={"Additional cloud credits"}>
+                Additional cloud credits
+              </Option>
+            </Select>
+          </FormControl>
+
+          {cloudCreditsRequest ===
+            "$500 in initial pilot cloud credits to begin a project or explore the ecosystem" && (
             <FormControl>
-              <label htmlFor="justification">Justification for Credits *</label>
-              <TextArea
-                required
-                id="justification"
-                name="justification"
-                placeholder={`Enter a brief justification for your request.`}
-                value={justification}
-                onChange={handleChangeJustification}
-                maxLength="6000"
-              />
-              <HelpText>
-                Reviewers will be interested in: 1.) Significance and goals of
-                the project; 2.) Datasets, tools, types of analysis to be used;
-                3.) Experience using cloud platforms; 4.) Anticipated timeline
-                for the work; 5.) Whether workflows/pipelines have been
-                optimized and/or if guidance/consultation from the platforms has
-                been sought; 6.) Estimated costs split out by development,
-                testing, analysis optimization, and the running of the analysis
-                (provide a basis for the estimated costs e.g. prior research
-                results with reference numbers); 7.) Number of samples, cost per
-                sample, and whether there is sufficient power of analysis. Limit
-                your response to 6000 characters. (Current length:{" "}
-                {justificationLength} / 6000 characters.)
-              </HelpText>
-            </FormControl>
-            <FormControl>
-              <label htmlFor="estimate">
-                Estimate of Cloud Credits Needed *
+              <label htmlFor="preferedAnalysisPlatform">
+                Select your preferred analysis platform * (or choose to explore
+                both)
               </label>
-              <AdornedInput
-                type="number"
-                required
-                min="1"
-                id="estimate"
-                name="estimate"
-                value={estimate}
-                onChange={handleChangeEstimate}
-                adornment="$"
-              />
-              <HelpText>
-                Please enter your estimate in US Dollars. Round up to the
-                nearest $100 and add a $300 buffer for troubleshooting and
-                testing.
-              </HelpText>
-            </FormControl>
-            <FormControl>
-              <label htmlFor="platform">Preferred Platform/Service *</label>
               <Select
                 required
-                id="platform"
-                name="platform"
-                value={platform}
-                onChange={handleChangePlatform}
+                id="preferedAnalysisPlatform"
+                name="preferedAnalysisPlatform"
+                value={preferedAnalysisPlatform}
+                onChange={handleChangePreferedAnalysisPlatform}
               >
                 <Option value="">Select One</Option>
-                {platformOptions.map((option) => (
-                  <Option key={option} value={option}>
-                    {option}
-                  </Option>
-                ))}
+
+                <Option You value={"$500 on Seven Bridges"}>
+                  $500 on Seven Bridges
+                </Option>
+                <Option You value={"$500 on Terra"}>
+                  $500 on Terra
+                </Option>
+                <Option You value={"$250 each on both Seven Bridges and Terra"}>
+                  $250 each on both Seven Bridges and Terra
+                </Option>
               </Select>
             </FormControl>
-            <br />
-            <SubmitButton>Submit</SubmitButton>
-          </Form>
-        )}
+          )}
+          {cloudCreditsRequest === "Additional cloud credits" && (
+            <>
+              <FormControl>
+                <label htmlFor="project">Project Name & Description *</label>
+                <TextArea
+                  required
+                  id="project"
+                  name="project"
+                  placeholder={`Enter project name and a brief description.`}
+                  value={project}
+                  onChange={handleChangeProject}
+                  maxLength="3000"
+                />
+                <HelpText>
+                  Limit your response to 3000 characters. (Current length:{" "}
+                  {projectLength} / 3000 characters.)
+                </HelpText>
+              </FormControl>
+              <FormControl>
+                <label htmlFor="previous-funding-details">
+                  Previous use of cloud credits *
+                </label>
+                <TextArea
+                  id="previous-funding-details"
+                  name="previous-funding-details"
+                  placeholder={`Briefly outline your use of previous cloud credit funding.`}
+                  value={previousFundingDetails}
+                  onChange={handleChangePreviousFundingDetails}
+                  maxLength="3000"
+                  required
+                />
+                <HelpText>
+                  Briefly outline your use of previous cloud credit funding.
+                  Limit your response to 3000 characters. (Current length:
+                  {previousFundingDetailsLength} / 3000 characters.)
+                </HelpText>
+              </FormControl>
+              <FormControl>
+                <label htmlFor="estimate">
+                  Estimate of Cloud Credits Needed *
+                </label>
+                <AdornedInput
+                  type="number"
+                  required
+                  min="1"
+                  id="estimate"
+                  name="estimate"
+                  value={estimate}
+                  onChange={handleChangeEstimate}
+                  adornment="$"
+                />
+                <HelpText>
+                  Please enter your estimate in US Dollars. Round up to the
+                  nearest $100 and add a $300 buffer for troubleshooting and
+                  testing.
+                </HelpText>
+              </FormControl>
+              <FormControl>
+                <label htmlFor="justification">
+                  Justification for Credits *
+                </label>
+                <TextArea
+                  required
+                  id="justification"
+                  name="justification"
+                  placeholder={`Enter a brief justification for your request.`}
+                  value={justification}
+                  onChange={handleChangeJustification}
+                  maxLength="6000"
+                />
+                <HelpText>
+                  Reviewers will be interested in: 1.) Significance and goals of
+                  the project; 2.) Datasets, tools, types of analysis to be
+                  used; 3.) Experience using cloud platforms; 4.) Anticipated
+                  timeline for the work; 5.) Whether workflows/pipelines have
+                  been optimized and/or if guidance/consultation from the
+                  platforms has been sought; 6.) Estimated costs split out by
+                  development, testing, analysis optimization, and the running
+                  of the analysis (provide a basis for the estimated costs e.g.
+                  prior research results with reference numbers); 7.) Number of
+                  samples, cost per sample, and whether there is sufficient
+                  power of analysis. Limit your response to 6000 characters.
+                  (Current length: {justificationLength} / 6000 characters.)
+                </HelpText>
+              </FormControl>
+              <FormControl>
+                <label htmlFor="platform">
+                  Select the platform on which you will use the additional
+                  credits: *
+                </label>
+                <Select
+                  required
+                  id="platform"
+                  name="platform"
+                  value={platform}
+                  onChange={handleChangePlatform}
+                >
+                  <Option value="">Select One</Option>
+                  <Option value="Seven Bridges">Seven Bridges</Option>
+                  <Option value="Terra">Terra</Option>
+                  <Option value="Both Seven Bridges and Terra">
+                    Both Seven Bridges and Terra
+                  </Option>
+                </Select>
+              </FormControl>
+              {platform === "Both Seven Bridges and Terra" && (
+                <>
+                  <FormControl>
+                    <label htmlFor="requestedSevenBridgesAmount">
+                      Indicate the amount of cloud credits requested for use on
+                      each platform *
+                    </label>
+                    <AdornedInput
+                      type="number"
+                      required
+                      min="1"
+                      id="requestedSevenBridgesAmount"
+                      name="requestedSevenBridgesAmount"
+                      value={requestedSevenBridgesAmount}
+                      onChange={handleChangeRequestedSevenBridgesAmount}
+                      adornment="$"
+                      placeholder="Seven Bridges:"
+                    />
+                    <AdornedInput
+                      type="number"
+                      required
+                      min="1"
+                      id="requestedTerraAmount"
+                      name="requestedTerraAmount"
+                      value={requestedTerraAmount}
+                      onChange={handleChangeRequestedTerraAmount}
+                      adornment="$"
+                      placeholder="Terra:"
+                    />
+                  </FormControl>
+                </>
+              )}
+            </>
+          )}
+          <br />
+          <SubmitButton>Submit</SubmitButton>
+        </Form>
         {!wasSubmitted && platformOptions.length === 0 && (
           <LoadingDots
             color="var(--color-crimson)"
