@@ -71,8 +71,10 @@ export const CloudCreditsForm = (props) => {
   const [justification, setJustification] = useState("");
   const [previousFundingDetails, setPreviousFundingDetails] = useState("");
   const [estimate, setEstimate] = useState();
-  const [platform, setPlatform] = useState("");
-  const [preferedAnalysisPlatform, setPreferedAnalysisPlatform] = useState("");
+  const [platform, setPlatform] = useState("Select One");
+  const [preferedAnalysisPlatform, setPreferedAnalysisPlatform] = useState(
+    "Not Applicable"
+  );
   const [requestedTerraAmount, setRequestedTerraAmount] = useState(0);
   const [
     requestedSevenBridgesAmount,
@@ -103,7 +105,7 @@ export const CloudCreditsForm = (props) => {
           //   (field) => field.name === "cf_what_bdcatalyst_service_will_you_use"
           // );
           // setPlatformOptions(platformField.choices);
-          // console.log(response);
+          console.log(response);
         })
         .catch((error) => console.error(error));
     };
@@ -116,6 +118,9 @@ export const CloudCreditsForm = (props) => {
     const description =
       `Name: ${name} ~~~~~ ` +
       `Email Address: ${email} ~~~~~ ` +
+      `Username (Seven Bridges Only)): ${username} ~~~~~ ` +
+      `Email Address: ${email} ~~~~~ ` +
+      `cf_what_platform_will_you_use_the_credit_on: ${platform} ~~~~~ ` +
       `Role: $${role} ~~~~~ ` +
       `Company/Organization: ${organization} ~~~~~ ` +
       `Collaborators: ${collaborators} ~~~~~ ` +
@@ -124,6 +129,7 @@ export const CloudCreditsForm = (props) => {
       `Use of Initial Pilot Credits: ${previousFundingDetails} ~~~~~ ` +
       `Estimate of Cloud Credits Needed: $${estimate} ~~~~~ ` +
       `Platform/Service: ${platform} ~~~~~ ` +
+      `Organization: ${organization} ~~~~~ ` +
       `~~~~~ ~~~~~ (This ticket was submitted from ${window.location.href}.)`;
     const payload = {
       type: "Cloud Credits",
@@ -134,21 +140,21 @@ export const CloudCreditsForm = (props) => {
       name: name,
       email: email,
       custom_fields: {
-        // cf_what_platform_will_you_use_the_credit_on: platform,
-        cf_name: username,
-        // cf_role: role,
-        // cf_organization: organization,
-        cf_cloud_credits_collaborator_information: collaborators,
-        // cf_is_related_research: relatedResearch,
-        // cf_how_did_you_learn_about_bdc: how,
-        // cf_cloud_credits_request_amount: cloudCreditsRequest,
-        // cf_prefered_analysis_platform: preferedAnalysisPlatform,
-        cf_cloud_credits_project_namedescription: project,
-        cf_cloud_credits_use_of_initial_pilot_credits: previousFundingDetails,
-        cf_estimated_cloud_credits_requested: +estimate,
-        cf_justification_for_credits: justification,
-        // cf_requested_terra_amount: requestedTerraAmount,
-        // cf_requested_seven_bridges_amount: requestedSevenBridgesAmount,
+        cf_cloud_credits_username_seven_bridges_only: username,
+        cf_what_bdcatalyst_service_will_you_use: platform,
+        cf_cf_cloud_credits_collaborator_information: role,
+        cf_cloud_credits_related_research_to_hlbs: relatedResearch,
+        cf_cloud_credits_how_did_you_learn_about_bdc: how,
+        cf_cloud_credits_request_type: cloudCreditsRequest,
+        cf_cloud_credits_preferred_analysis_platform_amount: preferedAnalysisPlatform,
+        // cf_estimated_cloud_credits_requested: +estimate,
+        // cf_justification_for_credits: justification,
+        // cf_cloud_credits_collaborator_information: collaborators,
+        // cf_cf_organization: organization,
+        // cf_cloud_credits_project_namedescription: project,
+        // cf_cloud_credits_use_of_initial_pilot_credits: previousFundingDetails,
+        // cf_cloud_credits_requested_terra_amount: requestedTerraAmount,
+        // cf_cloud_credits_requested_seven_bridges_amount: requestedSevenBridgesAmount,
       },
     };
 
@@ -472,7 +478,7 @@ export const CloudCreditsForm = (props) => {
                   value={platform}
                   onChange={handleChangePlatform}
                 >
-                  <Option value="">Select One</Option>
+                  <Option value="Select One">Select One</Option>
                   <Option value="Seven Bridges">Seven Bridges</Option>
                   <Option value="Terra">Terra</Option>
                   <Option value="Both Seven Bridges and Terra">
