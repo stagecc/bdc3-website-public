@@ -6,6 +6,16 @@ export const menuItems = [
   {
     text: "About",
     path: "/about",
+    submenu: [
+      {
+        text: "Overview",
+        path: "/about/overview",
+      },
+      {
+        text: "News",
+        path: "/about/news",
+      },
+    ],
   },
   {
     text: "Resources",
