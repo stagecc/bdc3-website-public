@@ -33,7 +33,7 @@ const carouselItems = [
     path: "/resources/byod"
   },
   {
-    text: "Cost",
+    text: "Estimate",
     description:
       "Hacker urban systemic augmented reality silent tube wristwatch",
     icon: ByodIcon,
