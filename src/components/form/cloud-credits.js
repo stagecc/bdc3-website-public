@@ -60,6 +60,7 @@ const ErrorMessage = () => {
 export const CloudCreditsForm = (props) => {
   const [name, setName] = useState("");
   const [username, setUserName] = useState("");
+  const [projectPi, setProjectPi] = useState("");
   const [email, setEmail] = useState("");
   const [how, setHow] = useState("");
   const [role, setRole] = useState("");
@@ -147,7 +148,7 @@ export const CloudCreditsForm = (props) => {
         cf_cloud_credits_how_did_you_learn_about_bdc: how,
         cf_cloud_credits_request_type: cloudCreditsRequest,
         cf_cloud_credits_preferred_analysis_platform_amount: preferedAnalysisPlatform,
-        // cf_estimated_cloud_credits_requested: +estimate,
+        cf_cloud_credits_project_pi: projectPi,
         // cf_justification_for_credits: justification,
         // cf_cloud_credits_collaborator_information: collaborators,
         // cf_cf_organization: organization,
@@ -179,6 +180,7 @@ export const CloudCreditsForm = (props) => {
   };
 
   const handleChangeName = (event) => setName(event.target.value);
+  const handleChangeProjectPi = (event) => setProjectPi(event.target.value);
   const handleChangeUserName = (event) => setUserName(event.target.value);
   const handleChangeEmail = (event) => setEmail(event.target.value);
   const handleChangeRole = (event) => setRole(event.target.value);
@@ -255,6 +257,17 @@ export const CloudCreditsForm = (props) => {
               onChange={handleChangeUserName}
             />
             <HelpText>Seven Bridges users only</HelpText>
+          </FormControl>
+          <FormControl>
+            <label htmlFor="projectPi">Project PI </label>
+            <TextInput
+              type="text"
+              id="projectPi"
+              name="projectPi"
+              value={projectPi}
+              onChange={handleChangeProjectPi}
+            />
+            <HelpText>(if applicable)</HelpText>
           </FormControl>
           <FormControl>
             <label htmlFor="role">Your Role *</label>
