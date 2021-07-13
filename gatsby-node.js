@@ -5,6 +5,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const platformTemplate = path.resolve(`src/templates/platform-template.js`);
   const redirectTemplate = path.resolve(`src/templates/redirect-template.js`);
   const articleTemplate = path.resolve(`src/templates/article-template.js`);
+  const tagTemplate = path.resolve(`src/templates/tag-template.js`);
   const result = await graphql(`
     {
       allMarkdownRemark(
@@ -83,6 +84,26 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       path: node.from,
       component: redirectTemplate,
       context: node,
+    });
+  });
+
+  // Create tag pages
+  const allTags = new Set();
+  articles.forEach(
+    ({
+      node: {
+        frontmatter: { tags },
+      },
+    }) => {
+      if (!Array.from(tags)) return;
+      tags.forEach((tag) => allTags.add(tag));
+    }
+  );
+  allTags.forEach((tag) => {
+    createPage({
+      path: `/tagged/${tag}`,
+      component: tagTemplate,
+      context: { tag },
     });
   });
 
