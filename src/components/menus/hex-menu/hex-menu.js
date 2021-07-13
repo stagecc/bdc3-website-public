@@ -11,41 +11,40 @@ const carouselItems = [
     description:
       "Take control of your data with customizable tools and workflows",
     icon: ToolsIcon,
-    path: "/resources/services"
+    path: "/resources/services",
   },
   {
     text: "Data",
     description: "Access biomedical data when you need it and how you need it",
     icon: DataBoltIcon,
-    path: "/resources/data"
+    path: "/resources/data",
   },
   {
     text: "Learn",
     description: "Get the support you need to explore, analyze, and discover",
     icon: EducationIcon,
-    path: "/resources/learn"
+    path: "/resources/learn",
   },
   {
     text: "BYOD",
     description:
       "Use the BioData Catalyst ecosystem to build on your existing work",
     icon: ByodIcon,
-    path: "/resources/byod"
+    path: "/resources/byod",
   },
   {
     text: "Estimate",
     description:
       "Hacker urban systemic augmented reality silent tube wristwatch",
     icon: ByodIcon,
-    path: "/resources/byod"
+    path: "/resources/byod",
   },
   {
     text: "Join",
-    description:
-      "Table dolphin fetishism urban lights kanji jeans",
+    description: "Table dolphin fetishism urban lights kanji jeans",
     icon: ByodIcon,
-    path: "/resources/byod"
-  }
+    path: "/resources/byod",
+  },
 ];
 
 const Wrapper = styled.div`
@@ -78,7 +77,7 @@ export const HexMenu = () => {
   const [index, setIndex] = useState(1);
   const { isCompact } = useWindowWidth();
 
-  const handleHoverMenuItem = newIndex => event => setIndex(newIndex);
+  const handleHoverMenuItem = (newIndex) => (event) => setIndex(newIndex);
 
   return (
     <Wrapper>

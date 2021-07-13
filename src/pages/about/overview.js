@@ -2,19 +2,19 @@ import React, { Fragment } from "react";
 import Img from "gatsby-image";
 import { Link } from "gatsby";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
-import { SEO } from "../components/seo";
+import { SEO } from "../../components/seo";
 import styled from "styled-components";
-import { PageContent } from "../components/layout";
+import { PageContent } from "../../components/layout";
 import {
   Title,
   Heading,
   Subheading,
   Paragraph
-} from "../components/typography";
-import { List, ListItem } from "../components/list";
-import { ExternalLink } from "../components/link";
+} from "../../components/typography";
+import { List, ListItem } from "../../components/list";
+import { ExternalLink } from "../../components/link";
 import { Container as Grid, Row, Col, Visible } from "react-grid-system";
-import { usePartners, usePlatforms } from "../hooks";
+import { usePartners, usePlatforms } from "../../hooks";
 
 const LogoCloud = styled.div`
   text-align: center;

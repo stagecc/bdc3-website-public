@@ -49,7 +49,7 @@ const IndexPage = () => {
           </CardBody>
         </Card>
 
-        <Card>
+        {/* <Card>
           <CardHeader size="large">
             What can BioData Catalyst do for you?
           </CardHeader>
@@ -67,7 +67,7 @@ const IndexPage = () => {
               <ListItem primary="Construct and enhance annotated metadata for NHLBI datasets that comply with FAIR data principles" />
             </BulletedList>
           </CardBody>
-        </Card>
+        </Card> */}
       </Container>
     </PageContent>
   );
