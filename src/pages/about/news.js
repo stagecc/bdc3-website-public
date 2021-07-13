@@ -3,11 +3,11 @@ import { SEO } from "../../components/seo";
 import { PageContent } from "../../components/layout";
 import { graphql, Link } from "gatsby";
 import styled from "styled-components";
-import { Title, Heading, Meta } from "../components/typography";
-import { InlineList } from "../components/list";
-import { TagLink } from "../components/link";
-import { ClockIcon } from "../components/icons";
-import { useWindowWidth } from "../hooks";
+import { Title, Heading, Meta } from "../../components/typography";
+import { InlineList2 } from "../../components/list";
+import { TagLink } from "../../components/link";
+// import { ClockIcon } from "../components/icons";
+import { useWindowWidth } from "../../hooks";
 
 const ArticlePreview = styled.article`
   margin: 4rem 0;
@@ -44,13 +44,10 @@ const NewsListItem = ({ date, path, title, timeToRead, tags, content }) => {
       </Heading>
       <Details compact={isCompact}>
         <PublishDate>Published on {date}</PublishDate>
-        <TimeToRead>
-          <ClockIcon fill="var(--color-grey)" size={18} /> &nbsp; {timeToRead}{" "}
-          minute read
-        </TimeToRead>
+        <TimeToRead>&nbsp; {timeToRead} minute read</TimeToRead>
       </Details>
       <Tags>
-        <InlineList
+        <InlineList2
           title="Tags"
           items={tags.map((tag) => (
             <TagLink tag={tag} />
