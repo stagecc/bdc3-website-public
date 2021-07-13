@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { DataBoltIcon, EducationIcon, ToolsIcon, ByodIcon } from "../../icons";
+import {
+  DataBoltIcon,
+  EducationIcon,
+  ToolsIcon,
+  ByodIcon,
+  EstimateIcon,
+  JoinIcon,
+} from "../../icons";
 import { useWindowWidth } from "../../../hooks";
 import { Hexagon } from "./hexagon";
 import { MenuItemDescription } from "./hex-menu-descriptions";
@@ -36,14 +43,14 @@ const carouselItems = [
     text: "Estimate",
     description:
       "Hacker urban systemic augmented reality silent tube wristwatch",
-    icon: ByodIcon,
-    path: "/resources/byod",
+    icon: EstimateIcon,
+    path: "/",
   },
   {
     text: "Join",
     description: "Table dolphin fetishism urban lights kanji jeans",
-    icon: ByodIcon,
-    path: "/resources/byod",
+    icon: JoinIcon,
+    path: "/contact/ecosystem",
   },
 ];
 
