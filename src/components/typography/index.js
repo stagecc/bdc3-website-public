@@ -5,3 +5,4 @@ export * from "./subsubheading";
 export * from "./paragraph";
 export * from "./title";
 export * from "./meta";
+export * from "./subtitle";

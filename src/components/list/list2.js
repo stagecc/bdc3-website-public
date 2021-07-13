@@ -8,7 +8,6 @@ export const InlineList2 = ({
   separator = " ",
   noItemsIndicator = " ∅",
 }) => {
-  console.log(items);
   return (
     <Fragment>
       {title && <strong>{title}: </strong>}
@@ -27,7 +26,7 @@ export const InlineList2 = ({
 InlineList2.propTypes = {
   title: PropTypes.string,
   items: PropTypes.array.isRequired,
-  separator: PropTypes.string.isRequired,
+  separator: PropTypes.string,
   noItemsIndicator: PropTypes.any,
 };
 
