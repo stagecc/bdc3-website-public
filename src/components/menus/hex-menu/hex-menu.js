@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { DataBoltIcon, EducationIcon, ToolsIcon, ByodIcon } from "../../icons";
+import {
+  DataBoltIcon,
+  EducationIcon,
+  ToolsIcon,
+  ByodIcon,
+  EstimateIcon,
+  JoinIcon,
+} from "../../icons";
 import { useWindowWidth } from "../../../hooks";
 import { Hexagon } from "./hexagon";
 import { MenuItemDescription } from "./hex-menu-descriptions";
@@ -31,6 +38,19 @@ const carouselItems = [
       "Use the BioData Catalyst ecosystem to build on your existing work",
     icon: ByodIcon,
     path: "/resources/byod",
+  },
+  {
+    text: "Estimate",
+    description:
+      "Hacker urban systemic augmented reality silent tube wristwatch",
+    icon: EstimateIcon,
+    path: "/",
+  },
+  {
+    text: "Join",
+    description: "Table dolphin fetishism urban lights kanji jeans",
+    icon: JoinIcon,
+    path: "/contact/ecosystem",
   },
 ];
 
@@ -81,7 +101,7 @@ export const HexMenu = () => {
             key={i}
             path={tab.path}
             active={index === i}
-            size={180}
+            size={160}
             growOnActive={!isCompact}
             showtext={!isCompact}
             text={tab.text}

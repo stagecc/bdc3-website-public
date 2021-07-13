@@ -44,3 +44,5 @@ export * from "./twitter-icon";
 export * from "./videos-icon";
 export * from "./warning-icon";
 export * from "./youtube-icon";
+export * from "./estimate-icon";
+export * from "./join-icon";

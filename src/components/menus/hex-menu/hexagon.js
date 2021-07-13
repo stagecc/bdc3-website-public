@@ -8,19 +8,25 @@ const HexagonWrapper = styled(Link)`
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-60%, -50%);
   transform-origin: 50% 50%;
   &:nth-child(1) {
-    transform: translate(-45%, 4%);
+    transform: translate(-55%, 19%);
   }
   &:nth-child(2) {
-    transform: translate(-45%, -104%);
+    transform: translate(-55%, -89%);
   }
   &:nth-child(3) {
-    transform: translate(-125%, -50%);
+    transform: translate(-135%, -35%);
   }
   &:nth-child(4) {
-    transform: translate(35%, -50%);
+    transform: translate(25%, -35%);
+  }
+  &:nth-child(5) {
+    transform: translate(105%, -89%);
+  }
+  &:nth-child(6) {
+    transform: translate(105%, 19%);
   }
 `;
 
@@ -35,6 +41,7 @@ const HexagonInterior = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 0.5rem;
   transition: background-color 500ms, transform 250ms ease-out;
   transform-origin: 50% 50%;
   transform: scale(${props => (props.growOnActive && props.active ? 1.05 : 1)});
@@ -43,7 +50,6 @@ const HexagonInterior = styled.div`
 
 const HexagonText = styled.span`
   text-transform: uppercase;
-  margin-top: 1rem;
 `;
 
 export const Hexagon = ({
