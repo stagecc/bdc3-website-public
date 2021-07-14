@@ -44,7 +44,7 @@ const carouselItems = [
     description:
       "Hacker urban systemic augmented reality silent tube wristwatch",
     icon: EstimateIcon,
-    path: "/",
+    path: "/resources/cloud-credits",
   },
   {
     text: "Join",

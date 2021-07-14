@@ -46,6 +46,38 @@ const IndexPage = () => {
               community of practice working collaboratively to solve technical
               and scientific challenges.
             </Paragraph>
+            <Paragraph>
+              BioData Catalyst allows researchers to find, access, share, store,
+              and compute on large scale datasets. In this ecosystem,
+              researchers are able to:
+            </Paragraph>
+            <BulletedList>
+              <ListItem
+                primary={
+                  "Utilize the many “out of the box” tools available on BioData  Catalyst to ease the burden of designing and testing individual tools"
+                }
+              />{" "}
+              <ListItem
+                primary={`Establish and use secure workspaces for collaborative analysis
+                of NHLBI datasets and HLBS research by taking advantage of an
+                ecosystem that brings the computation to the data, not the data
+                to the computation`}
+              />{" "}
+              <ListItem
+                primary={`                Design and test tools that search and analyze the unique
+              characteristics of NHLBI datasets, and that also group data
+              based on certain shared characteristics so that researchers can
+              test hypotheses`}
+              />{" "}
+              <ListItem
+                primary={`Leverage a powerful and scalable infrastructure to share
+                  workflows, tools, datasets, and results for re-use by others`}
+              />{" "}
+              <ListItem
+                primary={`                Construct and enhance annotated metadata for NHLBI datasets that
+               comply with FAIR data principles`}
+              />
+            </BulletedList>
           </CardBody>
         </Card>
 
