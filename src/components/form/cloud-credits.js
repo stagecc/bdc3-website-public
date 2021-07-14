@@ -14,7 +14,7 @@ import {
   AdornedInput,
   Select,
   Option,
-  TextArea
+  TextArea,
 } from "./inputs";
 
 const FRESHDESK_API_KEY = process.env.GATSBY_FRESHDESK_API_KEY;
@@ -24,12 +24,12 @@ const FRESHDESK_API_TICKET_FIELDS_URL = `${FRESHDESK_API_ROOT_URL}/ticket_fields
 
 const requestOptions = {
   "Content-Type": "application/json",
-  auth: { username: FRESHDESK_API_KEY, password: "X" }
+  auth: { username: FRESHDESK_API_KEY, password: "X" },
 };
 
 const SubmitButton = styled(Button).attrs({
   type: "submit",
-  value: "Submit"
+  value: "Submit",
 })``;
 
 const ThankYouMessage = () => {
@@ -57,25 +57,37 @@ const ErrorMessage = () => {
   );
 };
 
-export const CloudCreditsForm = props => {
-  const [platformOptions, setPlatformOptions] = useState([]);
+export const CloudCreditsForm = (props) => {
   const [name, setName] = useState("");
+  const [username, setUserName] = useState("");
+  const [projectPi, setProjectPi] = useState("");
   const [email, setEmail] = useState("");
+  const [how, setHow] = useState("");
   const [role, setRole] = useState("");
+  const [cloudCreditsRequest, setCloudCreditsRequest] = useState("");
   const [organization, setOrganization] = useState("");
   const [collaborators, setCollaborators] = useState("");
+  const [relatedResearch, setRelatedResearch] = useState("");
   const [project, setProject] = useState("");
   const [justification, setJustification] = useState("");
-  const [previousFunding, setPreviousFunding] = useState(false);
   const [previousFundingDetails, setPreviousFundingDetails] = useState("");
-  const [estimate, setEstimate] = useState(1);
-  const [platform, setPlatform] = useState("");
+  const [estimate, setEstimate] = useState();
+  const [platform, setPlatform] = useState("Select One");
+  const [preferedAnalysisPlatform, setPreferedAnalysisPlatform] = useState(
+    "Not Applicable"
+  );
+  const [requestedTerraAmount, setRequestedTerraAmount] = useState(0);
+  const [
+    requestedSevenBridgesAmount,
+    setRequestedSevenBridgesAmount,
+  ] = useState(0);
 
-  const [justificationLength, setJustificationLength] = useState(0);
+  const [justificationLength, setJustificationLength] = useState();
   const [
     previousFundingDetailsLength,
-    setPreviousFundingDetailsLength
-  ] = useState(0);
+    setPreviousFundingDetailsLength,
+  ] = useState();
+  
   const [projectLength, setProjectLength] = useState(0);
 
   const [wasSubmitted, setWasSubmitted] = useState(false);
@@ -90,32 +102,36 @@ export const CloudCreditsForm = props => {
     const fetchPlatformOptions = async () => {
       await axios
         .get(FRESHDESK_API_TICKET_FIELDS_URL, requestOptions)
-        .then(response => {
-          const platformField = response.data.find(
-            field => field.name === "cf_what_bdcatalyst_service_will_you_use"
-          );
-          setPlatformOptions(platformField.choices);
+        .then((response) => {
+          // const platformField = response.data.find(
+          //   (field) => field.name === "cf_what_bdcatalyst_service_will_you_use"
+          // );
+          // setPlatformOptions(platformField.choices);
+          // console.log(response);
         })
-        .catch(error => console.error(error));
+        .catch((error) => console.error(error));
     };
     fetchPlatformOptions();
   }, []);
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     let prefix = testSubmission ? "[TEST] " : "";
     const description =
       `Name: ${name} ~~~~~ ` +
       `Email Address: ${email} ~~~~~ ` +
+      `Username (Seven Bridges Only)): ${username} ~~~~~ ` +
+      `Email Address: ${email} ~~~~~ ` +
+      `cf_what_platform_will_you_use_the_credit_on: ${platform} ~~~~~ ` +
       `Role: $${role} ~~~~~ ` +
       `Company/Organization: ${organization} ~~~~~ ` +
       `Collaborators: ${collaborators} ~~~~~ ` +
       `Project Name & Description: ${project} ~~~~~ ` +
       `Justification for Credits: ${justification} ~~~~~ ` +
-      `Previous Requested Cloud Credits: ${previousFunding} ~~~~~ ` +
       `Use of Initial Pilot Credits: ${previousFundingDetails} ~~~~~ ` +
       `Estimate of Cloud Credits Needed: $${estimate} ~~~~~ ` +
       `Platform/Service: ${platform} ~~~~~ ` +
+      `Organization: ${organization} ~~~~~ ` +
       `~~~~~ ~~~~~ (This ticket was submitted from ${window.location.href}.)`;
     const payload = {
       type: "Cloud Credits",
@@ -126,14 +142,22 @@ export const CloudCreditsForm = props => {
       name: name,
       email: email,
       custom_fields: {
-        cf_cloud_credits_collaborator_information: collaborators,
-        cf_cloud_credits_project_namedescription: project,
-        cf_justification_for_credits: justification,
-        cf_cloud_credits_previous_request: previousFunding,
-        cf_cloud_credits_use_of_initial_pilot_credits: previousFundingDetails,
-        cf_estimated_cloud_credits_requested: +estimate,
-        cf_what_bdcatalyst_service_will_you_use: platform
-      }
+        cf_cloud_credits_username_seven_bridges_only: username,
+        cf_what_bdcatalyst_service_will_you_use: platform,
+        cf_cf_cloud_credits_collaborator_information: role,
+        cf_cloud_credits_related_research_to_hlbs: relatedResearch,
+        cf_cloud_credits_how_did_you_learn_about_bdc: how,
+        cf_cloud_credits_request_type: cloudCreditsRequest,
+        cf_cloud_credits_preferred_analysis_platform_amount: preferedAnalysisPlatform,
+        cf_cloud_credits_project_pi: projectPi,
+        // cf_justification_for_credits: justification,
+        // cf_cloud_credits_collaborator_information: collaborators,
+        // cf_cf_organization: organization,
+        // cf_cloud_credits_project_namedescription: project,
+        // cf_cloud_credits_use_of_initial_pilot_credits: previousFundingDetails,
+        // cf_cloud_credits_requested_terra_amount: requestedTerraAmount,
+        // cf_cloud_credits_requested_seven_bridges_amount: requestedSevenBridgesAmount,
+      },
     };
 
     const submitTicket = async () => {
@@ -141,43 +165,52 @@ export const CloudCreditsForm = props => {
       setWasSubmitted(true);
       await axios
         .post(FRESHDESK_API_CREATE_TICKET_URL, payload, requestOptions)
-        .then(response => {
-          console.log(response);
-          console.log(response.status);
+        .then((response) => {
           if (![200, 201].includes(response.status)) {
             throw new Error(`Unsuccessful HTTP response, ${response.status}`);
           }
         })
-        .catch(error => {
-          console.log(error);
+        .catch((error) => {
           setError(error);
         });
     };
     submitTicket();
   };
 
-  const handleChangeName = event => setName(event.target.value);
-  const handleChangeEmail = event => setEmail(event.target.value);
-  const handleChangeRole = event => setRole(event.target.value);
-  const handleChangeOrganization = event => setOrganization(event.target.value);
-  const handleChangeCollaborators = event =>
+  const handleChangeName = (event) => setName(event.target.value);
+  const handleChangeProjectPi = (event) => setProjectPi(event.target.value);
+  const handleChangeUserName = (event) => setUserName(event.target.value);
+  const handleChangeEmail = (event) => setEmail(event.target.value);
+  const handleChangeRole = (event) => setRole(event.target.value);
+  const handleChangeOrganization = (event) =>
+    setOrganization(event.target.value);
+  const handleChangeCollaborators = (event) =>
     setCollaborators(event.target.value);
-  const handleChangeProject = event => {
+  const handleChangeProject = (event) => {
     setProject(event.target.value);
     setProjectLength(event.target.value.length);
   };
-  const handleChangeJustification = event => {
+  const handleChangeJustification = (event) => {
     setJustification(event.target.value);
     setJustificationLength(event.target.value.length);
   };
-  const handleChangePreviousFunding = event =>
-    setPreviousFunding(event.target.value);
-  const handleChangePreviousFundingDetails = event => {
+  const handleChangePreviousFundingDetails = (event) => {
     setPreviousFundingDetails(event.target.value);
     setPreviousFundingDetailsLength(event.target.value.length);
   };
-  const handleChangeEstimate = event => setEstimate(event.target.value);
-  const handleChangePlatform = event => setPlatform(event.target.value);
+  const handleChangeEstimate = (event) => setEstimate(event.target.value);
+  const handleChangePlatform = (event) => setPlatform(event.target.value);
+  const handleChangeRelatedResearch = (event) =>
+    setRelatedResearch(event.target.value);
+  const handleChangeHow = (event) => setHow(event.target.value);
+  const handleChangeCloudCreditsRequest = (event) =>
+    setCloudCreditsRequest(event.target.value);
+  const handleChangePreferedAnalysisPlatform = (event) =>
+    setPreferedAnalysisPlatform(event.target.value);
+  const handleChangeRequestedSevenBridgesAmount = (event) =>
+    setRequestedSevenBridgesAmount(event.target.value);
+  const handleChangeRequestedTerraAmount = (event) =>
+    setRequestedTerraAmount(event.target.value);
 
   return (
     <Card {...props}>
@@ -186,201 +219,330 @@ export const CloudCreditsForm = props => {
         <Paragraph right noMargin>
           * <em>All fields are required.</em>
         </Paragraph>
-        {!wasSubmitted && platformOptions.length > 0 && (
-          <Form onSubmit={handleSubmit}>
-            <FormControl>
-              <label htmlFor="name" required>
-                Your Name *
-              </label>
-              <TextInput
-                type="text"
-                required
-                id="name"
-                name="name"
-                value={name}
-                onChange={handleChangeName}
-              />
-            </FormControl>
-            <FormControl>
-              <label htmlFor="email">Email Address *</label>
-              <TextInput
-                type="email"
-                required
-                id="email"
-                name="email"
-                value={email}
-                onChange={handleChangeEmail}
-              />
-              <HelpText>Please use an organizational email address.</HelpText>
-            </FormControl>
-            <FormControl>
-              <label htmlFor="role">Your Role *</label>
-              <TextInput
-                type="role"
-                required
-                id="role"
-                name="role"
-                value={role}
-                onChange={handleChangeRole}
-              />
-            </FormControl>
-            <FormControl>
-              <label htmlFor="organization">Your Organization *</label>
-              <TextInput
-                type="organization"
-                required
-                id="organization"
-                name="organization"
-                value={organization}
-                onChange={handleChangeOrganization}
-              />
-            </FormControl>
-            <FormControl>
-              <label htmlFor="collaborators">Collaborators *</label>
-              <TextArea
-                required
-                id="collaborators"
-                name="collaborators"
-                placeholder={`Enter each collaborator's name, email, role, and organization.`}
-                value={collaborators}
-                onChange={handleChangeCollaborators}
-              />
-              <HelpText>
-                Please list&mdash;one per line&mdash;the Name, Email, Role, and
-                Organization of each PI, Collaborator, and Student.
-              </HelpText>
-            </FormControl>
-            <FormControl>
-              <label htmlFor="project">Project Name & Description *</label>
-              <TextArea
-                required
-                id="project"
-                name="project"
-                placeholder={`Enter project name and a brief description.`}
-                value={project}
-                onChange={handleChangeProject}
-                maxLength="3000"
-              />
-              <HelpText>
-                Limit your response to 3000 characters. (Current length:{" "}
-                {projectLength} / 3000 characters.)
-              </HelpText>
-            </FormControl>
-            <FormControl>
-              <label htmlFor="previous-funding">
-                Have you submitted a cloud credits request before? *
-              </label>
-              <Select
-                required
-                id="previous-funding"
-                name="previous-funding"
-                value={previousFunding}
-                onChange={handleChangePreviousFunding}
-              >
-                <Option value="">Select One</Option>
-                <Option value="Yes">Yes</Option>
-                <Option value="No">No</Option>
-              </Select>
-            </FormControl>
-            <FormControl>
-              <label htmlFor="previous-funding-details">
-                Use of Initial Pilot Credits{" "}
-                {previousFunding === "Yes" ? "*" : ""}
-              </label>
-              <TextArea
-                id="previous-funding-details"
-                name="previous-funding-details"
-                placeholder={
-                  previousFunding !== "Yes"
-                    ? `N/A`
-                    : `Briefly outline your use of previous cloud credit funding.`
+        <Form onSubmit={handleSubmit}>
+          <FormControl>
+            <label htmlFor="name" required>
+              Your Name *
+            </label>
+            <TextInput
+              type="text"
+              required
+              id="name"
+              name="name"
+              value={name}
+              onChange={handleChangeName}
+            />
+          </FormControl>
+          <FormControl>
+            <label htmlFor="email">Email Address *</label>
+            <TextInput
+              type="email"
+              required
+              id="email"
+              name="email"
+              value={email}
+              onChange={handleChangeEmail}
+            />
+            <HelpText>Please use an organizational email address.</HelpText>
+          </FormControl>
+          <FormControl>
+            <label htmlFor="username">Platform User Name</label>
+            <TextInput
+              type="text"
+              id="username"
+              name="username"
+              value={username}
+              onChange={handleChangeUserName}
+            />
+            <HelpText>Seven Bridges users only</HelpText>
+          </FormControl>
+          <FormControl>
+            <label htmlFor="projectPi">Project PI </label>
+            <TextInput
+              type="text"
+              id="projectPi"
+              name="projectPi"
+              value={projectPi}
+              onChange={handleChangeProjectPi}
+            />
+            <HelpText>(if applicable)</HelpText>
+          </FormControl>
+          <FormControl>
+            <label htmlFor="role">Your Role *</label>
+            <TextInput
+              type="role"
+              required
+              id="role"
+              name="role"
+              value={role}
+              onChange={handleChangeRole}
+            />
+          </FormControl>
+          <FormControl>
+            <label htmlFor="organization">Your Organization *</label>
+            <TextInput
+              type="organization"
+              required
+              id="organization"
+              name="organization"
+              value={organization}
+              onChange={handleChangeOrganization}
+            />
+          </FormControl>
+          <FormControl>
+            <label htmlFor="collaborators">Collaborators (if applicable)</label>
+            <TextArea
+              id="collaborators"
+              name="collaborators"
+              placeholder={`Enter each collaborator's name, email, role, and organization.`}
+              value={collaborators}
+              onChange={handleChangeCollaborators}
+            />
+            <HelpText>
+              Please list&mdash;one per line&mdash;the Name, Email, Role, and
+              Organization of each PI, Collaborator, and Student.
+            </HelpText>
+          </FormControl>
+          <FormControl>
+            <label htmlFor="relatedResearch">
+              Is your research related to HLBS? *
+            </label>
+            <Select
+              required
+              id="relatedResearch"
+              name="relatedResearch"
+              value={relatedResearch}
+              onChange={handleChangeRelatedResearch}
+            >
+              <Option value="">Select One</Option>
+
+              <Option You value={"Yes"}>
+                Yes
+              </Option>
+              <Option You value={"No"}>
+                No
+              </Option>
+            </Select>
+            <HelpText>
+              Cloud Credits are available only to researchers of Heart, Lung,
+              Blood and Sleep (HLBS) disorders.
+            </HelpText>
+          </FormControl>
+          <FormControl>
+            <label htmlFor="how">
+              How did you learn about BioData Catalyst?
+            </label>
+            <TextArea
+              id="how"
+              name="how"
+              value={how}
+              onChange={handleChangeHow}
+            />
+          </FormControl>
+          <FormControl>
+            <label htmlFor="cloudCreditsRequest">
+              BioData Catalyst users may request one of the following: *
+            </label>
+            <Select
+              required
+              id="cloudCreditsRequest"
+              name="cloudCreditsRequest"
+              value={cloudCreditsRequest}
+              onChange={handleChangeCloudCreditsRequest}
+            >
+              <Option value="">Select One</Option>
+              <Option
+                You
+                value={
+                  "$500 in initial pilot cloud credits to begin a project or explore the ecosystem"
                 }
-                value={previousFundingDetails}
-                onChange={handleChangePreviousFundingDetails}
-                maxLength="3000"
-                disabled={previousFunding !== "Yes"}
-                required={previousFunding === "Yes"}
-              />
-              <HelpText>
-                Briefly outline your use of previous cloud credit funding. Limit
-                your response to 3000 characters. (Current length:{" "}
-                {previousFundingDetailsLength} / 3000 characters.)
-              </HelpText>
-            </FormControl>
+              >
+                $500 in initial pilot cloud credits to begin a project or
+                explore the ecosystem
+              </Option>
+              <Option You value={"Additional cloud credits"}>
+                Additional cloud credits
+              </Option>
+            </Select>
+          </FormControl>
+          {cloudCreditsRequest ===
+            "$500 in initial pilot cloud credits to begin a project or explore the ecosystem" && (
             <FormControl>
-              <label htmlFor="justification">Justification for Credits *</label>
-              <TextArea
-                required
-                id="justification"
-                name="justification"
-                placeholder={`Enter a brief justification for your request.`}
-                value={justification}
-                onChange={handleChangeJustification}
-                maxLength="6000"
-              />
-              <HelpText>
-                Reviewers will be interested in: 1.) Significance and goals of
-                the project; 2.) Datasets, tools, types of analysis to be used;
-                3.) Experience using cloud platforms; 4.) Anticipated timeline
-                for the work; 5.) Whether workflows/pipelines have been
-                optimized and/or if guidance/consultation from the platforms has
-                been sought; 6.) Estimated costs split out by development,
-                testing, analysis optimization, and the running of the analysis
-                (provide a basis for the estimated costs e.g. prior research
-                results with reference numbers); 7.) Number of samples, cost per
-                sample, and whether there is sufficient power of analysis. Limit
-                your response to 6000 characters. (Current length:{" "}
-                {justificationLength} / 6000 characters.)
-              </HelpText>
-            </FormControl>
-            <FormControl>
-              <label htmlFor="estimate">
-                Estimate of Cloud Credits Needed *
+              <label htmlFor="preferedAnalysisPlatform">
+                Select your preferred analysis platform * (or choose to explore
+                both)
               </label>
-              <AdornedInput
-                type="number"
-                required
-                min="1"
-                id="estimate"
-                name="estimate"
-                value={estimate}
-                onChange={handleChangeEstimate}
-                adornment="$"
-              />
-              <HelpText>
-                Please enter your estimate in US Dollars. Round up to the
-                nearest $100 and add a $300 buffer for troubleshooting and
-                testing.
-              </HelpText>
-            </FormControl>
-            <FormControl>
-              <label htmlFor="platform">Preferred Platform/Service *</label>
               <Select
                 required
-                id="platform"
-                name="platform"
-                value={platform}
-                onChange={handleChangePlatform}
+                id="preferedAnalysisPlatform"
+                name="preferedAnalysisPlatform"
+                value={preferedAnalysisPlatform}
+                onChange={handleChangePreferedAnalysisPlatform}
               >
                 <Option value="">Select One</Option>
-                {platformOptions.map(option => (
-                  <Option key={option} value={option}>
-                    {option}
-                  </Option>
-                ))}
+                <Option You value={"$500 on Seven Bridges"}>
+                  $500 on Seven Bridges
+                </Option>
+                <Option You value={"$500 on Terra"}>
+                  $500 on Terra
+                </Option>
+                <Option You value={"$250 each on both Seven Bridges and Terra"}>
+                  $250 each on both Seven Bridges and Terra
+                </Option>
               </Select>
             </FormControl>
-            <br />
-            <SubmitButton>Submit</SubmitButton>
-          </Form>
-        )}
-        {!wasSubmitted && platformOptions.length === 0 && (
+          )}
+          {cloudCreditsRequest === "Additional cloud credits" && (
+            <>
+              <FormControl>
+                <label htmlFor="project">Project Name & Description *</label>
+                <TextArea
+                  required
+                  id="project"
+                  name="project"
+                  placeholder={`Enter project name and a brief description.`}
+                  value={project}
+                  onChange={handleChangeProject}
+                  maxLength="3000"
+                />
+                <HelpText>
+                  Limit your response to 3000 characters. (Current length:{" "}
+                  {projectLength} / 3000 characters.)
+                </HelpText>
+              </FormControl>
+              <FormControl>
+                <label htmlFor="previous-funding-details">
+                  Previous use of cloud credits *
+                </label>
+                <TextArea
+                  id="previous-funding-details"
+                  name="previous-funding-details"
+                  placeholder={`Briefly outline your use of previous cloud credit funding.`}
+                  value={previousFundingDetails}
+                  onChange={handleChangePreviousFundingDetails}
+                  maxLength="3000"
+                  required
+                />
+                <HelpText>
+                  Briefly outline your use of previous cloud credit funding.
+                  Limit your response to 3000 characters. (Current length:
+                  {previousFundingDetailsLength} / 3000 characters.)
+                </HelpText>
+              </FormControl>
+              <FormControl>
+                <label htmlFor="estimate">
+                  Estimate of Cloud Credits Needed *
+                </label>
+                <AdornedInput
+                  type="number"
+                  required
+                  min="1"
+                  id="estimate"
+                  name="estimate"
+                  value={estimate}
+                  onChange={handleChangeEstimate}
+                  adornment="$"
+                />
+                <HelpText>
+                  Please enter your estimate in US Dollars. Round up to the
+                  nearest $100 and add a $300 buffer for troubleshooting and
+                  testing.
+                </HelpText>
+              </FormControl>
+              <FormControl>
+                <label htmlFor="justification">
+                  Justification for Credits *
+                </label>
+                <TextArea
+                  required
+                  id="justification"
+                  name="justification"
+                  placeholder={`Enter a brief justification for your request.`}
+                  value={justification}
+                  onChange={handleChangeJustification}
+                  maxLength="6000"
+                />
+                <HelpText>
+                  Reviewers will be interested in: 1.) Significance and goals of
+                  the project; 2.) Datasets, tools, types of analysis to be
+                  used; 3.) Experience using cloud platforms; 4.) Anticipated
+                  timeline for the work; 5.) Whether workflows/pipelines have
+                  been optimized and/or if guidance/consultation from the
+                  platforms has been sought; 6.) Estimated costs split out by
+                  development, testing, analysis optimization, and the running
+                  of the analysis (provide a basis for the estimated costs e.g.
+                  prior research results with reference numbers); 7.) Number of
+                  samples, cost per sample, and whether there is sufficient
+                  power of analysis. Limit your response to 6000 characters.
+                  (Current length: {justificationLength} / 6000 characters.)
+                </HelpText>
+              </FormControl>
+              <FormControl>
+                <label htmlFor="platform">
+                  Select the platform on which you will use the additional
+                  credits: *
+                </label>
+                <Select
+                  required
+                  id="platform"
+                  name="platform"
+                  value={platform}
+                  onChange={handleChangePlatform}
+                >
+                  <Option value="Select One">Select One</Option>
+                  <Option value="Seven Bridges">Seven Bridges</Option>
+                  <Option value="Terra">Terra</Option>
+                  <Option value="Both Seven Bridges and Terra">
+                    Both Seven Bridges and Terra
+                  </Option>
+                </Select>
+              </FormControl>
+              {platform === "Both Seven Bridges and Terra" && (
+                <>
+                  <FormControl>
+                    <label htmlFor="requestedSevenBridgesAmount">
+                      Indicate the amount of cloud credits requested for use on
+                      each platform *
+                    </label>
+                    <AdornedInput
+                      type="number"
+                      required
+                      min="1"
+                      id="requestedSevenBridgesAmount"
+                      name="requestedSevenBridgesAmount"
+                      value={requestedSevenBridgesAmount}
+                      onChange={handleChangeRequestedSevenBridgesAmount}
+                      adornment="$"
+                      placeholder="Seven Bridges:"
+                    />
+                    <HelpText>Seven Bridges</HelpText>
+                    <AdornedInput
+                      type="number"
+                      required
+                      min="1"
+                      id="requestedTerraAmount"
+                      name="requestedTerraAmount"
+                      value={requestedTerraAmount}
+                      onChange={handleChangeRequestedTerraAmount}
+                      adornment="$"
+                      placeholder="Terra:"
+                    />
+                    <HelpText>Terra</HelpText>
+                  </FormControl>
+                </>
+              )}
+            </>
+          )}
+          <br />
+          <SubmitButton>Submit</SubmitButton>
+        </Form>
+        {/* {!wasSubmitted && platformOptions.length === 0 && (
           <LoadingDots
             color="var(--color-crimson)"
             text="Loading form..."
             textPlacement="top"
           />
-        )}
+        )} */}
         {wasSubmitted && !error && <ThankYouMessage />}
         {wasSubmitted && error && <ErrorMessage />}
       </CardBody>
