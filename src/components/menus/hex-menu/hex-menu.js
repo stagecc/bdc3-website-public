@@ -41,14 +41,14 @@ const carouselItems = [
   },
   {
     text: "Estimate",
-    description:
-      "Hacker urban systemic augmented reality silent tube wristwatch",
+    description: "Explore pilot funding and budgeting for future cloud costs",
     icon: EstimateIcon,
     path: "/resources/cloud-credits",
   },
   {
     text: "Join",
-    description: "Table dolphin fetishism urban lights kanji jeans",
+    description:
+      "Join our community of researchers making advances in HLBS science",
     icon: JoinIcon,
     path: "/contact/ecosystem",
   },
