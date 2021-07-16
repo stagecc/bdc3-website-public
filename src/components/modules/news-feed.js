@@ -24,7 +24,7 @@ export const NewsFeedModule = () => {
           <Subheading>{article.title}</Subheading>
           <Paragraph>
             {article.excerpt}
-            &nbsp;&nbsp;&nbsp;<Link to={article.path}>Read More ></Link>
+            &nbsp;&nbsp;&nbsp;<Link to={article.path}>Read More</Link>
           </Paragraph>
         </ArticlePreview>
       ))}

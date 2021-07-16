@@ -1,13 +1,13 @@
 ---
 path: /news/welcome
-date: 2021-08-20
+date: 2021-07-16
 title: "NHLBI BioData Catalyst welcomes all researchers"
 subtitle: "Cloud-based ecosystem provides tools, applications, and workflows in secure workspaces for the heart, lung, blood, and sleep research community."
-tags: ["press release", "NSF"]
+tags: ["press release"]
 seo:
   title: "NHLBI BioData Catalyst welcomes all researchers"
   description: "Cloud-based ecosystem provides tools, applications, and workflows in secure workspaces for the heart, lung, blood, and sleep research community. "
-  keywords: ["NSF", "grant award"]
+  keywords: [""]
 ---
 
 The NHLBI BioData Catalyst announced today that its ecosystem, which has undergone rigorous pilot testing, is now open to all researchers.
