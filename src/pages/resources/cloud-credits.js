@@ -11,7 +11,6 @@ import { BulletedList, ListItem } from "../../components/list";
 const CloudCreditsPage = () => (
   <PageContent width="95%" maxWidth="1200px" center gutters>
     <SEO title="Cloud Credits" description="" keywords="" />
-
     <Title>Cloud Costs and Credits</Title>
 
     <section>

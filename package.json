@@ -21,7 +21,7 @@
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.1.35",
     "gatsby-transformer-json": "^2.4.2",
-    "gatsby-transformer-remark": "^2.6.35",
+    "gatsby-transformer-remark": "^2.16.1",
     "gatsby-transformer-sharp": "^2.3.1",
     "gatsby-transformer-yaml": "^2.2.25",
     "jwt-decode": "^2.2.0",

@@ -1,1 +1,1 @@
-export * from './data-carousel'
+export * from "./data-carousel";

@@ -87,6 +87,7 @@ export const CloudCreditsForm = (props) => {
     previousFundingDetailsLength,
     setPreviousFundingDetailsLength,
   ] = useState();
+
   const [projectLength, setProjectLength] = useState(0);
 
   const [wasSubmitted, setWasSubmitted] = useState(false);
@@ -106,7 +107,7 @@ export const CloudCreditsForm = (props) => {
           //   (field) => field.name === "cf_what_bdcatalyst_service_will_you_use"
           // );
           // setPlatformOptions(platformField.choices);
-          // console.log(response);
+          console.log(response);
         })
         .catch((error) => console.error(error));
     };
@@ -165,14 +166,11 @@ export const CloudCreditsForm = (props) => {
       await axios
         .post(FRESHDESK_API_CREATE_TICKET_URL, payload, requestOptions)
         .then((response) => {
-          // console.log(response);
-          // console.log(response.status);
           if (![200, 201].includes(response.status)) {
             throw new Error(`Unsuccessful HTTP response, ${response.status}`);
           }
         })
         .catch((error) => {
-          // console.log(error);
           setError(error);
         });
     };

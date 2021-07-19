@@ -1,2 +1,2 @@
-export * from './fellows-profile'
-export * from './fellows-link-list'
+export * from "./fellows-profile";
+export * from "./fellows-link-list";

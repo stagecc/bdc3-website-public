@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export const LineBreak = ({ count = 1 }) => {
-    return (
-          [...Array(count).keys()].map(i => <br key={ i }/>)
-    )
-}
+  return [...Array(count).keys()].map(i => <br key={i} />);
+};
