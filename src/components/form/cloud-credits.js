@@ -87,7 +87,7 @@ export const CloudCreditsForm = (props) => {
     previousFundingDetailsLength,
     setPreviousFundingDetailsLength,
   ] = useState();
-  
+
   const [projectLength, setProjectLength] = useState(0);
 
   const [wasSubmitted, setWasSubmitted] = useState(false);
@@ -107,7 +107,7 @@ export const CloudCreditsForm = (props) => {
           //   (field) => field.name === "cf_what_bdcatalyst_service_will_you_use"
           // );
           // setPlatformOptions(platformField.choices);
-          // console.log(response);
+          console.log(response);
         })
         .catch((error) => console.error(error));
     };

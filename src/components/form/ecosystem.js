@@ -92,6 +92,7 @@ export const EcoSystemForm = (props) => {
           if (![200, 201].includes(response.status)) {
             throw new Error(`Unsuccessful HTTP response, ${response.status}`);
           } else {
+            console.log(response);
             navigate("/contact/ecosuccess");
           }
         })

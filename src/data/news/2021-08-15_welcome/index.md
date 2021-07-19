@@ -3,7 +3,7 @@ path: /news/welcome
 date: 2021-07-16
 title: "NHLBI BioData Catalyst welcomes all researchers"
 subtitle: "Cloud-based ecosystem provides tools, applications, and workflows in secure workspaces for the heart, lung, blood, and sleep research community."
-tags: ["press release"]
+tags: ["news"]
 seo:
   title: "NHLBI BioData Catalyst welcomes all researchers"
   description: "Cloud-based ecosystem provides tools, applications, and workflows in secure workspaces for the heart, lung, blood, and sleep research community. "
