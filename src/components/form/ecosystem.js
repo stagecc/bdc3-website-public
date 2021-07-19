@@ -40,14 +40,11 @@ const ErrorMessage = () => {
   return (
     <Fragment>
       <Paragraph center>
-        Sorry &mdash; an error occurred while submitting your request!
-      </Paragraph>
-      <Paragraph center>
-        Please submit your request on{" "}
-        <ExternalLink to="https://biodatacatalyst.nhlbi.nih.gov/contact">
-          our help desk
-        </ExternalLink>{" "}
-        while we resolve this issue. Thanks!
+        The email address provided is already associated with a BioData Catalyst
+        account. For questions, please email{" "}
+        <a href="mailto: biodatacatalyst@nhlbi.nih.gov">
+          biodatacatalyst@nhlbi.nih.gov
+        </a>
       </Paragraph>
     </Fragment>
   );
