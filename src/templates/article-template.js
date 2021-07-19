@@ -23,7 +23,9 @@ export default ({ data, pageContext }) => {
       <div className="news-item-container">
         <div className="news-item">
           <Title>{frontmatter.title}</Title>
-          <Subtitle>{frontmatter.subtitle}</Subtitle>
+          <Subtitle className="article-subtitle">
+            {frontmatter.subtitle}
+          </Subtitle>
           <Meta>Published on {frontmatter.date}</Meta>
           <Meta>
             <InlineList2

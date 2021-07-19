@@ -54,7 +54,7 @@ const NewsListItem = ({ date, path, title, timeToRead, tags, content }) => {
           ))}
         />
       </Tags>
-      <main>{content}</main>
+      <main className="news-snippet">{content}</main>
     </ArticlePreview>
   );
 };
