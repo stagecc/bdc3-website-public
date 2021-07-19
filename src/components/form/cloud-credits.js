@@ -107,7 +107,7 @@ export const CloudCreditsForm = (props) => {
           //   (field) => field.name === "cf_what_bdcatalyst_service_will_you_use"
           // );
           // setPlatformOptions(platformField.choices);
-          console.log(response);
+          // console.log(response);
         })
         .catch((error) => console.error(error));
     };
@@ -161,7 +161,7 @@ export const CloudCreditsForm = (props) => {
     };
 
     const submitTicket = async () => {
-      console.log("Submitting", payload);
+      // console.log("Submitting", payload);
       setWasSubmitted(true);
       await axios
         .post(FRESHDESK_API_CREATE_TICKET_URL, payload, requestOptions)
