@@ -152,6 +152,7 @@ export const CloudCreditsForm = (props) => {
         cf_cloud_credits_project_pi: projectPi,
         // cf_justification_for_credits: justification,
         // cf_cloud_credits_collaborator_information: collaborators,
+        // cf_cf_organization: organization,
         // cf_cloud_credits_project_namedescription: project,
         // cf_cloud_credits_use_of_initial_pilot_credits: previousFundingDetails,
         // cf_cloud_credits_requested_terra_amount: requestedTerraAmount,
