@@ -131,9 +131,11 @@ export const CloudCreditsForm = (props) => {
       `Select your preferred analysis platform (or choose to explore both) ${preferedAnalysisPlatform} ~~~~~ ` +
       `Project Name & Description: ${project} ~~~~~ ` +
       `Justification for Credits: ${justification} ~~~~~ ` +
-      `Use of Initial Pilot Credits: ${previousFundingDetails} ~~~~~ ` +
+      `cf_cloud_credits_previous_request: ${previousFundingDetails} ~~~~~ ` +
       `Estimate of Cloud Credits Needed: $${estimate} ~~~~~ ` +
       `Platform/Service: ${platform} ~~~~~ ` +
+      `cf_cloud_credits_requested_terra_amount: ${requestedTerraAmount} ~~~~~ ` +
+      `cf_cloud_credits_requested_seven_bridges_amount: ${requestedSevenBridgesAmount} ~~~~~ ` +
       `~~~~~ ~~~~~ (This ticket was submitted from ${window.location.href}.)`;
     const payload = {
       type: "Cloud Credits",
