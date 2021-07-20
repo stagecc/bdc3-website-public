@@ -121,8 +121,8 @@ export const CloudCreditsForm = (props) => {
       `Name: ${name} ~~~~~ ` +
       `Email Address: ${email} ~~~~~ ` +
       `Username (Seven Bridges Only)): ${username} ~~~~~ ` +
-      `Project Pi (If applicable): $${projectPi} ~~~~~ ` +
-      `Role: $${role} ~~~~~ ` +
+      `Project Pi (If applicable): ${projectPi} ~~~~~ ` +
+      `Role: ${role} ~~~~~ ` +
       `Company/Organization: ${organization} ~~~~~ ` +
       `Collaborators: ${collaborators} ~~~~~ ` +
       `Is your research related to HLBS?: ${relatedResearch} ~~~~~ ` +
@@ -131,12 +131,30 @@ export const CloudCreditsForm = (props) => {
       `Select your preferred analysis platform (or choose to explore both) ${preferedAnalysisPlatform} ~~~~~ ` +
       `Project Name & Description: ${project} ~~~~~ ` +
       `Justification for Credits: ${justification} ~~~~~ ` +
-      `cf_cloud_credits_previous_request: ${previousFundingDetails} ~~~~~ ` +
+      `cf_cloud_credits_previous_use_of_cloud_credits: ${previousFundingDetails} ~~~~~ ` +
       `Estimate of Cloud Credits Needed: $${estimate} ~~~~~ ` +
       `Platform/Service: ${platform} ~~~~~ ` +
       `cf_cloud_credits_requested_terra_amount: ${requestedTerraAmount} ~~~~~ ` +
       `cf_cloud_credits_requested_seven_bridges_amount: ${requestedSevenBridgesAmount} ~~~~~ ` +
       `~~~~~ ~~~~~ (This ticket was submitted from ${window.location.href}.)`;
+
+    const additionalFields =
+      cloudCreditsRequest === "Additional cloud credits"
+        ? {
+            cf_cloud_credits_project_namedescription: project,
+            cf_cloud_credits_previous_use_of_cloud_credits: previousFundingDetails,
+            cf_estimated_cloud_credits_requested: Number(estimate),
+            cf_justification_for_credits: justification,
+            cf_what_bdcatalyst_service_will_you_use: platform,
+            cf_cloud_credits_requested_terra_amount: Number(
+              requestedTerraAmount
+            ),
+            cf_cloud_credits_requested_seven_bridges_amount: Number(
+              requestedSevenBridgesAmount
+            ),
+          }
+        : {};
+
     const payload = {
       type: "Cloud Credits",
       subject: prefix + "Cloud Credits Request",
@@ -155,17 +173,10 @@ export const CloudCreditsForm = (props) => {
         cf_cloud_credits_how_did_you_learn_about_bdc: how,
         cf_cloud_credits_request_type: cloudCreditsRequest,
         cf_cloud_credits_preferred_analysis_platform_amount: preferedAnalysisPlatform,
-
-        // ------
-        // cf_cloud_credits_project_namedescription: project,
-        // cf_cloud_credits_previous_request: previousFundingDetails,
-        // cf_estimated_cloud_credits_requested: estimate,
-        // cf_justification_for_credits: justification,
-        // cf_what_bdcatalyst_service_will_you_use: platform,
-        // cf_cloud_credits_requested_terra_amount: requestedTerraAmount,
-        // cf_cloud_credits_requested_seven_bridges_amount: requestedSevenBridgesAmount,
+        ...additionalFields,
       },
     };
+    console.log(payload);
 
     const submitTicket = async () => {
       // console.log("Submitting", payload);
