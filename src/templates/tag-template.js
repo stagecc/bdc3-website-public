@@ -89,7 +89,7 @@ export const newByTagQuery = graphql`
   query($tag: String!) {
     news: allMarkdownRemark(
       filter: {
-        fileAbsolutePath: { regex: "/news/" }
+        fileAbsolutePath: { regex: "/latest-updates/" }
         frontmatter: { tags: { in: [$tag] } }
       }
     ) {
