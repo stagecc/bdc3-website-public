@@ -56,7 +56,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
   // Create news items pages
   const articles = newsResults.data.allMarkdownRemark.edges.filter(({ node }) =>
-    node.fileAbsolutePath.includes("/news/")
+    node.fileAbsolutePath.includes("/latest-updates/")
   );
   articles.forEach(({ node }, index) => {
     createPage({

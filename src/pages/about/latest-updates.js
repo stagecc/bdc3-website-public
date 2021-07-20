@@ -73,7 +73,7 @@ const NewsPage = ({ data }) => {
         description="Read about news and current events that are related to BioData Catalyst."
         keywords={["news", "events", "press"]}
       />
-      <Title>News</Title>
+      <Title>Latest Updates</Title>
       {news.map(({ node }) => (
         <NewsListItem
           key={node.frontmatter.path}

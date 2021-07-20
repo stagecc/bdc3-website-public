@@ -12,8 +12,8 @@ export const menuItems = [
         path: "/about/overview",
       },
       {
-        text: "News",
-        path: "/about/news",
+        text: "Latest Updates",
+        path: "/about/latest-updates",
       },
     ],
   },

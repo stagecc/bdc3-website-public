@@ -1,5 +1,5 @@
 ---
-path: /news/NHLBI-BioData-Catalyst-welcomes-all-researchers
+path: /latest-updates/NHLBI-BioData-Catalyst-welcomes-all-researchers
 date: 2021-07-20
 title: "NHLBI BioData Catalyst welcomes all researchers"
 subtitle: "Cloud-based ecosystem provides tools, applications, and workflows in secure workspaces for the heart, lung, blood, and sleep research community."
