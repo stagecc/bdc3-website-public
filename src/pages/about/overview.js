@@ -9,7 +9,7 @@ import {
   Title,
   Heading,
   Subheading,
-  Paragraph
+  Paragraph,
 } from "../../components/typography";
 import { List, ListItem } from "../../components/list";
 import { ExternalLink } from "../../components/link";
@@ -47,37 +47,43 @@ const AboutPage = ({ data }) => {
                 style={{
                   position: "sticky",
                   top: "16rem",
-                  paddingRight: "2rem"
+                  paddingRight: "2rem",
                 }}
                 right
               >
                 <ListItem
                   primary={
-                    <AnchorLink to="/about#what-we-offer">
+                    <AnchorLink to="/about/overview#what-we-offer">
                       What we Offer
                     </AnchorLink>
                   }
                 />
                 <ListItem
                   primary={
-                    <AnchorLink to="/about#who-we-are">Who we Are</AnchorLink>
+                    <AnchorLink to="/about/overview#who-we-are">
+                      Who we Are
+                    </AnchorLink>
                   }
                 />
                 <ListItem
                   primary={
-                    <AnchorLink to="/about#contributing">Contribute</AnchorLink>
+                    <AnchorLink to="/about/overview#contributing">
+                      Contribute
+                    </AnchorLink>
                   }
                 />
                 <ListItem
                   primary={
-                    <AnchorLink to="/about#data-protection">
+                    <AnchorLink to="/about/overview#data-protection">
                       Data Protection
                     </AnchorLink>
                   }
                 />
                 <ListItem
                   primary={
-                    <AnchorLink to="/about#citation">Citation</AnchorLink>
+                    <AnchorLink to="/about/overview#citation">
+                      Citation
+                    </AnchorLink>
                   }
                 />
               </List>
@@ -136,7 +142,7 @@ const AboutPage = ({ data }) => {
               </Paragraph>
 
               <List dense>
-                {partners.map(partner => (
+                {partners.map((partner) => (
                   <ListItem key={partner.name} primary={partner.name} />
                 ))}
               </List>
@@ -144,7 +150,7 @@ const AboutPage = ({ data }) => {
               <Subheading>Platforms Powering Our Ecosystem</Subheading>
 
               <LogoCloud>
-                {platforms.map(platform => (
+                {platforms.map((platform) => (
                   <Link
                     key={platform.title}
                     to={platform.path}
