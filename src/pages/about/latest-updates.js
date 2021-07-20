@@ -93,7 +93,7 @@ export const query = graphql`
   query {
     allMarkdownRemark(
       sort: { fields: frontmatter___date, order: DESC }
-      filter: { fileAbsolutePath: { regex: "/news/" } }
+      filter: { fileAbsolutePath: { regex: "/latest-updates/" } }
     ) {
       edges {
         node {

@@ -20,19 +20,19 @@ module.exports = {
       "lung",
       "blood",
       "sleep",
-      "disorders"
+      "disorders",
     ],
     siteUrl: "https://biodatacatalyst.nhlbi.nih.gov/",
-    twitterUsername: ""
+    twitterUsername: "",
   },
   plugins: [
     {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ["Montserrat:300,400,600"]
-        }
-      }
+          families: ["Montserrat:300,400,600"],
+        },
+      },
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
@@ -40,45 +40,52 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/data/`
-      }
+        path: `${__dirname}/src/data/`,
+      },
     },
     `gatsby-transformer-yaml`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/data/partners`,
-        name: "partners"
-      }
+        name: "partners",
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/data/platforms`,
-        name: "platforms"
-      }
+        name: "platforms",
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `./src/data/fellows`,
-        name: "fellows"
-      }
+        name: "fellows",
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `./src/data/studies`,
-        name: "studies"
-      }
+        name: "studies",
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./src/data/latest-updates`,
+        name: "latest-updates",
+      },
     },
     `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`
-      }
+        path: `${__dirname}/src/images`,
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -86,15 +93,15 @@ module.exports = {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /service-ecosystem/
-        }
-      }
+          include: /service-ecosystem/,
+        },
+      },
     },
     {
       resolve: "gatsby-plugin-anchor-links",
       options: {
-        offset: -150
-      }
+        offset: -150,
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -105,8 +112,8 @@ module.exports = {
         background_color: `#c1272d`,
         theme_color: `#c1272d`,
         display: `minimal-ui`,
-        icon: `src/images/favicon.png` // This path is relative to the root of the site.
-      }
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
+      },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -126,11 +133,11 @@ module.exports = {
         // and here: https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/
         // sampleRate: 5, // Specifies what percentage of users should be tracked. This defaults to 100 (no users are sampled out) but large sites may need to use a lower sample rate to stay within Google Analytics processing limits.
         siteSpeedSampleRate: 10, // This setting determines how often site speed beacons will be sent. By default, 1% of users will be automatically be tracked.
-        cookieDomain: "biodatacatalyst.nhlbi.nih.gov" // Specifies the domain used to store the analytics cookie. Setting this to 'none' sets the cookie without specifying a domain.
-      }
-    }
+        cookieDomain: "biodatacatalyst.nhlbi.nih.gov", // Specifies the domain used to store the analytics cookie. Setting this to 'none' sets the cookie without specifying a domain.
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-  ]
+  ],
 };
