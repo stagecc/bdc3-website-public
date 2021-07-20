@@ -121,16 +121,19 @@ export const CloudCreditsForm = (props) => {
       `Name: ${name} ~~~~~ ` +
       `Email Address: ${email} ~~~~~ ` +
       `Username (Seven Bridges Only)): ${username} ~~~~~ ` +
-      `cf_what_platform_will_you_use_the_credit_on: ${platform} ~~~~~ ` +
+      `Project Pi (If applicable): $${projectPi} ~~~~~ ` +
       `Role: $${role} ~~~~~ ` +
       `Company/Organization: ${organization} ~~~~~ ` +
       `Collaborators: ${collaborators} ~~~~~ ` +
+      `Is your research related to HLBS?: ${relatedResearch} ~~~~~ ` +
+      `How did you learn about BioData Catalyst?: ${how} ~~~~~ ` +
+      `BioData Catalyst users may request one of the following: ${cloudCreditsRequest} ~~~~~ ` +
+      `Select your preferred analysis platform (or choose to explore both) ${preferedAnalysisPlatform} ~~~~~ ` +
       `Project Name & Description: ${project} ~~~~~ ` +
       `Justification for Credits: ${justification} ~~~~~ ` +
       `Use of Initial Pilot Credits: ${previousFundingDetails} ~~~~~ ` +
       `Estimate of Cloud Credits Needed: $${estimate} ~~~~~ ` +
       `Platform/Service: ${platform} ~~~~~ ` +
-      `Organization: ${organization} ~~~~~ ` +
       `~~~~~ ~~~~~ (This ticket was submitted from ${window.location.href}.)`;
     const payload = {
       type: "Cloud Credits",
@@ -152,13 +155,13 @@ export const CloudCreditsForm = (props) => {
         cf_cloud_credits_preferred_analysis_platform_amount: preferedAnalysisPlatform,
 
         // ------
-        cf_cloud_credits_project_namedescription: project,
-        cf_cloud_credits_previous_request: previousFundingDetails,
-        cf_estimated_cloud_credits_requested: estimate,
-        cf_justification_for_credits: justification,
-        cf_what_bdcatalyst_service_will_you_use: platform,
-        cf_cloud_credits_requested_terra_amount: requestedTerraAmount,
-        cf_cloud_credits_requested_seven_bridges_amount: requestedSevenBridgesAmount,
+        // cf_cloud_credits_project_namedescription: project,
+        // cf_cloud_credits_previous_request: previousFundingDetails,
+        // cf_estimated_cloud_credits_requested: estimate,
+        // cf_justification_for_credits: justification,
+        // cf_what_bdcatalyst_service_will_you_use: platform,
+        // cf_cloud_credits_requested_terra_amount: requestedTerraAmount,
+        // cf_cloud_credits_requested_seven_bridges_amount: requestedSevenBridgesAmount,
       },
     };
 
