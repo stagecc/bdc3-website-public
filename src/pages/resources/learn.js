@@ -139,12 +139,12 @@ const resources = [
       {
         text: "Seven Bridges Tutorials",
         url:
-          "https://bdcatalyst.gitbook.io/biodata-catalyst-tutorials/tutorials/seven-bridges-tutorials"
+          "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/tutorials-videos-and-modules/seven-bridges-tutorials"
       },
       {
         text: "Terra Tutorials",
         url:
-          "https://bdcatalyst.gitbook.io/biodata-catalyst-tutorials/tutorials/terra-tutorials"
+          "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/tutorials-videos-and-modules/terra-tutorials"
       },
       {
         text: "Terra Blog",
