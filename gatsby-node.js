@@ -6,6 +6,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const redirectTemplate = path.resolve(`src/templates/redirect-template.js`);
   const articleTemplate = path.resolve(`src/templates/article-template.js`);
   const tagTemplate = path.resolve(`src/templates/tag-template.js`);
+  const eventTemplate = path.resolve(`src/templates/events/event-template.js`);
+  const eventsTemplate = path.resolve(
+    `src/templates/events/upcoming-events-template.js`
+  );
+  const eventsArchiveTemplate = path.resolve(
+    `src/templates/events/past-events-template.js`
+  );
   const result = await graphql(`
     {
       allMarkdownRemark(
@@ -69,6 +76,21 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
+  // Create single event pages
+  const events = newsResults.data.allMarkdownRemark.edges.filter(({ node }) =>
+    node.fileAbsolutePath.includes("/events/")
+  );
+  events.forEach(({ node }, index) => {
+    createPage({
+      path: node.frontmatter.path,
+      component: eventTemplate,
+      context: {
+        // additional data passed via context
+        prev: index === 0 ? null : events[index - 1].node,
+        next: index === events.length - 1 ? null : events[index + 1].node,
+      },
+    });
+  });
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     console.log(`Creating page: ${node.frontmatter.path}`);
     createPage({
@@ -85,7 +107,28 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: node,
     });
   });
-
+  const todaysDate = new Date();
+  const dateString = `${todaysDate.getFullYear()}-${
+    todaysDate.getMonth() + 1 < 10 ? "0" : ""
+  }${todaysDate.getMonth() + 1}-${
+    todaysDate.getDate() < 10 ? "0" : ""
+  }${todaysDate.getDate()}`;
+  // Create upcoming event list page
+  createPage({
+    path: "/events",
+    component: eventsTemplate,
+    context: {
+      todaysDate: dateString,
+    },
+  });
+  // Create archived event list page
+  createPage({
+    path: "/events/archive",
+    component: eventsArchiveTemplate,
+    context: {
+      todaysDate: dateString,
+    },
+  });
   // Create tag pages
   const allTags = new Set();
   articles.forEach(
@@ -106,7 +149,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
-  return [...articles];
+  return [...articles, ...events];
 };
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
