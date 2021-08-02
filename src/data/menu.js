@@ -15,6 +15,10 @@ export const menuItems = [
         text: "Latest Updates",
         path: "/about/latest-updates",
       },
+      {
+        text: "Events",
+        path: "/about/events",
+      },
     ],
   },
   {
