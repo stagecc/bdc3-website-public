@@ -11,7 +11,7 @@ import {
 } from "../../components/typography";
 import { ExternalLink } from "../../components/link";
 import { ButtonLink } from "../../components/buttons";
-import { Module } from "../../components/layout";
+import { Module, PageContent } from "../../components/layout";
 // import { LinkIcon } from "../../components/icons";
 import { useWindowWidth } from "../../hooks";
 
@@ -83,7 +83,7 @@ const EventsList = ({ title, events }) => {
       )}
       {events.length ? (
         <Meta right>
-          <strong>*</strong> FABRIC-hosted event
+          <strong>*</strong> RENCI-hosted event
         </Meta>
       ) : null}
     </Module>
@@ -94,7 +94,7 @@ export default ({ data, pageContext }) => {
   const events = data.events.edges;
 
   return (
-    <>
+    <PageContent width="95%" maxWidth="1200px" center gutters>
       <SEO
         title="Upcoming FABRIC Events"
         description="Come meet the FABRIC team in person! Read about upcoming events that are related to FABRIC and the FABRIC team, inclusing conferences, workshops, and meet-ups."
@@ -118,11 +118,11 @@ export default ({ data, pageContext }) => {
       <EventsList events={events} />
 
       <Paragraph center>
-        <ButtonLink primary={true} to="/events/archive">
+        <ButtonLink primary={true} to="/about/events/archive">
           View our past events
         </ButtonLink>
       </Paragraph>
-    </>
+    </PageContent>
   );
 };
 

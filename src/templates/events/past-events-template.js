@@ -5,7 +5,7 @@ import { SEO } from "../../components/seo";
 import { Title, Paragraph, Meta } from "../../components/typography";
 import { ButtonLink } from "../../components/buttons";
 import { Container as Grid, Row, Col } from "react-grid-system";
-import { Module } from "../../components/layout";
+import { Module, PageContent } from "../../components/layout";
 
 const EventsList = ({ title, events }) => {
   return (
@@ -42,7 +42,7 @@ const EventsList = ({ title, events }) => {
         )}
         {events.length ? (
           <Meta right>
-            <strong>*</strong> FABRIC-hosted event
+            <strong>*</strong> RENCI-hosted event
           </Meta>
         ) : null}
       </Grid>
@@ -54,7 +54,7 @@ export default ({ data, pageContext }) => {
   const events = data.events.edges;
 
   return (
-    <>
+    <PageContent width="95%" maxWidth="1200px" center gutters>
       <SEO
         title="Past FABRIC Events"
         description="Read about upcoming events that are related to FABRIC and the FABRIC team, inclusing conferences, workshops, and meet-ups."
@@ -79,11 +79,11 @@ export default ({ data, pageContext }) => {
       </Module>
 
       <Paragraph center>
-        <ButtonLink primary={true} to="/events">
+        <ButtonLink primary={true} to="/about/events">
           View our upcoming events
         </ButtonLink>
       </Paragraph>
-    </>
+    </PageContent>
   );
 };
 

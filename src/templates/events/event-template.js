@@ -153,10 +153,10 @@ export const newsItemQuery = graphql`
       frontmatter {
         date(formatString: "MMMM D, YYYY")
         display_date
-        time
+
         location
         title
-        urlLabel
+
         url
         tags
         fabricHosted
@@ -171,3 +171,29 @@ export const newsItemQuery = graphql`
     }
   }
 `;
+
+// export const newsItemQuery = graphql`
+//   query($path: String!) {
+//     markdownRemark(frontmatter: { path: { eq: $path } }) {
+//       html
+//       frontmatter {
+//         date(formatString: "MMMM D, YYYY")
+//         display_date
+//         time
+//         location
+//         title
+//         urlLabel
+//         url
+//         tags
+//         fabricHosted
+//         presenter
+//         presentation_link
+//         seo {
+//           title
+//           description
+//           keywords
+//         }
+//       }
+//     }
+//   }
+// `;

@@ -115,7 +115,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }${todaysDate.getDate()}`;
   // Create upcoming event list page
   createPage({
-    path: "/events",
+    path: "/about/events",
     component: eventsTemplate,
     context: {
       todaysDate: dateString,
@@ -123,7 +123,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
   // Create archived event list page
   createPage({
-    path: "/events/archive",
+    path: "/about/events/archive",
     component: eventsArchiveTemplate,
     context: {
       todaysDate: dateString,
