@@ -1,25 +1,24 @@
-import React from "react"
-import styled from "styled-components"
-import { AnimateOnMount } from "../../components/anim"
-import { SEO } from "../../components/seo"
-import { graphql, Link } from "gatsby"
-import { Title, Meta } from "../../components/typography"
-import { InlineList } from "../../components/list"
-import { TagLink } from "../../components/link"
-import { Module } from "../../components/layout"
-import { Visible } from "react-grid-system"
-import { HorizontalRule } from "../../components/horizontal-rule"
-
+import React from "react";
+import styled from "styled-components";
+// import { AnimateOnMount } from "../../components/anim"
+import { SEO } from "../../components/seo";
+import { graphql, Link } from "gatsby";
+import { Title, Meta } from "../../components/typography";
+import { InlineList } from "../../components/list";
+import { TagLink } from "../../components/link";
+import { Module, PageContent } from "../../components/layout";
+import { Visible } from "react-grid-system";
+import { HorizontalRule } from "../../components/horizontal-rule";
 const EventMetadataWrapper = styled.div`
   ${Meta} {
     margin: 0;
   }
-`
+`;
 
 export default ({ data, pageContext }) => {
-  const { markdownRemark } = data
-  const { prev, next } = pageContext
-  const { frontmatter, html } = markdownRemark
+  const { markdownRemark } = data;
+  const { prev, next } = pageContext;
+  const { frontmatter, html } = markdownRemark;
   const {
     title,
     date,
@@ -33,10 +32,10 @@ export default ({ data, pageContext }) => {
     presenter,
     presentation_link,
     seo,
-  } = frontmatter
+  } = frontmatter;
 
   return (
-    <AnimateOnMount>
+    <PageContent width="95%" maxWidth="1200px" center gutters>
       <SEO
         title={seo.title}
         description={seo.description}
@@ -69,23 +68,23 @@ export default ({ data, pageContext }) => {
                 </a>
               </Meta>
             )}
-            {
-              presenter && (
-                <Meta>
-                <b>Presenter</b>:{" "} {presenter}
-                </Meta>
-              )
-            }
-            {
-              presentation_link && (
-                <Meta>
+            {presenter && (
+              <Meta>
+                <b>Presenter</b>: {presenter}
+              </Meta>
+            )}
+            {presentation_link && (
+              <Meta>
                 <b>Presentation Link</b>:{" "}
-                <a href={presentation_link} target="_blank" rel="noreferrer noopener">
+                <a
+                  href={presentation_link}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
                   {presentation_link}
                 </a>
-                </Meta>
-              )
-            }
+              </Meta>
+            )}
             <Meta>
               <InlineList
                 title="Tags"
@@ -143,9 +142,9 @@ export default ({ data, pageContext }) => {
           )}
         </div>
       </div>
-    </AnimateOnMount>
-  )
-}
+    </PageContent>
+  );
+};
 
 export const newsItemQuery = graphql`
   query($path: String!) {
@@ -171,4 +170,4 @@ export const newsItemQuery = graphql`
       }
     }
   }
-`
+`;

@@ -131,7 +131,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
   // Create tag pages
   const allTags = new Set();
-  articles.forEach(
+  articles.concat(events).forEach(
     ({
       node: {
         frontmatter: { tags },

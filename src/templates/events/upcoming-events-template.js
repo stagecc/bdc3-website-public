@@ -1,28 +1,29 @@
-import React, { Fragment } from "react"
-import { graphql, Link } from "gatsby"
-import { AnimateOnMount } from "../../components/anim"
-import { SEO } from "../../components/seo"
+import React, { Fragment } from "react";
+import { graphql, Link } from "gatsby";
+// import { AnimateOnMount } from "../../components/anim";
+import { SEO } from "../../components/seo";
 import {
   Title,
   Paragraph,
   Heading,
   Subheading,
   Meta,
-} from "../../components/typography"
-import { ExternalLink } from "../../components/link"
-import { ButtonLink } from "../../components/button"
-import { Module } from "../../components/layout"
-import { LinkIcon } from "../../components/icons"
-import { useWindowWidth } from "../../hooks"
+} from "../../components/typography";
+import { ExternalLink } from "../../components/link";
+import { ButtonLink } from "../../components/buttons";
+import { Module } from "../../components/layout";
+// import { LinkIcon } from "../../components/icons";
+import { useWindowWidth } from "../../hooks";
 
 const EventsList = ({ title, events }) => {
-  const { isCompact } = useWindowWidth()
+  const { isCompact } = useWindowWidth();
+  console.log(events);
   return (
     <Module title={title}>
       <br />
       {events.length ? (
         events.map((event) => {
-          const { excerpt } = event.node
+          const { excerpt } = event.node;
           const {
             title,
             path,
@@ -30,7 +31,7 @@ const EventsList = ({ title, events }) => {
             display_date,
             url,
             fabricHosted,
-          } = event.node.frontmatter
+          } = event.node.frontmatter;
           return (
             <Fragment key={title}>
               <Subheading>{display_date ? display_date : date}</Subheading>
@@ -54,11 +55,6 @@ const EventsList = ({ title, events }) => {
                       alignItems: "center",
                     }}
                   >
-                    <LinkIcon
-                      size={24}
-                      fill="var(--color-primary-dark)"
-                      style={{ marginRight: "0.25rem" }}
-                    />
                     Event Website:
                   </span>
                   <span>
@@ -78,7 +74,7 @@ const EventsList = ({ title, events }) => {
                 </Link>
               </Paragraph>
             </Fragment>
-          )
+          );
         })
       ) : (
         <Paragraph center>
@@ -91,14 +87,14 @@ const EventsList = ({ title, events }) => {
         </Meta>
       ) : null}
     </Module>
-  )
-}
+  );
+};
 
 export default ({ data, pageContext }) => {
-  const events = data.events.edges
+  const events = data.events.edges;
 
   return (
-    <AnimateOnMount>
+    <>
       <SEO
         title="Upcoming FABRIC Events"
         description="Come meet the FABRIC team in person! Read about upcoming events that are related to FABRIC and the FABRIC team, inclusing conferences, workshops, and meet-ups."
@@ -126,9 +122,9 @@ export default ({ data, pageContext }) => {
           View our past events
         </ButtonLink>
       </Paragraph>
-    </AnimateOnMount>
-  )
-}
+    </>
+  );
+};
 
 export const allEventsQuery = graphql`
   query($todaysDate: Date!) {
@@ -154,4 +150,4 @@ export const allEventsQuery = graphql`
       }
     }
   }
-`
+`;
