@@ -7,3 +7,4 @@ export * from "./main";
 export * from "./sticky-wrapper";
 export * from "./subfooter";
 export * from "./toolbar";
+export * from "./module";
