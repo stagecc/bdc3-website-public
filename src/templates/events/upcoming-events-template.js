@@ -81,11 +81,6 @@ const EventsList = ({ title, events }) => {
           There are no events to display at the moment. Please check back soon!
         </Paragraph>
       )}
-      {events.length ? (
-        <Meta right>
-          <strong>*</strong> RENCI-hosted event
-        </Meta>
-      ) : null}
     </Module>
   );
 };
