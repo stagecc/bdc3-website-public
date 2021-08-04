@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { SEO } from "../../components/seo";
 import { graphql, Link } from "gatsby";
 import { Title, Meta } from "../../components/typography";
-import { InlineList } from "../../components/list";
+import { InlineList2 } from "../../components/list";
 import { TagLink } from "../../components/link";
 import { Module, PageContent } from "../../components/layout";
 import { Visible } from "react-grid-system";
@@ -70,7 +70,7 @@ export default ({ data, pageContext }) => {
               </Meta>
             )}
             <Meta>
-              <InlineList
+              <InlineList2
                 title="Tags"
                 items={tags.map((tag) => (
                   <TagLink tag={tag} />
