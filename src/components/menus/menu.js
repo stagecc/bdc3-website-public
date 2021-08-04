@@ -15,6 +15,7 @@ export const MenuContainer = styled.nav`
 export const MenuLink = styled(Link)`
   display: flex;
 
+  align-items: center;
   text-transform: uppercase;
   color: #444;
   text-decoration: none;
