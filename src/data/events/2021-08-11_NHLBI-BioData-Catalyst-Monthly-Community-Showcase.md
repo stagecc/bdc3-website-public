@@ -1,16 +1,16 @@
 ---
-title: NHLBI BioData Catalyst Monthly Community Showcase
-path: /events/NHLBI-BioData-Catalyst-Monthly-Community-Showcase
+title: "NHLBI BioData Catalyst Community Hours: Exploring and Accessing Data"
+path: /events/NHLBI-BioData-Catalyst-Community-Hours-Exploring-and-Accessing-Data
 date: 2021-08-11
 display_date: August 11, 2021
 location: Chicago, IL
 url:
-tags: []
+tags: [community hours, data access, data exploration]
 fabricHosted: false
 seo:
-  title: Exploring and Accessing Data in NHLBI BioData Catalyst
+  title: "NHLBI BioData Catalyst Community Hours: Exploring and Accessing Data"
   description:
-  keywords: []
+  keywords: [community hours, data access, data exploration]
 ---
 
 On August 11th, join us for an informal, virtual event where you will learn about data access and exploration on BioData Catalyst from team members of PIC-SURE and Gen3. After a demo and presentation from these teams, time will be made available for discussion and to address questions, challenges, and issues you might be facing.

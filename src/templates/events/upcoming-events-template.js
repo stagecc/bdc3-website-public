@@ -111,8 +111,8 @@ export default ({ data, pageContext }) => {
       <Title>Upcoming Events</Title>
 
       <Paragraph>
-        See the list below of conferences and workshops in which the FABRIC team
-        is involved.
+        See the list below of events supported by the NHLBI BioData Catalyst
+        Ecosystem.
       </Paragraph>
 
       <EventsList events={events} />

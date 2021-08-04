@@ -28,7 +28,6 @@ export default ({ data, pageContext }) => {
     tags,
     url,
     urlLabel,
-    fabricHosted,
     presenter,
     presentation_link,
     seo,
@@ -53,21 +52,6 @@ export default ({ data, pageContext }) => {
             <Meta>
               <b>Location</b>: {location}
             </Meta>
-            {fabricHosted ? (
-              <Meta>
-                <b>{urlLabel ? urlLabel : "Registration"}</b>:{" "}
-                <a href={url} target="_blank" rel="noreferrer noopener">
-                  {url}
-                </a>
-              </Meta>
-            ) : (
-              <Meta>
-                <b>Event Website</b>:{" "}
-                <a href={url} target="_blank" rel="noreferrer noopener">
-                  {url}
-                </a>
-              </Meta>
-            )}
             {presenter && (
               <Meta>
                 <b>Presenter</b>: {presenter}

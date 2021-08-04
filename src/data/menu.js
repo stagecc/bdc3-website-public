@@ -12,7 +12,7 @@ export const menuItems = [
         path: "/about/overview",
       },
       {
-        text: "Latest Updates",
+        text: "Latest",
         path: "/about/latest-updates",
       },
       {
