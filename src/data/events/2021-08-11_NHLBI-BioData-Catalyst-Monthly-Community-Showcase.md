@@ -4,7 +4,7 @@ path: /events/NHLBI-BioData-Catalyst-Community-Hours-Exploring-and-Accessing-Dat
 date: 2021-08-11
 display_date: August 11, 2021
 location: Chicago, IL
-url:
+url: https://bit.ly/3ijOkr9
 tags: [community hours, data access, data exploration]
 fabricHosted: false
 seo:
