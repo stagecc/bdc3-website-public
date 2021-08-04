@@ -27,7 +27,6 @@ export default ({ data, pageContext }) => {
     location,
     tags,
     url,
-    urlLabel,
     presenter,
     presentation_link,
     seo,
@@ -49,9 +48,17 @@ export default ({ data, pageContext }) => {
               <b>Date</b>: {display_date ? display_date : date}
             </Meta>
             {time && <Meta>Time: {time}</Meta>}
-            <Meta>
+            {/* <Meta>
               <b>Location</b>: {location}
-            </Meta>
+            </Meta> */}
+            {url && (
+              <Meta>
+                Location:{" "}
+                <a href={url} target="_blank" rel="noreferrer noopener">
+                  {url}
+                </a>
+              </Meta>
+            )}
             {presenter && (
               <Meta>
                 <b>Presenter</b>: {presenter}
@@ -137,15 +144,10 @@ export const newsItemQuery = graphql`
       frontmatter {
         date(formatString: "MMMM D, YYYY")
         display_date
-
         location
         title
-
         url
         tags
-        fabricHosted
-        presenter
-        presentation_link
         seo {
           title
           description

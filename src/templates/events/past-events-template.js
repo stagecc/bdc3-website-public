@@ -28,7 +28,6 @@ const EventsList = ({ title, events }) => {
                 <Col xs={12} sm={9}>
                   <h5 style={{ lineHeight: 1.5 }}>
                     <Link to={path}>{title}</Link>
-                    {/* {fabricHosted ? "*" : null} */}
                   </h5>
                 </Col>
               </Row>
@@ -99,7 +98,6 @@ export const allEventsQuery = graphql`
             path
             title
             tags
-            fabricHosted
           }
         }
       }

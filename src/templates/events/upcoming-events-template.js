@@ -37,9 +37,8 @@ const EventsList = ({ title, events }) => {
               <Subheading>{display_date ? display_date : date}</Subheading>
               <Heading>
                 <Link to={path}>{title}</Link>
-                {fabricHosted ? "*" : null}
               </Heading>
-              {!fabricHosted && url && (
+              {/* {!fabricHosted && url && (
                 <Meta
                   style={{
                     display: "inline-flex",
@@ -61,7 +60,7 @@ const EventsList = ({ title, events }) => {
                     <ExternalLink to={url}>{url}</ExternalLink>
                   </span>
                 </Meta>
-              )}
+              )} */}
               <Paragraph
                 style={{
                   borderLeft: "3px solid var(--color-lightgrey)",
@@ -91,8 +90,8 @@ export default ({ data, pageContext }) => {
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters>
       <SEO
-        title="Upcoming FABRIC Events"
-        description="Come meet the FABRIC team in person! Read about upcoming events that are related to FABRIC and the FABRIC team, inclusing conferences, workshops, and meet-ups."
+        title="Upcoming Events"
+        description="Come meet the BioData Catalyst team in person! Read about upcoming events that are related, inclusing conferences, workshops, and meet-ups."
         keywords={[
           "events",
           "conferences",
@@ -138,7 +137,6 @@ export const allEventsQuery = graphql`
             path
             title
             url
-            fabricHosted
           }
           excerpt(pruneLength: 280)
         }
