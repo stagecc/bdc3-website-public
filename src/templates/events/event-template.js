@@ -81,7 +81,7 @@ export default ({ data, pageContext }) => {
 
           <Module title="Event Details">
             <div
-              className="event-content"
+              className="article-content"
               dangerouslySetInnerHTML={{
                 __html: html || "No details to display.",
               }}
