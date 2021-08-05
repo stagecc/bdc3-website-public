@@ -39,7 +39,7 @@ export default ({ data }) => {
       <Heading center>Powered by {frontmatter.title}</Heading>
 
       <LinkList center>
-        <ExternalLink to={frontmatter.links.launch}>Website</ExternalLink> |{" "}
+        <ExternalLink to={frontmatter.links.launch}>Launch</ExternalLink> |{" "}
         <ExternalLink to={frontmatter.links.documentation}>
           Documentation
         </ExternalLink>
