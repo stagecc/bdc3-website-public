@@ -67,7 +67,8 @@ export default ({ data, pageContext }) => {
 
       <Module>
         <Paragraph>
-          These are all past events in which the RENCI team has been involved.
+          These are past events supported by the NHLBI BioData Catalyst
+          Ecosystem.
         </Paragraph>
         <EventsList events={events} />
       </Module>
