@@ -146,6 +146,7 @@ export const newsItemQuery = graphql`
         display_date
         location
         title
+        time
         url
         tags
         seo {

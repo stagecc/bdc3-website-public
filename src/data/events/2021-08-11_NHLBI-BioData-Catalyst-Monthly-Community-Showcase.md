@@ -2,6 +2,7 @@
 title: "NHLBI BioData Catalyst Community Hours: Exploring and Accessing Data"
 path: /events/NHLBI-BioData-Catalyst-Community-Hours-Exploring-and-Accessing-Data
 date: 2021-08-11
+time: 1-2 pm PDT
 display_date: August 11, 2021
 location: " "
 url: https://bit.ly/3ijOkr9
