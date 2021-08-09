@@ -23,6 +23,6 @@ Submit to our [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSfNN2WJaBuJ
 
 Make sure to [register now](https://bit.ly/3ijOkr9) - we look forward to seeing you!
 
-# What are Community Hours?
+### What are Community Hours?
 
 BioData Catalyst Community Hours is a monthly, hour-long event where users can learn about features of the ecosystem. The hour is split into time for presentation by a platform team and time for questions. Teams will showcase tools, new features, or tips that meet user needs. After the presentations, time is available for discussion and questions for platform reps from users.
