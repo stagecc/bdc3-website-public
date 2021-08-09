@@ -9,6 +9,7 @@ import { TagLink } from "../../components/link";
 import { Module, PageContent } from "../../components/layout";
 import { Visible } from "react-grid-system";
 import { HorizontalRule } from "../../components/horizontal-rule";
+import { ButtonCta } from "../../components/buttons";
 const EventMetadataWrapper = styled.div`
   ${Meta} {
     margin: 0;
@@ -84,6 +85,13 @@ export default ({ data, pageContext }) => {
                 ))}
               />
             </Meta>
+            <br></br>
+            <br></br>
+            <Meta style={{ textAlign: "center" }}>
+              <ButtonCta href={url} target="_blank">
+                Register Now!
+              </ButtonCta>
+            </Meta>
           </EventMetadataWrapper>
 
           <Module title="Event Details">
@@ -94,6 +102,11 @@ export default ({ data, pageContext }) => {
               }}
             />
           </Module>
+          <div style={{ textAlign: "center" }}>
+            <ButtonCta href={url} target="_blank">
+              Register Now!
+            </ButtonCta>
+          </div>
         </div>
       </div>
 
