@@ -180,7 +180,7 @@ const CloudCreditsPage = () => (
         <ListItem
           primary={
             <span>
-              <ExternalLink to="https://sb-biodatacatalyst.readme.io/docs/cloud-infrastructure-pricing">
+              <ExternalLink to="https://sb-biodatacatalyst.readme.io/docs/about-pricing">
                 Cloud infrastructure pricing
               </ExternalLink>{" "}
               (BioData Catalyst powered by Seven Bridges)
