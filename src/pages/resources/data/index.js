@@ -275,7 +275,7 @@ export default DataPage;
 
 export const query = graphql`
   {
-    dataBucketsGraphic: file(relativePath: { eq: "data-buckets-2.png" }) {
+    dataBucketsGraphic: file(relativePath: { eq: "data-buckets.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
