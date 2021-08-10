@@ -28,7 +28,6 @@ const EventsList = ({ title, events }) => {
                 <Col xs={12} sm={9}>
                   <h5 style={{ lineHeight: 1.5 }}>
                     <Link to={path}>{title}</Link>
-                    {fabricHosted ? "*" : null}
                   </h5>
                 </Col>
               </Row>
@@ -40,11 +39,6 @@ const EventsList = ({ title, events }) => {
             soon!
           </Paragraph>
         )}
-        {events.length ? (
-          <Meta right>
-            <strong>*</strong> RENCI-hosted event
-          </Meta>
-        ) : null}
       </Grid>
     </Module>
   );
@@ -56,8 +50,8 @@ export default ({ data, pageContext }) => {
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters>
       <SEO
-        title="Past FABRIC Events"
-        description="Read about upcoming events that are related to FABRIC and the FABRIC team, inclusing conferences, workshops, and meet-ups."
+        title="Past RENCI Events"
+        description="Read about upcoming events that are related to RENCI and the RENCI team, inclusing conferences, workshops, and meet-ups."
         keywords={[
           "events",
           "conferences",
@@ -73,7 +67,8 @@ export default ({ data, pageContext }) => {
 
       <Module>
         <Paragraph>
-          These are all past events in which the FABRIC team has been involved.
+          These are past events supported by the NHLBI BioData Catalyst
+          Ecosystem.
         </Paragraph>
         <EventsList events={events} />
       </Module>
@@ -104,7 +99,6 @@ export const allEventsQuery = graphql`
             path
             title
             tags
-            fabricHosted
           }
         }
       }

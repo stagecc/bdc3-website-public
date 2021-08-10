@@ -14,7 +14,7 @@ export const MenuContainer = styled.nav`
 
 export const MenuLink = styled(Link)`
   display: flex;
-  justify-content: center;
+
   align-items: center;
   text-transform: uppercase;
   color: #444;
@@ -53,9 +53,9 @@ export const SubmenuHeader = styled.div`
   text-transform: uppercase;
   padding: 0.5rem 1.25rem;
   margin: 0;
-  background-color: ${props =>
+  background-color: ${(props) =>
     props.active ? "var(--color-crimson)" : "transparent"};
-  color: ${props => (props.active ? "#fff" : "#333")};
+  color: ${(props) => (props.active ? "#fff" : "#333")};
   letter-spacing: 2px;
   position: relative;
   font-weight: 400;
@@ -64,9 +64,9 @@ export const SubmenuHeader = styled.div`
   height: 100%;
   & svg {
     transition: transform 50ms;
-    transform: ${props =>
+    transform: ${(props) =>
       props.open ? "translateY(0.15rem)" : "translateY(0)"};
-    fill: ${props => (props.active ? "#fff" : "#333")};
+    fill: ${(props) => (props.active ? "#fff" : "#333")};
   }
   &:hover svg {
     transition: transform 250ms;
@@ -90,16 +90,16 @@ const Submenu = styled.nav.attrs({ className: "submenu" })`
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
   transition: transform 150ms, opacity 250ms;
   transform-origin: 50% 0%;
-  transform: ${props =>
+  transform: ${(props) =>
       props.open ? "scaleY(1) translateY(0)" : "scaleY(0) translateY(-2rem)"}
     translateX(-50%);
-  opacity: ${props => (props.open ? 1.0 : 0.1)};
+  opacity: ${(props) => (props.open ? 1.0 : 0.1)};
 `;
 
 export const Menu = ({ items, showBrand }) => {
   const [openSubmenu, setOpenSubmenu] = useState(-1);
 
-  const handleOpenSubmenu = index => event => setOpenSubmenu(index);
+  const handleOpenSubmenu = (index) => (event) => setOpenSubmenu(index);
   const handleCloseAllSubmenus = () => setOpenSubmenu(-1);
 
   return (
@@ -116,7 +116,7 @@ export const Menu = ({ items, showBrand }) => {
             {item.submenu ? (
               <Fragment>
                 <Match path={item.path}>
-                  {props => {
+                  {(props) => {
                     // "active" means we're looking at a page whose route contains the submenu's root route
                     const thisSubmenuIsActive = props.location.pathname.includes(
                       item.path
@@ -142,7 +142,7 @@ export const Menu = ({ items, showBrand }) => {
                   open={openSubmenu === currentIndex}
                   onClick={handleCloseAllSubmenus}
                 >
-                  {item.submenu.map(subitem => (
+                  {item.submenu.map((subitem) => (
                     <MenuLink
                       key={subitem.path}
                       to={subitem.path}

@@ -4,11 +4,12 @@ import styled from "styled-components";
 import { SEO } from "../../components/seo";
 import { graphql, Link } from "gatsby";
 import { Title, Meta } from "../../components/typography";
-import { InlineList } from "../../components/list";
+import { InlineList2 } from "../../components/list";
 import { TagLink } from "../../components/link";
 import { Module, PageContent } from "../../components/layout";
 import { Visible } from "react-grid-system";
 import { HorizontalRule } from "../../components/horizontal-rule";
+import { ButtonCta } from "../../components/buttons";
 const EventMetadataWrapper = styled.div`
   ${Meta} {
     margin: 0;
@@ -27,8 +28,6 @@ export default ({ data, pageContext }) => {
     location,
     tags,
     url,
-    urlLabel,
-    fabricHosted,
     presenter,
     presentation_link,
     seo,
@@ -50,19 +49,12 @@ export default ({ data, pageContext }) => {
               <b>Date</b>: {display_date ? display_date : date}
             </Meta>
             {time && <Meta>Time: {time}</Meta>}
-            <Meta>
+            {/* <Meta>
               <b>Location</b>: {location}
-            </Meta>
-            {fabricHosted ? (
+            </Meta> */}
+            {url && (
               <Meta>
-                <b>{urlLabel ? urlLabel : "Registration"}</b>:{" "}
-                <a href={url} target="_blank" rel="noreferrer noopener">
-                  {url}
-                </a>
-              </Meta>
-            ) : (
-              <Meta>
-                <b>Event Website</b>:{" "}
+                Location:{" "}
                 <a href={url} target="_blank" rel="noreferrer noopener">
                   {url}
                 </a>
@@ -86,23 +78,35 @@ export default ({ data, pageContext }) => {
               </Meta>
             )}
             <Meta>
-              <InlineList
+              <InlineList2
                 title="Tags"
                 items={tags.map((tag) => (
                   <TagLink tag={tag} />
                 ))}
               />
             </Meta>
+            <br></br>
+            <br></br>
+            <Meta style={{ textAlign: "center" }}>
+              <ButtonCta href={url} target="_blank">
+                Register Now!
+              </ButtonCta>
+            </Meta>
           </EventMetadataWrapper>
 
           <Module title="Event Details">
             <div
-              className="event-content"
+              className="article-content"
               dangerouslySetInnerHTML={{
                 __html: html || "No details to display.",
               }}
             />
           </Module>
+          <div style={{ textAlign: "center" }}>
+            <ButtonCta href={url} target="_blank">
+              Register Now!
+            </ButtonCta>
+          </div>
         </div>
       </div>
 
@@ -153,15 +157,11 @@ export const newsItemQuery = graphql`
       frontmatter {
         date(formatString: "MMMM D, YYYY")
         display_date
-
         location
         title
-
+        time
         url
         tags
-        fabricHosted
-        presenter
-        presentation_link
         seo {
           title
           description
