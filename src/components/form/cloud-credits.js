@@ -167,6 +167,7 @@ export const CloudCreditsForm = (props) => {
       email: email,
       custom_fields: {
         cf_cloud_credits_username_seven_bridges_only: username,
+        cf_cloud_credits_terra_user_name: terraUsername,
         cf_cloud_credits_project_pi: projectPi,
         cf_cf_cloud_credits_collaborator_information: role,
         cf_cf_organization: organization,
@@ -199,8 +200,7 @@ export const CloudCreditsForm = (props) => {
 
   const renderSwitch = (platform) => {
     switch (platform) {
-      case "$250 each on both Seven Bridges and Terra" ||
-        "Both Seven Bridges and Terra":
+      case "$250 each on both Seven Bridges and Terra":
         return (
           <>
             <FormControl>
