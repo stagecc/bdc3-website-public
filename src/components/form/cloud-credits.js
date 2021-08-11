@@ -123,6 +123,7 @@ export const CloudCreditsForm = (props) => {
       `Name: ${name} ~~~~~ ` +
       `Email Address: ${email} ~~~~~ ` +
       `Username (Seven Bridges Only)): ${username} ~~~~~ ` +
+      `Username (Terra Only)): ${terraUsername} ~~~~~ ` +
       `Project Pi (If applicable): ${projectPi} ~~~~~ ` +
       `Role: ${role} ~~~~~ ` +
       `Company/Organization: ${organization} ~~~~~ ` +
