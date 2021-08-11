@@ -234,6 +234,18 @@ export const CloudCreditsForm = (props) => {
     <Card {...props}>
       <CardHeader>Cloud Credits Request</CardHeader>
       <CardBody>
+        <Paragraph center noMargin>
+          Before completing this form you must create an account on the
+          applicable platform(s),{" "}
+          <ExternalLink to="https://docs.sevenbridges.com/docs/sign-up">
+            Seven Bridges
+          </ExternalLink>{" "}
+          or{" "}
+          <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/getting-started/analyze-data-1/terra/account-setup">
+            Terra
+          </ExternalLink>
+          .
+        </Paragraph>
         <Paragraph right noMargin>
           * <em>All fields are required.</em>
         </Paragraph>
