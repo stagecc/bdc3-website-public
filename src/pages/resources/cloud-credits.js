@@ -43,12 +43,15 @@ const CloudCreditsPage = () => (
 
       <Paragraph>
         Users of BioData Catalyst workspaces can apply for cloud credits to
-        support cloud costs as described in the sections below. Prior to
-        applying for cloud credits, users must set up an account on at least one
-        of the workspace environments, <em>Powered by Seven Bridges</em> or{" "}
-        <em>Powered by Terra</em> Users are welcome to create accounts on both
-        of the workspace environments. To learn more about what each workspace
-        has to offer, follow the links below:
+        support cloud costs as described in the sections below.{" "}
+        <b>
+          Prior to applying for cloud credits, users must set up an account on
+          at least one of the workspace environments,{" "}
+          <em>Powered by Seven Bridges</em> or <em>Powered by Terra.</em>
+        </b>{" "}
+        Users are welcome to create accounts on both of the workspace
+        environments. To learn more about what each workspace has to offer,
+        follow the links below:
       </Paragraph>
 
       <BulletedList>
@@ -180,7 +183,7 @@ const CloudCreditsPage = () => (
         <ListItem
           primary={
             <span>
-              <ExternalLink to="https://sb-biodatacatalyst.readme.io/docs/cloud-infrastructure-pricing">
+              <ExternalLink to="https://sb-biodatacatalyst.readme.io/docs/about-pricing">
                 Cloud infrastructure pricing
               </ExternalLink>{" "}
               (BioData Catalyst powered by Seven Bridges)

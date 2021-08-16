@@ -7,7 +7,7 @@ import {
   Title,
   Heading,
   Subheading,
-  Paragraph
+  Paragraph,
 } from "../../../components/typography";
 import { BulletedList, ListItem } from "../../../components/list";
 import { Button, ButtonLink } from "../../../components/buttons";
@@ -98,7 +98,7 @@ const DataPage = ({ data, location }) => {
             style={{
               margin: "1rem",
               display: "inline-flex",
-              alignItems: "center"
+              alignItems: "center",
             }}
           >
             Explore Studies &nbsp;&nbsp;{" "}
@@ -111,7 +111,7 @@ const DataPage = ({ data, location }) => {
             style={{
               margin: "1rem",
               display: "inline-flex",
-              alignItems: "center"
+              alignItems: "center",
             }}
           >
             Explore COVID-19 Studies &nbsp;&nbsp;{" "}
@@ -126,7 +126,7 @@ const DataPage = ({ data, location }) => {
             style={{
               margin: "1rem",
               display: "inline-flex",
-              alignItems: "center"
+              alignItems: "center",
             }}
           >
             Release Notes &nbsp;&nbsp;{" "}

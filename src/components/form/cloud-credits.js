@@ -16,6 +16,7 @@ import {
   Option,
   TextArea,
 } from "./inputs";
+import { render } from "react-dom";
 
 const FRESHDESK_API_KEY = process.env.GATSBY_FRESHDESK_API_KEY;
 const FRESHDESK_API_ROOT_URL = process.env.GATSBY_FRESHDESK_API_ROOT_URL;
@@ -60,6 +61,7 @@ const ErrorMessage = () => {
 export const CloudCreditsForm = (props) => {
   const [name, setName] = useState("");
   const [username, setUserName] = useState("");
+  const [terraUsername, setTerraUserName] = useState("");
   const [projectPi, setProjectPi] = useState("");
   const [email, setEmail] = useState("");
   const [how, setHow] = useState("");
@@ -165,6 +167,7 @@ export const CloudCreditsForm = (props) => {
       email: email,
       custom_fields: {
         cf_cloud_credits_username_seven_bridges_only: username,
+        cf_cloud_credits_terra_user_name: terraUsername,
         cf_cloud_credits_project_pi: projectPi,
         cf_cf_cloud_credits_collaborator_information: role,
         cf_cf_organization: organization,
@@ -195,9 +198,197 @@ export const CloudCreditsForm = (props) => {
     submitTicket();
   };
 
+  const renderSwitch = (platform) => {
+    switch (platform) {
+      case "$250 each on both Seven Bridges and Terra":
+        return (
+          <>
+            <FormControl>
+              <label htmlFor="username">
+                {" "}
+                Seven Bridges users only: Platform User Name (create account{" "}
+                <ExternalLink to="https://docs.sevenbridges.com/docs/sign-up">
+                  here
+                </ExternalLink>
+                )
+              </label>
+              <TextInput
+                required
+                type="text"
+                id="username"
+                name="username"
+                value={username}
+                onChange={handleChangeUserName}
+              />
+              <HelpText>Seven Bridges users only</HelpText>
+            </FormControl>{" "}
+            <FormControl>
+              <label htmlFor="terraUsername">
+                Terra users only: Google identity (create account{" "}
+                <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/getting-started/analyze-data-1/terra/account-setup">
+                  here
+                </ExternalLink>
+                )
+              </label>
+              <TextInput
+                required
+                type="text"
+                id="terraUsername"
+                name="terraUsername"
+                value={terraUsername}
+                onChange={handleChangeTerraUserName}
+              />
+              <HelpText>Terra users only</HelpText>
+            </FormControl>
+          </>
+        );
+      case "Both Seven Bridges and Terra":
+        return (
+          <>
+            <FormControl>
+              <label htmlFor="username">
+                {" "}
+                Seven Bridges users only: Platform User Name (create account{" "}
+                <ExternalLink to="https://docs.sevenbridges.com/docs/sign-up">
+                  here
+                </ExternalLink>
+                )
+              </label>
+              <TextInput
+                required
+                type="text"
+                id="username"
+                name="username"
+                value={username}
+                onChange={handleChangeUserName}
+              />
+              <HelpText>Seven Bridges users only</HelpText>
+            </FormControl>{" "}
+            <FormControl>
+              <label htmlFor="terraUsername">
+                Terra users only: Google identity (create account{" "}
+                <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/getting-started/analyze-data-1/terra/account-setup">
+                  here
+                </ExternalLink>
+                )
+              </label>
+              <TextInput
+                required
+                type="text"
+                id="terraUsername"
+                name="terraUsername"
+                value={terraUsername}
+                onChange={handleChangeTerraUserName}
+              />
+              <HelpText>Terra users only</HelpText>
+            </FormControl>
+          </>
+        );
+      case "$500 on Seven Bridges":
+        return (
+          <>
+            <FormControl>
+              <label htmlFor="username">
+                {" "}
+                Seven Bridges users only: Platform User Name (create account{" "}
+                <ExternalLink to="https://docs.sevenbridges.com/docs/sign-up">
+                  here
+                </ExternalLink>
+                )
+              </label>
+              <TextInput
+                required
+                type="text"
+                id="username"
+                name="username"
+                value={username}
+                onChange={handleChangeUserName}
+              />
+              <HelpText>Seven Bridges users only</HelpText>
+            </FormControl>
+          </>
+        );
+      case "Seven Bridges":
+        return (
+          <>
+            <FormControl>
+              <label htmlFor="username">
+                {" "}
+                Seven Bridges users only: Platform User Name (create account{" "}
+                <ExternalLink to="https://docs.sevenbridges.com/docs/sign-up">
+                  here
+                </ExternalLink>
+                )
+              </label>
+              <TextInput
+                required
+                type="text"
+                id="username"
+                name="username"
+                value={username}
+                onChange={handleChangeUserName}
+              />
+              <HelpText>Seven Bridges users only</HelpText>
+            </FormControl>
+          </>
+        );
+      case "$500 on Terra":
+        return (
+          <>
+            <FormControl>
+              <label htmlFor="terraUsername">
+                Terra users only: Google identity (create account{" "}
+                <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/getting-started/analyze-data-1/terra/account-setup">
+                  here
+                </ExternalLink>
+                )
+              </label>
+              <TextInput
+                required
+                type="text"
+                id="terraUsername"
+                name="terraUsername"
+                value={terraUsername}
+                onChange={handleChangeTerraUserName}
+              />
+              <HelpText>Terra users only</HelpText>
+            </FormControl>
+          </>
+        );
+      case "Terra":
+        return (
+          <>
+            <FormControl>
+              <label htmlFor="terraUsername">
+                Terra users only: Google identity (create account{" "}
+                <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/getting-started/analyze-data-1/terra/account-setup">
+                  here
+                </ExternalLink>
+                )
+              </label>
+              <TextInput
+                required
+                type="text"
+                id="terraUsername"
+                name="terraUsername"
+                value={terraUsername}
+                onChange={handleChangeTerraUserName}
+              />
+              <HelpText>Terra users only</HelpText>
+            </FormControl>
+          </>
+        );
+
+      default:
+        return <></>;
+    }
+  };
+
   const handleChangeName = (event) => setName(event.target.value);
   const handleChangeProjectPi = (event) => setProjectPi(event.target.value);
   const handleChangeUserName = (event) => setUserName(event.target.value);
+  const handleChangeTerraUserName = (event) =>
+    setTerraUserName(event.target.value);
   const handleChangeEmail = (event) => setEmail(event.target.value);
   const handleChangeRole = (event) => setRole(event.target.value);
   const handleChangeOrganization = (event) =>
@@ -234,6 +425,18 @@ export const CloudCreditsForm = (props) => {
     <Card {...props}>
       <CardHeader>Cloud Credits Request</CardHeader>
       <CardBody>
+        <Paragraph center noMargin>
+          Before completing this form you must create an account on the
+          applicable platform(s),{" "}
+          <ExternalLink to="https://docs.sevenbridges.com/docs/sign-up">
+            Seven Bridges
+          </ExternalLink>{" "}
+          or{" "}
+          <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/getting-started/analyze-data-1/terra/account-setup">
+            Terra
+          </ExternalLink>
+          .
+        </Paragraph>
         <Paragraph right noMargin>
           * <em>All fields are required.</em>
         </Paragraph>
@@ -262,17 +465,6 @@ export const CloudCreditsForm = (props) => {
               onChange={handleChangeEmail}
             />
             <HelpText>Please use an organizational email address.</HelpText>
-          </FormControl>
-          <FormControl>
-            <label htmlFor="username">Platform User Name</label>
-            <TextInput
-              type="text"
-              id="username"
-              name="username"
-              value={username}
-              onChange={handleChangeUserName}
-            />
-            <HelpText>Seven Bridges users only</HelpText>
           </FormControl>
           <FormControl>
             <label htmlFor="projectPi">Project PI </label>
@@ -385,30 +577,36 @@ export const CloudCreditsForm = (props) => {
           </FormControl>
           {cloudCreditsRequest ===
             "$500 in initial pilot cloud credits to begin a project or explore the ecosystem" && (
-            <FormControl>
-              <label htmlFor="preferedAnalysisPlatform">
-                Select your preferred analysis platform * (or choose to explore
-                both)
-              </label>
-              <Select
-                required
-                id="preferedAnalysisPlatform"
-                name="preferedAnalysisPlatform"
-                value={preferedAnalysisPlatform}
-                onChange={handleChangePreferedAnalysisPlatform}
-              >
-                <Option value="">Select One</Option>
-                <Option You value={"$500 on Seven Bridges"}>
-                  $500 on Seven Bridges
-                </Option>
-                <Option You value={"$500 on Terra"}>
-                  $500 on Terra
-                </Option>
-                <Option You value={"$250 each on both Seven Bridges and Terra"}>
-                  $250 each on both Seven Bridges and Terra
-                </Option>
-              </Select>
-            </FormControl>
+            <>
+              <FormControl>
+                <label htmlFor="preferedAnalysisPlatform">
+                  Select your preferred analysis platform * (or choose to
+                  explore both)
+                </label>
+                <Select
+                  required
+                  id="preferedAnalysisPlatform"
+                  name="preferedAnalysisPlatform"
+                  value={preferedAnalysisPlatform}
+                  onChange={handleChangePreferedAnalysisPlatform}
+                >
+                  <Option value="">Select One</Option>
+                  <Option You value={"$500 on Seven Bridges"}>
+                    $500 on Seven Bridges
+                  </Option>
+                  <Option You value={"$500 on Terra"}>
+                    $500 on Terra
+                  </Option>
+                  <Option
+                    You
+                    value={"$250 each on both Seven Bridges and Terra"}
+                  >
+                    $250 each on both Seven Bridges and Terra
+                  </Option>
+                </Select>
+              </FormControl>
+              {renderSwitch(preferedAnalysisPlatform)}
+            </>
           )}
           {cloudCreditsRequest === "Additional cloud credits" && (
             <>
@@ -515,6 +713,7 @@ export const CloudCreditsForm = (props) => {
                   </Option>
                 </Select>
               </FormControl>
+              {renderSwitch(platform)}
               {platform === "Both Seven Bridges and Terra" && (
                 <>
                   <FormControl>
