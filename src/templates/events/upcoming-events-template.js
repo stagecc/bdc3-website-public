@@ -17,7 +17,6 @@ import { useWindowWidth } from "../../hooks";
 
 const EventsList = ({ title, events }) => {
   const { isCompact } = useWindowWidth();
-  console.log(events);
   return (
     <Module title={title}>
       <br />
