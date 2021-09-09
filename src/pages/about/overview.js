@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import Img from "gatsby-image";
-import { Link } from "gatsby";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { SEO } from "../../components/seo";
 import styled from "styled-components";
@@ -12,7 +11,7 @@ import {
   Paragraph,
 } from "../../components/typography";
 import { List, ListItem } from "../../components/list";
-import { ExternalLink } from "../../components/link";
+import { Link } from "../../components/link";
 import { Container as Grid, Row, Col, Visible } from "react-grid-system";
 import { usePartners, usePlatforms } from "../../hooks";
 
@@ -180,9 +179,9 @@ const AboutPage = ({ data }) => {
                 <ListItem
                   primary={
                     <Fragment>
-                      <ExternalLink to="https://anvilproject.org/ncpi">
+                      <Link to="https://anvilproject.org/ncpi">
                         NCPI
-                      </ExternalLink>{" "}
+                      </Link>{" "}
                       &ndash; The NIH Cloud Platform Interoperability Effort
                       (NCPI) is establishing and implementing guidelines and
                       technical standards to empower end-user analyses across
@@ -198,9 +197,9 @@ const AboutPage = ({ data }) => {
                 <ListItem
                   primary={
                     <Fragment>
-                      <ExternalLink to="https://datascience.nih.gov/strides">
+                      <Link to="https://datascience.nih.gov/strides">
                         STRIDES
-                      </ExternalLink>{" "}
+                      </Link>{" "}
                       &ndash; The NIH Science and Technology Research
                       Infrastructure for Discovery, Experimentation, and
                       Sustainability (STRIDES) Initiative allows NIH to provide
@@ -216,9 +215,9 @@ const AboutPage = ({ data }) => {
                 <ListItem
                   primary={
                     <Fragment>
-                      <ExternalLink to="https://datascience.nih.gov/data-infrastructure">
+                      <Link to="https://datascience.nih.gov/data-infrastructure">
                         ODSS
-                      </ExternalLink>{" "}
+                      </Link>{" "}
                       &ndash; The NIH Office of Data Science Strategy (ODSS)
                       supports efficient and effective biomedical research data
                       infrastructure to achieve NIH’s mission of applying
@@ -246,9 +245,9 @@ const AboutPage = ({ data }) => {
               <ol style={{ lineHeight: 2 }}>
                 <li>
                   Ongoing submission and upvoting of ideas via the{" "}
-                  <ExternalLink to="https://biodatacatalyst.ideascale.com/">
+                  <Link to="https://biodatacatalyst.ideascale.com/">
                     NHLBI BioDataCatalyst Ideascale
-                  </ExternalLink>
+                  </Link>
                   .
                 </li>
                 <li>Periodic Requests for Comment (RFC) solicitations.</li>
@@ -279,9 +278,9 @@ const AboutPage = ({ data }) => {
 
               <Paragraph>
                 To learn more about citing and acknowledging BioData Catalyst,{" "}
-                <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/biodata-catalyst-glossary/citation-and-acknowledgement">
+                <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/biodata-catalyst-glossary/citation-and-acknowledgement">
                   visit our documentation
-                </ExternalLink>
+                </Link>
                 .
               </Paragraph>
             </section>
