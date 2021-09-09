@@ -1,0 +1,10 @@
+-
+  id: aware
+  message: We don’t know what is wrong, but we are looking into it.
+-
+  id: fixing
+  message: We know exactly what is wrong and we anticipate fixing it shortly.
+-
+  id: blocked
+  message: An external service is experiencing problems, and we will let you know when we know more.
+
