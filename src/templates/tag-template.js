@@ -1,6 +1,6 @@
 import React from "react";
 import { SEO } from "../components/seo";
-import { Link } from "gatsby";
+import { Link } from "../components/link";
 import { graphql } from "gatsby";
 import { Title, Heading, Paragraph, Meta } from "../components/typography";
 import { InlineList2 } from "../components/list";

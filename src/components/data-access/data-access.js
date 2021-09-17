@@ -6,7 +6,7 @@ import { DownloadIcon } from "../../components/icons";
 import { Button } from "../../components/buttons";
 import { Subheading, Paragraph } from "../../components/typography";
 import { Card, CardHeader, CardBody } from "../../components/card";
-import { ExternalLink } from "../../components/link";
+import { Link } from "../../components/link";
 
 const ProjectList = styled.select`
   width: 100%;
@@ -96,9 +96,9 @@ export const DataAccess = ({ location }) => {
             <Paragraph>
               For additional guidance on How to check what data you have access
               to on BioData Catalyst, see a page dedicated to this topic in our{" "}
-              <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/data-access/check-my-access-to-data">
+              <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/data-access/check-my-access-to-data">
                 BioData Catalyst documentation
-              </ExternalLink>
+              </Link>
               .
             </Paragraph>
 

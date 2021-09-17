@@ -5,10 +5,8 @@ import {
   Title,
   Heading,
   Paragraph,
-  Subheading,
 } from "../../components/typography";
 import { BulletedList, ListItem } from "../../components/list";
-import { Button, ButtonLink } from "../../components/buttons";
 import { Link } from "../../components/link";
 
 const SuccessPage = () => {
@@ -217,7 +215,8 @@ const SuccessPage = () => {
           <Paragraph>
             ALREADY KNOW WHICH ECOSYSTEM ELEMENT YOU WANT TO USE?
           </Paragraph>
-          <ButtonLink
+          <Link
+          asButton={true}
             light
             target="_blank"
             rel="noopener noreferrer"
@@ -229,8 +228,9 @@ const SuccessPage = () => {
             }}
           >
             GEN3
-          </ButtonLink>
-          <ButtonLink
+          </Link>
+          <Link
+          asButton={true}
             light
             target="_blank"
             rel="noopener noreferrer"
@@ -242,15 +242,13 @@ const SuccessPage = () => {
             }}
           >
             PIC-SURE
-          </ButtonLink>
+          </Link>
           <Link
             asButton={true}
-            
             light
             target="_blank"
             rel="noopener noreferrer"
-            // to="https://terra.biodatacatalyst.nhlbi.nih.gov/"
-            to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/getting-started"
+            to="https://terra.biodatacatalyst.nhlbi.nih.gov/"
             style={{
               margin: "1rem",
               display: "inline-flex",
@@ -259,12 +257,12 @@ const SuccessPage = () => {
           >
             TERRA
           </Link>
-          <ButtonLink
+          <Link
+            asButton={true}
             light
-            as="a"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://accounts.sb.biodatacatalyst.nhlbi.nih.gov/auth/login?next=https%3A%2F%2Faccounts.sb.biodatacatalyst.nhlbi.nih.gov%2Foauth2%2Fauthorization%3Fresponse_type%3Dcode%26client_id%3D74735b722c33498cb981b6b6e24f659f%26redirect_uri%3Dhttps%253A%252F%252Fplatform.sb.biodatacatalyst.nhlbi.nih.gov%252Foauth2%252Fredirect%26state%3DI0yJTlok0yClQhiGCycDKJFPpxYCje%26scope%3Dopenid%26nonce%3D16359656934167200991623799348"
+            to="https://accounts.sb.biodatacatalyst.nhlbi.nih.gov/auth/login?next=https%3A%2F%2Faccounts.sb.biodatacatalyst.nhlbi.nih.gov%2Foauth2%2Fauthorization%3Fresponse_type%3Dcode%26client_id%3D74735b722c33498cb981b6b6e24f659f%26redirect_uri%3Dhttps%253A%252F%252Fplatform.sb.biodatacatalyst.nhlbi.nih.gov%252Foauth2%252Fredirect%26state%3DI0yJTlok0yClQhiGCycDKJFPpxYCje%26scope%3Dopenid%26nonce%3D16359656934167200991623799348"
             style={{
               margin: "1rem",
               display: "inline-flex",
@@ -272,7 +270,7 @@ const SuccessPage = () => {
             }}
           >
             SEVEN BRIDGES
-          </ButtonLink>
+          </Link>
         </Paragraph>
       </section>
       <br />

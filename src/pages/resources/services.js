@@ -1,12 +1,11 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
-import { Link } from "gatsby";
 import { SEO } from "../../components/seo";
 import { PageContent } from "../../components/layout";
 import { Title, Heading, Paragraph } from "../../components/typography";
 import { Container as Grid, Row, Col, Visible } from "react-grid-system";
 import { Card, CardHeader, CardBody } from "../../components/card";
-import { ExternalLink } from "../../components/link";
+import { Link } from "../../components/link";
 import { usePlatforms } from "../../hooks";
 
 const ToolLinks = styled.div`
@@ -19,7 +18,7 @@ const InternalToolLink = styled(Link)`
   margin: 0 0.5rem;
 `;
 
-const ExternalToolLink = styled(ExternalLink)`
+const ExternalToolLink = styled(Link)`
   margin: 0 0.5rem;
   white-space: nowrap;
 `;

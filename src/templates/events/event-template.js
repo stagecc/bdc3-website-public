@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 // import { AnimateOnMount } from "../../components/anim"
 import { SEO } from "../../components/seo";
-import { graphql, Link } from "gatsby";
+import { graphql} from "gatsby";
+import { Link } from "../../components/link";
 import { Title, Meta } from "../../components/typography";
 import { InlineList2 } from "../../components/list";
 import { TagLink } from "../../components/link";

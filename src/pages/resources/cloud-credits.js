@@ -1,10 +1,8 @@
 import React from "react";
 import { SEO } from "../../components/seo";
-import { Link } from "gatsby";
 import { PageContent } from "../../components/layout";
 import { Title, Heading, Paragraph } from "../../components/typography";
-import { ExternalLink } from "../../components/link";
-import { AnchorLink } from "gatsby-plugin-anchor-links";
+import { Link } from "../../components/link";
 import { CloudCreditsForm } from "../../components/form";
 import { BulletedList, ListItem } from "../../components/list";
 
@@ -57,16 +55,16 @@ const CloudCreditsPage = () => (
       <BulletedList>
         <ListItem
           primary={
-            <ExternalLink to="https://biodatacatalyst.nhlbi.nih.gov/platforms/terra">
+            <Link to="https://biodatacatalyst.nhlbi.nih.gov/platforms/terra">
               BioData Catalyst Powered by Terra
-            </ExternalLink>
+            </Link>
           }
         />
         <ListItem
           primary={
-            <ExternalLink to="https://biodatacatalyst.nhlbi.nih.gov/platforms/seven-bridges">
+            <Link to="https://biodatacatalyst.nhlbi.nih.gov/platforms/seven-bridges">
               BioData Catalyst Powered by Seven Bridges
-            </ExternalLink>
+            </Link>
           }
         />
       </BulletedList>
@@ -173,9 +171,9 @@ const CloudCreditsPage = () => (
         <ListItem
           primary={
             <span>
-              <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/analyze-data/terra/account-setup/managing-costs">
+              <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/analyze-data/terra/account-setup/managing-costs">
                 Controlling your cloud costs
-              </ExternalLink>{" "}
+              </Link>{" "}
               (BioData Catalyst powered by Terra)
             </span>
           }
@@ -183,9 +181,9 @@ const CloudCreditsPage = () => (
         <ListItem
           primary={
             <span>
-              <ExternalLink to="https://sb-biodatacatalyst.readme.io/docs/about-pricing">
+              <Link to="https://sb-biodatacatalyst.readme.io/docs/about-pricing">
                 Cloud infrastructure pricing
-              </ExternalLink>{" "}
+              </Link>{" "}
               (BioData Catalyst powered by Seven Bridges)
             </span>
           }
@@ -193,9 +191,9 @@ const CloudCreditsPage = () => (
         <ListItem
           primary={
             <span>
-              <ExternalLink to="https://sb-biodatacatalyst.readme.io/page/comprehensive-tips-for-reliable-and-efficient-analysis-set-up">
+              <Link to="https://sb-biodatacatalyst.readme.io/page/comprehensive-tips-for-reliable-and-efficient-analysis-set-up">
                 Comprehensive tips for reliable and efficient analysis set-up
-              </ExternalLink>{" "}
+              </Link>{" "}
               (BioData Catalyst Powered by Seven Bridges)
             </span>
           }

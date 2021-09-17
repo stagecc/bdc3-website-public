@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link } from "../../components/link";
 import styled from "styled-components";
 import { useNews } from "../../hooks";
 import { Subheading, Paragraph } from "../typography";

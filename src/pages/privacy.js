@@ -7,7 +7,7 @@ import {
   Subheading,
   Paragraph
 } from "../components/typography";
-import { ExternalLink } from "../components/link";
+import { Link } from "../components/link";
 import { BulletedList, ListItem } from "../components/list";
 
 const PrivacyPage = () => {
@@ -19,9 +19,9 @@ const PrivacyPage = () => {
 
       <Paragraph>
         The{" "}
-        <ExternalLink to="https://www.nhlbi.nih.gov/">
+        <Link to="https://www.nhlbi.nih.gov/">
           National Heart Lung and Blood Institute
-        </ExternalLink>{" "}
+        </Link>{" "}
         (NHLBI) operates the BioData Catalyst website . Protecting your privacy
         is very important to us. The following information establishes how the
         BioData Catalyst website will use information gathered from your visit.
@@ -77,10 +77,10 @@ const PrivacyPage = () => {
 
         <Paragraph>
           The Office of Management and Budget Memo{" "}
-          <ExternalLink to="https://www.nih.gov/sites/default/files/misc/m10-22.pdf">
+          <Link to="https://www.nih.gov/sites/default/files/misc/m10-22.pdf">
             M-10-22, Guidance for Online Use of Web Measurement and
             Customization Technologies
-          </ExternalLink>{" "}
+          </Link>{" "}
           allows Federal agencies to use session and persistent cookies.
         </Paragraph>
 
@@ -122,9 +122,9 @@ const PrivacyPage = () => {
           out of cookies, you will still have access to all information and
           resources at this site. Instructions for disabling or opting out of
           cookies in the most popular browsers are located at 
-          <ExternalLink to="https://www.usa.gov/optout-instructions">
+          <Link to="https://www.usa.gov/optout-instructions">
             https://www.usa.gov/optout-instructions.
-          </ExternalLink>
+          </Link>
           Please note that by following the instructions to opt-out of cookies,
           you will disable cookies from all sources, not just those from this
           site.

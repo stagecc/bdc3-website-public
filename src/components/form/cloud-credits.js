@@ -5,7 +5,7 @@ import { Paragraph } from "../typography";
 import { Button } from "../buttons";
 import { Card, CardHeader, CardBody } from "../card";
 import { Dots as LoadingDots } from "../loading";
-import { ExternalLink } from "../link";
+import { Link } from "../link";
 import {
   Form,
   FormControl,
@@ -49,9 +49,9 @@ const ErrorMessage = () => {
       </Paragraph>
       <Paragraph center>
         Please submit submit your request on{" "}
-        <ExternalLink to="https://bdcatalyst.freshdesk.com">
+        <Link to="https://bdcatalyst.freshdesk.com">
           our help desk
-        </ExternalLink>{" "}
+        </Link>{" "}
         while we resolve this issue. Thanks!
       </Paragraph>
     </Fragment>
@@ -207,9 +207,9 @@ export const CloudCreditsForm = (props) => {
               <label htmlFor="username">
                 {" "}
                 Seven Bridges users only: Platform User Name (create account{" "}
-                <ExternalLink to="https://docs.sevenbridges.com/docs/sign-up">
+                <Link to="https://docs.sevenbridges.com/docs/sign-up">
                   here
-                </ExternalLink>
+                </Link>
                 )
               </label>
               <TextInput
@@ -225,9 +225,9 @@ export const CloudCreditsForm = (props) => {
             <FormControl>
               <label htmlFor="terraUsername">
                 Terra users only: Google identity (create account{" "}
-                <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/getting-started/analyze-data-1/terra/account-setup">
+                <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/getting-started/analyze-data-1/terra/account-setup">
                   here
-                </ExternalLink>
+                </Link>
                 )
               </label>
               <TextInput
@@ -249,9 +249,9 @@ export const CloudCreditsForm = (props) => {
               <label htmlFor="username">
                 {" "}
                 Seven Bridges users only: Platform User Name (create account{" "}
-                <ExternalLink to="https://docs.sevenbridges.com/docs/sign-up">
+                <Link to="https://docs.sevenbridges.com/docs/sign-up">
                   here
-                </ExternalLink>
+                </Link>
                 )
               </label>
               <TextInput
@@ -267,9 +267,9 @@ export const CloudCreditsForm = (props) => {
             <FormControl>
               <label htmlFor="terraUsername">
                 Terra users only: Google identity (create account{" "}
-                <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/getting-started/analyze-data-1/terra/account-setup">
+                <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/getting-started/analyze-data-1/terra/account-setup">
                   here
-                </ExternalLink>
+                </Link>
                 )
               </label>
               <TextInput
@@ -291,9 +291,9 @@ export const CloudCreditsForm = (props) => {
               <label htmlFor="username">
                 {" "}
                 Seven Bridges users only: Platform User Name (create account{" "}
-                <ExternalLink to="https://docs.sevenbridges.com/docs/sign-up">
+                <Link to="https://docs.sevenbridges.com/docs/sign-up">
                   here
-                </ExternalLink>
+                </Link>
                 )
               </label>
               <TextInput
@@ -315,9 +315,9 @@ export const CloudCreditsForm = (props) => {
               <label htmlFor="username">
                 {" "}
                 Seven Bridges users only: Platform User Name (create account{" "}
-                <ExternalLink to="https://docs.sevenbridges.com/docs/sign-up">
+                <Link to="https://docs.sevenbridges.com/docs/sign-up">
                   here
-                </ExternalLink>
+                </Link>
                 )
               </label>
               <TextInput
@@ -338,9 +338,9 @@ export const CloudCreditsForm = (props) => {
             <FormControl>
               <label htmlFor="terraUsername">
                 Terra users only: Google identity (create account{" "}
-                <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/getting-started/analyze-data-1/terra/account-setup">
+                <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/getting-started/analyze-data-1/terra/account-setup">
                   here
-                </ExternalLink>
+                </Link>
                 )
               </label>
               <TextInput
@@ -361,9 +361,9 @@ export const CloudCreditsForm = (props) => {
             <FormControl>
               <label htmlFor="terraUsername">
                 Terra users only: Google identity (create account{" "}
-                <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/getting-started/analyze-data-1/terra/account-setup">
+                <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/getting-started/analyze-data-1/terra/account-setup">
                   here
-                </ExternalLink>
+                </Link>
                 )
               </label>
               <TextInput
@@ -428,13 +428,13 @@ export const CloudCreditsForm = (props) => {
         <Paragraph center noMargin>
           Before completing this form you must create an account on the
           applicable platform(s),{" "}
-          <ExternalLink to="https://docs.sevenbridges.com/docs/sign-up">
+          <Link to="https://docs.sevenbridges.com/docs/sign-up">
             Seven Bridges
-          </ExternalLink>{" "}
+          </Link>{" "}
           or{" "}
-          <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/getting-started/analyze-data-1/terra/account-setup">
+          <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/getting-started/analyze-data-1/terra/account-setup">
             Terra
-          </ExternalLink>
+          </Link>
           .
         </Paragraph>
         <Paragraph right noMargin>

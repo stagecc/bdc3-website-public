@@ -2,7 +2,7 @@ import React from "react";
 import { SEO } from "../../components/seo";
 import { PageContent } from "../../components/layout";
 import { Title, Heading, Paragraph } from "../../components/typography";
-import { ExternalLink, Link } from "../../components/link";
+import { Link } from "../../components/link";
 import { EcoSystemForm } from "../../components/form";
 import { BulletedList, ListItem } from "../../components/list";
 

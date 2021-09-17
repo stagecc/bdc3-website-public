@@ -1,6 +1,5 @@
 import React from "react";
 import { SEO } from "../components/seo";
-import { Link } from "gatsby";
 import { PageContent } from "../components/layout";
 import {
   Title,
@@ -10,7 +9,7 @@ import {
 } from "../components/typography";
 import { Card, CardHeader, CardBody } from "../components/card";
 // import { Accordion } from '../components/accordion'
-import { ExternalLink } from "../components/link";
+import { Link } from "../components/link";
 import { Dots as LoadingDots } from "../components/loading";
 import { useFreshdeskFaqs } from "../hooks";
 import { Accordion, Panel } from "@mwatson/react-accessible-accordion";
@@ -46,9 +45,9 @@ const FaqPage = () => {
           <ErrorMessage center>{error}</ErrorMessage>
           <Paragraph center>
             View our FAQs directly at{" "}
-            <ExternalLink to="https://bdcatalyst.freshdesk.com">
+            <Link to="https://bdcatalyst.freshdesk.com">
               bdcatalyst.freshdesk.com
-            </ExternalLink>
+            </Link>
             .
           </Paragraph>
         </div>
@@ -102,9 +101,9 @@ const FaqPage = () => {
 
       <Paragraph>
         If unanswered questions remain, view our complete{" "}
-        <ExternalLink to="https://bdcatalyst.freshdesk.com/">
+        <Link to="https://bdcatalyst.freshdesk.com/">
           Knowledge Base
-        </ExternalLink>{" "}
+        </Link>{" "}
         or submit a <Link to="/contact">help request</Link> to receive
         assistance.
       </Paragraph>

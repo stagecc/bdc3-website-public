@@ -1,12 +1,11 @@
 import React from "react";
-import { Link } from "gatsby";
 import { SEO } from "../components/seo";
 import { PageContent } from "../components/layout";
 import { Title, Heading, Paragraph } from "../components/typography";
 import { List, ListItem } from "../components/list";
 import { DataTable, CovidExpansionPanel } from "../components/data-table";
 import { useStudies } from "../hooks";
-import { ExternalLink } from "../components/link";
+import { Link } from "../components/link";
 
 const Covid19Page = () => {
   const { covidStudies, covidStudiesColumns } = useStudies();
@@ -20,9 +19,9 @@ const Covid19Page = () => {
       <Paragraph>
         NHLBI's response to the public health threat posed by COVID-19 includes
         a{" "}
-        <ExternalLink to="https://www.nhlbi.nih.gov/directors-messages/coronavirus-covid-19-nhlbi-response">
+        <Link to="https://www.nhlbi.nih.gov/directors-messages/coronavirus-covid-19-nhlbi-response">
           multi-pronged research strategy
-        </ExternalLink>
+        </Link>
         , which consists of translational research, clinical trials, clinical
         epidemiology, and population science. The NHLBI is also leveraging its
         cyberinfrastructure, namely the BioData Catalyst ecosystem, to help
@@ -62,14 +61,14 @@ const Covid19Page = () => {
       <Paragraph>
         Access to COVID-19 data on BioData Catalyst requires data access
         approvals from the NLM Database of Genotypes and Phenotypes (
-        <ExternalLink to="https://dbgap.ncbi.nlm.nih.gov/aa/wga.cgi?page=login">
+        <Link to="https://dbgap.ncbi.nlm.nih.gov/aa/wga.cgi?page=login">
           dbGaP
-        </ExternalLink>
+        </Link>
         ) system. To learn more about data access and data use on the BioData
         Catalyst system, visit our{" "}
-        <ExternalLink to="https://biodatacatalyst.nhlbi.nih.gov/resources/data">
+        <Link to="https://biodatacatalyst.nhlbi.nih.gov/resources/data">
           Data webpage
-        </ExternalLink>
+        </Link>
         .
       </Paragraph>
 
@@ -80,9 +79,9 @@ const Covid19Page = () => {
           primary={
             <span>
               Obtain or confirm you already have an{" "}
-              <ExternalLink to="https://era.nih.gov/eracommons-timeline.htm">
+              <Link to="https://era.nih.gov/eracommons-timeline.htm">
                 eRA Commons account
-              </ExternalLink>
+              </Link>
               , the credentials which will be used as part of the login process.
             </span>
           }
@@ -98,9 +97,9 @@ const Covid19Page = () => {
                   primary={
                     <span>
                       (a) Going to the{" "}
-                      <ExternalLink to="https://dbgap.ncbi.nlm.nih.gov/aa/wga.cgi?page=login">
+                      <Link to="https://dbgap.ncbi.nlm.nih.gov/aa/wga.cgi?page=login">
                         controlled-access login page for dbGaP
-                      </ExternalLink>{" "}
+                      </Link>{" "}
                       and clicking on the "Login" link on the upper right side
                       of the page.
                     </span>
@@ -132,9 +131,9 @@ const Covid19Page = () => {
           primary={
             <span>
               Read the BioData Catalyst Ecosystem{" "}
-              <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/">
+              <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/">
                 Overview document
-              </ExternalLink>{" "}
+              </Link>{" "}
               because it provides important information for new users and links
               to additional guidance and resources.
             </span>
@@ -157,13 +156,13 @@ const Covid19Page = () => {
             <span>
               Prepare for cloud storage costs (incurred from computation and
               storage of derived results) which may be paid via users’{" "}
-              <ExternalLink to="https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc">
+              <Link to="https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc">
                 Amazon
-              </ExternalLink>{" "}
+              </Link>{" "}
               and &nbsp;
-              <ExternalLink to="https://cloud.google.com/free/?utm_source=google&utm_medium=cpc&utm_campaign=na-US-all-en-dr-SKWS-all-all-trial-b-dr-1009135&utm_content=text-ad-none-any-DEV_c-CRE_265893083938-ADGP_Hybrid%20%7C%20AW%20SEM%20%7C%20BKWS%20%7C%20US%20%7C%20en%20%7C%20BMM%20~%20Google%20Cloud%20Free%20Tier-KWID_43700032443110077-kwd-326209943198&utm_term=KW_%2Bfree%20%2Bgoogle%20%2Bcloud-ST_%2Bfree%20%2Bgoogle%20%2Bcloud&gclid=CjwKCAiAz4b_BRBbEiwA5XlVVtvMK1vgUhmeGn4U0YiiGRlYUHeefMx0xvs_ot5mwkbNLe7ytcdefxoCebAQAvD_BwE">
+              <Link to="https://cloud.google.com/free/?utm_source=google&utm_medium=cpc&utm_campaign=na-US-all-en-dr-SKWS-all-all-trial-b-dr-1009135&utm_content=text-ad-none-any-DEV_c-CRE_265893083938-ADGP_Hybrid%20%7C%20AW%20SEM%20%7C%20BKWS%20%7C%20US%20%7C%20en%20%7C%20BMM%20~%20Google%20Cloud%20Free%20Tier-KWID_43700032443110077-kwd-326209943198&utm_term=KW_%2Bfree%20%2Bgoogle%20%2Bcloud-ST_%2Bfree%20%2Bgoogle%20%2Bcloud&gclid=CjwKCAiAz4b_BRBbEiwA5XlVVtvMK1vgUhmeGn4U0YiiGRlYUHeefMx0xvs_ot5mwkbNLe7ytcdefxoCebAQAvD_BwE">
                 Google
-              </ExternalLink>{" "}
+              </Link>{" "}
               accounts. Cloud credits may be available for those conducting
               heart, lung, blood, or sleep research. Visit the{" "}
               <Link to="/resources/cloud-credits">Cloud Credits page</Link> for
@@ -179,9 +178,9 @@ const Covid19Page = () => {
               ecosystem to conduct your research. Refer to the Ecosystem Access,
               Hosted Data, and System Services section of the Overview document
               for{" "}
-              <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/#ecosystem-access-hosted-data-and-system-services">
+              <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/#ecosystem-access-hosted-data-and-system-services">
                 login information
-              </ExternalLink>
+              </Link>
               .
             </span>
           }

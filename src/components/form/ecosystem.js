@@ -5,7 +5,7 @@ import { Paragraph } from "../typography";
 import { Button } from "../buttons";
 import { Card, CardHeader, CardBody } from "../card";
 // import { Dots as LoadingDots } from "../loading";
-import { ExternalLink } from "../link";
+import { Link } from "../link";
 import { navigate } from "gatsby";
 import {
   Form,

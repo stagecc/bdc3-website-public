@@ -12,7 +12,7 @@ import { TextInput } from "../form";
 import { Button, IconButton } from "../buttons";
 import { DownloadIcon, PieChartIcon } from "../icons";
 import { ChartTooltip, PieChart } from "../charts";
-import { Stat } from "./stat";
+// import { Stat } from "./stat";
 import { downloadCSV, downloadJSON } from "../../utils";
 import { BackspaceIcon, CloseIcon, FullscreenIcon } from "../icons";
 

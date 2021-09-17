@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, Link } from "gatsby";
+import { graphql} from "gatsby";
 import Img from "gatsby-image";
 import { SEO } from "../../../components/seo";
 import { PageContent } from "../../../components/layout";
@@ -11,7 +11,7 @@ import {
 } from "../../../components/typography";
 import { BulletedList, ListItem } from "../../../components/list";
 import { Button, ButtonLink } from "../../../components/buttons";
-import { ExternalLink } from "../../../components/link";
+import { Link } from "../../../components/link";
 import { Visible } from "react-grid-system";
 import { DataAccess } from "../../../components/data-access";
 import { DownloadIcon, MagnifyingGlassIcon } from "../../../components/icons";
@@ -49,9 +49,9 @@ const DataPage = ({ data, location }) => {
           <ListItem
             primary={
               <span>
-                <ExternalLink to="https://www.nhlbiwgs.org/">
+                <Link to="https://www.nhlbiwgs.org/">
                   TOPMed
-                </ExternalLink>{" "}
+                </Link>{" "}
                 Freeze 5b
               </span>
             }
@@ -59,9 +59,9 @@ const DataPage = ({ data, location }) => {
           <ListItem
             primary={
               <span>
-                <ExternalLink to="https://www.nhlbiwgs.org/">
+                <Link to="https://www.nhlbiwgs.org/">
                   TOPMed
-                </ExternalLink>{" "}
+                </Link>{" "}
                 Freeze 8 Data
               </span>
             }
@@ -70,9 +70,9 @@ const DataPage = ({ data, location }) => {
             primary={
               <span>
                 Parent Studies{" "}
-                <ExternalLink to="https://www.ncbi.nlm.nih.gov/gap/">
+                <Link to="https://www.ncbi.nlm.nih.gov/gap/">
                   dbGaP
-                </ExternalLink>
+                </Link>
               </span>
             }
           />
@@ -144,9 +144,9 @@ const DataPage = ({ data, location }) => {
           The BioData Catalyst ecosystem manages access to the hosted controlled
           data using data access approvals from the NIH Database of Genotypes
           and Phenotypes (
-          <ExternalLink to="https://dbgap.ncbi.nlm.nih.gov/aa/wga.cgi?page=login">
+          <Link to="https://dbgap.ncbi.nlm.nih.gov/aa/wga.cgi?page=login">
             dbGaP
-          </ExternalLink>
+          </Link>
           ). Therefore, users who want to access one or more of the hosted
           controlled studies on the ecosystem must be approved for access to
           that study in dbGaP.
@@ -187,9 +187,9 @@ const DataPage = ({ data, location }) => {
                 PIs with approved DARs can give lab staff access to the hosted
                 datasets on the BioData Catalyst ecosystem by giving the lab
                 staff "designated downloader status" on dbGaP.{" "}
-                <ExternalLink to="https://www.youtube.com/watch?v=Yem3OH26kX4&t=1s">
+                <Link to="https://www.youtube.com/watch?v=Yem3OH26kX4&t=1s">
                   Learn more about this process
-                </ExternalLink>
+                </Link>
                 .
               </span>
             }
@@ -246,16 +246,16 @@ const DataPage = ({ data, location }) => {
         <BulletedList>
           <ListItem
             primary={
-              <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/data-management/data-management-strategy">
+              <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/data-management/data-management-strategy">
                 Data Management Strategy V1.0
-              </ExternalLink>
+              </Link>
             }
           />
           <ListItem
             primary={
-              <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/data-management/biodata-catalyst-data-generator-guidance">
+              <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/data-management/biodata-catalyst-data-generator-guidance">
                 Data Generators Guidance V1.0
-              </ExternalLink>
+              </Link>
             }
           />
         </BulletedList>

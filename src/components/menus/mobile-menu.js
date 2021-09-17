@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { Link } from "gatsby";
+import { Link } from "../../components/link";
 import styled from "styled-components";
 import { CloseIcon, HamburgerIcon } from "../icons";
 import { Brand } from "../layout";

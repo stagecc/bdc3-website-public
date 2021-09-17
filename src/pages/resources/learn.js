@@ -1,12 +1,11 @@
 import React from "react";
 import { SEO } from "../../components/seo";
-import { Link } from "gatsby";
 import { PageContent } from "../../components/layout";
 import { Title, Paragraph } from "../../components/typography";
 import { Container as Grid, Row, Col } from "react-grid-system";
 import { ResourceCard } from "../../components/card";
 import { BulletedList, ListItem } from "../../components/list";
-import { ExternalLink } from "../../components/link";
+import { Link } from "../../components/link";
 import {
   BlogIcon,
   CommunityIcon,
@@ -221,7 +220,7 @@ const LearnPage = () => (
                   <ListItem
                     key={link.text}
                     primary={
-                      <ExternalLink to={link.url}>{link.text}</ExternalLink>
+                      <Link to={link.url}>{link.text}</Link>
                     }
                   />
                 ))}
