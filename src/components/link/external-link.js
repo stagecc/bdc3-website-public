@@ -55,7 +55,7 @@ export const ExternalLink = ({
   };
 
   return requiresConfirmation ? (
-    <a href={to} onClick={triggerDialog}>
+    <a href={to} onClick={triggerDialog} className={asButton ? 'button-link' : null}>
       {children}
       {!noIcon && (
         <ExternalLinkIcon
@@ -67,7 +67,7 @@ export const ExternalLink = ({
       )}
     </a>
   ) : (
-    <a href={to} target="_blank" rel="noopener noreferrer" {...props}>
+    <a href={to} className={asButton ? 'button-link' : null} target="_blank" rel="noopener noreferrer" {...props}>
       {children}
     </a>
   );

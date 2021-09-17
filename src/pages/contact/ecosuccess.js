@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import { SEO } from "../../components/seo";
 import { PageContent } from "../../components/layout";
 import {
@@ -10,7 +9,7 @@ import {
 } from "../../components/typography";
 import { BulletedList, ListItem } from "../../components/list";
 import { Button, ButtonLink } from "../../components/buttons";
-import { ExternalLink } from "../../components/link";
+import { Link } from "../../components/link";
 
 const SuccessPage = () => {
   return (
@@ -244,11 +243,14 @@ const SuccessPage = () => {
           >
             PIC-SURE
           </ButtonLink>
-          <ButtonLink
+          <Link
+            asButton={true}
+            
             light
             target="_blank"
             rel="noopener noreferrer"
-            to="https://terra.biodatacatalyst.nhlbi.nih.gov/"
+            // to="https://terra.biodatacatalyst.nhlbi.nih.gov/"
+            to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/getting-started"
             style={{
               margin: "1rem",
               display: "inline-flex",
@@ -256,8 +258,8 @@ const SuccessPage = () => {
             }}
           >
             TERRA
-          </ButtonLink>
-          <Button
+          </Link>
+          <ButtonLink
             light
             as="a"
             target="_blank"
@@ -270,7 +272,7 @@ const SuccessPage = () => {
             }}
           >
             SEVEN BRIDGES
-          </Button>
+          </ButtonLink>
         </Paragraph>
       </section>
       <br />

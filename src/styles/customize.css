@@ -51,3 +51,25 @@ a:active {
 .news-snippet {
   line-height: 30px;
 }
+
+.button-link {
+  background-color: "#fff";
+  border-radius: 4px;
+  display: inline-block;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-crimson);
+  color: var(--color-crimson);
+  padding: 1rem 1.5rem;
+  font-size: 100%;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  white-space: nowrap;
+  cursor: pointer;
+  position: relative;
+  transition: filter 250ms;
+}
+
+.button-link:hover, .button-link:focus {
+  filter: brightness(1.2);
+}

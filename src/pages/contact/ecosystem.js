@@ -2,7 +2,7 @@ import React from "react";
 import { SEO } from "../../components/seo";
 import { PageContent } from "../../components/layout";
 import { Title, Heading, Paragraph } from "../../components/typography";
-import { ExternalLink } from "../../components/link";
+import { ExternalLink, Link } from "../../components/link";
 import { EcoSystemForm } from "../../components/form";
 import { BulletedList, ListItem } from "../../components/list";
 
@@ -16,13 +16,13 @@ const RegistrationPage = () => (
       <Paragraph>
         Thank you for your interest in joining the NHLBI BioData Catalyst
         community of practice. The ecosystem provides{" "}
-        <ExternalLink to="https://biodatacatalyst.nhlbi.nih.gov/resources/services/">
+        <Link to="https://biodatacatalyst.nhlbi.nih.gov/resources/services/">
           tools, applications, and workflows
-        </ExternalLink>{" "}
+        </Link>{" "}
         in secure workspaces to support data analysis on a range of{" "}
-        <ExternalLink to="https://biodatacatalyst.nhlbi.nih.gov/resources/data/">
+        <Link to="https://biodatacatalyst.nhlbi.nih.gov/resources/data/">
           hosted datasets.{" "}
-        </ExternalLink>
+        </Link>
       </Paragraph>
       <Paragraph>Joining this community will grant access to:</Paragraph>
       <BulletedList>
@@ -30,9 +30,9 @@ const RegistrationPage = () => (
           primary={
             <span>
               BioData Catalyst Ecosystem&nbsp;
-              <ExternalLink to="https://biodatacatalyst.nhlbi.nih.gov/contact/">
+              <Link to="https://biodatacatalyst.nhlbi.nih.gov/contact/">
                 Help Desk
-              </ExternalLink>
+              </Link>
             </span>
           }
         />
@@ -40,9 +40,9 @@ const RegistrationPage = () => (
           primary={
             <span>
               BioData Catalyst Ecosystem&nbsp;
-              <ExternalLink to="https://bdcatalyst.freshdesk.com/support/discussions/60000024585">
+              <Link to="https://bdcatalyst.freshdesk.com/support/discussions/60000024585">
                 Forums
-              </ExternalLink>
+              </Link>
             </span>
           }
         />{" "}

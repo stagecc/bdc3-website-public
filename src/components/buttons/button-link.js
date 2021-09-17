@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "gatsby";
+// import { Link } from "../link";
 import { Button } from "./button";
 
 const transitionBrightness = `
@@ -12,7 +13,7 @@ const transitionBrightness = `
 
 export const ButtonLink = styled(Button).attrs({ as: Link })`
   ${transitionBrightness}
-`;
+`; 
 
 export const ButtonExternalLink = styled(Button)`
   ${transitionBrightness}
