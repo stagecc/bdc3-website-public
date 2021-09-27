@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-//
-
 export const Heading = styled.h2`
     color: ${props => (props.light ? "#eef" : "var(--color-blueberry)")};
     text-align: center;
