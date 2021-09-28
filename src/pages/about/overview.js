@@ -245,11 +245,11 @@ const AboutPage = ({ data }) => {
 
               <ol style={{ lineHeight: 2 }}>
                 <li>
-                  Ongoing submission and upvoting of ideas via the{" "}
-                  <ExternalLink to="https://biodatacatalyst.ideascale.com/">
-                    NHLBI BioDataCatalyst Ideascale
-                  </ExternalLink>
-                  .
+                  BioData Catalyst is a dynamic resource that will be
+                  continually developed and refined. The BioData Catalyst
+                  Consortium solicits feedback on the development of significant
+                  processes, emerging standards, and decisions with Periodic
+                  Requests for Comment (RFC) solicitations.
                 </li>
                 <li>Periodic Requests for Comment (RFC) solicitations.</li>
               </ol>
