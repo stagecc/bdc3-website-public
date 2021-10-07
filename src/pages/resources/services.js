@@ -64,7 +64,8 @@ const ServicesPage = ({ data }) => {
       cardTitle: "Explore Available Data",
       cardItems: [
         platforms.find(platform => platform.frontmatter.title === "Gen3"),
-        platforms.find(platform => platform.frontmatter.title === "PIC-SURE")
+        platforms.find(platform => platform.frontmatter.title === "PIC-SURE"),
+        platforms.find(platform => platform.frontmatter.title === "Dug")
       ]
     },
     {
