@@ -11,6 +11,8 @@ import { Module, PageContent } from "../../components/layout";
 import { Visible } from "react-grid-system";
 import { HorizontalRule } from "../../components/horizontal-rule";
 import { ButtonCta } from "../../components/buttons";
+import { Markdown } from '../../components/markdown'
+
 const EventMetadataWrapper = styled.div`
   ${Meta} {
     margin: 0;
@@ -18,9 +20,8 @@ const EventMetadataWrapper = styled.div`
 `;
 
 export default ({ data, pageContext }) => {
-  const { markdownRemark } = data;
+  const { markdownRemark: { frontmatter, rawMarkdownBody } } = data;
   const { prev, next } = pageContext;
-  const { frontmatter, html } = markdownRemark;
   const {
     title,
     date,
@@ -96,12 +97,7 @@ export default ({ data, pageContext }) => {
           </EventMetadataWrapper>
 
           <Module title="Event Details">
-            <div
-              className="article-content"
-              dangerouslySetInnerHTML={{
-                __html: html || "No details to display.",
-              }}
-            />
+            <Markdown src={ rawMarkdownBody } />
           </Module>
           <div style={{ textAlign: "center" }}>
             <ButtonCta href={url} target="_blank">
@@ -154,7 +150,7 @@ export default ({ data, pageContext }) => {
 export const newsItemQuery = graphql`
   query($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
+      rawMarkdownBody
       frontmatter {
         date(formatString: "MMMM D, YYYY")
         display_date
