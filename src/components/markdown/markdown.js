@@ -3,12 +3,8 @@ import { Link } from '../link'
 import ReactMarkdown from 'react-markdown'
 
 export const Markdown = ({ src }) => {
-  console.log(src)
   const componentMap = useMemo(() => ({
-    a: function Anchor({ node, href, children, ...props }) {
-      console.log(node)
-      return <Link to={ href } { ...props }>{ children }</Link>
-    },
+    a: function Anchor({ node, href, children, ...props }) { return <Link to={ href } { ...props }>{ children }</Link> },
   }), [])
 
   return (
