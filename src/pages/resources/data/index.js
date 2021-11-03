@@ -9,12 +9,14 @@ import {
   Subheading,
   Paragraph,
 } from "../../../components/typography";
+import { Card, CardHeader, CardBody } from "../../../components/card"
 import { BulletedList, ListItem } from "../../../components/list";
-import { Button, ButtonLink } from "../../../components/buttons";
+import { Button, ButtonLink, ButtonExternalLink } from "../../../components/buttons";
 import { ExternalLink } from "../../../components/link";
 import { Visible } from "react-grid-system";
 import { DataAccess } from "../../../components/data-access";
 import { DownloadIcon, MagnifyingGlassIcon } from "../../../components/icons";
+import { Container as Grid, Row, Col } from 'react-grid-system'
 
 const DataPage = ({ data, location }) => {
   const { dataBucketsGraphic, dataBucketsGraphicMobile } = data;
@@ -34,8 +36,6 @@ const DataPage = ({ data, location }) => {
       <br />
 
       <DataAccess location={location} />
-
-      <br />
 
       <section>
         <Heading>Datasets</Heading>
@@ -85,64 +85,85 @@ const DataPage = ({ data, location }) => {
           />
         </BulletedList>
 
-        <Paragraph center>
+        <Paragraph>
           To view the most recent changes to our data, view the
-          {' '}
+          {" "}
           <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/release-notes">
             Release Notes
           </ExternalLink>.
         </Paragraph>
       </section>
 
-      <br />
+      <br /><br />
 
-      <section>
-        <Heading>Explore Studies</Heading>
-
-        <Paragraph center>
-          <ButtonLink
-            light
-            download
-            to="/resources/data/studies"
-            style={{
-              margin: "1rem",
-              display: "inline-flex",
-              alignItems: "center",
-            }}
-          >
-            Explore Studies &nbsp;&nbsp;{" "}
-            <MagnifyingGlassIcon fill="var(--color-crimson)" size={24} />
-          </ButtonLink>
-          <ButtonLink
-            light
-            download
-            to="/covid-19"
-            style={{
-              margin: "1rem",
-              display: "inline-flex",
-              alignItems: "center",
-            }}
-          >
-            Explore COVID-19 Studies &nbsp;&nbsp;{" "}
-            <MagnifyingGlassIcon fill="var(--color-crimson)" size={24} />
-          </ButtonLink>
-          <Button
-            light
-            as="a"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/release-notes"
-            style={{
-              margin: "1rem",
-              display: "inline-flex",
-              alignItems: "center",
-            }}
-          >
-            Release Notes &nbsp;&nbsp;{" "}
-            <DownloadIcon fill="var(--color-crimson)" size={24} />
-          </Button>
-        </Paragraph>
-      </section>
+      <Grid fluid>
+        <Row gutterWidth={ 32 }>
+          <Col>
+            <Card>
+              <CardHeader size="large">Studies Available in BioData Catalyst</CardHeader>
+              <CardBody>
+                <Paragraph>
+                  In BioData Catalyst, researchers have access to ...
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                  ... our <strong>entire collection of studies</strong>{" "}
+                  Sit amet consectetur adipiscing elit pellentesque.
+                  A lacus vestibulum sed arcu non odio euismod lacinia.
+                  ... over X <strong>COVID-19 studies</strong>{" "}
+                  Eget mi proin sed libero enim sed. Mattis vulputate enim nulla aliquet.
+                  ... <strong>TOPMed Phenotypes with Dug</strong>.
+                </Paragraph>
+                <br/>
+                <Heading center>
+                  What BioData Catalyst data would <em>you</em> like to explore?
+                </Heading>
+              </CardBody>
+              <CardBody style={{ display: 'flex', gap: '2rem' }}>
+                <Grid fluid style={{ width: '100% '}}>
+                  <Row align="center" gutterWidth={ 32 }>
+                    <Col xs={ 12 } md={ 4 } align="center">
+                      <ButtonLink
+                        light
+                        download
+                        to="/resources/data/studies"
+                        fullWidth
+                        style={{ textAlign: "center", display: "inline-flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "0.5rem", marginBottom: "0.5rem" }}
+                      >
+                        <div>All</div>
+                        <div>Studies</div>
+                      </ButtonLink>
+                    </Col>
+                    <Col xs={ 12 } md={ 4 } align="center">
+                      <ButtonLink
+                        light
+                        download
+                        to="/covid-19"
+                        fullWidth
+                        style={{ textAlign: "center", display: "inline-flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "0.5rem", marginBottom: "0.5rem" }}
+                      >
+                        <div>COVID-19</div>
+                        <div>Studies</div>
+                      </ButtonLink>
+                    </Col>
+                    <Col xs={ 12 } md={ 4 } align="center">
+                      <ButtonExternalLink
+                        light
+                        download
+                        fullWidth
+                        to="https://search.biodatacatalyst.renci.org/"
+                        fullWidth
+                        style={{ textAlign: "center", display: "inline-flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "0.5rem", marginBottom: "0.5rem" }}
+                      >
+                        <div style={{ textTransform: "none", margin: "0" }}>TOPMed</div>
+                        <div>Phenotypes</div>
+                      </ButtonExternalLink>
+                    </Col>
+                  </Row>
+                </Grid>
+              </CardBody>
+            </Card>
+          </Col>
+        </Row>
+      </Grid>
 
       <br />
 
