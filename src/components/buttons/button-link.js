@@ -15,7 +15,8 @@ export const ButtonLink = styled(Button).attrs({ as: Link })`
   ${transitionBrightness}
 `; 
 
-export const ButtonExternalLink = styled(Button)`
+export const ButtonExternalLink = styled(ButtonLink)
+  .attrs({ rel: 'noopener noreferrer', target: '_blank' })`
   ${transitionBrightness}
 `;
 

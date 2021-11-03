@@ -102,7 +102,7 @@ const ServicesPage = ({ data }) => {
         <section>
           <Subheading>{section.title}</Subheading>
           <Grid fluid>
-            <Row gutterWidth={ 32 }>
+            <Row gutterWidth={ 32 } justify="center">
               {section.platforms.map(platform => (
                 <Col xs={ 12 } lg={ 6 } style={{ marginBottom: '32px' }}>
                   <Card>
