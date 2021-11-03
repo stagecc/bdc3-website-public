@@ -38,7 +38,7 @@ const DataPage = ({ data, location }) => {
       <br />
 
       <section>
-        <Heading>About BioData Catalyst Datasets</Heading>
+        <Heading>Datasets</Heading>
 
         <Paragraph>
           The BioData Catalyst ecosystem currently hosts a number of controlled
@@ -85,10 +85,19 @@ const DataPage = ({ data, location }) => {
           />
         </BulletedList>
 
-        <Paragraph>
-          Download BioData Catalyst Release Notes and Study Details via the
-          boxes below.
+        <Paragraph center>
+          To view the most recent changes to our data, view the
+          {' '}
+          <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/release-notes">
+            Release Notes
+          </ExternalLink>.
         </Paragraph>
+      </section>
+
+      <br />
+
+      <section>
+        <Heading>Explore Studies</Heading>
 
         <Paragraph center>
           <ButtonLink
