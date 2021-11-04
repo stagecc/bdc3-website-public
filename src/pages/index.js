@@ -28,6 +28,7 @@ const IndexPage = () => {
           <HexMenu />
         </Hidden>
 
+
         <Card>
           <CardHeader size="large">What is BioData Catalyst?</CardHeader>
           <CardBody image={{ placement: "right", path: SickleCellImage }}>

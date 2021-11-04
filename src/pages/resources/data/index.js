@@ -14,9 +14,10 @@ import { BulletedList, ListItem } from "../../../components/list";
 import { Button, ButtonLink } from "../../../components/buttons";
 import { Link } from "../../../components/link";
 import { Visible } from "react-grid-system";
-import { DataAccess } from "../../../components/data-access";
 import { DownloadIcon, MagnifyingGlassIcon } from "../../../components/icons";
 import { Container as Grid, Row, Col } from 'react-grid-system'
+import { DugForm } from '../../../components/form'
+import { HorizontalRule } from '../../../components/horizontal-rule'
 
 const DataPage = ({ data, location }) => {
   const { dataBucketsGraphic, dataBucketsGraphicMobile } = data;
@@ -31,139 +32,102 @@ const DataPage = ({ data, location }) => {
     >
       <SEO title="BioData Catalyst Data Access" description="" keywords="" />
 
-      <Title>Accessing BioData Catalyst Data</Title>
+      <Title>BioData Catalyst Data</Title>
+
+
+
+      <DugForm />
 
       <br />
 
-      <DataAccess location={location} />
+      <Heading>Studies in BioData Catalyst</Heading>
 
-      <section>
-        <Heading>Datasets</Heading>
+      <Paragraph>
+        The BioData Catalyst ecosystem currently hosts a number of controlled
+        and open datasets:
+      </Paragraph>
 
-        <Paragraph>
-          The BioData Catalyst ecosystem currently hosts a number of controlled
-          and open datasets:
-        </Paragraph>
+      <BulletedList dense>
+        <ListItem
+          primary={
+            <span>
+              <ExternalLink to="https://www.nhlbiwgs.org/">
+                TOPMed
+              </ExternalLink>{" "}
+              Freeze 5b
+            </span>
+          }
+        />
+        <ListItem
+          primary={
+            <span>
+              <ExternalLink to="https://www.nhlbiwgs.org/">
+                TOPMed
+              </ExternalLink>{" "}
+              Freeze 8 Data
+            </span>
+          }
+        />
+        <ListItem
+          primary={
+            <span>
+              Parent Studies{" "}
+              <ExternalLink to="https://www.ncbi.nlm.nih.gov/gap/">
+                dbGaP
+              </ExternalLink>
+            </span>
+          }
+        />
+        <ListItem
+          primary={
+            <span>
+              COVID-19 data <Link to="/covid-19">(ORCHID)</Link>
+            </span>
+          }
+        />
+      </BulletedList>
 
-        <BulletedList dense>
-          <ListItem
-            primary={
-              <span>
-                <Link to="https://www.nhlbiwgs.org/">
-                  TOPMed
-                </Link>{" "}
-                Freeze 5b
-              </span>
-            }
-          />
-          <ListItem
-            primary={
-              <span>
-                <Link to="https://www.nhlbiwgs.org/">
-                  TOPMed
-                </Link>{" "}
-                Freeze 8 Data
-              </span>
-            }
-          />
-          <ListItem
-            primary={
-              <span>
-                Parent Studies{" "}
-                <Link to="https://www.ncbi.nlm.nih.gov/gap/">
-                  dbGaP
-                </Link>
-              </span>
-            }
-          />
-          <ListItem
-            primary={
-              <span>
-                COVID-19 data <Link to="/covid-19">(ORCHID)</Link>
-              </span>
-            }
-          />
-        </BulletedList>
+      <br/>
 
-        <Paragraph>
-          To view the most recent changes to our data, view the
-          {" "}
-          <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/release-notes">
-            Release Notes
-          </ExternalLink>.
-        </Paragraph>
-      </section>
-
-      <br /><br />
-
-      <Grid fluid>
-        <Row gutterWidth={ 32 }>
-          <Col>
-            <Card>
-              <CardHeader size="large">Studies Available in BioData Catalyst</CardHeader>
-              <CardBody>
-                <Paragraph>
-                  In BioData Catalyst, researchers have access to ...
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                  ... our <strong>entire collection of studies</strong>{" "}
-                  Sit amet consectetur adipiscing elit pellentesque.
-                  A lacus vestibulum sed arcu non odio euismod lacinia.
-                  ... over X <strong>COVID-19 studies</strong>{" "}
-                  Eget mi proin sed libero enim sed. Mattis vulputate enim nulla aliquet.
-                  ... <strong>TOPMed Phenotypes with Dug</strong>.
-                </Paragraph>
-                <br/>
-                <Heading center>
-                  What BioData Catalyst data would <em>you</em> like to explore?
-                </Heading>
-              </CardBody>
-              <CardBody style={{ display: 'flex', gap: '2rem' }}>
-                <Grid fluid style={{ width: '100% '}}>
-                  <Row align="center" gutterWidth={ 32 }>
-                    <Col xs={ 12 } md={ 4 } align="center">
-                      <ButtonLink
-                        light
-                        download
-                        to="/resources/data/studies"
-                        fullWidth
-                        style={{ textAlign: "center", display: "inline-flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "0.5rem", marginBottom: "0.5rem" }}
-                      >
-                        <div>All</div>
-                        <div>Studies</div>
-                      </ButtonLink>
-                    </Col>
-                    <Col xs={ 12 } md={ 4 } align="center">
-                      <ButtonLink
-                        light
-                        download
-                        to="/covid-19"
-                        fullWidth
-                        style={{ textAlign: "center", display: "inline-flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "0.5rem", marginBottom: "0.5rem" }}
-                      >
-                        <div>COVID-19</div>
-                        <div>Studies</div>
-                      </ButtonLink>
-                    </Col>
-                    <Col xs={ 12 } md={ 4 } align="center">
-                      <ButtonExternalLink
-                        light
-                        download
-                        fullWidth
-                        to="https://search.biodatacatalyst.renci.org/"
-                        fullWidth
-                        style={{ textAlign: "center", display: "inline-flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "0.5rem", marginBottom: "0.5rem" }}
-                      >
-                        <div style={{ textTransform: "none", margin: "0" }}>TOPMed</div>
-                        <div>Phenotypes</div>
-                      </ButtonExternalLink>
-                    </Col>
-                  </Row>
-                </Grid>
-              </CardBody>
-            </Card>
+      <Grid fluid style={{ width: '100% '}}>
+        <Row align="center" gutterWidth={ 32 }>
+          <Col xs={ 12 } md={ 6 } align="center">
+            <ButtonLink
+              light
+              download
+              to="/resources/data/studies"
+              fullWidth
+              style={{ textAlign: "center", display: "inline-flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "0.5rem", marginBottom: "0.5rem" }}
+            >
+              List of Studies
+            </ButtonLink>
+          </Col>
+          <Col xs={ 12 } md={ 6 } align="center">
+            <ButtonLink
+              light
+              download
+              to="/covid-19"
+              fullWidth
+              style={{ textAlign: "center", display: "inline-flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "0.5rem", marginBottom: "0.5rem" }}
+            >
+              List of COVID-19 Studies
+            </ButtonLink>
           </Col>
         </Row>
       </Grid>
+
+      <br />
+
+      <Paragraph>
+        To view the most recent updates to BioData Catalyst data, see our
+        {" "}
+        <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/release-notes">
+          Release Notes
+        </ExternalLink>.
+        {" "}
+        <ExternalLink to="https://staging.gen3.biodatacatalyst.nhlbi.nih.gov/user/oauth2/authorize?idp=fence&client_id=toS2vKpzJmIKj7P64biqpSl3BWO8OPrfZlTuPyAx&redirect_uri=https://staging.biodatacatalyst.nhlbi.nih.gov/resources/data&response_type=id_token+token&scope=openid+user&nonce=2bfe151af238d21f48d8a8bf8bbec408838c8dc0ace6b4c5621ac9dfa157798b">Log in with your eRA Commons credentials</ExternalLink> to determine the datasets to which you currently have access.
+        For additional guidance on checking what data you have access to on BioData Catalyst, see a page dedicated to this topic in our <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/data-access/check-my-access-to-data">BioData Catalyst documentation</ExternalLink>.
+      </Paragraph>
 
       <br />
 
@@ -297,6 +261,8 @@ const DataPage = ({ data, location }) => {
       </section>
 
       <br />
+      <br />
+
     </PageContent>
   );
 };
