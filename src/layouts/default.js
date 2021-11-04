@@ -23,6 +23,8 @@ import hexBackgroundRightSvg from "../images/hex-background-right.svg";
 import { ExternalLink } from "../components/link";
 import { logLogo } from "../utils";
 import { Banner } from "../components/banner";
+import { DugBar } from '../components/form'
+import { MagnifyingGlassIcon, CloseIcon } from '../components/icons'
 
 import "../styles/normalize.css";
 import "../styles/customize.css";
@@ -87,15 +89,11 @@ export const DefaultLayout = ({ children }) => {
       <LayoutWrapper compact={isCompact}>
         <SkipLink href="#main-content">Skip to main content</SkipLink>
         <StickyWrapper stuck={true}>
-          <Banner>
-            <Paragraph style={{ margin: 0 }}>
-              COVID-19 is an emerging, rapidly evolving situation. Get updated
-              information on&nbsp;
-              <Link to="/covid-19">
-                COVID-19 data available on NHLBI BioData Catalyst
-              </Link>
-              .
-            </Paragraph>
+          <Banner
+            openedIcon={ <CloseIcon fill="var(--color-white)" size={24} /> }
+            closedIcon={ <MagnifyingGlassIcon fill="var(--color-white)" size={24} /> }
+          >
+            <DugBar />
           </Banner>
           <Header>
             <Brand width="380px" compact={isCompact} />

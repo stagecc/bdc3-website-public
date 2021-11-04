@@ -34,7 +34,7 @@ const StudiesPage = () => {
       }
       setModifiedStudiesColumns([...columnsCopy]);
     }
-  }, []);
+  }, [studiesColumns]);
 
   return (
     <PageContent
