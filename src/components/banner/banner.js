@@ -31,7 +31,7 @@ const Wrapper = styled.div(({ active }) => `
     opacity: 0.75;
     transition: fill 250ms, opacity 250ms;
   }
-  &:hover {
+  &:hover, &:focus-within {
     border-color: var(--color-blueberry);
     & .toggler {
       transition: background-color 250ms, transform 50ms ease-out;
