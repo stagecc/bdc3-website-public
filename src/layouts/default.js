@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { Link } from "gatsby";
 import { Container as Grid, Row, Col, Visible } from "react-grid-system";
 import {
   Header,
@@ -20,7 +19,7 @@ import { List, ListItem } from "../components/list";
 import { useScrollPosition, useWindowWidth } from "../hooks";
 import hexBackgroundLeftSvg from "../images/hex-background-left.svg";
 import hexBackgroundRightSvg from "../images/hex-background-right.svg";
-import { ExternalLink } from "../components/link";
+import { Link } from "../components/link";
 import { logLogo } from "../utils";
 import { Banner } from "../components/banner";
 
@@ -128,19 +127,19 @@ export const DefaultLayout = ({ children }) => {
                     />
                     <ListItem
                       primary={
-                        <ExternalLink
+                        <Link
                           lightIcon
                           to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/"
                         >
                           Documentation
-                        </ExternalLink>
+                        </Link>
                       }
                     />
                     <ListItem
                       primary={
-                        <ExternalLink to="https://www.nhlbi.nih.gov/about/foia-fee-for-service-office">
+                        <Link to="https://www.nhlbi.nih.gov/about/foia-fee-for-service-office">
                           Freedom of Information Act (FOIA)
-                        </ExternalLink>
+                        </Link>
                       }
                     />
                   </List>
@@ -160,12 +159,12 @@ export const DefaultLayout = ({ children }) => {
               <Row>
                 <Col xs={12} style={{ textAlign: "center" }}>
                   <strong style={{ textTransform: "uppercase" }}>
-                    <ExternalLink
+                    <Link
                       lightIcon
                       to="http://www.biodatacatalyst.org/Security/login"
                     >
                       Consortium Member Portal
-                    </ExternalLink>
+                    </Link>
                   </strong>
                 </Col>
               </Row>
@@ -173,25 +172,25 @@ export const DefaultLayout = ({ children }) => {
           </Container>
         </Footer>
         <Subfooter compact={isCompact}>
-          <ExternalLink to="https://www.hhs.gov/">
+          <Link to="https://www.hhs.gov/">
             U.S. Department of Health & Human Services
-          </ExternalLink>
+          </Link>
           <Visible md lg xl>
             <strong>&bull;</strong>
           </Visible>
-          <ExternalLink to="https://www.nih.gov/">
+          <Link to="https://www.nih.gov/">
             National Institutes of Health
-          </ExternalLink>
+          </Link>
           <Visible md lg xl>
             <strong>&bull;</strong>
           </Visible>
-          <ExternalLink to="https://www.nhlbi.nih.gov/">
+          <Link to="https://www.nhlbi.nih.gov/">
             National Heart, Lung, and Blood Institute
-          </ExternalLink>
+          </Link>
           <Visible md lg xl>
             <strong>&bull;</strong>
           </Visible>
-          <ExternalLink to="https://www.usa.gov/">USA.gov</ExternalLink>
+          <Link to="https://www.usa.gov/">USA.gov</Link>
         </Subfooter>
       </LayoutWrapper>
     )

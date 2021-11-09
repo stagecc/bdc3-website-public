@@ -6,7 +6,7 @@ import { Dots as LoadingDots } from "../loading";
 import { PaginationTray } from "./pagination-tray";
 import { Card, CardHeader, CardBody, CardFooter } from "../card";
 import { Paragraph } from "../typography";
-import { ExternalLink } from "../link";
+import { Link } from "../link";
 
 const Wrapper = styled.section``;
 
@@ -51,9 +51,9 @@ const ResultsList = () => {
         <Paragraph center>
           However, you're in luck. The BioData Catalyst Documentation Search can
           be accessed at{" "}
-          <ExternalLink to="https://cse.google.com/cse?cx=f67468621577c356b">
+          <Link to="https://cse.google.com/cse?cx=f67468621577c356b">
             https://cse.google.com/cse?cx=f67468621577c356b
-          </ExternalLink>
+          </Link>
           .
         </Paragraph>
       </section>

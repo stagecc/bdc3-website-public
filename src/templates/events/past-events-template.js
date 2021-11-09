@@ -1,6 +1,7 @@
 import React from "react";
 // import { AnimateOnMount } from "../../components/anim";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
+import { Link } from "../../components/link";
 import { SEO } from "../../components/seo";
 import { Title, Paragraph, Meta } from "../../components/typography";
 import { ButtonLink } from "../../components/buttons";

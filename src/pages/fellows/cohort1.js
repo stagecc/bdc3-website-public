@@ -3,7 +3,7 @@ import { SEO } from "../../components/seo";
 import { PageContent } from "../../components/layout";
 import { Title, Heading, Paragraph } from "../../components/typography";
 import { useFellows } from "../../hooks";
-import { ExternalLink } from "../../components/link";
+import { Link } from "../../components/link";
 import { kebabCase } from "../../utils";
 import {
   FellowsLinkList,
@@ -30,9 +30,9 @@ const FellowsCohort1Page = () => {
         <Paragraph>
           Cohort I Fellows will work on the BioData Catalyst Ecosystem from
           March 2020 to June 2021. Read what our{" "}
-          <ExternalLink to="https://drive.google.com/file/d/12MdA9L_0Ouf6CI08zVFxlAOQuN8Wxh_9/view?usp=sharing">
+          <Link to="https://drive.google.com/file/d/12MdA9L_0Ouf6CI08zVFxlAOQuN8Wxh_9/view?usp=sharing">
             Cohort I Fellows have said
-          </ExternalLink>{" "}
+          </Link>{" "}
           about the NHLBI BioData Catalyst ecosystem.
         </Paragraph>
       </section>

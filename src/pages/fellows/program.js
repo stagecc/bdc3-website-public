@@ -1,6 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { SEO } from "../../components/seo";
-import { Link } from "gatsby";
 import { PageContent } from "../../components/layout";
 import {
   Title,
@@ -11,7 +10,7 @@ import {
 import { BulletedList, OrderedList, ListItem } from "../../components/list";
 import { Table } from "../../components/table";
 import { Button } from "../../components/buttons";
-import { ExternalLink } from "../../components/link";
+import { Link } from "../../components/link";
 import { Alert } from "../../components/alert";
 
 const FellowsPage = () => {
@@ -79,9 +78,9 @@ const FellowsPage = () => {
 
         <Paragraph>
           Read what our{" "}
-          <ExternalLink to="https://drive.google.com/file/d/12MdA9L_0Ouf6CI08zVFxlAOQuN8Wxh_9/view?usp=sharing">
+          <Link to="https://drive.google.com/file/d/12MdA9L_0Ouf6CI08zVFxlAOQuN8Wxh_9/view?usp=sharing">
             Cohort I Fellows have said
-          </ExternalLink>{" "}
+          </Link>{" "}
           about the NHLBI BioData Catalyst ecosystem and view the projects from{" "}
           <Link to="/fellows/cohort1">Cohort 1</Link> and{" "}
           <Link to="/fellows/cohort2">Cohort 2</Link>.

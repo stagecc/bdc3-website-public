@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { Match } from "@reach/router";
 import styled from "styled-components";
-import { Link } from "gatsby";
+import { Link } from "../../components/link";
 import { ChevronDownIcon } from "../icons";
 
 export const MenuContainer = styled.nav`

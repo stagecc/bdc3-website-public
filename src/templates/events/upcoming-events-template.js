@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 // import { AnimateOnMount } from "../../components/anim";
 import { SEO } from "../../components/seo";
 import {
@@ -9,7 +9,7 @@ import {
   Subheading,
   Meta,
 } from "../../components/typography";
-import { ExternalLink } from "../../components/link";
+import { Link } from "../../components/link";
 import { ButtonLink } from "../../components/buttons";
 import { Module, PageContent } from "../../components/layout";
 // import { LinkIcon } from "../../components/icons";
@@ -56,7 +56,7 @@ const EventsList = ({ title, events }) => {
                     Event Website:
                   </span>
                   <span>
-                    <ExternalLink to={url}>{url}</ExternalLink>
+                    <Link to={url}>{url}</Link>
                   </span>
                 </Meta>
               )} */}

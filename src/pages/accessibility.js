@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link } from "../components/link";
 import { PageContent } from "../components/layout";
 import { Title, Paragraph } from "../components/typography";
 import { SEO } from "../components/seo";

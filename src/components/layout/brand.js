@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link } from "../link";
 import styled from "styled-components";
 import bdcLogo from "../../images/bdc-logo.svg";
 import bdcLogoWhite from "../../images/bdc-logo-white.svg";

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { SEO } from "../../../components/seo";
 import { PageContent } from "../../../components/layout";
 import { Title, Paragraph } from "../../../components/typography";
-import { ExternalLink } from "../../../components/link";
+import { Link } from "../../../components/link";
 import { DataTable, ExpansionPanel } from "../../../components/data-table";
 import { useStudies } from "../../../hooks";
 
@@ -24,11 +24,11 @@ const StudiesPage = () => {
       if (index > -1) {
         columnsCopy[index].cell = row => (
           <CustomCell>
-            <ExternalLink
+            <Link
               to={`https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=${row.Accession}`}
             >
               {row.Name}
-            </ExternalLink>
+            </Link>
           </CustomCell>
         );
       }

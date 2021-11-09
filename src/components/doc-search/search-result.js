@@ -2,7 +2,7 @@ import React, { Fragment, useMemo } from "react";
 import styled from "styled-components";
 import { useDocSearch } from "./search-context";
 import { Subheading } from "../typography";
-import { ExternalLink } from "../link";
+import { Link } from "../link";
 import { IconButton } from "../buttons";
 import { DocumentRemoveIcon, DocumentAddIcon } from "../icons";
 import { Visible } from "react-grid-system";
@@ -139,7 +139,7 @@ export const Result = ({ index, result }) => {
         <Index>{index}.</Index>
         <Content>
           <Title>
-            <ExternalLink to={link}>{title}</ExternalLink>
+            <Link to={link}>{title}</Link>
           </Title>
           <em>{displayLink}</em>
           <p

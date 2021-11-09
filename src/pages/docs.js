@@ -4,7 +4,7 @@ import styled, { css, keyframes } from "styled-components";
 import { useLocation } from "@reach/router";
 import { PageContent } from "../components/layout";
 import { Title, Heading } from "../components/typography";
-import { Link } from "gatsby";
+import { Link } from "../components/link";
 import { FolderIcon, FolderFullIcon, UndoIcon } from "../components/icons";
 import {
   DocSearch,

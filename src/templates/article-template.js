@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, Link } from "gatsby";
+import { graphql} from "gatsby";
 import { SEO } from "../components/seo";
 import { Title, Subtitle, Meta } from "../components/typography";
 import { InlineList2 } from "../components/list";
@@ -7,6 +7,7 @@ import { TagLink } from "../components/link";
 import { PageContent } from "../components/layout";
 import { Visible } from "react-grid-system";
 import { HorizontalRule } from "../components/horizontal-rule";
+import { Link } from "../components/link";
 
 export default ({ data, pageContext }) => {
   const { markdownRemark } = data;

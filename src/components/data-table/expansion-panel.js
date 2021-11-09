@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Subheading } from "../typography";
-import { ExternalLink } from "../link";
+import { Link } from "../link";
 
 const Wrapper = styled.div`
   background-color: #cccccc55;
@@ -20,11 +20,11 @@ const DbGapLink = ({ pht }) => {
   const re = new RegExp(/pht(\d+)\.v\d\.p\d/);
   const [, digits] = pht.match(re);
   return (
-    <ExternalLink
+    <Link
       to={`https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/dataset.cgi?study_id=phs000956.v4.p1&pht=${digits}`}
     >
       {pht}
-    </ExternalLink>
+    </Link>
   );
 };
 
@@ -61,11 +61,11 @@ export const ExpansionPanel = ({ data }) => {
     <Wrapper>
       <Header>
         <Subheading>
-          <ExternalLink
+          <Link
             to={`https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=${data.Accession}`}
           >
             {data.Name}
-          </ExternalLink>
+          </Link>
         </Subheading>
         <span>{data.Accession}</span>
       </Header>
@@ -107,11 +107,11 @@ export const CovidExpansionPanel = ({ data }) => {
     <Wrapper>
       <Header>
         <Subheading>
-          <ExternalLink
+          <Link
             to={`https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=${data.Accession}`}
           >
             {data.Name}
-          </ExternalLink>
+          </Link>
         </Subheading>
       </Header>
 
@@ -129,7 +129,7 @@ export const CovidExpansionPanel = ({ data }) => {
         <br />
         <br />
         <strong>Study Link:</strong>{" "}
-        <ExternalLink to={data.Link}>{data.Link}</ExternalLink>
+        <Link to={data.Link}>{data.Link}</Link>
         <br />
         <br />
         <strong>Network:</strong> {data.Network}
