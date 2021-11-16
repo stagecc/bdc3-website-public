@@ -46,7 +46,7 @@ export const DugForm = ({ focusOnMount = false, compact, style }) => {
   return (
     <Form onSubmit={ doSearch } style={ style }>
       <InputGroup>
-        <TextInput type="text" ref={ inputField } placeholder="Search dbGaP and TOPmed metadata variables by concept" />
+        <TextInput type="text" ref={ inputField } placeholder="Search dbGaP and TOPMed metadata variables by concept" />
           <SearchButton small={ compact }>
             {
               compact ? (
