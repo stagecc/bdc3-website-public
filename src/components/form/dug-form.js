@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Hidden } from 'react-grid-system'
 import { Form, InputGroup, TextInput } from './'
 import { Button } from '../buttons'
-import { MagnifyingGlassIcon } from '../icons/magnifying-glass-icon'
+import { InfoIcon, MagnifyingGlassIcon } from '../icons'
 
 const SearchButton = styled(Button)`
   background-color: var(--color-blueberry);
@@ -46,7 +46,7 @@ export const DugForm = ({ focusOnMount = false, compact, style }) => {
   return (
     <Form onSubmit={ doSearch } style={ style }>
       <InputGroup>
-        <TextInput type="text" ref={ inputField } placeholder="Search dbGaP and TOPMed metadata variables by concept" />
+        <TextInput type="text" ref={ inputField } placeholder="Search study variables by concept" />
           <SearchButton small={ compact }>
             {
               compact ? (
