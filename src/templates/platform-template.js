@@ -47,7 +47,7 @@ export default ({ data }) => {
 
       <Heading>About {frontmatter.title}</Heading>
 
-      <Paragraph>{frontmatter.teaser}</Paragraph>
+      <Paragraph>{frontmatter.about}</Paragraph>
 
       <Heading>Key Features</Heading>
 
@@ -65,7 +65,7 @@ export const platformQuery = graphql`
           launch
           documentation
         }
-        teaser
+        about
         logo {
           childImageSharp {
             fixed(fit: COVER, width: 300) {

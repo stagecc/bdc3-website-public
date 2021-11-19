@@ -17,7 +17,7 @@ const platformsQuery = graphql`
               launch
               documentation
             }
-            teaser
+            about
             service
             logo {
               id
