@@ -7,8 +7,8 @@ links:
   homepage: https://use.helx.renci.org/
   launch: https://search.biodatacatalyst.renci.org/
   documentation: https://helx.gitbook.io/helx-documentation/dug/using-search
-teaser: Dug's focus on searching data is semantic searc. With Dug, "relevant" is defined as having a basis in curated, peer reviewed ontologically represented biomedical knowledge. Given a search term, Dug returns results that are related based on connections in ontological biomedical knowledge graphs. 
-service: Dug applies semantic web and knowledge graph methods to improve the FAIR-ness of research data.
+about: Dug's focus on searching data is semantic search. With Dug, "relevant" is defined as having a basis in curated, peer reviewed ontologically represented biomedical knowledge. Given a search term, Dug returns results that are related based on connections in ontological biomedical knowledge graphs. 
+service: null
 ---
 
 - Search dbGaP and TOPmed metadata variables by concept

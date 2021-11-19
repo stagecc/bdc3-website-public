@@ -104,7 +104,11 @@ const ServicesPage = ({ data }) => {
           <Subheading>{section.title}</Subheading>
           <Grid fluid>
             <Row gutterWidth={ 32 } justify="center">
-              {section.platforms.map(platform => (
+              {/*
+                One platform, Dug, needs to be listed on the Learn page but _not_ on this Services page.
+                Removing the value of `frontmatter.about` in the Dug markdown file will prevent rendering here.
+              */}
+              {section.platforms.map(platform => platform.frontmatter.service && (
                 <Col xs={ 12 } lg={ 6 } style={{ marginBottom: '32px' }}>
                   <Card>
                     <CardHeader>{platform.frontmatter.serviceTitle}</CardHeader>

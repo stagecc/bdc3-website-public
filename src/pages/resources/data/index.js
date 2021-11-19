@@ -34,9 +34,13 @@ const DataPage = ({ data, location }) => {
 
       <Title>BioData Catalyst Data</Title>
 
-
-
       <DugForm />
+
+      <Paragraph center style={{ fontStyle: 'italic', fontSize: '90%' }}>
+        Semantic search provided by Dug.
+        {' '}
+        <Link to="/platforms/dug">Learn more about Dug here</Link>.
+      </Paragraph>
 
       <br />
 

@@ -22,7 +22,6 @@ import hexBackgroundLeftSvg from "../images/hex-background-left.svg";
 import hexBackgroundRightSvg from "../images/hex-background-right.svg";
 import { ExternalLink } from "../components/link";
 import { logLogo } from "../utils";
-import { DugBar } from '../components/form'
 import { MagnifyingGlassIcon, CloseIcon } from '../components/icons'
 
 import "../styles/normalize.css";
@@ -88,7 +87,6 @@ export const DefaultLayout = ({ children }) => {
       <LayoutWrapper compact={isCompact}>
         <SkipLink href="#main-content">Skip to main content</SkipLink>
         <StickyWrapper stuck={true}>
-          <DugBar />
           <Header>
             <Brand width="380px" compact={isCompact} />
             <Visible xs sm md>
