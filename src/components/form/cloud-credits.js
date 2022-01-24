@@ -4,7 +4,7 @@ import axios from "axios";
 import { Paragraph } from "../typography";
 import { Button } from "../buttons";
 import { Card, CardHeader, CardBody } from "../card";
-import { Dots as LoadingDots } from "../loading";
+// import { Dots as LoadingDots } from "../loading";
 import { ExternalLink } from "../link";
 import {
   Form,
@@ -16,7 +16,7 @@ import {
   Option,
   TextArea,
 } from "./inputs";
-import { render } from "react-dom";
+// import { render } from "react-dom";
 
 const FRESHDESK_API_KEY = process.env.GATSBY_FRESHDESK_API_KEY;
 const FRESHDESK_API_ROOT_URL = process.env.GATSBY_FRESHDESK_API_ROOT_URL;

@@ -6,11 +6,11 @@ import {
   Title,
   Heading,
   Paragraph,
-  Subheading,
+  // Subheading,
 } from "../../components/typography";
 import { BulletedList, ListItem } from "../../components/list";
 import { Button, ButtonLink } from "../../components/buttons";
-import { ExternalLink } from "../../components/link";
+// import { ExternalLink } from "../../components/link";
 
 const SuccessPage = () => {
   return (

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
@@ -17,7 +17,7 @@ import { Paragraph } from "../components/typography";
 import { Menu, MobileMenu } from "../components/menus";
 import { menuItems } from "../data/menu";
 import { List, ListItem } from "../components/list";
-import { useScrollPosition, useWindowWidth } from "../hooks";
+import { useWindowWidth } from "../hooks";
 import hexBackgroundLeftSvg from "../images/hex-background-left.svg";
 import hexBackgroundRightSvg from "../images/hex-background-right.svg";
 import { ExternalLink } from "../components/link";
@@ -78,7 +78,7 @@ const SkipLink = styled.a`
 
 export const DefaultLayout = ({ children }) => {
   const { isCompact } = useWindowWidth();
-  const scrollPosition = useScrollPosition();
+  // const scrollPosition = useScrollPosition();
 
   useEffect(() => logLogo(), []);
 

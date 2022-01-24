@@ -1,12 +1,12 @@
 import React, { Fragment } from "react";
-import styled from "styled-components";
+// import styled from "styled-components";
 import { Paragraph } from "../typography";
 import { useDocSearch } from "./search-context";
 import { Result } from "./search-result";
 import { Card, CardHeader, CardBody, CardFooter } from "../card";
 import { IconButton } from "../buttons";
 import { DeleteIcon, FolderIcon } from "../icons";
-import ReactTooltip from "react-tooltip";
+// import ReactTooltip from "react-tooltip";
 
 export const SavedSearchList = () => {
   const { clearSavedResults, savedResults } = useDocSearch();

@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 import { PageContent } from "../../components/layout";
 import { Title, Heading, Paragraph } from "../../components/typography";
 import { ExternalLink } from "../../components/link";
-import { AnchorLink } from "gatsby-plugin-anchor-links";
+// import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { CloudCreditsForm } from "../../components/form";
 import { BulletedList, ListItem } from "../../components/list";
 

@@ -18,7 +18,7 @@ const EventsList = ({ title, events }) => {
               path,
               date,
               display_date,
-              fabricHosted,
+              // fabricHosted,
             } = event.node.frontmatter;
             return (
               <Row key={title}>
