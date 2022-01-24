@@ -138,7 +138,7 @@ const Dialog = ({ onContinue }) => {
         </Header>
         <Body>{dialog.contents}</Body>
         <Actions>
-          <Button onClick={dialog.close} light autoFocus>
+          <Button onClick={dialog.close} light >
             Cancel
           </Button>
           <Button onClick={onContinue}>Continue</Button>

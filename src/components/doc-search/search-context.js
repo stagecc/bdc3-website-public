@@ -2,7 +2,7 @@ import React, {
   createContext,
   useContext,
   useEffect,
-  useMemo,
+  // useMemo,
   useState
 } from "react";
 import axios from "axios";
@@ -45,7 +45,7 @@ export const DocSearch = ({ children }) => {
     if (storedResults.length) {
       setSavedResults(storedResults);
     }
-  }, []);
+  }, [storedResults]);
 
   useEffect(() => {
     setPaginationRadius(
@@ -64,7 +64,7 @@ export const DocSearch = ({ children }) => {
 
   useEffect(() => {
     setStoredResults(savedResults);
-  }, [savedResults]);
+  }, [savedResults, setStoredResults]);
 
   const saveResult = newResult => {
     setSavedResults(savedResults => [...new Set([...savedResults, newResult])]);

@@ -16,7 +16,7 @@ import {
   Option,
   TextArea,
 } from "./inputs";
-import { render } from "react-dom";
+// import { render } from "react-dom";
 
 const FRESHDESK_API_KEY = process.env.GATSBY_FRESHDESK_API_KEY;
 const FRESHDESK_API_ROOT_URL = process.env.GATSBY_FRESHDESK_API_ROOT_URL;

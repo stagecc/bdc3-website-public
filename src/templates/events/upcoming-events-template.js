@@ -7,16 +7,16 @@ import {
   Paragraph,
   Heading,
   Subheading,
-  Meta,
+  // Meta,
 } from "../../components/typography";
 import { Link } from "../../components/link";
 import { ButtonLink } from "../../components/buttons";
 import { Module, PageContent } from "../../components/layout";
 // import { LinkIcon } from "../../components/icons";
-import { useWindowWidth } from "../../hooks";
+// import { useWindowWidth } from "../../hooks";
 
 const EventsList = ({ title, events }) => {
-  const { isCompact } = useWindowWidth();
+  // const { isCompact } = useWindowWidth();
   return (
     <Module title={title}>
       <br />
@@ -28,8 +28,8 @@ const EventsList = ({ title, events }) => {
             path,
             date,
             display_date,
-            url,
-            fabricHosted,
+            // url,
+            // fabricHosted,
           } = event.node.frontmatter;
           return (
             <Fragment key={title}>

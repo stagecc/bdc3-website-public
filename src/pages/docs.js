@@ -1,9 +1,9 @@
-import React, { Fragment, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { SEO } from "../components/seo";
 import styled, { css, keyframes } from "styled-components";
 import { useLocation } from "@reach/router";
 import { PageContent } from "../components/layout";
-import { Title, Heading } from "../components/typography";
+import { Title } from "../components/typography";
 import { Link } from "../components/link";
 import { FolderIcon, FolderFullIcon, UndoIcon } from "../components/icons";
 import {
@@ -88,18 +88,18 @@ const SavedResultsLink = styled(Link).attrs({
 );
 
 const ViewSavedResultsLink = () => {
-  const { savedResults, clearSavedResults, docSearchPath } = useDocSearch();
+  const { savedResults, docSearchPath } = useDocSearch();
   const wiggler = useRef();
 
   useEffect(() => {
     wiggler.current.classList.add("wiggle");
-    const removeWiggleClass = () => {
-      if (wiggler.current) {
-        wiggler.current.classList.remove("wiggle");
-      }
-    };
-    const wiggleTimer = setTimeout(removeWiggleClass, 500);
-    return () => clearTimeout(removeWiggleClass);
+    // const removeWiggleClass = () => {
+    //   if (wiggler.current) {
+    //     wiggler.current.classList.remove("wiggle");
+    //   }
+    // };
+    // const wiggleTimer = setTimeout(removeWiggleClass, 500);
+    // return () => clearTimeout(removeWiggleClass);
   }, [savedResults.length]);
 
   return (

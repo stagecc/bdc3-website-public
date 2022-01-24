@@ -16,7 +16,7 @@ import { Paragraph } from "../components/typography";
 import { Menu, MobileMenu } from "../components/menus";
 import { menuItems } from "../data/menu";
 import { List, ListItem } from "../components/list";
-import { useScrollPosition, useWindowWidth } from "../hooks";
+import { useWindowWidth } from "../hooks";
 import hexBackgroundLeftSvg from "../images/hex-background-left.svg";
 import hexBackgroundRightSvg from "../images/hex-background-right.svg";
 import { Link } from "../components/link";
@@ -77,7 +77,7 @@ const SkipLink = styled.a`
 
 export const DefaultLayout = ({ children }) => {
   const { isCompact } = useWindowWidth();
-  const scrollPosition = useScrollPosition();
+  // const scrollPosition = useScrollPosition();
 
   useEffect(() => logLogo(), []);
 
@@ -137,19 +137,19 @@ export const DefaultLayout = ({ children }) => {
                     />
                     <ListItem
                       primary={
-                        <ExternalLink
+                        <Link
                           lightIcon
                           to="https://hhs.responsibledisclosure.com/hc/en-us"
                         >
                           HHS Vulnerability Disclosure
-                        </ExternalLink>
+                        </Link>
                       }
                     />
                     <ListItem
                       primary={
-                        <ExternalLink to="https://www.nhlbi.nih.gov/about/foia-fee-for-service-office">
+                        <Link to="https://www.nhlbi.nih.gov/about/foia-fee-for-service-office">
                           Freedom of Information Act (FOIA)
-                        </ExternalLink>
+                        </Link>
                       }
                     />
                   </List>

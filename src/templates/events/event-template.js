@@ -27,7 +27,7 @@ export default ({ data, pageContext }) => {
     date,
     display_date,
     time,
-    location,
+    // location,
     tags,
     url,
     presenter,

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Result } from "./search-result";
 import { useDocSearch } from "./search-context";
