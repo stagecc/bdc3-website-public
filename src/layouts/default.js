@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { Container as Grid, Row, Col, Visible } from "react-grid-system";
@@ -137,9 +137,19 @@ export const DefaultLayout = ({ children }) => {
                     />
                     <ListItem
                       primary={
-                        <Link to="https://www.nhlbi.nih.gov/about/foia-fee-for-service-office">
+                        <ExternalLink
+                          lightIcon
+                          to="https://hhs.responsibledisclosure.com/hc/en-us"
+                        >
+                          HHS Vulnerability Disclosure
+                        </ExternalLink>
+                      }
+                    />
+                    <ListItem
+                      primary={
+                        <ExternalLink to="https://www.nhlbi.nih.gov/about/foia-fee-for-service-office">
                           Freedom of Information Act (FOIA)
-                        </Link>
+                        </ExternalLink>
                       }
                     />
                   </List>

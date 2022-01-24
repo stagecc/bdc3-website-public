@@ -4,7 +4,7 @@ import axios from "axios";
 import { Paragraph } from "../typography";
 import { Button } from "../buttons";
 import { Card, CardHeader, CardBody } from "../card";
-import { Dots as LoadingDots } from "../loading";
+// import { Dots as LoadingDots } from "../loading";
 import { Link } from "../link";
 import {
   Form,
