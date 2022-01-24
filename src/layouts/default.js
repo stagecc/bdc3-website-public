@@ -137,6 +137,16 @@ export const DefaultLayout = ({ children }) => {
                     />
                     <ListItem
                       primary={
+                        <Link
+                          lightIcon
+                          to="https://hhs.responsibledisclosure.com/hc/en-us"
+                        >
+                          HHS Vulnerability Disclosure
+                        </Link>
+                      }
+                    />
+                    <ListItem
+                      primary={
                         <Link to="https://www.nhlbi.nih.gov/about/foia-fee-for-service-office">
                           Freedom of Information Act (FOIA)
                         </Link>
