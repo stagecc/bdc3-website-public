@@ -28,7 +28,7 @@ export const SearchForm = () => {
     if (input.current) {
       input.current.focus();
     }
-  }, []);
+  }, [input.current]);
 
   return (
     <InputGroup

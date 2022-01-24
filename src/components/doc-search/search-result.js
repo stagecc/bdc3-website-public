@@ -83,7 +83,7 @@ const Divider = styled.div`
 
 export const Result = ({ index, result }) => {
   const { savedResults, saveResult, removeResult } = useDocSearch();
-  const { title, displayLink, link, htmlSnippet} = result;
+  const { title, displayLink, link, htmlSnippet, snippet, imageURL } = result;
 
   let thumbnailURL = "";
   if (result?.pagemap?.cse_thumbnail) {
@@ -95,7 +95,7 @@ export const Result = ({ index, result }) => {
       savedResults.find(savedResult => savedResult.cacheId === result.cacheId)
         ? true
         : false,
-    [result, savedResults]
+    [result, savedResults, savedResults.length]
   );
 
   const MemoizedSaveButton = useMemo(
@@ -129,7 +129,7 @@ export const Result = ({ index, result }) => {
         <ReactTooltip place="left" type="dark" effect="solid" />
       </Actions>
     ),
-    [alreadySaved ,removeResult, result, saveResult]
+    [alreadySaved]
   );
 
   return (

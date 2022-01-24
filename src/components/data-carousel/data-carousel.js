@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-// import { graphql } from "gatsby";
+import { graphql } from "gatsby";
 import { useWindowWidth } from "../../hooks";
 import { useTransition } from "react-spring";
 import { DetailsPanel, DataDetail } from "./details-panel";

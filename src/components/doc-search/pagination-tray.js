@@ -3,8 +3,8 @@ import styled from "styled-components";
 import {
   ChevronLeftIcon as PreviousResultsIcon,
   ChevronRightIcon as NextResultsIcon,
-  // FirstPageIcon,
-  // LastPageIcon,
+  FirstPageIcon,
+  LastPageIcon,
   EllipsisIcon
 } from "../icons";
 import { Button, IconButton } from "../buttons";
@@ -41,18 +41,18 @@ const PaginationIconButton = ({ icon, clickHandler, disabled }) => {
 
 export const PaginationTray = () => {
   const {
-    // results,
-    // totalResults,
+    results,
+    totalResults,
     currentPage,
     pageCount,
     paginationRadius,
-    // doSearch,
-    // loading,
+    doSearch,
+    loading,
     handleGoToNextPage,
     handleGoToPreviousPage,
     handleGoToPage,
-    // handleGoToFirstPage,
-    // handleGoToLastPage
+    handleGoToFirstPage,
+    handleGoToLastPage
   } = useDocSearch();
   return (
     <Wrapper aria-label="pagination">

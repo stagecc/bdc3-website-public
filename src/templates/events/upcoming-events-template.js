@@ -1,22 +1,22 @@
-import React, { Fragment } from 'react';
-import { graphql, Link } from 'gatsby';
+import React, { Fragment } from "react";
+import { graphql, Link } from "gatsby";
 // import { AnimateOnMount } from "../../components/anim";
-import { SEO } from '../../components/seo';
+import { SEO } from "../../components/seo";
 import {
   Title,
   Paragraph,
   Heading,
   Subheading,
-  // Meta,
-} from '../../components/typography';
-// import { ExternalLink } from '../../components/link';
-import { ButtonLink } from '../../components/buttons';
-import { Module, PageContent } from '../../components/layout';
+  Meta,
+} from "../../components/typography";
+import { ExternalLink } from "../../components/link";
+import { ButtonLink } from "../../components/buttons";
+import { Module, PageContent } from "../../components/layout";
 // import { LinkIcon } from "../../components/icons";
-// import { useWindowWidth } from '../../hooks';
+import { useWindowWidth } from "../../hooks";
 
-function EventsList({ title, events }) {
-  // const { isCompact } = useWindowWidth();
+const EventsList = ({ title, events }) => {
+  const { isCompact } = useWindowWidth();
   return (
     <Module title={title}>
       <br />
@@ -28,12 +28,12 @@ function EventsList({ title, events }) {
             path,
             date,
             display_date,
-            // url,
-            // fabricHosted,
+            url,
+            fabricHosted,
           } = event.node.frontmatter;
           return (
             <Fragment key={title}>
-              <Subheading>{display_date || date}</Subheading>
+              <Subheading>{display_date ? display_date : date}</Subheading>
               <Heading>
                 <Link to={path}>{title}</Link>
               </Heading>
@@ -62,14 +62,12 @@ function EventsList({ title, events }) {
               )} */}
               <Paragraph
                 style={{
-                  borderLeft: '3px solid var(--color-lightgrey)',
-                  paddingLeft: '1rem',
+                  borderLeft: "3px solid var(--color-lightgrey)",
+                  paddingLeft: "1rem",
                 }}
               >
-                {excerpt}
-                {' '}
-                <br />
-                <Link style={{ float: 'right' }} to={path}>
+                {excerpt} <br />
+                <Link style={{ float: "right" }} to={path}>
                   Read More
                 </Link>
               </Paragraph>
@@ -83,9 +81,9 @@ function EventsList({ title, events }) {
       )}
     </Module>
   );
-}
+};
 
-export default function ({ data, pageContext }) {
+export default ({ data, pageContext }) => {
   const events = data.events.edges;
 
   return (
@@ -94,12 +92,12 @@ export default function ({ data, pageContext }) {
         title="Upcoming Events"
         description="Come meet the BioData Catalyst team in person! Read about upcoming events that are related, inclusing conferences, workshops, and meet-ups."
         keywords={[
-          'events',
-          'conferences',
-          'meet-ups',
-          'workshops',
-          'presentations',
-          'hackathons',
+          "events",
+          "conferences",
+          "meet-ups",
+          "workshops",
+          "presentations",
+          "hackathons",
         ]}
       />
 
@@ -113,13 +111,13 @@ export default function ({ data, pageContext }) {
       <EventsList events={events} />
 
       <Paragraph center>
-        <ButtonLink primary to="/about/events/archive">
+        <ButtonLink primary={true} to="/about/events/archive">
           View our past events
         </ButtonLink>
       </Paragraph>
     </PageContent>
   );
-}
+};
 
 export const allEventsQuery = graphql`
   query($todaysDate: Date!) {
