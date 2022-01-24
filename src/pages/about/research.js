@@ -4,6 +4,7 @@ import { PageContent } from "../../components/layout";
 import { Title } from "../../components/typography";
 
 const ResearchPage = ({ data }) => {
+  const publications = data.publications.nodes
 
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters>
@@ -13,31 +14,27 @@ const ResearchPage = ({ data }) => {
         keywords={["pubilsh", "research"]}
       />
       <Title>Published Research</Title>
+
+      {
+        publications.map(publication => (
+          <pre key={ publication.id } style={{ fontSize: '80%', backgroundColor: '#eee', padding: '1rem' }}>
+            { JSON.stringify(publication, null, 2) }
+          </pre>
+        ))
+      }
     </PageContent>
   );
 };
 
-// export const query = graphql`
-//   query {
-//     allMarkdownRemark(
-//       sort: { fields: frontmatter___date, order: DESC }
-//       filter: { fileAbsolutePath: { regex: "/latest-updates/" } }
-//     ) {
-//       edges {
-//         node {
-//           id
-//           excerpt(pruneLength: 250)
-//           timeToRead
-//           frontmatter {
-//             date(formatString: "MMMM DD, YYYY")
-//             path
-//             title
-//             tags
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
+export const query = graphql`query {
+  publications: allPublicationsYaml {
+    nodes {
+      id
+      title
+      date
+      location
+    }
+  }
+}`;
 
 export default ResearchPage;
