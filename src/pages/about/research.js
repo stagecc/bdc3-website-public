@@ -35,6 +35,7 @@ const ResearchPage = ({ data }) => {
                 BioData Catalyst Authors: { bdcAuthors.map((author, i) => <span>{ author }{ i + 1 < bdcAuthors.length ? ',' : '' } </span>)}
               </Paragraph>
             </div>
+            <br/>
           </Fragment>
         ))
     }
