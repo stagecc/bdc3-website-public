@@ -20,7 +20,7 @@ export const menuItems = [
         path: "/about/events",
       },
       {
-        text: "Research",
+        text: "Published Research",
         path: "/about/research",
       },
     ],
