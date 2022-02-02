@@ -1,7 +1,8 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { SEO } from "../../components/seo";
 import { PageContent } from "../../components/layout";
-import { Title } from "../../components/typography";
+import { Heading, Paragraph, Title } from "../../components/typography";
+import { Link } from '../../components/link'
 
 const ResearchPage = ({ data }) => {
   const publications = data.publications.nodes
@@ -16,23 +17,40 @@ const ResearchPage = ({ data }) => {
       <Title>Published Research</Title>
 
       {
-        publications.map(publication => (
-          <pre key={ publication.id } style={{ fontSize: '80%', backgroundColor: '#eee', padding: '1rem' }}>
-            { JSON.stringify(publication, null, 2) }
-          </pre>
+        publications.map(({ id, title, date, location, url, bdcAuthors }) => (
+          <Fragment key={id}>
+            <Heading>
+              <Link to={url}>{title}</Link>
+            </Heading>
+            <div
+              style={{
+                borderLeft: "3px solid var(--color-lightgrey)",
+                paddingLeft: "1rem",
+              }}
+            >
+              <Paragraph>
+                Published on { date } in <em>{ location }</em>
+              </Paragraph>
+              <Paragraph>
+                BioData Catalyst Authors: { bdcAuthors.map((author, i) => <span>{ author }{ i + 1 < bdcAuthors.length ? ',' : '' } </span>)}
+              </Paragraph>
+            </div>
+          </Fragment>
         ))
-      }
+    }
     </PageContent>
   );
 };
 
 export const query = graphql`query {
-  publications: allPublicationsYaml {
+  publications: allPublicationsYaml(sort: {fields: date, order: DESC}) {
     nodes {
       id
       title
-      date
+      date(formatString: "MMMM Do, YYYY")
       location
+      url
+      bdcAuthors
     }
   }
 }`;
