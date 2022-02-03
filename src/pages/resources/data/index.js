@@ -9,15 +9,12 @@ import {
   Subheading,
   Paragraph,
 } from "../../../components/typography";
-import { Card, CardHeader, CardBody } from "../../../components/card"
 import { BulletedList, ListItem } from "../../../components/list";
-import { Button, ButtonLink } from "../../../components/buttons";
+import { ButtonLink } from "../../../components/buttons";
 import { Link } from "../../../components/link";
 import { Visible } from "react-grid-system";
-import { DownloadIcon, MagnifyingGlassIcon } from "../../../components/icons";
 import { Container as Grid, Row, Col } from 'react-grid-system'
 import { DugForm } from '../../../components/form'
-import { HorizontalRule } from '../../../components/horizontal-rule'
 
 const DataPage = ({ data, location }) => {
   const { dataBucketsGraphic, dataBucketsGraphicMobile } = data;
@@ -55,9 +52,9 @@ const DataPage = ({ data, location }) => {
         <ListItem
           primary={
             <span>
-              <ExternalLink to="https://www.nhlbiwgs.org/">
+              <Link to="https://www.nhlbiwgs.org/">
                 TOPMed
-              </ExternalLink>{" "}
+              </Link>{" "}
               Freeze 5b
             </span>
           }
@@ -65,9 +62,9 @@ const DataPage = ({ data, location }) => {
         <ListItem
           primary={
             <span>
-              <ExternalLink to="https://www.nhlbiwgs.org/">
+              <Link to="https://www.nhlbiwgs.org/">
                 TOPMed
-              </ExternalLink>{" "}
+              </Link>{" "}
               Freeze 8 Data
             </span>
           }
@@ -76,9 +73,9 @@ const DataPage = ({ data, location }) => {
           primary={
             <span>
               Parent Studies{" "}
-              <ExternalLink to="https://www.ncbi.nlm.nih.gov/gap/">
+              <Link to="https://www.ncbi.nlm.nih.gov/gap/">
                 dbGaP
-              </ExternalLink>
+              </Link>
             </span>
           }
         />
@@ -125,12 +122,12 @@ const DataPage = ({ data, location }) => {
       <Paragraph>
         To view the most recent updates to BioData Catalyst data, see our
         {" "}
-        <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/release-notes">
+        <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/release-notes">
           Release Notes
-        </ExternalLink>.
+        </Link>.
         {" "}
-        <ExternalLink to="https://staging.gen3.biodatacatalyst.nhlbi.nih.gov/user/oauth2/authorize?idp=fence&client_id=toS2vKpzJmIKj7P64biqpSl3BWO8OPrfZlTuPyAx&redirect_uri=https://staging.biodatacatalyst.nhlbi.nih.gov/resources/data&response_type=id_token+token&scope=openid+user&nonce=2bfe151af238d21f48d8a8bf8bbec408838c8dc0ace6b4c5621ac9dfa157798b">Log in with your eRA Commons credentials</ExternalLink> to determine the datasets to which you currently have access.
-        For additional guidance on checking what data you have access to on BioData Catalyst, see a page dedicated to this topic in our <ExternalLink to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/data-access/check-my-access-to-data">BioData Catalyst documentation</ExternalLink>.
+        <Link to="https://staging.gen3.biodatacatalyst.nhlbi.nih.gov/user/oauth2/authorize?idp=fence&client_id=toS2vKpzJmIKj7P64biqpSl3BWO8OPrfZlTuPyAx&redirect_uri=https://staging.biodatacatalyst.nhlbi.nih.gov/resources/data&response_type=id_token+token&scope=openid+user&nonce=2bfe151af238d21f48d8a8bf8bbec408838c8dc0ace6b4c5621ac9dfa157798b">Log in with your eRA Commons credentials</Link> to determine the datasets to which you currently have access.
+        For additional guidance on checking what data you have access to on BioData Catalyst, see a page dedicated to this topic in our <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/data-access/check-my-access-to-data">BioData Catalyst documentation</Link>.
       </Paragraph>
 
       <br />
