@@ -8,16 +8,26 @@
     "Short Description": "This study focuses on cardiometabolic health in the Old Order Amish (OOA) community, a population which may be enriched for rare gene variants due to their ancestral history.  A major goal for WGS is to identify functional variants which underlie large effect associations in this population",
     "Number of Variables": 68,
     "Data Dictionary Link": "pht005002.v1.p1",
-    "dbGaP Listed Variable": ["Coronary artery calcification score"],
-    "Type": ["Family"],
-    "Populations": ["European"],
+    "dbGaP Listed Variable": [
+      "Coronary artery calcification score"
+    ],
+    "Type": [
+      "Family"
+    ],
+    "Populations": [
+      "European"
+    ],
     "Molecular Data": [
       "De-novo Mutations (NGS)",
       "SNP/CNV Genotypes (NGS)",
       "WGS"
     ],
-    "Consent": ["HMB-IRB-MDS --- Health/medical/biomedical (irb, mds)"],
-    "Consent Short": ["HMB-IRB-MDS"]
+    "Consent": [
+      "HMB-IRB-MDS --- Health/medical/biomedical (irb, mds)"
+    ],
+    "Consent Short": [
+      "HMB-IRB-MDS"
+    ]
   },
   {
     "Primary Research Focus": "Cardiovascular Diseases",
@@ -31,7 +41,9 @@
     "dbGaP Listed Variable": [
       "Venous thrombus embolism group (Case/Comparison)"
     ],
-    "Type": ["Case-control"],
+    "Type": [
+      "Case-control"
+    ],
     "Populations": [
       "White",
       "European American",
@@ -40,12 +52,18 @@
       "White, Not Hispanic",
       "Caucasian"
     ],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
     "Consent": [
       "DS-CVD-IRB --- Disease-specific (cardiovascular disease, irb)",
       "HMB-IRB --- Health/medical/biomedical (irb)"
     ],
-    "Consent Short": ["DS-CVD-IRB", "HMB-IRB"]
+    "Consent Short": [
+      "DS-CVD-IRB",
+      "HMB-IRB"
+    ]
   },
   {
     "Primary Research Focus": "Asthma",
@@ -56,16 +74,26 @@
     "Short Description": "Asthmatics of African descent tend to have more severe asthma and more severe clinical symptoms than individuals of European ancestry. The baseline prevalence of asthma in Barbados is high (~20%), and from admixture analyses, we have determined that the proportion of African ancestry among Barbadian founders is similar to U.S. African Americans.  We therefore performed whole genome sequencing on 1,100 individuals from the Barbados Genetics of Asthma Study (BAGS), in order to generate additional discovery of rare and structural variants that may control risk to asthma.",
     "Number of Variables": 48,
     "Data Dictionary Link": "pht005905.v3.p1",
-    "dbGaP Listed Variable": ["FEV1/FVC (pre-bronchodilator)"],
-    "Type": ["Family"],
-    "Populations": ["African Caribbean"],
+    "dbGaP Listed Variable": [
+      "FEV1/FVC (pre-bronchodilator)"
+    ],
+    "Type": [
+      "Family"
+    ],
+    "Populations": [
+      "African Caribbean"
+    ],
     "Molecular Data": [
       "De-novo Mutations (NGS)",
       "SNP/CNV Genotypes (NGS)",
       "WGS"
     ],
-    "Consent": ["GRU-IRB --- General research use (irb)"],
-    "Consent Short": ["GRU-IRB"]
+    "Consent": [
+      "GRU-IRB --- General research use (irb)"
+    ],
+    "Consent Short": [
+      "GRU-IRB"
+    ]
   },
   {
     "Primary Research Focus": "Atrial Fibrilliation",
@@ -79,11 +107,23 @@
     "dbGaP Listed Variable": [
       "LVEF (Left Ventricular Ejection Fraction) by echo"
     ],
-    "Type": ["Case Set"],
-    "Populations": ["White, Not Hispanic", "White, Hispanic/Latino"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
-    "Consent": ["GRU-IRB --- General research use (irb)"],
-    "Consent Short": ["GRU-IRB"]
+    "Type": [
+      "Case Set"
+    ],
+    "Populations": [
+      "White, Not Hispanic",
+      "White, Hispanic/Latino"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
+    "Consent": [
+      "GRU-IRB --- General research use (irb)"
+    ],
+    "Consent Short": [
+      ""
+    ]
   },
   {
     "Primary Research Focus": "Sleep Apnea Syndromes",
@@ -94,8 +134,12 @@
     "Short Description": "The CFS is a family-based study providing epidemiological data on genetic and non-genetic risk factors for sleep disordered breathing (SDB).",
     "Number of Variables": 10,
     "Data Dictionary Link": "pht006299.v2.p2",
-    "dbGaP Listed Variable": ["Data release of TOPMed Consortium sequencing"],
-    "Type": ["Longitudinal"],
+    "dbGaP Listed Variable": [
+      "Data release of TOPMed Consortium sequencing"
+    ],
+    "Type": [
+      "Longitudinal"
+    ],
     "Populations": [
       "Black",
       "White",
@@ -120,30 +164,46 @@
     "Consent": [
       "DS-HLBS-IRB-NPU --- Disease-specific (heart, lung, blood, and sleep disorders, irb, npu)"
     ],
-    "Consent Short": ["DS-HLBS-IRB-NPU"]
+    "Consent Short": [
+      ""
+    ]
   },
   {
     "Primary Research Focus": "Cardiovascular Diseases",
     "Accession": "phs001368.v2.p2",
     "Cohort Abbreviation": "CHS",
     "Name": "NHLBI TOPMed: Trans-Omics for Precision Medicine (TOPMed) Whole Genome Sequencing Project: Cardiovascular Health Study",
-    "Description": "Participants from the Cardiovascular Health Study (CHS), a large population-based longitudinal cohort study (phs000287), have been included in the TOPMed project. Whole genome sequencing will be performed to contribute to multiple analyses, including cardiovascular disease risk factors, subclinical disease measures, the occurrence of myocardial infarction (MI) and stroke, and analyses of venous thromboembolism (VTE).",
-    "Short Description": "Participants from the Cardiovascular Health Study (CHS), a large population-based longitudinal cohort study (phs000287), have been included in the TOPMed project. Whole genome sequencing will be performed to contribute to multiple analyses, including cardiovascular disease risk factors, subclinical disease measures, the occurrence of myocardial infarction (MI) and stroke, and analyses of venous thromboembolism (VTE).",
+    "Description": "Participants from the Cardiovascular Health Study (CHS), a large population-based longitudinal cohort study (\u00a0phs000287), have been included in the TOPMed project. Whole genome sequencing will be performed to contribute to multiple analyses, including cardiovascular disease risk factors, subclinical disease measures, the occurrence of myocardial infarction (MI) and stroke, and analyses of venous thromboembolism (VTE).",
+    "Short Description": "Participants from the Cardiovascular Health Study (CHS), a large population-based longitudinal cohort study (\u00a0phs000287), have been included in the TOPMed project. Whole genome sequencing will be performed to contribute to multiple analyses, including cardiovascular disease risk factors, subclinical disease measures, the occurrence of myocardial infarction (MI) and stroke, and analyses of venous thromboembolism (VTE).",
     "Number of Variables": 12,
     "Data Dictionary Link": "pht007959.v2.p2",
     "dbGaP Listed Variable": [
       "Sampling Groups (Venous Thromboembolism; African American; Incident MI or Definite Fatal CHD; Probabl Fatal CHD; Incident Stroke; Prevalent MI/Stroke; Healthy Elderly; Other)"
     ],
-    "Type": ["Longitudinal"],
-    "Populations": ["Not Reported", "White", "White, Hispanic or Latino"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
+    "Type": [
+      "Longitudinal"
+    ],
+    "Populations": [
+      "Not Reported",
+      "White",
+      "White, Hispanic or Latino"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS) (12)",
+      "WGS (12)"
+    ],
     "Consent": [
       "DS-CVD-MDS --- Disease-specific (cardiovascular disease, mds)",
       "DS-CVD-NPU-MDS --- Disease-specific (cardiovascular disease, npu, mds)",
       "HMB-MDS --- Health/medical/biomedical (mds)",
       "HMB-NPU-MDS --- Health/medical/biomedical (npu, mds)"
     ],
-    "Consent Short": ["DS-CVD-MDS", "DS-CVD-NPU-MDS", "HMB-MDS", "HMB-NPU-MDS"]
+    "Consent Short": [
+      "DS-CVD-MDS",
+      "DS-CVD-NPU-MDS",
+      "HMB-MDS",
+      "HMB-NPU-MDS"
+    ]
   },
   {
     "Primary Research Focus": "Pulmonary Disease, Chronic Obstructive",
@@ -157,7 +217,9 @@
     "dbGaP Listed Variable": [
       "Case or Control Status of the Subject (Case; Control; Other)"
     ],
-    "Type": ["Case-Control"],
+    "Type": [
+      "Case-Control"
+    ],
     "Populations": [
       "African American",
       "Caucasian",
@@ -166,12 +228,17 @@
       "White Caucasian",
       "Black, Not of Hispanic Origin"
     ],
-    "Molecular Data": ["WGS"],
+    "Molecular Data": [
+      "WGS"
+    ],
     "Consent": [
       "DS-CS-MDS-RD --- Disease-specific (copd and smoking, mds, rd)",
       "HMB-MDS --- Health/medical/biomedical (mds)"
     ],
-    "Consent Short": ["DS-CS-MDS-RD", "HMB-MDS"]
+    "Consent Short": [
+      "DS-CS-MDS-RD",
+      "HMB-MDS"
+    ]
   },
   {
     "Primary Research Focus": "Asthma",
@@ -182,9 +249,16 @@
     "Short Description": "The three primary goals of this project are to: (1) identify common and rare genetic variants that determine asthma and its associated phenotypes (height, weight, IgE level, lung function, bronchodilator response, steroid treatment response) through whole genome sequencing (WGS); (2) perform novel family based association analysis of our WGS data to identify novel genes for asthma; and (3) integrate epigenomic and transcriptomic data with our WGS data and determine the epistatic interactions present using systems genomics approaches.  Herein, we propose a novel family-based study design and state-of-the-art genome sequencing techniques to map a set of sequence variants for asthma and its associated phenotypes and assess the interrelationships of the identified genes and variants using systems genomics methods.",
     "Number of Variables": 28,
     "Data Dictionary Link": "pht005248.v4.p1",
-    "dbGaP Listed Variable": ["Current Smoking Status"],
-    "Type": ["Parent-Offspring Trios"],
-    "Populations": ["Not Reported", "Hispanic"],
+    "dbGaP Listed Variable": [
+      "Current Smoking Status"
+    ],
+    "Type": [
+      "Parent-Offspring Trios"
+    ],
+    "Populations": [
+      "Not Reported",
+      "Hispanic"
+    ],
     "Molecular Data": [
       "De-novo Mutations (NGS)",
       "SNP/CNV Genotypes (NGS)",
@@ -193,7 +267,9 @@
     "Consent": [
       "DS-ASTHMA-IRB-MDS-RD --- Disease-specific (asthma, irb, mds, rd)"
     ],
-    "Consent Short": ["DS-ASTHMA-IRB-MDS-RD"]
+    "Consent Short": [
+      "DS-ASTHMA-IRB-MDS-RD"
+    ]
   },
   {
     "Primary Research Focus": "Cardiovascular Disease",
@@ -207,14 +283,24 @@
     "dbGaP Listed Variable": [
       "Coronary artery calcified plaque using the agatston score with a 130 HU threshold"
     ],
-    "Type": ["Cohort; Cross-Sectional"],
-    "Populations": ["African American"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
+    "Type": [
+      "Cohort; Cross-Sectional"
+    ],
+    "Populations": [
+      "African American"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
     "Consent": [
       "DS-DHD-IRB-COL-NPU --- Disease-specific (diabetes and heart disease, irb, col, npu)",
       "HMB-IRB-COL-NPU --- Health/medical/biomedical (irb, col, npu)"
     ],
-    "Consent Short": ["DS-DHD-IRB-COL-NPU", "HMB-IRB-COL-NPU"]
+    "Consent Short": [
+      "DS-DHD-IRB-COL-NPU",
+      "HMB-IRB-COL-NPU"
+    ]
   },
   {
     "Primary Research Focus": "Chronic Obstructive Pulmonary Disease",
@@ -225,12 +311,27 @@
     "Short Description": "This study has enrolled subjects with severe COPD (forced expiratory volume in one second (FEV1) < 40% predicted) at an early age (< 53 years) without alpha-1 antitrypsin deficiency (a known Mendelian risk factor for COPD).  This study has been used for epidemiological studies, familial aggregation analysis, linkage analysis, and candidate gene association analysis. Approximately 80 of the severe, early-onset COPD probands will undergo whole genome sequencing in this project with sequencing data available through dbGaP.",
     "Number of Variables": 23,
     "Data Dictionary Link": "pht004972.v2.p1",
-    "dbGaP Listed Variable": ["Consent group as determined by DAC"],
-    "Type": ["Pedigree Whole Genome Sequencing"],
-    "Populations": ["Caucasian", "Other", "Not Reported"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
-    "Consent": ["DS-CS-RD --- Disease-specific (copd and smoking, rd) (23)"],
-    "Consent Short": ["DS-CS-RD"]
+    "dbGaP Listed Variable": [
+      "Consent group as determined by DAC"
+    ],
+    "Type": [
+      "Pedigree Whole Genome Sequencing"
+    ],
+    "Populations": [
+      "Caucasian",
+      "Other",
+      "Not Reported"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
+    "Consent": [
+      "DS-CS-RD --- Disease-specific (copd and smoking, rd) (23)"
+    ],
+    "Consent Short": [
+      "DS-CS-RD"
+    ]
   },
   {
     "Primary Research Focus": "Cardiovascular Diseases",
@@ -241,8 +342,12 @@
     "Short Description": "The Framingham Heart Study (FHS) is a prospective cohort study of 3 generations of subjects who have been followed up to 65 years to evaluate risk factors for cardiovascular disease.  This project will focus on deep whole genome sequencing (mean 30X coverage) in ~4100 subjects and imputed to all with GWAS array data to more fully understand the genetic contributions to cardiovascular, lung, blood and sleep disorders.",
     "Number of Variables": 9,
     "Data Dictionary Link": "pht004911.v3.p3",
-    "dbGaP Listed Variable": ["TOPMed Phase"],
-    "Type": ["Cohort"],
+    "dbGaP Listed Variable": [
+      "TOPMed Phase"
+    ],
+    "Type": [
+      "Cohort"
+    ],
     "Populations": [
       "Not Reported",
       "White",
@@ -261,7 +366,10 @@
       "HMB-IRB-MDS --- Health/medical/biomedical (irb, mds)",
       "HMB-IRB-NPU-MDS --- Health/medical/biomedical (irb, npu, mds)"
     ],
-    "Consent Short": ["HMB-IRB-MDS", "HMB-IRB-NPU-MDS"]
+    "Consent Short": [
+      "HMB-IRB-MDS",
+      "HMB-IRB-NPU-MDS"
+    ]
   },
   {
     "Primary Research Focus": "Lung Diseases",
@@ -272,12 +380,25 @@
     "Short Description": "This is a case-only pharmacogenetic study of bronchodilator drug response among racially admixed Latino children with asthma.",
     "Number of Variables": 9,
     "Data Dictionary Link": "pht004900.v3.p2",
-    "dbGaP Listed Variable": ["TOPMed Phase"],
-    "Type": ["Case Set"],
-    "Populations": ["Multiple (38 Populations)"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
-    "Consent": ["DS-LD-IRB-COL --- Disease-specific (lung diseases, irb, col)"],
-    "Consent Short": ["DS-LD-IRB-COL"]
+    "dbGaP Listed Variable": [
+      "TOPMed Phase"
+    ],
+    "Type": [
+      "Case Set"
+    ],
+    "Populations": [
+      "Multiple (38 Populations)"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
+    "Consent": [
+      "DS-LD-IRB-COL --- Disease-specific (lung diseases, irb, col)"
+    ],
+    "Consent Short": [
+      "DS-LD-IRB-COL"
+    ]
   },
   {
     "Primary Research Focus": "Platelet Aggregation",
@@ -288,32 +409,57 @@
     "Short Description": "GeneSTAR is a prospective longitudinal family-based study conducted originally in healthy adult siblings of people with documented early onset coronary disease under 60 years of age.  Additional phenotyping and intervential substudies have been conducted to discover and amplify understanding of the mechanisms of atherogenic vascular diseases and attendant comorbidities.",
     "Number of Variables": 151,
     "Data Dictionary Link": "pht007766.v1.p1",
-    "dbGaP Listed Variable": ["Fibrinogen (mg/dl)"],
-    "Type": ["Family; Longitudinal Cohort"],
-    "Populations": ["European American", "African American"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
+    "dbGaP Listed Variable": [
+      "Fibrinogen (mg/dl)"
+    ],
+    "Type": [
+      "Family; Longitudinal Cohort"
+    ],
+    "Populations": [
+      "European American",
+      "African American"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
     "Consent": [
       "DS-CVD-IRB-NPU-MDS --- Disease-specific (cardiovascular disease, irb, npu, mds)"
     ],
-    "Consent Short": ["DS-CVD-IRB-NPU-MDS"]
+    "Consent Short": [
+      "DS-CVD-IRB-NPU-MDS"
+    ]
   },
   {
     "Primary Research Focus": "Hypertension",
     "Accession": "phs001345.v1.p1",
     "Cohort Abbreviation": "GENOA",
     "Name": "NHLBI TOPMed: Genetic Epidemiology Network of Arteriopathy (GENOA)",
-    "Description": "The Genetic Epidemiology Network of Arteriopathy (GENOA) is one of four networks in the NHLBI Family-Blood Pressure Program (FBPP). GENOA's long-term objective is to elucidate the genetics of target organ complications of hypertension, including both atherosclerotic and arteriolosclerotic complications involving the heart, brain, kidneys, and peripheral arteries. The longitudinal GENOA Study recruited European-American and African-American sibships with at least 2 individuals with clinically diagnosed essential hypertension before age 60 years. All other members of the sibship were invited to participate regardless of their hypertension status. Participants were diagnosed with hypertension if they had either 1) a previous clinical diagnosis of hypertension by a physician with current anti-hypertensive treatment, or 2) an average systolic blood pressure ? 140 mm Hg or diastolic blood pressure ? 90 mm Hg based on the second and third readings at the time of their clinic visit. Only participants of the African-American Cohort were sequenced through TOPMed.\n\nThe Family Blood Pressure Program (FBPP), GENOA's parent program, is an unprecedented collaboration to identify genes influencing blood pressure (BP) levels, hypertension, and its target-organ damage. This program has conducted over 21,000 physical examinations, assembled a shared database of several hundred BP and hypertension-related phenotypic measurements, completed genome-wide linkage analyses for BP, hypertension, and hypertension associated risk factors and complications, and published over 130 manuscripts on program findings. The FBPP emerged from what was initially funded as four independent networks of investigators (HyperGEN, GenNet, SAPPHIRe and GENOA) competing to identify genetic determinants of hypertension in multiple ethnic groups. Realizing the greater likelihood of success through collaboration, the investigators created a single confederation with program-wide and network-specific goals.",
+    "Description": "The Genetic Epidemiology Network of Arteriopathy (GENOA) is one of four networks in the NHLBI Family-Blood Pressure Program (FBPP). GENOA's long-term objective is to elucidate the genetics of target organ complications of hypertension, including both atherosclerotic and arteriolosclerotic complications involving the heart, brain, kidneys, and peripheral arteries. The longitudinal GENOA Study recruited European-American and African-American sibships with at least 2 individuals with clinically diagnosed essential hypertension before age 60 years. All other members of the sibship were invited to participate regardless of their hypertension status. Participants were diagnosed with hypertension if they had either 1) a previous clinical diagnosis of hypertension by a physician with current anti-hypertensive treatment, or 2) an average systolic blood pressure \u2265 140 mm Hg or diastolic blood pressure \u2265 90 mm Hg based on the second and third readings at the time of their clinic visit. Only participants of the African-American Cohort were sequenced through TOPMed.\n\nThe Family Blood Pressure Program (FBPP), GENOA's parent program, is an unprecedented collaboration to identify genes influencing blood pressure (BP) levels, hypertension, and its target-organ damage. This program has conducted over 21,000 physical examinations, assembled a shared database of several hundred BP and hypertension-related phenotypic measurements, completed genome-wide linkage analyses for BP, hypertension, and hypertension associated risk factors and complications, and published over 130 manuscripts on program findings. The FBPP emerged from what was initially funded as four independent networks of investigators (HyperGEN, GenNet, SAPPHIRe and GENOA) competing to identify genetic determinants of hypertension in multiple ethnic groups. Realizing the greater likelihood of success through collaboration, the investigators created a single confederation with program-wide and network-specific goals.",
     "Short Description": "The long-term objective of the Genetic Epidemiology Network of Arteriopathy (GENOA) project is to elucidate the genetics of target organ complications of hypertension, including both atherosclerotic and arteriolosclerotic complications involving the heart, brain, kidneys, and peripheral arteries.",
     "Number of Variables": 12,
     "Data Dictionary Link": "pht008604.v1.p1",
-    "dbGaP Listed Variable": ["Histological Type"],
-    "Type": ["Cohort; Sibling Cohort"],
-    "Populations": ["African American", "Black", "Black or African American"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
+    "dbGaP Listed Variable": [
+      "Histological Type"
+    ],
+    "Type": [
+      "Cohort; Sibling Cohort"
+    ],
+    "Populations": [
+      "African American",
+      "Black",
+      "Black or African American"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
     "Consent": [
       "DS-ASC-RF-NPU --- Disease-specific (arteriosclerosis and its risk factors, npu)"
     ],
-    "Consent Short": ["DS-ASC-RF-NPU"]
+    "Consent Short": [
+      "DS-ASC-RF-NPU"
+    ]
   },
   {
     "Primary Research Focus": "Arterial Pressure, Mean",
@@ -324,14 +470,24 @@
     "Short Description": "The GenSalt study aims to identify genes which interact with dietary sodium and potassium intake to influence blood pressure in Han Chinese participants from rural north China.",
     "Number of Variables": 22,
     "Data Dictionary Link": "pht007764.v1.p1",
-    "dbGaP Listed Variable": ["Average Baseline Mean Arterial Pressure"],
-    "Type": ["Cohort; Parent-Offspring Trios"],
-    "Populations": ["Chinese Han"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
+    "dbGaP Listed Variable": [
+      "Average Baseline Mean Arterial Pressure"
+    ],
+    "Type": [
+      "Cohort; Parent-Offspring Trios"
+    ],
+    "Populations": [
+      "Chinese Han"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)\nWGS"
+    ],
     "Consent": [
       "DS-HCR-IRB --- Disease-specific (high blood pressure and related cardiovascular-renal disease, irb)"
     ],
-    "Consent Short": ["DS-HCR-IRB"]
+    "Consent Short": [
+      "DS-HCR-IRB"
+    ]
   },
   {
     "Primary Research Focus": "Lipids",
@@ -342,14 +498,24 @@
     "Short Description": "The GOLDN study was initiated to assess how genetic factors interact with environmental (diet and drug) interventions to influence blood levels of triglycerides and other atherogenic lipid species and inflammation markers in Caucasian participants.",
     "Number of Variables": 13,
     "Data Dictionary Link": "pht008690.v1.p1",
-    "dbGaP Listed Variable": ["TOPMed Phase"],
-    "Type": ["Longitudinal"],
-    "Populations": ["Caucasian"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
+    "dbGaP Listed Variable": [
+      "TOPMed Phase"
+    ],
+    "Type": [
+      "Longitudinal"
+    ],
+    "Populations": [
+      "Caucasian"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)\nWGS"
+    ],
     "Consent": [
       "DS-CVD-IRB --- Disease-specific (cardiovascular disease, irb)"
     ],
-    "Consent Short": ["DS-CVD-IRB"]
+    "Consent Short": [
+      "DS-CVD-IRB"
+    ]
   },
   {
     "Primary Research Focus": "Cardiovascular Diseases",
@@ -363,7 +529,9 @@
     "dbGaP Listed Variable": [
       "Affection Status (Case control status of the subject for atrial fibrillation or venous thrombosis)"
     ],
-    "Type": ["Case Set"],
+    "Type": [
+      "Case Set"
+    ],
     "Populations": [
       "White or Caucasian",
       "Black or African American",
@@ -373,12 +541,18 @@
       "White - Not of Hispanic Origin",
       "Native Hawaiian or Other Pacific Islander"
     ],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
     "Consent": [
       "DS-CVD-IRB-MDS --- Disease-specific (cardiovascular disease, irb, mds)",
       "HMB-IRB-MDS --- Disease-specific (cardiovascular disease, irb, mds)"
     ],
-    "Consent Short": ["DS-CVD-IRB-MDS", "HMB-IRB-MDS"]
+    "Consent Short": [
+      "DS-CVD-IRB-MDS",
+      "HMB-IRB-MDS"
+    ]
   },
   {
     "Primary Research Focus": "Hypertrophy, Left Ventricular",
@@ -389,19 +563,29 @@
     "Short Description": "The Hypertension Genetic Epidemiology Network Study (HyperGEN) - Genetics of Left Ventricular (LV) Hypertrophy is a familial study aimed to understand genetic risk factors for LV hypertrophy by conducting genetic studies of continuous traits from echocardiography exams.",
     "Number of Variables": 158,
     "Data Dictionary Link": "pht008896.v1.p1",
-    "dbGaP Listed Variable": ["Left ventricular mass (g)"],
-    "Type": ["Family"],
+    "dbGaP Listed Variable": [
+      "Left ventricular mass (g)"
+    ],
+    "Type": [
+      "Family"
+    ],
     "Populations": [
       "Black, Not of Hispanic Origin",
       "African American",
       "Asian"
     ],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
     "Consent": [
       "DS-CVD-IRB-RD --- Disease-specific (cardiovascular disease, irb, rd)",
       "GRU-IRB --- General research use"
     ],
-    "Consent Short": ["DS-CVD-IRB-RD", "GRU-IRB"]
+    "Consent Short": [
+      "DS-CVD-IRB-RD",
+      "GRU-IRB"
+    ]
   },
   {
     "Primary Research Focus": "Cardiovascular Diseases",
@@ -412,17 +596,32 @@
     "Short Description": "Since there is a greater prevalence of cardiovascular disease among African Americans, the purpose of the Jackson Heart Study (JHS) is to explore the reasons for this disparity and to uncover new approaches to reduce it.",
     "Number of Variables": 19,
     "Data Dictionary Link": "pht004840.v2.p1",
-    "dbGaP Listed Variable": ["Body site where sample was collected"],
-    "Type": ["Longitudinal Cohort"],
-    "Populations": ["African American", "Black"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
+    "dbGaP Listed Variable": [
+      "Body site where sample was collected"
+    ],
+    "Type": [
+      "Longitudinal Cohort"
+    ],
+    "Populations": [
+      "African American",
+      "Black"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
     "Consent": [
       "DS-FDO-IRB --- Disease-specific (focused disease only, irb)",
       "DS-FDO-IRB-NPU --- Disease-specific (focused disease only, irb, npu)",
       "HMB-IRB --- Health/medical/biomedical (irb)",
       "HMB-IRB-NPU --- Health/medical/biomedical (irb, npu)"
     ],
-    "Consent Short": ["DS-FDO-IRB", "DS-FDO-IRB-NPU", "HMB-IRB", "HMB-IRB-NPU"]
+    "Consent Short": [
+      "DS-FDO-IRB",
+      "DS-FDO-IRB-NPU",
+      "HMB-IRB",
+      "HMB-IRB-NPU"
+    ]
   },
   {
     "Primary Research Focus": "Venous Thromboembolism",
@@ -433,8 +632,12 @@
     "Short Description": "This study consists of 338 VTE cases from an inception cohort of Olmsted County, MN residents (OC) with a first lifetime objectively-diagnosed idiopathic VTE during the 40-year study period, 1966-2005.",
     "Number of Variables": 53,
     "Data Dictionary Link": "pht008239.v1.p1",
-    "dbGaP Listed Variable": ["Age at time of blood clot"],
-    "Type": ["Case Set"],
+    "dbGaP Listed Variable": [
+      "Age at time of blood clot"
+    ],
+    "Type": [
+      "Case Set"
+    ],
     "Populations": [
       "Not Reported",
       "White",
@@ -444,9 +647,16 @@
       "Asian",
       "Amind"
     ],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
-    "Consent": ["GRU --- General research use"],
-    "Consent Short": ["GRU"]
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
+    "Consent": [
+      "GRU --- General research use"
+    ],
+    "Consent Short": [
+      "GRU"
+    ]
   },
   {
     "Primary Research Focus": "Cardiovascular Diseases",
@@ -457,8 +667,12 @@
     "Short Description": "The Multi-Ethnic Study of Atherosclerosis (MESA) is a study of the characteristics of subclinical cardiovascular disease (disease detected non-invasively before it has produced clinical signs and symptoms) and the risk factors that predict progression to clinically overt cardiovascular disease or progression of the subclinical disease.  The general goal of the MESA Family Study, an ancillary study to MESA funded by a grant from NHLBI, is to apply modern genetic analysis and genotyping methodologies to delineate the genetic determinants of early atherosclerosis.",
     "Number of Variables": 12,
     "Data Dictionary Link": "pht009015.v1.p1",
-    "dbGaP Listed Variable": ["Histological Type"],
-    "Type": ["Family; Longitudinal"],
+    "dbGaP Listed Variable": [
+      "Histological Type"
+    ],
+    "Type": [
+      "Family; Longitudinal"
+    ],
     "Populations": [
       "Black or African American",
       "White Caucasian",
@@ -470,12 +684,18 @@
       "Black, Not of Hispanic Origin",
       "Black"
     ],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
     "Consent": [
       "HMB --- Health/medical/biomedical",
       "HMB-NPU --- Health/medical/biomedical (npu)"
     ],
-    "Consent Short": ["HMB", "HMB-NPU"]
+    "Consent Short": [
+      "HMB",
+      "HMB-NPU"
+    ]
   },
   {
     "Primary Research Focus": "Atrial Fibrilliation",
@@ -489,19 +709,27 @@
     "dbGaP Listed Variable": [
       "Affection Status (Case control status of the subject for atrial fibrillation)"
     ],
-    "Type": ["Case Set"],
+    "Type": [
+      "Case Set"
+    ],
     "Populations": [
       "White",
       "American Indian",
       "American indian Black",
       "Hispanic"
     ],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
     "Consent": [
       "DS-AF-IRB-RD --- Disease-specific (atrial fibrillation, irb, rd)",
       "HMB-IRB --- Health/medical/biomedical (irb)"
     ],
-    "Consent Short": ["DS-AF-IRB-RD", "HMB-IRB"]
+    "Consent Short": [
+      "DS-AF-IRB-RD",
+      "HMB-IRB"
+    ]
   },
   {
     "Primary Research Focus": "Atrial Fibrilliation",
@@ -512,8 +740,12 @@
     "Short Description": "The Atrial Fibrillation Genetics Consortium (AFGen) was organized to identify common and rare genetic variation associated with atrial fibrillation risk. In the current study, we have performed whole genome sequencing in cases with early-onset atrial fibrillation. Samples in this study were enrolled as a part of the Partners HealthCare Biobank. Cases with early-onset atrial fibrillation were identified from the Biobank (defined as atrial fibrillation onset prior to 61 years and in the absence of structural heart disease).",
     "Number of Variables": 27,
     "Data Dictionary Link": "pht005693.v1.p1",
-    "dbGaP Listed Variable": ["ECG - PR Interval"],
-    "Type": ["Case Set"],
+    "dbGaP Listed Variable": [
+      "ECG - PR Interval"
+    ],
+    "Type": [
+      "Case Set"
+    ],
     "Populations": [
       "White, Not Hispanic",
       "White, Missing",
@@ -523,9 +755,16 @@
       "Missing",
       "Hispanic, Hispanic/Latino"
     ],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
-    "Consent": ["HMB --- Health/medical/biomedical"],
-    "Consent Short": ["HMB"]
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
+    "Consent": [
+      "HMB --- Health/medical/biomedical"
+    ],
+    "Consent Short": [
+      "HMB"
+    ]
   },
   {
     "Primary Research Focus": "Cardiovascular Diseases",
@@ -536,14 +775,28 @@
     "Short Description": "The San Antonio Family Heart Study (SAFHS) is a complex pedigree-based mixed longitudinal study designed to identify low frequency or rare variants influencing susceptibility to cardiovascular disease, using whole genome sequence (WGS) information from 2,590 individuals in large Mexican American pedigrees from San Antonio, Texas. The major objectives of this study are to identify low frequency or rare variants in and around known common variant signals for CVD, as well as to find novel low frequency or rare variants influencing susceptibility to CVD.",
     "Number of Variables": 40,
     "Data Dictionary Link": "pht008631.v2.p2",
-    "dbGaP Listed Variable": ["2-hour insulin"],
-    "Type": ["Family"],
-    "Populations": ["Mexican American", "Mexam", "Other", "Euram"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
+    "dbGaP Listed Variable": [
+      "2-hour insulin"
+    ],
+    "Type": [
+      "Family"
+    ],
+    "Populations": [
+      "Mexican American",
+      "Mexam",
+      "Other",
+      "Euram"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
     "Consent": [
       "DS-DHD-IRB-PUB-MDS-RD --- Disease-specific (diabetes and heart disease, irb, pub, mds, rd)"
     ],
-    "Consent Short": ["DS-DHD-IRB-PUB-MDS-RD"]
+    "Consent Short": [
+      "DS-DHD-IRB-PUB-MDS-RD"
+    ]
   },
   {
     "Primary Research Focus": "Lung Diseases",
@@ -557,13 +810,22 @@
     "dbGaP Listed Variable": [
       "Smoke Current (Does participant currently smoke at least 1 cig per day?)"
     ],
-    "Type": ["Case-control"],
+    "Type": [
+      "Case-control"
+    ],
     "Populations": [
       "Black, White Black, Black Other, White Black Native Hawaiian, Black Other Niicarguan, Black Other Pac. Island"
     ],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
-    "Consent": ["DS-LD-IRB-COL --- Disease-specific (lung diseases, irb, col)"],
-    "Consent Short": ["DS-LD-IRB-COL"]
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
+    "Consent": [
+      "DS-LD-IRB-COL --- Disease-specific (lung diseases, irb, col)"
+    ],
+    "Consent Short": [
+      "DS-LD-IRB-COL"
+    ]
   },
   {
     "Primary Research Focus": "Sarcoidosis",
@@ -574,12 +836,25 @@
     "Short Description": "This study aims to comprehensively interrogate the genomes of African American sarcoidosis families. Sarcoidosis is characterized by a hyperimmune response resulting in granuloma formation in multiple organs.",
     "Number of Variables": 46,
     "Data Dictionary Link": "pht005793.v2.p1",
-    "dbGaP Listed Variable": ["Disease status of participant"],
-    "Type": ["Affected Sib Pairs; Family"],
-    "Populations": ["Black"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
-    "Consent": ["DS-SAR-IRB --- Disease-specific (sarcoidosis, irb)"],
-    "Consent Short": ["DS-SAR-IRB"]
+    "dbGaP Listed Variable": [
+      "Disease status of participant"
+    ],
+    "Type": [
+      "Affected Sib Pairs; Family"
+    ],
+    "Populations": [
+      "Black"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
+    "Consent": [
+      "DS-SAR-IRB --- Disease-specific (sarcoidosis, irb)"
+    ],
+    "Consent Short": [
+      "DS-SAR-IRB"
+    ]
   },
   {
     "Primary Research Focus": "Obesity",
@@ -590,14 +865,25 @@
     "Short Description": "The individuals sequenced here represent a small subset of the parent study (described below) and were carefully selected for the purpose of creating a Samoan-specific reference panel for imputation back into the parent study. The INFOSTIP algorithm of Gusev et. al. (2012) (PMID: 22135348) was used to optimally choose the individuals for sequencing.\n\nThe research goal of the parent study (dbGaP ID phs000914) is to identify genetic variation that increases susceptibility to obesity and cardiometabolic phenotypes among adult Samoans using genome-wide association (GWAS) methods.",
     "Number of Variables": 9,
     "Data Dictionary Link": "pht005681.v2.p1",
-    "dbGaP Listed Variable": ["TOPMed Phase"],
-    "Type": ["Cross-Sectional; Population"],
-    "Populations": ["Samoan"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
+    "dbGaP Listed Variable": [
+      "TOPMed Phase"
+    ],
+    "Type": [
+      "Cross-Sectional; Population"
+    ],
+    "Populations": [
+      "Samoan"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
     "Consent": [
       "GRU-IRB-PUB-COL-NPU-GSO --- General research use (irb, pub, col, npu, gso)"
     ],
-    "Consent Short": ["GRU-IRB-PUB-COL-NPU-GSO"]
+    "Consent Short": [
+      "GRU-IRB-PUB-COL-NPU-GSO"
+    ]
   },
   {
     "Primary Research Focus": "Blood Pressure",
@@ -608,30 +894,55 @@
     "Short Description": "The THRV-TOPMed study consists of three cohorts: The SAPPHIRe Family cohort (N=1,271), TSGH (Tri-Service General Hospital, a hospital-based cohort, N=160), and TCVGH (Taichung Veterans General Hospital, another hospital-based cohort, N=922), all based in Taiwan.",
     "Number of Variables": 84,
     "Data Dictionary Link": "pht008970.v1.p1",
-    "dbGaP Listed Variable": ["SBP1 (1st Systolic Blood Pressure)"],
-    "Type": ["Cohort"],
-    "Populations": ["Taiwan Chinese"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
+    "dbGaP Listed Variable": [
+      "SBP1 (1st Systolic Blood Pressure)"
+    ],
+    "Type": [
+      "Cohort"
+    ],
+    "Populations": [
+      "Taiwan Chinese"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
     "Consent": [
       "DS-CVD-IRB-COL-NPU-RD --- Disease-specific (cardiovascular disease, irb, col, npu, rd)"
     ],
-    "Consent Short": ["DS-CVD-IRB-COL-NPU-RD"]
+    "Consent Short": [
+      "DS-CVD-IRB-COL-NPU-RD"
+    ]
   },
   {
     "Primary Research Focus": "Atrial Fibrilliation",
     "Accession": "phs000997.v4.p2",
     "Cohort Abbreviation": "VAFAR",
     "Name": "NHLBI TOPMed: The Vanderbilt AF Ablation Registry",
-    "Description": "The Vanderbilt Atrial Fibrillation Ablation Registry (VAFAR) was founded in 2011. Patients with AF referred for AF ablation are prospectively enrolled. A detailed clinical history is recorded, along with imaging data (cardiac MRI or CT). Blood samples are obtained for DNA extraction at the time of ablation. Details of the ablation procedure are recorded. Patients are longitudinally followed to monitor for AF recurrence. VAFAR contributed 171 samples submitted to dbGaP for WGS: 115 were from male subjects, of which 113 were whiteon-Hispanic and 2 were Hispanic; 56 were from females, of which all 56 were whiteon-Hispanic.",
+    "Description": "The Vanderbilt Atrial Fibrillation Ablation Registry (VAFAR) was founded in 2011. Patients with AF referred for AF ablation are prospectively enrolled. A detailed clinical history is recorded, along with imaging data (cardiac MRI or CT). Blood samples are obtained for DNA extraction at the time of ablation. Details of the ablation procedure are recorded. Patients are longitudinally followed to monitor for AF recurrence. VAFAR contributed 171 samples submitted to dbGaP for WGS: 115 were from male subjects, of which 113 were white/non-Hispanic and 2 were Hispanic; 56 were from females, of which all 56 were white/non-Hispanic.",
     "Short Description": "The Vanderbilt Atrial Fibrillation Ablation Registry (VAFAR) prospectively enrolls patients with AF referred for AF ablation.  Patients are longitudinally followed to monitor for AF recurrence.",
     "Number of Variables": 26,
     "Data Dictionary Link": "pht005688.v3.p2",
-    "dbGaP Listed Variable": ["LA size by echo"],
-    "Type": ["Case Set"],
-    "Populations": ["White, Not Hispanic", "White, Hispanic"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
-    "Consent": ["HMB-IRB --- Health/medical/biomedical (irb)"],
-    "Consent Short": ["HMB-IRB"]
+    "dbGaP Listed Variable": [
+      "LA size by echo"
+    ],
+    "Type": [
+      "Case Set"
+    ],
+    "Populations": [
+      "White, Not Hispanic",
+      "White, Hispanic"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
+    "Consent": [
+      "HMB-IRB --- Health/medical/biomedical (irb)"
+    ],
+    "Consent Short": [
+      "HMB-IRB"
+    ]
   },
   {
     "Primary Research Focus": "Atrial Fibrilliation",
@@ -642,8 +953,12 @@
     "Short Description": "The Vanderbilt Atrial Fibrillation (AF) Registry was founded in 2001. Patients with AF and family members are prospectively enrolled. At enrollment a detailed past medical history is obtained along with an AF symptom severity assessment. Blood samples are obtained for DNA extraction. Patients are followed longitudinally along with serial collection of AF symptom severity assessments.",
     "Number of Variables": 32,
     "Data Dictionary Link": "pht005675.v3.p2",
-    "dbGaP Listed Variable": ["Hypertension (Case Control)"],
-    "Type": ["Case Set"],
+    "dbGaP Listed Variable": [
+      "Hypertension (Case Control)"
+    ],
+    "Type": [
+      "Case Set"
+    ],
     "Populations": [
       "White, Not Hispanic",
       "Black, Not of Hispanic Origin",
@@ -651,9 +966,16 @@
       "Asian, Non-Hispanic",
       "Native American, Non-Hispanic"
     ],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
-    "Consent": ["GRU-IRB --- General research use (irb)"],
-    "Consent Short": ["GRU-IRB"]
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
+    "Consent": [
+      "GRU-IRB --- General research use (irb)"
+    ],
+    "Consent Short": [
+      "GRU-IRB"
+    ]
   },
   {
     "Primary Research Focus": "Atrial Fibrilliation",
@@ -664,12 +986,26 @@
     "Short Description": "The Women's Genome Health Study (WGHS) is a prospective cohort comprised of over 25,000 initially healthy female health professionals enrolled in the Women's Health Study.  Women who reported atrial fibrillation during the course of the study were asked to report diagnoses of AF at baseline, 48 months, and then annually thereafter.",
     "Number of Variables": 56,
     "Data Dictionary Link": "pht005682.v3.p1",
-    "dbGaP Listed Variable": ["Age at AF Diagnosis"],
-    "Type": ["Case Set"],
-    "Populations": ["Not Reported", "White, Not Hispanic"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
-    "Consent": ["HMB --- Health/medical/biomedical"],
-    "Consent Short": ["HMB"]
+    "dbGaP Listed Variable": [
+      "Age at AF Diagnosis"
+    ],
+    "Type": [
+      "Case Set"
+    ],
+    "Populations": [
+      "Not Reported",
+      "White, Not Hispanic"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
+    "Consent": [
+      "HMB --- Health/medical/biomedical"
+    ],
+    "Consent Short": [
+      "HMB"
+    ]
   },
   {
     "Primary Research Focus": "Stroke",
@@ -680,8 +1016,12 @@
     "Short Description": "This is Whole Genome Sequencing data from the TOPMed participation of the Women's Health Initiative. Approximately 11,100 subjects were involved in this study: approximately 1,100 cases of VTE, 4,000 cases of ischemic stroke, 900 cases of hemorrhagic stroke, and 5,100 controls.",
     "Number of Variables": 11,
     "Data Dictionary Link": "pht005989.v2.p1",
-    "dbGaP Listed Variable": ["TOPMed Phase"],
-    "Type": ["Longitudinal"],
+    "dbGaP Listed Variable": [
+      "TOPMed Phase"
+    ],
+    "Type": [
+      "Longitudinal"
+    ],
     "Populations": [
       "White - Not of Hispanic Origin",
       "Black or African American",
@@ -692,12 +1032,18 @@
       "Not Reported",
       "White"
     ],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
     "Consent": [
       "HMB-IRB --- Health/medical/biomedical (irb)",
       "HMB-IRB-NPU --- Health/medical/biomedical (irb, npu)"
     ],
-    "Consent Short": ["HMB-IRB", "HMB-IRB-NPU"]
+    "Consent Short": [
+      "HMB-IRB",
+      "HMB-IRB-NPU"
+    ]
   },
   {
     "Primary Research Focus": "Cardiovascular Diseases",
@@ -708,8 +1054,12 @@
     "Short Description": "CARDIA is a study examining the etiology and natural history of cardiovascular disease beginning in young adulthood.  The cohort consists of 5115 healthy black and white mena and women aged 18-30.  Follow-ups occurred at Year 2, 5, 7, 10, 15, 20, 25, 30.  Data have been collected on a variety of factors believed to be related to heart disease, e.g. blood pressure, cholesterol, and lipds.  Physical measurements, lifestyle factors, dietary and exercise patterns, behavioral and psychological variables, medical and family history, and other chemistries (e.g., insulin and glucose) were collected.",
     "Number of Variables": 11,
     "Data Dictionary Link": "pht009498.v1.p1",
-    "dbGaP Listed Variable": ["Body site where sample was collected"],
-    "Type": ["Longitudinal"],
+    "dbGaP Listed Variable": [
+      "Body site where sample was collected"
+    ],
+    "Type": [
+      "Longitudinal"
+    ],
     "Populations": [
       "White, Not Hispanic",
       "Black, Not of Hispanic Origin",
@@ -722,12 +1072,18 @@
       "American Indian or Alaskan Native",
       "No Answer"
     ],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
     "Consent": [
       "HMB-IRB --- Health/medical/biomedical (irb)",
       "HMB-IRB-NPU --- Health/medical/biomedical (irb, npu)"
     ],
-    "Consent Short": ["HMB-IRB", "HMB-IRB-NPU"]
+    "Consent Short": [
+      "HMB-IRB",
+      "HMB-IRB-NPU"
+    ]
   },
   {
     "Primary Research Focus": "Asthma",
@@ -738,8 +1094,12 @@
     "Short Description": "The Childhood Asthma Management Program (CAMP) was designed to evaluate whether continuous, long-term treatment (over a period of four to six years) with either an inhaled corticosteroid (budesonide) or an inhaled noncorticosteroid drug (nedocromil) safely produces an improvement in lung growth as compared with treatment for symptoms only (with albuterol and, if necessary, prednisone, administered as needed). The primary outcome in the study was lung growth, as assessed by the change in forced expiratory volume in one second (FEV1, expressed as a percentage of the predicted value) after the administration of a bronchodilator. Secondary outcomes included the degree of airway responsiveness, morbidity, physical growth, and psychological development",
     "Number of Variables": 19,
     "Data Dictionary Link": "pht009834.v1.p1",
-    "dbGaP Listed Variable": ["Case control status of the subject for asthma"],
-    "Type": ["Parent-Offspring Trios"],
+    "dbGaP Listed Variable": [
+      "Case control status of the subject for asthma"
+    ],
+    "Type": [
+      "Parent-Offspring Trios"
+    ],
     "Populations": [
       "Not Reported",
       "White",
@@ -747,11 +1107,15 @@
       "Hispanic",
       "Other"
     ],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)"],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)"
+    ],
     "Consent": [
       "DS-AST-COPD --- Disease-specific (asthma and chronic obstructive pulmonary disease)"
     ],
-    "Consent Short": ["DS-AST-COPD"]
+    "Consent Short": [
+      "DS-AST-COPD"
+    ]
   },
   {
     "Primary Research Focus": "Cardiovascular Disease",
@@ -762,8 +1126,12 @@
     "Short Description": "This study contains whole genome sequence data. A case-control sample of individuals from the Hispanic Community Health Study/Study of Latinos (HCHS/SOL), a multicenter prospective cohort study of 16,415 persons of Cuban, Dominican, Mexican, Puerto Rican, Central American, and South American background (phs000810), was selected for whole genome sequencing, including participants with a history of physician-diagnosed asthma and asthma-free participants.",
     "Number of Variables": 9,
     "Data Dictionary Link": "pht006627.v1.p1",
-    "dbGaP Listed Variable": ["Consent group as determined by DAC"],
-    "Type": ["Cohort"],
+    "dbGaP Listed Variable": [
+      "Consent group as determined by DAC"
+    ],
+    "Type": [
+      "Cohort"
+    ],
     "Populations": [
       "Puerto Rican",
       "Cuban",
@@ -774,12 +1142,18 @@
       "More than one Heritage/Other",
       "Not Reported"
     ],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
     "Consent": [
       "HMB --- Health/medical/biomedical",
       "HMB-NPU --- Health/medical/biomedical (npu)"
     ],
-    "Consent Short": ["HMB", "HMB-NPU"]
+    "Consent Short": [
+      "HMB",
+      "HMB-NPU"
+    ]
   },
   {
     "Primary Research Focus": "Atrial Fibrilliation",
@@ -790,12 +1164,24 @@
     "Short Description": "Atrial fibrillation (AF), the most common sustained cardiac arrhythmia, is the primary cause of many hospital admissions, and is associated with significant secondary morbidity by increasing the risk of stroke, heart failure, and all-cause mortality.  The pathophysiology of AF generation and maintenance, and the potential contribution of such genetic or anatomic substrates for patient selection, and for target identification during catheter ablation have not yet been examined.  The proposed study will improve our understanding of the underlying pathophysiology of AF, and may improve current techniques for treatment of this important arrhythmia.",
     "Number of Variables": 13,
     "Data Dictionary Link": "pht009997.v1.p1",
-    "dbGaP Listed Variable": ["AF status"],
-    "Type": ["Case Set"],
-    "Populations": ["White"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)"],
-    "Consent": ["HMB-NPU-MDS --- Health/medical/biomedical (npu, mds)"],
-    "Consent Short": ["HMB-NPU-MDS"]
+    "dbGaP Listed Variable": [
+      "AF status"
+    ],
+    "Type": [
+      "Case Set"
+    ],
+    "Populations": [
+      "White"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)"
+    ],
+    "Consent": [
+      "HMB-NPU-MDS --- Health/medical/biomedical (npu, mds)"
+    ],
+    "Consent Short": [
+      "HMB-NPU-MDS"
+    ]
   },
   {
     "Primary Research Focus": "Atrial Fibrilliation",
@@ -806,12 +1192,24 @@
     "Short Description": "The UMMS miRhythm Study is an ongoing study of adult patients undergoing an elective electrophysiology study or arrhythmia ablation procedure for a supraventricular or ventricular arrhythmia, including atrial fibrillation (AF).  Atrial fibrillation is a major clinical and public health problem that is related to atrial pathologic remodeling. Few tools are available to quantify the activity or extent of this remodeling, though previous studies have suggested an important role for miRNA in cardiovascular disease through gene expression regulation, making this a promising avenue for studying AF mechanisms.  The aim of the study is to determine the time-dependent changes to key circulating miRNAs in a model of planned atrial injury and remodeling via ablation.",
     "Number of Variables": 26,
     "Data Dictionary Link": "pht009858.v1.p1",
-    "dbGaP Listed Variable": ["LVEF by echo (closest to enrollment)"],
-    "Type": ["Case Set"],
-    "Populations": ["White, Not Hispanic"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)"],
-    "Consent": ["GRU --- General research use"],
-    "Consent Short": ["GRU"]
+    "dbGaP Listed Variable": [
+      "LVEF by echo (closest to enrollment)"
+    ],
+    "Type": [
+      "Case Set"
+    ],
+    "Populations": [
+      "White, Not Hispanic"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)"
+    ],
+    "Consent": [
+      "GRU --- General research use"
+    ],
+    "Consent Short": [
+      "GRU"
+    ]
   },
   {
     "Primary Research Focus": "Anemia, Sickle Cell",
@@ -822,8 +1220,12 @@
     "Short Description": "During Visit One, the PUSH Study will perform echocardiography on 600 children and adolescent with patients with SCD (Sickle Cell Disease) and 100 control children and adolescents.  As a part of this visit, each participant or parent will sign informed consent, complete a Participant Contact Information Form, complete a Medical History Form, undergo physical examination with completion of a Physical Examination Form and have blood drawn. Each participant must have echocardiography performed with measurement of Tricuspid Regurgitant Jet Velocity (TRV).  Other tests will be attempted.  Results of all procedures and tests will be transmitted to the Data Manager at Howard University. Sequencing was only done on sickle cell participants.",
     "Number of Variables": 79,
     "Data Dictionary Link": "pht009764.v1.p1",
-    "dbGaP Listed Variable": ["Subject age"],
-    "Type": ["Case-Control"],
+    "dbGaP Listed Variable": [
+      "Subject age"
+    ],
+    "Type": [
+      "Case-Control"
+    ],
     "Populations": [
       "Black or African American, Non-Hispanic",
       "Black or African American, Caribbean",
@@ -836,11 +1238,16 @@
       "Asian, Non-Hispanic",
       "White or Caucasian, Hispanic/Latino"
     ],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
     "Consent": [
       "DS-SCD-IRB-PUB-COL --- Disease-specific (sickle cell disease, irb, pub, col)"
     ],
-    "Consent Short": ["DS-SCD-IRB-PUB-COL"]
+    "Consent Short": [
+      "DS-SCD-IRB-PUB-COL"
+    ]
   },
   {
     "Primary Research Focus": "Sickle Cell Anemia",
@@ -854,13 +1261,22 @@
     "dbGaP Listed Variable": [
       "Oxygen saturation result measured at enrollment"
     ],
-    "Type": ["Cohort"],
-    "Populations": ["Brazilian"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
+    "Type": [
+      "Cohort"
+    ],
+    "Populations": [
+      "Brazilian"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
     "Consent": [
       "GRU-IRB-PUB-COL-NPU --- General research use (irb, pub, col, npu)"
     ],
-    "Consent Short": ["GRU-IRB-PUB-COL-NPU"]
+    "Consent Short": [
+      "GRU-IRB-PUB-COL-NPU"
+    ]
   },
   {
     "Primary Research Focus": "Asthma",
@@ -871,8 +1287,12 @@
     "Short Description": "The overall goal of the Severe Asthma Research Program (SARP) is to identify and characterize subjects with severe asthma to understand pathophysiologic mechanisms in severe asthma. Subjects with mild and moderate asthma were recruited for comparison but the program was enriched for subjects with severe asthma from multiple centers. Subjects were comprehensively phenotyped for asthma related traits including lung function, atopy, questionnaires on medical and family history, exhaled nitric oxide and health care utilization including exacerbations and symptoms. Asthma is a heterogenous disease. Cluster analysis in SARP has shown multiple subphenotypes and endotypes.",
     "Number of Variables": 37,
     "Data Dictionary Link": "pht009628.v1.p1",
-    "dbGaP Listed Variable": ["Duration of asthma"],
-    "Type": ["Case Set"],
+    "dbGaP Listed Variable": [
+      "Duration of asthma"
+    ],
+    "Type": [
+      "Case Set"
+    ],
     "Populations": [
       "Cauc, Non-Hispanic",
       "Black/AF Amer, Non-Hispanic",
@@ -883,9 +1303,16 @@
       "Asian, Unknown",
       "Cauc, Unknown"
     ],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
-    "Consent": ["GRU --- General research use"],
-    "Consent Short": ["GRU"]
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
+    "Consent": [
+      "GRU --- General research use"
+    ],
+    "Consent Short": [
+      "GRU"
+    ]
   },
   {
     "Primary Research Focus": "Anemia, Sickle Cell",
@@ -896,15 +1323,22 @@
     "Short Description": "Walk-PHaSST study is a multi-center clinical trial to evaluate the effects of sildenafil on Sickle Cell Disease (SCD) population with low exercise capacity associated with an increased Doppler-estimated pulmonary artery systolic pressure (as assessed by the tricuspid regurgitant velocity (TRV)).  The screening phase of the study enrolled 720 subjects and 74 of them were randomized for the clinical trial. For the screening cohort, we have collected general demographics and race/ethnicity, hemoglobin genotype, physical examination, laboratory screening, transthoracic Doppler echocardiography, and 6 minute walk test in 9 US and 1 UK site. The walk-PHaSST biorepository have banked samples from 610 of the screening subjects. A total of 592 subjects from the screening phase are included in the TOPMed program for WGS.",
     "Number of Variables": 87,
     "Data Dictionary Link": "pht009816.v1.p1",
-    "dbGaP Listed Variable": ["Avascular necrosis of hip"],
-    "Type": ["Clinical Trial; Cross-Sectional"],
+    "dbGaP Listed Variable": [
+      "Avascular necrosis of hip"
+    ],
+    "Type": [
+      "Clinical Trial; Cross-Sectional"
+    ],
     "Populations": [
       "Black, Not of Hispanic Origin",
       "Black, Hispanic or Latino",
       "Hispanic or Latino",
       "Non-Hispanic"
     ],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
     "Consent": [
       "DS-SCD-IRB-PUB-COL-NPU-MDS-RD --- Disease-specific (sickle cell disease, irb, pub, col, npu, mds, rd)",
       "HMB-IRB-PUB-COL-NPU-MDS-GSO --- Health/medical/biomedical (irb, pub, col, npu, mds, gso)"
@@ -919,16 +1353,29 @@
     "Accession": "phs001644.v1.p1",
     "Cohort Abbreviation": "BioMe",
     "Name": "NHLBI TOPMed: - NHGRI CCDG: The BioMe Biobank at Mount Sinai",
-    "Description": "The IPM BioMe Biobank, founded in September 2007, is an ongoing, broadly-consented electronic health record (EHR)-linked clinical care biobank that enrolls participants non-selectively from the Mount Sinai Medical Center patient population. BioMe currently comprises >42,000 participants from diverse ancestries, characterized by a broad spectrum of longitudinal biomedical traits. Participants enroll through an opt-in process and consent to be followed throughout their clinical care (past, present, and future) in real-time, allowing us to integrate their genomic information with their EHRs for discovery research and clinical care implementation. BioMe participants consent for recall, based on their genotype and/or phenotype, permitting in-depth follow-up and functional studies for selected participants at any time. Phenotypic and genomic data are stored in a secure database and made available to investigators, contingent on approval by the BioMe Governing Board. BioMe uses a \"data-broker\" system to protect confidentiality.",
-    "Short Description": "BioMe currently comprises >42,000 participants from diverse ancestries, characterized by a broad spectrum of longitudinal biomedical traits. Participants enroll through an opt-in process and consent to be followed throughout their clinical care (past, present, and future) in real-time, allowing us to integrate their genomic information with their EHRs for discovery research and clinical care implementation.",
+    "Description": "The IPM BioMe\u00a0Biobank, founded in September 2007, is an ongoing, broadly-consented electronic health record (EHR)-linked clinical care biobank that enrolls participants non-selectively from the Mount Sinai Medical Center patient population. BioMe\u00a0currently comprises >42,000 participants from diverse ancestries, characterized by a broad spectrum of longitudinal biomedical traits. Participants enroll through an opt-in process and consent to be followed throughout their clinical care (past, present, and future) in real-time, allowing us to integrate their genomic information with their EHRs for discovery research and clinical care implementation. BioMe participants consent for recall, based on their genotype and/or phenotype, permitting in-depth follow-up and functional studies for selected participants at any time. Phenotypic and genomic data are stored in a secure database and made available to investigators, contingent on approval by the BioMe\u00a0Governing Board. BioMe\u00a0uses a \"data-broker\" system to protect confidentiality.",
+    "Short Description": "BioMe\u00a0currently comprises >42,000 participants from diverse ancestries, characterized by a broad spectrum of longitudinal biomedical traits. Participants enroll through an opt-in process and consent to be followed throughout their clinical care (past, present, and future) in real-time, allowing us to integrate their genomic information with their EHRs for discovery research and clinical care implementation.",
     "Number of Variables": 20,
     "Data Dictionary Link": "pht009944.v1.p1",
-    "dbGaP Listed Variable": [""],
-    "Type": ["Cohort"],
-    "Populations": [""],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
-    "Consent": ["HMB-NPU --- Health/medical/biomedical (npu)"],
-    "Consent Short": ["HMB-NPU"]
+    "dbGaP Listed Variable": [
+      ""
+    ],
+    "Type": [
+      "Cohort"
+    ],
+    "Populations": [
+      ""
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
+    "Consent": [
+      "HMB-NPU --- Health/medical/biomedical (npu)"
+    ],
+    "Consent Short": [
+      "HMB-NPU"
+    ]
   },
   {
     "Primary Research Focus": "Pulmonary Disease, Chronic Obstructive",
@@ -939,26 +1386,40 @@
     "Short Description": "ECLIPSE was a longitudinal observational study of 2164 COPD subjects and a smaller number of smoking controls (337) and nonsmoking controls (245) followed regularly for three years, with three chest CT scans (at baseline, one year, and three years).   Inclusion criteria included subjects ages 40-75, at least 10 pack-years of smoking, and spirometry in GOLD grades 2-4 (COPD cases) or normal spirometry with post-bronchodilator FEV1 >85% (predicted) and FEV1/FVC>0.7 (controls).  Genome-wide gene expression microarray data are available in 147 induced sputum samples from COPD subjects and 248 peripheral blood samples from COPD and control subjects.",
     "Number of Variables": 9,
     "Data Dictionary Link": "pht007116.v1.p1",
-    "dbGaP Listed Variable": ["Consent group as determined by DAC"],
-    "Type": ["Case-control"],
-    "Populations": ["Not Reported"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)"],
+    "dbGaP Listed Variable": [
+      "Consent group as determined by DAC"
+    ],
+    "Type": [
+      "Case-control"
+    ],
+    "Populations": [
+      "Not Reported"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)"
+    ],
     "Consent": [
       "DS-COPD-MDS-RD --- Disease-specific (chronic obstructive pulmonary disease, mds, rd)"
     ],
-    "Consent Short": ["DS-COPD-MDS-RD"]
+    "Consent Short": [
+      "DS-COPD-MDS-RD"
+    ]
   },
   {
     "Primary Research Focus": "Heart Defects, Congenital",
     "Accession": "phs001735.v1.p1",
     "Cohort Abbreviation": "PCGC_CHD",
     "Name": "NHLBI TOPMed: Pediatric Cardiac Genomics Consortium's Congenital Heart Disease Biobank",
-    "Description": "The Pediatric Cardiovascular Genetics Consortium (PCGC) proposes to define genetic causes for congenital heart defects (CHD) as part of the TOPMed Program are the most common form of heart disease in childhood and are also the most prevalent form of birth defects, occurring in 2-3% of live births. The PCGC has recruited and clinically characterized ? 10,000 CHD probands and parents (CHD trios). From whole exome sequencing (WES) of >2800 CHD trios, we identified a substantial enrichment of damaging de novo mutations in genes important for cardiogenesis, particularly implicating histone modifier enzyme gene defects. Analysis of whole genome sequencing (WGS) of 350 probands with CHD unexplained by WES and their parents preliminarily implicated de novo mutations in enhancers of genes previously shown to cause CHD in mouse knock out models. Sequencing of RNA (RNAseq) from discarded cardiac tissues from CHD probands has revealed likely causal allele-specific expression (ASE) as well as biallelic loss of expression (LOE).",
-    "Short Description": "The Pediatric Cardiovascular Genetics Consortium (PCGC) proposes to define genetic causes for congenital heart defects (CHD) as part of the TOPMed Program are the most common form of heart disease in childhood and are also the most prevalent form of birth defects, occurring in 2-3% of live births. The PCGC has recruited and clinically characterized ? 10,000 CHD probands and parents (CHD trios).",
+    "Description": "The Pediatric Cardiovascular Genetics Consortium (PCGC) proposes to define genetic causes for congenital heart defects (CHD) as part of the TOPMed Program are the most common form of heart disease in childhood and are also the most prevalent form of birth defects, occurring in 2-3% of live births. The PCGC has recruited and clinically characterized \u2265 10,000 CHD probands and parents (CHD trios). From whole exome sequencing (WES) of >2800 CHD trios, we identified a substantial enrichment of damaging de novo mutations in genes important for cardiogenesis, particularly implicating histone modifier enzyme gene defects. Analysis of whole genome sequencing (WGS) of 350 probands with CHD unexplained by WES and their parents preliminarily implicated de novo mutations in enhancers of genes previously shown to cause CHD in mouse knock out models. Sequencing of RNA (RNAseq) from discarded cardiac tissues from CHD probands has revealed likely causal allele-specific expression (ASE) as well as biallelic loss of expression (LOE).",
+    "Short Description": "The Pediatric Cardiovascular Genetics Consortium (PCGC) proposes to define genetic causes for congenital heart defects (CHD) as part of the TOPMed Program are the most common form of heart disease in childhood and are also the most prevalent form of birth defects, occurring in 2-3% of live births. The PCGC has recruited and clinically characterized \u2265 10,000 CHD probands and parents (CHD trios).",
     "Number of Variables": 9,
     "Data Dictionary Link": "pht007118.v1.p1",
-    "dbGaP Listed Variable": ["Proband Status"],
-    "Type": ["Case-control"],
+    "dbGaP Listed Variable": [
+      "Proband Status"
+    ],
+    "Type": [
+      "Case-control"
+    ],
     "Populations": [
       "Not Reported",
       "White, Not Hispanic",
@@ -976,11 +1437,15 @@
       "More than One Race, Unknown",
       "White, Unknown"
     ],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)"],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)"
+    ],
     "Consent": [
       "DS-COPD-MDS-RD --- Disease-specific (chronic obstructive pulmonary disease, mds, rd)"
     ],
-    "Consent Short": ["DS-COPD-MDS-RD"]
+    "Consent Short": [
+      "DS-COPD-MDS-RD"
+    ]
   },
   {
     "Primary Research Focus": "Asthma",
@@ -991,12 +1456,24 @@
     "Short Description": "SNP Health Association Resource (SHARe) Asthma Resource project (SHARP) is conducting a genome-wide analysis in adults and children who have participated in National Heart, Lung, and Blood Institute's clinical research trials on asthma. This includes 1041 children with asthma who participated in the Childhood Asthma Management Program (CAMP), 994 children who participated in one or five clinical trials conducted by the Childhood Asthma Research and Education (CARE) network, and 701 adults who participated in one of six clinical trials conducted by the Asthma Clinical Research Network (ACRN).",
     "Number of Variables": 338,
     "Data Dictionary Link": "pht000700.v1.p1",
-    "dbGaP Listed Variable": ["Case Control"],
-    "Type": ["Cross-Sectional"],
-    "Populations": [""],
-    "Molecular Data": ["SNP Genotypes (Array)"],
-    "Consent": ["ARR --- Asthma-related research"],
-    "Consent Short": ["ARR"]
+    "dbGaP Listed Variable": [
+      "Case Control"
+    ],
+    "Type": [
+      "Cross-Sectional"
+    ],
+    "Populations": [
+      ""
+    ],
+    "Molecular Data": [
+      "SNP Genotypes (Array)"
+    ],
+    "Consent": [
+      "ARR --- Asthma-related research"
+    ],
+    "Consent Short": [
+      "ARR"
+    ]
   },
   {
     "Primary Research Focus": "Atrial Fibrilliation",
@@ -1007,8 +1484,12 @@
     "Short Description": "The goal of this study was to identify genetic predictors of response to rate control therapy in patients with AF. We conducted a genome-wide association study (GWAS) focusing on subjects with a history of atrial fibrillation.  Study cases were individuals who underwent AV node ablation and pacemaker implantation after combined therapy with 3 AV nodal-blocking agents was ineffective in rate control. Controls for this study were individuals who met standardized rate-control efficacy criteria for optimal rate control with 2 or fewer AV nodal-blocking agents. Two additional groups were genotyped by RIKEN: An additional group of patients with AF as well as subjects undergoing cardiac surgery in whom AF did not occur post-operatively. All study participants were recruited and treated/evaluated at Vanderbilt University Medical Center.",
     "Number of Variables": 13,
     "Data Dictionary Link": "pht002932.v1.p1",
-    "dbGaP Listed Variable": ["Affection status"],
-    "Type": ["Case-control"],
+    "dbGaP Listed Variable": [
+      "Affection status"
+    ],
+    "Type": [
+      "Case-control"
+    ],
     "Populations": [
       "Caucasian",
       "African American",
@@ -1018,9 +1499,15 @@
       "Native American",
       "Unknown"
     ],
-    "Molecular Data": ["SNP Genotypes (Array)"],
-    "Consent": ["HMB --- Health/medical/biomedical"],
-    "Consent Short": ["HMB"]
+    "Molecular Data": [
+      "SNP Genotypes (Array)"
+    ],
+    "Consent": [
+      "HMB --- Health/medical/biomedical"
+    ],
+    "Consent Short": [
+      "HMB"
+    ]
   },
   {
     "Primary Research Focus": "Asthma",
@@ -1031,30 +1518,54 @@
     "Short Description": "The NHLBI \"Grand Opportunity\" Exome Sequencing Project (GO-ESP), a signature project of the NHLBI Recovery Act investment, was designed to identify genetic variants in coding regions (exons) of the human genome (the \"exome\") that are associated with heart, lung and blood diseases. These and related diseases that are of high impact to public health and individuals from diverse racial and ethnic groups will be studied.",
     "Number of Variables": 22,
     "Data Dictionary Link": "pht003225.v1.p1",
-    "dbGaP Listed Variable": ["Main phenotype studied (ASTHMA)"],
-    "Type": ["Case Set"],
-    "Populations": [""],
-    "Molecular Data": ["SNP Genotypes (NGS)", "SNP/CNV Genotypes (NGS)", "WXS"],
-    "Consent": ["GRU --- General research use"],
-    "Consent Short": ["GRU"]
+    "dbGaP Listed Variable": [
+      "Main phenotype studied (ASTHMA)"
+    ],
+    "Type": [
+      "Case Set"
+    ],
+    "Populations": [
+      ""
+    ],
+    "Molecular Data": [
+      "SNP Genotypes (NGS)",
+      "SNP/CNV Genotypes (NGS)",
+      "WXS"
+    ],
+    "Consent": [
+      "GRU --- General research use"
+    ],
+    "Consent Short": [
+      "GRU"
+    ]
   },
   {
     "Primary Research Focus": "Coronary Disease",
     "Accession": "phs000703.v1.p1",
     "Cohort Abbreviation": "CATHGEN",
     "Name": "CATHeterization GENetics (CATHGEN)",
-    "Description": "The CATHGEN biorepository consists of biological samples collected on 9334 sequential consenting individuals undergoing cardiac catheterization at Duke University Medical Center between 2001 and 2010 inclusive. The Institutional Review Board informed consent allowed for 50 mL of blood to be collected from fasting patients through the femoral arterial sheath during the catheterization procedure. Three 7.5 mL EDTA tubes for DNA extraction are stored at -80C. The Duke Database for Cardiovascular Disease (DDCD) provides the bulk of the clinical data used for analysis. Follow-up includes mortality information gleaned from the National Death Index and Social Security Death Index plus follow-up phone calls and written questionnaires regarding MI, stroke, re-hospitalization, coronary re-vascularization procedures, smoking, exercise, and medication use.",
+    "Description": "The CATHGEN biorepository consists of biological samples collected on 9334 sequential consenting individuals undergoing cardiac catheterization at Duke University Medical Center between 2001 and 2010 inclusive. The Institutional Review Board informed consent allowed for 50 mL of blood to be collected from fasting patients through the femoral arterial sheath during the catheterization procedure. Three 7.5 mL EDTA tubes for DNA extraction are stored at -80\u00b0C. The Duke Database for Cardiovascular Disease (DDCD) provides the bulk of the clinical data used for analysis. Follow-up includes mortality information gleaned from the National Death Index and Social Security Death Index plus follow-up phone calls and written questionnaires regarding MI, stroke, re-hospitalization, coronary re-vascularization procedures, smoking, exercise, and medication use.",
     "Short Description": "The CATHGEN biorepository consists of biological samples collected on 9334 sequential consenting individuals undergoing cardiac catheterization at Duke University Medical Center between 2001 and 2010 inclusive.  Follow-up includes mortality information gleaned from the National Death Index and Social Security Death Index plus follow-up phone calls and written questionnaires regarding MI, stroke, re-hospitalization, coronary re-vascularization procedures, smoking, exercise, and medication use.",
     "Number of Variables": 4,
     "Data Dictionary Link": "pht003669.v1.p1",
-    "dbGaP Listed Variable": ["Sample Use"],
-    "Type": ["Cross-Sectional"],
-    "Populations": [""],
-    "Molecular Data": ["Not Provided"],
+    "dbGaP Listed Variable": [
+      "Sample Use"
+    ],
+    "Type": [
+      "Cross-Sectional"
+    ],
+    "Populations": [
+      ""
+    ],
+    "Molecular Data": [
+      "Not Provided"
+    ],
     "Consent": [
       "DS-CVD-IRB --- Disease-specific (cardiovascular disease, irb)"
     ],
-    "Consent Short": ["DS-CVD-IRB"]
+    "Consent Short": [
+      "DS-CVD-IRB"
+    ]
   },
   {
     "Primary Research Focus": "Cardiovascular Diseases",
@@ -1065,15 +1576,26 @@
     "Short Description": "The Hispanic Community Health Study / Study of Latinos (HCHS/SOL) is a multi-center epidemiologic study in Hispanic/Latino populations to determine the role of acculturation in the prevalence and development of disease, and to identify risk factors playing a protective or harmful role in Hispanics/Latinos.  The goals of the HCHS/SOL include studying the prevalence and development of disease in Hispanics/Latinos, including the role of acculturation, and identifying disease risk factors that play protective or harmful roles in Hispanics/Latinos.  Study participants aged 18-74 years took part in an extensive clinic exam and assessments to ascertain socio-demographic, cultural, environmental and biomedical characteristics. Annual follow-up interviews are conducted to determine a range of health outcomes.",
     "Number of Variables": 278,
     "Data Dictionary Link": "pht004715.v1.p1",
-    "dbGaP Listed Variable": ["BMI (kg/m2)"],
-    "Type": ["Prospective Longitudinal Cohort"],
-    "Populations": [""],
-    "Molecular Data": ["Not Provided"],
+    "dbGaP Listed Variable": [
+      "BMI (kg/m2)"
+    ],
+    "Type": [
+      "Prospective Longitudinal Cohort"
+    ],
+    "Populations": [
+      ""
+    ],
+    "Molecular Data": [
+      "Not Provided"
+    ],
     "Consent": [
       "HMB --- Health/medical/biomedical",
       "HMB-NPU --- Health/medical/biomedical (npu)"
     ],
-    "Consent Short": ["HMB", "HMB-NPU"]
+    "Consent Short": [
+      "HMB",
+      "HMB-NPU"
+    ]
   },
   {
     "Primary Research Focus": "Cardiovascular Diseases",
@@ -1084,14 +1606,24 @@
     "Short Description": "The Diabetes Heart Study is a family based study enriched for type 2 diabetes (T2D). The cohort included 1220 self-reported European Americans from 475 families and included siblings concordant for T2D; where possible unaffected siblings were also recruited. The cohort was recruited between 1998 and 2006. Participants were extensively phenotyped for measures of subclinical CVD and other known CVD risk factors. Primary outcomes were quantified burden of vascular calcified plaque in the coronary artery, carotid artery and abdominal aorta all determined from non-contrast computed tomography scans.",
     "Number of Variables": 23,
     "Data Dictionary Link": "pht005550.v1.p1",
-    "dbGaP Listed Variable": ["Type 2 diabetes affected"],
-    "Type": ["Cross-Sectional"],
-    "Populations": ["European American"],
-    "Molecular Data": ["SNP Genotypes (Array)"],
+    "dbGaP Listed Variable": [
+      "Type 2 diabetes affected"
+    ],
+    "Type": [
+      "Cross-Sectional"
+    ],
+    "Populations": [
+      "European American"
+    ],
+    "Molecular Data": [
+      "SNP Genotypes (Array)"
+    ],
     "Consent": [
       "DS-DRC-IRB --- Disease-specific (diabetes and related complications, irb)"
     ],
-    "Consent Short": ["DS-DRC-IRB"]
+    "Consent Short": [
+      "DS-DRC-IRB"
+    ]
   },
   {
     "Primary Research Focus": "Pulmonary Disease, Chronic Obstructive",
@@ -1102,14 +1634,24 @@
     "Short Description": "ECLIPSE was a longitudinal observational study of 2164 COPD subjects and a smaller number of smoking controls (337) and nonsmoking controls (245) followed regularly for three years, with three chest CT scans (at baseline, one year, and three years).   Inclusion criteria included subjects ages 40-75, at least 10 pack-years of smoking, and spirometry in GOLD grades 2-4 (COPD cases) or normal spirometry with post-bronchodilator FEV1 >85% (predicted) and FEV1/FVC>0.7 (controls).  Genome-wide gene expression microarray data are available in 147 induced sputum samples from COPD subjects and 248 peripheral blood samples from COPD and control subjects.",
     "Number of Variables": 1140,
     "Data Dictionary Link": "pht006379.v1.p1",
-    "dbGaP Listed Variable": ["SGRQ-C activity component score"],
-    "Type": ["Case-control"],
-    "Populations": ["Not Reported"],
-    "Molecular Data": ["SNP Genotypes (Array)"],
+    "dbGaP Listed Variable": [
+      "SGRQ-C activity component score"
+    ],
+    "Type": [
+      "Case-control"
+    ],
+    "Populations": [
+      "Not Reported"
+    ],
+    "Molecular Data": [
+      "SNP Genotypes (Array)"
+    ],
     "Consent": [
       "DS-COPD-RD --- Disease-specific (chronic obstructive pulmonary disease, rd)"
     ],
-    "Consent Short": ["DS-COPD-RD"]
+    "Consent Short": [
+      "DS-COPD-RD"
+    ]
   },
   {
     "Primary Research Focus": "Heart Defects, Congenital",
@@ -1120,15 +1662,26 @@
     "Short Description": "Multi-center, prospective observational cohort study of individuals with congenital heart defects (CHD). Phenotypic data and source DNA derived from 10,000 probands, parents, and families of interest are being collected to investigate relationships between genetic factors and phenotypic and clinical outcomes in patients with CHD.",
     "Number of Variables": 414,
     "Data Dictionary Link": "pht005824.v1.p2",
-    "dbGaP Listed Variable": ["Aortic valve"],
-    "Type": ["Prospective Longitudinal Cohort"],
-    "Populations": [""],
-    "Molecular Data": ["Not Provided"],
+    "dbGaP Listed Variable": [
+      "Aortic valve"
+    ],
+    "Type": [
+      "Prospective Longitudinal Cohort"
+    ],
+    "Populations": [
+      ""
+    ],
+    "Molecular Data": [
+      "Not Provided"
+    ],
     "Consent": [
       "DS-CHD --- Disease-specific (congenital heart disease)",
       "HMB --- Health/medical/biomedical"
     ],
-    "Consent Short": ["DS-CHD", "HMB"]
+    "Consent Short": [
+      "DS-CHD",
+      "HMB"
+    ]
   },
   {
     "Primary Research Focus": "Hemophilia",
@@ -1139,8 +1692,12 @@
     "Short Description": "The My Life Our Future (MLOF) project (www.mylifeourfuture.org) is a national resource developed by a partnership of BloodworksNW (BWNW, formerly the Puget Sound Blood Center), the American Thrombosis and Hemostasis Network (ATHN), the National Hemophilia Foundation (NHF) and Bioverativ, to provide free F8 and F9 gene variant analysis to patients with hemophilia A or B, and to establish a research repository of DNA sequence, DNA, RNA, buffy coat, serum and plasma.",
     "Number of Variables": 19,
     "Data Dictionary Link": "pht009566.v1.p1",
-    "dbGaP Listed Variable": ["Disease status of participant"],
-    "Type": ["Cross-Sectional"],
+    "dbGaP Listed Variable": [
+      "Disease status of participant"
+    ],
+    "Type": [
+      "Cross-Sectional"
+    ],
     "Populations": [
       "White, Not Hispanic",
       "White, Hispanic, Latino/a, or Spanish Origin",
@@ -1159,9 +1716,16 @@
       "Native Hawaiian or Other Pacific Islander, Hispanic, Latino/a, or Spanish Origin",
       "Asian, Unknown"
     ],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
-    "Consent": ["HMB-PUB --- Health/medical/biomedical (pub)"],
-    "Consent Short": ["HMB-PUB"]
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
+    "Consent": [
+      "HMB-PUB --- Health/medical/biomedical (pub)"
+    ],
+    "Consent Short": [
+      "HMB-PUB"
+    ]
   },
   {
     "Primary Research Focus": "Sickle Cell Anemia",
@@ -1172,8 +1736,12 @@
     "Short Description": "Sickle cell disease (SCD) is characterized by the presence of sickle hemoglobin (HbS) within circulating erythrocytes resulting in hemolytic anemia, vascular occlusion, and end organ damage due to alterations in the shape and deformability of the cell membrane. The disease is inherited in an autosomal recessive pattern, and is most commonly caused by a single nucleotide substitution in the hemoglobin subunit beta (HBB) gene located on chromosome 11. Participants in this study include children with SCD treated with hydroxyurea to pharmacologically increase fetal hemoglobin (HbF) levels and reduce disease severity. Therefore, the primary phenotype of interest in this study is the change in HbF levels in response to hydroxyurea treatment.",
     "Number of Variables": 17,
     "Data Dictionary Link": "pht009579.v1.p1",
-    "dbGaP Listed Variable": ["Change in level of fetal hemoglobin"],
-    "Type": ["Case Set"],
+    "dbGaP Listed Variable": [
+      "Change in level of fetal hemoglobin"
+    ],
+    "Type": [
+      "Case Set"
+    ],
     "Populations": [
       "African American",
       "Not Reported",
@@ -1182,13 +1750,19 @@
       "Asian",
       "Other"
     ],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
     "Consent": [
       "DS-SCD --- Disease-specific (sickle cell disease)",
       "DS-SCD-RD --- Disease-specific (sickle cell disease, rd)",
       "HMB --- Health/medical/biomedical"
     ],
-    "Consent Short": ["DS-SCD", "DS-SCD-RD", "HMB"]
+    "Consent Short": [
+      "DS-SCD",
+      "DS-SCD-RD"
+    ]
   },
   {
     "Primary Research Focus": "Asthma",
@@ -1199,8 +1773,12 @@
     "Short Description": "Started in 2007, the Study of Asthma Phenotypes and Pharmacogenomic Interactions by Race-ethnicity (SAPPHIRE) is one of the largest asthma cohort studies in the United States. Its overarching goal is to elucidate the genetic underpinnings of asthma and asthma medication treatment response. The SAPPHIRE sample selected for sequencing includes African American and/or Latino individuals with and without asthma.",
     "Number of Variables": 20,
     "Data Dictionary Link": "pht009729.v1.p1",
-    "dbGaP Listed Variable": ["Case control status of the subject for asthma"],
-    "Type": ["Prospective Longitudinal Cohort"],
+    "dbGaP Listed Variable": [
+      "Case control status of the subject for asthma"
+    ],
+    "Type": [
+      "Prospective Longitudinal Cohort"
+    ],
     "Populations": [
       "Blk",
       "Latino",
@@ -1232,9 +1810,16 @@
       "Wht/Blk/Amind/Pacifisl",
       "Blk/Pacifisl/Latino"
     ],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
-    "Consent": ["DS-ASTHMA-IRB-COL --- Disease-specific (asthma, irb, col)"],
-    "Consent Short": ["DS-ASTHMA-IRB-COL"]
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
+    "Consent": [
+      "DS-ASTHMA-IRB-COL --- Disease-specific (asthma, irb, col)"
+    ],
+    "Consent Short": [
+      "DS-ASTHMA-IRB-COL"
+    ]
   },
   {
     "Primary Research Focus": "Anemia, Sickle Cell",
@@ -1245,14 +1830,25 @@
     "Short Description": "We enrolled > 700 patients with Hb SS, Hb S-beta0 thalassemia and HbSC being followed primarily at three southeastern U.S. regional institutions (Duke University Medical Center, University of North Carolina Medical Center, and Emory University Medical Center). Medical information obtained included the presence or absence of specific targeted outcomes (overall disease severity as well as specific types of end organ damage). Clinical data include medical status (history, physical, examination, and laboratory results) and information regarding potentially confounding environmental factors. Limited plasma samples are available for correlative studies (e.g. of cytokine levels, coagulation activation). Targeted SNP for candidate gene analysis as well as GWAS has been performed on most samples. Whole genome sequencing has been conducted through the TOPMed Consortium.",
     "Number of Variables": 36,
     "Data Dictionary Link": "pht009735.v1.p1",
-    "dbGaP Listed Variable": ["Hemoglobin diagnosis"],
-    "Type": ["Case Set"],
-    "Populations": ["Not Reported"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
+    "dbGaP Listed Variable": [
+      "Hemoglobin diagnosis"
+    ],
+    "Type": [
+      "Case Set"
+    ],
+    "Populations": [
+      "Not Reported"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
     "Consent": [
       "DS-SCD-IRB-PUB-COL-MDS-RD --- Disease-specific (sickle cell disease, irb, pub, col, mds, rd)"
     ],
-    "Consent Short": ["DS-SCD-IRB-PUB-COL-MDS-RD"]
+    "Consent Short": [
+      "DS-SCD-IRB-PUB-COL-MDS-RD"
+    ]
   },
   {
     "Primary Research Focus": "Atrial Fibrilliation",
@@ -1263,12 +1859,24 @@
     "Short Description": "In the Australian Familial AF Study, a cohort of probands with familial AF was recruited for genetics studies at the Victor Chang Cardiac Research Institute. Familial AF cases were identified from in-patient and out-patient populations at St. Vincent's Hospital and by referral from collaborating physicians throughout Australia. Study subjects underwent clinical evaluation with history, ECG and echocardiogram, and informed consent was obtained from all participants. 151 probands aged <66 years at the time of diagnosis were included in this analysis. The control cohort was comprised of age- and sex-matched individuals (n=151) who had no history of cardiovascular disease.\n\nIn the current TOPMed study, we have performed whole genome sequencing in European Ancestry cases with early-onset atrial fibrillation (defined as atrial fibrillation onset prior to 61 years).",
     "Number of Variables": 26,
     "Data Dictionary Link": "pht009875.v1.p1",
-    "dbGaP Listed Variable": ["EF ever <50%"],
-    "Type": ["Case Set"],
-    "Populations": ["White, Not Hispanic"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)"],
-    "Consent": ["HMB-NPU-MDS --- Health/medical/biomedical (npu, mds)"],
-    "Consent Short": ["HMB-NPU-MDS"]
+    "dbGaP Listed Variable": [
+      "EF ever <50%"
+    ],
+    "Type": [
+      "Case Set"
+    ],
+    "Populations": [
+      "White, Not Hispanic"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)"
+    ],
+    "Consent": [
+      "HMB-NPU-MDS --- Health/medical/biomedical (npu, mds)"
+    ],
+    "Consent Short": [
+      "HMB-NPU-MDS"
+    ]
   },
   {
     "Primary Research Focus": "Pulmonary Disease, Chronic Obstructive",
@@ -1279,8 +1887,12 @@
     "Short Description": "Chronic obstructive pulmonary disease (COPD), a disease state characterized by airflow limitation that is not fully reversible, is the third leading cause of death in the U.S. Like most complex diseases, COPD is influenced by multiple genetic determinants (each with modest individual effects). Emerging evidence supports the paradigm that complex disease genetic determinants are part of a network of interacting genes and proteins; perturbations of this network can increase disease risk. To identify this network, multiple Omics data will need to be analyzed with methods to account for nonlinear relationships and interactions between key genes and proteins. Our overall hypothesis is that integrated network analysis of genetic, transcriptomic, proteomic, and epigenetic data from biospecimens ranging from lung tissue to nasal epithelial cells to blood in highly phenotyped subjects will provide insights into COPD pathogenesis and heterogeneity.",
     "Number of Variables": 1455,
     "Data Dictionary Link": "pht010055.v1.p1",
-    "dbGaP Listed Variable": ["CT Reconstruction Slice Thickness"],
-    "Type": ["Case-Control"],
+    "dbGaP Listed Variable": [
+      "CT Reconstruction Slice Thickness"
+    ],
+    "Type": [
+      "Case-Control"
+    ],
     "Populations": [
       "White, Not Hispanic",
       "Black or African American, Non-Hispanic",
@@ -1294,9 +1906,15 @@
       "Unknown or Other, Hispanic or Latino",
       "American Indian or Alaskan Native, Hispanic or Latino"
     ],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)"],
-    "Consent": ["HMB-MDS --- Health/medical/biomedical (mds)"],
-    "Consent Short": ["HMB-MDS"]
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)"
+    ],
+    "Consent": [
+      "HMB-MDS --- Health/medical/biomedical (mds)"
+    ],
+    "Consent Short": [
+      "HMB-MDS"
+    ]
   },
   {
     "Primary Research Focus": "Atrial Fibrilliation",
@@ -1307,30 +1925,52 @@
     "Short Description": "Atrial fibrillation, one of the most common human arrhythmias confers major morbidity, mortality and health care cost, and has been demonstrated to be caused and influenced by genetic and -omics factors. Particularly, AFLMU enrolled patients with an early onset of atrial fibrillation to increase the genetic burden on disease pathophysiology.",
     "Number of Variables": 13,
     "Data Dictionary Link": "pht009913.v1.p1",
-    "dbGaP Listed Variable": ["Race of participant"],
-    "Type": ["Case Set"],
-    "Populations": ["White"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)"],
+    "dbGaP Listed Variable": [
+      "Race of participant"
+    ],
+    "Type": [
+      "Case Set"
+    ],
+    "Populations": [
+      "White"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)"
+    ],
     "Consent": [
       "HMB-IRB-PUB-COL-NPU-MDS --- Health/medical/biomedical (irb, pub, col, npu, mds)"
     ],
-    "Consent Short": ["HMB-IRB-PUB-COL-NPU-MDS"]
+    "Consent Short": [
+      "HMB-IRB-PUB-COL-NPU-MDS"
+    ]
   },
   {
     "Primary Research Focus": "Atrial Fibrilliation",
     "Accession": "phs001544.v1.p1",
     "Cohort Abbreviation": "MPP",
     "Name": "NHLBI TOPMed - NHGRI CCDG: Malmo Preventive Project (MPP)",
-    "Description": "The Malmo Preventive Project (MPP) was a community-based disease prevention program including 33,346 inhabitants from the city of Malmo in Southern Sweden. Complete birth cohorts between 1921-1949 were invited, and the participation rate was 71%. Participants underwent screening between 1974 to 1992 for cardiovascular risk factors, alcohol abuse, and breast cancer. Between 2002-2006, surviving participants were invited to a reexamination which included blood sampling from which DNA has been extracted. Subjects with prevalent or incident AF were identified from national registers as previously described, and cases with DNA were then matched in a 1:1 fashion to controls with DNA from the same cohort by sex, age (+/- 1 year), and date of baseline exam (+/- 1 year). Also, controls required a follow-up exceeding that of the corresponding AF case.",
-    "Short Description": "The Malmo Preventive Project (MPP) was a community-based disease prevention program including 33,346 inhabitants from the city of Malmo in Southern Sweden. Complete birth cohorts between 1921-1949 were invited, and the participation rate was 71%. Participants underwent screening between 1974 to 1992 for cardiovascular risk factors, alcohol abuse, and breast cancer. Between 2002-2006, surviving participants were invited to a reexamination which included blood sampling from which DNA has been extracted.",
+    "Description": "The Malm\u00f6 Preventive Project (MPP) was a community-based disease prevention program including 33,346 inhabitants from the city of Malm\u00f6 in Southern Sweden. Complete birth cohorts between 1921-1949 were invited, and the participation rate was 71%. Participants underwent screening between 1974 to 1992 for cardiovascular risk factors, alcohol abuse, and breast cancer. Between 2002-2006, surviving participants were invited to a reexamination which included blood sampling from which DNA has been extracted. Subjects with prevalent or incident AF were identified from national registers as previously described, and cases with DNA were then matched in a 1:1 fashion to controls with DNA from the same cohort by sex, age (\u00b11 year), and date of baseline exam (\u00b11 year). Also, controls required a follow-up exceeding that of the corresponding AF case.",
+    "Short Description": "The Malm\u00f6 Preventive Project (MPP) was a community-based disease prevention program including 33,346 inhabitants from the city of Malm\u00f6 in Southern Sweden. Complete birth cohorts between 1921-1949 were invited, and the participation rate was 71%. Participants underwent screening between 1974 to 1992 for cardiovascular risk factors, alcohol abuse, and breast cancer. Between 2002-2006, surviving participants were invited to a reexamination which included blood sampling from which DNA has been extracted.",
     "Number of Variables": 13,
     "Data Dictionary Link": "pht009898.v1.p1",
-    "dbGaP Listed Variable": ["Race of participant"],
-    "Type": ["Case Set"],
-    "Populations": ["White"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)"],
-    "Consent": ["HMB-NPU-MDS --- Health/medical/biomedical (npu, mds)"],
-    "Consent Short": ["HMB-NPU-MDS"]
+    "dbGaP Listed Variable": [
+      "Race of participant"
+    ],
+    "Type": [
+      "Case Set"
+    ],
+    "Populations": [
+      "White"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)"
+    ],
+    "Consent": [
+      "HMB-NPU-MDS --- Health/medical/biomedical (npu, mds)"
+    ],
+    "Consent Short": [
+      "HMB-NPU-MDS"
+    ]
   },
   {
     "Primary Research Focus": "Atrial Fibrilliation",
@@ -1341,12 +1981,24 @@
     "Short Description": "The DECAF trial was conducted at the Texas Cardiac Arrhythmia Institute (TCAI) in 2013 in collaboration with the University of Texas at Austin. Four hundred consecutive AF patients undergoing catheter ablation were enrolled. All participants provided voluntary informed consents. Blood samples were collected before the ablation procedure and labeled with anonymous patient identifier. AF cases included adults >18 years of age from both sex and all AF types.",
     "Number of Variables": 14,
     "Data Dictionary Link": "pht009974.v1.p1",
-    "dbGaP Listed Variable": ["Age at enrollment"],
-    "Type": ["Prospective Longitudinal Cohort"],
-    "Populations": ["White"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)"],
-    "Consent": ["GRU --- General research use"],
-    "Consent Short": ["GRU"]
+    "dbGaP Listed Variable": [
+      "Age at enrollment"
+    ],
+    "Type": [
+      "Prospective Longitudinal Cohort"
+    ],
+    "Populations": [
+      "White"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)"
+    ],
+    "Consent": [
+      "GRU --- General research use"
+    ],
+    "Consent Short": [
+      "GRU"
+    ]
   },
   {
     "Primary Research Focus": "Asthma",
@@ -1360,11 +2012,21 @@
     "dbGaP Listed Variable": [
       "Average PM2.5 air pollution measurement from birth to age 18"
     ],
-    "Type": ["Case-control"],
-    "Populations": ["Hispanic White"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)"],
-    "Consent": ["GRU --- General research use"],
-    "Consent Short": ["GRU"]
+    "Type": [
+      "Case-control"
+    ],
+    "Populations": [
+      "Hispanic White"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)"
+    ],
+    "Consent": [
+      "GRU --- General research use"
+    ],
+    "Consent Short": [
+      "GRU"
+    ]
   },
   {
     "Primary Research Focus": "Asthma",
@@ -1378,11 +2040,21 @@
     "dbGaP Listed Variable": [
       "Average PM2.5 air pollution measurement from birth to age 18"
     ],
-    "Type": ["Case-control"],
-    "Populations": ["Hispanic White"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)"],
-    "Consent": ["GRU --- General research use"],
-    "Consent Short": ["GRU"]
+    "Type": [
+      "Case-control"
+    ],
+    "Populations": [
+      "Hispanic White"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)"
+    ],
+    "Consent": [
+      "GRU --- General research use"
+    ],
+    "Consent Short": [
+      "GRU"
+    ]
   },
   {
     "Primary Research Focus": "Asthma",
@@ -1396,11 +2068,21 @@
     "dbGaP Listed Variable": [
       "Average PM2.5 air pollution measurement from birth to age 18"
     ],
-    "Type": ["Case-control"],
-    "Populations": ["Hispanic White"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)"],
-    "Consent": ["GRU --- General research use"],
-    "Consent Short": ["GRU"]
+    "Type": [
+      "Case-control"
+    ],
+    "Populations": [
+      "Hispanic White"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)"
+    ],
+    "Consent": [
+      "GRU --- General research use"
+    ],
+    "Consent Short": [
+      "GRU"
+    ]
   },
   {
     "Primary Research Focus": "Atrial Fibrilliation",
@@ -1411,12 +2093,24 @@
     "Short Description": "The Genetics in AF (GENAF) study enrolled individuals with early-onset lone AF before age 50 in Norway between 2009 and 2016. Early-onset was defined as diagnosis of AF before age 50. Lone AF was defined as AF in the absence of clinical or echocardiographic findings of cardiovascular disease, hypertension, metabolic or pulmonary disease. AF was documented in ECG. All participants underwent clinical examination, including ECG, echocardiography, and blood draw, from which DNA has been extracted.",
     "Number of Variables": 13,
     "Data Dictionary Link": "pht009989.v1.p1",
-    "dbGaP Listed Variable": ["AF status"],
-    "Type": ["Case Set"],
-    "Populations": ["White"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)"],
-    "Consent": ["HMB-NPU --- Health/medical/biomedical (npu)"],
-    "Consent Short": ["HMB-NPU"]
+    "dbGaP Listed Variable": [
+      "AF status"
+    ],
+    "Type": [
+      "Case Set"
+    ],
+    "Populations": [
+      "White"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)"
+    ],
+    "Consent": [
+      "HMB-NPU --- Health/medical/biomedical (npu)"
+    ],
+    "Consent Short": [
+      "HMB-NPU"
+    ]
   },
   {
     "Primary Research Focus": "Atrial Fibrilliation",
@@ -1427,12 +2121,24 @@
     "Short Description": "The Estonian Biobank is the population-based biobank of the Estonian Genome Centre of University of Tartu. The biobank is conducted according to the Estonian Gene Research Act and all participants have signed broad informed consent. The cohort size is currently 51,535 people from 18 years of age and up.",
     "Number of Variables": 13,
     "Data Dictionary Link": "pht010090.v1.p1",
-    "dbGaP Listed Variable": ["Race of participant"],
-    "Type": ["Case Set"],
-    "Populations": ["White"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)"],
-    "Consent": ["GRU --- General research use"],
-    "Consent Short": ["GRU"]
+    "dbGaP Listed Variable": [
+      "Race of participant"
+    ],
+    "Type": [
+      "Case Set"
+    ],
+    "Populations": [
+      "White"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)"
+    ],
+    "Consent": [
+      "GRU --- General research use"
+    ],
+    "Consent Short": [
+      "GRU"
+    ]
   },
   {
     "Primary Research Focus": "Asthma",
@@ -1446,11 +2152,21 @@
     "dbGaP Listed Variable": [
       "Bronchodilator Response after 4 puffs of Proventil HFA Albuterol"
     ],
-    "Type": ["Case Set"],
-    "Populations": ["Black"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)"],
-    "Consent": ["DS-ASTHMA-IRB-COL --- Disease-specific (asthma, irb, col)"],
-    "Consent Short": ["DS-ASTHMA-IRB-COL"]
+    "Type": [
+      "Case Set"
+    ],
+    "Populations": [
+      "Black"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)"
+    ],
+    "Consent": [
+      "DS-ASTHMA-IRB-COL --- Disease-specific (asthma, irb, col)"
+    ],
+    "Consent Short": [
+      "DS-ASTHMA-IRB-COL"
+    ]
   },
   {
     "Primary Research Focus": "Atrial Fibrilliation",
@@ -1461,12 +2177,25 @@
     "Short Description": "Atrial fibrillation (also called AFib or AF) is a quivering or irregular heartbeat (arrhythmia) that can lead to blood clots, stroke, heart failure and other heart-related complications. The Groningen Genetics of Atrial Fibrillation (GGAF) cohort is a cohort composed from 5 different sources of individuals with atrial fibrillation (AF) and age and sex-matched controls.  All samples selected for TOPMed WGS are from individuals with atrial fibrillation.",
     "Number of Variables": 13,
     "Data Dictionary Link": "pht010094.v1.p1",
-    "dbGaP Listed Variable": ["Gender of participant"],
-    "Type": ["Prospective Longitudinal Cohort"],
-    "Populations": ["Not Reported"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
-    "Consent": ["GRU --- General research use"],
-    "Consent Short": ["GRU"]
+    "dbGaP Listed Variable": [
+      "Gender of participant"
+    ],
+    "Type": [
+      "Prospective Longitudinal Cohort"
+    ],
+    "Populations": [
+      "Not Reported"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
+    "Consent": [
+      "GRU --- General research use"
+    ],
+    "Consent Short": [
+      "GRU"
+    ]
   },
   {
     "Primary Research Focus": "Asthma",
@@ -1480,29 +2209,51 @@
     "dbGaP Listed Variable": [
       "Body Mass Index calculated from Height and Weight"
     ],
-    "Type": ["Prospective Longitudinal Cohort"],
-    "Populations": ["Hispanic/White", "Hispanic/Black"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)"],
-    "Consent": ["DS-ASTHMA-IRB-COL --- Disease-specific (asthma, irb, col)"],
-    "Consent Short": ["DS-ASTHMA-IRB-COL"]
+    "Type": [
+      "Prospective Longitudinal Cohort"
+    ],
+    "Populations": [
+      "Hispanic/White",
+      "Hispanic/Black"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)"
+    ],
+    "Consent": [
+      "DS-ASTHMA-IRB-COL --- Disease-specific (asthma, irb, col)"
+    ],
+    "Consent Short": [
+      "DS-ASTHMA-IRB-COL"
+    ]
   },
   {
     "Primary Research Focus": "Asthma",
     "Accession": "phs001728.v1.p1",
     "Cohort Abbreviation": "BADGER",
     "Name": "NHLBI TOPMed: Best ADd-on Therapy Giving Effective Response (BADGER)",
-    "Description": "BADGER is a 56-week randomized, double-blind, three-treatment, three-period cross-over trial that will evaluate the differential improvement in control that is achieved following three separate treatment interventions in children whose asthma is not acceptably controlled on a low dose of ICS (per NAEPP guidelines). All participants will enter an 8-week run-in period during which time they will receive a dose of 1x ICS (fluticasone 200 ?g/day). During this 8-week time period, running 2-week averages to establish the lack of acceptable asthma control will be calculated. Thus, a child could qualify for randomization at any time during this 8-week run-in period. This approach should maximize both patient safety and successful enrollment. Children will continue to receive 1x ICS during the entire treatment phase. During each period of the treatment phase, they also will receive one add-on therapy in the form of LABA, LTRA or additional 1x ICS. The order of the add-on therapy assignment will be determined by randomization into one of six treatment sequences (order determined randomly). Each treatment period will be 16 weeks in length; the initial 4 weeks of each period will be considered to be the washout period for the previous treatment. The primary outcome measures will be frequency of asthma exacerbations, asthma control days, and FEV1.",
-    "Short Description": "BADGER is a 56-week randomized, double-blind, three-treatment, three-period cross-over trial that will evaluate the differential improvement in control that is achieved following three separate treatment interventions in children whose asthma is not acceptably controlled on a low dose of ICS (per NAEPP guidelines). All participants will enter an 8-week run-in period during which time they will receive a dose of 1x ICS (fluticasone 200 ?g/day).  This approach should maximize both patient safety and successful enrollment. Children will continue to receive 1x ICS during the entire treatment phase. During each period of the treatment phase, they also will receive one add-on therapy in the form of LABA, LTRA or additional 1x ICS.",
+    "Description": "BADGER is a 56-week randomized, double-blind, three-treatment, three-period cross-over trial that will evaluate the differential improvement in control that is achieved following three separate treatment interventions in children whose asthma is not acceptably controlled on a low dose of ICS (per NAEPP guidelines). All participants will enter an 8-week run-in period during which time they will receive a dose of 1x ICS (fluticasone 200 \u03bcg/day). During this 8-week time period, running 2-week averages to establish the lack of acceptable asthma control will be calculated. Thus, a child could qualify for randomization at any time during this 8-week run-in period. This approach should maximize both patient safety and successful enrollment. Children will continue to receive 1x ICS during the entire treatment phase. During each period of the treatment phase, they also will receive one add-on therapy in the form of LABA, LTRA or additional 1x ICS. The order of the add-on therapy assignment will be determined by randomization into one of six treatment sequences (order determined randomly). Each treatment period will be 16 weeks in length; the initial 4 weeks of each period will be considered to be the washout period for the previous treatment. The primary outcome measures will be frequency of asthma exacerbations, asthma control days, and FEV1.",
+    "Short Description": "BADGER is a 56-week randomized, double-blind, three-treatment, three-period cross-over trial that will evaluate the differential improvement in control that is achieved following three separate treatment interventions in children whose asthma is not acceptably controlled on a low dose of ICS (per NAEPP guidelines). All participants will enter an 8-week run-in period during which time they will receive a dose of 1x ICS (fluticasone 200 \u03bcg/day).  This approach should maximize both patient safety and successful enrollment. Children will continue to receive 1x ICS during the entire treatment phase. During each period of the treatment phase, they also will receive one add-on therapy in the form of LABA, LTRA or additional 1x ICS.",
     "Number of Variables": 19,
     "Data Dictionary Link": "pht010124.v1.p1",
     "dbGaP Listed Variable": [
       "In the last 12 months, has participant been hospitalized because of asthma?"
     ],
-    "Type": ["Prospective Longitudinal Cohort"],
-    "Populations": ["Hispanic/White", "Hispanic/Black"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)"],
-    "Consent": ["DS-ASTHMA-IRB-COL --- Disease-specific (asthma, irb, col)"],
-    "Consent Short": ["DS-ASTHMA-IRB-COL"]
+    "Type": [
+      "Prospective Longitudinal Cohort"
+    ],
+    "Populations": [
+      "Hispanic/White",
+      "Hispanic/Black"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)"
+    ],
+    "Consent": [
+      "DS-ASTHMA-IRB-COL --- Disease-specific (asthma, irb, col)"
+    ],
+    "Consent Short": [
+      "DS-ASTHMA-IRB-COL"
+    ]
   },
   {
     "Primary Research Focus": "Asthma",
@@ -1516,47 +2267,79 @@
     "dbGaP Listed Variable": [
       "Body Mass Index calculated from Height and Weight"
     ],
-    "Type": ["Prospective Longitudinal Cohort"],
-    "Populations": ["Hispanic/White"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)"],
-    "Consent": ["DS-ASTHMA-IRB-COL --- Disease-specific (asthma, irb, col)"],
-    "Consent Short": ["DS-ASTHMA-IRB-COL"]
+    "Type": [
+      "Prospective Longitudinal Cohort"
+    ],
+    "Populations": [
+      "Hispanic/White"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)"
+    ],
+    "Consent": [
+      "DS-ASTHMA-IRB-COL --- Disease-specific (asthma, irb, col)"
+    ],
+    "Consent Short": [
+      "DS-ASTHMA-IRB-COL"
+    ]
   },
   {
     "Primary Research Focus": "Asthma",
     "Accession": "phs001730.v1.p1",
     "Cohort Abbreviation": "PACT",
     "Name": "NHLBI TOPMed: Pediatric Asthma Controller Trial (PACT)",
-    "Description": "After a 2-4 week assessment/characterization run-in period, 6-14 year-old children who met NAEPP criteria for mild-moderate persistent asthma specifically based on symptom criteria and methacholine PC20 ? 12.5 mg/ml and FEV1 ? 80% were randomized to one of the three active treatment arms for 12 months. Randomization was stratified according to clinical center, bronchodilator response (< 12% or ? 12%), race (Caucasian or non-Caucasian), and methacholine PC20 (< 2 or ? 2 mg/ml). The primary outcome variable was the proportion of asthma-free days during the 12-month treatment period. Secondary outcomes included other measures of asthma control (percentage of rescue-free days, albuterol-free days, and episode-free days; the number of asthma exacerbations requiring prednisone therapy and the time to the first asthma exacerbation), forced oscillation and spirometry, reversibility (FEV1 pre- and post 2 puffs of albuterol MDI), methacholine PC20, exhaled nitric oxide, and asthma-related quality of life.",
-    "Short Description": "After a 2-4 week assessment/characterization run-in period, 6-14 year-old children who met NAEPP criteria for mild-moderate persistent asthma specifically based on symptom criteria and methacholine PC20 ? 12.5 mg/ml and FEV1 ? 80% were randomized to one of the three active treatment arms for 12 months. Randomization was stratified according to clinical center, bronchodilator response (< 12% or ? 12%), race (Caucasian or non-Caucasian), and methacholine PC20 (< 2 or ? 2 mg/ml). The primary outcome variable was the proportion of asthma-free days during the 12-month treatment period.",
+    "Description": "After a 2-4 week assessment/characterization run-in period, 6-14 year-old children who met NAEPP criteria for mild-moderate persistent asthma specifically based on symptom criteria and methacholine PC20 \u2264 12.5 mg/ml and FEV1 \u2265 80% were randomized to one of the three active treatment arms for 12 months. Randomization was stratified according to clinical center, bronchodilator response (< 12% or \u2265 12%), race (Caucasian or non-Caucasian), and methacholine PC20 (< 2 or \u2265 2 mg/ml). The primary outcome variable was the proportion of asthma-free days during the 12-month treatment period. Secondary outcomes included other measures of asthma control (percentage of rescue-free days, albuterol-free days, and episode-free days; the number of asthma exacerbations requiring prednisone therapy and the time to the first asthma exacerbation), forced oscillation and spirometry, reversibility (FEV1 pre- and post 2 puffs of albuterol MDI), methacholine PC20, exhaled nitric oxide, and asthma-related quality of life.",
+    "Short Description": "After a 2-4 week assessment/characterization run-in period, 6-14 year-old children who met NAEPP criteria for mild-moderate persistent asthma specifically based on symptom criteria and methacholine PC20 \u2264 12.5 mg/ml and FEV1 \u2265 80% were randomized to one of the three active treatment arms for 12 months. Randomization was stratified according to clinical center, bronchodilator response (< 12% or \u2265 12%), race (Caucasian or non-Caucasian), and methacholine PC20 (< 2 or \u2265 2 mg/ml). The primary outcome variable was the proportion of asthma-free days during the 12-month treatment period.",
     "Number of Variables": 19,
     "Data Dictionary Link": "pht010132.v1.p1",
     "dbGaP Listed Variable": [
       "In the last 12 months, has participant been prescribed oral steroids (such as prednisone pills or prelone liquid) to help control asthma?"
     ],
-    "Type": ["Prospective Longitudinal Cohort"],
-    "Populations": ["Hispanic/White", "Hispanic/Black"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)"],
-    "Consent": ["DS-ASTHMA-IRB-COL --- Disease-specific (asthma, irb, col)"],
-    "Consent Short": ["DS-ASTHMA-IRB-COL"]
+    "Type": [
+      "Prospective Longitudinal Cohort"
+    ],
+    "Populations": [
+      "Hispanic/White",
+      "Hispanic/Black"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)"
+    ],
+    "Consent": [
+      "DS-ASTHMA-IRB-COL --- Disease-specific (asthma, irb, col)"
+    ],
+    "Consent Short": [
+      "DS-ASTHMA-IRB-COL"
+    ]
   },
   {
     "Primary Research Focus": "Asthma",
     "Accession": "phs001732.v1.p1",
     "Cohort Abbreviation": "TREXA",
     "Name": "NHLBI TOPMed: TReating Children to Prevent EXacerbations of Asthma (TREXA)",
-    "Description": "TREXA is a 44-week randomized, double-blind, double-masked, four-treatment, parallel trial that will evaluate the weaning strategy that provides the best protection against the development of exacerbations in children whose asthma is acceptably controlled on a low dose of ICS (per NAEPP guidelines). Following the 4 weeks of the run-in period on a 1x dose of ICS (100 g fluticasone b.i.d. or its equivalent), children who do not meet the definition of acceptable asthma control will be randomized to the parallel BADGER protocol; those who meet the definition of acceptable asthma control will be enrolled into the 44-week treatment phase of the study. The primary outcome measure will be time to first exacerbation requiring a prednisone course.",
-    "Short Description": "TREXA is a 44-week randomized, double-blind, double-masked, four-treatment, parallel trial that will evaluate the weaning strategy that provides the best protection against the development of exacerbations in children whose asthma is acceptably controlled on a low dose of ICS (per NAEPP guidelines). Following the 4 weeks of the run-in period on a 1x dose of ICS (100 g fluticasone b.i.d. or its equivalent), children who do not meet the definition of acceptable asthma control will be randomized to the parallel BADGER protocol; those who meet the definition of acceptable asthma control will be enrolled into the 44-week treatment phase of the study. The primary outcome measure will be time to first exacerbation requiring a prednisone course.",
+    "Description": "TREXA is a 44-week randomized, double-blind, double-masked, four-treatment, parallel trial that will evaluate the weaning strategy that provides the best protection against the development of exacerbations in children whose asthma is acceptably controlled on a low dose of ICS (per NAEPP guidelines). Following the 4 weeks of the run-in period on a 1x dose of ICS (100 \u00b5g fluticasone b.i.d. or its equivalent), children who do not meet the definition of acceptable asthma control will be randomized to the parallel BADGER protocol; those who meet the definition of acceptable asthma control will be enrolled into the 44-week treatment phase of the study. The primary outcome measure will be time to first exacerbation requiring a prednisone course.",
+    "Short Description": "TREXA is a 44-week randomized, double-blind, double-masked, four-treatment, parallel trial that will evaluate the weaning strategy that provides the best protection against the development of exacerbations in children whose asthma is acceptably controlled on a low dose of ICS (per NAEPP guidelines). Following the 4 weeks of the run-in period on a 1x dose of ICS (100 \u00b5g fluticasone b.i.d. or its equivalent), children who do not meet the definition of acceptable asthma control will be randomized to the parallel BADGER protocol; those who meet the definition of acceptable asthma control will be enrolled into the 44-week treatment phase of the study. The primary outcome measure will be time to first exacerbation requiring a prednisone course.",
     "Number of Variables": 19,
     "Data Dictionary Link": "pht010141.v1.p1",
     "dbGaP Listed Variable": [
       "Bronchodilator Response after 4 puffs of Proventil HFA Albuterol"
     ],
-    "Type": ["Prospective Longitudinal Cohort"],
-    "Populations": ["Hispanic/White", "Hispanic/Black"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)"],
-    "Consent": ["DS-ASTHMA-IRB-COL --- Disease-specific (asthma, irb, col)"],
-    "Consent Short": ["DS-ASTHMA-IRB-COL"]
+    "Type": [
+      "Prospective Longitudinal Cohort"
+    ],
+    "Populations": [
+      "Hispanic/White",
+      "Hispanic/Black"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)"
+    ],
+    "Consent": [
+      "DS-ASTHMA-IRB-COL --- Disease-specific (asthma, irb, col)"
+    ],
+    "Consent Short": [
+      "DS-ASTHMA-IRB-COL"
+    ]
   },
   {
     "Primary Research Focus": "Idiopathic Pulmonary Fibrosis",
@@ -1567,8 +2350,12 @@
     "Short Description": "This is a set of cases diagnosed with idiopathic pulmonary fibrosis, a fatal interstitial lung disease. These cases were included in the TOPMed phase three studies. The planned study will compare these cases to within-TOPMed controls for genome-wide association studies.",
     "Number of Variables": 18,
     "Data Dictionary Link": "pht010151.v2.p2",
-    "dbGaP Listed Variable": ["Everever smoking status"],
-    "Type": ["Case Set"],
+    "dbGaP Listed Variable": [
+      "Ever/never smoking status"
+    ],
+    "Type": [
+      "Case Set"
+    ],
     "Populations": [
       "White, Not Hispanic",
       "White, Unknown Ethnicity",
@@ -1585,7 +2372,9 @@
       "American Indian/Alaska Native, Unknown Ethnicity",
       "Hispanic or Latino"
     ],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)"],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)"
+    ],
     "Consent": [
       "Health/Medical/Biomedical (IRB, NPU)",
       "Disease-Specific (Lung Disease, IRB, NPU)",
@@ -1610,11 +2399,243 @@
     "Short Description": "Atrial fibrillation (also called AFib or AF) is a quivering or irregular heartbeat (arrhythmia) that can lead to blood clots, stroke, heart failure and other heart-related complications. Individuals with early onset atrial fibrillation (AF) are included in this study of cases from the BioVU sample repository. BioVU is Vanderbilt's biobank of DNA extracted from leftover and otherwise discarded clinical blood specimens. BioVU subjects are de-identified and linked to the Synthetic Derivative enabling researchers to access genetic data/DNA material as well as dense, longitudinal electronic medical record (EMR) information.",
     "Number of Variables": 20,
     "Data Dictionary Link": "pht008231.v1.p1",
-    "dbGaP Listed Variable": ["Age of subject at sample"],
-    "Type": ["Case Set"],
-    "Populations": ["Not Reported"],
-    "Molecular Data": ["SNP/CNV Genotypes (NGS)", "WGS"],
-    "Consent": ["HMB-GSO --- Health/medical/biomedical (gso)"],
-    "Consent Short": ["HMB-GSO"]
+    "dbGaP Listed Variable": [
+      "Age of subject at sample"
+    ],
+    "Type": [
+      "Case Set"
+    ],
+    "Populations": [
+      "Not Reported"
+    ],
+    "Molecular Data": [
+      "SNP/CNV Genotypes (NGS)",
+      "WGS"
+    ],
+    "Consent": [
+      "HMB-GSO --- Health/medical/biomedical (gso)"
+    ],
+    "Consent Short": [
+      "HMB-GSO"
+    ]
+  },
+  {
+    "Primary Research Focus": "Sickle Cell Disease",
+    "Accession": "phs002348.v1.p1",
+    "Cohort Abbreviation": "MSH",
+    "Name": "Multicenter Study of Hydroxyurea (MSH) (also in BioLINCC, curated by CureSCi)",
+    "Description": "This study aimed to determine whether or not treatment with hydroxyurea titrated to maximum tolerated doses would reduce the frequency of vaso-occlusive (painful) crises by at least 50% in 299 men and women between 18 and 50 years old with a diagnosis of sickle cell anemia by gel electrophoresis conducted by a Core Laboratory. A secondary objective investigated correlations of fetal hemoglobin (HbF) levels and other patient or treatment characteristics with the occurrence of vaso-occlusive (painful) crises, and the effect of treatment on the quality of life. This controlled trial made hydroxyurea the first drug of proven benefit in preventing vaso-occlusive pain crisis and acute chest syndrome caused by sickle cell disease, with additional findings including reduced mortality in adult patients taking hydroxyurea for frequent painful sickle cell episodes after 9 of years follow-up. No significant side-effects of hydroxyurea therapy were noted.",
+    "Short Description": "This study aimed to determine whether or not treatment with hydroxyurea titrated to maximum tolerated doses would reduce the frequency of vaso-occlusive (painful) crises by at least 50% in 299 men and women between 18 and 50 years old with a diagnosis of sickle cell anemia. This controlled trial made hydroxyurea the first drug of proven benefit in preventing vaso-occlusive pain crisis and acute chest syndrome caused by sickle cell disease, with additional findings including reduced mortality in adult patients taking hydroxyurea for frequent painful sickle cell episodes after 9 of years follow-up. No significant side-effects of hydroxyurea therapy were noted.",
+    "Number of Variables": 1,
+    "Data Dictionary Link": "pht011050.v1.p1",
+    "dbGaP Listed Variable": [
+      "Consent group as determined by DAC"
+    ],
+    "Type": [
+      "Double-Blind; Randomized Controlled Clinical Trial"
+    ],
+    "Populations": [
+      ""
+    ],
+    "Molecular Data": [
+      "Not Provided"
+    ],
+    "Consent": [
+      "GRU --- General research use"
+    ],
+    "Consent Short": [
+      "GRU"
+    ]
+  },
+  {
+    "Primary Research Focus": "Sickle Cell Disease",
+    "Accession": "phs002362.v1.p1",
+    "Cohort Abbreviation": "CSSCD",
+    "Name": "Cooperative Study of Sickle Cell Disease (CSSCD)",
+    "Description": "The Cooperative Study of Sickle Cell Disease was initiated in 1977 to determine the natural history of sickle cell disease (SCD) from birth to death in order to identify those factors contributing to the morbidity and mortality of the disease. Specific objectives included: 1) to study the effect of sickle cell disease on growth and development from birth through adolescence 2) to study the conditions or events that may be related to the onset of painful crises 3) to obtain data on the nature, duration, and outcome of major complications of SCD 4) determine the nature, prevalence, and age- related incidence of organ damage due to SCD, and 5) study the role of SCD and its interaction with selected health events.",
+    "Short Description": "The Cooperative Study of Sickle Cell Disease was initiated in 1977 to determine the natural history of sickle cell disease (SCD) from birth to death in order to identify those factors contributing to the morbidity and mortality of the disease.",
+    "Number of Variables": 1,
+    "Data Dictionary Link": "pht011017.v1.p1",
+    "dbGaP Listed Variable": [
+      "Consent group as determined by DAC"
+    ],
+    "Type": [
+      "Case-control; Clinical Trial"
+    ],
+    "Populations": [
+      ""
+    ],
+    "Molecular Data": [
+      "Not Provided"
+    ],
+    "Consent": [
+      "GRU --- General research use"
+    ],
+    "Consent Short": [
+      "GRU"
+    ]
+  },
+  {
+    "Primary Research Focus": "Sickle Cell Disease",
+    "Accession": "phs002385.v1.p1",
+    "Cohort Abbreviation": "HCT for SCD",
+    "Name": "Hematopoietic Cell Transplant for Sickle Cell Disease (HCT for SCD)",
+    "Description": "Hematopoietic cell transplant for sickle cell disease is curative. Offering this treatment for patients with severe disease is challenging as only about 20-25% of patients expected to benefit have an HLA-matched sibling. Consequently, several transplantations have utilized an HLA-matched or mismatched unrelated adult donor and HLA-mismatched relative. Transplantation strategies have also evolved over time that has included transplant conditioning regimens of varying intensity, grafts other than bone marrow and novel approaches to overcome the donor-recipient histocompatibility barrier and limit graft-versus-host disease. The data that is available for sickle cell disease transplants have been utilized to report on outcomes after transplantation and compare outcomes after transplantation of grafts HLA-matched related, HLA-mismatched related, HLA-matched and HLA-mismatched unrelated donors. Collectively, these data have advanced our knowledge and understanding of hematopoietic cell transplant for this disease. These data can also serve as \"contemporaneous controls\" for comparison with other more recent curative treatments like gene therapy and gene editing.",
+    "Short Description": "Hematopoietic cell transplant for sickle cell disease is curative. The data that is available for sickle cell disease transplants have been utilized to report on outcomes after transplantation and compare outcomes after transplantation of grafts HLA-matched related, HLA-mismatched related, HLA-matched and HLA-mismatched unrelated donors. Collectively, these data have advanced our knowledge and understanding of hematopoietic cell transplant for this disease. These data can also serve as \"contemporaneous controls\" for comparison with other more recent curative treatments like gene therapy and gene editing.",
+    "Number of Variables": 1,
+    "Data Dictionary Link": "pht011243.v1.p1",
+    "dbGaP Listed Variable": [
+      "Consent group as determined by DAC"
+    ],
+    "Type": [
+      "Prospective Longitudinal Cohort"
+    ],
+    "Populations": [
+      ""
+    ],
+    "Molecular Data": [
+      "Not Provided"
+    ],
+    "Consent": [
+      "GRU --- General research use"
+    ],
+    "Consent Short": [
+      "GRU"
+    ]
+  },
+  {
+    "Primary Research Focus": "Cardiovascular Diseases",
+    "Accession": "phs000285.v3.p2",
+    "Cohort Abbreviation": "CARDIA",
+    "Name": "Coronary Artery Risk Development in Young Adults (CARDIA)",
+    "Description": "CARDIA is a study examining the etiology and natural history of cardiovascular disease beginning in young adulthood. In 1985-1986, a cohort of 5115 healthy black and white men and women aged 18-30 years were selected to have approximately the same number of people in subgroups of age (18-24 and 25-30), sex, race, and education (high school or less and more than high school) within each of four US Field Centers. Data have been collected on a variety of factors believed to be related to heart disease. These include conditions with clear links to heart disease such as blood pressure, cholesterol and other lipids. Data have also been collected on physical measurements such as weight and skinfold fat as well as lifestyle factors such as substance use (tobacco and alcohol), dietary and exercise patterns, behavioral and psychological variables, medical and family history, and other chemistries (e.g., insulin and glucose).",
+    "Short Description": "CARDIA is a study examining the etiology and natural history of cardiovascular disease beginning in young adulthood. In 1985-1986, a cohort of 5115 healthy black and white men and women aged 18-30 years were selected to have approximately the same number of people in subgroups of age (18-24 and 25-30), sex, race, and education (high school or less and more than high school) within each of four US Field Centers. Data have been collected on a variety of factors believed to be related to heart disease.",
+    "Number of Variables": 9041,
+    "Data Dictionary Link": "pht001555.v3.p2",
+    "dbGaP Listed Variable": [
+      "Study accession ID"
+    ],
+    "Type": [
+      "Prospective Longitudinal Cohort"
+    ],
+    "Populations": [
+      "White, Not Hispanic",
+      "Black, Not of Hispanic Origin",
+      "European American",
+      "African American",
+      "Hispanic",
+      "Asian or Pacific Island",
+      "Don't Know",
+      "American Indian or Alaskan Native",
+      "No Answer"
+    ],
+    "Molecular Data": [
+      "Not Provided"
+    ],
+    "Consent": [
+      "HMB-IRB --- Health/medical/biomedical (irb)",
+      "HMB-IRB-NPU --- Health/medical/biomedical (irb, npu)"
+    ],
+    "Consent Short": [
+      "HMB-IRB",
+      "HMB-IRB-NPU"
+    ]
+  },
+  {
+    "Primary Research Focus": "Heart Defects, Congenital",
+    "Accession": "phs000571.v1.p1",
+    "Cohort Abbreviation": "PCGC",
+    "Name": "The Pediatric Cardiac Genomics Consortium (PCGC)",
+    "Description": "Multi-center, prospective observational cohort study of individuals with congenital heart defects (CHD). Phenotypic data and source DNA of probands, parents, and families of interest are being collected to investigate relationships between genetic factors and phenotypic and clinical outcomes in patients with CHD.",
+    "Short Description": "Multi-center, prospective observational cohort study of individuals with congenital heart defects (CHD). Phenotypic data and source DNA of probands, parents, and families of interest are being collected to investigate relationships between genetic factors and phenotypic and clinical outcomes in patients with CHD.",
+    "Number of Variables": 454,
+    "Data Dictionary Link": "pht003176.v1.p1",
+    "dbGaP Listed Variable": [
+      "Aortic valve"
+    ],
+    "Type": [
+      "Prospective Longitudinal Cohort"
+    ],
+    "Populations": [
+      "Not Reported",
+      "Non-Hispanic White",
+      "Non-Hispanic more than One Race",
+      "Non-Hispanic Black or African American",
+      "Other",
+      "Non-Hispanic Asian",
+      "Unknown",
+      "White, Not Hispanic",
+      "Asian",
+      "Black, Not of Hispanic Origin",
+      "Non-Hispanic Native Hawaiian or Other Pacific Islander",
+      "Non-Hispanic American Indian or Alaskan Native"
+    ],
+    "Molecular Data": [
+      "SNP Genotypes (Array)"
+    ],
+    "Consent": [
+      "DS-CHD --- Disease-specific (congenital heart disease)",
+      "HMB --- Health/medical/biomedical"
+    ],
+    "Consent Short": [
+      "DS-CHD",
+      "HMB"
+    ]
+  },
+  {
+    "Primary Research Focus": "Sickle Cell Anemia",
+    "Accession": "phs002383.v1.p1",
+    "Cohort Abbreviation": "Walk-PhaSST",
+    "Name": "Treatment of Pulmonary Hypertension and Sickle Cell Disease with Sildenafil Therapy (Walk-PHaSST)",
+    "Description": "Pulmonary arterial hypertension (PAH) is a progressive condition characterized by narrowing or stiffening pulmonary arterioles resulting in increased pulmonary blood pressure and reduced delivery of oxygenated blood to the body. It is a common complication of sickle cell disease and initially presents with the symptom of shortness of breath (dyspnea) on exertion. As the condition worsens, other symptoms such as dizziness, lower extremity edema, and chest pain can develop. The drug, sildenafil, works by relaxing blood vessels in the lungs which reduces pulmonary blood pressure and allows more oxygenated blood to circulate. The study was intended to screen about 1000 subjects and randomize 132 subjects, however it was terminated early due to the unforeseen increase in adverse events in participants treated with sildenafil as compared to placebo. When the study was stopped, 33 participants had completed the trial. Subjects continued to be monitored, but were instructed to taper sildenafil treatment over three to seven days.\n\nThere was no evidence that treatment with sildenafil impacted the six minute walk distance from baseline to week 16. In addition, treatment with sildenafil appeared to increase rates of hospitalization due to sickle cell disease pain.",
+    "Short Description": "Pulmonary arterial hypertension (PAH) is a progressive condition characterized by narrowing or stiffening pulmonary arterioles resulting in increased pulmonary blood pressure and reduced delivery of oxygenated blood to the body.  Subjects eligible for the main intervention trial based on screening results were randomized in a 1:1 double blind fashion to receive sildenafil or placebo for 16 weeks. The study was intended to screen about 1000 subjects and randomize 132 subjects, however it was terminated early due to the unforeseen increase in adverse events in participants treated with sildenafil as compared to placebo.",
+    "Number of Variables": 1,
+    "Data Dictionary Link": "pht011233.v1.p1",
+    "dbGaP Listed Variable": [
+      "Consent group as determined by DAC"
+    ],
+    "Type": [
+      "Clinical Trial; Double-Blind"
+    ],
+    "Populations": [
+      ""
+    ],
+    "Molecular Data": [
+      "Not Provided"
+    ],
+    "Consent": [
+      "DS-SCD-IRB-PUB-COL-NPU-MDS-RD --- Disease-specific (sickle cell disease, irb, pub, col, npu, mds, rd)"
+    ],
+    "Consent Short": [
+      "DS-SCD-IRB-PUB-COL-NPU-MDS-RD"
+    ]
+  },
+  {
+    "Primary Research Focus": "Sickle Cell Anemia",
+    "Accession": "phs002415.v1.p1",
+    "Cohort Abbreviation": "BABY HUG",
+    "Name": "Hydroxyurea to Prevent Organ Damage in Children with Sickle Cell Anemia (BABY HUG) Phase III Clinical Trial and Follow-Up Observational Studies I and II",
+    "Description": "Sickle cell anemia is associated with substantial morbidity from acute complications and organ dysfunction beginning in the first year of life. The BABY HUG Randomized Controlled Trial concluded that hydroxyurea treatment in very young children seemed to have an acceptable safety profile and to reduce complications of sickle cell anemia. However, more data were needed on the long-term safety of hydroxyurea use in very young children. As a result, follow-up studies were initiated. The Follow-Up Study II provided longer follow-up than Follow-Up Study I, and included more assessment types than Follow-Up Study I. The purpose of the BABY HUG Follow-up Study I was to provide structured follow-up of the children enrolled in the BABY HUG Randomized Controlled Trial, in order to characterize the long-term toxicities and unexpected risks (if any) associated with treatment with hydroxyurea at an early age.\n\nThe objective of Follow-Up Study II was to obtain additional data about the long-term safety and efficacy of hydroxyurea use in children with Sickle Cell Anemia through at least the first decade of life.",
+    "Short Description": "The BABY HUG Randomized Controlled Trial concluded that hydroxyurea treatment in very young children seemed to have an acceptable safety profile and to reduce complications of sickle cell anemia. However, more data were needed on the long-term safety of hydroxyurea use in very young children. The purpose of the BABY HUG Follow-up Study I was to provide structured follow-up of the children enrolled in the BABY HUG Randomized Controlled Trial, in order to characterize the long-term toxicities and unexpected risks (if any) associated with treatment with hydroxyurea at an early age. The objective of Follow-Up Study II was to obtain additional data about the long-term safety and efficacy of hydroxyurea use in children with Sickle Cell Anemia through at least the first decade of life.",
+    "Number of Variables": null,
+    "Data Dictionary Link": "pht011586.v1.p1",
+    "dbGaP Listed Variable": [
+      "Consent group as determined by DAC"
+    ],
+    "Type": [
+      "Clinical Trial"
+    ],
+    "Populations": [
+      ""
+    ],
+    "Molecular Data": [
+      "Not Provided"
+    ],
+    "Consent": [
+      "DS-SCD-IRB-RD --- Disease-specific (sickle cell disease, irb, rd)"
+    ],
+    "Consent Short": [
+      "DS-SCD-IRB-PUB-COL-NPU-MDS-RD"
+    ]
   }
 ]
