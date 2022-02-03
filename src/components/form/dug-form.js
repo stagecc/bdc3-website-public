@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Hidden } from 'react-grid-system'
 import { Form, InputGroup, TextInput } from './'
 import { Button } from '../buttons'
-import { InfoIcon, MagnifyingGlassIcon } from '../icons'
+import { MagnifyingGlassIcon } from '../icons'
 
 const SearchButton = styled(Button)`
   background-color: var(--color-blueberry);
@@ -26,7 +26,7 @@ export const DugForm = ({ focusOnMount = false, compact, style }) => {
     if (focusOnMount && inputField.current) {
       inputField.current.focus()
     }
-  }, [])
+  }, [focusOnMount])
 
   useEffect(() => {
     // this lets the user press backslash to jump focus to the search box
