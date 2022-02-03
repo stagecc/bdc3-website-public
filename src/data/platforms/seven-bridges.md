@@ -7,7 +7,7 @@ links:
   homepage: https://f4c.readme.io
   launch: https://platform.sb.biodatacatalyst.nhlbi.nih.gov
   documentation: https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/analyze-data/seven-bridges
-teaser: BioData Catalyst Powered by Seven Bridges offers researchers collaborative workspaces for analyzing genomics data at scale. Researchers can find and analyze the hosted TOPMed studies by using hundreds of optimized analysis tools and workflows (pipelines); creating their own workflows; or interactive analysis.
+about: BioData Catalyst Powered by Seven Bridges offers researchers collaborative workspaces for analyzing genomics data at scale. Researchers can find and analyze the hosted TOPMed studies by using hundreds of optimized analysis tools and workflows (pipelines); creating their own workflows; or interactive analysis.
 service: Utilize collaborative workspaces for analyzing genomics data at scale. Access hosted datasets along with Common Workflow Language (CWL) and GENESIS R package pipelines for analysis. This platform also enables users to bring their own data for analysis and work in RStudio and Jupyterlab Notebooks for interactive analysis.
 ---
 

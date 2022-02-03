@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import styled from "styled-components";
 import { SEO } from "../../components/seo";
 import { PageContent } from "../../components/layout";
-import { Title, Heading, Paragraph } from "../../components/typography";
+import { Title, Heading, Subheading, Paragraph } from "../../components/typography";
 import { Container as Grid, Row, Col, Visible } from "react-grid-system";
 import { Card, CardHeader, CardBody } from "../../components/card";
 import { Link } from "../../components/link";
@@ -11,7 +11,8 @@ import { usePlatforms } from "../../hooks";
 const ToolLinks = styled.div`
   display: flex;
   justify-content: space-around;
-  margin: 0 0 2rem 0;
+  padding: 2rem;
+  background-color: #eee;
 `;
 
 const InternalToolLink = styled(Link)`
@@ -58,31 +59,32 @@ const Separator = styled.div`
 const ServicesPage = ({ data }) => {
   const platforms = usePlatforms();
 
-  const services = [
+  const sections = [
     {
-      cardTitle: "Explore Available Data",
-      cardItems: [
+      title: "Explore Available Data",
+      platforms: [
         platforms.find(platform => platform.frontmatter.title === "Gen3"),
-        platforms.find(platform => platform.frontmatter.title === "PIC-SURE")
-      ]
+        platforms.find(platform => platform.frontmatter.title === "PIC-SURE"),
+        platforms.find(platform => platform.frontmatter.title === "Dug"),
+      ],
     },
     {
-      cardTitle: "Analyze Data in Cloud-based Shared Workspaces",
-      cardItems: [
-        platforms.find(
-          platform => platform.frontmatter.title === "Seven Bridges"
-        ),
-        platforms.find(platform => platform.frontmatter.title === "Terra")
-      ]
+      title: "Analyze Data in Cloud-based Shared Workspaces",
+      platforms: [
+        platforms.find(platform => platform.frontmatter.title === "Seven Bridges"),
+        platforms.find(platform => platform.frontmatter.title === "Terra"),
+      ],
     },
     {
-      cardTitle: "Use Community Tools on Controlled-access Datasets",
-      cardItems: [
+      title: "Use Community Tools on Controlled-access Datasets",
+      platforms: [
         platforms.find(platform => platform.frontmatter.title === "Dockstore"),
-        platforms.find(platform => platform.frontmatter.title === "HeLx")
-      ]
+        platforms.find(platform => platform.frontmatter.title === "HeLx"),
+      ],
     }
   ];
+
+  console.log(sections)
 
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters>
@@ -92,81 +94,60 @@ const ServicesPage = ({ data }) => {
 
       <br />
 
-      <section>
-        <Heading center>What Do You Want to Do Today?</Heading>
-        <br />
-        <br />
+      <Heading center style={{ fontSize: '175%' }}>What Do You Want to Do Today?</Heading>
+      <br />
+      <br />
 
-        {services.map((service, i) => (
-          <Card key={service.cardTitle}>
-            <CardHeader>{service.cardTitle}</CardHeader>
-            <CardBody>
-              <Grid fluid>
-                <Row gutterWidth={0}>
-                  {service.cardItems.map((platform, i) => (
-                    <Fragment key={i}>
-                      <Col
-                        xs={12}
-                        lg={5}
-                        style={{
-                          display: "flex",
-                          flexDirection: "column",
-                          justifyContent: "space-between"
-                        }}
-                      >
-                        <h3 style={{ textAlign: "center" }}>
-                          {platform.frontmatter.serviceTitle}
-                        </h3>
-                        <Paragraph>{platform.frontmatter.service}</Paragraph>
-                        <ToolLinks>
-                          {platform.frontmatter.links.launch && (
-                            <ExternalToolLink
-                              to={platform.frontmatter.links.launch}
-                              aria-label={`Launch ${platform.frontmatter.title}`}
-                            >
-                              Launch
-                            </ExternalToolLink>
-                          )}
-                          {platform.frontmatter.links.launch && "|"}
-                          {platform.frontmatter.links.documentation && (
-                            <ExternalToolLink
-                              to={platform.frontmatter.links.documentation}
-                              aria-label={`View ${platform.frontmatter.title} documentation`}
-                            >
-                              Documentation
-                            </ExternalToolLink>
-                          )}
-                          {platform.frontmatter.links.documentation && "|"}
-                          <InternalToolLink
-                            to={platform.frontmatter.path}
-                            aria-label={`Learn more about ${platform.frontmatter.title}`}
-                          >
-                            Learn
-                          </InternalToolLink>
-                        </ToolLinks>
-                      </Col>
-                      {i + 1 < service.cardItems.length && (
-                        <Fragment>
-                          <Visible lg xl>
-                            <Col md={2}>
-                              <Separator vertical />
-                            </Col>
-                          </Visible>
-                          <Visible xs sm md>
-                            <Col xs={12}>
-                              <Separator horizontal />
-                            </Col>
-                          </Visible>
-                        </Fragment>
+      {sections.map((section, i) => (
+        <section>
+          <Subheading>{section.title}</Subheading>
+          <Grid fluid>
+            <Row gutterWidth={ 32 } justify="center">
+              {/*
+                One platform, Dug, needs to be listed on the Learn page but _not_ on this Services page.
+                Removing the value of `frontmatter.about` in the Dug markdown file will prevent rendering here.
+              */}
+              {section.platforms.map(platform => platform.frontmatter.service && (
+                <Col xs={ 12 } lg={ 6 } style={{ marginBottom: '32px' }}>
+                  <Card>
+                    <CardHeader>{platform.frontmatter.serviceTitle}</CardHeader>
+                    <CardBody style={{ flex: 1 }}>
+                      <Paragraph>{platform.frontmatter.service}</Paragraph>
+                    </CardBody>
+                    <ToolLinks>
+                      {platform.frontmatter.links.launch && (
+                        <ExternalToolLink
+                          to={platform.frontmatter.links.launch}
+                          aria-label={`Launch ${platform.frontmatter.title}`}
+                        >
+                          Launch
+                        </ExternalToolLink>
                       )}
-                    </Fragment>
-                  ))}
-                </Row>
-              </Grid>
-            </CardBody>
-          </Card>
-        ))}
-      </section>
+                      {platform.frontmatter.links.launch && "|"}
+                      {platform.frontmatter.links.documentation && (
+                        <ExternalToolLink
+                          to={platform.frontmatter.links.documentation}
+                          aria-label={`View ${platform.frontmatter.title} documentation`}
+                        >
+                          Documentation
+                        </ExternalToolLink>
+                      )}
+                      {platform.frontmatter.links.documentation && "|"}
+                      <InternalToolLink
+                        to={platform.frontmatter.path}
+                        aria-label={`Learn more about ${platform.frontmatter.title}`}
+                      >
+                        Learn
+                      </InternalToolLink>
+                    </ToolLinks>
+                  </Card>
+                </Col>
+              ))}
+            </Row>
+          </Grid>
+          <br />
+        </section>
+      ))}
 
       <section>
         <Heading>Imputation Server</Heading>

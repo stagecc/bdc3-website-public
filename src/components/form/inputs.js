@@ -2,22 +2,23 @@ import React from "react";
 import styled from "styled-components";
 
 const inputStyle = `
-    flex: 1;
-    padding: 0.5rem;
-    outline: none;
-    border-radius: 4px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: var(--color-lightgrey);
-    transition: boroder-color 250ms, filter 250ms;
-    &:focus {
-        border-color: var(--color-eggplant);
-        filter: drop-shadow(0 0 0.1rem var(--color-eggplant));
-    }
+  flex: 1;
+  padding: 0.5rem;
+  outline: none;
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-lightgrey);
+  transition: boroder-color 250ms, filter 250ms;
+  overflow: hidden;
+  &:focus {
+    border-color: var(--color-eggplant);
+    filter: drop-shadow(0 0 0.1rem var(--color-eggplant));
+  }
 `;
 
 export const Form = styled.form`
-  padding: 1rem 0.5rem;
+  padding: 0;
 `;
 
 export const FormControl = styled.div`
