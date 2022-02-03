@@ -139,7 +139,7 @@ export const DefaultLayout = ({ children }) => {
                       primary={
                         <Link
                           lightIcon
-                          to="https://hhs.responsibledisclosure.com/hc/en-us"
+                          to="https://www.hhs.gov/vulnerability-disclosure-policy/index.html"
                         >
                           HHS Vulnerability Disclosure
                         </Link>
