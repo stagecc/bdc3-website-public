@@ -21,7 +21,6 @@ import hexBackgroundLeftSvg from "../images/hex-background-left.svg";
 import hexBackgroundRightSvg from "../images/hex-background-right.svg";
 import { Link } from "../components/link";
 import { logLogo } from "../utils";
-import { MagnifyingGlassIcon, CloseIcon } from '../components/icons'
 
 import "../styles/normalize.css";
 import "../styles/customize.css";

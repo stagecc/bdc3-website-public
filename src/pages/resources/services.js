@@ -1,9 +1,9 @@
-import React, { Fragment } from "react";
+import React from "react";
 import styled from "styled-components";
 import { SEO } from "../../components/seo";
 import { PageContent } from "../../components/layout";
 import { Title, Heading, Subheading, Paragraph } from "../../components/typography";
-import { Container as Grid, Row, Col, Visible } from "react-grid-system";
+import { Container as Grid, Row, Col } from "react-grid-system";
 import { Card, CardHeader, CardBody } from "../../components/card";
 import { Link } from "../../components/link";
 import { usePlatforms } from "../../hooks";
@@ -22,38 +22,6 @@ const InternalToolLink = styled(Link)`
 const ExternalToolLink = styled(Link)`
   margin: 0 0.5rem;
   white-space: nowrap;
-`;
-
-const Separator = styled.div`
-  position: relative;
-  height: 100%;
-  width: 100%;
-  ${props => props.horizontal && `margin: 1rem 0;`}
-  &::after {
-    content: "";
-    position: absolute;
-    border-right: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    opacity: 0.25;
-    ${props =>
-      props.horizontal &&
-      `
-        top: 0%;
-        height: 1px;
-        width: 100%;
-        border-bottom: 1px solid var(--color-lightgrey);
-      `}
-    ${props =>
-      props.vertical &&
-      `
-        top: 50%;
-        height: 85%;
-        width: 1px;
-        border-left: 1px solid var(--color-lightgrey);
-      `}
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
 `;
 
 const ServicesPage = ({ data }) => {
