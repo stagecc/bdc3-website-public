@@ -82,7 +82,7 @@ const DownloadJSONButton = ({ onExport }) => (
 );
 
 export const DataTable = ({ columns, data, ...props }) => {
-  const [query] = useState(""); // eslint-disable-line no-unused-vars
+  const [query] = useState("");
   const [filteredStudies, setFilteredStudies] = useState(data);
   const [selectedStudies, setSelectedStudies] = useState([]);
   const [grouping, setGrouping] = useState(
@@ -128,7 +128,7 @@ export const DataTable = ({ columns, data, ...props }) => {
       );
       setVariablesCount(num);
     }
-  }, [filteredStudies, grouping]);
+  }, [filteredStudies]);  // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (filteredStudies && grouping) {
@@ -140,11 +140,11 @@ export const DataTable = ({ columns, data, ...props }) => {
 
   const handleGroupingChange = event => setGrouping(event.target.value);
 
-  // const handleFilterChange = key => e => {
-  //   const f = { ...filters };
-  //   f[key] = e.target.value;
-  //   setFilters(f);
-  // };
+  const handleFilterChange = key => e => {
+    const f = { ...filters };
+    f[key] = e.target.value;
+    setFilters(f);
+  };
 
   const handleToggleFullScreen = () => setFullscreen(!fullscreen);
 
@@ -163,15 +163,10 @@ export const DataTable = ({ columns, data, ...props }) => {
     data => {
       setSelectedStudies(data.selectedRows);
     },
-    []
+    [data.selectedRows]  // eslint-disable-line react-hooks/exhaustive-deps
   );
 
   const memoizedSubheaderComponent = useMemo(() => {
-    const handleFilterChange = key => e => {
-      const f = { ...filters };
-      f[key] = e.target.value;
-      setFilters(f);
-    };
     return (
       <Fragment>
         <TextInput
@@ -190,7 +185,7 @@ export const DataTable = ({ columns, data, ...props }) => {
         </IconButton>
       </Fragment>
     );
-  }, [filters]);
+  }, [query, filters, filteredStudies]);  // eslint-disable-line react-hooks/exhaustive-deps
 
   const memoizedActionsComponent = useMemo(() => {
     return (
@@ -240,9 +235,9 @@ export const DataTable = ({ columns, data, ...props }) => {
             title={
               <Fragment>
                 Studies grouped by
-                <select
+                <select // eslint-disable-line jsx-a11y/no-onchange
                   value={grouping}
-                  onBlur={handleGroupingChange}
+                  onChange={handleGroupingChange} // eslint-disable-line jsx-a11y/no-onchange
                   style={{ margin: "0.5rem" }}
                 >
                   {columns
