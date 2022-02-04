@@ -43,50 +43,102 @@ const DataPage = ({ data, location }) => {
 
       <Heading>Studies in BioData Catalyst</Heading>
 
-      <Paragraph>
-        The BioData Catalyst ecosystem currently hosts a number of controlled
-        and open datasets:
-      </Paragraph>
-
-      <BulletedList dense>
+      
+      <BulletedList>
         <ListItem
           primary={
             <span>
-              <Link to="https://www.nhlbiwgs.org/">
-                TOPMed
-              </Link>{" "}
-              Freeze 5b
+              COVID-19 data (
+              <Link to="/covid-19">ORCHID</Link>,{' '}
+              <Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002363.v1.p1">RED CORAL</Link>)
             </span>
           }
         />
         <ListItem
           primary={
             <span>
-              <Link to="https://www.nhlbiwgs.org/">
-                TOPMed
-              </Link>{" "}
-              Freeze 8 Data
+              Curated by the <Link to="https://curesickle.org/">Cure Sickle Cell Initiative</Link>
+              <BulletedList>
+                <ListItem
+                  primary={
+                    <span>
+                      Cooperative Study of Sickle Cell Disease
+                      (<Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002362.v1.p1">CSSCD</Link>)
+                    </span>
+                  }
+                />
+                <ListItem
+                  primary={
+                    <span>
+                      Hematopoietic Cell Transplant for Sickle Cell Disease
+                      (<Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002385.v1.p1">HCT for SCD</Link>)
+                    </span>
+                  }
+                />
+                <ListItem
+                  primary={
+                    <span>
+                      Multicenter Study of Hydroxyurea
+                      (<Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002348.v1.p1">MSH</Link>)
+                    </span>
+                  }
+                />
+                <ListItem
+                  primary={
+                    <span>
+                      Optimizing Primary Stroke Prevention in Children with Sickle Cell Anemia
+                      (<Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002386.v1.p1">STOP II</Link>)
+                    </span>
+                  }
+                />
+                <ListItem
+                  primary={
+                    <span>
+                      Treatment of Pulmonary Hypertension and Sickle Cell Disease with Sildenafil Therapy
+                      (<Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002383.v1.p1">Walk-PHaSST</Link>)
+                    </span>
+                  }
+                />
+              </BulletedList>
             </span>
           }
         />
         <ListItem
           primary={
             <span>
-              Parent Studies{" "}
-              <Link to="https://www.ncbi.nlm.nih.gov/gap/">
-                dbGaP
-              </Link>
+              The Pediatric Cardiac Genomics Consortium
+              (<Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001843.v1.p2">PCGC</Link>)
+                WGS Data
             </span>
           }
         />
         <ListItem
           primary={
             <span>
-              COVID-19 data <Link to="/covid-19">(ORCHID)</Link>
+              TOPMed Freeze 8 and Freeze 5b Data
+              <BulletedList>
+                <ListItem
+                  primary={
+                    <span>
+                      Newly added: Coronary Artery Risk Development in Young Adults
+                      (<Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000285.v3.p2">CARDIA</Link>)
+                    </span>
+                  }
+                />
+              </BulletedList>
+            </span>
+          }
+        />
+        <ListItem
+          primary={
+            <span>
+              TOPMed Parent Studies
+              (<Link to="https://topmed.nhlbi.nih.gov/group/project-studies?field_is_this_a_value=sub">dbGaP</Link>)
             </span>
           }
         />
       </BulletedList>
+
 
       <br/>
 
