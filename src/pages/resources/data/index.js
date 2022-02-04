@@ -14,7 +14,7 @@ import { ButtonLink } from "../../../components/buttons";
 import { Link } from "../../../components/link";
 import { Visible } from "react-grid-system";
 import { Container as Grid, Row, Col } from 'react-grid-system'
-import { DugForm } from '../../../components/form'
+// import { DugForm } from '../../../components/form'
 
 const DataPage = ({ data, location }) => {
   const { dataBucketsGraphic, dataBucketsGraphicMobile } = data;
@@ -31,13 +31,13 @@ const DataPage = ({ data, location }) => {
 
       <Title>BioData Catalyst Data</Title>
 
-      <DugForm />
+      {/* <DugForm />
 
       <Paragraph center style={{ fontStyle: 'italic', fontSize: '90%' }}>
         Semantic search provided by Dug.
         {' '}
         <Link to="/platforms/dug">Learn more about Dug here</Link>.
-      </Paragraph>
+      </Paragraph> */}
 
       <br />
 
@@ -50,7 +50,7 @@ const DataPage = ({ data, location }) => {
             <span>
               COVID-19 data (
               <Link to="/covid-19">ORCHID</Link>,{' '}
-              <Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002363.v1.p1">RED CORAL</Link>)
+              <Link to="/covid-19">RED CORAL</Link>)
             </span>
           }
         />

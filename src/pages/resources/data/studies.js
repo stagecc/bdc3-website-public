@@ -34,7 +34,7 @@ const StudiesPage = () => {
       }
       setModifiedStudiesColumns([...columnsCopy]);
     }
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <PageContent
