@@ -133,7 +133,7 @@ const DataPage = ({ data, location }) => {
           primary={
             <span>
               TOPMed Parent Studies
-              (<Link to="https://topmed.nhlbi.nih.gov/group/project-studies?field_is_this_a_value=sub">dbGaP</Link>)
+              <Link to="https://topmed.nhlbi.nih.gov/group/project-studies?field_is_this_a_value=sub">dbGaP</Link>
             </span>
           }
         />
