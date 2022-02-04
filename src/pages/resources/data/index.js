@@ -14,6 +14,7 @@ import { ButtonLink } from "../../../components/buttons";
 import { Link } from "../../../components/link";
 import { Visible } from "react-grid-system";
 import { Container as Grid, Row, Col } from 'react-grid-system'
+import { DataAccess } from "../../../components/data-access/data-access";
 // import { DugForm } from '../../../components/form'
 
 const DataPage = ({ data, location }) => {
@@ -30,6 +31,8 @@ const DataPage = ({ data, location }) => {
       <SEO title="BioData Catalyst Data Access" description="" keywords="" />
 
       <Title>BioData Catalyst Data</Title>
+
+      <DataAccess location={location} />
 
       {/* <DugForm />
 
