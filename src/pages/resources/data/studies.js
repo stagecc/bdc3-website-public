@@ -51,8 +51,10 @@ const StudiesPage = () => {
       <br />
 
       <Paragraph>
-        The filterable data table below provides metadata on all studies
-        available in BioData Catalyst.
+        The filterable data table below provides metadata on all
+        non-COVID studies available in BioData Catalyst.{' '}
+        <Link to="/covid-19">View COVID-19 studies here</Link>.
+
       </Paragraph>
 
       {studies && modifiedStudiesColumns && (

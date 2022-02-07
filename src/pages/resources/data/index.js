@@ -118,7 +118,8 @@ const DataPage = ({ data, location }) => {
         <ListItem
           primary={
             <span>
-              TOPMed Freeze 8 and Freeze 5b Data
+              <Link to="https://www.nhlbiwgs.org/">TOPMed</Link>{' '}
+              Freeze 8 and Freeze 5b Data
               <BulletedList>
                 <ListItem
                   primary={
@@ -135,8 +136,8 @@ const DataPage = ({ data, location }) => {
         <ListItem
           primary={
             <span>
-              TOPMed Parent Studies
-              <Link to="https://topmed.nhlbi.nih.gov/group/project-studies?field_is_this_a_value=sub">dbGaP</Link>
+              <Link to="https://topmed.nhlbi.nih.gov/group/project-studies?field_is_this_a_value=sub">TOPMed</Link>
+              {' '}Parent Studies
             </span>
           }
         />
