@@ -28,7 +28,7 @@ export const UnorderedList = styled.ul`
 export const BulletedList = styled(UnorderedList)(
   ({ bullet }) => `
   list-style-type: ${bullet};
-  margin: 0 0 2rem 1rem;
+  margin: 1rem 0 1rem 1rem;
 `
 );
 

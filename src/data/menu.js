@@ -1,9 +1,5 @@
 export const menuItems = [
   {
-    text: "Home",
-    path: "/",
-  },
-  {
     text: "About",
     path: "/about",
     submenu: [
@@ -18,6 +14,10 @@ export const menuItems = [
       {
         text: "Events",
         path: "/about/events",
+      },
+      {
+        text: "Published Research",
+        path: "/about/research",
       },
     ],
   },

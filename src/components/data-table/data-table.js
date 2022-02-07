@@ -82,14 +82,14 @@ const DownloadJSONButton = ({ onExport }) => (
 );
 
 export const DataTable = ({ columns, data, ...props }) => {
-  // const [query] = useState("");
+  const [query] = useState("");
   const [filteredStudies, setFilteredStudies] = useState(data);
   const [selectedStudies, setSelectedStudies] = useState([]);
   const [grouping, setGrouping] = useState(
     columns.filter(column => column.groupable)[0].selector
   );
   const [groupCounts, setGroupCounts] = useState([]);
-  // const [variablesCount, setVariablesCount] = useState(0);
+  const [variablesCount, setVariablesCount] = useState(0); // eslint-disable-line no-unused-vars
   const [pieChartVisible, setPieChartVisible] = useState(false);
   const [fullscreen, setFullscreen] = useState(false);
   // filter state is maintained in this object,
@@ -118,17 +118,17 @@ export const DataTable = ({ columns, data, ...props }) => {
         data.filter(study => isFiltered(study, "Name", filters.Name))
       );
     }
-  }, [filters, data, filteredStudies]);
+  }, [filters]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // useEffect(() => {
-  //   if (filteredStudies && grouping) {
-      // const num = filteredStudies.reduce(
-      //   (total, study) => total + parseInt(study.Number_of_Variables),
-      //   0
-      // );
-      // setVariablesCount(num);
-  //   }
-  // }, [filteredStudies, grouping]);
+  useEffect(() => {
+    if (filteredStudies && grouping) {
+      const num = filteredStudies.reduce(
+        (total, study) => total + parseInt(study.Number_of_Variables),
+        0
+      );
+      setVariablesCount(num);
+    }
+  }, [filteredStudies]);  // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (filteredStudies && grouping) {
@@ -140,7 +140,11 @@ export const DataTable = ({ columns, data, ...props }) => {
 
   const handleGroupingChange = event => setGrouping(event.target.value);
 
-
+  const handleFilterChange = key => e => {
+    const f = { ...filters };
+    f[key] = e.target.value;
+    setFilters(f);
+  };
 
   const handleToggleFullScreen = () => setFullscreen(!fullscreen);
 
@@ -159,17 +163,10 @@ export const DataTable = ({ columns, data, ...props }) => {
     data => {
       setSelectedStudies(data.selectedRows);
     },
-    []
+    [data.selectedRows]  // eslint-disable-line react-hooks/exhaustive-deps
   );
 
   const memoizedSubheaderComponent = useMemo(() => {
-
-    const handleFilterChange = key => e => {
-      const f = { ...filters };
-      f[key] = e.target.value;
-      setFilters(f);
-    };
-
     return (
       <Fragment>
         <TextInput
@@ -188,7 +185,7 @@ export const DataTable = ({ columns, data, ...props }) => {
         </IconButton>
       </Fragment>
     );
-  }, [filters]);
+  }, [query, filters, filteredStudies]);  // eslint-disable-line react-hooks/exhaustive-deps
 
   const memoizedActionsComponent = useMemo(() => {
     return (
@@ -238,9 +235,9 @@ export const DataTable = ({ columns, data, ...props }) => {
             title={
               <Fragment>
                 Studies grouped by
-                <select
+                <select // eslint-disable-line jsx-a11y/no-onchange
                   value={grouping}
-                  onBlur={handleGroupingChange}
+                  onChange={handleGroupingChange} // eslint-disable-line jsx-a11y/no-onchange
                   style={{ margin: "0.5rem" }}
                 >
                   {columns

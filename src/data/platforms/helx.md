@@ -7,7 +7,7 @@ links:
   homepage: #
   launch: #
   documentation: #
-teaser: This tool will be available in a future release.
+about: This tool will be available in a future release.
 service: >
   Use the HeLx web-based platform for collaborative open science. It provides metadata aware data management capabilities with extensive support for sharing and access control. The AppStore also presents tools that can be dynamically launched for each user.
   This tool will be available in a future release.

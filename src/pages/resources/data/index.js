@@ -13,7 +13,7 @@ import { BulletedList, ListItem } from "../../../components/list";
 import { Button, ButtonLink } from "../../../components/buttons";
 import { Link } from "../../../components/link";
 import { Visible } from "react-grid-system";
-import { DataAccess } from "../../../components/data-access";
+import { DataAccess } from "../../../components/data-access/data-access";
 import { DownloadIcon, MagnifyingGlassIcon } from "../../../components/icons";
 
 const DataPage = ({ data, location }) => {
@@ -29,65 +29,117 @@ const DataPage = ({ data, location }) => {
     >
       <SEO title="BioData Catalyst Data Access" description="" keywords="" />
 
-      <Title>Accessing BioData Catalyst Data</Title>
-
-      <br />
+      <Title>BioData Catalyst Data</Title>
 
       <DataAccess location={location} />
 
       <br />
 
-      <section>
-        <Heading>About BioData Catalyst Datasets</Heading>
+      <Heading>Studies in BioData Catalyst</Heading>
+
+      
+      <BulletedList>
+        <ListItem
+          primary={
+            <span>
+              COVID-19 data (
+              <Link to="/covid-19">ORCHID</Link>,{' '}
+              <Link to="/covid-19">RED CORAL</Link>)
+            </span>
+          }
+        />
+        <ListItem
+          primary={
+            <span>
+              Curated by the <Link to="https://curesickle.org/">Cure Sickle Cell Initiative</Link>
+              <BulletedList>
+                <ListItem
+                  primary={
+                    <span>
+                      Cooperative Study of Sickle Cell Disease
+                      (<Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002362.v1.p1">CSSCD</Link>)
+                    </span>
+                  }
+                />
+                <ListItem
+                  primary={
+                    <span>
+                      Hematopoietic Cell Transplant for Sickle Cell Disease
+                      (<Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002385.v1.p1">HCT for SCD</Link>)
+                    </span>
+                  }
+                />
+                <ListItem
+                  primary={
+                    <span>
+                      Multicenter Study of Hydroxyurea
+                      (<Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002348.v1.p1">MSH</Link>)
+                    </span>
+                  }
+                />
+                <ListItem
+                  primary={
+                    <span>
+                      Optimizing Primary Stroke Prevention in Children with Sickle Cell Anemia
+                      (<Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002386.v1.p1">STOP II</Link>)
+                    </span>
+                  }
+                />
+                <ListItem
+                  primary={
+                    <span>
+                      Treatment of Pulmonary Hypertension and Sickle Cell Disease with Sildenafil Therapy
+                      (<Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002383.v1.p1">Walk-PHaSST</Link>)
+                    </span>
+                  }
+                />
+              </BulletedList>
+            </span>
+          }
+        />
+        <ListItem
+          primary={
+            <span>
+              The Pediatric Cardiac Genomics Consortium
+              (<Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001843.v1.p2">PCGC</Link>)
+                WGS Data
+            </span>
+          }
+        />
+        <ListItem
+          primary={
+            <span>
+              <Link to="https://www.nhlbiwgs.org/">TOPMed</Link>{' '}
+              Freeze 8 and Freeze 5b Data
+              <BulletedList>
+                <ListItem
+                  primary={
+                    <span>
+                      Newly added: Coronary Artery Risk Development in Young Adults
+                      (<Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000285.v3.p2">CARDIA</Link>)
+                    </span>
+                  }
+                />
+              </BulletedList>
+            </span>
+          }
+        />
+        <ListItem
+          primary={
+            <span>
+              <Link to="https://topmed.nhlbi.nih.gov/group/project-studies?field_is_this_a_value=sub">TOPMed</Link>
+              {' '}Parent Studies
+            </span>
+          }
+        />
+      </BulletedList>
+
+
+      <br/>
 
         <Paragraph>
-          The BioData Catalyst ecosystem currently hosts a number of controlled
-          and open datasets:
-        </Paragraph>
-
-        <BulletedList dense>
-          <ListItem
-            primary={
-              <span>
-                <Link to="https://www.nhlbiwgs.org/">
-                  TOPMed
-                </Link>{" "}
-                Freeze 5b
-              </span>
-            }
-          />
-          <ListItem
-            primary={
-              <span>
-                <Link to="https://www.nhlbiwgs.org/">
-                  TOPMed
-                </Link>{" "}
-                Freeze 8 Data
-              </span>
-            }
-          />
-          <ListItem
-            primary={
-              <span>
-                Parent Studies{" "}
-                <Link to="https://www.ncbi.nlm.nih.gov/gap/">
-                  dbGaP
-                </Link>
-              </span>
-            }
-          />
-          <ListItem
-            primary={
-              <span>
-                COVID-19 data <Link to="/covid-19">(ORCHID)</Link>
-              </span>
-            }
-          />
-        </BulletedList>
-
-        <Paragraph>
-          Download BioData Catalyst Release Notes and Study Details via the
-          boxes below.
+          Download BioData Catalyst Release Notes and Study Details
+          using the buttons below.
         </Paragraph>
 
         <Paragraph center>
@@ -133,7 +185,6 @@ const DataPage = ({ data, location }) => {
             <DownloadIcon fill="var(--color-crimson)" size={24} />
           </Button>
         </Paragraph>
-      </section>
 
       <br />
 
@@ -267,6 +318,8 @@ const DataPage = ({ data, location }) => {
       </section>
 
       <br />
+      <br />
+
     </PageContent>
   );
 };
