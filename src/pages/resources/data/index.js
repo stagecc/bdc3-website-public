@@ -10,12 +10,11 @@ import {
   Paragraph,
 } from "../../../components/typography";
 import { BulletedList, ListItem } from "../../../components/list";
-import { ButtonLink } from "../../../components/buttons";
+import { Button, ButtonLink } from "../../../components/buttons";
 import { Link } from "../../../components/link";
 import { Visible } from "react-grid-system";
-import { Container as Grid, Row, Col } from 'react-grid-system'
 import { DataAccess } from "../../../components/data-access/data-access";
-// import { DugForm } from '../../../components/form'
+import { DownloadIcon, MagnifyingGlassIcon } from "../../../components/icons";
 
 const DataPage = ({ data, location }) => {
   const { dataBucketsGraphic, dataBucketsGraphicMobile } = data;
@@ -33,14 +32,6 @@ const DataPage = ({ data, location }) => {
       <Title>BioData Catalyst Data</Title>
 
       <DataAccess location={location} />
-
-      {/* <DugForm />
-
-      <Paragraph center style={{ fontStyle: 'italic', fontSize: '90%' }}>
-        Semantic search provided by Dug.
-        {' '}
-        <Link to="/platforms/dug">Learn more about Dug here</Link>.
-      </Paragraph> */}
 
       <br />
 
@@ -146,45 +137,54 @@ const DataPage = ({ data, location }) => {
 
       <br/>
 
-      <Grid fluid style={{ width: '100% '}}>
-        <Row align="center" gutterWidth={ 32 }>
-          <Col xs={ 12 } md={ 6 } align="center">
-            <ButtonLink
-              light
-              download
-              to="/resources/data/studies"
-              fullWidth
-              style={{ textAlign: "center", display: "inline-flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "0.5rem", marginBottom: "0.5rem" }}
-            >
-              List of Studies
-            </ButtonLink>
-          </Col>
-          <Col xs={ 12 } md={ 6 } align="center">
-            <ButtonLink
-              light
-              download
-              to="/covid-19"
-              fullWidth
-              style={{ textAlign: "center", display: "inline-flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "0.5rem", marginBottom: "0.5rem" }}
-            >
-              List of COVID-19 Studies
-            </ButtonLink>
-          </Col>
-        </Row>
-      </Grid>
+        <Paragraph>
+          Download BioData Catalyst Release Notes and Study Details
+          using the buttons below.
+        </Paragraph>
 
-      <br />
-
-      <Paragraph>
-        To view the most recent updates to BioData Catalyst data, see our
-        {" "}
-        <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/release-notes">
-          Release Notes
-        </Link>.
-        {" "}
-        <Link to="https://staging.gen3.biodatacatalyst.nhlbi.nih.gov/user/oauth2/authorize?idp=fence&client_id=toS2vKpzJmIKj7P64biqpSl3BWO8OPrfZlTuPyAx&redirect_uri=https://staging.biodatacatalyst.nhlbi.nih.gov/resources/data&response_type=id_token+token&scope=openid+user&nonce=2bfe151af238d21f48d8a8bf8bbec408838c8dc0ace6b4c5621ac9dfa157798b">Log in with your eRA Commons credentials</Link> to determine the datasets to which you currently have access.
-        For additional guidance on checking what data you have access to on BioData Catalyst, see a page dedicated to this topic in our <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/data-access/check-my-access-to-data">BioData Catalyst documentation</Link>.
-      </Paragraph>
+        <Paragraph center>
+          <ButtonLink
+            light
+            download
+            to="/resources/data/studies"
+            style={{
+              margin: "1rem",
+              display: "inline-flex",
+              alignItems: "center",
+            }}
+          >
+            Explore Studies &nbsp;&nbsp;{" "}
+            <MagnifyingGlassIcon fill="var(--color-crimson)" size={24} />
+          </ButtonLink>
+          <ButtonLink
+            light
+            download
+            to="/covid-19"
+            style={{
+              margin: "1rem",
+              display: "inline-flex",
+              alignItems: "center",
+            }}
+          >
+            Explore COVID-19 Studies &nbsp;&nbsp;{" "}
+            <MagnifyingGlassIcon fill="var(--color-crimson)" size={24} />
+          </ButtonLink>
+          <Button
+            light
+            as="a"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/release-notes"
+            style={{
+              margin: "1rem",
+              display: "inline-flex",
+              alignItems: "center",
+            }}
+          >
+            Release Notes &nbsp;&nbsp;{" "}
+            <DownloadIcon fill="var(--color-crimson)" size={24} />
+          </Button>
+        </Paragraph>
 
       <br />
 
