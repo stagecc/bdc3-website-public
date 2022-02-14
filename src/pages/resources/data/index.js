@@ -51,7 +51,7 @@ const DataPage = ({ data, location }) => {
         <ListItem
           primary={
             <span>
-              Curated by the <Link to="https://curesickle.org/">Cure Sickle Cell Initiative</Link>
+              Sickle Cell Disease Datasets
               <BulletedList>
                 <ListItem
                   primary={
