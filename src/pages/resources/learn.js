@@ -42,6 +42,11 @@ const resources = [
           "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/explore_data/gen3-discovering-data"
       },
       {
+        text: "PIC-SURE Documentation",
+        url: 
+          "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/getting-started/explore-available-data/pic-sure-for-biodata-catalyst-user-guide"
+      },
+      {
         text: "Seven Bridges Documentation",
         url:
           "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/analyze-data/seven-bridges"
@@ -71,6 +76,10 @@ const resources = [
         url: "https://gen3.org/community/webinars/"
       },
       {
+        text: "PIC-SURE Videos",
+        url: "https://www.youtube.com/watch?v=KQha_vZDgVc&list=PLJ6YccH8TEufZ5L-ctxzFF7vuZRLVacKw"
+      },
+      {
         text: "Seven Bridges",
         url: "https://www.sevenbridges.com/webinars/"
       },
@@ -98,7 +107,12 @@ const resources = [
         text: "Gen3 FAQs",
         url:
           "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/explore_data/gen3-discovering-data"
-      }
+      },
+      {
+        text: "PIC-SURE FAQs",
+        url: 
+          "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/getting-started/explore-available-data/pic-sure-for-biodata-catalyst-user-guide",
+      },
     ]
   },
   {
@@ -131,6 +145,11 @@ const resources = [
     description:
       "Learn about how the BioData Catalyst is evolving and how to use the system from the community.",
     links: [
+      {
+        text: "PIC-SURE Tutorials",
+        url: 
+          "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/getting-started/explore-available-data/pic-sure-for-biodata-catalyst-user-guide/data-analysis-using-the-pic-sure-api"
+      },
       {
         text: "Seven Bridges Blog",
         url: "https://www.sevenbridges.com/blog/"
