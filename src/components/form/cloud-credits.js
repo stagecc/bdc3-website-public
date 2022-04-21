@@ -221,7 +221,7 @@ export const CloudCreditsForm = (props) => {
                 value={username}
                 onChange={handleChangeUserName}
               />
-              <HelpText>Seven Bridges users only</HelpText>
+              {/* <HelpText>Seven Bridges users only</HelpText> */}
             </FormControl>{" "}
             <FormControl>
               <label htmlFor="terraUsername">
@@ -239,7 +239,7 @@ export const CloudCreditsForm = (props) => {
                 value={terraUsername}
                 onChange={handleChangeTerraUserName}
               />
-              <HelpText>Terra users only</HelpText>
+              {/* <HelpText>Terra users only</HelpText> */}
             </FormControl>
           </>
         );
@@ -263,7 +263,7 @@ export const CloudCreditsForm = (props) => {
                 value={username}
                 onChange={handleChangeUserName}
               />
-              <HelpText>Seven Bridges users only</HelpText>
+              {/* <HelpText>Seven Bridges users only</HelpText> */}
             </FormControl>{" "}
             <FormControl>
               <label htmlFor="terraUsername">
@@ -281,7 +281,7 @@ export const CloudCreditsForm = (props) => {
                 value={terraUsername}
                 onChange={handleChangeTerraUserName}
               />
-              <HelpText>Terra users only</HelpText>
+              {/* <HelpText>Terra users only</HelpText> */}
             </FormControl>
           </>
         );
@@ -305,7 +305,7 @@ export const CloudCreditsForm = (props) => {
                 value={username}
                 onChange={handleChangeUserName}
               />
-              <HelpText>Seven Bridges users only</HelpText>
+              {/* <HelpText>Seven Bridges users only</HelpText> */}
             </FormControl>
           </>
         );
@@ -329,7 +329,7 @@ export const CloudCreditsForm = (props) => {
                 value={username}
                 onChange={handleChangeUserName}
               />
-              <HelpText>Seven Bridges users only</HelpText>
+              {/* <HelpText>Seven Bridges users only</HelpText> */}
             </FormControl>
           </>
         );
@@ -352,7 +352,7 @@ export const CloudCreditsForm = (props) => {
                 value={terraUsername}
                 onChange={handleChangeTerraUserName}
               />
-              <HelpText>Terra users only</HelpText>
+              {/* <HelpText>Terra users only</HelpText> */}
             </FormControl>
           </>
         );
@@ -375,7 +375,7 @@ export const CloudCreditsForm = (props) => {
                 value={terraUsername}
                 onChange={handleChangeTerraUserName}
               />
-              <HelpText>Terra users only</HelpText>
+              {/* <HelpText>Terra users only</HelpText> */}
             </FormControl>
           </>
         );

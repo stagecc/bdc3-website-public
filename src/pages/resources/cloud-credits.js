@@ -8,7 +8,7 @@ import { BulletedList, ListItem } from "../../components/list";
 
 const CloudCreditsPage = () => (
   <PageContent width="95%" maxWidth="1200px" center gutters>
-    <SEO title="Cloud Credits" description="" keywords="" />
+    <SEO title="Cloud Costs and Credits" description="" keywords="" />
     <Title>Cloud Costs and Credits</Title>
 
     <section>
@@ -76,10 +76,10 @@ const CloudCreditsPage = () => (
       <Paragraph>
         New users of BioData Catalyst may apply for an initial $500 in cloud
         credits, also known as Pilot Credits, and many analyses can be completed
-        for that amount or less. Others may use the $500 in cloud credits to
-        test and evaluate BioData Catalyst for their research needs, for example
-        piloting pipelines on smaller samples and estimating how much full
-        analysis will cost.
+        for that amount or less. Others, including NIH intramural researchers,
+        may use the $500 in cloud credits to test and evaluate BioData Catalyst
+        for their research needs, for example piloting pipelines on smaller
+        samples and estimating how much full analysis will cost.
       </Paragraph>
 
       <Paragraph>
@@ -107,8 +107,9 @@ const CloudCreditsPage = () => (
       </Paragraph>
 
       <Paragraph>
-        Use these resources to understand and estimate cloud costs, and consider
-        including the expenses in your funding applications.
+        <a href="#understanding">Use these resources</a> to understand and
+        estimate cloud costs, and consider including the expenses in your
+        funding applications.
       </Paragraph>
 
       {/* <Paragraph>
@@ -155,12 +156,16 @@ const CloudCreditsPage = () => (
       <Paragraph>
         Users can submit an application using the Cloud Credit Request Form
         below. Cloud Credit Program requests will be reviewed and decided as
-        soon as possible.
+        soon as possible. The credits will remain active as long as there is
+        activity in the billing group. If there is 6 months of inactivity then
+        users will be queried if the credits are still needed.
       </Paragraph>
     </section>
 
     <section>
-      <Heading>Understanding and Estimating Cloud Costs</Heading>
+      <Heading id="understanding">
+        Understanding and Estimating Cloud Costs
+      </Heading>
 
       <Paragraph>
         Links to resources that provide helpful information about cloud costs
@@ -193,6 +198,16 @@ const CloudCreditsPage = () => (
             <span>
               <Link to="https://sb-biodatacatalyst.readme.io/page/comprehensive-tips-for-reliable-and-efficient-analysis-set-up">
                 Comprehensive tips for reliable and efficient analysis set-up
+              </Link>{" "}
+              (BioData Catalyst Powered by Seven Bridges)
+            </span>
+          }
+        />
+        <ListItem
+          primary={
+            <span>
+              <Link to="https://sb-biodatacatalyst.readme.io/docs/estimate-and-manage-your-cloud-costs">
+                Estimate and Manage Your Cloud Costs
               </Link>{" "}
               (BioData Catalyst Powered by Seven Bridges)
             </span>
