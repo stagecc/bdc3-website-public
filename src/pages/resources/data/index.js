@@ -15,6 +15,7 @@ import { Link } from "../../../components/link";
 import { Visible } from "react-grid-system";
 import { DataAccess } from "../../../components/data-access/data-access";
 import { DownloadIcon, MagnifyingGlassIcon } from "../../../components/icons";
+import { DugForm } from '../../../components/form'
 
 const DataPage = ({ data, location }) => {
   const { dataBucketsGraphic, dataBucketsGraphicMobile } = data;
@@ -30,6 +31,17 @@ const DataPage = ({ data, location }) => {
       <SEO title="BioData Catalyst Data Access" description="" keywords="" />
 
       <Title>BioData Catalyst Data</Title>
+
+      <br />
+
+      <DugForm />
+      <Paragraph center style={{ fontStyle: 'italic', fontSize: '90%' }}>
+        Semantic search provided by Dug.
+        {' '}
+        <Link to="/platforms/dug">Learn more about Dug here</Link>.
+      </Paragraph>
+
+      <br />
 
       <DataAccess location={location} />
 

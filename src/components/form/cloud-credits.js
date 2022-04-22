@@ -21,7 +21,7 @@ import {
 const FRESHDESK_API_KEY = process.env.GATSBY_FRESHDESK_API_KEY;
 const FRESHDESK_API_ROOT_URL = process.env.GATSBY_FRESHDESK_API_ROOT_URL;
 const FRESHDESK_API_CREATE_TICKET_URL = `${FRESHDESK_API_ROOT_URL}/tickets`;
-const FRESHDESK_API_TICKET_FIELDS_URL = `${FRESHDESK_API_ROOT_URL}/ticket_fields`;
+// const FRESHDESK_API_TICKET_FIELDS_URL = `${FRESHDESK_API_ROOT_URL}/ticket_fields`;
 
 const requestOptions = {
   "Content-Type": "application/json",
@@ -94,27 +94,28 @@ export const CloudCreditsForm = (props) => {
 
   const [wasSubmitted, setWasSubmitted] = useState(false);
   const [error, setError] = useState();
+  const [buttonLocked, setbuttonLocked] = useState(false);
 
   const testSubmission = ["staging", "localhost"].includes(
     window.location.hostname
   );
 
-  useEffect(() => {
-    // before rendering the form, fetch the options for the Platform select dropown
-    const fetchPlatformOptions = async () => {
-      await axios
-        .get(FRESHDESK_API_TICKET_FIELDS_URL, requestOptions)
-        .then((response) => {
-          // const platformField = response.data.find(
-          //   (field) => field.name === "cf_what_bdcatalyst_service_will_you_use"
-          // );
-          // setPlatformOptions(platformField.choices);
-          // console.log(response);
-        })
-        .catch((error) => console.error(error));
-    };
-    fetchPlatformOptions();
-  }, []);
+  // useEffect(() => {
+  //   // before rendering the form, fetch the options for the Platform select dropown
+  //   const fetchPlatformOptions = async () => {
+  //     await axios
+  //       .get(FRESHDESK_API_TICKET_FIELDS_URL, requestOptions)
+  //       .then((response) => {
+  //         // const platformField = response.data.find(
+  //         //   (field) => field.name === "cf_what_bdcatalyst_service_will_you_use"
+  //         // );
+  //         // setPlatformOptions(platformField.choices);
+  //         // console.log(response);
+  //       })
+  //       .catch((error) => console.error(error));
+  //   };
+  //   fetchPlatformOptions();
+  // }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -179,17 +180,17 @@ export const CloudCreditsForm = (props) => {
         ...additionalFields,
       },
     };
-    console.log(payload);
 
     const submitTicket = async () => {
-      // console.log("Submitting", payload);
       setWasSubmitted(true);
       await axios
         .post(FRESHDESK_API_CREATE_TICKET_URL, payload, requestOptions)
         .then((response) => {
           if (![200, 201].includes(response.status)) {
+            setbuttonLocked(false);
             throw new Error(`Unsuccessful HTTP response, ${response.status}`);
           }
+          setbuttonLocked(true);
         })
         .catch((error) => {
           setError(error);
@@ -220,7 +221,7 @@ export const CloudCreditsForm = (props) => {
                 value={username}
                 onChange={handleChangeUserName}
               />
-              <HelpText>Seven Bridges users only</HelpText>
+              {/* <HelpText>Seven Bridges users only</HelpText> */}
             </FormControl>{" "}
             <FormControl>
               <label htmlFor="terraUsername">
@@ -238,7 +239,7 @@ export const CloudCreditsForm = (props) => {
                 value={terraUsername}
                 onChange={handleChangeTerraUserName}
               />
-              <HelpText>Terra users only</HelpText>
+              {/* <HelpText>Terra users only</HelpText> */}
             </FormControl>
           </>
         );
@@ -262,7 +263,7 @@ export const CloudCreditsForm = (props) => {
                 value={username}
                 onChange={handleChangeUserName}
               />
-              <HelpText>Seven Bridges users only</HelpText>
+              {/* <HelpText>Seven Bridges users only</HelpText> */}
             </FormControl>{" "}
             <FormControl>
               <label htmlFor="terraUsername">
@@ -280,7 +281,7 @@ export const CloudCreditsForm = (props) => {
                 value={terraUsername}
                 onChange={handleChangeTerraUserName}
               />
-              <HelpText>Terra users only</HelpText>
+              {/* <HelpText>Terra users only</HelpText> */}
             </FormControl>
           </>
         );
@@ -304,7 +305,7 @@ export const CloudCreditsForm = (props) => {
                 value={username}
                 onChange={handleChangeUserName}
               />
-              <HelpText>Seven Bridges users only</HelpText>
+              {/* <HelpText>Seven Bridges users only</HelpText> */}
             </FormControl>
           </>
         );
@@ -328,7 +329,7 @@ export const CloudCreditsForm = (props) => {
                 value={username}
                 onChange={handleChangeUserName}
               />
-              <HelpText>Seven Bridges users only</HelpText>
+              {/* <HelpText>Seven Bridges users only</HelpText> */}
             </FormControl>
           </>
         );
@@ -351,7 +352,7 @@ export const CloudCreditsForm = (props) => {
                 value={terraUsername}
                 onChange={handleChangeTerraUserName}
               />
-              <HelpText>Terra users only</HelpText>
+              {/* <HelpText>Terra users only</HelpText> */}
             </FormControl>
           </>
         );
@@ -374,7 +375,7 @@ export const CloudCreditsForm = (props) => {
                 value={terraUsername}
                 onChange={handleChangeTerraUserName}
               />
-              <HelpText>Terra users only</HelpText>
+              {/* <HelpText>Terra users only</HelpText> */}
             </FormControl>
           </>
         );
@@ -751,7 +752,7 @@ export const CloudCreditsForm = (props) => {
             </>
           )}
           <br />
-          <SubmitButton>Submit</SubmitButton>
+          <SubmitButton disabled={buttonLocked}>Submit</SubmitButton>
         </Form>
         {/* {!wasSubmitted && platformOptions.length === 0 && (
           <LoadingDots

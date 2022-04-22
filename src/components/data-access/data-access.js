@@ -36,7 +36,7 @@ export const DataAccess = ({ location }) => {
   const { isCompact } = useWindowWidth();
   const fenceCheckAccessUrl = `${
     process.env.GATSBY_FENCE_AUTH_ROOT
-  }/user/oauth2/authorize?idp=fence&client_id=${
+  }/user/oauth2/authorize?idp=ras&client_id=${
     process.env.GATSBY_FENCE_CLIENT_ID
   }&redirect_uri=${
     process.env.NODE_ENV === "production"
