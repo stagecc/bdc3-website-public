@@ -74,12 +74,13 @@ const CloudCreditsPage = () => (
       <Heading>Pilot Funding</Heading>
 
       <Paragraph>
-        New users of BioData Catalyst may apply for an initial $500 in cloud
-        credits, also known as Pilot Credits, and many analyses can be completed
-        for that amount or less. Others, including NIH intramural researchers,
-        may use the $500 in cloud credits to test and evaluate BioData Catalyst
-        for their research needs, for example piloting pipelines on smaller
-        samples and estimating how much full analysis will cost.
+        New users of BioData Catalyst who are affiliated with non-commercial 
+        entities may apply for an initial $500 in cloud credits, also known as 
+        Pilot Credits, and many analyses can be completed for that amount or 
+        less. Others, including NIH intramural researchers, may use the $500 
+        in cloud credits to test and evaluate BioData Catalyst for their 
+        research needs, for example piloting pipelines on smaller samples and 
+        estimating how much full analysis will cost.
       </Paragraph>
 
       <Paragraph>
@@ -94,7 +95,7 @@ const CloudCreditsPage = () => (
     </section>
 
     <section>
-      <Heading>Cloud Costs Exceeding the $500 in Pilot Funding</Heading>
+      <Heading>Cloud Costs After or Without Pilot Funding</Heading>
 
       <Paragraph>
         Users support their own cloud costs once they exceed their pilot 
@@ -137,14 +138,15 @@ const CloudCreditsPage = () => (
       <Heading>NHLBI BioData Catalyst Cloud Credit Program</Heading>
 
       <Paragraph>
-        The NHLBI BioData Catalyst Cloud Credit Program offers users the
-        opportunity to apply for additional cloud credits to support research
-        projects in the heart, lung, blood, and sleep fields. Cloud credits are
-        awarded on a per project basis, so if multiple users are working
-        together on a larger project the group should submit one application.
-        All individuals involved in a project will be able to make use of
-        awarded cloud credits through a shared billing group on either BioData
-        Catalyst Powered by Seven Bridges or BioData Catalyst Powered by Terra.
+        The NHLBI BioData Catalyst Cloud Credit Program offers users affiliated 
+        with non-commercial entities the opportunity to apply for additional 
+        cloud credits to support research projects in the heart, lung, blood, 
+        and sleep fields. Cloud credits are awarded on a per project basis, so 
+        if multiple users are working together on a larger project the group 
+        should submit one application. All individuals involved in a project 
+        will be able to make use of awarded cloud credits through a shared 
+        billing group on either BioData Catalyst Powered by Seven Bridges or 
+        BioData Catalyst Powered by Terra.
       </Paragraph>
 
       <Paragraph>
