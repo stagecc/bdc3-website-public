@@ -98,13 +98,13 @@ const CloudCreditsPage = () => (
       <Heading>Cloud Costs After or Without Pilot Funding</Heading>
 
       <Paragraph>
-        Users support their own cloud costs if they are ineligible for pilot 
-        funding or once they exhaust their pilot funding. BioData Catalyst 
-        Powered by Terra can cover costs using their own Google accounts. Users 
-        of BioData Catalyst Powered by Seven Bridges can cover additional costs 
-        by providing a credit card or purchase order number. To support your own 
-        cloud costs on Seven Bridges, please contact support@sevenbridges.com. To 
-        support your own cloud costs on Terra, please contact support@terra.bio.
+        Users support their own cloud costs once they exceed their pilot 
+        funding. Users of BioData Catalyst Powered by Seven Bridges can cover 
+        additional costs by providing a credit card or purchase order number. 
+        Users of BioData Catalyst Powered by Terra can cover costs using their 
+        own Google accounts.  To support your own cloud costs on Seven Bridges, 
+        please contact support@sevenbridges.com. To support your own cloud costs 
+        on Terra, please contact support@terra.bio.
       </Paragraph>
 
       <Paragraph>
