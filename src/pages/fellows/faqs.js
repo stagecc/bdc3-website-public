@@ -5,24 +5,28 @@ import {
   Title,
   Heading,
   Paragraph,
-  ErrorMessage
+  ErrorMessage,
 } from "../../components/typography";
 import { Card, CardHeader, CardBody } from "../../components/card";
 // import { Accordion } from '../components/accordion'
 import { Link } from "../../components/link";
 import { Dots as LoadingDots } from "../../components/loading";
 import { useFreshdeskFaqs } from "../../hooks";
-import { Accordion, Panel } from "@mwatson/react-accessible-accordion";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import Typography from "@mui/material/Typography";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const panelStyles = {
   body: {
     borderBottom: "1px solid #ddd",
-    lineHeight: 1.5
-  }
+    lineHeight: 1.5,
+  },
 };
 
 const FaqPage = () => {
-  const { isLoading, folders, error } = useFreshdeskFaqs("FELLOWS");
+  const { isLoading, error, folders } = useFreshdeskFaqs("FELLOWS");
 
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters>
@@ -58,10 +62,9 @@ const FaqPage = () => {
           textPlacement="top"
         />
       )}
-
       {// If loading articles is complete, render them.
       !isLoading &&
-        folders.map(folder => {
+        folders.map((folder) => {
           return (
             <Card key={folder.id}>
               <CardHeader>{folder.name}</CardHeader>
@@ -69,23 +72,25 @@ const FaqPage = () => {
                 <Paragraph noMargin>{folder.description}</Paragraph>
               </CardBody>
               {folder.articles ? (
-                <CardBody style={{ padding: "1rem 0" }}>
-                  <Accordion>
-                    {folder.articles.map(article => (
-                      <Panel
-                        key={article.title}
-                        title={article.title}
+                <CardBody>
+                  {folder.articles.map((article, i) => (
+                    <Accordion>
+                      <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls={i + 1}
                         id={article.title}
-                        styles={panelStyles}
                       >
+                        {article.title}
+                      </AccordionSummary>
+                      <AccordionDetails>
                         <div
                           dangerouslySetInnerHTML={{
-                            __html: article.description
+                            __html: article.description,
                           }}
                         />
-                      </Panel>
-                    ))}
-                  </Accordion>
+                      </AccordionDetails>
+                    </Accordion>
+                  ))}
                 </CardBody>
               ) : (
                 <CardBody>Loading...</CardBody>
@@ -98,12 +103,10 @@ const FaqPage = () => {
 
       <Paragraph>
         If unanswered questions remain, view our complete{" "}
-        <Link to="https://bdcatalyst.freshdesk.com/">
-          Knowledge Base
-        </Link>{" "}
-        or submit a <Link to="/contact">help request</Link> to receive
-        assistance. Questions regarding the Fellows Program may be directed to
-        the NHLBI BioData Catalyst Help Desk and by selecting the{" "}
+        <Link to="https://bdcatalyst.freshdesk.com/">Knowledge Base</Link> or
+        submit a <Link to="/contact">help request</Link> to receive assistance.
+        Questions regarding the Fellows Program may be directed to the NHLBI
+        BioData Catalyst Help Desk and by selecting the{" "}
         <strong>Fellows Program</strong> type from the{" "}
         <Link to="/contact/">contact form</Link>.
       </Paragraph>
