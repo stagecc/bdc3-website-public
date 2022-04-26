@@ -15,15 +15,14 @@ import { useFreshdeskFaqs } from "../../hooks";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-const panelStyles = {
-  body: {
-    borderBottom: "1px solid #ddd",
-    lineHeight: 1.5,
-  },
-};
+// const panelStyles = {
+//   body: {
+//     borderBottom: "1px solid #ddd",
+//     lineHeight: 1.5,
+//   },
+// };
 
 const FaqPage = () => {
   const { isLoading, error, folders } = useFreshdeskFaqs("FELLOWS");
@@ -64,7 +63,7 @@ const FaqPage = () => {
       )}
       {// If loading articles is complete, render them.
       !isLoading &&
-        folders.map((folder) => {
+        folders.map((folder,i) => {
           return (
             <Card key={folder.id}>
               <CardHeader>{folder.name}</CardHeader>
@@ -74,7 +73,7 @@ const FaqPage = () => {
               {folder.articles ? (
                 <CardBody>
                   {folder.articles.map((article, i) => (
-                    <Accordion>
+                    <Accordion key={article.title + i}>
                       <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls={i + 1}
