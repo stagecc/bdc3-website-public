@@ -8,7 +8,6 @@ import {
   ErrorMessage,
 } from "../../components/typography";
 import { Card, CardHeader, CardBody } from "../../components/card";
-// import { Accordion } from '../components/accordion'
 import { Link } from "../../components/link";
 import { Dots as LoadingDots } from "../../components/loading";
 import { useFreshdeskFaqs } from "../../hooks";
@@ -16,13 +15,6 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-
-// const panelStyles = {
-//   body: {
-//     borderBottom: "1px solid #ddd",
-//     lineHeight: 1.5,
-//   },
-// };
 
 const FaqPage = () => {
   const { isLoading, error, folders } = useFreshdeskFaqs("FELLOWS");
@@ -76,7 +68,7 @@ const FaqPage = () => {
                     <Accordion key={article.title + i}>
                       <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
-                        aria-controls={i + 1}
+                        aria-controls={article.title}
                         id={article.title}
                       >
                         {article.title}

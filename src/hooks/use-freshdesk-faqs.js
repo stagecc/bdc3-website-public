@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-// const GENERAL = 'GENERAL'
 const FELLOWS = "FELLOWS";
-const FRESHDESK_API_ROOT = process.env.GATSBY_FRESHDESK_API_ROOT_URL;
-const FRESHDESK_API_KEY = process.env.GATSBY_FRESHDESK_API_KEY;
+const FRESHDESK_API_ROOT = "https://bdcatalyst.freshdesk.com/api/v2";
+const FRESHDESK_API_KEY = "pPdU3tldVlQt0TdXAMO";
+// const FRESHDESK_API_ROOT = process.env.GATSBY_FRESHDESK_API_ROOT_URL;
+// const FRESHDESK_API_KEY = process.env.GATSBY_FRESHDESK_API_KEY;
 const FRESHDESK_GENERAL_FAQS_CATEGORY_ID = "60000157358";
 const FRESHDESK_FELLOWS_FAQS_CATEGORY_ID = "60000294708";
 
@@ -49,11 +50,7 @@ export const useFreshdeskFaqs = (category) => {
               .then((result) => {
                 setFolders([...folders]);
               })
-              .finally((res) => {
-                setIsLoading(false);
-              })
           );
-          // Promise.all(articlePromises).then(responses => setFolders(responses));
         })
         .catch((error) => {
           setError("An error occurred while fetching articles from Freshdesk.");
@@ -61,6 +58,7 @@ export const useFreshdeskFaqs = (category) => {
         });
     };
     fetchArticles();
+    setIsLoading(false);
   }, [category]);
 
   return { isLoading, folders, error };
