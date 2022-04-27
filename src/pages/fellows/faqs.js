@@ -68,7 +68,7 @@ const FaqPage = () => {
                     <Accordion key={article.title + i}>
                       <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
-                        aria-controls={article.title}
+                        aria-controls={article.title + "-content"}
                         id={article.title}
                       >
                         {article.title}
