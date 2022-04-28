@@ -2,8 +2,8 @@
 title: "NHLBI BioData Catalyst Cross-Data Harmonization Interest Group"
 path: /events/2022-06-21_NHLBI_BioData_Catalyst_Cross-Data_Harmonization_Interest_Group
 date: 2022-06-21
-time: 1:00-2:00 pm EDT
-display_date: Tuesday, June 21st
+time: 1:00 - 2:00 p.m. EDT
+display_date: Tuesday, June 21st, 2022
 location: " "
 url: https://renci.zoom.us/j/92679200774?pwd=VzhoQithMERENzVWakR2Ym5Rd0tydz09
 tags: [interest groups, cross-data harmonization]

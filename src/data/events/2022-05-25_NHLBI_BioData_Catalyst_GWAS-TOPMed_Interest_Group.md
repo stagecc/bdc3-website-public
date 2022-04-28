@@ -2,8 +2,8 @@
 title: "NHLBI BioData Catalyst GWAS/TOPMed Interest Group"
 path: /events/2022-05-25_NHLBI_BioData_Catalyst_GWAS-TOPMed_Interest_Group
 date: 2022-05-25
-time: 11:00 am - 12:00 pm EDT
-display_date: Tuesday, May 25th
+time: 11:00 a.m. - 12:00 p.m. EDT
+display_date: Tuesday, May 25th, 2022
 location: " "
 url: https://renci.zoom.us/j/92679200774?pwd=VzhoQithMERENzVWakR2Ym5Rd0tydz09
 tags: [interest groups, GWAS, TOPMed]

@@ -2,8 +2,8 @@
 title: "NHLBI BioData Catalyst Workflow and Development Interest Group"
 path: /events/2022-07-18_NHLBI_BioData_Catalyst_Workflow_and_Development_Interest_Group
 date: 2022-07-18
-time: 1:30-2:30 pm EDT
-display_date: Monday, July 18th
+time: 1:30 - 2:30 p.m. EDT
+display_date: Monday, July 18th, 2022
 location: " "
 url: https://renci.zoom.us/j/99606818968?pwd=S2kwdW5ZbCtabjRYcHRQYWM4NnZkUT09 
 tags: [interest groups, workflow and development]
