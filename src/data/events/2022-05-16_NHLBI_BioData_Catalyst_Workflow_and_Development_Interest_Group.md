@@ -4,7 +4,7 @@ path: /events/2022-05-16_NHLBI_BioData_Catalyst_Workflow_and_Development_Interes
 date: 2022-05-16
 time: 1:30 - 2:30 p.m. EDT
 display_date: Monday, May 16th, 2022
-location: " "
+location: "Zoom (no registration required)"
 url: https://renci.zoom.us/j/99606818968?pwd=S2kwdW5ZbCtabjRYcHRQYWM4NnZkUT09 
 tags: [interest groups, workflow and development]
 seo:
@@ -19,6 +19,6 @@ Goals: Showcase the utility of reproducible analysis workflows by inviting commu
 
 Please join the Workflow and Development Interest Group for this month's "Meet the Scientist" on [May 16th, 2022 at 1:30 p.m. ET](https://renci.zoom.us/j/99606818968?pwd=S2kwdW5ZbCtabjRYcHRQYWM4NnZkUT09), for our next exploration on how the cloud platform is facilitating the research of our community members. Full flyer and research topic to follow shortly.
 
-Zoom Link (No Registration Required): [May 16th at 1:30pm ET](https://renci.zoom.us/j/99606818968?pwd=S2kwdW5ZbCtabjRYcHRQYWM4NnZkUT09)  
+**Zoom Link *(No Registration Required)*:** [May 16th, 2022 at 1:30 p.m. ET](https://renci.zoom.us/j/99606818968?pwd=S2kwdW5ZbCtabjRYcHRQYWM4NnZkUT09)  
 - **Meeting ID:** 996 0681 8968
 - **Passcode:** BDCatalyst

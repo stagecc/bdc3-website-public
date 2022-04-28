@@ -4,7 +4,7 @@ path: /events/2022-05-25_NHLBI_BioData_Catalyst_GWAS-TOPMed_Interest_Group
 date: 2022-05-25
 time: 11:00 a.m. - 12:00 p.m. EDT
 display_date: Tuesday, May 25th, 2022
-location: " "
+location: "Zoom (no registration required)"
 url: https://renci.zoom.us/j/92679200774?pwd=VzhoQithMERENzVWakR2Ym5Rd0tydz09
 tags: [interest groups, GWAS, TOPMed]
 seo:
@@ -17,6 +17,6 @@ seo:
 
 Goals: Create a regular forum for fellows to discuss issues, methods questions, or analysis hurdles faced when performing GWAS on the platform(s) and/or access issues with TOPMed data.
 
-Zoom Link (No Registration Required): https://renci.zoom.us/j/92679200774?pwd=VzhoQithMERENzVWakR2Ym5Rd0tydz09
-Meeting ID: 926 7920 0774
-Passcode: BDCatalyst
+**Zoom Link *(No Registration Required)*:** [May 25th, 2022 at 11:00 a.m. ET](https://renci.zoom.us/j/92679200774?pwd=VzhoQithMERENzVWakR2Ym5Rd0tydz09)
+- **Meeting ID:** 926 7920 0774
+- **Passcode:** BDCatalyst
