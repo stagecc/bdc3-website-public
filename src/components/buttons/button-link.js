@@ -21,9 +21,10 @@ export const ButtonExternalLink = styled(ButtonLink)
 `;
 
 export const ButtonCta = styled(ButtonLink)`
-  font-weight: bold;
+  font-weight: 600;
   padding: 1rem 2rem;
   font-size: 120%;
+  letter-spacing: 2px;
   // transition function inherited from ButtonLink, ...but changing the filter effect to include shadow
   filter: drop-shadow(0 0.25rem 0.5rem rgba(0, 0, 0, 0.5)) brightness(1);
   &:hover {
