@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { SEO } from "../../components/seo";
 import { graphql} from "gatsby";
 import { Link } from "../../components/link";
-import { Title, Meta } from "../../components/typography";
+import { Title, Meta, EventMetaData } from "../../components/typography";
 import { InlineList2 } from "../../components/list";
 import { TagLink } from "../../components/link";
 import { Module, PageContent } from "../../components/layout";
@@ -47,28 +47,27 @@ export default ({ data, pageContext }) => {
           <Title>{title}</Title>
 
           <EventMetadataWrapper>
-            <Meta>
-              <b>Date</b>: {display_date ? display_date : date}
-            </Meta>
-            {time && <Meta>Time: {time}</Meta>}
-            {/* <Meta>
+            <EventMetaData title="Date">
+              {display_date ? display_date : date}
+            </EventMetaData>
+            {time && <EventMetaData title='Time'>{time}</EventMetaData>}
+            {/* <EventMetaData>
               <b>Location</b>: {location}
-            </Meta> */}
+            </EventMetaData> */}
             {url && (
-              <Meta>
-                Location:{" "}
-                <a href={url} target="_blank" rel="noreferrer noopener">
+              <EventMetaData title="Meeting Details">
+                <a href={url} target="_blank" rel="noreferrer noopener" style={{fontWeight:"300"}}>
                   {url}
                 </a>
-              </Meta>
+              </EventMetaData>
             )}
             {presenter && (
-              <Meta>
+              <EventMetaData>
                 <b>Presenter</b>: {presenter}
-              </Meta>
+              </EventMetaData>
             )}
             {presentation_link && (
-              <Meta>
+              <EventMetaData>
                 <b>Presentation Link</b>:{" "}
                 <a
                   href={presentation_link}
@@ -77,33 +76,34 @@ export default ({ data, pageContext }) => {
                 >
                   {presentation_link}
                 </a>
-              </Meta>
+              </EventMetaData>
             )}
-            <Meta>
+            <EventMetaData title="Tags">
               <InlineList2
-                title="Tags"
                 items={tags.map((tag) => (
-                  <TagLink tag={tag} />
+                  <TagLink tag={tag} 
+                  style={{fontWeight:"400"}}  
+                  />
                 ))}
               />
-            </Meta>
-            <br></br>
-            <br></br>
-            <Meta style={{ textAlign: "center" }}>
+            </EventMetaData>
+            {/* <br></br>
+            <br></br> */}
+            {/* <div style={{ textAlign: "center" }}>
               <ButtonCta href={url} target="_blank">
                 Register Now!
               </ButtonCta>
-            </Meta>
+            </div> */}
           </EventMetadataWrapper>
 
           <Module title="Event Details">
             <Markdown src={ rawMarkdownBody } />
           </Module>
-          <div style={{ textAlign: "center" }}>
+          {/* <div style={{ textAlign: "center" }}>
             <ButtonCta href={url} target="_blank">
               Register Now!
             </ButtonCta>
-          </div>
+          </div> */}
         </div>
       </div>
 

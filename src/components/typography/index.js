@@ -6,3 +6,4 @@ export * from "./paragraph";
 export * from "./title";
 export * from "./meta";
 export * from "./subtitle";
+export * from "./eventmetadata";
