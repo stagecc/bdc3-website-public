@@ -3,14 +3,12 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 export const InlineList2 = ({
-  title,
   items,
-  separator = " ",
+  separator = ", ",
   noItemsIndicator = " ∅",
 }) => {
   return (
     <Fragment>
-      {title && <strong>{title}: </strong>}
       {items.length > 0
         ? items.map((item, i) => (
             <Fragment key={i}>
@@ -24,7 +22,6 @@ export const InlineList2 = ({
 };
 
 InlineList2.propTypes = {
-  title: PropTypes.string,
   items: PropTypes.array.isRequired,
   separator: PropTypes.string,
   noItemsIndicator: PropTypes.any,
