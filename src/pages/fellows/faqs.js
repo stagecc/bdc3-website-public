@@ -11,6 +11,7 @@ import { Card, CardHeader, CardBody } from "../../components/card";
 import { Link } from "../../components/link";
 import { Dots as LoadingDots } from "../../components/loading";
 import { useFreshdeskFaqs } from "../../hooks";
+import { Accordion as MwAccordion, Panel } from '@mwatson/react-accessible-accordion'
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
