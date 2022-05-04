@@ -88,22 +88,11 @@ export default ({ data, pageContext }) => {
               />
             </Meta>
             <br></br>
-            <br></br>
-            <Meta style={{ textAlign: "center" }}>
-              <ButtonCta href={url} target="_blank">
-                Register Now!
-              </ButtonCta>
-            </Meta>
           </EventMetadataWrapper>
 
           <Module title="Event Details">
             <Markdown src={ rawMarkdownBody } />
           </Module>
-          <div style={{ textAlign: "center" }}>
-            <ButtonCta href={url} target="_blank">
-              Register Now!
-            </ButtonCta>
-          </div>
         </div>
       </div>
 
