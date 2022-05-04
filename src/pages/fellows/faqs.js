@@ -11,10 +11,7 @@ import { Card, CardHeader, CardBody } from "../../components/card";
 import { Link } from "../../components/link";
 import { Dots as LoadingDots } from "../../components/loading";
 import { useFreshdeskFaqs } from "../../hooks";
-import { Accordion as MwAccordion, Panel } from '@mwatson/react-accessible-accordion'
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
+import { Accordion, Panel as AccordionPanel } from '@mwatson/react-accessible-accordion'
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const FaqPage = () => {
@@ -64,25 +61,23 @@ const FaqPage = () => {
                 <Paragraph noMargin>{folder.description}</Paragraph>
               </CardBody>
               {folder.articles ? (
-                <CardBody>
-                  {folder.articles.map((article, i) => (
-                    <Accordion key={article.title + i}>
-                      <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
-                        aria-controls={article.title + "-content"}
+                <CardBody style={{ padding: "1rem 0" }}>
+                  <Accordion>
+                    {folder.articles.map(article => (
+                      <AccordionPanel
+                        key={article.title}
+                        title={article.title}
                         id={article.title}
                       >
-                        {article.title}
-                      </AccordionSummary>
-                      <AccordionDetails>
                         <div
+                          style={{ padding: '1rem' }}
                           dangerouslySetInnerHTML={{
-                            __html: article.description,
+                            __html: article.description
                           }}
                         />
-                      </AccordionDetails>
-                    </Accordion>
-                  ))}
+                      </AccordionPanel>
+                    ))}
+                  </Accordion>
                 </CardBody>
               ) : (
                 <CardBody>Loading...</CardBody>

@@ -9,7 +9,7 @@
     "@emotion/styled": "^11.8.1",
     "@mui/icons-material": "^5.6.2",
     "@mui/material": "^5.6.3",
-    "@mwatson/react-accessible-accordion": "^1.4.4",
+    "@mwatson/react-accessible-accordion": "^1.4.5",
     "@nivo/pie": "^0.64.0",
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.26.1",
