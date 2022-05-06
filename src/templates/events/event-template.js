@@ -123,7 +123,6 @@ export default ({ data, pageContext }) => {
 
           {show_registration_button && (
             <div style={{ textAlign: "center" }}>
-              {console.log('button')}
               <ButtonCta href={url} target="_blank">
                 Register Now! {show_registration_button}
               </ButtonCta>
