@@ -20,21 +20,26 @@ const EventMetadataWrapper = styled.div`
     margin: 0;
   }
 `;
+
 const EventInfoLine = ({title, children}) => {
   return (
     <Fragment>
       <p style={{
-        margin: '0',
+        margin: '0.1rem 0',
         fontSize: '1.1rem',
         lineHeight: '1.5',
-        letterSpacing: '.7px',
         fontWeight: '300',
+        '& strong': {
+          fontWeight: '600'
+        }
       }}>
-        {title && <span style={{fontWeight:"600"}}>{title}: </span>}
+        {title && <strong>{title}: </strong>}
         {children}
       </p>
-  </Fragment>    )
+    </Fragment>
+  )
 }
+
 EventInfoLine.propTypes = {
   children: PropTypes.node.isRequired,
   title: PropTypes.string,
