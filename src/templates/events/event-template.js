@@ -1,10 +1,12 @@
-import React from "react";
+import React, { Fragment } from "react";
 import styled from "styled-components";
+import PropTypes from 'prop-types'
+
 // import { AnimateOnMount } from "../../components/anim"
 import { SEO } from "../../components/seo";
 import { graphql} from "gatsby";
 import { Link } from "../../components/link";
-import { Title, Meta, EventMetaData } from "../../components/typography";
+import { Title, Meta } from "../../components/typography";
 import { InlineList2 } from "../../components/list";
 import { TagLink } from "../../components/link";
 import { Module, PageContent } from "../../components/layout";
@@ -18,6 +20,60 @@ const EventMetadataWrapper = styled.div`
     margin: 0;
   }
 `;
+const EventInfoLine = ({title, children}) => {
+  return (
+    <Fragment>
+      <p style={{
+        margin: '0',
+        fontSize: '1.1rem',
+        lineHeight: '1.5',
+        letterSpacing: '.7px',
+        fontWeight: '300',
+      }}>
+        {title && <span style={{fontWeight:"600"}}>{title}: </span>}
+        {children}
+      </p>
+  </Fragment>    )
+}
+EventInfoLine.propTypes = {
+  children: PropTypes.node.isRequired,
+  title: PropTypes.string,
+}
+
+const EventInfo = ({date, display_date, time, location,  tags,  url,  presenter,  presentation_link }) => {
+return (
+  <Fragment>
+    <EventInfoLine title="Date"> {display_date ? display_date : date} </EventInfoLine>
+    {time && <EventInfoLine title='Time'> {time} </EventInfoLine>}
+    {location && <EventInfoLine title='Location'> {location} </EventInfoLine>}
+    {url && (
+      <EventInfoLine title="Meeting Details">
+        <a href={url} target="_blank" rel="noreferrer noopener">
+          {url}
+        </a>
+      </EventInfoLine>
+    )}
+    {presenter && <EventInfoLine title='Presenter'> {presenter} </EventInfoLine>}
+    {presentation_link && (
+      <EventInfoLine title='Presentation Link'>
+        <a href={presentation_link} target="_blank" rel="noreferrer noopener">
+          {presentation_link}
+        </a>
+      </EventInfoLine>
+    )}
+    <EventInfoLine title="Tags">
+      <InlineList2
+        items={tags.map((tag) => (
+          <TagLink tag={tag} 
+          style={{fontWeight:"400"}}  
+          />
+        ))}
+      />
+    </EventInfoLine>
+
+  </Fragment>
+)
+}
 
 export default ({ data, pageContext }) => {
   const { markdownRemark: { frontmatter, rawMarkdownBody } } = data;
@@ -27,7 +83,7 @@ export default ({ data, pageContext }) => {
     date,
     display_date,
     time,
-    // location,
+    location,
     tags,
     url,
     presenter,
@@ -47,54 +103,22 @@ export default ({ data, pageContext }) => {
           <Title>{title}</Title>
 
           <EventMetadataWrapper>
-            <EventMetaData title="Date">
-              {display_date ? display_date : date}
-            </EventMetaData>
-            {time && <EventMetaData title='Time'>{time}</EventMetaData>}
-            {/* <EventMetaData>
-              <b>Location</b>: {location}
-            </EventMetaData> */}
-            {url && (
-              <EventMetaData title="Meeting Details">
-                <a href={url} target="_blank" rel="noreferrer noopener" style={{fontWeight:"300"}}>
-                  {url}
-                </a>
-              </EventMetaData>
-            )}
-            {presenter && (
-              <EventMetaData>
-                <b>Presenter</b>: {presenter}
-              </EventMetaData>
-            )}
-            {presentation_link && (
-              <EventMetaData>
-                <b>Presentation Link</b>:{" "}
-                <a
-                  href={presentation_link}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                >
-                  {presentation_link}
-                </a>
-              </EventMetaData>
-            )}
-            <EventMetaData title="Tags">
-              <InlineList2
-                items={tags.map((tag) => (
-                  <TagLink tag={tag} 
-                  style={{fontWeight:"400"}}  
-                  />
-                ))}
-              />
-            </EventMetaData>
-            {/* <br></br>
-            <br></br> */}
+            <EventInfo
+                  date={date}
+                  display_date={display_date}
+                  time={time}
+                  location={location}
+                  tags={tags}
+                  url={url}
+                  presenter={presenter}
+                  presentation_link={presentation_link}
+            />
+          </EventMetadataWrapper>
             {/* <div style={{ textAlign: "center" }}>
               <ButtonCta href={url} target="_blank">
                 Register Now!
               </ButtonCta>
             </div> */}
-          </EventMetadataWrapper>
 
           <Module title="Event Details">
             <Markdown src={ rawMarkdownBody } />
