@@ -93,6 +93,7 @@ export default ({ data, pageContext }) => {
     url,
     presenter,
     presentation_link,
+    show_registration_button,
     seo,
   } = frontmatter;
 
@@ -119,20 +120,26 @@ export default ({ data, pageContext }) => {
                   presentation_link={presentation_link}
             />
           </EventMetadataWrapper>
-            {/* <div style={{ textAlign: "center" }}>
+
+          {show_registration_button && (
+            <div style={{ textAlign: "center" }}>
+              {console.log('button')}
               <ButtonCta href={url} target="_blank">
-                Register Now!
+                Register Now! {show_registration_button}
               </ButtonCta>
-            </div> */}
+            </div>
+          )}
 
           <Module title="Event Details">
             <Markdown src={ rawMarkdownBody } />
           </Module>
+
           {/* <div style={{ textAlign: "center" }}>
             <ButtonCta href={url} target="_blank">
               Register Now!
             </ButtonCta>
           </div> */}
+
         </div>
       </div>
 
