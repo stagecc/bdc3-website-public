@@ -194,6 +194,7 @@ export const newsItemQuery = graphql`
         time
         url
         tags
+        show_registration_button
         seo {
           title
           description
