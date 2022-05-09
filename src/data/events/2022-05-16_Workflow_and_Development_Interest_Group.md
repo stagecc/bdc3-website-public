@@ -8,7 +8,7 @@ location: "Zoom (no registration required)"
 url: https://renci.zoom.us/j/99606818968?pwd=S2kwdW5ZbCtabjRYcHRQYWM4NnZkUT09
 presenter: ''
 presentation_link: ''
-show_registration_button: true
+show_registration_button: false
 tags: [interest groups, workflow and development]
 seo:
   title: "Workflow and Development Interest Group - May"
