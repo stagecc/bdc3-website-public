@@ -1,5 +1,7 @@
-import React from "react";
+import React, { Fragment } from "react";
 import styled from "styled-components";
+import PropTypes from 'prop-types'
+
 // import { AnimateOnMount } from "../../components/anim"
 import { SEO } from "../../components/seo";
 import { graphql} from "gatsby";
@@ -19,6 +21,66 @@ const EventMetadataWrapper = styled.div`
   }
 `;
 
+const EventInfoLine = ({title, children}) => {
+  return (
+    <Fragment>
+      <p style={{
+        margin: '0.1rem 0',
+        fontSize: '1.1rem',
+        lineHeight: '1.5',
+        fontWeight: '300',
+        '& strong': {
+          fontWeight: '600'
+        }
+      }}>
+        {title && <strong>{title}: </strong>}
+        {children}
+      </p>
+    </Fragment>
+  )
+}
+
+EventInfoLine.propTypes = {
+  children: PropTypes.node.isRequired,
+  title: PropTypes.string,
+}
+
+const EventInfo = ({date, display_date, time, location,  tags,  url,  presenter,  presentation_link }) => {
+return (
+  <Fragment>
+    
+    <EventInfoLine title="Date">
+      {display_date ? display_date : date}
+    </EventInfoLine>
+    
+    {time && <EventInfoLine title='Time'> {time} </EventInfoLine>}
+    {/* 
+    {location && <EventInfoLine title='Location'> {location} </EventInfoLine>} 
+    */}
+
+    {url && (
+      <EventInfoLine title="Location">
+        Zoom (
+        <Link to={url} >
+          Click Here to Join
+        </Link>)
+      </EventInfoLine>
+    )}
+
+    <EventInfoLine title="Tags">
+      <InlineList2
+        items={tags.map((tag) => (
+          <TagLink tag={tag} 
+          style={{fontWeight:"400"}}  
+          />
+        ))}
+      />
+    </EventInfoLine>
+
+  </Fragment>
+)
+}
+
 export default ({ data, pageContext }) => {
   const { markdownRemark: { frontmatter, rawMarkdownBody } } = data;
   const { prev, next } = pageContext;
@@ -27,72 +89,60 @@ export default ({ data, pageContext }) => {
     date,
     display_date,
     time,
-    // location,
+    location,
     tags,
+    zoom,
     url,
     presenter,
     presentation_link,
+    show_registration_button,
     seo,
   } = frontmatter;
+
+
 
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters>
       <SEO
         title={seo.title}
         description={seo.description}
-        keywords={seo.keywords}
       />
       <div className="event-item-container">
         <div className="event-item">
           <Title>{title}</Title>
 
           <EventMetadataWrapper>
-            <Meta>
-              <b>Date</b>: {display_date ? display_date : date}
-            </Meta>
-            {time && <Meta>Time: {time}</Meta>}
-            {/* <Meta>
-              <b>Location</b>: {location}
-            </Meta> */}
-            {url && (
-              <Meta>
-                Location:{" "}
-                <a href={url} target="_blank" rel="noreferrer noopener">
-                  {url}
-                </a>
-              </Meta>
-            )}
-            {presenter && (
-              <Meta>
-                <b>Presenter</b>: {presenter}
-              </Meta>
-            )}
-            {presentation_link && (
-              <Meta>
-                <b>Presentation Link</b>:{" "}
-                <a
-                  href={presentation_link}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                >
-                  {presentation_link}
-                </a>
-              </Meta>
-            )}
-            <Meta>
-              <InlineList2
-                title="Tags"
-                items={tags.map((tag) => (
-                  <TagLink tag={tag} />
-                ))}
-              />
-            </Meta>
-            <br></br>
+            <EventInfo
+                  date={date}
+                  display_date={display_date}
+                  time={time}
+                  location={location}
+                  url={zoom ? zoom.url : url}
+                  presenter={presenter}
+                  presentation_link={presentation_link}
+                  tags={tags}
+            />
           </EventMetadataWrapper>
+
+          {show_registration_button && (
+            <div style={{ textAlign: "center", paddingTop: '2rem'}}>
+              <ButtonCta href={url} target="_blank">
+                Register Now!
+              </ButtonCta>
+            </div>
+          )}
 
           <Module title="Event Details">
             <Markdown src={ rawMarkdownBody } />
           </Module>
+
+          {/* * TODO: Conditionally render second button if the markdown is longer than a certain number of characters */}
+          {/* <div style={{ textAlign: "center" }}>
+            <ButtonCta href={url} target="_blank">
+              Register Now!
+            </ButtonCta>
+          </div> */}
+
         </div>
       </div>
 
@@ -148,6 +198,7 @@ export const newsItemQuery = graphql`
         time
         url
         tags
+        show_registration_button
         seo {
           title
           description
