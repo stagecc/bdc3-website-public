@@ -135,6 +135,7 @@ export default ({ data, pageContext }) => {
           <Module title="Event Details">
             <Markdown src={ rawMarkdownBody } />
           </Module>
+
           {/* * TODO: Conditionally render second button if the markdown is longer than a certain number of characters */}
           {/* <div style={{ textAlign: "center" }}>
             <ButtonCta href={url} target="_blank">
