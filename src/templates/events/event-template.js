@@ -45,7 +45,7 @@ EventInfoLine.propTypes = {
   title: PropTypes.string,
 }
 
-const EventInfo = ({date, display_date, time, location,  tags,  url,  presenter,  presentation_link }) => {
+const EventInfo = ({date, display_date, time, location, zoom, tags,  url,  presenter,  presentation_link }) => {
 return (
   <Fragment>
     
@@ -67,11 +67,19 @@ return (
       </EventInfoLine>
     )}
 
+    {zoom && (
+      <EventInfoLine title="Meeting Details">
+        <Meta style={{marginLeft: '2rem'}}>Meeting ID: {zoom.meeting_id}</Meta>
+        <Meta style={{marginLeft: '2rem'}}>Passcode: {zoom.passcode}</Meta>
+      </EventInfoLine>
+
+    )}
+
     <EventInfoLine title="Tags">
       <InlineList2
         items={tags.map((tag) => (
           <TagLink tag={tag} 
-          style={{fontWeight:"400"}}  
+          style={{fontWeight:"300", fontSize: '0.8rem'}}  
           />
         ))}
       />
@@ -117,7 +125,8 @@ export default ({ data, pageContext }) => {
                   display_date={display_date}
                   time={time}
                   location={location}
-                  url={zoom ? zoom.url : url}
+                  url={url}
+                  zoom={zoom}
                   presenter={presenter}
                   presentation_link={presentation_link}
                   tags={tags}
@@ -197,6 +206,10 @@ export const newsItemQuery = graphql`
         title
         time
         url
+        zoom {
+          meeting_id
+          passcode
+        }
         tags
         show_registration_button
         seo {

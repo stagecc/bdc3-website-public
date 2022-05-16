@@ -1,11 +1,14 @@
 ---
-title: "NHLBI BioData Catalyst Workflow and Development Interest Group"
+title: "NHLBI BioData Catalyst Workflow and Development Interest Group: Meet the Scientist"
 path: /events/2022-05-16_NHLBI_BioData_Catalyst_Workflow_and_Development_Interest_Group
 date: 2022-05-16
 time: 1:30 - 2:30 p.m. EDT
 display_date: Monday, May 16th, 2022
 location: "Zoom (no registration required)"
 url: https://renci.zoom.us/j/99606818968?pwd=S2kwdW5ZbCtabjRYcHRQYWM4NnZkUT09
+zoom:
+  meeting_id: 996 0681 8968
+  passcode: BDCatalyst
 presenter: ''
 presentation_link: ''
 show_registration_button: false
