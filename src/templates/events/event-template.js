@@ -90,7 +90,7 @@ return (
 }
 
 export default ({ data, pageContext }) => {
-  const { markdownRemark: { frontmatter, rawMarkdownBody } } = data;
+  const { markdownRemark: { frontmatter, rawMarkdownBody, html } } = data;
   const { prev, next } = pageContext;
   const {
     title,
@@ -103,6 +103,7 @@ export default ({ data, pageContext }) => {
     url,
     presenter,
     presentation_link,
+    speaker,
     show_registration_button,
     seo,
   } = frontmatter;
@@ -142,7 +143,10 @@ export default ({ data, pageContext }) => {
           )}
 
           <Module title="Event Details">
-            <Markdown src={ rawMarkdownBody } />
+            {/* <Markdown src={ rawMarkdownBody } />
+            <Markdown src={ html } /> */}
+            <div dangerouslySetInnerHTML={{ __html: html }} />
+
           </Module>
 
           {/* * TODO: Conditionally render second button if the markdown is longer than a certain number of characters */}
@@ -198,6 +202,7 @@ export default ({ data, pageContext }) => {
 export const newsItemQuery = graphql`
   query($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
+      html
       rawMarkdownBody
       frontmatter {
         date(formatString: "MMMM D, YYYY")
