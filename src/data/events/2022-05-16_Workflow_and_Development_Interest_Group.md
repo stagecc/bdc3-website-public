@@ -1,5 +1,5 @@
 ---
-title: "NHLBI BioData Catalyst Workflow and Development Interest Group"
+title: "BDC Workflow and Development Interest Group"
 path: /events/2022-05-16_NHLBI_BioData_Catalyst_Workflow_and_Development_Interest_Group
 date: 2022-05-16
 time: 1:30 - 2:30 p.m. EDT
