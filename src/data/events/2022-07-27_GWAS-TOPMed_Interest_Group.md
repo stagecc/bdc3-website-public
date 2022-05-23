@@ -1,6 +1,6 @@
 ---
 title: "NHLBI BioData Catalyst GWAS/TOPMed Interest Group"
-path: /events/2022-07-27_NHLBI_BioData_Catalyst_GWAS-TOPMed_Interest_Group
+path: /events/2022-07-27_NHLBI_BioData_Catalyst__GWAS-TOPMed_Interest_Group
 date: 2022-07-27
 time: 11:00 a.m. - 12:00 p.m. EDT
 display_date: Tuesday, July 27th, 2022

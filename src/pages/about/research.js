@@ -28,9 +28,6 @@ const ResearchPage = ({ data }) => {
             }}
           >
             <Paragraph>
-              Published on {date} in <em>{location}</em>
-            </Paragraph>
-            <Paragraph>
               {title ===
               "Streamlining statistical reproducibility: NHLBI ORCHID clinical trial results reproduction"
                 ? "BioData Catalyst Consortium Authors:"
@@ -41,6 +38,9 @@ const ResearchPage = ({ data }) => {
                   {i + 1 < bdcAuthors.length ? "," : ""}{" "}
                 </span>
               ))}
+            </Paragraph>
+            <Paragraph>
+              Published on {date} in <em>{location}</em>
             </Paragraph>
           </div>
           <br />
