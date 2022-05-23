@@ -1,6 +1,6 @@
 ---
-title: "BDC Cross-Data Harmonization Interest Group"
-path: /events/2022-07-19_BDC_Cross-Data_Harmonization_Interest_Group
+title: "NHLBI BioData Catalyst Cross-Data Harmonization Interest Group"
+path: /events/2022-07-19_NHLBI_BioData_Catalyst__Cross-Data_Harmonization_Interest_Group
 date: 2022-07-19
 time: 1:00 - 2:00 p.m. EDT
 display_date: Tuesday, July 19th, 2022
