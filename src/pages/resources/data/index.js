@@ -47,7 +47,7 @@ const DataPage = ({ data, location }) => {
 
       <br />
 
-      <Heading>Studies in BioData Catalyst</Heading>
+      <Heading>Studies available throughout the BioData Catalyst ecosystem</Heading>
 
       
       <BulletedList>
