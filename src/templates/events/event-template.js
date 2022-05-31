@@ -45,7 +45,7 @@ EventInfoLine.propTypes = {
   title: PropTypes.string,
 }
 
-const EventInfo = ({date, display_date, time, location,  tags,  url,  presenter,  presentation_link }) => {
+const EventInfo = ({date, display_date, time, location,  tags,  url,  presenter,  presentation_link, registration_required }) => {
 return (
   <Fragment>
     
@@ -54,18 +54,34 @@ return (
     </EventInfoLine>
     
     {time && <EventInfoLine title='Time'> {time} </EventInfoLine>}
-    {/* 
-    {location && <EventInfoLine title='Location'> {location} </EventInfoLine>} 
-    */}
+    
+    {/* {location && <EventInfoLine title='Location'> {location} </EventInfoLine>}  */}
+   
+    {registration_required ? (
+      <EventInfoLine title="Location">
+      Zoom (
+      <Link to={url} >
+        Click Here to Register
+      </Link>)
+    </EventInfoLine>
 
-    {url && (
+    ) : (
+      <EventInfoLine title="Location">
+      Zoom (
+      <Link to={url} >
+        Click Here to Join
+      </Link>)
+    </EventInfoLine>
+
+    )}
+    {/* {url && (
       <EventInfoLine title="Location">
         Zoom (
         <Link to={url} >
           Click Here to Join
         </Link>)
       </EventInfoLine>
-    )}
+    )} */}
 
     <EventInfoLine title="Tags">
       <InlineList2
@@ -95,7 +111,7 @@ export default ({ data, pageContext }) => {
     url,
     presenter,
     presentation_link,
-    show_registration_button,
+    registration_required,
     seo,
   } = frontmatter;
 
@@ -121,10 +137,11 @@ export default ({ data, pageContext }) => {
                   presenter={presenter}
                   presentation_link={presentation_link}
                   tags={tags}
+                  registration_required={registration_required}
             />
           </EventMetadataWrapper>
 
-          {show_registration_button && (
+          {registration_required && (
             <div style={{ textAlign: "center", paddingTop: '2rem'}}>
               <ButtonCta href={url} target="_blank">
                 Register Now!
@@ -198,7 +215,7 @@ export const newsItemQuery = graphql`
         time
         url
         tags
-        show_registration_button
+        registration_required
         seo {
           title
           description
