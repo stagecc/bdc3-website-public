@@ -33,7 +33,7 @@ const IndexPage = () => {
           <CardHeader size="large">What is BioData Catalyst?</CardHeader>
           <CardBody image={{ placement: "right", path: SickleCellImage }}>
             <Paragraph>
-              NHLBI BioData Catalyst is a cloud-based platform providing tools,
+              NHLBI BioData Catalyst is a cloud-based ecosystem providing tools,
               applications, and workflows in secure workspaces. By increasing
               access to NHLBI datasets and innovative data analysis
               capabilities, BioData Catalyst accelerates efficient biomedical

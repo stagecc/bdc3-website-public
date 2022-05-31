@@ -119,7 +119,7 @@ const AboutPage = ({ data }) => {
 
               <Paragraph>
                 Though the primary goal of the BioData Catalyst project is to
-                build a data science platform, at its core, this is a
+                build a data science ecosystem, at its core, this is a
                 people-centric endeavor. BioData Catalyst is also building a
                 community of practice working to collaboratively solve technical
                 and scientific challenges.
