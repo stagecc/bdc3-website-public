@@ -1,6 +1,6 @@
 ---
 title: "NHLBI BioData Catalyst Community Hours: SAS Studio on BioData Catalyst and COVID-19 Data Harmonization"
-path: /events/2022-06-22/Community_Hours
+path: /events/2022-06-22/community_hours
 date: 2022-06-22
 time: 1:00 - 2:00 pm EDT
 display_date: Wednesday, June 22nd, 2022
