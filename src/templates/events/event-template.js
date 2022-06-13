@@ -14,6 +14,7 @@ import { Visible } from "react-grid-system";
 import { HorizontalRule } from "../../components/horizontal-rule";
 import { ButtonCta } from "../../components/buttons";
 import { Markdown } from '../../components/markdown'
+import { Card, CardBody } from "../../components/card";
 
 const EventMetadataWrapper = styled.div`
   ${Meta} {
@@ -116,8 +117,26 @@ export default ({ data, pageContext }) => {
     seo,
   } = frontmatter;
 
+  const todaysDate = new Date();
 
+  const dateString = `${todaysDate.getFullYear()}-${
+    todaysDate.getMonth() + 1 < 10 ? "0" : ""
+  }${todaysDate.getMonth() + 1}-${
+    todaysDate.getDate() < 10 ? "0" : ""
+  }${todaysDate.getDate()}`;
 
+  const parsedEventDate = new Date(Date.parse(date))
+
+  const eventDate = `${parsedEventDate.getFullYear()}-${
+    parsedEventDate.getMonth() + 1 < 10 ? "0" : ""
+  }${parsedEventDate.getMonth() + 1}-${
+    parsedEventDate.getDate() < 10 ? "0" : ""
+  }${parsedEventDate.getDate()}`
+
+  const past = dateString > eventDate ? true : false
+
+  const forumURL = "https://bdcatalyst.freshdesk.com/support/discussions/forums/60000122778"
+  
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters>
       <SEO
@@ -128,6 +147,20 @@ export default ({ data, pageContext }) => {
         <div className="event-item">
           <Title>{title}</Title>
 
+        {
+          past && (
+            <Card>
+              <CardBody>
+                <Meta>
+                  This event has passed. To view session materials click <Link to={presentation_link ? presentation_link : forumURL }>
+                     here
+                    </Link>
+                  .
+                </Meta>
+              </CardBody>
+            </Card>
+          )
+        }
           <EventMetadataWrapper>
             <EventInfo
                   date={date}
@@ -228,6 +261,7 @@ export const newsItemQuery = graphql`
         title
         time
         url
+        presentation_link
         tags
         registration_required
         flyer {
