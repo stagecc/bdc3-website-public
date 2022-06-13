@@ -6,6 +6,7 @@ time: 1:00 - 2:00 pm EDT
 display_date: Wednesday, August 25, 2021
 location: " "
 url: https://bit.ly/3ArDjuj
+presentation_link: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000406463
 tags: [community hours, workspaces, cloud credits]
 seo:
   title: "NHLBI BioData Catalyst Community Hours: A Tour of the Analysis Workspaces"
