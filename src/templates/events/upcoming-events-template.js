@@ -5,8 +5,8 @@ import { SEO } from "../../components/seo";
 import {
   Title,
   Paragraph,
-  Heading,
   Subheading,
+  Subsubheading,
   // Meta,
 } from "../../components/typography";
 import { Link } from "../../components/link";
@@ -28,49 +28,47 @@ const EventsList = ({ title, events }) => {
             path,
             date,
             display_date,
-            // url,
-            // fabricHosted,
           } = event.node.frontmatter;
           return (
-            <Fragment key={`${date}${title}`}>
-              <Subheading>{display_date ? display_date : date}</Subheading>
-              <Heading>
-                <Link to={path}>{title}</Link>
-              </Heading>
-              {/* {!fabricHosted && url && (
-                <Meta
+            <Fragment key={title}>
+              <Subsubheading 
+                style={{
+                  fontWeight: "500",
+                  fontSize: "1rem",
+                  margin: "0 0 0.5rem",
+                }}
+              >
+                {display_date ? display_date : date}
+              </Subsubheading>
+              <Subheading 
+                style={{
+                  fontSize: "1.4rem",
+                  margin: '0',
+                  fontWeight: "600",
+                  letterSpacing: "0.5px"
+                }}
+              >
+                <Link 
+                  to={path}
                   style={{
-                    display: "inline-flex",
-                    justifyContent: "flex-start",
-                    alignItems: "flex-start",
-                    flexDirection: isCompact ? "column" : "row",
+                    textUnderlineOffset: "0.3rem",
+                    lineHeight: '1.7'
                   }}
-                >
-                  <span
-                    style={{
-                      display: "inline-flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                    }}
-                  >
-                    Event Website:
-                  </span>
-                  <span>
-                    <Link to={url}>{url}</Link>
-                  </span>
-                </Meta>
-              )} */}
+                >{title}</Link>
+              </Subheading>
               <Paragraph
                 style={{
                   borderLeft: "3px solid var(--color-lightgrey)",
                   paddingLeft: "1rem",
+                  lineHeight: "1.8",
+                  fontSize: "0.8rem"
                 }}
               >
-                {excerpt} <br />
-                <Link style={{ float: "right" }} to={path}>
+                {excerpt} <Link to={path}>
                   Read More
                 </Link>
               </Paragraph>
+              <br/>
             </Fragment>
           );
         })
