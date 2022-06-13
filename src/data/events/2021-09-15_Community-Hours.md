@@ -6,6 +6,7 @@ time: 1:00 - 2:00 pm EDT
 display_date: Wednesday, September 15, 2021
 location: " "
 url: https://renci.zoom.us/meeting/register/tJwpd--oqDsjG92aiAgPKQHzNILKgC8gZYVq
+presentation_link: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000406493
 tags: [community hours, cloud costs]
 seo:
   title: "NHLBI BioData Catalyst Community Hours: Cloud Costs"
