@@ -1,10 +1,10 @@
 ---
 title: "NHLBI BioData Catalyst Community Hours: 
 Reproducible Research Methods"
-path: /events/2022-02-16_NHLBI_BioData_Catalyst_Community_Hours_Reproducible_Research_Methods
+path: /events/2022-02-16/community_hours
 date: 2022-02-16
-time: 1-2 pm EDT
-display_date: Wednesday, February 16th
+time: 1:00 - 2:00 pm EDT
+display_date: Wednesday, February 16, 2022
 location: " "
 url: https://bit.ly/3nGT8sZ
 tags: [community hours]

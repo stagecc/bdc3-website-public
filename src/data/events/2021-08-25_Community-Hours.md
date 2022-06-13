@@ -1,9 +1,9 @@
 ---
 title: "NHLBI BioData Catalyst Community Hours: A Tour of the Analysis Workspaces"
-path: /events/NHLBI-BioData-Catalyst-Community-Hours-A-Tour-of-the-Analysis-Workspaces
+path: /events/2022-08-25/community_hours
 date: 2021-08-25
-time: 1-2 pm EDT
-display_date: August 25, 2021
+time: 1:00 - 2:00 pm EDT
+display_date: Wednesday, August 25, 2021
 location: " "
 url: https://bit.ly/3ArDjuj
 tags: [community hours, workspaces, cloud credits]
