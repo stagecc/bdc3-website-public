@@ -1,9 +1,9 @@
 ---
 title: "NHLBI BioData Catalyst Community Hours: Cloud Costs"
-path: /events/NHLBI-BioData-Catalyst-Community-Hours-Cloud-Costs
+path: /events/2021-09-15/community_hours
 date: 2021-09-15
-time: 1-2 pm EDT
-display_date: September 15, 2021
+time: 1:00 - 2:00 pm EDT
+display_date: Wednesday, September 15, 2021
 location: " "
 url: https://renci.zoom.us/meeting/register/tJwpd--oqDsjG92aiAgPKQHzNILKgC8gZYVq
 tags: [community hours, cloud costs]
