@@ -32,7 +32,7 @@ const EventsList = ({ title, events }) => {
             // fabricHosted,
           } = event.node.frontmatter;
           return (
-            <Fragment key={title}>
+            <Fragment key={`${date}${title}`}>
               <Subheading>{display_date ? display_date : date}</Subheading>
               <Heading>
                 <Link to={path}>{title}</Link>
