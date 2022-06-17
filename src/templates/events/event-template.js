@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
 import PropTypes from 'prop-types'
-
+import Img from "gatsby-image";
 // import { AnimateOnMount } from "../../components/anim"
 import { SEO } from "../../components/seo";
 import { graphql} from "gatsby";
@@ -112,6 +112,7 @@ export default ({ data, pageContext }) => {
     presenter,
     presentation_link,
     registration_required,
+    flyer,
     seo,
   } = frontmatter;
 
@@ -153,6 +154,16 @@ export default ({ data, pageContext }) => {
             <Markdown src={ rawMarkdownBody } />
           </Module>
 
+          {flyer && (
+            <Img 
+              fluid={flyer.childImageSharp.fluid}
+              style={{
+                margin: '0 auto',
+                width: '400px',
+              }}
+            />
+          )}
+          
           {/* * TODO: Conditionally render second button if the markdown is longer than a certain number of characters */}
           {/* <div style={{ textAlign: "center" }}>
             <ButtonCta href={url} target="_blank">
@@ -216,6 +227,13 @@ export const newsItemQuery = graphql`
         url
         tags
         registration_required
+        flyer {
+          childImageSharp {
+            fluid(maxWidth: 400) {
+              ...GatsbyImageSharpFluid
+            }
+          }  
+        }
         seo {
           title
           description
