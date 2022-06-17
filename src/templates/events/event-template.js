@@ -155,15 +155,18 @@ export default ({ data, pageContext }) => {
           </Module>
 
           {flyer && (
-            <Img 
-              fluid={flyer.childImageSharp.fluid}
-              style={{
-                margin: '0 auto',
-                width: '400px',
-              }}
-            />
+            <Link to={`${window.location.origin}${flyer.childImageSharp.fluid.src}`}>
+              <Img 
+                fluid={flyer.childImageSharp.fluid}
+                style={{
+                  margin: '0 auto',
+                  width: '400px',
+                  filter: 'drop-shadow(10px 10px 8px rgba(0, 0, 0, 0.1))'
+                }}
+              />
+            </Link>
           )}
-          
+
           {/* * TODO: Conditionally render second button if the markdown is longer than a certain number of characters */}
           {/* <div style={{ textAlign: "center" }}>
             <ButtonCta href={url} target="_blank">
