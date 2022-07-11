@@ -31,38 +31,17 @@ const EventsList = ({ title, events }) => {
           } = event.node.frontmatter;
           return (
             <Fragment key={title}>
-              <Subsubheading 
-                style={{
-                  fontWeight: "500",
-                  fontSize: "1rem",
-                  margin: "0 0 0.5rem",
-                }}
+              <Subheading 
               >
                 {display_date ? display_date : date}
-              </Subsubheading>
-              <Subheading 
-                style={{
-                  fontSize: "1.4rem",
-                  margin: '0',
-                  fontWeight: "600",
-                  letterSpacing: "0.5px"
-                }}
+              </Subheading>
+              <Subsubheading 
               >
                 <Link 
                   to={path}
-                  style={{
-                    textUnderlineOffset: "0.3rem",
-                    lineHeight: '1.7'
-                  }}
                 >{title}</Link>
-              </Subheading>
+              </Subsubheading>
               <Paragraph
-                style={{
-                  borderLeft: "3px solid var(--color-lightgrey)",
-                  paddingLeft: "1rem",
-                  lineHeight: "1.8",
-                  fontSize: "0.8rem"
-                }}
               >
                 {excerpt} <Link to={path}>
                   Read More
