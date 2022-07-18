@@ -9,13 +9,17 @@ url: https://renci.zoom.us/meeting/register/tJcoc-2vrzouGdXVpgP_l5DCXVd1ONu-nNgj
 registration_required: true
 tags: [community hours]
 seo:
-  title: "NHLBI BioData Catalyst Community Hours: SAS Studio on BioData Catalyst and COVID-19 Data Harmonization"
+  title: "NHLBI BioData Catalyst Community Hours: Sickle Cell Disease Data and Research"
   description:
 ---
 
-Join us on **[Wednesday, July 20th at 1:00 pm ET](https://renci.zoom.us/meeting/register/tJcoc-2vrzouGdXVpgP_l5DCXVd1ONu-nNgj)** for BioData Catalyst Community Hours. This informal, virtual event  will be focused on **Sickle Cell Disease datasets and research in BioData Catalyst**. 
+Join us on **[Wednesday, July 20th at 1:00 pm ET](https://renci.zoom.us/meeting/register/tJcoc-2vrzouGdXVpgP_l5DCXVd1ONu-nNgj)** to learn about BioData Catalyst’s many features that are of value to **sickle cell disease-related research**. You’ll hear from platform representatives about the several sickle cell disease-specific datasets available in the ecosystem, **upcoming features to link external metadata** to these studies, and how to **leverage SAS in the cloud**. Additionally, you’ll hear firsthand the **use case of researcher Brandon Lê** using BioData Catalyst to conduct sickle cell disease research.
 
-Sickle Cell Disease specific datasets have been ingested into BioData Catalyst that are of value and interest to Sickle Cell Disease researchers. Join this session to learn about the data and features and hear firsthand the use case of a researcher successfully using the ecosystem for Sickle Cell Disease research.
+**About Brandon Lê**
+
+Brandon Lê, a BioData Catalyst Cohort 2 Fellow, is a PhD candidate at Duke University studying the genetic modifiers of sickle cell disease. His project analyzes several TOPMed SCD cohorts to find associations with renal dysfunction. Through genome-wide association studies of common genetic variants and meta-analyses, several genetic variants statistically associated with renal dysfunction have been identified. This research serves as a foundation for analysis of transcriptomic and proteomic data to find additional omic associations, as well as development of deep learning tools to improve prediction power.
+
+BioData Catalyst enabled this research to be effortlessly scaled up to additional cohorts. The BDC ecosystem provided the tools and infrastructure needed to replicate an analysis pipeline to additional cohorts without the burden of modifying scripts for each individual fileset or navigating high-performance computing services. Consequently, BDC has enabled these analyses to be massively parallelized, saving time and effort. The use of BDC-maintained and versioned applications and workflows also means these analyses are reproducible for follow-up work and publications.
 
 After a presentation and demo on these topics, time will be made available for discussion and to address questions, challenges, and issues you might be facing in the ecosystem.
 
