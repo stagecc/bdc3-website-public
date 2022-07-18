@@ -14,6 +14,7 @@ import { ButtonLink } from "../../components/buttons";
 import { Module, PageContent } from "../../components/layout";
 // import { LinkIcon } from "../../components/icons";
 // import { useWindowWidth } from "../../hooks";
+import { Grid } from '@mui/material'
 
 const EventsList = ({ title, events }) => {
   // const { isCompact } = useWindowWidth();
@@ -31,7 +32,23 @@ const EventsList = ({ title, events }) => {
           } = event.node.frontmatter;
           return (
             <Fragment key={title}>
-              <Subheading 
+              <Grid container spacing={2}>
+                <Grid item sm={12} md={3}>
+                  {display_date ? display_date : date}
+                </Grid>
+                <Grid item sm={12} md={9}>
+                  <Subheading>
+                    <Link 
+                      to={path}
+                    >{title}</Link>
+                  </Subheading>
+                  <Paragraph style={{fontSize: '85%'}}>{excerpt} <Link to={path}>
+                    Read More
+                    </Link>
+                  </Paragraph>
+                </Grid>
+              </Grid>
+              {/* <Subheading 
               >
                 {display_date ? display_date : date}
               </Subheading>
@@ -46,7 +63,7 @@ const EventsList = ({ title, events }) => {
                 {excerpt} <Link to={path}>
                   Read More
                 </Link>
-              </Paragraph>
+              </Paragraph> */}
               <br/>
             </Fragment>
           );
