@@ -62,38 +62,31 @@ export const ExpansionPanel = ({ data }) => {
       <Header>
         <Subheading>
           <Link
-            to={`https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=${data.Accession}`}
+            to={`https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=${data.Acession}`}
           >
             {data.Name}
           </Link>
         </Subheading>
-        <span>{data.Accession}</span>
+        <span>{data.Acession}</span>
       </Header>
 
       <Body>
+        <strong>Study Name:</strong> {data.Name}
+        <br />
+        <br />
         <strong>Study Description:</strong> {data.Description}
         <br />
         <br />
-        <strong>Primary Research Focus:</strong> {data.Primary_Research_Focus}
+        <strong>Study Consent: </strong>
+        {data.Consent_Short}
         <br />
         <br />
-        <strong>dbGaP Listed Variable:</strong>{" "}
-        {data.dbGaP_Listed_Variable.join(LIST_DELIMITER)}
+        <strong>Study Consent Code: </strong>
+        {data.Consent_Code}
         <br />
         <br />
-        <strong>Study Type:</strong> {data.Type.join(LIST_DELIMITER)}
+        <strong>Cohort Abbreviation:</strong> {data.Cohort_Abbreviation}
         <br />
-        <br />
-        <strong>Study-Reported Population(s):</strong>{" "}
-        {data.Populations.join(LIST_DELIMITER)}
-        <br />
-        <br />
-        <strong>Study Consent:</strong>{" "}
-        {data.Consent_Short.join(LIST_DELIMITER)}
-        <br />
-        <br />
-        <strong>Primary Data Dictionary Link:</strong>{" "}
-        <DbGapLink pht={data.Data_Dictionary_Link} />
         <br />
       </Body>
 
@@ -108,7 +101,7 @@ export const CovidExpansionPanel = ({ data }) => {
       <Header>
         <Subheading>
           <Link
-            to={`https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=${data.Accession}`}
+            to={`https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=${data.Acession}`}
           >
             {data.Name}
           </Link>
@@ -116,29 +109,16 @@ export const CovidExpansionPanel = ({ data }) => {
       </Header>
 
       <Body>
-        <strong>Short Name:</strong> {data.Short_Name}
+        <strong>Short Name:</strong> {data.Name}
         <br />
         <br />
         <strong>Study Description:</strong> {data.Description}
         <br />
         <br />
-        <strong>dbGaP Accession ID:</strong> {data.Accession}
+        <strong>dbGaP Accession ID:</strong> {data.Acession}
         <br />
         <br />
-        <strong>Study Type:</strong> {data.Type}
-        <br />
-        <br />
-        <strong>Study Link:</strong>{" "}
-        <Link to={data.Link}>{data.Link}</Link>
-        <br />
-        <br />
-        <strong>Network:</strong> {data.Network}
-        <br />
-        <br />
-        <strong>Responsible Party:</strong> {data.Responsible_Party}
-        <br />
-        <br />
-        <strong>Other Information:</strong> {data.Other_Information}
+        <strong>Cohort Abbreviation:</strong> {data.Cohort_Abbreviation}
         <br />
         <br />
       </Body>

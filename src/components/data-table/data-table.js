@@ -82,11 +82,12 @@ const DownloadJSONButton = ({ onExport }) => (
 );
 
 export const DataTable = ({ columns, data, ...props }) => {
+  console.log(columns)
   const [query] = useState("");
   const [filteredStudies, setFilteredStudies] = useState(data);
   const [selectedStudies, setSelectedStudies] = useState([]);
   const [grouping, setGrouping] = useState(
-    columns.filter(column => column.groupable)[0].selector
+    columns.filter(column => column.groupable)
   );
   const [groupCounts, setGroupCounts] = useState([]);
   const [variablesCount, setVariablesCount] = useState(0); // eslint-disable-line no-unused-vars
