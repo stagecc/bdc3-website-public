@@ -14,19 +14,19 @@ const Wrapper = styled.div`
   }
 `;
 
-const LIST_DELIMITER = " ; ";
+// const LIST_DELIMITER = " ; ";
 
-const DbGapLink = ({ pht }) => {
-  const re = new RegExp(/pht(\d+)\.v\d\.p\d/);
-  const [, digits] = pht.match(re);
-  return (
-    <Link
-      to={`https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/dataset.cgi?study_id=phs000956.v4.p1&pht=${digits}`}
-    >
-      {pht}
-    </Link>
-  );
-};
+// const DbGapLink = ({ pht }) => {
+//   const re = new RegExp(/pht(\d+)\.v\d\.p\d/);
+//   const [, digits] = pht.match(re);
+//   return (
+//     <Link
+//       to={`https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/dataset.cgi?study_id=phs000956.v4.p1&pht=${digits}`}
+//     >
+//       {pht}
+//     </Link>
+//   );
+// };
 
 const Header = styled.div`
   display: flex;

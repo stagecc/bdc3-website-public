@@ -82,7 +82,6 @@ const DownloadJSONButton = ({ onExport }) => (
 );
 
 export const DataTable = ({ columns, data, ...props }) => {
-  console.log(columns)
   const [query] = useState("");
   const [filteredStudies, setFilteredStudies] = useState(data);
   const [selectedStudies, setSelectedStudies] = useState([]);
