@@ -24,7 +24,7 @@ jobs:
       
       - name: delete existing files
         run: |
-          rm -f src/data/studies/covid-studies.json && src/data/studies/studies.json 
+          rm src/data/studies/covid-studies.json && rm src/data/studies/studies.json 
       
       - name: execute py script # run the run.py to get the latest data
         run: python call_mds.py
