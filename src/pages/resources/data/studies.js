@@ -25,7 +25,7 @@ const StudiesPage = () => {
         columnsCopy[index].cell = row => (
           <CustomCell>
             <Link
-              to={`https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=${row.Acession}`}
+              to={`https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=${row.Accession}`}
             >
               {row.Name}
             </Link>

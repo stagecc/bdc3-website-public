@@ -1,7 +1,7 @@
 [
   {
-    "name": "Acession",
-    "selector": "Acession",
+    "name": "Accession",
+    "selector": "Accession",
     "type": "string",
     "omit": false,
     "groupable": false,

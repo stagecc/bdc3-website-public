@@ -62,12 +62,12 @@ export const ExpansionPanel = ({ data }) => {
       <Header>
         <Subheading>
           <Link
-            to={`https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=${data.Acession}`}
+            to={`https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=${data.Accession}`}
           >
             {data.Name}
           </Link>
         </Subheading>
-        <span>{data.Acession}</span>
+        <span>{data.Accession}</span>
       </Header>
 
       <Body>
@@ -101,7 +101,7 @@ export const CovidExpansionPanel = ({ data }) => {
       <Header>
         <Subheading>
           <Link
-            to={`https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=${data.Acession}`}
+            to={`https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=${data.Accession}`}
           >
             {data.Name}
           </Link>
@@ -115,7 +115,7 @@ export const CovidExpansionPanel = ({ data }) => {
         <strong>Study Description:</strong> {data.Description}
         <br />
         <br />
-        <strong>dbGaP Accession ID:</strong> {data.Acession}
+        <strong>dbGaP Accession ID:</strong> {data.Accession}
         <br />
         <br />
         <strong>Cohort Abbreviation:</strong> {data.Cohort_Abbreviation}

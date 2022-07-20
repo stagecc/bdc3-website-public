@@ -5,7 +5,7 @@ const studiesQuery = graphql`
     studies: allStudiesJson {
       edges {
         node {
-          Acession
+          Accession
           Name
           Description
           Cohort_Abbreviation
@@ -31,7 +31,7 @@ const studiesQuery = graphql`
     covidStudies: allCovidStudiesJson {
       edges {
         node {
-          Acession
+          Accession
           Name
           Cohort_Abbreviation
           Description
