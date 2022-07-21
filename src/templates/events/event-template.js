@@ -46,7 +46,7 @@ EventInfoLine.propTypes = {
   title: PropTypes.string,
 }
 
-const EventInfo = ({date, display_date, time, location,  tags,  url,  presenter,  presentation_link, registration_required }) => {
+const EventInfo = ({date, display_date, time,  tags, url, registration_required }) => {
 return (
   <Fragment>
     
@@ -55,9 +55,7 @@ return (
     </EventInfoLine>
     
     {time && <EventInfoLine title='Time'> {time} </EventInfoLine>}
-    
-    {/* {location && <EventInfoLine title='Location'> {location} </EventInfoLine>}  */}
-   
+       
     {registration_required ? (
       <EventInfoLine title="Location">
       Zoom (
@@ -75,14 +73,6 @@ return (
     </EventInfoLine>
 
     )}
-    {/* {url && (
-      <EventInfoLine title="Location">
-        Zoom (
-        <Link to={url} >
-          Click Here to Join
-        </Link>)
-      </EventInfoLine>
-    )} */}
 
     <EventInfoLine title="Tags">
       <InlineList2
@@ -106,12 +96,9 @@ export default ({ data, pageContext }) => {
     date,
     display_date,
     time,
-    location,
     tags,
     zoom,
     url,
-    presenter,
-    presentation_link,
     registration_required,
     flyer,
     seo,
@@ -166,10 +153,7 @@ export default ({ data, pageContext }) => {
                   date={date}
                   display_date={display_date}
                   time={time}
-                  location={location}
                   url={zoom ? zoom.url : url}
-                  presenter={presenter}
-                  presentation_link={presentation_link}
                   tags={tags}
                   registration_required={registration_required}
             />
@@ -257,11 +241,9 @@ export const newsItemQuery = graphql`
       frontmatter {
         date(formatString: "MMMM D, YYYY")
         display_date
-        location
         title
         time
         url
-        presentation_link
         tags
         registration_required
         flyer {
