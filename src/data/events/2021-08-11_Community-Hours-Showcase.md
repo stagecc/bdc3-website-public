@@ -6,7 +6,7 @@ time: 1:00 - 2:00 pm EDT
 display_date: Wednesday, August 11, 2021
 location: " "
 url: https://bit.ly/3ijOkr9
-presentation_link: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000406457
+forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000406457
 tags: [community hours, data access, data exploration]
 seo:
   title: "NHLBI BioData Catalyst Community Hours: Exploring and Accessing Data"

@@ -7,7 +7,7 @@ time: 1:00 - 2:00 pm EDT
 display_date: Wednesday, February 16, 2022
 location: " "
 url: https://bit.ly/3nGT8sZ
-presentation_link: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000406846
+forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000406846
 tags: [community hours]
 seo:
   title: "NHLBI BioData Catalyst Community Hours: 

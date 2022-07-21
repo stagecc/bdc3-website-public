@@ -6,7 +6,7 @@ time: 1:00 - 2:00 pm EDT
 display_date: Wednesday, October 27, 2021
 location: " "
 url: https://bit.ly/3AffwxO
-presentation_link: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000406593
+forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000406593
 tags: [community hours]
 seo:
   title: "NHLBI BioData Catalyst Community Hours: First Community Showcase and Meet & greet"
