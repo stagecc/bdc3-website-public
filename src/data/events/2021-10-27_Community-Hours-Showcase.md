@@ -1,11 +1,12 @@
 ---
 title: "NHLBI BioData Catalyst Community Hours: First Community Showcase and Meet & greet"
-path: /events/NHLBI-BioData-Catalyst-Community-Hours-First-Community-Showcase-Meet-And-Greet
+path: /events/2021-10-27/community_hours
 date: 2021-10-27
-time: 1-2 pm EDT
-display_date: October 27, 2021
+time: 1:00 - 2:00 pm EDT
+display_date: Wednesday, October 27, 2021
 location: " "
 url: https://bit.ly/3AffwxO
+forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000406593
 tags: [community hours]
 seo:
   title: "NHLBI BioData Catalyst Community Hours: First Community Showcase and Meet & greet"

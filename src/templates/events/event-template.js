@@ -14,12 +14,32 @@ import { Visible } from "react-grid-system";
 import { HorizontalRule } from "../../components/horizontal-rule";
 import { ButtonCta } from "../../components/buttons";
 import { Markdown } from '../../components/markdown'
+import { Card, CardBody } from "../../components/card";
 
 const EventMetadataWrapper = styled.div`
   ${Meta} {
     margin: 0;
   }
 `;
+
+const PastEventAlert = ({forum_post}) => {
+  return (
+      <Card>
+        <CardBody>
+          <Meta>
+            This event has passed. {forum_post && (
+              <span>
+                To view session materials click <Link to={ forum_post }>
+                  here
+                </Link>
+              .
+              </span>
+              )}
+          </Meta>
+        </CardBody>
+      </Card>
+  )
+}
 
 const EventInfoLine = ({title, children}) => {
   return (
@@ -45,7 +65,7 @@ EventInfoLine.propTypes = {
   title: PropTypes.string,
 }
 
-const EventInfo = ({date, display_date, time, location,  tags,  url,  presenter,  presentation_link, registration_required }) => {
+const EventInfo = ({date, display_date, time, tags, url, registration_required }) => {
 return (
   <Fragment>
     
@@ -54,9 +74,7 @@ return (
     </EventInfoLine>
     
     {time && <EventInfoLine title='Time'> {time} </EventInfoLine>}
-    
-    {/* {location && <EventInfoLine title='Location'> {location} </EventInfoLine>}  */}
-   
+       
     {registration_required ? (
       <EventInfoLine title="Location">
       Zoom (
@@ -74,14 +92,6 @@ return (
     </EventInfoLine>
 
     )}
-    {/* {url && (
-      <EventInfoLine title="Location">
-        Zoom (
-        <Link to={url} >
-          Click Here to Join
-        </Link>)
-      </EventInfoLine>
-    )} */}
 
     <EventInfoLine title="Tags">
       <InlineList2
@@ -105,19 +115,33 @@ export default ({ data, pageContext }) => {
     date,
     display_date,
     time,
-    location,
     tags,
     zoom,
     url,
-    presenter,
-    presentation_link,
+    forum_post,
     registration_required,
     flyer,
     seo,
   } = frontmatter;
 
+  const todaysDate = new Date();
 
+  const dateString = `${todaysDate.getFullYear()}-${
+    todaysDate.getMonth() + 1 < 10 ? "0" : ""
+  }${todaysDate.getMonth() + 1}-${
+    todaysDate.getDate() < 10 ? "0" : ""
+  }${todaysDate.getDate()}`;
 
+  const parsedEventDate = new Date(Date.parse(date))
+
+  const eventDate = `${parsedEventDate.getFullYear()}-${
+    parsedEventDate.getMonth() + 1 < 10 ? "0" : ""
+  }${parsedEventDate.getMonth() + 1}-${
+    parsedEventDate.getDate() < 10 ? "0" : ""
+  }${parsedEventDate.getDate()}`
+
+  const past = dateString > eventDate
+  
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters>
       <SEO
@@ -128,15 +152,15 @@ export default ({ data, pageContext }) => {
         <div className="event-item">
           <Title>{title}</Title>
 
+        {
+          past && <PastEventAlert forum_post={forum_post}/>
+        }
           <EventMetadataWrapper>
             <EventInfo
                   date={date}
                   display_date={display_date}
                   time={time}
-                  location={location}
                   url={zoom ? zoom.url : url}
-                  presenter={presenter}
-                  presentation_link={presentation_link}
                   tags={tags}
                   registration_required={registration_required}
             />
@@ -224,10 +248,10 @@ export const newsItemQuery = graphql`
       frontmatter {
         date(formatString: "MMMM D, YYYY")
         display_date
-        location
         title
         time
         url
+        forum_post
         tags
         registration_required
         flyer {

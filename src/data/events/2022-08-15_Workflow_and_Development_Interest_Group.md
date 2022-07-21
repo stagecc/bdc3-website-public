@@ -1,6 +1,6 @@
 ---
 title: "NHLBI BioData Catalyst Workflow and Development Interest Group"
-path: /events/2022-08-15_NHLBI_BioData_Catalyst_Workflow_and_Development_Interest_Group
+path: /events/2022-08-15/interest-groups/workflow-and-development
 date: 2022-08-15
 time: 1:30 - 2:30 p.m. EDT
 display_date: Monday, August 15th, 2022

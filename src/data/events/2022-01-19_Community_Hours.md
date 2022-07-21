@@ -1,12 +1,13 @@
 ---
 title: "NHLBI BioData Catalyst Community Hours: 
 Interactive Analysis with Seven Bridges"
-path: /events/2022-01-19_NHLBI_BioData_Catalyst_Community_Hours_Interactive_Analysis
+path: /events/2022-01-19/community_hours
 date: 2022-01-19
-time: 1-2 pm EDT
-display_date: Wednesday, January 19th
+time: 1:00 - 2:00 pm EDT
+display_date: Wednesday, January 19, 2022
 location: " "
 url: https://bit.ly/3ocRq3b
+forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000406807
 tags: [community hours]
 seo:
   title: "NHLBI BioData Catalyst Community Hours: 
