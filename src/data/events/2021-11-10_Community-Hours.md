@@ -6,7 +6,7 @@ time: 1:00 - 2:00 pm EDT
 display_date: Wednesday, November 10, 2021
 location: " "
 url: https://bit.ly/3DJez2i
-presentation_link: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000406595
+forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000406595
 tags: [community hours]
 seo:
   title: "NHLBI BioData Catalyst Community Hours: Workflows with Dockstore"

@@ -6,7 +6,7 @@ time: 1:00 - 2:00 pm EDT
 display_date: Wednesday, July 20, 2022
 location: "Zoom"
 url: https://renci.zoom.us/meeting/register/tJcoc-2vrzouGdXVpgP_l5DCXVd1ONu-nNgj
-presentation_link: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000407032
+forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000407032
 registration_required: true
 tags: [community hours]
 seo:
