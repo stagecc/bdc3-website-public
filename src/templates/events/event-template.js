@@ -22,6 +22,25 @@ const EventMetadataWrapper = styled.div`
   }
 `;
 
+const PastEventAlert = ({forum_post}) => {
+  return (
+      <Card>
+        <CardBody>
+          <Meta>
+            This event has passed. {forum_post && (
+              <span>
+                To view session materials click <Link to={ forum_post }>
+                  here
+                </Link>
+              .
+              </span>
+              )}
+          </Meta>
+        </CardBody>
+      </Card>
+  )
+}
+
 const EventInfoLine = ({title, children}) => {
   return (
     <Fragment>
@@ -46,7 +65,7 @@ EventInfoLine.propTypes = {
   title: PropTypes.string,
 }
 
-const EventInfo = ({date, display_date, time,  tags, url, registration_required }) => {
+const EventInfo = ({date, display_date, time, tags, url, registration_required }) => {
 return (
   <Fragment>
     
@@ -99,6 +118,7 @@ export default ({ data, pageContext }) => {
     tags,
     zoom,
     url,
+    forum_post,
     registration_required,
     seo,
   } = frontmatter;
@@ -119,9 +139,7 @@ export default ({ data, pageContext }) => {
     parsedEventDate.getDate() < 10 ? "0" : ""
   }${parsedEventDate.getDate()}`
 
-  const past = dateString > eventDate ? true : false
-
-  const forumURL = "https://bdcatalyst.freshdesk.com/support/discussions/forums/60000122778"
+  const past = dateString > eventDate
   
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters>
@@ -134,18 +152,7 @@ export default ({ data, pageContext }) => {
           <Title>{title}</Title>
 
         {
-          past && (
-            <Card>
-              <CardBody>
-                <Meta>
-                  This event has passed. To view session materials click <Link to={presentation_link ? presentation_link : forumURL }>
-                     here
-                    </Link>
-                  .
-                </Meta>
-              </CardBody>
-            </Card>
-          )
+          past && <PastEventAlert forum_post={forum_post}/>
         }
           <EventMetadataWrapper>
             <EventInfo
@@ -230,6 +237,7 @@ export const newsItemQuery = graphql`
         title
         time
         url
+        forum_post
         tags
         registration_required
         seo {
