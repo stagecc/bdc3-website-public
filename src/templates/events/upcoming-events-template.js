@@ -11,6 +11,7 @@ import {
 import { Link } from "../../components/link";
 import { ButtonLink } from "../../components/buttons";
 import { Module, PageContent } from "../../components/layout";
+import { HorizontalRule } from "../../components/horizontal-rule"
 // import { LinkIcon } from "../../components/icons";
 // import { useWindowWidth } from "../../hooks";
 import { Grid } from '@mui/material'
@@ -49,6 +50,7 @@ const EventsList = ({ title, events }) => {
                   </Paragraph>
                 </Grid>
               </Grid>
+              <HorizontalRule />
               <br/>
             </Fragment>
           );
