@@ -6,7 +6,6 @@ import {
   Title,
   Paragraph,
   Subheading,
-  Subsubheading,
   // Meta,
 } from "../../components/typography";
 import { Link } from "../../components/link";
@@ -34,10 +33,12 @@ const EventsList = ({ title, events }) => {
             <Fragment key={title}>
               <Grid container spacing={2}>
                 <Grid item sm={12} md={3}>
-                  {display_date ? display_date : date}
+                  <Paragraph left noMargin>
+                    {display_date ? display_date : date}
+                  </Paragraph>
                 </Grid>
                 <Grid item sm={12} md={9}>
-                  <Subheading>
+                  <Subheading left>
                     <Link 
                       to={path}
                     >{title}</Link>
@@ -48,22 +49,6 @@ const EventsList = ({ title, events }) => {
                   </Paragraph>
                 </Grid>
               </Grid>
-              {/* <Subheading 
-              >
-                {display_date ? display_date : date}
-              </Subheading>
-              <Subsubheading 
-              >
-                <Link 
-                  to={path}
-                >{title}</Link>
-              </Subsubheading>
-              <Paragraph
-              >
-                {excerpt} <Link to={path}>
-                  Read More
-                </Link>
-              </Paragraph> */}
               <br/>
             </Fragment>
           );
