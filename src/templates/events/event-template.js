@@ -25,7 +25,7 @@ const EventMetadataWrapper = styled.div`
 const PastEventAlert = ({forum_post}) => {
   return (
       <Card>
-        <CardBody>
+        <CardBody style={{backgroundColor: 'rgba(237, 240, 244, 0.8)' }}>
           <Meta>
             This event has passed. {forum_post && (
               <span>
