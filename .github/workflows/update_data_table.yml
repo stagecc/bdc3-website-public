@@ -1,0 +1,46 @@
+name: py
+    
+on: workflow_dispatch
+#  schedule:
+#    - cron: "0 0 * * *" #runs at 00:00 UTC everyday
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v2 # checkout the repository content to github runner.
+
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.6 #install the python needed
+      
+      - name: install python packages
+        run: |
+          python3 -m pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: create folder
+        run: |
+          rm -rf outputs && mkdir -p outputs
+      
+      - name: execute py script # run the run.py to get the latest data
+        run: python call_mds.py
+      
+      #  env:
+      #    key: ${{ secrets.key }} # if run.py requires passwords..etc, set it as secrets
+      #- name: export index
+      #  .... # use crosponding script or actions to help export.
+      - name: commit files 
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git commit -m "add new data" -a
+      - name: push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master

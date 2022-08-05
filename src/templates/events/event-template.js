@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
 import PropTypes from 'prop-types'
-
+import Img from "gatsby-image";
 // import { AnimateOnMount } from "../../components/anim"
 import { SEO } from "../../components/seo";
 import { graphql} from "gatsby";
@@ -120,6 +120,7 @@ export default ({ data, pageContext }) => {
     url,
     forum_post,
     registration_required,
+    flyer,
     seo,
   } = frontmatter;
 
@@ -176,6 +177,19 @@ export default ({ data, pageContext }) => {
           <Module title="Event Details">
             <Markdown src={ rawMarkdownBody } />
           </Module>
+
+          {flyer && (
+            <Link to={`${window.location.origin}${flyer.childImageSharp.fluid.src}`}>
+              <Img 
+                fluid={flyer.childImageSharp.fluid}
+                style={{
+                  margin: '0 auto',
+                  width: '400px',
+                  filter: 'drop-shadow(10px 10px 8px rgba(0, 0, 0, 0.1))'
+                }}
+              />
+            </Link>
+          )}
 
           {/* * TODO: Conditionally render second button if the markdown is longer than a certain number of characters */}
           {/* <div style={{ textAlign: "center" }}>
@@ -240,6 +254,13 @@ export const newsItemQuery = graphql`
         forum_post
         tags
         registration_required
+        flyer {
+          childImageSharp {
+            fluid(maxWidth: 400) {
+              ...GatsbyImageSharpFluid
+            }
+          }  
+        }
         seo {
           title
           description
