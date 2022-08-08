@@ -15,7 +15,7 @@ import { Link } from "../../../components/link";
 import { Visible } from "react-grid-system";
 import { DataAccess } from "../../../components/data-access/data-access";
 import { DownloadIcon, MagnifyingGlassIcon } from "../../../components/icons";
-import { DugForm } from '../../../components/form'
+// import { DugForm } from '../../../components/form'
 
 const DataPage = ({ data, location }) => {
   const { dataBucketsGraphic, dataBucketsGraphicMobile } = data;
@@ -34,6 +34,7 @@ const DataPage = ({ data, location }) => {
 
       <br />
 
+{/*
       <DugForm />
       <Paragraph center style={{ fontStyle: 'italic', fontSize: '90%' }}>
         Semantic search provided by Dug.
@@ -42,6 +43,7 @@ const DataPage = ({ data, location }) => {
       </Paragraph>
 
       <br />
+*/}
 
       <DataAccess location={location} />
 
