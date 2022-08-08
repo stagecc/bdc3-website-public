@@ -17,7 +17,7 @@
     "groupable": false
   },
   {
-    "name": "Cohort Abbreviation",
+    "name": "Study/Cohort Abbreviation",
     "selector": "Cohort_Abbreviation",
     "type": "string",
     "omit": true,
@@ -31,17 +31,59 @@
     "groupable": false
   },
   {
-    "name": "Consent Code",
-    "selector": "Consent_Code",
+    "name": "Short Description",
+    "selector": "Short_Description",
     "type": "string",
     "omit": true,
     "groupable": false
   },
   {
-    "name": "Consent Short",
+    "name": "Primary Research Focus",
+    "selector": "Primary_Research_Focus",
+    "type": "array",
+    "omit": true,
+    "groupable": true
+  },
+  {
+    "name": "dbGaP Listed Variable",
+    "selector": "dbGaP_Listed_Variable",
+    "type": "array",
+    "omit": true,
+    "groupable": true
+  },
+  {
+    "name": "Study Type",
+    "selector": "Type",
+    "type": "string",
+    "omit": true,
+    "groupable": true
+  },
+  {
+    "name": "Populations",
+    "selector": "Populations",
+    "type": "array",
+    "omit": true,
+    "groupable": true
+  },
+  {
+    "name": "Consent",
+    "selector": "Consent",
+    "type": "string",
+    "omit": true,
+    "groupable": false
+  },
+  {
+    "name": "Consent",
     "selector": "Consent_Short",
     "type": "array",
     "omit": true,
     "groupable": true
+  },
+  {
+    "name": "Data Dictionary Link",
+    "selector": "Data_Dictionary_Link",
+    "type": "string",
+    "omit": true,
+    "groupable": false
   }
 ]

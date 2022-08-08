@@ -1,0 +1,47 @@
+[
+  {
+    "Acession": "phs002299.v1.p1",
+    "Cohort Abbreviation": "ORCHID",
+    "Name": "PETAL Network: Outcomes Related to COVID-19 Treated With Hydroxychloroquine Among Inpatients With Symptomatic Disease (ORCHID) Trial",
+    "Description": "ORCHID was a multicenter, blinded, placebo-controlled randomized trial conducted at 34 hospitals in the US between April 2 and June 19, 2020. Adults hospitalized with respiratory symptoms from severe acute respiratory syndrome coronavirus 2 infection were enrolled, with the last outcome assessment on July 17, 2020. The planned sample size was 510 patients with five interim analyses; however, the trial was stopped at the fourth interim analysis for futility with a sample size of 479 patients.The distribution of the day 14 clinical status score (measured using a 7-category ordinal scale) was not significantly different for patients randomized to receive hydroxychloroquine compared with placebo.Instructions for requesting individual-level data are available on BioData Catalyst at https://biodatacatalyst.nhlbi.nih.gov/resources/data/. Apply for data access in dbGaP. Upon approval, users may begin accessing requested data in BioData Catalyst. For questions about availability, you may contact the BioData Catalyst team at https://biodatacatalyst.nhlbi.nih.gov/contact.    Study Weblinks:   PETAL Network ORCHID Study    Study Design:       Clinical Trial    Study Type:  Clinical Trial Controlled Trial Placebo-Controlled Randomized Randomized Controlled Clinical Trial   Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002299.v1.p1 on 2021-03-25 and may not include exact formatting or images.",
+    "Consent Code": "c1",
+    "Consent Short": "HMB",
+    "Subject Count": 479
+  },
+  {
+    "Acession": "phs002710.v1.p1",
+    "Cohort Abbreviation": "ACTIV-4B",
+    "Name": "COVID-19 Positive Outpatient Thrombosis Prevention in Adults Aged 40-80",
+    "Description": "An adaptive randomized double-blind placebo-controlled platform trial to compare the effectiveness of anticoagulation with antiplatelet agents and with placebo to prevent thrombotic events in patients diagnosed with COVID-19 who are not admitted to hospital as COVID-19 related symptoms are currently stable. Study Design:     Interventional Study Type:Clinical TrialDouble-BlindInterventionalPlacebo-ControlledRandomizedRandomized Controlled Clinical TrialNOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/ on 2022-03-29 and may not include exact formatting or images.",
+    "Consent Code": "c1",
+    "Consent Short": "GRU",
+    "Subject Count": 657
+  },
+  {
+    "Acession": "phs002752.v1.p1",
+    "Cohort Abbreviation": "C3PO",
+    "Name": "Clinical-trial of COVID-19 Convalescent Plasma in Outpatients",
+    "Description": "The overarching goal of this project is to confirm or refute the role of passive immunization as a safe and efficacious therapy in preventing the progression from mild to severe/critical COVID-19 illness and to understand the immunologic kinetics of anti-SARS-CoV-2 antibodies after passive immunization.The primary objective is to determine the efficacy and safety of a single dose of convalescent plasma (CP) for preventing the progression from mild to severe COVID-19 illness. The secondary objective is to characterize the immunologic response to CP administration.This study will enroll adults presenting to the emergency department (ED) with mild, symptomatic, laboratory-confirmed COVID-19 illness, who are at high risk for progression to severe/critical illness, but who are clinically stable for outpatient management at randomization.",
+    "Consent Code": "c1",
+    "Consent Short": "GRU",
+    "Subject Count": 511
+  },
+  {
+    "Acession": "phs002694.v1.p1",
+    "Cohort Abbreviation": "ACTIV-4A",
+    "Name": "Accelerating COVID-19 Therapeutic Interventions and Vaccines 4 ACUTE (ACTIV-4A)",
+    "Description": "This is a randomized, open label, adaptive platform trial to compare the effectiveness of antithrombotic strategies for prevention of adverse outcomes in COVID-19 positive inpatients. Study Design:     Interventional Study Type:Clinical TrialControlled TrialInterventionalRandomizedRandomized Controlled Clinical TrialNOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/ on 2022-03-29 and may not include exact formatting or images.",
+    "Consent Code": "c1",
+    "Consent Short": "GRU",
+    "Subject Count": 1083
+  },
+  {
+    "Acession": "phs002363.v1.p1",
+    "Cohort Abbreviation": "RED_CORAL_HMB",
+    "Name": "PETAL - Repository of Electronic Data COVID-19 Observational Study",
+    "Description": "To describe characteristics, treatment, and outcomes among patients hospitalized with COVID-19 early in the pandemic, 1480 consecutive adult inpatients with laboratory-confirmed, symptomatic SARS-CoV-2 infection admitted to 57 US hospitals from March 1 to April 1, 2020 were studied.It was found that in a geographically diverse early-pandemic COVID-19 cohort with complete hospital folllow-up, hospital mortality was associated with older age, comorbidity burden, and male sex. Intensive care unit admissions occurred early and were associated with protracted hospital stays. Survivors often required new health care services or respiratory support at discharge.The PETAL Network central institutional review board at Vanderbilt University and the institutional review boards at each participating hospital approved the study or determined that the study was exempt from review.Instructions for requesting individual-level data are available on BioData Catalyst at https://biodatacatalyst.nhlbi.nih.gov/resources/data/. Apply for data access in dbGaP. Upon approval, users may begin accessing requested data in BioData Catalyst. For questions about availability, you may contact the BioData Catalyst team at https://biodatacatalyst.nhlbi.nih.gov/contact. Study Weblinks: PETAL Network RED CORAL StudyNHLBI BioLINCC (RED CORAL) Study Design:     Control Set Study Type:Case-CohortClinical CohortCohortMulticenter NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/ on 2022-03-29 and may not include exact formatting or images.",
+    "Consent Code": "c1",
+    "Consent Short": "HMB",
+    "Subject Count": 1480
+  }
+]

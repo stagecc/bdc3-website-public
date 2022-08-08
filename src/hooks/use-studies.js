@@ -8,9 +8,17 @@ const studiesQuery = graphql`
           Accession
           Name
           Description
+          Short_Description
           Cohort_Abbreviation
-          Consent_Code
+          Primary_Research_Focus
+          Consent
           Consent_Short
+          dbGaP_Listed_Variable
+          Data_Dictionary_Link
+          Number_of_Variables
+          Type
+          Molecular_Data
+          Populations
         }
       }
     }
@@ -33,8 +41,13 @@ const studiesQuery = graphql`
         node {
           Accession
           Name
-          Cohort_Abbreviation
+          Short_Name
           Description
+          Type
+          Link
+          Network
+          Responsible_Party
+          Other_Information
         }
       }
     }

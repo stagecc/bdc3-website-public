@@ -4,16 +4,16 @@ import requests
 import collections
 
 def main():
-    output_path = "src/data/studies"
-    output_file = "studies.json"
+    output_path = "outputs"
+    output_file = "mds_results.json"
     mds_results = query_mds()
     mds_studies_list,mds_covid_list = transform_mds_dict(mds_results)
 
     # Export Files to JSON
-    with open(f"{output_path}/{output_file}", "w") as stream:
+    with open(f"{output_path}/studies_{output_file}", "w") as stream:
         json.dump(mds_studies_list,indent=2,fp=stream)
 
-    with open(f"{output_path}/covid-{output_file}", "w") as stream:
+    with open(f"{output_path}/covid_{output_file}", "w") as stream:
         json.dump(mds_covid_list,indent=2,fp=stream)
 
 
@@ -71,7 +71,7 @@ def transform_mds_dict(mds_result):
         accession = full_accession[:full_accession.find('.c')]
 
         # Write Values
-        new_dict["Accession"] = accession
+        new_dict["Acession"] = accession
         new_dict["Cohort Abbreviation"] = metadata['short_name']
         new_dict["Name"] = metadata['full_name']
         new_dict["Description"] = metadata['study_description']

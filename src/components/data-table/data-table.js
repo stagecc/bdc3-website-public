@@ -86,7 +86,7 @@ export const DataTable = ({ columns, data, ...props }) => {
   const [filteredStudies, setFilteredStudies] = useState(data);
   const [selectedStudies, setSelectedStudies] = useState([]);
   const [grouping, setGrouping] = useState(
-    columns.filter(column => column.groupable)
+    columns.filter(column => column.groupable)[0].selector
   );
   const [groupCounts, setGroupCounts] = useState([]);
   const [variablesCount, setVariablesCount] = useState(0); // eslint-disable-line no-unused-vars
