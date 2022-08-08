@@ -1,6 +1,6 @@
 ---
 title: "NHLBI BioData Catalyst Cross-Data Harmonization Interest Group"
-path: /events/2022-08-16_NHLBI_BioData_Catalyst__Cross-Data_Harmonization_Interest_Group
+path: /events/2022-08-16/interest-groups/cross-data-harmonization
 date: 2022-08-16
 time: 1:00 - 2:00 p.m. EDT
 display_date: Tuesday, August 16th, 2022

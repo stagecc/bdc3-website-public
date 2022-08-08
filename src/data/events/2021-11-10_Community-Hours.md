@@ -1,11 +1,12 @@
 ---
 title: "NHLBI BioData Catalyst Community Hours: Workflows with Dockstore"
-path: /events/NHLBI-BioData-Catalyst-Community-Hours-Workflows-With-Dockstore
+path: /events/2021-11-10/community_hours
 date: 2021-11-10
-time: 1-2 pm EDT
-display_date: November 10, 2021
+time: 1:00 - 2:00 pm EDT
+display_date: Wednesday, November 10, 2021
 location: " "
 url: https://bit.ly/3DJez2i
+forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000406595
 tags: [community hours]
 seo:
   title: "NHLBI BioData Catalyst Community Hours: Workflows with Dockstore"

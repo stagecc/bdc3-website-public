@@ -1,11 +1,12 @@
 ---
 title: "NHLBI BioData Catalyst Community Hours: Ecosystem and Research Highlights"
-path: /events/NHLBI-BioData-Catalyst-Community-Hours-Ecosystem-and-Research-dec
+path: /events/2021-12-08/community_hours
 date: 2021-12-08
-time: 1-2 pm EDT
-display_date: December 8, 2021
+time: 1:00 - 2:00 pm EDT
+display_date: Wednesday, December 8, 2021
 location: " "
 url: https://bit.ly/3H9J1Fi
+forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000406692
 tags: [community hours, ecosystem, research]
 seo:
   title: "NHLBI BioData Catalyst Community Hours: Ecosystem and Research Highlights"

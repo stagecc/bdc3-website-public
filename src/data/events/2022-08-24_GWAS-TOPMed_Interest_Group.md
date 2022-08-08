@@ -1,6 +1,6 @@
 ---
 title: "NHLBI BioData Catalyst GWAS/TOPMed Interest Group"
-path: /events/2022-08-24_NHLBI_BioData_Catalyst__GWAS-TOPMed_Interest_Group
+path: /events/2022-08-24/interest-groups/GWAS-TOPMed
 date: 2022-08-24
 time: 11:00 a.m. - 12:00 p.m. EDT
 display_date: Tuesday, August 24th, 2022

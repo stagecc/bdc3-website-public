@@ -5,15 +5,16 @@ import { SEO } from "../../components/seo";
 import {
   Title,
   Paragraph,
-  Heading,
   Subheading,
   // Meta,
 } from "../../components/typography";
 import { Link } from "../../components/link";
 import { ButtonLink } from "../../components/buttons";
 import { Module, PageContent } from "../../components/layout";
+import { HorizontalRule } from "../../components/horizontal-rule"
 // import { LinkIcon } from "../../components/icons";
 // import { useWindowWidth } from "../../hooks";
+import { Grid } from '@mui/material'
 
 const EventsList = ({ title, events }) => {
   // const { isCompact } = useWindowWidth();
@@ -28,49 +29,29 @@ const EventsList = ({ title, events }) => {
             path,
             date,
             display_date,
-            // url,
-            // fabricHosted,
           } = event.node.frontmatter;
           return (
-            <Fragment key={`${date}${title}`}>
-              <Subheading>{display_date ? display_date : date}</Subheading>
-              <Heading>
-                <Link to={path}>{title}</Link>
-              </Heading>
-              {/* {!fabricHosted && url && (
-                <Meta
-                  style={{
-                    display: "inline-flex",
-                    justifyContent: "flex-start",
-                    alignItems: "flex-start",
-                    flexDirection: isCompact ? "column" : "row",
-                  }}
-                >
-                  <span
-                    style={{
-                      display: "inline-flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                    }}
-                  >
-                    Event Website:
-                  </span>
-                  <span>
-                    <Link to={url}>{url}</Link>
-                  </span>
-                </Meta>
-              )} */}
-              <Paragraph
-                style={{
-                  borderLeft: "3px solid var(--color-lightgrey)",
-                  paddingLeft: "1rem",
-                }}
-              >
-                {excerpt} <br />
-                <Link style={{ float: "right" }} to={path}>
-                  Read More
-                </Link>
-              </Paragraph>
+            <Fragment key={title}>
+              <Grid container spacing={2}>
+                <Grid item sm={12} md={3}>
+                  <Paragraph left noMargin>
+                    {display_date ? display_date : date}
+                  </Paragraph>
+                </Grid>
+                <Grid item sm={12} md={9}>
+                  <Subheading left>
+                    <Link 
+                      to={path}
+                    >{title}</Link>
+                  </Subheading>
+                  <Paragraph style={{fontSize: '85%'}}>{excerpt} <Link to={path}>
+                    Read More
+                    </Link>
+                  </Paragraph>
+                </Grid>
+              </Grid>
+              <HorizontalRule />
+              <br/>
             </Fragment>
           );
         })

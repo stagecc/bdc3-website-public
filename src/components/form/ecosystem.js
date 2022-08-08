@@ -21,7 +21,7 @@ import {
   // ErrorText,
 } from "./inputs";
 
-const FRESHDESK_USER_NAME = process.env.GATSBY_FRESHDESK_USER_NAME;
+const FRESHDESK_USER_NAME = process.env.GATSBY_FRESHDESK_API_KEY;
 const FRESHDESK_PASSWORD = process.env.GATSBY_FRESHDESK_PASSWORD;
 const FRESHDESK_API_ROOT_URL = process.env.GATSBY_FRESHDESK_API_ROOT_URL;
 const FRESHDESK_API_CREATE_CONTACT = `${FRESHDESK_API_ROOT_URL}/contacts`;
@@ -54,9 +54,6 @@ export const EcoSystemForm = (props) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [commons, setCommons] = useState("");
-  // const [password, setPassword] = useState("");
-  // const [confirm_password, setConfirmPassword] = useState("");
-  // const [passwordError, setPasswordError] = useState(false);
   const [organization, setOrganization] = useState("");
   const [referral, setReferralSource] = useState("");
   const [other, setOther] = useState("");
@@ -72,7 +69,6 @@ export const EcoSystemForm = (props) => {
       email: email,
       custom_fields: {
         era_commons_id: commons,
-        // contacts_password: password,
         contacts_organization: organization,
         contacts_field: field.toString(),
         contacts_referral: referral,
@@ -89,12 +85,11 @@ export const EcoSystemForm = (props) => {
           if (![200, 201].includes(response.status)) {
             throw new Error(`Unsuccessful HTTP response, ${response.status}`);
           } else {
-            // console.log(response);
             navigate("/contact/ecosuccess");
           }
         })
         .catch((error) => {
-          console.log(error);
+          console.log("error");
           setError(error);
         });
     };
@@ -104,16 +99,6 @@ export const EcoSystemForm = (props) => {
   const handleChangeName = (event) => setName(event.target.value);
   const handleChangeCommons = (event) => setCommons(event.target.value);
   const handleChangeEmail = (event) => setEmail(event.target.value);
-  // const handleChangePassword = (event) => setPassword(event.target.value);
-  // const handleConfirmPassword = (event) => {
-  //   const pw = event.target.value;
-  //   if (pw != password) {
-  //     setPasswordError(true);
-  //   } else {
-  //     setPasswordError(false);
-  //   }
-  //   setConfirmPassword(pw);
-  // };
   const handleChangeOrganization = (event) =>
     setOrganization(event.target.value);
   const handleChangeRefferal = (event) => setReferralSource(event.target.value);
@@ -125,7 +110,6 @@ export const EcoSystemForm = (props) => {
     setField([...field, event.target.value]);
   };
   const handleChangeInterest = (event) => setInterest(event.target.value);
-
   return (
     <Card {...props}>
       <CardHeader>Join the Ecosystem </CardHeader>
@@ -179,35 +163,6 @@ export const EcoSystemForm = (props) => {
                 will serve as your user account name.
               </HelpText>
             </FormControl>
-            {/* <FormControl>
-              <label htmlFor="password">
-                NHLBI BioData Catalyst Password *
-              </label>
-              <TextInput
-                type="password"
-                required
-                id="password"
-                name="password"
-                value={password}
-                onChange={handleChangePassword}
-              />
-              <HelpText>
-                This password will provide access to the BioData Catalyst
-                ecosystem help desk and forums.
-              </HelpText>
-            </FormControl> */}
-            {/* <FormControl>
-              <label htmlFor="confirm_password">Confirm Password *</label>
-              <TextInput
-                type="password"
-                required
-                id=""
-                name=""
-                value={confirm_password}
-                onChange={handleConfirmPassword}
-              />
-              {passwordError && <ErrorText>Passwords do not match</ErrorText>}
-            </FormControl> */}
             <FormControl>
               <label htmlFor="organization">Organization *</label>
               <TextInput

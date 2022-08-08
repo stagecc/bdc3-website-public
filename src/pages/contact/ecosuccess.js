@@ -71,7 +71,7 @@ const SuccessPage = () => {
                   >
                     Open PIC-SURE&nbsp;
                   </Link>
-                  (view documentation{" "}
+                  (view documentation
                   <Link
                     target="_blank"
                     to="https://docs.google.com/document/d/1oVmdBSETxHNpB2DIWAh05TH_uUMPeJQKgyFsAGXpQVU/edit#heading=h.nohmcs2v8hsa"
