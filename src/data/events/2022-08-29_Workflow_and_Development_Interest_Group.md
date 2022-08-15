@@ -1,9 +1,9 @@
 ---
 title: "NHLBI BioData Catalyst Workflow and Development Interest Group"
-path: /events/2022-08-15/interest-groups/workflow-and-development
-date: 2022-08-15
+path: /events/2022-08-29/interest-groups/workflow-and-development
+date: 2022-08-29
 time: 1:30 - 2:30 p.m. EDT
-display_date: Monday, August 15th, 2022
+display_date: Monday, August 29th, 2022
 location: "Zoom (no registration required)"
 url: https://renci.zoom.us/j/99606818968?pwd=S2kwdW5ZbCtabjRYcHRQYWM4NnZkUT09 
 tags: [interest groups, workflow and development]
@@ -17,8 +17,8 @@ seo:
 
 Goals: Showcase the utility of reproducible analysis workflows by inviting community researchers to talk through their research questions and path to answers. Platform demonstrations and workspace tours will take place in an informal presentation and discussion setting. All workflow languages will be represented in the group, based on the preferred workflow language of the presenter.
 
-Please join the Workflow and Development Interest Group for this month's "Meet the Scientist" on [August 15th, 2022 at 1:30 p.m. ET](https://renci.zoom.us/j/99606818968?pwd=S2kwdW5ZbCtabjRYcHRQYWM4NnZkUT09), for our next exploration on how the cloud platform is facilitating the research of our community members. Full flyer and research topic to follow shortly.
+Please join the Workflow and Development Interest Group for this month's "Meet the Scientist" on [August 29th, 2022 at 1:30 p.m. ET](https://renci.zoom.us/j/99606818968?pwd=S2kwdW5ZbCtabjRYcHRQYWM4NnZkUT09), for our next exploration on how the cloud platform is facilitating the research of our community members. Full flyer and research topic to follow shortly.
 
-**Zoom Link *(No Registration Required)*:** [August 15th, 2022 at 1:30 p.m. ET](https://renci.zoom.us/j/99606818968?pwd=S2kwdW5ZbCtabjRYcHRQYWM4NnZkUT09)  
+**Zoom Link *(No Registration Required)*:** [August 29th, 2022 at 1:30 p.m. ET](https://renci.zoom.us/j/99606818968?pwd=S2kwdW5ZbCtabjRYcHRQYWM4NnZkUT09)  
 - **Meeting ID:** 996 0681 8968
 - **Passcode:** BDCatalyst
