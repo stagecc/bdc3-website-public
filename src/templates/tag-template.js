@@ -11,7 +11,7 @@ export default ({ data, pageContext }) => {
   const { tag } = pageContext;
 
   const articles = data.news.edges.map(({ node }) => node);
-  // const events = data.events.edges.map(({ node }) => node);
+  const events = data.events.edges.map(({ node }) => node);
 
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters>
@@ -54,7 +54,7 @@ export default ({ data, pageContext }) => {
         <br />
         <br />
 
-        {/* <section>
+        <section>
           <Heading>Events</Heading>
           {events.length ? (
             events.map((event) => {
@@ -66,7 +66,7 @@ export default ({ data, pageContext }) => {
                   </h5>
                   <Meta>
                     <strong>Event Date:</strong> {date} <br />
-                    <InlineList
+                    <InlineList2
                       title="Tags"
                       items={tags.map((tag) => (
                         <TagLink tag={tag} />
@@ -79,7 +79,7 @@ export default ({ data, pageContext }) => {
           ) : (
             <Paragraph>No events with this tag!</Paragraph>
           )}
-        </section> */}
+        </section>
       </div>
     </PageContent>
   );
@@ -90,6 +90,24 @@ export const newByTagQuery = graphql`
     news: allMarkdownRemark(
       filter: {
         fileAbsolutePath: { regex: "/latest-updates/" }
+        frontmatter: { tags: { in: [$tag] } }
+      }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            path
+            date(formatString: "MMMM DD, YYYY")
+            tags
+          }
+        }
+      }
+    }
+  
+    events: allMarkdownRemark(
+      filter: {
+        fileAbsolutePath: { regex: "/events/" }
         frontmatter: { tags: { in: [$tag] } }
       }
     ) {
