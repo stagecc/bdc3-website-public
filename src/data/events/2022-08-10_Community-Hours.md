@@ -6,6 +6,7 @@ time: 1:00 - 2:00 pm EDT
 display_date: Wednesday, August 10, 2022
 location: "Zoom"
 url: https://renci.zoom.us/meeting/register/tJcqcu6prDMuGdWme-2u9oFUJ284Mogi48JT
+forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000407091
 registration_required: true
 tags: [community hours]
 seo:
