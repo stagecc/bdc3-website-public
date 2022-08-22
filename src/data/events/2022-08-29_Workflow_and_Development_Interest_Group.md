@@ -17,7 +17,15 @@ seo:
 
 Goals: Showcase the utility of reproducible analysis workflows by inviting community researchers to talk through their research questions and path to answers. Platform demonstrations and workspace tours will take place in an informal presentation and discussion setting. All workflow languages will be represented in the group, based on the preferred workflow language of the presenter.
 
-Please join the Workflow and Development Interest Group for this month's "Meet the Scientist" on [August 29th, 2022 at 1:30 p.m. ET](https://renci.zoom.us/j/99606818968?pwd=S2kwdW5ZbCtabjRYcHRQYWM4NnZkUT09), for our next exploration on how the cloud platform is facilitating the research of our community members. Full flyer and research topic to follow shortly.
+### Creating Cloud Workflows on BioData Catalyst Powered by Seven Bridges
+Regardless of if you are new to cloud analysis or a seasoned cloud pro, please come to the Workflow Development Interest Group’s meeting on August 29th at 1:30 pm ET to learn more about the tool and workflow editors on BioData Catalyst Powered by Seven Bridges.
+
+Topics presented include:
+- Turning an analysis script (R, Python..etc) into a cloud enabled portable tool.
+- Combining a user created tool and a Public Apps Gallery tool into a multi-step workflow.
+- How to find docker containers that can be used “as-is” on the BioData Catalyst platform.
+
+Can’t attend live? Contact [Dave Roberson](david.Roberson@sbgenomics.com) for a recording and notes from the session.
 
 **Zoom Link *(No Registration Required)*:** [August 29th, 2022 at 1:30 p.m. ET](https://renci.zoom.us/j/99606818968?pwd=S2kwdW5ZbCtabjRYcHRQYWM4NnZkUT09)  
 - **Meeting ID:** 996 0681 8968
