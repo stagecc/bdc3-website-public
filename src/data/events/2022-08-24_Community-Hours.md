@@ -6,7 +6,7 @@ time: 2:00 - 3:00 pm EDT
 display_date: Wednesday, August 24, 2022
 location: "Zoom"
 url: https://bit.ly/3PnUMvz
-forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000407032
+forum_post: https://bdcatalyst.freshdesk.com/support/discussions/forums/60000122778
 registration_required: true
 tags: [community hours]
 seo:
