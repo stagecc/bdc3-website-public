@@ -9,6 +9,15 @@
     "Subject Count": 657
   },
   {
+    "Accession": "phs002752.v1.p1",
+    "Cohort Abbreviation": "C3PO",
+    "Name": "Clinical-trial of COVID-19 Convalescent Plasma in Outpatients",
+    "Description": "The overarching goal of this project is to confirm or refute the role of passive immunization as a safe and efficacious therapy in preventing the progression from mild to severe/critical COVID-19 illness and to understand the immunologic kinetics of anti-SARS-CoV-2 antibodies after passive immunization.The primary objective is to determine the efficacy and safety of a single dose of convalescent plasma (CP) for preventing the progression from mild to severe COVID-19 illness. The secondary objective is to characterize the immunologic response to CP administration.This study will enroll adults presenting to the emergency department (ED) with mild, symptomatic, laboratory-confirmed COVID-19 illness, who are at high risk for progression to severe/critical illness, but who are clinically stable for outpatient management at randomization.",
+    "Consent Code": "c1",
+    "Consent Short": "phs002752.v1.p1.c1",
+    "Subject Count": 511
+  },
+  {
     "Accession": "phs002694.v1.p1",
     "Cohort Abbreviation": "ACTIV-4A",
     "Name": "Accelerating COVID-19 Therapeutic Interventions and Vaccines 4 ACUTE (ACTIV-4A)",
