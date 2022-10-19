@@ -76,7 +76,7 @@ def transform_mds_dict(mds_result):
         new_dict["Name"] = metadata['full_name']
         new_dict["Description"] = metadata['study_description']
         new_dict["Consent Code"] = metadata['dbgap_consent']
-        new_dict["Consent Short"] = metadata['dbgap_consent_text']
+        new_dict["Consent Short"] = metadata['study_id']
         new_dict["Subject Count"] = metadata['_subjects_count']
 
         if covid:

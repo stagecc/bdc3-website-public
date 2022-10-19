@@ -71,21 +71,26 @@ export const ExpansionPanel = ({ data }) => {
       </Header>
 
       <Body>
+        {/* Full Name DONE*/}
         <strong>Study Name:</strong> {data.Name}
         <br />
         <br />
+        {/* Study Description DONE*/}
         <strong>Study Description:</strong> {data.Description}
         <br />
         <br />
-        <strong>Study Consent: </strong>
+        {/* Study ID */}
+        <strong>Study ID: </strong>
         {data.Consent_Short}
         <br />
         <br />
-        <strong>Study Consent Code: </strong>
+        {/* Code DONE*/}
+        <strong>Study Code: </strong>
         {data.Consent_Code}
         <br />
         <br />
-        <strong>Cohort Abbreviation:</strong> {data.Cohort_Abbreviation}
+        {/* Short Name DONE*/}
+        <strong>Short Name:</strong> {data.Cohort_Abbreviation}
         <br />
         <br />
       </Body>
@@ -108,7 +113,7 @@ export const CovidExpansionPanel = ({ data }) => {
         </Subheading>
       </Header>
 
-      <Body>
+      {/* <Body>
         <strong>Short Name:</strong> {data.Name}
         <br />
         <br />
@@ -119,6 +124,30 @@ export const CovidExpansionPanel = ({ data }) => {
         <br />
         <br />
         <strong>Cohort Abbreviation:</strong> {data.Cohort_Abbreviation}
+        <br />
+        <br />
+      </Body> */}
+      <Body>
+        {/* Full Name DONE*/}
+        <strong>Study Name:</strong> {data.Name}
+        <br />
+        <br />
+        {/* Study Description DONE*/}
+        <strong>Study Description:</strong> {data.Description}
+        <br />
+        <br />
+        {/* Study ID */}
+        <strong>Study ID: </strong>
+        {data.Consent_Short}
+        <br />
+        <br />
+        {/* Code DONE*/}
+        <strong>Study Code: </strong>
+        {data.Consent_Code}
+        <br />
+        <br />
+        {/* Short Name DONE*/}
+        <strong>Short Name:</strong> {data.Cohort_Abbreviation}
         <br />
         <br />
       </Body>
