@@ -14,19 +14,19 @@ const Wrapper = styled.div`
   }
 `;
 
-const LIST_DELIMITER = " ; ";
+// const LIST_DELIMITER = " ; ";
 
-const DbGapLink = ({ pht }) => {
-  const re = new RegExp(/pht(\d+)\.v\d\.p\d/);
-  const [, digits] = pht.match(re);
-  return (
-    <Link
-      to={`https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/dataset.cgi?study_id=phs000956.v4.p1&pht=${digits}`}
-    >
-      {pht}
-    </Link>
-  );
-};
+// const DbGapLink = ({ pht }) => {
+//   const re = new RegExp(/pht(\d+)\.v\d\.p\d/);
+//   const [, digits] = pht.match(re);
+//   return (
+//     <Link
+//       to={`https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/dataset.cgi?study_id=phs000956.v4.p1&pht=${digits}`}
+//     >
+//       {pht}
+//     </Link>
+//   );
+// };
 
 const Header = styled.div`
   display: flex;
@@ -71,29 +71,27 @@ export const ExpansionPanel = ({ data }) => {
       </Header>
 
       <Body>
+        {/* Full Name DONE*/}
+        <strong>Study Name:</strong> {data.Name}
+        <br />
+        <br />
+        {/* Study Description DONE*/}
         <strong>Study Description:</strong> {data.Description}
         <br />
         <br />
-        <strong>Primary Research Focus:</strong> {data.Primary_Research_Focus}
+        {/* Study ID */}
+        <strong>Study ID: </strong>
+        {data.Consent_Short}
         <br />
         <br />
-        <strong>dbGaP Listed Variable:</strong>{" "}
-        {data.dbGaP_Listed_Variable.join(LIST_DELIMITER)}
+        {/* Code DONE*/}
+        <strong>Study Code: </strong>
+        {data.Consent_Code}
         <br />
         <br />
-        <strong>Study Type:</strong> {data.Type.join(LIST_DELIMITER)}
+        {/* Short Name DONE*/}
+        <strong>Short Name:</strong> {data.Cohort_Abbreviation}
         <br />
-        <br />
-        <strong>Study-Reported Population(s):</strong>{" "}
-        {data.Populations.join(LIST_DELIMITER)}
-        <br />
-        <br />
-        <strong>Study Consent:</strong>{" "}
-        {data.Consent_Short.join(LIST_DELIMITER)}
-        <br />
-        <br />
-        <strong>Primary Data Dictionary Link:</strong>{" "}
-        <DbGapLink pht={data.Data_Dictionary_Link} />
         <br />
       </Body>
 
@@ -115,8 +113,8 @@ export const CovidExpansionPanel = ({ data }) => {
         </Subheading>
       </Header>
 
-      <Body>
-        <strong>Short Name:</strong> {data.Short_Name}
+      {/* <Body>
+        <strong>Short Name:</strong> {data.Name}
         <br />
         <br />
         <strong>Study Description:</strong> {data.Description}
@@ -125,20 +123,31 @@ export const CovidExpansionPanel = ({ data }) => {
         <strong>dbGaP Accession ID:</strong> {data.Accession}
         <br />
         <br />
-        <strong>Study Type:</strong> {data.Type}
+        <strong>Cohort Abbreviation:</strong> {data.Cohort_Abbreviation}
         <br />
         <br />
-        <strong>Study Link:</strong>{" "}
-        <Link to={data.Link}>{data.Link}</Link>
+      </Body> */}
+      <Body>
+        {/* Full Name DONE*/}
+        <strong>Study Name:</strong> {data.Name}
         <br />
         <br />
-        <strong>Network:</strong> {data.Network}
+        {/* Study Description DONE*/}
+        <strong>Study Description:</strong> {data.Description}
         <br />
         <br />
-        <strong>Responsible Party:</strong> {data.Responsible_Party}
+        {/* Study ID */}
+        <strong>Study ID: </strong>
+        {data.Consent_Short}
         <br />
         <br />
-        <strong>Other Information:</strong> {data.Other_Information}
+        {/* Code DONE*/}
+        <strong>Study Code: </strong>
+        {data.Consent_Code}
+        <br />
+        <br />
+        {/* Short Name DONE*/}
+        <strong>Short Name:</strong> {data.Cohort_Abbreviation}
         <br />
         <br />
       </Body>
