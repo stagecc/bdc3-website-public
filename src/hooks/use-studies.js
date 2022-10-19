@@ -35,6 +35,8 @@ const studiesQuery = graphql`
           Name
           Cohort_Abbreviation
           Description
+          Consent_Code
+          Consent_Short
         }
       }
     }
