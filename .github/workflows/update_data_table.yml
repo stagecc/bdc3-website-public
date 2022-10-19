@@ -22,9 +22,9 @@ jobs:
           python3 -m pip install --upgrade pip
           pip install -r requirements.txt
       
-      - name: delete existing files
-        run: |
-          rm src/data/studies/covid-studies.json && rm src/data/studies/studies.json 
+      # - name: delete existing files
+      #   run: |
+      #     rm src/data/studies/covid-studies.json && rm src/data/studies/studies.json 
       
       - name: execute py script # run the run.py to get the latest data
         run: python call_mds.py
