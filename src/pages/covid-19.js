@@ -40,7 +40,8 @@ const Covid19Page = () => {
 
       <Paragraph>
         The table below provides metadata on the SARS-CoV-2 studies in the
-        BioData Catalyst ecosystem.
+        BioData Catalyst ecosystem. Note that some elements of the ecosystem may
+        lag in showing some datasets.
       </Paragraph>
 
       {covidStudies && covidStudiesColumns && (

@@ -20,9 +20,11 @@ const StudiesPage = () => {
   useEffect(() => {
     const columnsCopy = [...studiesColumns];
     if (studiesColumns.length) {
-      const index = columnsCopy.findIndex(column => column.selector === "Name");
+      const index = columnsCopy.findIndex(
+        (column) => column.selector === "Name"
+      );
       if (index > -1) {
-        columnsCopy[index].cell = row => (
+        columnsCopy[index].cell = (row) => (
           <CustomCell>
             <Link
               to={`https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=${row.Accession}`}
@@ -51,10 +53,10 @@ const StudiesPage = () => {
       <br />
 
       <Paragraph>
-        The filterable data table below provides metadata on all
-        non-COVID studies available in BioData Catalyst.{' '}
+        The filterable data table below provides metadata on all non-COVID
+        studies available in BioData Catalyst. Note that some elements of the
+        ecosystem may lag in showing some datasets.
         <Link to="/covid-19">View COVID-19 studies here</Link>.
-
       </Paragraph>
 
       {studies && modifiedStudiesColumns && (
