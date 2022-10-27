@@ -86,6 +86,10 @@ const resources = [
       {
         text: "Terra Videos",
         url: "https://www.youtube.com/channel/UCkXAqpR5Hk1ZmNd2-1K2l5Q"
+      },
+      {
+        text: "BioData Catalyst Videos",
+        url: "https://www.youtube.com/channel/UCGkmY5oNK8uFZzT8vV_9KgQ"
       }
     ]
   },
