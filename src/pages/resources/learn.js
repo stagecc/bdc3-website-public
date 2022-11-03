@@ -68,6 +68,10 @@ const resources = [
         url: "https://videocast.nih.gov/watch=37703"
       },
       {
+        text: "BioData Catalyst Videos",
+        url: "https://www.youtube.com/channel/UCGkmY5oNK8uFZzT8vV_9KgQ"
+      },
+      {
         text: "Dockstore Videos",
         url: "https://www.youtube.com/channel/UCFWNYqxQvVLAuZq8rdOSE4g/videos"
       },
