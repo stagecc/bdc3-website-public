@@ -429,7 +429,7 @@ export const CloudCreditsForm = (props) => {
         <Paragraph center noMargin>
           Before completing this form you must create an account on the
           applicable platform(s),{" "}
-          <Link to="https://docs.sevenbridges.com/docs/sign-up">
+          <Link to="https://sb-biodatacatalyst.readme.io/docs/sign-up-for-biodata-catalyst-powered-by-seven-bridges">
             Seven Bridges
           </Link>{" "}
           or{" "}
