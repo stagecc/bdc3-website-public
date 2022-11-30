@@ -54,9 +54,9 @@ const StudiesPage = () => {
 
       <Paragraph>
         The filterable data table below provides metadata on all non-COVID
-        studies available in BioData Catalyst. Note that some elements of the
-        ecosystem may lag in showing some datasets.
-        <Link to="/covid-19">View COVID-19 studies here</Link>.
+        studies available in BioData Catalyst. Note that some parts of the
+        ecosystem may lag in showing some datasets.  <Link to="/covid-19">View 
+        COVID-19 studies here</Link>.
       </Paragraph>
 
       {studies && modifiedStudiesColumns && (
