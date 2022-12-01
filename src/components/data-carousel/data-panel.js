@@ -5,8 +5,9 @@ import { animated } from "react-spring";
 export const DataPanel = styled.div`
   height: 100%;
   width: 100%;
-  flex: ${props => (props.compact ? "1 0 50%" : "1")};
-  max-width: ${props => (props.compact ? "none" : "400px")};
+  display: ${props => (props.testimonialStyle ? "none" : "block")};
+  flex: ${props => (props.compact ? "1 0 50%" : "3")};
+  max-width: ${props => (props.compact ? "none" : "800px")};
   background-color: #00000066;
   text-align: center;
 `;
@@ -64,7 +65,7 @@ export const Data = ({ data, style }) => {
   }, [dataIndex]);
 
   return (
-    <DataWrapper style={style}>
+    <DataWrapper style={style} >
       {data.map((datum, i) => (
         <Datum key={i} active={i < dataIndex}>
           <DatumValue>{datum.value}</DatumValue>

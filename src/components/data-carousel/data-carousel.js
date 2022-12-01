@@ -159,7 +159,7 @@ export const DataCarousel = () => {
               <DataDetail key={key} style={props} item={item} />
             ))}
           </DetailsPanel>
-          <DataPanel compact={isCompact}>
+          <DataPanel compact={isCompact} testimonialStyle>
             {dataTransitions.map(({ item, props, key }) => (
               <Data key={key} style={props} data={item.data} />
             ))}
