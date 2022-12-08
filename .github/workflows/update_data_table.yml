@@ -39,8 +39,10 @@ jobs:
           git config --local user.name "GitHub Action"
           git add -A
           git commit -m "add new data" -a
+          git checkout -b studies-update-"`r format(Sys.time(), '%y %m, %d')`"
+          git push origin studies-update-"`r format(Sys.time(), '%y %m, %d')`"
       - name: push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: feature/update-mds-files
+          branch: studies-update-"`r format(Sys.time(), '%y %m, %d')`"
