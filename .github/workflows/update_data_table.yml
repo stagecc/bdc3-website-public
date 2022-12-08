@@ -15,7 +15,7 @@ jobs:
       - name: setup python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.6 #install the python needed
+          python-version: 3.11.1 #install the python needed
       
       - name: install python packages
         run: |
@@ -39,8 +39,10 @@ jobs:
           git config --local user.name "GitHub Action"
           git add -A
           git commit -m "add new data" -a
+          git checkout -b studies-update-"`r format(Sys.time(), '%y %m, %d')`"
+          git push origin studies-update-"`r format(Sys.time(), '%y %m, %d')`"
       - name: push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: mds-api-integration
+          branch: studies-update-"`r format(Sys.time(), '%y %m, %d')`"
