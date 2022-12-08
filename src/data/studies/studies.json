@@ -1,5 +1,131 @@
 [
   {
+    "Accession": "phs000166.v2.p1",
+    "Cohort Abbreviation": "SHARP",
+    "Name": "National Heart, Lung, and Blood Institute SNP Health Association Asthma Resource Project (SHARP)",
+    "Description": "SNP Health Association Resource (SHARe) Asthma Resource project (SHARP) is conducting a genome-wide analysis in adults and children who have participated in National Heart, Lung, and Blood Institute's clinical research trials on asthma. This includes 1041 children with asthma who participated in the Childhood Asthma Management Program (CAMP), 994 children who participated in one or five clinical trials conducted by the Childhood Asthma Research and Education (CARE) network, and 701 adults who participated in one of six clinical trials conducted by the Asthma Clinical Research Network (ACRN). There are three study types. The longitudinal clinical trials can be subsetted for population-based and/or case-control analyses. Each of the childhood asthma studies has a majority of children participating as part of a parent-child trio. The ACRN (adult) studies are probands alone. Control genotypes will be provided for case-control analyses.   Study Weblinks:   CAMP CARE ACRN    Study Design:       Cross-Sectional    Study Type:  Longitudinal Parent-Offspring Trios Case-Control   Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000166.v2.p1 on 2021-03-25 and may not include exact formatting or images.",
+    "Consent Code": "c1",
+    "Consent Short": "phs000166.v2.p1.c1",
+    "Subject Count": 4046
+  },
+  {
+    "Accession": "phs000820.v1.p1",
+    "Cohort Abbreviation": "CCAF",
+    "Name": "The Cleveland Clinic Foundation's Lone Atrial Fibrillation GWAS Study",
+    "Description": "Blood samples were taken from patients who have lone atrial fibrillation. DNA samples were processed with Illumina Hap550 and Hap 610 chips.   Study Design:       Case Set    Study Type:  Case Set     dbGaP estimated ancestry using  GRAF-pop  Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000820.v1.p1 on 2021-03-25 and may not include exact formatting or images.",
+    "Consent Code": "c1",
+    "Consent Short": "phs000820.v1.p1.c1",
+    "Subject Count": 543
+  },
+  {
+    "Accession": "phs000784.v3.p1",
+    "Cohort Abbreviation": "GenSal",
+    "Name": "Genetic Epidemiology Network of Salt Sensitivity (GenSalt)",
+    "Description": "The GenSalt study is aimed at identifying novel genes which interact with the effect of dietary sodium and potassium intake or cold pressor on blood pressure.   Study Design:       Interventional    Study Type:  Family Interventional     dbGaP estimated ancestry using  GRAF-pop  Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000784.v3.p1 on 2021-03-25 and may not include exact formatting or images.",
+    "Consent Code": "c1",
+    "Consent Short": "phs000784.v3.p1.c1",
+    "Subject Count": 1675
+  },
+  {
+    "Accession": "phs000914.v1.p1",
+    "Cohort Abbreviation": "SAS",
+    "Name": "Genome-Wide Association Study of Adiposity in Samoans",
+    "Description": "The research goal of this study is to identify genetic variation that increases susceptibility to obesity and cardiometabolic phenotypes among adult Samoans using genome-wide association (GWAS) methods. DNA from peripheral blood and phenotypic information were collected from 3,119 adult Samoans, 23 to 70 years of age. The participants reside throughout the independent nation of Samoa, which is experiencing economic development and the nutrition transition. Genotyping was performed with the Affymetrix Genome-Wide Human SNP 6.0 Array using a panel of approximately 900,000 SNPs. Anthropometric, fasting blood biomarkers and detailed dietary, physical activity, health and socio-demographic variables were collected. We are replicating the GWAS findings in an independent sample of 2,500 Samoans from earlier studies. After replication of genomic regions and informative SNPs in those regions, we will determine sequences of the important genes, and determine the specific genetic variants in the sequenced genes that are associated with adiposity and related cardiometabolic conditions. We will also identify gene by environment interactions, focusing on dietary intake patterns and nutrients.   Study Design:       Cross-Sectional    Study Type:  Cross-Sectional Population     dbGaP estimated ancestry using  GRAF-pop  Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000914.v1.p1 on 2021-03-25 and may not include exact formatting or images.",
+    "Consent Code": "c1",
+    "Consent Short": "phs000914.v1.p1.c1",
+    "Subject Count": 3501
+  },
+  {
+    "Accession": "phs001001.v1.p1",
+    "Cohort Abbreviation": "MGH_AF",
+    "Name": "Massachusetts General Hospital (MGH) Atrial Fibrillation Study",
+    "Description": "\"The Massachusetts General Hospital (MGH) Atrial Fibrillation Study was initiated in 2001. The study has enrolled serial probands, unaffected and affected family members with atrial fibrillation. At enrollment participants undergo a structured interview to systematically capture their past medical history, AF treatments, and family history. An electrocardiogram is performed; the results of an echocardiogram are obtained; and blood samples are obtained. The Massachusetts General Hospital (MGH) Atrial Fibrillation Study is utilized in the following dbGaP substudies. To view genotypes, analysis, other molecular data, and derived variables collected in these substudies, please click on the following substudies below or in the \"\"Substudies\"\" section of this top-level study page phs001001 Massachusetts General Hospital (MGH) Atrial Fibrillation Study.  phs001116 MGH AF CHARGE-S phs001117 MGH AF Exome Sequencing phs001118 MGH AF Medical Resequencing     Study Design:       Case Set    Study Type:  Case Set   Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001001.v1.p1 on 2021-03-25 and may not include exact formatting or images.\"",
+    "Consent Code": "c1",
+    "Consent Short": "phs001001.v1.p1.c1",
+    "Subject Count": 933
+  },
+  {
+    "Accession": "phs001012.v1.p1",
+    "Cohort Abbreviation": "DHS",
+    "Name": "The Diabetes Heart Study (DHS)",
+    "Description": "The Diabetes Heart Study is a family based study enriched for type 2 diabetes (T2D). The cohort included 1220 self-reported European Americans from 475 families (Bowden et al 2010 Review of Diabetic Studies 7:188-201: PMID: 21409311; Bowden et al 2008 Annals of Human Genetics 72:598-601 PMID: 18460048) and included siblings concordant for T2D; where possible unaffected siblings were also recruited. The cohort was recruited between 1998 and 2006. Participants were extensively phenotyped for measures of subclinical CVD and other known CVD risk factors. Primary outcomes were quantified burden of vascular calcified plaque in the coronary artery, carotid artery and abdominal aorta all determined from non-contrast computed tomography scans.    Study Design:       Cross-Sectional    Study Type:  Cross-Sectional Cohort     dbGaP estimated ancestry using  GRAF-pop  Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001012.v1.p1 on 2021-03-25 and may not include exact formatting or images.",
+    "Consent Code": "c1",
+    "Consent Short": "phs001012.v1.p1.c1",
+    "Subject Count": 1177
+  },
+  {
+    "Accession": "phs001180.v2.p1",
+    "Cohort Abbreviation": "GALAII",
+    "Name": "Genes-Environments and Admixture in Latino Asthmatics (GALA II) Study",
+    "Description": "\"A case-control pharmacogenetic study of bronchodilator drug response among racially admixed Latino children with asthma. Each participant had two spirometry measurements using the KoKo PFT System. With the first spirometry test, participant was administered with 4 puffs of HFA Albuterol. The second albuterol measurement was based on age, for participants under 16 years of age, additional 2 puffs were administered and for those over 16 years of age, additional 4 puffs were administered. The overall goal is to identify genetic factors which are predictive of drug response in children with asthma. The principal tools include a questionnaire and biological specimen collection. Participants are 8-21 years old at time of recruitment. Children with asthma have physician-diagnosed asthma, symptoms and medications. The GALAII Study is utilized in the following dbGaP substudies. To view genotypes, analysis, other molecular data, and derived variables collected in these substudies, please click on the following substudies below or in the \"\"Substudies\"\" box located on the right hand side of this top-level study page phs001180 GALAII Study.  phs001274phs001274 GALAII GWAS     Study Weblinks:   Asthma Collaboratory    Study Design:       Case-Control    Study Type:  Case-Control   Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001180.v2.p1 on 2021-03-25 and may not include exact formatting or images.\"",
+    "Consent Code": "c2",
+    "Consent Short": "phs001180.v2.p1.c2",
+    "Subject Count": 4458
+  },
+  {
+    "Accession": "phs001194.v2.p2",
+    "Cohort Abbreviation": "PCGC",
+    "Name": "National Heart, Lung, and Blood Institute (NHLBI) Bench to Bassinet Program: The Pediatric Cardiac Genetics Consortium (PCGC) Study",
+    "Description": "\"Multi-center, prospective observational cohort study of individuals with congenital heart defects (CHD). Phenotypic data and source DNA derived from 10,000 probands, parents, and families of interest are being collected to investigate relationships between genetic factors and phenotypic and clinical outcomes in patients with CHD. The PCGC Cohort is utilized in the following dbGaP substudies. To view genotypes, other molecular data, and derived variables collected in these substudies, please click on the following substudies below or in the \"\"Substudies\"\" section of this top-level study page phs001194 PCGC Cohort.  phs000571 The Pediatric Cardiac Genetics Consortium (PCGC)   The Gabriella Miller Kids First Pediatric Research Program (Kids First) subset of the PCGC project (phs001194) is now accessible through a separate dbGaP study accession: phs001138. To access this dataset, please submit a Data Access Request (DAR) for phs001138. Approval of this DAR will be expedited for approved users of phs001194. To learn about other Kids First datasets visit https://kidsfirstdrc.org/.   Study Weblinks:   From Bench to Bassinet: CHD Genes    Study Design:       Prospective Longitudinal Cohort    Study Type:  Parent-Offspring Trios Cohort   Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001194.v2.p2 on 2021-03-25 and may not include exact formatting or images.\"",
+    "Consent Code": "c1",
+    "Consent Short": "phs001194.v2.p2.c1",
+    "Subject Count": 9431
+  },
+  {
+    "Accession": "phs001194.v2.p2",
+    "Cohort Abbreviation": "PCGC",
+    "Name": "National Heart, Lung, and Blood Institute (NHLBI) Bench to Bassinet Program: The Pediatric Cardiac Genetics Consortium (PCGC) Study",
+    "Description": "\"Multi-center, prospective observational cohort study of individuals with congenital heart defects (CHD). Phenotypic data and source DNA derived from 10,000 probands, parents, and families of interest are being collected to investigate relationships between genetic factors and phenotypic and clinical outcomes in patients with CHD. The PCGC Cohort is utilized in the following dbGaP substudies. To view genotypes, other molecular data, and derived variables collected in these substudies, please click on the following substudies below or in the \"\"Substudies\"\" section of this top-level study page phs001194 PCGC Cohort.  phs000571 The Pediatric Cardiac Genetics Consortium (PCGC)   The Gabriella Miller Kids First Pediatric Research Program (Kids First) subset of the PCGC project (phs001194) is now accessible through a separate dbGaP study accession: phs001138. To access this dataset, please submit a Data Access Request (DAR) for phs001138. Approval of this DAR will be expedited for approved users of phs001194. To learn about other Kids First datasets visit https://kidsfirstdrc.org/.   Study Weblinks:   From Bench to Bassinet: CHD Genes    Study Design:       Prospective Longitudinal Cohort    Study Type:  Parent-Offspring Trios Cohort   Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001194.v2.p2 on 2021-03-25 and may not include exact formatting or images.\"",
+    "Consent Code": "c2",
+    "Consent Short": "phs001194.v2.p2.c2",
+    "Subject Count": 32
+  },
+  {
+    "Accession": "phs001252.v1.p1",
+    "Cohort Abbreviation": "ECLIPSE",
+    "Name": "Evaluation of COPD Longitudinally to Identify Predictive Surrogate Endpoints (ECLIPSE)",
+    "Description": "ECLIPSE was a longitudinal observational study of 2164 COPD subjects and a smaller number of smoking controls (337) and nonsmoking controls (245) followed regularly for three years, with three chest CT scans (at baseline, one year, and three years) (Vestbo, European Respiratory Journal 2008; 31: 869). Inclusion criteria included age 40-75, at least 10 pack-years of smoking, and spirometry in GOLD grades 2-4 (COPD cases) or normal spirometry with post-bronchodilator FEV1 >85% predicted and FEV1/FVC>0.7 (controls). Study visits were performed at enrollment, three months, and every six months thereafter with spirometry, questionnaires, and other clinical evaluations. The ECLIPSE CT scans have been analyzed with the VIDA software for emphysema and airway phenotypes. ECLIPSE has provided key insights into the clinical epidemiology of COPD, including COPD exacerbations (Hurst, NEJM 2010; 363: 1128) and lung function decline in COPD (Vestbo, NEJM 2011; 365: 1184). ECLIPSE has been used in a number of genetic studies of COPD susceptibility and protein biomarkers(Faner, Thorax 2014; 69: 666). Genome-wide gene expression microarray data are available in 147 induced sputum samples from COPD subjects and 248 peripheral blood samples from COPD and control subjects.   Study Weblinks:   ECLIPSE    Study Design:       Case-Control    Study Type:  Case-Control Longitudinal Cohort Cohort     dbGaP estimated ancestry using  GRAF-pop  Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001252.v1.p1 on 2021-03-25 and may not include exact formatting or images.",
+    "Consent Code": "c1",
+    "Consent Short": "phs001252.v1.p1.c1",
+    "Subject Count": 2746
+  },
+  {
+    "Accession": "phs001607.v2.p2",
+    "Cohort Abbreviation": "IPF",
+    "Name": "NHLBI TOPMed: Pulmonary Fibrosis Whole Genome Sequencing",
+    "Description": "\"This study is part of the NHLBI Trans-Omics for Precision Medicine (TOPMed)  Whole Genome Sequencing Program. TOPMed is part of a broader  Precision Medicine Initiative,  which aims to provide disease treatments that are tailored to an individual's  unique genes and environment. TOPMed will contribute to this initiative through the  integration of whole-genome sequencing (WGS) and other -omics (e.g., metabolic profiles,  protein and RNA expression patterns) data with molecular, behavioral, imaging, environmental,  and clinical data. In doing so, this program aims to uncover factors that increase or decrease  the risk of disease, to identify subtypes of disease, and to develop more targeted and personalized  treatments. Two genotype call sets derived from WGS are now available,  Freeze 5b (GRCh38) and Freeze 8 (GRCh38), with largely overlapping sample sets.  Information about how to identify other TOPMed WGS accessions for cross-study analysis,  as well as descriptions of TOPMed methods of data acquisition, data processing and quality control,  are provided in the accompanying documents,   \"\"TOPMed Whole Genome Sequencing Project - Freeze 5b, Phases 1 and 2\"\"  and \"\"TOPMed Whole Genome Sequencing Project - Freeze 8, Phases 1-4\"\".  Please check the study list at the top of each of these methods documents to determine whether  it applies to this study accession. This is a set of cases diagnosed with idiopathic pulmonary fibrosis, a fatal interstitial lung disease. These cases were included in the TOPMed phase three studies. The planned study will compare these cases to within-TOPMed controls for genome-wide association studies.   Study Design:       Case Set    Study Type:  Case Set     dbGaP estimated ancestry using  GRAF-pop  Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001607.v2.p2 on 2021-03-25 and may not include exact formatting or images.\"",
+    "Consent Code": "c5",
+    "Consent Short": "phs001607.v2.p2.c5",
+    "Subject Count": 176
+  },
+  {
+    "Accession": "phs001607.v2.p2",
+    "Cohort Abbreviation": "IPF",
+    "Name": "NHLBI TOPMed: Pulmonary Fibrosis Whole Genome Sequencing",
+    "Description": "\"This study is part of the NHLBI Trans-Omics for Precision Medicine (TOPMed)  Whole Genome Sequencing Program. TOPMed is part of a broader  Precision Medicine Initiative,  which aims to provide disease treatments that are tailored to an individual's  unique genes and environment. TOPMed will contribute to this initiative through the  integration of whole-genome sequencing (WGS) and other -omics (e.g., metabolic profiles,  protein and RNA expression patterns) data with molecular, behavioral, imaging, environmental,  and clinical data. In doing so, this program aims to uncover factors that increase or decrease  the risk of disease, to identify subtypes of disease, and to develop more targeted and personalized  treatments. Two genotype call sets derived from WGS are now available,  Freeze 5b (GRCh38) and Freeze 8 (GRCh38), with largely overlapping sample sets.  Information about how to identify other TOPMed WGS accessions for cross-study analysis,  as well as descriptions of TOPMed methods of data acquisition, data processing and quality control,  are provided in the accompanying documents,   \"\"TOPMed Whole Genome Sequencing Project - Freeze 5b, Phases 1 and 2\"\"  and \"\"TOPMed Whole Genome Sequencing Project - Freeze 8, Phases 1-4\"\".  Please check the study list at the top of each of these methods documents to determine whether  it applies to this study accession. This is a set of cases diagnosed with idiopathic pulmonary fibrosis, a fatal interstitial lung disease. These cases were included in the TOPMed phase three studies. The planned study will compare these cases to within-TOPMed controls for genome-wide association studies.   Study Design:       Case Set    Study Type:  Case Set     dbGaP estimated ancestry using  GRAF-pop  Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001607.v2.p2 on 2021-03-25 and may not include exact formatting or images.\"",
+    "Consent Code": "c4",
+    "Consent Short": "phs001607.v2.p2.c4",
+    "Subject Count": 282
+  },
+  {
+    "Accession": "phs001607.v2.p2",
+    "Cohort Abbreviation": "IPF",
+    "Name": "NHLBI TOPMed: Pulmonary Fibrosis Whole Genome Sequencing",
+    "Description": "\"This study is part of the NHLBI Trans-Omics for Precision Medicine (TOPMed)  Whole Genome Sequencing Program. TOPMed is part of a broader  Precision Medicine Initiative,  which aims to provide disease treatments that are tailored to an individual's  unique genes and environment. TOPMed will contribute to this initiative through the  integration of whole-genome sequencing (WGS) and other -omics (e.g., metabolic profiles,  protein and RNA expression patterns) data with molecular, behavioral, imaging, environmental,  and clinical data. In doing so, this program aims to uncover factors that increase or decrease  the risk of disease, to identify subtypes of disease, and to develop more targeted and personalized  treatments. Two genotype call sets derived from WGS are now available,  Freeze 5b (GRCh38) and Freeze 8 (GRCh38), with largely overlapping sample sets.  Information about how to identify other TOPMed WGS accessions for cross-study analysis,  as well as descriptions of TOPMed methods of data acquisition, data processing and quality control,  are provided in the accompanying documents,   \"\"TOPMed Whole Genome Sequencing Project - Freeze 5b, Phases 1 and 2\"\"  and \"\"TOPMed Whole Genome Sequencing Project - Freeze 8, Phases 1-4\"\".  Please check the study list at the top of each of these methods documents to determine whether  it applies to this study accession. This is a set of cases diagnosed with idiopathic pulmonary fibrosis, a fatal interstitial lung disease. These cases were included in the TOPMed phase three studies. The planned study will compare these cases to within-TOPMed controls for genome-wide association studies.   Study Design:       Case Set    Study Type:  Case Set     dbGaP estimated ancestry using  GRAF-pop  Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001607.v2.p2 on 2021-03-25 and may not include exact formatting or images.\"",
+    "Consent Code": "c2",
+    "Consent Short": "phs001607.v2.p2.c2",
+    "Subject Count": 692
+  },
+  {
+    "Accession": "phs002348.v1.p1",
+    "Cohort Abbreviation": "MSH",
+    "Name": "Multicenter Study of Hydroxyurea (MSH)",
+    "Description": "This study aimed to determine whether or not treatment with hydroxyurea titrated to maximum tolerated doses would reduce the frequency of vaso-occlusive (painful) crises by at least 50% in 299 men and women between 18 and 50 years old with a diagnosis of sickle cell anemia by gel electrophoresis conducted by a Core Laboratory. A secondary objective investigated correlations of fetal hemoglobin (HbF) levels and other patient or treatment characteristics with the occurrence of vaso-occlusive (painful) crises, and the effect of treatment on the quality of life.This controlled trial made hydroxyurea the first drug of proven benefit in preventing vaso-occlusive pain crisis and acute chest syndrome caused by sickle cell disease, with additional findings including reduced mortality in adult patients taking hydroxyurea for frequent painful sickle cell episodes after 9 of years follow-up. No significant side-effects of hydroxyurea therapy were noted.Instructions for requesting individual-level data are available on BioData Catalyst at https://biodatacatalyst.nhlbi.nih.gov/resources/data/. Apply for data access in dbGaP. Upon approval, users may begin accessing requested data in BioData Catalyst. For questions about availability, you may contact the BioData Catalyst team at https://biodatacatalyst.nhlbi.nih.gov/contact.    Study Weblinks:      ClinicalTrials.gov (MSH) NHLBI BioLINCC (MSH)    Study Design:       Clinical Trial    Study Type:  Double-Blind Randomized Controlled Clinical Trial   Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/ on 2021-07-07 and may not include exact formatting or images.",
+    "Consent Code": "c1",
+    "Consent Short": "phs002348.v1.p1.c1",
+    "Subject Count": 357
+  },
+  {
     "Accession": "phs002715.v1.p1",
     "Cohort Abbreviation": "NSRR-CFS",
     "Name": "Cleveland Family Study",
@@ -1285,131 +1411,5 @@
     "Consent Code": "c1",
     "Consent Short": "phs001599.v1.p1.c1",
     "Subject Count": 943
-  },
-  {
-    "Accession": "phs000166.v2.p1",
-    "Cohort Abbreviation": "SHARP",
-    "Name": "National Heart, Lung, and Blood Institute SNP Health Association Asthma Resource Project (SHARP)",
-    "Description": "SNP Health Association Resource (SHARe) Asthma Resource project (SHARP) is conducting a genome-wide analysis in adults and children who have participated in National Heart, Lung, and Blood Institute's clinical research trials on asthma. This includes 1041 children with asthma who participated in the Childhood Asthma Management Program (CAMP), 994 children who participated in one or five clinical trials conducted by the Childhood Asthma Research and Education (CARE) network, and 701 adults who participated in one of six clinical trials conducted by the Asthma Clinical Research Network (ACRN). There are three study types. The longitudinal clinical trials can be subsetted for population-based and/or case-control analyses. Each of the childhood asthma studies has a majority of children participating as part of a parent-child trio. The ACRN (adult) studies are probands alone. Control genotypes will be provided for case-control analyses.   Study Weblinks:   CAMP CARE ACRN    Study Design:       Cross-Sectional    Study Type:  Longitudinal Parent-Offspring Trios Case-Control   Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000166.v2.p1 on 2021-03-25 and may not include exact formatting or images.",
-    "Consent Code": "c1",
-    "Consent Short": "phs000166.v2.p1.c1",
-    "Subject Count": 4046
-  },
-  {
-    "Accession": "phs000820.v1.p1",
-    "Cohort Abbreviation": "CCAF",
-    "Name": "The Cleveland Clinic Foundation's Lone Atrial Fibrillation GWAS Study",
-    "Description": "Blood samples were taken from patients who have lone atrial fibrillation. DNA samples were processed with Illumina Hap550 and Hap 610 chips.   Study Design:       Case Set    Study Type:  Case Set     dbGaP estimated ancestry using  GRAF-pop  Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000820.v1.p1 on 2021-03-25 and may not include exact formatting or images.",
-    "Consent Code": "c1",
-    "Consent Short": "phs000820.v1.p1.c1",
-    "Subject Count": 543
-  },
-  {
-    "Accession": "phs000784.v3.p1",
-    "Cohort Abbreviation": "GenSal",
-    "Name": "Genetic Epidemiology Network of Salt Sensitivity (GenSalt)",
-    "Description": "The GenSalt study is aimed at identifying novel genes which interact with the effect of dietary sodium and potassium intake or cold pressor on blood pressure.   Study Design:       Interventional    Study Type:  Family Interventional     dbGaP estimated ancestry using  GRAF-pop  Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000784.v3.p1 on 2021-03-25 and may not include exact formatting or images.",
-    "Consent Code": "c1",
-    "Consent Short": "phs000784.v3.p1.c1",
-    "Subject Count": 1675
-  },
-  {
-    "Accession": "phs000914.v1.p1",
-    "Cohort Abbreviation": "SAS",
-    "Name": "Genome-Wide Association Study of Adiposity in Samoans",
-    "Description": "The research goal of this study is to identify genetic variation that increases susceptibility to obesity and cardiometabolic phenotypes among adult Samoans using genome-wide association (GWAS) methods. DNA from peripheral blood and phenotypic information were collected from 3,119 adult Samoans, 23 to 70 years of age. The participants reside throughout the independent nation of Samoa, which is experiencing economic development and the nutrition transition. Genotyping was performed with the Affymetrix Genome-Wide Human SNP 6.0 Array using a panel of approximately 900,000 SNPs. Anthropometric, fasting blood biomarkers and detailed dietary, physical activity, health and socio-demographic variables were collected. We are replicating the GWAS findings in an independent sample of 2,500 Samoans from earlier studies. After replication of genomic regions and informative SNPs in those regions, we will determine sequences of the important genes, and determine the specific genetic variants in the sequenced genes that are associated with adiposity and related cardiometabolic conditions. We will also identify gene by environment interactions, focusing on dietary intake patterns and nutrients.   Study Design:       Cross-Sectional    Study Type:  Cross-Sectional Population     dbGaP estimated ancestry using  GRAF-pop  Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000914.v1.p1 on 2021-03-25 and may not include exact formatting or images.",
-    "Consent Code": "c1",
-    "Consent Short": "phs000914.v1.p1.c1",
-    "Subject Count": 3501
-  },
-  {
-    "Accession": "phs001001.v1.p1",
-    "Cohort Abbreviation": "MGH_AF",
-    "Name": "Massachusetts General Hospital (MGH) Atrial Fibrillation Study",
-    "Description": "\"The Massachusetts General Hospital (MGH) Atrial Fibrillation Study was initiated in 2001. The study has enrolled serial probands, unaffected and affected family members with atrial fibrillation. At enrollment participants undergo a structured interview to systematically capture their past medical history, AF treatments, and family history. An electrocardiogram is performed; the results of an echocardiogram are obtained; and blood samples are obtained. The Massachusetts General Hospital (MGH) Atrial Fibrillation Study is utilized in the following dbGaP substudies. To view genotypes, analysis, other molecular data, and derived variables collected in these substudies, please click on the following substudies below or in the \"\"Substudies\"\" section of this top-level study page phs001001 Massachusetts General Hospital (MGH) Atrial Fibrillation Study.  phs001116 MGH AF CHARGE-S phs001117 MGH AF Exome Sequencing phs001118 MGH AF Medical Resequencing     Study Design:       Case Set    Study Type:  Case Set   Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001001.v1.p1 on 2021-03-25 and may not include exact formatting or images.\"",
-    "Consent Code": "c1",
-    "Consent Short": "phs001001.v1.p1.c1",
-    "Subject Count": 933
-  },
-  {
-    "Accession": "phs001012.v1.p1",
-    "Cohort Abbreviation": "DHS",
-    "Name": "The Diabetes Heart Study (DHS)",
-    "Description": "The Diabetes Heart Study is a family based study enriched for type 2 diabetes (T2D). The cohort included 1220 self-reported European Americans from 475 families (Bowden et al 2010 Review of Diabetic Studies 7:188-201: PMID: 21409311; Bowden et al 2008 Annals of Human Genetics 72:598-601 PMID: 18460048) and included siblings concordant for T2D; where possible unaffected siblings were also recruited. The cohort was recruited between 1998 and 2006. Participants were extensively phenotyped for measures of subclinical CVD and other known CVD risk factors. Primary outcomes were quantified burden of vascular calcified plaque in the coronary artery, carotid artery and abdominal aorta all determined from non-contrast computed tomography scans.    Study Design:       Cross-Sectional    Study Type:  Cross-Sectional Cohort     dbGaP estimated ancestry using  GRAF-pop  Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001012.v1.p1 on 2021-03-25 and may not include exact formatting or images.",
-    "Consent Code": "c1",
-    "Consent Short": "phs001012.v1.p1.c1",
-    "Subject Count": 1177
-  },
-  {
-    "Accession": "phs001180.v2.p1",
-    "Cohort Abbreviation": "GALAII",
-    "Name": "Genes-Environments and Admixture in Latino Asthmatics (GALA II) Study",
-    "Description": "\"A case-control pharmacogenetic study of bronchodilator drug response among racially admixed Latino children with asthma. Each participant had two spirometry measurements using the KoKo PFT System. With the first spirometry test, participant was administered with 4 puffs of HFA Albuterol. The second albuterol measurement was based on age, for participants under 16 years of age, additional 2 puffs were administered and for those over 16 years of age, additional 4 puffs were administered. The overall goal is to identify genetic factors which are predictive of drug response in children with asthma. The principal tools include a questionnaire and biological specimen collection. Participants are 8-21 years old at time of recruitment. Children with asthma have physician-diagnosed asthma, symptoms and medications. The GALAII Study is utilized in the following dbGaP substudies. To view genotypes, analysis, other molecular data, and derived variables collected in these substudies, please click on the following substudies below or in the \"\"Substudies\"\" box located on the right hand side of this top-level study page phs001180 GALAII Study.  phs001274phs001274 GALAII GWAS     Study Weblinks:   Asthma Collaboratory    Study Design:       Case-Control    Study Type:  Case-Control   Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001180.v2.p1 on 2021-03-25 and may not include exact formatting or images.\"",
-    "Consent Code": "c2",
-    "Consent Short": "phs001180.v2.p1.c2",
-    "Subject Count": 4458
-  },
-  {
-    "Accession": "phs001194.v2.p2",
-    "Cohort Abbreviation": "PCGC",
-    "Name": "National Heart, Lung, and Blood Institute (NHLBI) Bench to Bassinet Program: The Pediatric Cardiac Genetics Consortium (PCGC) Study",
-    "Description": "\"Multi-center, prospective observational cohort study of individuals with congenital heart defects (CHD). Phenotypic data and source DNA derived from 10,000 probands, parents, and families of interest are being collected to investigate relationships between genetic factors and phenotypic and clinical outcomes in patients with CHD. The PCGC Cohort is utilized in the following dbGaP substudies. To view genotypes, other molecular data, and derived variables collected in these substudies, please click on the following substudies below or in the \"\"Substudies\"\" section of this top-level study page phs001194 PCGC Cohort.  phs000571 The Pediatric Cardiac Genetics Consortium (PCGC)   The Gabriella Miller Kids First Pediatric Research Program (Kids First) subset of the PCGC project (phs001194) is now accessible through a separate dbGaP study accession: phs001138. To access this dataset, please submit a Data Access Request (DAR) for phs001138. Approval of this DAR will be expedited for approved users of phs001194. To learn about other Kids First datasets visit https://kidsfirstdrc.org/.   Study Weblinks:   From Bench to Bassinet: CHD Genes    Study Design:       Prospective Longitudinal Cohort    Study Type:  Parent-Offspring Trios Cohort   Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001194.v2.p2 on 2021-03-25 and may not include exact formatting or images.\"",
-    "Consent Code": "c1",
-    "Consent Short": "phs001194.v2.p2.c1",
-    "Subject Count": 9431
-  },
-  {
-    "Accession": "phs001194.v2.p2",
-    "Cohort Abbreviation": "PCGC",
-    "Name": "National Heart, Lung, and Blood Institute (NHLBI) Bench to Bassinet Program: The Pediatric Cardiac Genetics Consortium (PCGC) Study",
-    "Description": "\"Multi-center, prospective observational cohort study of individuals with congenital heart defects (CHD). Phenotypic data and source DNA derived from 10,000 probands, parents, and families of interest are being collected to investigate relationships between genetic factors and phenotypic and clinical outcomes in patients with CHD. The PCGC Cohort is utilized in the following dbGaP substudies. To view genotypes, other molecular data, and derived variables collected in these substudies, please click on the following substudies below or in the \"\"Substudies\"\" section of this top-level study page phs001194 PCGC Cohort.  phs000571 The Pediatric Cardiac Genetics Consortium (PCGC)   The Gabriella Miller Kids First Pediatric Research Program (Kids First) subset of the PCGC project (phs001194) is now accessible through a separate dbGaP study accession: phs001138. To access this dataset, please submit a Data Access Request (DAR) for phs001138. Approval of this DAR will be expedited for approved users of phs001194. To learn about other Kids First datasets visit https://kidsfirstdrc.org/.   Study Weblinks:   From Bench to Bassinet: CHD Genes    Study Design:       Prospective Longitudinal Cohort    Study Type:  Parent-Offspring Trios Cohort   Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001194.v2.p2 on 2021-03-25 and may not include exact formatting or images.\"",
-    "Consent Code": "c2",
-    "Consent Short": "phs001194.v2.p2.c2",
-    "Subject Count": 32
-  },
-  {
-    "Accession": "phs001252.v1.p1",
-    "Cohort Abbreviation": "ECLIPSE",
-    "Name": "Evaluation of COPD Longitudinally to Identify Predictive Surrogate Endpoints (ECLIPSE)",
-    "Description": "ECLIPSE was a longitudinal observational study of 2164 COPD subjects and a smaller number of smoking controls (337) and nonsmoking controls (245) followed regularly for three years, with three chest CT scans (at baseline, one year, and three years) (Vestbo, European Respiratory Journal 2008; 31: 869). Inclusion criteria included age 40-75, at least 10 pack-years of smoking, and spirometry in GOLD grades 2-4 (COPD cases) or normal spirometry with post-bronchodilator FEV1 >85% predicted and FEV1/FVC>0.7 (controls). Study visits were performed at enrollment, three months, and every six months thereafter with spirometry, questionnaires, and other clinical evaluations. The ECLIPSE CT scans have been analyzed with the VIDA software for emphysema and airway phenotypes. ECLIPSE has provided key insights into the clinical epidemiology of COPD, including COPD exacerbations (Hurst, NEJM 2010; 363: 1128) and lung function decline in COPD (Vestbo, NEJM 2011; 365: 1184). ECLIPSE has been used in a number of genetic studies of COPD susceptibility and protein biomarkers(Faner, Thorax 2014; 69: 666). Genome-wide gene expression microarray data are available in 147 induced sputum samples from COPD subjects and 248 peripheral blood samples from COPD and control subjects.   Study Weblinks:   ECLIPSE    Study Design:       Case-Control    Study Type:  Case-Control Longitudinal Cohort Cohort     dbGaP estimated ancestry using  GRAF-pop  Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001252.v1.p1 on 2021-03-25 and may not include exact formatting or images.",
-    "Consent Code": "c1",
-    "Consent Short": "phs001252.v1.p1.c1",
-    "Subject Count": 2746
-  },
-  {
-    "Accession": "phs001607.v2.p2",
-    "Cohort Abbreviation": "IPF",
-    "Name": "NHLBI TOPMed: Pulmonary Fibrosis Whole Genome Sequencing",
-    "Description": "\"This study is part of the NHLBI Trans-Omics for Precision Medicine (TOPMed)  Whole Genome Sequencing Program. TOPMed is part of a broader  Precision Medicine Initiative,  which aims to provide disease treatments that are tailored to an individual's  unique genes and environment. TOPMed will contribute to this initiative through the  integration of whole-genome sequencing (WGS) and other -omics (e.g., metabolic profiles,  protein and RNA expression patterns) data with molecular, behavioral, imaging, environmental,  and clinical data. In doing so, this program aims to uncover factors that increase or decrease  the risk of disease, to identify subtypes of disease, and to develop more targeted and personalized  treatments. Two genotype call sets derived from WGS are now available,  Freeze 5b (GRCh38) and Freeze 8 (GRCh38), with largely overlapping sample sets.  Information about how to identify other TOPMed WGS accessions for cross-study analysis,  as well as descriptions of TOPMed methods of data acquisition, data processing and quality control,  are provided in the accompanying documents,   \"\"TOPMed Whole Genome Sequencing Project - Freeze 5b, Phases 1 and 2\"\"  and \"\"TOPMed Whole Genome Sequencing Project - Freeze 8, Phases 1-4\"\".  Please check the study list at the top of each of these methods documents to determine whether  it applies to this study accession. This is a set of cases diagnosed with idiopathic pulmonary fibrosis, a fatal interstitial lung disease. These cases were included in the TOPMed phase three studies. The planned study will compare these cases to within-TOPMed controls for genome-wide association studies.   Study Design:       Case Set    Study Type:  Case Set     dbGaP estimated ancestry using  GRAF-pop  Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001607.v2.p2 on 2021-03-25 and may not include exact formatting or images.\"",
-    "Consent Code": "c5",
-    "Consent Short": "phs001607.v2.p2.c5",
-    "Subject Count": 176
-  },
-  {
-    "Accession": "phs001607.v2.p2",
-    "Cohort Abbreviation": "IPF",
-    "Name": "NHLBI TOPMed: Pulmonary Fibrosis Whole Genome Sequencing",
-    "Description": "\"This study is part of the NHLBI Trans-Omics for Precision Medicine (TOPMed)  Whole Genome Sequencing Program. TOPMed is part of a broader  Precision Medicine Initiative,  which aims to provide disease treatments that are tailored to an individual's  unique genes and environment. TOPMed will contribute to this initiative through the  integration of whole-genome sequencing (WGS) and other -omics (e.g., metabolic profiles,  protein and RNA expression patterns) data with molecular, behavioral, imaging, environmental,  and clinical data. In doing so, this program aims to uncover factors that increase or decrease  the risk of disease, to identify subtypes of disease, and to develop more targeted and personalized  treatments. Two genotype call sets derived from WGS are now available,  Freeze 5b (GRCh38) and Freeze 8 (GRCh38), with largely overlapping sample sets.  Information about how to identify other TOPMed WGS accessions for cross-study analysis,  as well as descriptions of TOPMed methods of data acquisition, data processing and quality control,  are provided in the accompanying documents,   \"\"TOPMed Whole Genome Sequencing Project - Freeze 5b, Phases 1 and 2\"\"  and \"\"TOPMed Whole Genome Sequencing Project - Freeze 8, Phases 1-4\"\".  Please check the study list at the top of each of these methods documents to determine whether  it applies to this study accession. This is a set of cases diagnosed with idiopathic pulmonary fibrosis, a fatal interstitial lung disease. These cases were included in the TOPMed phase three studies. The planned study will compare these cases to within-TOPMed controls for genome-wide association studies.   Study Design:       Case Set    Study Type:  Case Set     dbGaP estimated ancestry using  GRAF-pop  Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001607.v2.p2 on 2021-03-25 and may not include exact formatting or images.\"",
-    "Consent Code": "c4",
-    "Consent Short": "phs001607.v2.p2.c4",
-    "Subject Count": 282
-  },
-  {
-    "Accession": "phs001607.v2.p2",
-    "Cohort Abbreviation": "IPF",
-    "Name": "NHLBI TOPMed: Pulmonary Fibrosis Whole Genome Sequencing",
-    "Description": "\"This study is part of the NHLBI Trans-Omics for Precision Medicine (TOPMed)  Whole Genome Sequencing Program. TOPMed is part of a broader  Precision Medicine Initiative,  which aims to provide disease treatments that are tailored to an individual's  unique genes and environment. TOPMed will contribute to this initiative through the  integration of whole-genome sequencing (WGS) and other -omics (e.g., metabolic profiles,  protein and RNA expression patterns) data with molecular, behavioral, imaging, environmental,  and clinical data. In doing so, this program aims to uncover factors that increase or decrease  the risk of disease, to identify subtypes of disease, and to develop more targeted and personalized  treatments. Two genotype call sets derived from WGS are now available,  Freeze 5b (GRCh38) and Freeze 8 (GRCh38), with largely overlapping sample sets.  Information about how to identify other TOPMed WGS accessions for cross-study analysis,  as well as descriptions of TOPMed methods of data acquisition, data processing and quality control,  are provided in the accompanying documents,   \"\"TOPMed Whole Genome Sequencing Project - Freeze 5b, Phases 1 and 2\"\"  and \"\"TOPMed Whole Genome Sequencing Project - Freeze 8, Phases 1-4\"\".  Please check the study list at the top of each of these methods documents to determine whether  it applies to this study accession. This is a set of cases diagnosed with idiopathic pulmonary fibrosis, a fatal interstitial lung disease. These cases were included in the TOPMed phase three studies. The planned study will compare these cases to within-TOPMed controls for genome-wide association studies.   Study Design:       Case Set    Study Type:  Case Set     dbGaP estimated ancestry using  GRAF-pop  Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001607.v2.p2 on 2021-03-25 and may not include exact formatting or images.\"",
-    "Consent Code": "c2",
-    "Consent Short": "phs001607.v2.p2.c2",
-    "Subject Count": 692
-  },
-  {
-    "Accession": "phs002348.v1.p1",
-    "Cohort Abbreviation": "MSH",
-    "Name": "Multicenter Study of Hydroxyurea (MSH)",
-    "Description": "This study aimed to determine whether or not treatment with hydroxyurea titrated to maximum tolerated doses would reduce the frequency of vaso-occlusive (painful) crises by at least 50% in 299 men and women between 18 and 50 years old with a diagnosis of sickle cell anemia by gel electrophoresis conducted by a Core Laboratory. A secondary objective investigated correlations of fetal hemoglobin (HbF) levels and other patient or treatment characteristics with the occurrence of vaso-occlusive (painful) crises, and the effect of treatment on the quality of life.This controlled trial made hydroxyurea the first drug of proven benefit in preventing vaso-occlusive pain crisis and acute chest syndrome caused by sickle cell disease, with additional findings including reduced mortality in adult patients taking hydroxyurea for frequent painful sickle cell episodes after 9 of years follow-up. No significant side-effects of hydroxyurea therapy were noted.Instructions for requesting individual-level data are available on BioData Catalyst at https://biodatacatalyst.nhlbi.nih.gov/resources/data/. Apply for data access in dbGaP. Upon approval, users may begin accessing requested data in BioData Catalyst. For questions about availability, you may contact the BioData Catalyst team at https://biodatacatalyst.nhlbi.nih.gov/contact.    Study Weblinks:      ClinicalTrials.gov (MSH) NHLBI BioLINCC (MSH)    Study Design:       Clinical Trial    Study Type:  Double-Blind Randomized Controlled Clinical Trial   Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/ on 2021-07-07 and may not include exact formatting or images.",
-    "Consent Code": "c1",
-    "Consent Short": "phs002348.v1.p1.c1",
-    "Subject Count": 357
   }
 ]
