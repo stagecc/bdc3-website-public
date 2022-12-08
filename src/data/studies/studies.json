@@ -1,14 +1,5 @@
 [
   {
-    "Accession": "phs000820.v1.p1",
-    "Cohort Abbreviation": "CCAF",
-    "Name": "The Cleveland Clinic Foundation's Lone Atrial Fibrillation GWAS Study",
-    "Description": "Blood samples were taken from patients who have lone atrial fibrillation. DNA samples were processed with Illumina Hap550 and Hap 610 chips.   Study Design:       Case Set    Study Type:  Case Set     dbGaP estimated ancestry using  GRAF-pop  Number of study subjects that have individual-level data available through Authorized Access:  NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000820.v1.p1 on 2021-03-25 and may not include exact formatting or images.",
-    "Consent Code": "c1",
-    "Consent Short": "phs000820.v1.p1.c1",
-    "Subject Count": 543
-  },
-  {
     "Accession": "phs000784.v3.p1",
     "Cohort Abbreviation": "GenSal",
     "Name": "Genetic Epidemiology Network of Salt Sensitivity (GenSalt)",
