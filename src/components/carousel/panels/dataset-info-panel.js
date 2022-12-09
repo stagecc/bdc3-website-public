@@ -1,32 +1,29 @@
 import React from 'react'
 import styled from "styled-components";
+import { Overlay } from './subcomponents/Overlay'
+import { DetailsPanel, DetailWrapper, Headline, Description } from './subcomponents/LeftPanel'
+import { DataPanel, DataWrapper, Datum, DatumValue, DatumName } from './subcomponents/RightPanel'
 import { datasetInfoContent } from '../types'
-
-const style = {
-  margin: 0,
-  flex: 1,
-  padding: '1rem',
-  border: '10px dashed #90f',
-}
-
-const Overlay = styled.div`
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  /* flex-direction: ${props => (props.compact ? "column" : "row")}; */
-  align-items: stretch;
-`;
 
 
 export const DatasetInfoPanel = ({ content }) => {
   return (
     <Overlay>
-      <pre style={ style }>
-        { JSON.stringify(content, null, 2) }
-      </pre>
+      <DetailsPanel>
+        <DetailWrapper>
+          <Headline>{content.headline}</Headline>
+          <Description>{content.description}</Description>
+        </DetailWrapper>
+      </DetailsPanel>
+      <DataPanel dataset>
+        <DataWrapper>
+          {content.datasets.map((datum, i) => (
+            <Datum key={i} active>
+              <DatumValue dataset>{datum.name}</DatumValue>
+            </Datum>
+          ))}
+        </DataWrapper>
+      </DataPanel>
     </Overlay>
   )
 }

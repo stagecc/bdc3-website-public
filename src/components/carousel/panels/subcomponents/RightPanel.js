@@ -6,6 +6,7 @@ export const DataPanel = styled.div`
   width: 100%;
   display: block;
   flex: 1;
+  flex: ${props => (props.dataset ? "3" : "1")};
   max-width: ${props => (props.compact ? "none" : "800px")};
   background-color: #00000066;
   text-align: center;
@@ -28,7 +29,7 @@ export const DatumName = styled.span`
 `;
 
 export const DatumValue = styled.span`
-  font-size: 300%;
+  font-size: ${props => (props.dataset ? "150%" : "300%")};
   font-weight: bold;
   // color: var(--color-crimson);
   color: #f99;
