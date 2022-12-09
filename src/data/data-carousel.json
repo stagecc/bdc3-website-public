@@ -1,17 +1,52 @@
 [
   {
     "key": 0,
-    "headline": "Advancing access to TOPMed data",
-    "description": "BioData Catalyst provides one point of entry to the most TOPMed datasets, including Freeze 8 data.",
-    "data": [
-      { "name": "Participants", "value": "406,853" },
-      { "name": "Petabytes of Data", "value": "3.42" }
-    ]
+    "type": "stats",
+    "content": {
+      "headline": "Advancing access to TOPMed data",
+      "description": "BioData Catalyst provides one point of entry to the most TOPMed datasets, including Freeze 8 data.",
+      "stats": [
+        { "name": "Participants", "value": "406,853" },
+        { "name": "Petabytes of Data", "value": "3.42" }
+      ]
+    }
   },
   {
     "key": 1,
-    "headline": "Prioritizing diverse data",
-    "description": "BioData Catalyst provides access to the highly diverse TOPMed dataset.",
-    "data": [{ "name": "Participants with phenotypes", "value": "285,093" }]
+    "type": "stats",
+    "content": {
+      "headline": "Prioritizing diverse data",
+      "description": "BioData Catalyst provides access to the highly diverse TOPMed dataset.",
+      "stats": [{ "name": "Participants with phenotypes", "value": "285,093" }]
+    }
+  },
+  {
+    "key": 2,
+    "type": "dataset-info",
+    "content": {
+      "headline": "Prioritizing diverse data",
+      "description": "BioData Catalyst provides access to the highly diverse TOPMed dataset.",
+      "datasets": [
+        { "name": "COVID-19 Studies" },
+        { "name": "TOPMed Parent Studies and Freeze 8" },
+        { "name": "Sickle Cell Disease Studies" }
+      ]
+    }
+  },
+  {
+    "key": 3,
+    "type": "testimonial",
+    "content": {
+      "quote": "BioData Catalyst is a wonderful ecosystem to drive science and new discoveries."      ,
+      "attribution": "Dr. Ravi Mathur, Statistical Geneticist, RTI International"
+    }
+  },
+  {
+    "key": 4,
+    "type": "testimonial",
+    "content": {
+      "quote": "I would recommend BioData Catalyst…analysis can be a headache, but BioData Catalyst makes it so easy."      ,
+      "attribution": "Dr. Jean Monlong, BioData Catalyst Cohort 1 Fellow, University of California Santa Cruz Genomics Institute"
+    }
   }
 ]

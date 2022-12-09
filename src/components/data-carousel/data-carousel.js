@@ -7,7 +7,7 @@ import { DetailsPanel, DataDetail } from "./details-panel";
 import { DataPanel, Data } from "./data-panel";
 import { PauseIcon, PlayIcon } from "../icons";
 import backgroundImage from "../../images/stars-long-exposure.png";
-import carouselItems from "../../data/data-carousel.json";
+import carouselItems from "../../data/data-carousel-old.json";
 
 const INTERVAL = 2 * 1000;
 // speed up animation time in dev, leave appropriate wait time in prod
