@@ -50,3 +50,22 @@ export const Datum = styled.span`
     padding-bottom: 1rem;
   }
 `;
+
+export const CarouselBulletedList = styled.ul`
+  list-style: none; /* Remove default bullets */
+  margin: 1rem;
+  text-align: left;
+`
+;
+
+export const CarouselListItem = styled.li`
+  font-size: 130%;
+  line-height: 1.5;
+  color: #eee;
+  padding: 0.5rem;
+  &::before {
+    content: '•';
+    margin: 0 10px;
+    color: #f99;
+  }
+`

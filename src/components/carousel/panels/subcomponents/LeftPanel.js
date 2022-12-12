@@ -20,7 +20,7 @@ export const DetailWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: ${props => (props.dataset ? "flex-end" : "center")};
 `;
 
 export const Headline = styled.h1`
