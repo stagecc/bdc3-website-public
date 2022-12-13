@@ -105,13 +105,13 @@ export const Carousel = ({ panels }) => {
 
   const StyledPanelWrapper = styled(animated.div)`
     position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: ${props => (props.compact ? "column" : "row")};
-  align-items: stretch;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: ${props => (props.compact ? "column" : "row")};
+    align-items: stretch;
   ` 
   
   return (
