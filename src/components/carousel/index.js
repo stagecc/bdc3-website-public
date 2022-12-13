@@ -103,6 +103,17 @@ export const Carousel = ({ panels }) => {
     }
   );
 
+  const StyledPanelWrapper = styled(animated.div)`
+    position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: ${props => (props.compact ? "column" : "row")};
+  align-items: stretch;
+  ` 
+  
   return (
     <Border>
       <Wrapper
@@ -119,9 +130,9 @@ export const Carousel = ({ panels }) => {
         <Overlay>
         {
           panelTransitions.map(({ item, props, key })=>(
-            <animated.div key={key} style={{...props, width: '100%', height: '100%', display: 'flex', position: 'absolute', left: '0', top: '0'}}>
+            <StyledPanelWrapper key={key} style={props}>
               <CarouselPanel item={item} />
-            </animated.div>
+            </StyledPanelWrapper>
             ))
         }
           <StateNote>
