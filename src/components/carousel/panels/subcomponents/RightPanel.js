@@ -1,11 +1,9 @@
-import React from 'react'
 import styled from "styled-components";
 
 export const DataPanel = styled.div`
   height: 100%;
   width: 100%;
   display: block;
-  flex: 1;
   flex: ${props => (props.dataset ? "3" : "1")};
   max-width: ${props => (props.compact ? "none" : "800px")};
   background-color: #00000066;

@@ -1,6 +1,4 @@
 import React, { Fragment } from 'react'
-import styled from "styled-components";
-import { Overlay } from './subcomponents/Overlay'
 import { DetailsPanel, DetailWrapper, Headline, Description } from './subcomponents/LeftPanel'
 import { DataPanel, DataWrapper, Datum, DatumValue, DatumName } from './subcomponents/RightPanel'
 import { statsContent } from '../types'
