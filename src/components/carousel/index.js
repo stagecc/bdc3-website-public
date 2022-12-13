@@ -41,8 +41,8 @@ const Border = styled.div`
 const Wrapper = styled.div`
   // & * { border: 1px solid #f99; }
   height: 20vw;
-  min-height: ${props => (props.compact ? "600px" : "300px")};
-  max-height: ${props => (props.compact ? "700px" : "500px")};
+  min-height: ${props => (props.compact ? "500px" : "300px")};
+  max-height: ${props => (props.compact ? "600px" : "500px")};
   overflow: hidden;
   margin-bottom: 4rem;
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% calc(100% - 5vw));
@@ -130,7 +130,7 @@ export const Carousel = ({ panels }) => {
         <Overlay>
         {
           panelTransitions.map(({ item, props, key })=>(
-            <StyledPanelWrapper key={key} style={props}>
+            <StyledPanelWrapper key={key} style={props} compact={isCompact}>
               <CarouselPanel item={item} />
             </StyledPanelWrapper>
             ))
