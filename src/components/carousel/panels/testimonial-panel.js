@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import styled from "styled-components";
 import { Overlay } from './subcomponents/Overlay'
 import { DetailsPanel, DetailWrapper, Headline, Description } from './subcomponents/LeftPanel'
@@ -7,14 +7,14 @@ import { testimonialContent } from '../types'
 
 export const TestimonialPanel = ({ content }) => {
   return (
-    <Overlay>
+    <Fragment>
       <DetailsPanel>
         <DetailWrapper>
           <Headline>{content.quote}</Headline>
           <Description>{content.attribution}</Description>
         </DetailWrapper>
       </DetailsPanel>
-    </Overlay>
+    </Fragment>
   )
 }
 

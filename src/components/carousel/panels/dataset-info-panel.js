@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import styled from "styled-components";
 import { Overlay } from './subcomponents/Overlay'
 import { DetailsPanel, DetailWrapper, Headline, Description } from './subcomponents/LeftPanel'
@@ -7,7 +7,7 @@ import { datasetInfoContent } from '../types'
 
 export const DatasetInfoPanel = ({ content }) => {
   return (
-    <Overlay>
+    <Fragment>
       <DetailsPanel>
         <DetailWrapper dataset>
           <Headline>{content.headline}</Headline>
@@ -23,7 +23,7 @@ export const DatasetInfoPanel = ({ content }) => {
           </CarouselBulletedList>
         </DataWrapper>
       </DataPanel>
-    </Overlay>
+    </Fragment>
   )
 }
 
