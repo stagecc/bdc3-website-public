@@ -59,6 +59,9 @@ const Wrapper = styled.div`
     background-position: center;
     background-size: cover;
   }
+  &:hover ${StateNote} {
+    filter: opacity(1);
+  }
   &:focus {
     border: 1px dashed var(--color-crimson);
     filter: saturate(0.75);
@@ -106,13 +109,13 @@ export const Carousel = ({ panels }) => {
         <Overlay>
           <CarouselPanel data={ panels[carouselIndex] } />
           <StateNote>
-              <span style={{ marginRight: "0.5rem" }}>Animations paused</span>
-              {playingAnimations ? (
-                <PlayIcon size={16} fill="#fff" />
-              ) : (
-                <PauseIcon size={16} fill="#fff" />
-              )}
-            </StateNote>
+            <span style={{ marginRight: "0.5rem" }}>Animations paused</span>
+            {playingAnimations ? (
+              <PlayIcon size={16} fill="#fff" />
+            ) : (
+              <PauseIcon size={16} fill="#fff" />
+            )}
+          </StateNote>
         </Overlay>
       </Wrapper>
     </Border>
