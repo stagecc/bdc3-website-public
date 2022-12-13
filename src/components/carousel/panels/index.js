@@ -10,12 +10,12 @@ const panels = {
   stats: StatsPanel,
 }
 
-export const CarouselPanel = ({ data }) => {
-  const { type, content } = data
+export const CarouselPanel = ({ item }) => {
+  const { type, content } = item
 
   return React.createElement(panels[type], { content })
 }
 
 CarouselPanel.propTypes = {
-  data: panelType,
+  item: panelType,
 }

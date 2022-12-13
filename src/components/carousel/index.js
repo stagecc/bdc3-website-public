@@ -7,8 +7,9 @@ import { CarouselPanel } from './panels'
 import backgroundImage from "../../images/stars-long-exposure.png";
 import { PauseIcon, PlayIcon } from "../icons";
 import { Overlay } from './panels/subcomponents/Overlay'
+import { useTransition, animated } from "react-spring";
 
-const INTERVAL = 2000 // ms
+const INTERVAL = 5000 // ms
 
 const StateNote = styled.span`
   color: #eee;
@@ -92,6 +93,15 @@ export const Carousel = ({ panels }) => {
       setPlayingAnimations(!playingAnimations);
     }
   };
+  const panelTransitions = useTransition(
+    panels[carouselIndex],
+    item => item.key,
+    {
+      from: { opacity: 0, transform: 'translate3d(100%,0,0)' },
+      enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
+      leave: { opacity: 0, transform: 'translate3d(-50%,0,0)' },
+    }
+  );
 
   return (
     <Border>
@@ -107,7 +117,13 @@ export const Carousel = ({ panels }) => {
 
       >
         <Overlay>
-          <CarouselPanel data={ panels[carouselIndex] } />
+        {
+          panelTransitions.map(({ item, props, key })=>(
+            <animated.div key={key} style={{...props, width: '100%', height: '100%', display: 'flex', position: 'absolute', left: '0', top: '0'}}>
+              <CarouselPanel item={item} />
+            </animated.div>
+            ))
+        }
           <StateNote>
             <span style={{ marginRight: "0.5rem" }}>Animations paused</span>
             {playingAnimations ? (
