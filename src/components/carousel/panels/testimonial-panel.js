@@ -1,15 +1,18 @@
 import React, { Fragment } from 'react'
 import { DetailsPanel, DetailWrapper, Headline, Description } from './subcomponents/LeftPanel'
 import { testimonialContent } from '../types'
+import { useWindowWidth } from "../../../hooks";
 
 
 export const TestimonialPanel = ({ content }) => {
+  const { isCompact } = useWindowWidth();
+
   return (
     <Fragment>
-      <DetailsPanel>
-        <DetailWrapper>
-          <Headline>{content.quote}</Headline>
-          <Description>{content.attribution}</Description>
+      <DetailsPanel compact={isCompact}>
+        <DetailWrapper compact={isCompact}>
+          <Headline compact={isCompact}>{content.quote}</Headline>
+          <Description compact={isCompact}>{content.attribution}</Description>
         </DetailWrapper>
       </DetailsPanel>
     </Fragment>

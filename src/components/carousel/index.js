@@ -93,6 +93,7 @@ export const Carousel = ({ panels }) => {
       setPlayingAnimations(!playingAnimations);
     }
   };
+  
   const panelTransitions = useTransition(
     panels[carouselIndex],
     item => item.key,

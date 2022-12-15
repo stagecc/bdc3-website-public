@@ -2,21 +2,24 @@ import React, { Fragment } from 'react'
 import { DetailsPanel, DetailWrapper, Headline, Description } from './subcomponents/LeftPanel'
 import { DataPanel, DataWrapper, CarouselListItem, CarouselBulletedList } from './subcomponents/RightPanel'
 import { datasetInfoContent } from '../types'
+import { useWindowWidth } from "../../../hooks";
 
 export const DatasetInfoPanel = ({ content }) => {
+  const { isCompact } = useWindowWidth();
+
   return (
     <Fragment>
-      <DetailsPanel>
-        <DetailWrapper dataset>
-          <Headline>{content.headline}</Headline>
-          <Description>{content.description}</Description>
+      <DetailsPanel compact={isCompact}>
+        <DetailWrapper dataset compact={isCompact}>
+          <Headline compact={isCompact}>{content.headline}</Headline>
+          <Description compact={isCompact}>{content.description}</Description>
         </DetailWrapper>
       </DetailsPanel>
-      <DataPanel dataset>
-        <DataWrapper>
-          <CarouselBulletedList>
+      <DataPanel dataset compact={isCompact}>
+        <DataWrapper compact={isCompact}>
+          <CarouselBulletedList compact={isCompact}>
             {content.datasets.map((datum, i) => (
-              <CarouselListItem key={i}>{datum.name}</CarouselListItem>
+              <CarouselListItem key={i} compact={isCompact}>{datum.name}</CarouselListItem>
             ))}
           </CarouselBulletedList>
         </DataWrapper>

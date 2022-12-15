@@ -19,6 +19,7 @@ export const DataWrapper = styled.div`
   justify-content: center;
   align-items: stretch;
   position: relative;
+
 `;
 
 export const DatumName = styled.span`
@@ -27,7 +28,7 @@ export const DatumName = styled.span`
 `;
 
 export const DatumValue = styled.span`
-  font-size: ${props => (props.dataset ? "150%" : "300%")};
+  font-size: ${props => (props.compact ? "150%" : "300%")};
   font-weight: bold;
   // color: var(--color-crimson);
   color: #f99;
@@ -41,11 +42,12 @@ export const Datum = styled.span`
   align-items: center;
   transition: transform 500ms;
   transform: translateX(${props => (props.active ? "0%" : "100%")});
+  padding-bottom: 1rem;
   &:first-child {
     padding-top: 1rem;
   }
   &:last-child {
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
   }
 `;
 
@@ -57,10 +59,10 @@ export const CarouselBulletedList = styled.ul`
 ;
 
 export const CarouselListItem = styled.li`
-  font-size: 130%;
-  line-height: 1.5;
+  font-size: ${props => (props.compact ? "90%" : "130%")};
+  line-height: ${props => (props.compact ? "1.3" : "1.5")};
   color: #eee;
-  padding: 0.5rem;
+  padding:${props => (props.compact ? "0.3rem" : "0.5rem")};
   &::before {
     content: '•';
     margin: 0 10px;

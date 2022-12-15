@@ -23,15 +23,13 @@ export const DetailWrapper = styled.div`
 `;
 
 export const Headline = styled.h1`
-  font-size: 1rem;
+  font-size: ${props => (props.compact ? "1.3rem" : "1rem")};
   padding: 0 1rem;
   @media screen and (min-width: 768px) {
     font-size: 3vw;
-
   }
   @media screen and (min-width: 992px) {
     font-size: 180%;
-
   }
   text-align: center;
   color: #eee;
@@ -45,6 +43,7 @@ export const Description = styled.p`
   background-color: #00000076;
   padding: 0.5rem 1rem;
   text-align: center;
-  font-size: 85%;
+  font-size: ${props => (props.compact ? "80%" : "85%")};
   letter-spacing: 0.5px;
+  line-height: ${props => (props.compact ? "1.3" : "1")};
 `;
