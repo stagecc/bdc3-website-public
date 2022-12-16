@@ -15,9 +15,15 @@ export const Carousel = ({ panels }) => {
   const [carouselIndex, setCarouselIndex] = useState(0)
   const indexRef = useRef(carouselIndex);
   indexRef.current = carouselIndex;
+
+  // pause/play functionality is controlled by this playingAnimations state variable
+  // when playingAnimations is set to false, the carousel does not advance to the next panel
   const [playingAnimations, setPlayingAnimations] = useState(true);
 
+  // this fires when the index changes and playingAnimations changes
   useEffect(() => {
+
+    // if playing, wait for INTERVAL ms before advancing to the next panel
     if (playingAnimations) {
       let timer;
       timer = setInterval(
@@ -67,7 +73,7 @@ export const Carousel = ({ panels }) => {
         {
           panelTransitions.map(({ item, props, key })=>(
             <StyledPanelWrapper key={key} style={props} compact={isCompact}>
-              {/* CarouselPanel sents the panel data and panel type 
+              {/* CarouselPanel sends the panel data and panel type 
               and uses react.createElement based on the panel type */}
               <CarouselPanel item={item} />
             </StyledPanelWrapper>

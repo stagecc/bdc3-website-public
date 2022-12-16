@@ -7,11 +7,12 @@ export const testimonialContent = PropTypes.shape({
 
 // Boundaries for Testimonial Content
 // Quote:
-  // Max: 150 characters
+  // Max: 150 characters *
   // Min: 50 characters
 // Attribution:
-  // Max: 150 characters
+  // Max: 150 characters *
   // Min: none
+// * subject to visual confirmation because letters are not all equally sized
 
 export const statsContent = PropTypes.shape({
   headline: PropTypes.string.isRequired,
@@ -26,15 +27,17 @@ export const statsContent = PropTypes.shape({
 
 // Boundaries for Stats Content
 // Headline:
-  // Max: 75 characters
+  // Max: 75 characters *
   // Min: none
 // Description:
-  // Max: 130 characters
+  // Max: 130 characters *
   // Min: none
 // Stats:
   // total items: no more than 2 before needing to change the style
-  // name: 35 characters
-  // value: 10 numbers without punctuation, 8-9 numbers with punctiation
+  // name: 35 characters *
+  // value: 10 numbers without punctuation, 8-9 numbers with punctiation *
+// * subject to visual confirmation because letters are not all equally sized
+
 
 export const datasetInfoContent = PropTypes.shape({
   headline: PropTypes.string.isRequired,
@@ -48,14 +51,15 @@ export const datasetInfoContent = PropTypes.shape({
 
 // Boundaries for Stats Content
 // Headline:
-  // Max: 75 characters
+  // Max: 75 characters *
   // Min: none
 // Description:
-  // Max: 130 characters
+  // Max: 130 characters *
   // Min: none
 // Stats:
   // total items: at least 2, no more than 4
-  // name: 70 characters (depends on length of other lines as well)
+  // name: 70 characters (depends on length of other lines as well) *
+// * subject to visual confirmation because letters are not all equally sized
 
 
 export const panelType = PropTypes.shape({
