@@ -18,6 +18,7 @@ export const Carousel = ({ panels }) => {
 
   // pause/play functionality is controlled by this playingAnimations state variable
   // when playingAnimations is set to false, the carousel does not advance to the next panel
+  // see documentation here: https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html
   const [playingAnimations, setPlayingAnimations] = useState(true);
 
   // this fires when the index changes and playingAnimations changes
@@ -46,7 +47,8 @@ export const Carousel = ({ panels }) => {
   // It takes three arguments, 1- the data that you want to display, 2- a key, 3- the config object
   // The component that is returned is a styled component with a base of animated.div called StyledPanelWrapper
   // Inside StyledPanelWrapper is the CarouselPanel component, which displays only the current panel
-  // For documentation see here: https://react-spring.dev/docs/components/use-transition
+  // Useful Links: https://react-spring.dev/docs/components/use-transition
+  // Useful Video Walkthrough: https://www.youtube.com/watch?v=WKmhhBokAh8
 
   const panelTransitions = useTransition(
     panels[carouselIndex],
