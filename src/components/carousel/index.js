@@ -11,6 +11,11 @@ import { useTransition, animated } from "react-spring";
 
 const INTERVAL = 5000 // ms
 
+// StateNote adds a pause/play functionality to the carousel in which users can 
+// either click or press the space bar to pause the animations, making it more readable
+// StateNote is controlled by the state variable playingAnimations
+// See documentation here: https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html
+
 const StateNote = styled.span`
   color: #eee;
   background-color: #000000;
@@ -94,6 +99,13 @@ export const Carousel = ({ panels }) => {
     }
   };
   
+  // panelTransitions is an array created using the useTransition hook from react-spring
+  // This array adds transition variables and is mapped over  inside the Overlay component. 
+  // It takes three arguments, 1- the data that you want to display, 2- a key, 3- the config object
+  // The component that is returned is a styled component with a base of animated.div called StyledPanelWrapper
+  // Inside StyledPanelWrapper is the CarouselPanel component, which displays only the current panel
+  // For documentation see here: https://react-spring.dev/docs/components/use-transition
+
   const panelTransitions = useTransition(
     panels[carouselIndex],
     item => item.key,
@@ -132,6 +144,8 @@ export const Carousel = ({ panels }) => {
         {
           panelTransitions.map(({ item, props, key })=>(
             <StyledPanelWrapper key={key} style={props} compact={isCompact}>
+              {/* CarouselPanel sents the panel data and panel type 
+              and uses react.createElement based on the panel type */}
               <CarouselPanel item={item} />
             </StyledPanelWrapper>
             ))
