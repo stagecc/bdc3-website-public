@@ -11,13 +11,13 @@ const HexagonWrapper = styled(Link)`
   transform: translate(-60%, -50%);
   transform-origin: 50% 50%;
   &:nth-child(1) {
-    transform: translate(-55%, 19%);
+    transform: translate(-135%, -35%);
   }
   &:nth-child(2) {
     transform: translate(-55%, -89%);
   }
   &:nth-child(3) {
-    transform: translate(-135%, -35%);
+    transform: translate(-55%, 19%);
   }
   &:nth-child(4) {
     transform: translate(25%, -35%);
