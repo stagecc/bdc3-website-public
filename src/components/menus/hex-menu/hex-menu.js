@@ -14,11 +14,10 @@ import { MenuItemDescription } from "./hex-menu-descriptions";
 
 const carouselItems = [
   {
-    text: "Services",
-    description:
-      "Take control of your data with customizable tools and workflows",
-    icon: ToolsIcon,
-    path: "/resources/services",
+    text: "Learn",
+    description: "Get the support you need to explore, analyze, and discover",
+    icon: EducationIcon,
+    path: "/resources/learn",
   },
   {
     text: "Data",
@@ -27,10 +26,11 @@ const carouselItems = [
     path: "/resources/data",
   },
   {
-    text: "Learn",
-    description: "Get the support you need to explore, analyze, and discover",
-    icon: EducationIcon,
-    path: "/resources/learn",
+    text: "Services",
+    description:
+      "Take control of your data with customizable tools and workflows",
+    icon: ToolsIcon,
+    path: "/resources/services",
   },
   {
     text: "BYOD",
