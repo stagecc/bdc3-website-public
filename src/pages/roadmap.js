@@ -21,13 +21,13 @@ const RoadmapPage = () => {
 
         <Box marginBottom={4}>
           <Paragraph>
-            The process outlined below guides data generators to upload their data into the NHLBI BioData Catalyst (BDC) ecosystem, providing a step-by-step approach to submitting data and making it available for use through BDC.
+            The checklist outlined below guides data generators to upload their data into the NHLBI BioData Catalyst (BDC) ecosystem, providing a step-by-step approach to submitting data and making it available for use through BDC.
           </Paragraph>
         </Box>
 
 
         <Card>
-          <CardHeader size="large">Roadmap</CardHeader>
+          <CardHeader size="large">BioData Catalyst Data Generator Guidance</CardHeader>
           <CardBody>
             <Roadmap steps={[
               {
