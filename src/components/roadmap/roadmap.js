@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Button, makeStyles, Paper, Step, StepContent, StepLabel, Stepper, Typography } from "@mui/material"
+import { Box, Button, Paper, Step, StepContent, StepLabel, Stepper, Typography } from "@mui/material"
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import remarkGfm from 'remark-gfm';
 
@@ -20,14 +20,6 @@ const Roadmap = ({ steps }) => {
 
   const handleSelect = (i) => {
     setActiveStep(i)
-  }
-
-  const styles = {
-    root: {
-      padding: "0",
-      marginBottom: "-14px",
-      marginTop: "-4px",
-    }
   }
 
   function Icon({ img }) {
@@ -67,66 +59,62 @@ const Roadmap = ({ steps }) => {
   }
 
   return (
-    <div className={"container mb-16"}>
-      <Box sx={{ maxWidth: 1200 }}>
-        <Stepper activeStep={activeStep} orientation="vertical">
-          {steps.map((step, index) => (
-            <Step key={step.title}>
-              <StepLabel
-                style={{ padding: 0 }}
-                StepIconComponent={CustomStepIcon}
+    <Box sx={{ maxWidth: 1200 }}>
+      <Stepper activeStep={activeStep} orientation="vertical">
+        {steps.map((step, index) => (
+          <Step key={step.title}>
+            <StepLabel
+              style={{ padding: 0 }}
+            // StepIconComponent={CustomStepIcon}
+            >
+              <button
+                onClick={() => handleSelect(index)}
+                className="cursor-pointer"
               >
-                <button
-                  onClick={() => handleSelect(index)}
-                  className="cursor-pointer"
-                >
-                  <span>
-                    {step.title}
-                  </span>
-                </button>
-              </StepLabel>
+                <span>
+                  {step.title}
+                </span>
+              </button>
+            </StepLabel>
 
-              <StepContent>
-                <div className="event-html">
-                  <Typography>
-                    <ReactMarkdown linkTarget="_blank" remarkPlugins={[remarkGfm]}>{step.description}</ReactMarkdown>
-                  </Typography>
-                </div>
-                <Box sx={{ mb: 2 }}>
-                  <div className="mt-6">
+            <StepContent>
+              <Typography>
+                <ReactMarkdown linkTarget="_blank" remarkPlugins={[remarkGfm]}>{step.description}</ReactMarkdown>
+              </Typography>
+              <Box sx={{ mb: 2 }}>
+                <div>
+                  <Button
+                    variant="contained"
+                    onClick={handleNext}
+                    sx={{ mt: 1, mr: 1 }}
+                  >
+                    {index === steps.length - 1 ? "Finish" : "Continue"}
+                  </Button>
+                  {index === 0 ? (
+                    ""
+                  ) : (
                     <Button
-                      variant="contained"
-                      onClick={handleNext}
+                      disabled={index === 0}
+                      onClick={handleBack}
                       sx={{ mt: 1, mr: 1 }}
                     >
-                      {index === steps.length - 1 ? "Finish" : "Continue"}
+                      Back
                     </Button>
-                    {index === 0 ? (
-                      ""
-                    ) : (
-                      <Button
-                        disabled={index === 0}
-                        onClick={handleBack}
-                        sx={{ mt: 1, mr: 1 }}
-                      >
-                        Back
-                      </Button>
-                    )}
-                  </div>
-                </Box>
-              </StepContent>
-            </Step>
-          ))}
-        </Stepper>
-        {activeStep === steps.length && (
-          <Paper square elevation={0} sx={{ p: 3 }}>
-            <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
-              Reset
-            </Button>
-          </Paper>
-        )}
-      </Box>
-    </div>
+                  )}
+                </div>
+              </Box>
+            </StepContent>
+          </Step>
+        ))}
+      </Stepper>
+      {activeStep === steps.length && (
+        <Paper square elevation={0} sx={{ p: 3 }}>
+          <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
+            Reset
+          </Button>
+        </Paper>
+      )}
+    </Box>
   )
 }
 
