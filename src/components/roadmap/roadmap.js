@@ -2,6 +2,22 @@ import React, { useState } from 'react';
 import { Box, Button, Paper, Step, StepContent, StepLabel, Stepper, Typography } from "@mui/material"
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import remarkGfm from 'remark-gfm';
+import styled from 'styled-components';
+
+const LabelButton = styled.button`
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  font-size: 1.25rem;
+  color: var(--color-crimson);
+  cursor: pointer;
+  font-weight: 900;
+
+  &:hover {
+    color: var(--color-crimson-dark);
+  }
+`;
 
 const Roadmap = ({ steps }) => {
   const [activeStep, setActiveStep] = useState(0)
@@ -78,17 +94,17 @@ const Roadmap = ({ steps }) => {
               }}
             // StepIconComponent={CustomStepIcon}
             >
-              <button
+              <LabelButton
                 onClick={() => handleSelect(index)}
                 className="cursor-pointer"
               >
                 <span>
                   {step.title}
                 </span>
-              </button>
+              </LabelButton>
             </StepLabel>
 
-            <StepContent>
+            <StepContent sx={{pl: 4}}>
               <Typography>
                 <ReactMarkdown linkTarget="_blank" remarkPlugins={[remarkGfm]}>{step.description}</ReactMarkdown>
               </Typography>
