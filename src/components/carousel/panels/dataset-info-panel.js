@@ -10,14 +10,14 @@ export const DatasetInfoPanel = ({ content }) => {
   return (
     <Fragment>
       <DetailsPanel compact={isCompact}>
-        <DetailWrapper dataset compact={isCompact}>
+        <DetailWrapper dataset>
           <Headline compact={isCompact}>{content.headline}</Headline>
           <Description compact={isCompact}>{content.description}</Description>
         </DetailWrapper>
       </DetailsPanel>
       <DataPanel dataset compact={isCompact}>
-        <DataWrapper compact={isCompact}>
-          <CarouselBulletedList compact={isCompact}>
+        <DataWrapper>
+          <CarouselBulletedList>
             {content.datasets.map((datum, i) => (
               <CarouselListItem key={`carousel-dataset-item-${i}`} compact={isCompact}>{datum.name}</CarouselListItem>
             ))}

@@ -10,7 +10,7 @@ export const TestimonialPanel = ({ content }) => {
   return (
     <Fragment>
       <DetailsPanel compact={isCompact}>
-        <DetailWrapper compact={isCompact}>
+        <DetailWrapper>
           <Headline compact={isCompact}>{content.quote}</Headline>
           <Description compact={isCompact}>{content.attribution}</Description>
         </DetailWrapper>

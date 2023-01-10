@@ -10,15 +10,15 @@ export const StatsPanel = ({ content }) => {
   return (
     <Fragment>
       <DetailsPanel compact={isCompact}>
-        <DetailWrapper compact={isCompact}>
+        <DetailWrapper>
           <Headline compact={isCompact}>{content.headline}</Headline>
           <Description compact={isCompact}>{content.description}</Description>
         </DetailWrapper>
       </DetailsPanel>
       <DataPanel compact={isCompact}>
-        <DataWrapper compact={isCompact}>
+        <DataWrapper>
           {content.stats.map((datum, i) => (
-            <Datum key={`carousel-stats-item-${i}`} active compact={isCompact}>
+            <Datum key={`carousel-stats-item-${i}`} active>
               <DatumValue compact={isCompact}>{datum.value}</DatumValue>
               <DatumName>{datum.name}</DatumName>
             </Datum>

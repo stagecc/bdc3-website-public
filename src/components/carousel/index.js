@@ -71,7 +71,7 @@ export const Carousel = ({ panels }) => {
         onMouseLeave={() => setPlayingAnimations(true)}
         onKeyDown={handleKeyDown}
       >
-        <Overlay>
+        <Overlay compact={isCompact}>
         {
           panelTransitions.map(({ item, props, key })=>(
             <StyledPanelWrapper key={key} style={props} compact={isCompact}>
