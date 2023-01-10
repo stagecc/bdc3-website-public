@@ -32,11 +32,6 @@ const StyledConnector = MuiStyled(StepConnector)(() => ({
       backgroundColor: 'var(--color-crimson)'
     },
   },
-  [`& .${stepConnectorClasses.line}`]: {
-    width: 1,
-    border: 0,
-    backgroundColor: 'var(--color-lightgrey)',
-  },
 }));
 
 const Roadmap = ({ steps }) => {
