@@ -75,3 +75,18 @@ a:active {
 .button-link:hover, .button-link:focus {
   filter: brightness(1.2);
 }
+
+table, th, td {
+  border: 1px solid var(--color-grey);
+  padding: 8px;
+}
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  border-bottom-width: 2px;
+}
