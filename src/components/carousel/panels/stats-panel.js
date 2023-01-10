@@ -18,7 +18,7 @@ export const StatsPanel = ({ content }) => {
       <DataPanel compact={isCompact}>
         <DataWrapper compact={isCompact}>
           {content.stats.map((datum, i) => (
-            <Datum key={i} active compact={isCompact}>
+            <Datum key={`carousel-stats-item-${i}`} active compact={isCompact}>
               <DatumValue compact={isCompact}>{datum.value}</DatumValue>
               <DatumName>{datum.name}</DatumName>
             </Datum>
