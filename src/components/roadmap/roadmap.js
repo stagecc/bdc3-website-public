@@ -69,30 +69,30 @@ const Roadmap = ({ steps }) => {
     )
   }
 
-  const CustomStepIcon = (props) => {
-    const stepIcons = {
-      1: <Icon img="1" />,
-      2: <Icon img="2" />,
-      3: <Icon img="3" />,
-      4: <Icon img="4" />,
-      5: <Icon img="5" />,
-      6: <Icon img="6" />,
-      7: <Icon img="7" />,
-      8: <Icon img="8" />,
-      9: <Icon img="9" />,
-    }
+  // const CustomStepIcon = (props) => {
+  //   const stepIcons = {
+  //     1: <Icon img="1" />,
+  //     2: <Icon img="2" />,
+  //     3: <Icon img="3" />,
+  //     4: <Icon img="4" />,
+  //     5: <Icon img="5" />,
+  //     6: <Icon img="6" />,
+  //     7: <Icon img="7" />,
+  //     8: <Icon img="8" />,
+  //     9: <Icon img="9" />,
+  //   }
 
-    return (
-      <button
-        onClick={() => handleSelect(props.icon - 1)}
-        className="cursor-pointer"
-      >
-        <div>
-          {stepIcons[String(props.icon)]}
-        </div>
-      </button>
-    )
-  }
+  //   return (
+  //     <button
+  //       onClick={() => handleSelect(props.icon - 1)}
+  //       className="cursor-pointer"
+  //     >
+  //       <div>
+  //         {stepIcons[String(props.icon)]}
+  //       </div>
+  //     </button>
+  //   )
+  // }
 
   return (
     <Box sx={{ maxWidth: 1200 }} marginY={2}>
