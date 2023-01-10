@@ -65,6 +65,17 @@ const Roadmap = ({ steps }) => {
           <Step key={step.title}>
             <StepLabel
               style={{ padding: 0 }}
+              sx={{ 
+                '& .MuiSvgIcon-root.Mui-active': {
+                  fill: "var(--color-crimson-light)"
+                }, 
+                '& .MuiSvgIcon-root.Mui-completed': { 
+                  fill: "var(--color-crimson)" 
+                },
+                '& .MuiSvgIcon-root': { 
+                  fill: "var(--color-lightgrey)" 
+                }
+              }}
             // StepIconComponent={CustomStepIcon}
             >
               <button
@@ -86,7 +97,14 @@ const Roadmap = ({ steps }) => {
                   <Button
                     variant="contained"
                     onClick={handleNext}
-                    sx={{ mt: 1, mr: 1 }}
+                    sx={{
+                      mt: 1,
+                      mr: 1,
+                      backgroundColor: 'var(--color-crimson)',
+                      '&:hover': {
+                        backgroundColor: 'var(--color-crimson-light)'
+                      }
+                    }}
                   >
                     {index === steps.length - 1 ? "Finish" : "Continue"}
                   </Button>
@@ -96,7 +114,14 @@ const Roadmap = ({ steps }) => {
                     <Button
                       disabled={index === 0}
                       onClick={handleBack}
-                      sx={{ mt: 1, mr: 1 }}
+                      sx={{
+                        mt: 1,
+                        mr: 1,
+                        color: 'var(--color-crimson-dark)',
+                        '&:hover': {
+                          backgroundColor: 'rgba(210, 59, 79, 0.04)'
+                        } 
+                      }}
                     >
                       Back
                     </Button>
@@ -109,7 +134,16 @@ const Roadmap = ({ steps }) => {
       </Stepper>
       {activeStep === steps.length && (
         <Paper square elevation={0} sx={{ p: 3 }}>
-          <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
+          <Button onClick={handleReset} variant={"outlined"} sx={{
+              mt: 1,
+              mr: 1,
+              color: 'var(--color-crimson)',
+              borderColor: 'var(--color-crimson)',
+              '&:hover': {
+                backgroundColor: 'rgba(210, 59, 79, 0.04)',
+                borderColor: 'var(--color-crimson)',
+              } 
+            }}>
             Reset
           </Button>
         </Paper>
