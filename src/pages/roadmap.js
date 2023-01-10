@@ -4,7 +4,7 @@ import { PageContent, Container } from "../components/layout";
 import Roadmap from "../components/roadmap/roadmap";
 import { Paragraph, Title } from "../components/typography";
 import { Card, CardBody, CardHeader } from "../components/card";
-import { Link } from "@mui/material";
+import { Box, Link } from "@mui/material";
 
 const RoadmapPage = () => {
   return (
@@ -19,9 +19,11 @@ const RoadmapPage = () => {
       >
         <Title>Roadmap</Title>
 
-        <Paragraph>
-          The process outlined below guides data generators to upload their data into the NHLBI BioData Catalyst (BDC) ecosystem, providing a step-by-step approach to submitting data and making it available for use through BDC.
-        </Paragraph>
+        <Box marginBottom={4}>
+          <Paragraph>
+            The process outlined below guides data generators to upload their data into the NHLBI BioData Catalyst (BDC) ecosystem, providing a step-by-step approach to submitting data and making it available for use through BDC.
+          </Paragraph>
+        </Box>
 
 
         <Card>

@@ -75,7 +75,7 @@ const Roadmap = ({ steps }) => {
   }
 
   return (
-    <Box sx={{ maxWidth: 1200 }}>
+    <Box sx={{ maxWidth: 1200 }} marginY={2}>
       <Stepper activeStep={activeStep} orientation="vertical">
         {steps.map((step, index) => (
           <Step key={step.title}>
