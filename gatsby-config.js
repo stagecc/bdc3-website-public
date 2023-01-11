@@ -93,6 +93,13 @@ module.exports = {
         name: "publications",
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./src/data/roadmap`,
+        name: "roadmap",
+      },
+    },
     `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
