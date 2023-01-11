@@ -32,6 +32,11 @@ const StyledConnector = MuiStyled(StepConnector)(() => ({
       backgroundColor: 'var(--color-crimson)'
     },
   },
+  [`& .${stepConnectorClasses.line}`]: {
+    width: '3px',
+    border: 0,
+    backgroundColor: 'var(--color-lightgrey)',
+  },
 }));
 
 const Roadmap = ({ steps }) => {
@@ -93,7 +98,15 @@ const Roadmap = ({ steps }) => {
     <Box sx={{ maxWidth: 1200 }} marginY={2}>
       <Stepper activeStep={activeStep} orientation="vertical" connector={<StyledConnector />}>
         {steps.map((step, index) => (
-          <Step key={step.title}>
+          <Step
+            key={step.title}
+            sx={{
+              '& .MuiStepContent-root': {
+                borderColor: "var(--color-lightgrey)",
+                borderWidth: "3px",
+              }
+            }}
+            >
             <StepLabel
               style={{ padding: 0 }}
               sx={{
