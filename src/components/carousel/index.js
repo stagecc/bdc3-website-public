@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useMemo } from "react";
 import PropTypes from 'prop-types'
 import { useWindowWidth } from "../../hooks";
 import { panelType } from './types'
@@ -50,14 +50,28 @@ export const Carousel = ({ panels }) => {
   // Useful Links: https://react-spring.dev/docs/components/use-transition
   // Useful Video Walkthrough: https://www.youtube.com/watch?v=WKmhhBokAh8
 
-  const panelTransitions = useTransition(
-    panels[carouselIndex],
-    item => item.key,
-    {
+  // memoize the the transforms for panel transitions, updating as `isCompact` changes.
+  const panelTransitionTransform = useMemo(() => {
+    const verticalTransform = { 
+      /* vertical transform stuff */ 
+      from: { opacity: 0, transform: 'translate3d(0,100%,0)' },
+      enter: { opacity: 1, transform: 'translate3d(0,0%,0)' },
+      leave: { opacity: 0, transform: 'translate3d(0,-50%,0)' },
+    }
+    const horizontalTransform = { 
+      /* horiz transform stuff */ 
       from: { opacity: 0, transform: 'translate3d(100%,0,0)' },
       enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
       leave: { opacity: 0, transform: 'translate3d(-50%,0,0)' },
     }
+    return isCompact ? verticalTransform  : horizontalTransform
+  }, [isCompact])
+
+  const panelTransitions = useTransition(
+    panels[carouselIndex],
+    item => item.key,
+    // then use the transform here
+    { ...panelTransitionTransform }
   );
   
   return (
