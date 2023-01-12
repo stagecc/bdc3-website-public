@@ -3,6 +3,7 @@ import { SEO } from "../../components/seo";
 import { PageContent } from "../../components/layout";
 import { Heading, Paragraph, Title } from "../../components/typography";
 import { Link } from "../../components/link";
+import { graphql } from "gatsby";
 
 const ResearchPage = ({ data }) => {
   const publications = data.publications.nodes;
