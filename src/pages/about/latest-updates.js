@@ -89,27 +89,25 @@ const NewsPage = ({ data }) => {
   );
 };
 
-export const query = graphql`
-  query {
-    allMarkdownRemark(
-      sort: { fields: frontmatter___date, order: DESC }
-      filter: { fileAbsolutePath: { regex: "/latest-updates/" } }
-    ) {
-      edges {
-        node {
-          id
-          excerpt(pruneLength: 250)
-          timeToRead
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            path
-            title
-            tags
-          }
+export const query = graphql`{
+  allMarkdownRemark(
+    sort: {frontmatter: {date: DESC}}
+    filter: {fileAbsolutePath: {regex: "/latest-updates/"}}
+  ) {
+    edges {
+      node {
+        id
+        excerpt(pruneLength: 250)
+        timeToRead
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          path
+          title
+          tags
         }
       }
     }
   }
-`;
+}`;
 
 export default NewsPage;
