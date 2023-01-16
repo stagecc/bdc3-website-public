@@ -83,26 +83,21 @@ export default ({ data, pageContext }) => {
   );
 };
 
-export const allEventsQuery = graphql`
-  query($todaysDate: Date!) {
-    events: allMarkdownRemark(
-      sort: { fields: frontmatter___date, order: DESC }
-      filter: {
-        fileAbsolutePath: { regex: "/events/" }
-        frontmatter: { date: { lt: $todaysDate } }
-      }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            date(formatString: "MMM D, YYYY")
-            display_date
-            path
-            title
-            tags
-          }
+export const allEventsQuery = graphql`query ($todaysDate: Date!) {
+  events: allMarkdownRemark(
+    sort: {frontmatter: {date: DESC}}
+    filter: {fileAbsolutePath: {regex: "/events/"}, frontmatter: {date: {lt: $todaysDate}}}
+  ) {
+    edges {
+      node {
+        frontmatter {
+          date(formatString: "MMM D, YYYY")
+          display_date
+          path
+          title
+          tags
         }
       }
     }
   }
-`;
+}`;

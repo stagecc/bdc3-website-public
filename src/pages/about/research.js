@@ -3,6 +3,7 @@ import { SEO } from "../../components/seo";
 import { PageContent } from "../../components/layout";
 import { Heading, Paragraph, Title } from "../../components/typography";
 import { Link } from "../../components/link";
+import { graphql } from "gatsby";
 
 const ResearchPage = ({ data }) => {
   const publications = data.publications.nodes;
@@ -50,19 +51,17 @@ const ResearchPage = ({ data }) => {
   );
 };
 
-export const query = graphql`
-  query {
-    publications: allPublicationsYaml(sort: { fields: date, order: DESC }) {
-      nodes {
-        id
-        title
-        date(formatString: "MMMM Do, YYYY")
-        location
-        url
-        bdcAuthors
-      }
+export const query = graphql`{
+  publications: allPublicationsYaml(sort: {date: DESC}) {
+    nodes {
+      id
+      title
+      date(formatString: "MMMM Do, YYYY")
+      location
+      url
+      bdcAuthors
     }
   }
-`;
+}`;
 
 export default ResearchPage;

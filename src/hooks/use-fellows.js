@@ -22,47 +22,45 @@ export const fellowFragment = graphql`
   }
 `;
 
-const fellowsQuery = graphql`
-  {
-    avatar: file(relativePath: { regex: "/avatar.png/" }) {
-      childImageSharp {
-        fixed {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    cohortOne: allMarkdownRemark(
-      sort: { fields: fileAbsolutePath, order: ASC }
-      filter: { fileAbsolutePath: { regex: "/data/fellows/cohort1/" } }
-    ) {
-      edges {
-        node {
-          ...FellowDetails
-        }
-      }
-    }
-    cohortTwo: allMarkdownRemark(
-      sort: { fields: fileAbsolutePath, order: ASC }
-      filter: { fileAbsolutePath: { regex: "/data/fellows/cohort2/" } }
-    ) {
-      edges {
-        node {
-          ...FellowDetails
-        }
-      }
-    }
-    cohortThree: allMarkdownRemark(
-      sort: { fields: fileAbsolutePath, order: ASC }
-      filter: { fileAbsolutePath: { regex: "/data/fellows/cohort3/" } }
-    ) {
-      edges {
-        node {
-          ...FellowDetails
-        }
+const fellowsQuery = graphql`{
+  avatar: file(relativePath: {regex: "/avatar.png/"}) {
+    childImageSharp {
+      fixed {
+        ...GatsbyImageSharpFixed
       }
     }
   }
-`;
+  cohortOne: allMarkdownRemark(
+    sort: {fileAbsolutePath: ASC}
+    filter: {fileAbsolutePath: {regex: "/data/fellows/cohort1/"}}
+  ) {
+    edges {
+      node {
+        ...FellowDetails
+      }
+    }
+  }
+  cohortTwo: allMarkdownRemark(
+    sort: {fileAbsolutePath: ASC}
+    filter: {fileAbsolutePath: {regex: "/data/fellows/cohort2/"}}
+  ) {
+    edges {
+      node {
+        ...FellowDetails
+      }
+    }
+  }
+  cohortThree: allMarkdownRemark(
+    sort: {fileAbsolutePath: ASC}
+    filter: {fileAbsolutePath: {regex: "/data/fellows/cohort3/"}}
+  ) {
+    edges {
+      node {
+        ...FellowDetails
+      }
+    }
+  }
+}`;
 
 export const useFellows = () => {
   const { avatar, cohortOne, cohortTwo, cohortThree } = useStaticQuery(

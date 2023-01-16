@@ -13,49 +13,45 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const eventsArchiveTemplate = path.resolve(
     `src/templates/events/past-events-template.js`
   );
-  const result = await graphql(`
-    {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___title] }
-        limit: 10
-        filter: { fileAbsolutePath: { regex: "/data/platforms/" } }
-      ) {
-        edges {
-          node {
-            frontmatter {
-              path
-            }
-          }
-        }
-      }
-      allRedirectsJson {
-        edges {
-          node {
-            from
-            to
-          }
+  const result = await graphql(`{
+  allMarkdownRemark(
+    sort: {frontmatter: {title: DESC}}
+    limit: 10
+    filter: {fileAbsolutePath: {regex: "/data/platforms/"}}
+  ) {
+    edges {
+      node {
+        frontmatter {
+          path
         }
       }
     }
-  `);
+  }
+  allRedirectsJson {
+    edges {
+      node {
+        from
+        to
+      }
+    }
+  }
+}`);
 
-  const newsResults = await graphql(`
-    {
-      allMarkdownRemark(sort: { fields: frontmatter___date, order: ASC }) {
-        edges {
-          node {
-            fileAbsolutePath
-            frontmatter {
-              path
-              title
-              date(formatString: "MMMM DD, YYYY")
-              tags
-            }
-          }
+  const newsResults = await graphql(`{
+  allMarkdownRemark(sort: {frontmatter: {date: ASC}}) {
+    edges {
+      node {
+        fileAbsolutePath
+        frontmatter {
+          path
+          title
+          date(formatString: "MMMM DD, YYYY")
+          tags
         }
       }
     }
-  `);
+  }
+}`);
   // Handle errors
   if (result.errors) {
     reporter.panicOnBuild(`Error while running GraphQL query.`);
