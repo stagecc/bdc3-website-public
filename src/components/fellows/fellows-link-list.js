@@ -18,5 +18,6 @@ export const FellowsLinkList = styled.div`
 `;
 
 export const FellowsLinkListItem = ({ path, text }) => (
-  <AnchorLink to={path}>{text}</AnchorLink>
+  // <AnchorLink to={path}>{text}</AnchorLink>
+  <a href={path}>{text}</a>
 );
