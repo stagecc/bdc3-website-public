@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import Img from "gatsby-image";
-import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { SEO } from "../../components/seo";
 import styled from "styled-components";
 import { PageContent } from "../../components/layout";
@@ -14,6 +13,7 @@ import { List, ListItem } from "../../components/list";
 import { Link } from "../../components/link";
 import { Container as Grid, Row, Col, Visible } from "react-grid-system";
 import { usePartners, usePlatforms } from "../../hooks";
+import { navigate } from "gatsby";
 
 const LogoCloud = styled.div`
   text-align: center;
@@ -52,37 +52,37 @@ const AboutPage = ({ data }) => {
               >
                 <ListItem
                   primary={
-                    <AnchorLink to="/about/overview#what-we-offer">
+                    <a href="#what-we-offer" onClick={() => navigate("#what-we-offer")}>
                       What we Offer
-                    </AnchorLink>
+                    </a>
                   }
                 />
                 <ListItem
                   primary={
-                    <AnchorLink to="/about/overview#who-we-are">
+                    <a href="#who-we-are" onClick={() => navigate("#who-we-are")}>
                       Who we Are
-                    </AnchorLink>
+                    </a>
                   }
                 />
                 <ListItem
                   primary={
-                    <AnchorLink to="/about/overview#contributing">
+                    <a href="#contributing" onClick={() => navigate("#contributing")}>
                       Contribute
-                    </AnchorLink>
+                    </a>
                   }
                 />
                 <ListItem
                   primary={
-                    <AnchorLink to="/about/overview#data-protection">
+                    <a href="#data-protection" onClick={() => navigate("#data-protection")}>
                       Data Protection
-                    </AnchorLink>
+                    </a>
                   }
                 />
                 <ListItem
                   primary={
-                    <AnchorLink to="/about/overview#citation">
+                    <a href="#citation" onClick={() => navigate("#citation")}>
                       Citation
-                    </AnchorLink>
+                    </a>
                   }
                 />
               </List>
