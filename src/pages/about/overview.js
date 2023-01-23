@@ -24,6 +24,21 @@ const LogoCloud = styled.div`
   align-items: center;
 `;
 
+const Section = styled.section`
+  &:before { 
+    content: "";
+    display: block; 
+    position: relative;
+    width: 0;
+    height: 120px;
+    margin-top: -120px;
+  }
+
+  &:first-of-type {
+    margin-top: -140px;
+  }
+`
+
 const PlatformImage = styled(Img)`
   margin: 2rem;
 `;
@@ -91,7 +106,7 @@ const AboutPage = ({ data }) => {
           <Col xs={12} lg={9}>
             <Title>About BioData Catalyst</Title>
 
-            <section id="what-we-offer">
+            <Section id="what-we-offer">
               <Heading>What We Offer</Heading>
 
               <Paragraph>
@@ -110,11 +125,11 @@ const AboutPage = ({ data }) => {
                 options, and prevention strategies for heart, lung, blood, and
                 sleep disorders.
               </Paragraph>
-            </section>
+            </Section>
 
             <br />
 
-            <section id="who-we-are">
+            <Section id="who-we-are">
               <Heading>Who We Are</Heading>
 
               <Paragraph>
@@ -228,11 +243,11 @@ const AboutPage = ({ data }) => {
                   }
                 />
               </List>
-            </section>
+            </Section>
 
             <br />
 
-            <section id="contributing">
+            <Section id="contributing">
               <Heading>Contribute to the Ecosystem Development</Heading>
 
               <Paragraph>
@@ -252,11 +267,11 @@ const AboutPage = ({ data }) => {
                 </li>
                 <li>Periodic Requests for Comment (RFC) solicitations.</li>
               </ol>
-            </section>
+            </Section>
 
             <br />
 
-            <section id="data-protection">
+            <Section id="data-protection">
               <Heading>Data Protection</Heading>
 
               <Paragraph>
@@ -269,11 +284,11 @@ const AboutPage = ({ data }) => {
                 </Link>
                 .
               </Paragraph>
-            </section>
+            </Section>
 
             <br />
 
-            <section id="citation">
+            <Section id="citation">
               <Heading>How to Cite Us</Heading>
 
               <Paragraph>
@@ -283,7 +298,7 @@ const AboutPage = ({ data }) => {
                 </Link>
                 .
               </Paragraph>
-            </section>
+            </Section>
           </Col>
         </Row>
       </Grid>
