@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import Img from "gatsby-image";
-import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { SEO } from "../../components/seo";
 import styled from "styled-components";
 import { PageContent } from "../../components/layout";
@@ -14,6 +13,7 @@ import { List, ListItem } from "../../components/list";
 import { Link } from "../../components/link";
 import { Container as Grid, Row, Col, Visible } from "react-grid-system";
 import { usePartners, usePlatforms } from "../../hooks";
+import { navigate } from "gatsby";
 
 const LogoCloud = styled.div`
   text-align: center;
@@ -23,6 +23,21 @@ const LogoCloud = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+const Section = styled.section`
+  &:before { 
+    content: "";
+    display: block; 
+    position: relative;
+    width: 0;
+    height: 120px;
+    margin-top: -120px;
+  }
+
+  &:first-of-type {
+    margin-top: -140px;
+  }
+`
 
 const PlatformImage = styled(Img)`
   margin: 2rem;
@@ -52,37 +67,37 @@ const AboutPage = ({ data }) => {
               >
                 <ListItem
                   primary={
-                    <AnchorLink to="/about/overview#what-we-offer">
+                    <a href="#what-we-offer" onClick={() => navigate("#what-we-offer")}>
                       What we Offer
-                    </AnchorLink>
+                    </a>
                   }
                 />
                 <ListItem
                   primary={
-                    <AnchorLink to="/about/overview#who-we-are">
+                    <a href="#who-we-are" onClick={() => navigate("#who-we-are")}>
                       Who we Are
-                    </AnchorLink>
+                    </a>
                   }
                 />
                 <ListItem
                   primary={
-                    <AnchorLink to="/about/overview#contributing">
+                    <a href="#contributing" onClick={() => navigate("#contributing")}>
                       Contribute
-                    </AnchorLink>
+                    </a>
                   }
                 />
                 <ListItem
                   primary={
-                    <AnchorLink to="/about/overview#data-protection">
+                    <a href="#data-protection" onClick={() => navigate("#data-protection")}>
                       Data Protection
-                    </AnchorLink>
+                    </a>
                   }
                 />
                 <ListItem
                   primary={
-                    <AnchorLink to="/about/overview#citation">
+                    <a href="#citation" onClick={() => navigate("#citation")}>
                       Citation
-                    </AnchorLink>
+                    </a>
                   }
                 />
               </List>
@@ -91,7 +106,7 @@ const AboutPage = ({ data }) => {
           <Col xs={12} lg={9}>
             <Title>About BioData Catalyst</Title>
 
-            <section id="what-we-offer">
+            <Section id="what-we-offer">
               <Heading>What We Offer</Heading>
 
               <Paragraph>
@@ -110,11 +125,11 @@ const AboutPage = ({ data }) => {
                 options, and prevention strategies for heart, lung, blood, and
                 sleep disorders.
               </Paragraph>
-            </section>
+            </Section>
 
             <br />
 
-            <section id="who-we-are">
+            <Section id="who-we-are">
               <Heading>Who We Are</Heading>
 
               <Paragraph>
@@ -228,11 +243,11 @@ const AboutPage = ({ data }) => {
                   }
                 />
               </List>
-            </section>
+            </Section>
 
             <br />
 
-            <section id="contributing">
+            <Section id="contributing">
               <Heading>Contribute to the Ecosystem Development</Heading>
 
               <Paragraph>
@@ -252,11 +267,11 @@ const AboutPage = ({ data }) => {
                 </li>
                 <li>Periodic Requests for Comment (RFC) solicitations.</li>
               </ol>
-            </section>
+            </Section>
 
             <br />
 
-            <section id="data-protection">
+            <Section id="data-protection">
               <Heading>Data Protection</Heading>
 
               <Paragraph>
@@ -269,11 +284,11 @@ const AboutPage = ({ data }) => {
                 </Link>
                 .
               </Paragraph>
-            </section>
+            </Section>
 
             <br />
 
-            <section id="citation">
+            <Section id="citation">
               <Heading>How to Cite Us</Heading>
 
               <Paragraph>
@@ -283,7 +298,7 @@ const AboutPage = ({ data }) => {
                 </Link>
                 .
               </Paragraph>
-            </section>
+            </Section>
           </Col>
         </Row>
       </Grid>

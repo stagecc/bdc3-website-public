@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { AnchorLink } from "gatsby-plugin-anchor-links";
+import { navigate } from "gatsby";
 
 export const FellowsLinkList = styled.div`
   -moz-columns: 250px 3;
@@ -18,5 +18,5 @@ export const FellowsLinkList = styled.div`
 `;
 
 export const FellowsLinkListItem = ({ path, text }) => (
-  <AnchorLink to={path}>{text}</AnchorLink>
+  <a href={path} onClick={() => navigate(path)}>{text}</a>
 );

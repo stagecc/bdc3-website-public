@@ -53,7 +53,17 @@ const FellowPhoto = styled(Img)`
 `;
 
 const Wrapper = styled.article`
-  // border: 1px solid #f99; * { border: 1px solid #f99; }
+  &:before { 
+    content: "";
+    display: block; 
+    position: relative;
+    width: 0;
+    height: 150px;
+    margin-top: -150px;
+  }
+`;
+
+const FlexWrapper = styled.div`
   display: flex;
   flex-direction: ${props => (props.compact ? "column" : "row")};
   justify-content: center;
@@ -64,14 +74,7 @@ const Wrapper = styled.article`
     filter: saturate(1.0);
     transform: scale(1.02);
   }
-  &::before { 
-    content: " ";
-    display: block; 
-    height: 150px;
-    margin-top: -150px;
-    visibility: hidden;
-  }
-}`;
+`;
 
 export const FellowsProfile = ({
   name,
@@ -83,27 +86,29 @@ export const FellowsProfile = ({
 }) => {
   const { isCompact } = useWindowWidth();
   return (
-    <Wrapper id={kebabCase(name.replace(/,.+$/, ""))} compact={isCompact}>
-      <PhotoWrapper>
-        <FellowPhoto fixed={photo} />
-      </PhotoWrapper>
-      <FellowDetails>
-        <FellowHeading>
-          <FellowName center={isCompact}>{name}</FellowName>
-          <FellowOrganization center={isCompact}>
-            {institution}
-          </FellowOrganization>
-        </FellowHeading>
-        <FellowBio dangerouslySetInnerHTML={{ __html: bio }} />
-        <Collapser
-          title={
-            <FellowAbstractTitle>Project: {projectTitle}</FellowAbstractTitle>
-          }
-          ariaId={`${kebabCase(projectTitle.slice(0, 20))}_abstract`}
-        >
-          <Paragraph>Abstract: {projectAbstract}</Paragraph>
-        </Collapser>
-      </FellowDetails>
+    <Wrapper id={kebabCase(name.replace(/,.+$/, ""))} >
+      <FlexWrapper compact={isCompact}>
+        <PhotoWrapper>
+          <FellowPhoto fixed={photo} />
+        </PhotoWrapper>
+        <FellowDetails>
+          <FellowHeading>
+            <FellowName center={isCompact}>{name}</FellowName>
+            <FellowOrganization center={isCompact}>
+              {institution}
+            </FellowOrganization>
+          </FellowHeading>
+          <FellowBio dangerouslySetInnerHTML={{ __html: bio }} />
+          <Collapser
+            title={
+              <FellowAbstractTitle>Project: {projectTitle}</FellowAbstractTitle>
+            }
+            ariaId={`${kebabCase(projectTitle.slice(0, 20))}_abstract`}
+          >
+            <Paragraph>Abstract: {projectAbstract}</Paragraph>
+          </Collapser>
+        </FellowDetails>
+      </FlexWrapper>
     </Wrapper>
   );
 };

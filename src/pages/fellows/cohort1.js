@@ -44,7 +44,7 @@ const FellowsCohort1Page = () => {
           {cohortOne.map(fellow => (
             <FellowsLinkListItem
               key={kebabCase(fellow.name.replace(/,.+$/, ""))}
-              path={`/fellows/cohort1#${kebabCase(
+              path={`#${kebabCase(
                 fellow.name.replace(/,.+$/, "")
               )}`}
               text={fellow.name}
