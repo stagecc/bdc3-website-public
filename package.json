@@ -55,7 +55,8 @@
     "start": "npm run develop",
     "cleanstart": "gatsby clean && npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "update-studies": "node ./src/scripts/update-studies.js"
   },
   "repository": {
     "type": "git",
