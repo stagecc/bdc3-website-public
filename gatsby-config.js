@@ -68,8 +68,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `./src/data/studies`,
-        name: "studies",
+        path: `./src/data/studies/columns`,
+        name: "columns",
       },
     },
     {
