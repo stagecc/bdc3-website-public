@@ -1,4 +1,5 @@
 const path = require(`path`);
+const fetch = require(`node-fetch`);
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
@@ -165,4 +166,92 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
       },
     });
   }
+};
+
+exports.sourceNodes = async ({
+  actions: { createNode },
+  createNodeId,
+  createContentDigest,
+}) => {
+  const requestUrl = `https://gen3.biodatacatalyst.nhlbi.nih.gov/mds/metadata?_guid_type=discovery_metadata&limit=2000&data=true`;
+
+  const response = await fetch(requestUrl, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'accept': 'application/json'
+    }
+  });
+
+  if(!response.ok) {
+    throw new Error(response);
+  }
+
+  const data = await response.json();
+
+  // ------ transform response data ------
+  const mdsStudiesList = [];
+  const mdsCovidList = [];
+
+  // iterate over each study
+  for (const study of Object.values(data)) {
+    let isCovidStudy = false;
+
+    const studyMetadata = study['gen3_discovery'];
+
+    // check if study is tagged with 'COVID 19'
+    for(const tag of studyMetadata['tags']) {
+      if(tag.name.includes('COVID 19'))
+        isCovidStudy = true;
+    }
+
+    // strip consent
+    const fullAccession = studyMetadata['dbgap_accession'];
+    const accession = fullAccession.split('').splice(0, fullAccession.indexOf('.c')).join('');
+
+    // write values to row:
+    const row = {
+      "Accession": accession,
+      "Cohort Abbreviation": studyMetadata['short_name'],
+      "Name": studyMetadata['full_name'],
+      "Description": studyMetadata['study_description'],
+      "Consent Code": studyMetadata['dbgap_consent'],
+      "Consent Short": studyMetadata['study_id'],
+      "Subject Count": studyMetadata['_subjects_count'],
+    }
+
+    if(isCovidStudy) {
+      mdsCovidList.push(row);
+    } else {
+      mdsStudiesList.push(row);
+    }
+  }
+
+  const stringifiedMdsCovidList = JSON.stringify(mdsCovidList);
+  const covidNodeMeta = {
+    id: createNodeId(`mds-external-covid-studies`),
+    parent: null,
+    children: [],
+    internal: {
+      type: `MDSExternalCovidStudies`,
+      mediaType: `application/json`,
+      content: stringifiedMdsCovidList,
+      contentDigest: createContentDigest(mdsCovidList),
+    }
+  }
+  createNode({ stringifiedMdsCovidList, ...covidNodeMeta });
+    
+  const stringifiedMdsStudiesList = JSON.stringify(mdsStudiesList);
+  const studiesNodeMeta = {
+    id: createNodeId(`mds-external-covid-studies`),
+    parent: null,
+    children: [],
+    internal: {
+      type: `MDSExternalStudies`,
+      mediaType: `application/json`,
+      content: stringifiedMdsStudiesList,
+      contentDigest: createContentDigest(mdsStudiesList),
+    }
+  }
+  createNode({ stringifiedMdsStudiesList, ...studiesNodeMeta });
 };
