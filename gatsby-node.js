@@ -1,5 +1,6 @@
 const path = require(`path`);
 const fetch = require(`node-fetch`);
+const fs = require('fs');
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
@@ -227,7 +228,22 @@ exports.sourceNodes = async ({
     }
   }
 
-  const stringifiedMdsCovidList = JSON.stringify(mdsCovidList);
+  // ------ write updated data to src/data/studies directory ------
+  const stringifiedMdsCovidList = JSON.stringify(mdsCovidList, null, 2);
+  const stringifiedMdsStudiesList = JSON.stringify(mdsStudiesList, null, 2);
+
+  fs.writeFileSync(
+    'src/data/studies/covid-studies.json',
+    stringifiedMdsCovidList,
+    { encoding: 'utf-8' }
+  );
+  fs.writeFileSync(
+    'src/data/studies/studies.json',
+    stringifiedMdsStudiesList,
+    { encoding: 'utf-8' }
+  );
+  
+  // ------ create gatsby graphql nodes ------
   const covidNodeMeta = {
     id: createNodeId(`mds-external-covid-studies`),
     parent: null,
@@ -241,7 +257,6 @@ exports.sourceNodes = async ({
   }
   createNode({ stringifiedMdsCovidList, ...covidNodeMeta });
     
-  const stringifiedMdsStudiesList = JSON.stringify(mdsStudiesList);
   const studiesNodeMeta = {
     id: createNodeId(`mds-external-covid-studies`),
     parent: null,
