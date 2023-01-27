@@ -2,13 +2,13 @@ import { graphql, useStaticQuery } from "gatsby";
 
 const studiesQuery = graphql`
   {
-    studies: allStudiesJson {
+    studies: allMdsStudiesJson {
       edges {
         node {
           Accession
           Name
-          Description
           Cohort_Abbreviation
+          Description
           Consent_Code
           Consent_Short
         }
@@ -28,7 +28,7 @@ const studiesQuery = graphql`
         }
       }
     }
-    covidStudies: allCovidStudiesJson {
+    covidStudies: allMdsCovidStudiesJson {
       edges {
         node {
           Accession
