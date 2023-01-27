@@ -1,6 +1,6 @@
 const path = require(`path`);
 const fetch = require(`node-fetch`);
-const fs = require('fs');
+const fs = require('fs/promises');
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
@@ -169,12 +169,17 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   }
 };
 
-exports.sourceNodes = async ({
-  actions: { createNode },
-  createNodeId,
-  createContentDigest,
-}) => {
-  const requestUrl = `https://gen3.biodatacatalyst.nhlbi.nih.gov/mds/metadata?_guid_type=discovery_metadata&limit=2000&data=true`;
+/**
+ * @returns a json object containing containing raw MDS data or null if there is an error fetching
+ */
+async function queryMds() {
+  const baseUrl = "https://gen3.biodatacatalyst.nhlbi.nih.gov/mds";
+  const endpoint = "metadata";
+  const guidType = "discovery_metadata";
+  const limit = 2000;
+  const returnData = "true";
+  
+  const requestUrl = `${baseUrl}/${endpoint}?_guid_type=${guidType}&limit=${limit}&data=${returnData}`;
 
   const response = await fetch(requestUrl, {
     method: 'GET',
@@ -185,17 +190,25 @@ exports.sourceNodes = async ({
   });
 
   if(!response.ok) {
-    throw new Error(response);
-  }
+    console.error(`Error fetching from ${requestUrl}:\n`, response);
+    return null;
+  };
 
-  const data = await response.json();
+  return await response.json();
+}
 
-  // ------ transform response data ------
-  const mdsStudiesList = [];
-  const mdsCovidList = [];
+/**
+ * Splits `rawMdsData` into two objects (one for regular studies, one for COVID studies),
+ * renames several fields, and coverts from named keys to an array of studies
+ * @param rawMdsData
+ * @returns {{ mdsStudiesList, mdsCovidList }} keys for each array of studies
+ */
+function transformStudies(rawMdsData) {
+  const studies = [];
+  const covidStudies = [];
 
   // iterate over each study
-  for (const study of Object.values(data)) {
+  for (const study of Object.values(rawMdsData)) {
     let isCovidStudy = false;
 
     const studyMetadata = study['gen3_discovery'];
@@ -222,51 +235,69 @@ exports.sourceNodes = async ({
     }
 
     if(isCovidStudy) {
-      mdsCovidList.push(row);
+      covidStudies.push(row);
     } else {
-      mdsStudiesList.push(row);
+      studies.push(row);
     }
   }
 
-  // ------ write updated data to src/data/studies directory ------
-  const stringifiedMdsCovidList = JSON.stringify(mdsCovidList, null, 2);
-  const stringifiedMdsStudiesList = JSON.stringify(mdsStudiesList, null, 2);
+  return { studies, covidStudies }
+}
 
-  fs.writeFileSync(
-    'src/data/studies/covid-studies.json',
-    stringifiedMdsCovidList,
-    { encoding: 'utf-8' }
-  );
-  fs.writeFileSync(
-    'src/data/studies/studies.json',
-    stringifiedMdsStudiesList,
-    { encoding: 'utf-8' }
-  );
-  
-  // ------ create gatsby graphql nodes ------
-  const covidNodeMeta = {
-    id: createNodeId(`mds-external-covid-studies`),
-    parent: null,
-    children: [],
-    internal: {
-      type: `MDSExternalCovidStudies`,
-      mediaType: `application/json`,
-      content: stringifiedMdsCovidList,
-      contentDigest: createContentDigest(mdsCovidList),
-    }
+exports.sourceNodes = async ({
+  actions: { createNode },
+  createNodeId,
+  createContentDigest,
+}) => {
+
+  const rawMdsData = await queryMds();
+
+  let studies, studiesStringified, covidStudies, covidStudiesStringified;
+
+  if(rawMdsData) {
+    ({ studies, covidStudies } = transformStudies(rawMdsData));
+
+    // write files to src/data/studies directory
+    studiesStringified = JSON.stringify(studies, null, 2);
+    covidStudiesStringified = JSON.stringify(covidStudies, null, 2);
+    await fs.writeFile('src/data/studies/studies.json', studiesStringified, { encoding: 'utf-8' });
+    await fs.writeFile('src/data/studies/covid-studies.json', covidStudiesStringified, { encoding: 'utf-8' });
+
   }
-  createNode({ stringifiedMdsCovidList, ...covidNodeMeta });
-    
+  else {
+    console.log('Unable to fetch studies from MDS, using json in src/data/studies');
+
+    // read and parse json files in memory
+    studiesStringified = await fs.readFile('src/data/studies/studies.json', { encoding: 'utf-8' });
+    studies = JSON.parse(studiesStringified);
+    covidStudiesStringified = await fs.readFile('src/data/studies/covid-studies.json', { encoding: 'utf-8' });
+    covidStudies = JSON.parse(covidStudiesStringified);
+  }
+
+  // create gatsby graphql nodes
   const studiesNodeMeta = {
-    id: createNodeId(`mds-external-covid-studies`),
+    id: createNodeId(`mds-studies`),
     parent: null,
     children: [],
     internal: {
-      type: `MDSExternalStudies`,
+      type: `MDSStudies`,
       mediaType: `application/json`,
-      content: stringifiedMdsStudiesList,
-      contentDigest: createContentDigest(mdsStudiesList),
+      content: studiesStringified,
+      contentDigest: createContentDigest(studies),
     }
   }
-  createNode({ stringifiedMdsStudiesList, ...studiesNodeMeta });
+  createNode({ studiesStringified, ...studiesNodeMeta });
+
+  const covidStudiesNodeMeta = {
+    id: createNodeId(`mds-covid-studies`),
+    parent: null,
+    children: [],
+    internal: {
+      type: `MDSCovidStudies`,
+      mediaType: `application/json`,
+      content: covidStudiesStringified,
+      contentDigest: createContentDigest(covidStudies),
+    }
+  }
+  createNode({ covidStudiesStringified, ...covidStudiesNodeMeta });
 };
