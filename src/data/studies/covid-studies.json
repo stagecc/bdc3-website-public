@@ -9,15 +9,6 @@
     "Subject Count": 479
   },
   {
-    "Accession": "phs002363.v1.p1",
-    "Cohort Abbreviation": "RED_CORAL_HMB",
-    "Name": "PETAL - Repository of Electronic Data COVID-19 Observational Study",
-    "Description": "To describe characteristics, treatment, and outcomes among patients hospitalized with COVID-19 early in the pandemic, 1480 consecutive adult inpatients with laboratory-confirmed, symptomatic SARS-CoV-2 infection admitted to 57 US hospitals from March 1 to April 1, 2020 were studied.It was found that in a geographically diverse early-pandemic COVID-19 cohort with complete hospital folllow-up, hospital mortality was associated with older age, comorbidity burden, and male sex. Intensive care unit admissions occurred early and were associated with protracted hospital stays. Survivors often required new health care services or respiratory support at discharge.The PETAL Network central institutional review board at Vanderbilt University and the institutional review boards at each participating hospital approved the study or determined that the study was exempt from review.Instructions for requesting individual-level data are available on BioData Catalyst at https://biodatacatalyst.nhlbi.nih.gov/resources/data/. Apply for data access in dbGaP. Upon approval, users may begin accessing requested data in BioData Catalyst. For questions about availability, you may contact the BioData Catalyst team at https://biodatacatalyst.nhlbi.nih.gov/contact. Study Weblinks: PETAL Network RED CORAL StudyNHLBI BioLINCC (RED CORAL) Study Design:     Control Set Study Type:Case-CohortClinical CohortCohortMulticenter NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/ on 2022-03-29 and may not include exact formatting or images.",
-    "Consent Code": "c1",
-    "Consent Short": "phs002363.v1.p1.c1",
-    "Subject Count": 1480
-  },
-  {
     "Accession": "phs002694.v1.p1",
     "Cohort Abbreviation": "ACTIV-4A",
     "Name": "Accelerating COVID-19 Therapeutic Interventions and Vaccines 4 ACUTE (ACTIV-4A)",
