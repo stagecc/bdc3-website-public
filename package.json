@@ -41,7 +41,6 @@
     "styled-components": "^4.4.1"
   },
   "devDependencies": {
-    "disparity": "^3.2.0",
     "node-fetch": "^2.6.1",
     "prettier": "^1.18.2"
   },
