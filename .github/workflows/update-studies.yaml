@@ -1,4 +1,4 @@
-name: Update Studies
+name: Update studies
 
 on:
   schedule: 
