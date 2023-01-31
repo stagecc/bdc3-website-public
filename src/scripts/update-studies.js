@@ -28,15 +28,11 @@ function delta(oldVal, newVal) {
   await fs.writeFile(STUDIES_PATH, studiesStringified, { encoding: 'utf-8' });
   await fs.writeFile(COVID_STUDIES_PATH, covidStudiesStringified, { encoding: 'utf-8' });
 
-  console.log(`
-The following table shows the number of studies in each file before and after updating.
-
-${table([
-  ["File", "Prev", "New", "Change"],
-  ["studies.json", numOldStudies, numNewStudies, delta(numOldStudies, numNewStudies)],
-  ["covid-studies.json", numOldCovidStudies, numNewCovidStudies, delta(numOldCovidStudies, numNewCovidStudies)]
-], { align: ['l', 'l', 'l', 'c'] })}
-
-*Note that the file may have been updated, even if the change in the number of studies is 0. Please use \`git diff\` or the 'Files changed' tab to see in detail what was changed.*
-`);
+  console.log('The following table shows the number of studies in each file before and after updating.\n');
+  console.log(table([
+    ["File", "Prev", "New", "Change"],
+    ["studies.json", numOldStudies, numNewStudies, delta(numOldStudies, numNewStudies)],
+    ["covid-studies.json", numOldCovidStudies, numNewCovidStudies, delta(numOldCovidStudies, numNewCovidStudies)]
+  ], { align: ['l', 'l', 'l', 'c'] }));
+  console.log('\n*Note that the file may have been updated, even if the change in the number of studies is 0. Please use `git diff` or the "Files changed" tab to see in detail what was changed.*');
 })();
