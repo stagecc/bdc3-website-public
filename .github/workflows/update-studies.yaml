@@ -1,13 +1,13 @@
 name: Update studies
 
 on:
-  push:
-    branches:
-      - 'testing/update-studies/staging'
+  #push:
+  #  branches:
+  #    - 'testing/update-studies/staging'
 
-  schedule: 
+  #schedule: 
   # Runs at 05:00, only on Monday. (00:00 EST)
-    - cron: 0 5 * * 1
+  #  - cron: 0 5 * * 1
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
