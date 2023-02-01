@@ -24,6 +24,6 @@ You are welcome to [anonymously include your questions in advance](https://forms
 
 Make sure to [register now](http://bit.ly/BDC-JanCommHours2023) - we look forward to seeing you!
 
-What are Community Hours?
+### What are Community Hours?
 
 BDC Community Hours is a monthly, hour-long event where users can learn about features of the ecosystem. The hour is split into time for presentation by a platform team and time for questions. Teams will showcase tools, new features, or tips that meet user needs. After the presentations, time is available for discussion and questions for platform reps from users.
