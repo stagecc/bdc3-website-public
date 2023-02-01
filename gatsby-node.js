@@ -1,6 +1,4 @@
 const path = require(`path`);
-const fs = require('fs/promises');
-const { queryMds, transformStudies } = require('./src/utils/studies-data-helpers');
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
@@ -167,57 +165,4 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
       },
     });
   }
-};
-
-exports.sourceNodes = async ({
-  actions: { createNode },
-  createNodeId,
-  createContentDigest,
-}) => {
-
-  const rawMdsData = await queryMds();
-
-  let studies, studiesStringified, covidStudies, covidStudiesStringified;
-
-  if(rawMdsData) {
-    ({ studies, covidStudies } = transformStudies(rawMdsData));
-    studiesStringified = JSON.stringify(studies, null, 2);
-    covidStudiesStringified = JSON.stringify(covidStudies, null, 2);
-  }
-  else {
-    console.log('Unable to fetch studies from MDS, using json in src/data/studies');
-
-    // read and parse json files in memory
-    studiesStringified = await fs.readFile('src/data/studies/studies.json', { encoding: 'utf-8' });
-    studies = JSON.parse(studiesStringified);
-    covidStudiesStringified = await fs.readFile('src/data/studies/covid-studies.json', { encoding: 'utf-8' });
-    covidStudies = JSON.parse(covidStudiesStringified);
-  }
-
-  // create gatsby graphql nodes
-  const studiesNodeMeta = {
-    id: createNodeId(`mds-studies`),
-    parent: null,
-    children: [],
-    internal: {
-      type: `MDSStudies`,
-      mediaType: `application/json`,
-      content: studiesStringified,
-      contentDigest: createContentDigest(studies),
-    }
-  }
-  createNode({ studiesStringified, ...studiesNodeMeta });
-
-  const covidStudiesNodeMeta = {
-    id: createNodeId(`mds-covid-studies`),
-    parent: null,
-    children: [],
-    internal: {
-      type: `MDSCovidStudies`,
-      mediaType: `application/json`,
-      content: covidStudiesStringified,
-      contentDigest: createContentDigest(covidStudies),
-    }
-  }
-  createNode({ covidStudiesStringified, ...covidStudiesNodeMeta });
 };

@@ -42,7 +42,6 @@
   },
   "devDependencies": {
     "markdown-table": "^2.0.0",
-    "node-fetch": "^2.6.1",
     "prettier": "^1.18.2"
   },
   "keywords": [
