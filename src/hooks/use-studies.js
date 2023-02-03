@@ -7,8 +7,8 @@ const studiesQuery = graphql`
         node {
           Accession
           Name
-          Description
           Cohort_Abbreviation
+          Description
           Consent_Code
           Consent_Short
         }
