@@ -8,19 +8,28 @@
     "grow": 1
   },
   {
+    "name": "Consent",
+    "selector": "Consent_Code",
+    "type": "array",
+    "omit": false,
+    "groupable": false,
+    "sortable": true,
+    "grow": 0
+  },
+  {
     "name": "Study Name",
     "selector": "Name",
     "type": "string",
     "sortable": true,
-    "grow": 6,
-    "maxWidth": "1000px",
+    "grow": 8,
+    "maxWidth": "800px",
     "groupable": false
   },
   {
     "name": "Short Name",
     "selector": "Short_Name",
     "type": "string",
-    "omit": false,
+    "omit": true,
     "groupable": false
   },
   {

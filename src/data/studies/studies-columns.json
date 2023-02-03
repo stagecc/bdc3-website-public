@@ -3,9 +3,18 @@
     "name": "Accession",
     "selector": "Accession",
     "type": "string",
+    "omit": false,
+    "groupable": false,
+    "grow": 1
+  },
+  {
+    "name": "Consent",
+    "selector": "Consent_Code",
+    "type": "string",
+    "omit": false,
+    "groupable": false,
     "sortable": true,
-    "grow": 1,
-    "groupable": false
+    "grow": 0
   },
   {
     "name": "Study Name",
@@ -13,7 +22,7 @@
     "type": "string",
     "sortable": true,
     "grow": 8,
-    "maxWidth": "1000px",
+    "maxWidth": "800px",
     "groupable": false
   },
   {
@@ -71,13 +80,6 @@
     "type": "string",
     "omit": true,
     "groupable": false
-  },
-  {
-    "name": "Consent",
-    "selector": "Consent_Short",
-    "type": "array",
-    "omit": true,
-    "groupable": true
   },
   {
     "name": "Data Dictionary Link",
