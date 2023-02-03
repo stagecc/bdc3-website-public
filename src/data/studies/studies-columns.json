@@ -4,7 +4,6 @@
     "selector": "Accession",
     "type": "string",
     "omit": false,
-    "sortable": true,
     "groupable": false,
     "grow": 1
   },
