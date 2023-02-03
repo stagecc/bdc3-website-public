@@ -21,8 +21,8 @@
     "selector": "Name",
     "type": "string",
     "sortable": true,
-    "grow": 8,
-    "maxWidth": "800px",
+    "grow": 6,
+    "maxWidth": "850px",
     "groupable": false
   },
   {
