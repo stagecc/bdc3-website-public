@@ -10,7 +10,7 @@
   {
     "name": "Consent",
     "selector": "Consent_Code",
-    "type": "array",
+    "type": "string",
     "omit": false,
     "groupable": false,
     "sortable": true,
