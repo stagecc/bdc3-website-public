@@ -4,13 +4,14 @@
     "selector": "Accession",
     "type": "string",
     "omit": false,
+    "sortable": true,
     "groupable": false,
     "grow": 1
   },
   {
     "name": "Consent",
     "selector": "Consent_Code",
-    "type": "array",
+    "type": "string",
     "omit": false,
     "groupable": false,
     "sortable": true,
