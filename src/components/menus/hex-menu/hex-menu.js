@@ -35,7 +35,7 @@ const carouselItems = [
   {
     text: "BYOD",
     description:
-      "Use the BioData Catalyst ecosystem to build on your existing work",
+      "Use the BDC ecosystem to build on your existing work",
     icon: ByodIcon,
     path: "/resources/byod",
   },

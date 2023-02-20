@@ -31,33 +31,34 @@ const IndexPage = () => {
 
 
         <Card>
-          <CardHeader size="large">What is BioData Catalyst?</CardHeader>
+          <CardHeader size="large">What is NHLBI BioData Catalyst® (BDC)?</CardHeader>
           <CardBody image={{ placement: "right", path: SickleCellImage }}>
             <Paragraph>
-              NHLBI BioData Catalyst is a cloud-based ecosystem providing tools,
+              NHLBI BioData Catalyst® (BDC) is a cloud-based ecosystem providing tools,
               applications, and workflows in secure workspaces. By increasing
               access to NHLBI datasets and innovative data analysis
-              capabilities, BioData Catalyst accelerates efficient biomedical
+              capabilities, BDC accelerates efficient biomedical
               research that drives discovery and scientific advancement, leading
               to novel diagnostic tools, therapeutics, and prevention strategies
               for heart, lung, blood, and sleep disorders.
             </Paragraph>
             <Paragraph>
-              Though the primary goal of the BioData Catalyst project is to
+              Though the primary goal of the BDC project is to
               build a data science ecosystem, at its core, this is a
-              people-centric endeavor. BioData Catalyst is also building a
+              people-centric endeavor. BDC is also building a
               community of practice working collaboratively to solve technical
               and scientific challenges.
             </Paragraph>
             <Paragraph>
-              BioData Catalyst allows researchers to find, access, share, store,
+              BDC allows researchers to find, access, share, store,
               and compute on large scale datasets. In this ecosystem,
               researchers are able to:
             </Paragraph>
             <BulletedList>
               <ListItem
                 primary={
-                  "Utilize the many “out of the box” tools available on BioData  Catalyst to ease the burden of designing and testing individual tools"
+                  `Utilize the many “out of the box” tools available on BDC to ease 
+                  the burden of designing and testing individual tools`
                 }
               />{" "}
               <ListItem
