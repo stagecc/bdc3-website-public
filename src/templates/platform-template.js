@@ -1,6 +1,7 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
+import { SEO } from "../components/seo";
 import styled from "styled-components";
 import { PageContent } from "../components/layout";
 import { Title, Heading, Paragraph } from "../components/typography";
@@ -27,23 +28,33 @@ const LogoContainer = styled.div`
 export default ({ data }) => {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
-  const platformLogoFixed = frontmatter.logo.childImageSharp.fixed;
+  const platformLogoFixed = frontmatter.logo ? frontmatter.logo.childImageSharp.fixed: null;
 
   return (
     <PageContent width="95%" maxWidth="1080px" center gutters>
-      <LogoContainer>
-        <Img fixed={platformLogoFixed} />
-      </LogoContainer>
+      <SEO title={`About ${frontmatter.title}`} description="" keywords="" />
+      
+      {
+        frontmatter.logo && (
+          <LogoContainer>
+            <Img fixed={platformLogoFixed} />
+          </LogoContainer>
+        )
+      }
 
-      <Title center>BioData Catalyst</Title>
-      <Heading center>Powered by {frontmatter.title}</Heading>
+      <Title center>{frontmatter.title}</Title>
 
+{
+  frontmatter.links.launch || frontmatter.links.documentation ? (
+    <Fragment>
       <LinkList center>
-        <Link to={frontmatter.links.launch}>Launch</Link> |{" "}
-        <Link to={frontmatter.links.documentation}>
-          Documentation
-        </Link>
+        { frontmatter.links.launch && (<Link to={frontmatter.links.launch}>Launch</Link>)}
+        { frontmatter.links.launch && frontmatter.links.documentation &&(<> |{" "}</>)}
+        { frontmatter.links.documentation && (<Link to={frontmatter.links.documentation}>Documentation</Link>)}
       </LinkList>
+    </Fragment>
+  ) : null
+}
 
       <Heading>About {frontmatter.title}</Heading>
 
