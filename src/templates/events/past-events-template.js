@@ -68,8 +68,7 @@ export default ({ data, pageContext }) => {
 
       <Module>
         <Paragraph>
-          These are past events supported by the NHLBI BioData Catalyst
-          Ecosystem.
+          The following are past events supported by the BDC ecosystem.
         </Paragraph>
         <EventsList events={events} />
       </Module>
