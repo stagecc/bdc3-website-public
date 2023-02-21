@@ -243,24 +243,36 @@ const AboutPage = ({ data }) => {
             <br />
 
             <Section id="contributing">
-              <Heading>Contribute to the Ecosystem Development</Heading>
+              <Heading>Contribute to the BDC Ecosystem</Heading>
 
               <Paragraph>
-                BDC is a dynamic resource that will be continually developed 
-                and refined. The BDC Consortium solicits feedback on the 
-                development of significant processes, emerging standards, 
-                and decisions in two main ways:
+              BDC is a dynamic ecosystem that gets continually developed and 
+              enhanced, and the BDC Consortium encourages the community to 
+              provide resources, insights, and suggestions. There are multiple 
+              ways to contribute:
               </Paragraph>
 
               <ol style={{ lineHeight: 2 }}>
                 <li>
-                  BDC is a dynamic resource that will be continually developed 
-                  and refined. The BDC Consortium solicits feedback on the 
-                  development of significant processes, emerging standards, 
-                  and decisions with Periodic Requests for Comment (RFC) 
-                  solicitations.
+                  Learn how to{" "}
+                    <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/community/contributing-user-resources-to-bdc">
+                      Contribute User Resources to BDC
+                    </Link>{" "}
+                  like written documentation, videos, and responses to inquiries
                 </li>
-                <li>Periodic Requests for Comment (RFC) solicitations.</li>
+                <li>
+                  Use the BDC{" "}
+                    <Link to="https://biodatacatalyst.nhlbi.nih.gov/contact">
+                      Contact Form
+                    </Link>{" "}
+                  to provide feedback about enhancements you'd like to see
+                </li>
+                <li>
+                  Respond to periodic{" "}
+                    <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/community/request-for-comments">
+                      Requests for Comment (RFC) solicitations
+                    </Link>
+                </li>
               </ol>
             </Section>
 
