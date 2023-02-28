@@ -1,7 +1,7 @@
 ---
 name: Gen3
 title: BDC Powered by Gen3 (BDC-Gen3)
-serviceTitle: BioData Catalyst Powered by Gen3
+serviceTitle: BDC-Gen3
 poweredBy: true
 path: /platforms/gen3
 logo: gen3.png

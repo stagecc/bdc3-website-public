@@ -1,7 +1,7 @@
 ---
 name: Terra
 title: BDC Powered by Terra (BDC-Terra)
-serviceTitle: BioData Catalyst Powered by Terra
+serviceTitle: BDC-Terra
 poweredBy: true
 path: /platforms/terra
 logo: terra.png

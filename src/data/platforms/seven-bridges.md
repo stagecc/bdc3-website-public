@@ -1,7 +1,7 @@
 ---
 name: Seven Bridges
 title: BDC Powered by Seven Bridges (BDC-Seven Bridges)
-serviceTitle: BioData Catalyst Powered by Seven Bridges
+serviceTitle: BDC-Seven Bridges
 poweredBy: true
 path: /platforms/seven-bridges
 logo: seven-bridges.png

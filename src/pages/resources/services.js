@@ -31,23 +31,23 @@ const ServicesPage = ({ data }) => {
     {
       title: "Explore Available Data",
       platforms: [
-        platforms.find(platform => platform.frontmatter.title === "Gen3"),
-        platforms.find(platform => platform.frontmatter.title === "PIC-SURE"),
-        platforms.find(platform => platform.frontmatter.title === "Dug"),
+        platforms.find(platform => platform.frontmatter.title.includes("Gen3")),
+        platforms.find(platform => platform.frontmatter.title.includes("PIC-SURE")),
+        platforms.find(platform => platform.frontmatter.title.includes("Dug")),
       ],
     },
     {
       title: "Analyze Data in Cloud-based Shared Workspaces",
       platforms: [
-        platforms.find(platform => platform.frontmatter.title === "Seven Bridges"),
-        platforms.find(platform => platform.frontmatter.title === "Terra"),
+        platforms.find(platform => platform.frontmatter.title.includes("Seven Bridges")),
+        platforms.find(platform => platform.frontmatter.title.includes("Terra")),
       ],
     },
     {
       title: "Use Community Tools on Controlled-access Datasets",
       platforms: [
-        platforms.find(platform => platform.frontmatter.title === "Dockstore"),
-        platforms.find(platform => platform.frontmatter.title === "HeLx"),
+        platforms.find(platform => platform.frontmatter.title.includes("Dockstore")),
+        platforms.find(platform => platform.frontmatter.title.includes("HeLx")),
       ],
     }
   ];
@@ -78,9 +78,13 @@ const ServicesPage = ({ data }) => {
               {section.platforms.map(platform => platform.frontmatter.service && (
                 <Col xs={ 12 } lg={ 6 } style={{ marginBottom: '32px' }}>
                   <Card>
-                    <CardHeader>{platform.frontmatter.serviceTitle}</CardHeader>
+                    <CardHeader
+                      style={{fontStyle: platform.frontmatter.poweredBy ? 'italic' : 'normal'}}
+                    >
+                      {platform.frontmatter.serviceTitle}
+                    </CardHeader>
                     <CardBody style={{ flex: 1 }}>
-                      <Paragraph>{platform.frontmatter.service}</Paragraph>
+                      <Paragraph dangerouslySetInnerHTML={{__html: platform.frontmatter.service}}/>
                     </CardBody>
                     <ToolLinks>
                       {platform.frontmatter.links.launch && (
