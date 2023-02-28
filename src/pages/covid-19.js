@@ -12,9 +12,9 @@ const Covid19Page = () => {
 
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters>
-      <SEO title="COVID-19" description="" keywords="" />
+      <SEO title="COVID-19 Data" description="" keywords="" />
 
-      <Title>About BioData Catalyst COVID-19 Data</Title>
+      <Title>About BDC COVID-19 Data</Title>
 
       <Paragraph>
         NHLBI's response to the public health threat posed by COVID-19 includes
@@ -24,15 +24,15 @@ const Covid19Page = () => {
         </Link>
         , which consists of translational research, clinical trials, clinical
         epidemiology, and population science. The NHLBI is also leveraging its
-        cyberinfrastructure, namely the BioData Catalyst ecosystem, to help
+        cyberinfrastructure, namely the BDC ecosystem, to help
         coordinate various data management needs of many of the COVID-19
         efforts.
       </Paragraph>
 
       <Paragraph>
-        BioData Catalyst is supporting data aggregation, rapid and broad access,
+        BDC is supporting data aggregation, rapid and broad access,
         and computation for several NIH-funded COVID-19 datasets. In an effort
-        to drive more impactful analyses, BioData Catalyst will be interoperable
+        to drive more impactful analyses, BDC will be interoperable
         with other COVID-19 data resources.
       </Paragraph>
 
@@ -40,7 +40,7 @@ const Covid19Page = () => {
 
       <Paragraph>
         The table below provides metadata on the SARS-CoV-2 studies in the
-        BioData Catalyst ecosystem. Note that some parts of the ecosystem may
+        BDC ecosystem. Note that some parts of the ecosystem may
         lag in showing some datasets.
       </Paragraph>
 
@@ -60,13 +60,13 @@ const Covid19Page = () => {
       <Heading>Access COVID-19 Data</Heading>
 
       <Paragraph>
-        Access to COVID-19 data on BioData Catalyst requires data access
+        Access to COVID-19 data on BDC requires data access
         approvals from the NLM Database of Genotypes and Phenotypes (
         <Link to="https://dbgap.ncbi.nlm.nih.gov/aa/wga.cgi?page=login">
           dbGaP
         </Link>
-        ) system. To learn more about data access and data use on the BioData
-        Catalyst system, visit our{" "}
+        ) system. To learn more about data access and data use on the BDC
+        system, visit our{" "}
         <Link to="https://biodatacatalyst.nhlbi.nih.gov/resources/data">
           Data webpage
         </Link>
@@ -131,11 +131,11 @@ const Covid19Page = () => {
         <ListItem
           primary={
             <span>
-              Read the BioData Catalyst Ecosystem{" "}
+              Read the BDC{" "}
               <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/">
-                Overview document
+                documentation
               </Link>{" "}
-              because it provides important information for new users and links
+              , as it provides important information for new users and links
               to additional guidance and resources.
             </span>
           }
@@ -146,7 +146,7 @@ const Covid19Page = () => {
               Identify your preferred workspace and platforms by considering the
               descriptions available on the{" "}
               <Link to="/resources/services">
-                BioData Catalyst Services page
+                BDC Services page
               </Link>{" "}
               and the documentation to which it links.
             </span>
@@ -175,7 +175,7 @@ const Covid19Page = () => {
           primary={
             <span>
               Once you have approved dbGaP access, you may set up accounts for
-              your preferred workspace and platforms on the BioData Catalyst
+              your preferred workspace and platforms on the BDC
               ecosystem to conduct your research. Refer to the Ecosystem Access,
               Hosted Data, and System Services section of the Overview document
               for{" "}
