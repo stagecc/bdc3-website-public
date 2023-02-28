@@ -32,7 +32,7 @@ export default ({ data }) => {
 
   return (
     <PageContent width="95%" maxWidth="1080px" center gutters>
-      <SEO title={`About ${frontmatter.title}`} description="" keywords="" />
+      <SEO title={`About ${frontmatter.name}`} description="" keywords="" />
       
       {
         frontmatter.logo && (
@@ -41,8 +41,7 @@ export default ({ data }) => {
           </LogoContainer>
         )
       }
-
-      <Title center>{frontmatter.title}</Title>
+      <Title center style={{fontStyle: frontmatter.poweredBy ? 'italic' : 'normal'}}>{frontmatter.title}</Title>
 
 {
   frontmatter.links.launch || frontmatter.links.documentation ? (
@@ -56,9 +55,9 @@ export default ({ data }) => {
   ) : null
 }
 
-      <Heading>About {frontmatter.title}</Heading>
+      <Heading>About {frontmatter.name}</Heading>
 
-      <Paragraph>{frontmatter.about}</Paragraph>
+      <Paragraph dangerouslySetInnerHTML={{ __html: frontmatter.about }}/>
 
       <Heading>Key Features</Heading>
 
@@ -71,7 +70,9 @@ export const platformQuery = graphql`
   query($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       frontmatter {
+        name
         title
+        poweredBy
         links {
           launch
           documentation

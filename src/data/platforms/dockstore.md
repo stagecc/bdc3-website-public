@@ -1,6 +1,8 @@
 ---
+name: Dockstore
 title: Dockstore
 serviceTitle: Dockstore
+poweredBy: false
 path: /platforms/dockstore
 logo: dockstore.png
 links:

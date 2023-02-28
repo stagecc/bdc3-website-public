@@ -1,7 +1,9 @@
 ---
-title: PIC-SURE
-path: /platforms/pic-sure
+name: PIC-SURE
+title: BDC Powered by PIC-SURE (BDC-PIC-SURE)
 serviceTitle: BioData Catalyst Powered by PIC-SURE
+poweredBy: true
+path: /platforms/pic-sure
 logo: pic-sure.png
 links:
   homepage: https://pic-sure.org/

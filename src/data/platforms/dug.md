@@ -1,8 +1,10 @@
 ---
+name: Dug
 title: Dug
-path: /platforms/dug
 serviceTitle: BioData Catalyst Powered by Dug
-logo:
+poweredBy: false
+path: /platforms/dug
+logo: dug.png
 links:
   homepage: https://use.helx.renci.org/
   launch: https://search.biodatacatalyst.renci.org/
