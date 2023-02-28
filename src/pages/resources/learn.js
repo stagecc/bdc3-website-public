@@ -20,14 +20,14 @@ const resources = [
     title: "Documentation",
     icon: <DocumentsIcon size={52} fill="#fff" />,
     description:
-      "Find step-by-step instructions on how to use BioData Catalyst services and tools.",
+      "Find step-by-step instructions on how to use BDC services and tools.",
     links: [
       {
-        text: "BioData Catalyst Documentation",
+        text: "BDC Documentation",
         url: "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/"
       },
       {
-        text: "BioData Catalyst Release Notes",
+        text: "BDC Release Notes",
         url:
           "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/release-notes"
       },
@@ -61,14 +61,14 @@ const resources = [
   {
     title: "Videos",
     icon: <VideosIcon size={42} fill="#fff" />,
-    description: "BioData Catalyst webinars, workshops, and how to videos.",
+    description: "BDC webinars, workshops, and how to videos.",
     links: [
       {
-        text: "BioData Catalyst Demonstration (1:02:53)",
+        text: "BDC Demonstration (1:02:53)",
         url: "https://videocast.nih.gov/watch=37703"
       },
       {
-        text: "BioData Catalyst Videos",
+        text: "BDC Videos",
         url: "https://www.youtube.com/channel/UCGkmY5oNK8uFZzT8vV_9KgQ"
       },
       {
@@ -100,7 +100,7 @@ const resources = [
       "Find answers to frequently asked questions from BioData Catalyst users",
     links: [
       {
-        text: "BioData Catalyst FAQs",
+        text: "BDC FAQs",
         url: "https://bdcatalyst.freshdesk.com/support/solutions"
       },
       {
@@ -126,7 +126,7 @@ const resources = [
       "Connect with others using the BioData Catalyst and learn how they are using it.",
     links: [
       {
-        text: "BioData Catalyst Forum",
+        text: "BDC Forum",
         url: "https://bdcatalyst.freshdesk.com/support/discussions/60000024585"
       },
       {
@@ -147,7 +147,7 @@ const resources = [
     title: "Blogs & Tutorials",
     icon: <BlogIcon size={42} fill="#fff" />,
     description:
-      "Learn about how the BioData Catalyst is evolving and how to use the system from the community.",
+      "Learn about how BDC is evolving and how to use the system from the community.",
     links: [
       {
         text: "PIC-SURE Tutorials",
@@ -181,7 +181,7 @@ const resources = [
   {
     title: "Upcoming Events",
     icon: <EventsIcon size={42} fill="#fff" />,
-    description: "Find upcoming BioData Catalyst events or view the archive.",
+    description: "Find upcoming BDC events or view the archive.",
     links: [
       {
         text: "Dockstore News & Events",
@@ -201,17 +201,17 @@ const resources = [
 
 const LearnPage = () => (
   <PageContent width="95%" maxWidth="1200px" center gutters>
-    <SEO title="Learn and Support" description="" keywords="" />
+    <SEO title="Learn" description="" keywords="" />
 
     <Title>Learn and Support</Title>
 
     <Paragraph>
-      The NHLBI BioData Catalyst is an ecosystem made up of many platforms and
+      BDC is an ecosystem made up of many platforms and
       partners that support our researchers.
     </Paragraph>
 
     <Paragraph>
-      Get started on the BioData Catalyst ecosystem with this collection of
+      Get started on the BDC ecosystem with this collection of
       documentation, videos, FAQs, community forums, tutorials, blog posts,
       upcoming events, and more from our ecosystem partners.
     </Paragraph>
