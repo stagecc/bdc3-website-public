@@ -97,7 +97,7 @@ const resources = [
     title: "FAQs",
     icon: <FaqsIcon size={42} fill="#fff" />,
     description:
-      "Find answers to frequently asked questions from BioData Catalyst users",
+      "Find answers to frequently asked questions from BDC users",
     links: [
       {
         text: "BDC FAQs",
@@ -123,7 +123,7 @@ const resources = [
     title: "Community Forums",
     icon: <CommunityIcon size={42} fill="#fff" />,
     description:
-      "Connect with others using the BioData Catalyst and learn how they are using it.",
+      "Connect with others using BDC and learn how they are using it.",
     links: [
       {
         text: "BDC Forum",
