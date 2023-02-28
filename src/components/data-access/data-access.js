@@ -94,10 +94,14 @@ export const DataAccess = ({ location }) => {
               datasets to which you currently have access.
             </Paragraph>
             <Paragraph>
-              For additional guidance on How to check what data you have access
-              to on BioData Catalyst, see a page dedicated to this topic in our{" "}
-              <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/data-access/check-my-access-to-data">
-                BioData Catalyst documentation
+              For additional guidance on how to check what data you have access
+              to on BDC, refer to the{" "}
+              <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/getting-started/data-access/check-my-access-to-data">
+                Checking Access page
+              </Link>{" "}
+              of the{" "}
+              <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/">
+                BDC documentation
               </Link>
               .
             </Paragraph>

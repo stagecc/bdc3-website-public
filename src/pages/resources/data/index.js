@@ -28,9 +28,9 @@ const DataPage = ({ data, location }) => {
       gutters
       style={{ position: "relative" }}
     >
-      <SEO title="BioData Catalyst Data Access" description="" keywords="" />
+      <SEO title="Data" description="" keywords="" />
 
-      <Title>BioData Catalyst Data</Title>
+      <Title>BDC Data</Title>
 
       <br />
 
@@ -49,7 +49,7 @@ const DataPage = ({ data, location }) => {
 
       <br />
 
-      <Heading>Studies available throughout the BioData Catalyst ecosystem</Heading>
+      <Heading>Studies available throughout the BDC ecosystem</Heading>
 
       
       <BulletedList>
@@ -156,7 +156,7 @@ const DataPage = ({ data, location }) => {
       <br/>
 
         <Paragraph>
-          Download BioData Catalyst Release Notes and Study Details
+          Download BDC Release Notes and Study Details
           using the buttons below.
         </Paragraph>
 
@@ -207,10 +207,10 @@ const DataPage = ({ data, location }) => {
       <br />
 
       <section>
-        <Heading>How Data Access Works on BioData Catalyst</Heading>
+        <Heading>How Data Access Works on BDC</Heading>
 
         <Paragraph>
-          The BioData Catalyst ecosystem manages access to the hosted controlled
+          The BDC ecosystem manages access to the hosted controlled
           data using data access approvals from the NIH Database of Genotypes
           and Phenotypes (
           <Link to="https://dbgap.ncbi.nlm.nih.gov/aa/wga.cgi?page=login">
@@ -222,7 +222,7 @@ const DataPage = ({ data, location }) => {
         </Paragraph>
 
         <Paragraph>
-          Users log into BioData Catalyst platforms with their eRA Commons
+          Users log into BDC platforms with their eRA Commons
           credentials and authentication is performed by iTrust.
         </Paragraph>
 
@@ -247,14 +247,14 @@ const DataPage = ({ data, location }) => {
         <BulletedList>
           <ListItem
             primary={`
-            Principal Investigators (PIs) who have approved Data Access Requests (DARs) on dbGaP for BioData Catalyst datasets will be able to programmatically access those data within the BioData Catalyst ecosystem.
+            Principal Investigators (PIs) who have approved Data Access Requests (DARs) on dbGaP for BDC datasets will be able to programmatically access those data within the BDC ecosystem.
           `}
           />
           <ListItem
             primary={
               <span>
                 PIs with approved DARs can give lab staff access to the hosted
-                datasets on the BioData Catalyst ecosystem by giving the lab
+                datasets on the BDC ecosystem by giving the lab
                 staff "designated downloader status" on dbGaP.{" "}
                 <Link to="https://www.youtube.com/watch?v=Yem3OH26kX4&t=1s">
                   Learn more about this process
@@ -265,7 +265,7 @@ const DataPage = ({ data, location }) => {
           />
           <ListItem
             primary={`
-            Please note that having other researchers listed on your dbGaP DAR application as internal and external collaborators will not result in these individuals having access to hosted datasets on BioData Catalyst.
+            Please note that having other researchers listed on your dbGaP DAR application as internal and external collaborators will not result in these individuals having access to hosted datasets on BDC.
             PIs will need to add internal collaborators from their dbGaP application to the list of designated downloaders as described above.
             In addition, external collaborators will need to obtain DAR approval for those at their institutions.
           `}
@@ -279,16 +279,14 @@ const DataPage = ({ data, location }) => {
         <Heading>Data Use Policy Statement</Heading>
 
         <Paragraph>
-          BioData Catalyst adheres to internationally recognized policies for
-          data access and release that have been developed to enable broad
-          access to data on the BioData Catalyst ecosystem. Data available on
-          the BioData Catalyst ecosystem are subject to both general and
-          data-set specific data use policies, and access to controlled data are
-          restricted to authorized users. As a BioData Catalyst user, you are
-          solely responsible for adhering to Data Use Agreement(s),
-          Institutional Review Board policies and guidelines, and other Data Use
-          Limitations when uploading or downloading data on the BioData Catalyst
-          ecosystem.
+          BDC adheres to internationally recognized policies for data access and 
+          release that have been developed to enable broad access to data on the 
+          BDC ecosystem. Data available on the BDC ecosystem are subject to both 
+          general and data-set specific data use policies, and access to controlled 
+          data are restricted to authorized users. As a BDC user, you are solely 
+          responsible for adhering to Data Use Agreement(s), Institutional Review 
+          Board policies and guidelines, and other Data Use Limitations when 
+          uploading or downloading data on the BDC ecosystem.
         </Paragraph>
       </section>
 
@@ -298,9 +296,9 @@ const DataPage = ({ data, location }) => {
         <Heading>Adding and Managing Hosted Data</Heading>
 
         <Paragraph>
-          A component of the BioData Catalyst mission is to provide findable,
+          A component of the BDC mission is to provide findable,
           accessible, interoperable, and reusable (FAIR) data to support the
-          NHLBI research community. One way in which the BioData Catalyst
+          NHLBI research community. One way in which the BDC
           Consortium is committed to achieving that mission is to successfully
           manage data already in the ecosystem and make available additional
           hosted data.
@@ -330,7 +328,7 @@ const DataPage = ({ data, location }) => {
         </BulletedList>
 
         <Paragraph>
-          The BioData Catalyst Consortium will update these documents to reflect
+          The BDC Consortium will update these documents to reflect
           maturities of the ecosystem and best practices in data management.
         </Paragraph>
       </section>
