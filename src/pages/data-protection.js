@@ -12,12 +12,12 @@ const DataProtectionPage = () => (
 
     <Paragraph>
       In addition to its useful tools, applications, and workflows, NHLBI
-      BioData Catalyst increases access to NHLBI datasets, allows researchers to
-      bring their own data, and offers secure collaboration workspaces. BioData
-      Catalyst, therefore, must responsibly steward access to hosted datasets,
-      require researchers bringing their own data to respect and protect the
-      interests of research participants, and take measures to secure the
-      BioData Catalyst ecosystem.
+      BioData Catalyst® (BDC) increases access to NHLBI datasets, allows 
+      researchers to bring their own data, and offers secure collaboration 
+      workspaces. BDC, therefore, must responsibly steward access to hosted 
+      datasets, require researchers bringing their own data to respect and 
+      protect the interests of research participants, and take measures to 
+      secure the BDC ecosystem.
     </Paragraph>
 
     <section>
@@ -34,7 +34,7 @@ const DataProtectionPage = () => (
 
       <Heading>Hosted Data Access Controls</Heading>
       <Paragraph>
-        All hosted data within BioData Catalyst is de-identified. Further
+        All hosted data within BDC is de-identified. Further
         restrictions on access and use are used as additional measures of
         security.
       </Paragraph>
@@ -63,7 +63,7 @@ const DataProtectionPage = () => (
         </Link>{" "}
         (eRA) infrastructure for authentication and authorization, ensures that
         only data objects approved for access by NIH DACs and approved in dbGaP
-        are available to a user in BioData Catalyst.
+        are available to a user in BDC.
       </Paragraph>
     </section>
 
@@ -88,7 +88,7 @@ const DataProtectionPage = () => (
           Summary Results
         </Link>
         . Downloading of sequences, variants, images, phenotypes and other
-        individual data is prohibited. BioData Catalyst notifies and repeatedly
+        individual data is prohibited. BDC notifies and repeatedly
         reminds users that they may not download individual level data when they
         receive cloud credits, when they login, and when they request downloads.
         Monitoring of data egress adds another layer of security.

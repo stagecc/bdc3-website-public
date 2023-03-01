@@ -85,8 +85,7 @@ export default ({ data, pageContext }) => {
       <Title>Upcoming Events</Title>
 
       <Paragraph>
-        See the list below of events supported by the NHLBI BioData Catalyst
-        Ecosystem.
+        The following is a list of upcoming events supported by the BDC ecosystem.
       </Paragraph>
 
       <EventsList events={events} />

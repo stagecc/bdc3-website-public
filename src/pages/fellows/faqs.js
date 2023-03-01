@@ -21,14 +21,14 @@ const FaqPage = () => {
 
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters>
-      <SEO title="Frequently Asked Questions" description="" keywords="" />
+      <SEO title="BDC Fellows Program FAQs" description="" keywords="" />
 
       <Title>Fellows Program FAQs</Title>
 
       <Paragraph>
         This page includes collections of answers to our most Frequently Asked
-        Questions about the BioData Catalyst Fellows Program. View the{" "}
-        <Link to="/faqs">BioData Catalyst General FAQs here</Link>.
+        Questions about the BDC Fellows Program. View the{" "}
+        <Link to="/faqs">BDC General FAQs here</Link>.
       </Paragraph>
 
       {// If an error occurs fetching articles, show error and route users to Freshdesk.
@@ -96,8 +96,8 @@ const FaqPage = () => {
         If unanswered questions remain, view our complete{" "}
         <Link to="https://bdcatalyst.freshdesk.com/">Knowledge Base</Link> or
         submit a <Link to="/contact">help request</Link> to receive assistance.
-        Questions regarding the Fellows Program may be directed to the NHLBI
-        BioData Catalyst Help Desk and by selecting the{" "}
+        Questions regarding the BDC Fellows Program may be directed to the BDC Help 
+        Desk and by selecting the{" "}
         <strong>Fellows Program</strong> type from the{" "}
         <Link to="/contact/">contact form</Link>.
       </Paragraph>

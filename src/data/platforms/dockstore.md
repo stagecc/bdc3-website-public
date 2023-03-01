@@ -1,6 +1,8 @@
 ---
+name: Dockstore
 title: Dockstore
 serviceTitle: Dockstore
+poweredBy: false
 path: /platforms/dockstore
 logo: dockstore.png
 links:
@@ -19,6 +21,6 @@ service: Search from a catalog of high-quality Docker-based workflows that expor
   - Create a landing page for your workflow to share with the community
   - Create organizations for your lab, collaboration, or university and show off collections of workflows that you use or have written
 - Use &mdash; Discover and launch scientific workflows locally and in the cloud
-  - Select from a variety of launch partners including BioData Catalyst, Terra, DNAStack and DNAnexus
+  - Select from a variety of launch partners including BDC, Terra, DNAStack and DNAnexus
   - Find workflows from a variety of high profile projects like the Pan-Cancer Analysis of Whole Genomes, Human Cell Atlas, TOPMed, and the GA4GH-DREAM Workflow Execution Challenge
   - Use the Dockstore CLI to run workflows locally on Linux/Ubuntu

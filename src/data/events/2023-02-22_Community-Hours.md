@@ -1,5 +1,5 @@
 ---
-title: "NHLBI BioData Catalyst Community Hours: Cloud Workflow Optimization and Researcher Showcase"
+title: "BDC Community Hours: Cloud Workflow Optimization and Researcher Showcase"
 path: /events/2023-02-22/community_hours
 date: 2023-02-22
 time: 1:00 - 2:00 pm EST
@@ -10,7 +10,7 @@ forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000407
 registration_required: true
 tags: [community hours]
 seo:
-  title: "NHLBI BioData Catalyst Community Hours: Cloud Workflow Optimization and Researcher Showcase"
+  title: "BDC Community Hours: Cloud Workflow Optimization and Researcher Showcase"
   description:
 ---
 

@@ -8,13 +8,13 @@ import { BulletedList, ListItem } from "../../components/list";
 
 const RegistrationPage = () => (
   <PageContent width="95%" maxWidth="1200px" center gutters>
-    <SEO title="NHLBI BioData Catalyst Access" description="" keywords="" />
+    <SEO title="Join the BDC Community" description="" keywords="" />
 
-    <Title>Join the NHLBI BioData Catalyst Community</Title>
+    <Title>Join the BDC Community</Title>
 
     <section>
       <Paragraph>
-        Thank you for your interest in joining the NHLBI BioData Catalyst
+        Thank you for your interest in joining the BDC
         community of practice. The ecosystem provides{" "}
         <Link to="https://biodatacatalyst.nhlbi.nih.gov/resources/services/">
           tools, applications, and workflows
@@ -29,7 +29,7 @@ const RegistrationPage = () => (
         <ListItem
           primary={
             <span>
-              BioData Catalyst Ecosystem&nbsp;
+              BDC Ecosystem&nbsp;
               <Link to="https://biodatacatalyst.nhlbi.nih.gov/contact/">
                 Help Desk
               </Link>
@@ -39,7 +39,7 @@ const RegistrationPage = () => (
         <ListItem
           primary={
             <span>
-              BioData Catalyst Ecosystem&nbsp;
+              BDC Ecosystem&nbsp;
               <Link to="https://bdcatalyst.freshdesk.com/support/discussions/60000024585">
                 Forums
               </Link>

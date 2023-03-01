@@ -4,7 +4,7 @@
     "type": "stats",
     "content": {
       "headline": "Advancing access to TOPMed data",
-      "description": "BioData Catalyst provides one point of entry to the most TOPMed datasets, including Freeze 8 data.",
+      "description": "BDC provides one point of entry to the most TOPMed datasets, including Freeze 8 data.",
       "stats": [
         { "name": "Participants", "value": "406,853" },
         { "name": "Petabytes of Data", "value": "3.42" }
@@ -16,7 +16,7 @@
     "type": "stats",
     "content": {
       "headline": "Prioritizing diverse data",
-      "description": "BioData Catalyst provides access to the highly diverse TOPMed dataset.",
+      "description": "BDC provides access to the highly diverse TOPMed dataset.",
       "stats": [{ "name": "Participants with phenotypes", "value": "285,093" }]
     }
   }

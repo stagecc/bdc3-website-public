@@ -104,26 +104,25 @@ const AboutPage = ({ data }) => {
             </Col>
           </Visible>
           <Col xs={12} lg={9}>
-            <Title>About BioData Catalyst</Title>
+            <Title>About NHLBI BioData Catalyst® (BDC)</Title>
 
             <Section id="what-we-offer">
               <Heading>What We Offer</Heading>
 
               <Paragraph>
                 For research investigators who need to find, access, share,
-                store, and compute on large scale datasets, NHLBI BioData
-                Catalyst serves as a cloud-based ecosystem providing tools,
-                applications, and workflows to enable these capabilities in
-                secure workspaces.
+                store, and compute on large scale datasets, BDC serves as a 
+                cloud-based ecosystem providing tools, applications, and 
+                workflows to enable these capabilities in secure workspaces.
               </Paragraph>
 
               <Paragraph>
-                NHLBI BioData Catalyst increases access to NHLBI datasets and
-                innovative data analysis capabilities and accelerates efficient
-                biomedical research that drives discovery and scientific
-                advancement, leading to novel diagnostic tools, therapeutic
-                options, and prevention strategies for heart, lung, blood, and
-                sleep disorders.
+                BDC increases access to NHLBI datasets and innovative data 
+                analysis capabilities and accelerates efficient biomedical 
+                research that drives discovery and scientific advancement, 
+                leading to novel diagnostic tools, therapeutic options, and 
+                prevention strategies for heart, lung, blood, and sleep 
+                disorders.
               </Paragraph>
             </Section>
 
@@ -133,17 +132,16 @@ const AboutPage = ({ data }) => {
               <Heading>Who We Are</Heading>
 
               <Paragraph>
-                Though the primary goal of the BioData Catalyst project is to
-                build a data science ecosystem, at its core, this is a
-                people-centric endeavor. BioData Catalyst is also building a
-                community of practice working to collaboratively solve technical
-                and scientific challenges.
+                Though the primary goal of the BDC project is to build a data 
+                science ecosystem, at its core, this is a people-centric 
+                endeavor. BDC is also building a community of practice working 
+                to collaboratively solve technical and scientific challenges.
               </Paragraph>
 
               <Paragraph>
-                The BioData Catalyst ecosystem is funded by the National Heart,
-                Lung, and Blood Institute (NHLBI). It is designed to be nimble
-                and responsive to the ever-changing conditions of the data and
+                The BDC ecosystem is funded by the National Heart, Lung, and 
+                Blood Institute (NHLBI). It is designed to be nimble and 
+                responsive to the ever-changing conditions of the data and 
                 biomedical science community.
               </Paragraph>
 
@@ -152,7 +150,7 @@ const AboutPage = ({ data }) => {
               <Paragraph>
                 Researchers and other professionals from the following
                 institutions have received funding from NHLBI to work on the
-                BioData Catalyst ecosystem:
+                BDC ecosystem:
               </Paragraph>
 
               <List dense>
@@ -184,10 +182,9 @@ const AboutPage = ({ data }) => {
               <Subheading>NIH Cloud Ecosystem Collaborations</Subheading>
 
               <Paragraph>
-                NHLBI BioData Catalyst partners with others in the cloud
-                computing domain to help build our community of practice and
-                accelerate progress in the data and biomedical community.
-                Current partners are:
+                BDC partners with others in the cloud computing domain to 
+                help build our community of practice and accelerate progress 
+                in the data and biomedical community. Current partners are:
               </Paragraph>
 
               <List>
@@ -201,11 +198,10 @@ const AboutPage = ({ data }) => {
                       (NCPI) is establishing and implementing guidelines and
                       technical standards to empower end-user analyses across
                       participating platforms and facilitate the realization of
-                      a trans-NIH, federated data ecosystem. NHLBI BioData
-                      Catalyst is participating in the NCPI - along with AnVIL,
-                      the Cancer Research Data Commons, and the Kids First Data
-                      Resource Center - to enable cross-platform data sharing
-                      and analysis.
+                      a trans-NIH, federated data ecosystem. BDC is participating 
+                      in the NCPI - along with AnVIL, the Cancer Research Data 
+                      Commons, and the Kids First Data Resource Center - to 
+                      enable cross-platform data sharing and analysis.
                     </Fragment>
                   }
                 />
@@ -221,9 +217,8 @@ const AboutPage = ({ data }) => {
                       cost-effective access to industry-leading partners to help
                       advance biomedical research. These partnerships enable
                       access to rich datasets and advanced computational
-                      infrastructure, tools, and services. NHLBI BioData
-                      Catalyst leverages STRIDES to enhance efficiency of data
-                      storage and computation.
+                      infrastructure, tools, and services. BDC leverages STRIDES 
+                      to enhance efficiency of data storage and computation.
                     </Fragment>
                   }
                 />
@@ -236,9 +231,9 @@ const AboutPage = ({ data }) => {
                       &ndash; The NIH Office of Data Science Strategy (ODSS)
                       supports efficient and effective biomedical research data
                       infrastructure to achieve NIH’s mission of applying
-                      knowledge gained through research to improve health. NHLBI
-                      BioData Catalyst works with ODSS to facilitate secure data
-                      storage and broad access to biomedical datasets.
+                      knowledge gained through research to improve health. BDC 
+                      works with ODSS to facilitate secure data storage and 
+                      broad access to biomedical datasets.
                     </Fragment>
                   }
                 />
@@ -248,24 +243,36 @@ const AboutPage = ({ data }) => {
             <br />
 
             <Section id="contributing">
-              <Heading>Contribute to the Ecosystem Development</Heading>
+              <Heading>Contribute to the BDC Ecosystem</Heading>
 
               <Paragraph>
-                BioData Catalyst is a dynamic resource that will be continually
-                developed and refined. The BioData Catalyst Consortium solicits
-                feedback on the development of significant processes, emerging
-                standards, and decisions in two main ways:
+              BDC is a dynamic ecosystem that gets continually developed and 
+              enhanced, and the BDC Consortium encourages the community to 
+              provide resources, insights, and suggestions. There are multiple 
+              ways to contribute:
               </Paragraph>
 
               <ol style={{ lineHeight: 2 }}>
                 <li>
-                  BioData Catalyst is a dynamic resource that will be
-                  continually developed and refined. The BioData Catalyst
-                  Consortium solicits feedback on the development of significant
-                  processes, emerging standards, and decisions with Periodic
-                  Requests for Comment (RFC) solicitations.
+                  Learn how to{" "}
+                    <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/community/contributing-user-resources-to-bdc">
+                      Contribute User Resources to BDC
+                    </Link>{" "}
+                  like written documentation, videos, and responses to inquiries
                 </li>
-                <li>Periodic Requests for Comment (RFC) solicitations.</li>
+                <li>
+                  Use the BDC{" "}
+                    <Link to="https://biodatacatalyst.nhlbi.nih.gov/contact">
+                      Contact Form
+                    </Link>{" "}
+                  to provide feedback about enhancements you'd like to see
+                </li>
+                <li>
+                  Respond to periodic{" "}
+                    <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/community/request-for-comments">
+                      Requests for Comment (RFC) solicitations
+                    </Link>
+                </li>
               </ol>
             </Section>
 
@@ -275,10 +282,10 @@ const AboutPage = ({ data }) => {
               <Heading>Data Protection</Heading>
 
               <Paragraph>
-                The NHLBI BioData Catalyst ecosystem responsibly stewards access
-                to hosted datasets, requires researchers bringing their own data
-                to respect and protect the interests of research participants,
-                and takes measures to secure the BioData Catalyst ecosystem.{" "}
+                The BDC ecosystem responsibly stewards access to hosted datasets, 
+                requires researchers bringing their own data to respect and 
+                protect the interests of research participants, and takes measures 
+                to secure the BDC ecosystem.{" "}
                 <Link to="/data-protection">
                   Read more about how we do this
                 </Link>
@@ -292,7 +299,7 @@ const AboutPage = ({ data }) => {
               <Heading>How to Cite Us</Heading>
 
               <Paragraph>
-                To learn more about citing and acknowledging BioData Catalyst,{" "}
+                To learn more about citing and acknowledging BDC,{" "}
                 <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/biodata-catalyst-glossary/citation-and-acknowledgement">
                   visit our documentation
                 </Link>
