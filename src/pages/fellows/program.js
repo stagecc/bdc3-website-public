@@ -77,7 +77,7 @@ const FellowsPage = () => {
 
         <Paragraph>
           Read what our{" "}
-          <Link to="https://drive.google.com/file/d/12MdA9L_0Ouf6CI08zVFxlAOQuN8Wxh_9/view?usp=sharing">
+          <Link to="https://drive.google.com/file/d/1sBC-lInfXUZnNhS7V_Q5q6aIP89ctWeP/view">
             Cohort I Fellows have said
           </Link>{" "}
           about the BDC ecosystem and view the projects from{" "}
