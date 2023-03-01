@@ -33,7 +33,6 @@ const ServicesPage = ({ data }) => {
       platforms: [
         platforms.find(platform => platform.frontmatter.title.includes("Gen3")),
         platforms.find(platform => platform.frontmatter.title.includes("PIC-SURE")),
-        platforms.find(platform => platform.frontmatter.title.includes("Dug")),
       ],
     },
     {
@@ -47,7 +46,6 @@ const ServicesPage = ({ data }) => {
       title: "Use Community Tools on Controlled-access Datasets",
       platforms: [
         platforms.find(platform => platform.frontmatter.title.includes("Dockstore")),
-        platforms.find(platform => platform.frontmatter.title.includes("HeLx")),
       ],
     }
   ];
