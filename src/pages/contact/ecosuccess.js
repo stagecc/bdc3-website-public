@@ -148,14 +148,14 @@ const SuccessPage = () => {
                     target="_blank"
                     to="https://terra.biodatacatalyst.nhlbi.nih.gov/#workspaces"
                   >
-                    BDC Powered by Terra (BDC-Terra)
+                    <em>BDC Powered by Terra (BDC-Terra)</em>
                   </Link>{" "}
                   and/or{" "}
                   <Link
                     target="_blank"
                     to="https://accounts.sb.biodatacatalyst.nhlbi.nih.gov/auth/login?next=https%3A%2F%2Faccounts.sb.biodatacatalyst.nhlbi.nih.gov%2Foauth2%2Fauthorization%3Fresponse_type%3Dcode%26client_id%3D74735b722c33498cb981b6b6e24f659f%26redirect_uri%3Dhttps%253A%252F%252Fplatform.sb.biodatacatalyst.nhlbi.nih.gov%252Foauth2%252Fredirect%26state%3DYYGRQegjWMkiv8aBqE4gA9tl0pMgSc%26scope%3Dopenid%26nonce%3D56551633294225677721625106839"
                   >
-                    BDC Powered by Seven Bridges (BDC-Seven Bridges)
+                    <em>BDC Powered by Seven Bridges (BDC-Seven Bridges)</em>
                   </Link>
                   ). You are welcome to work in one or both of the workspace
                   environments.
