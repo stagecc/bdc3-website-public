@@ -105,7 +105,9 @@ export const FellowsProfile = ({
             }
             ariaId={`${kebabCase(projectTitle.slice(0, 20))}_abstract`}
           >
-            <Paragraph>Abstract: {projectAbstract}</Paragraph>
+            <Paragraph>Abstract: 
+              <div dangerouslySetInnerHTML={{ __html: projectAbstract }} />
+            </Paragraph>
           </Collapser>
         </FellowDetails>
       </FlexWrapper>
