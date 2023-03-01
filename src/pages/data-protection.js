@@ -12,7 +12,7 @@ const DataProtectionPage = () => (
 
     <Paragraph>
       In addition to its useful tools, applications, and workflows, NHLBI
-      BioData Catalyst® (BDC) increases access to NHLBI datasets, allows 
+      BioData Catalyst<sup>®</sup> (BDC) increases access to NHLBI datasets, allows 
       researchers to bring their own data, and offers secure collaboration 
       workspaces. BDC, therefore, must responsibly steward access to hosted 
       datasets, require researchers bringing their own data to respect and 

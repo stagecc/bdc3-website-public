@@ -22,7 +22,7 @@ const PrivacyPage = () => {
         <Link to="https://www.nhlbi.nih.gov/">
           National Heart Lung and Blood Institute
         </Link>{" "}
-        (NHLBI) operates the NHLBI BioData Catalyst® (BDC) website. Protecting 
+        (NHLBI) operates the NHLBI BioData Catalyst<sup>®</sup> (BDC) website. Protecting 
         your privacyis very important to us. The following information 
         establishes how the BDC website will use information gathered from your 
         visit.
