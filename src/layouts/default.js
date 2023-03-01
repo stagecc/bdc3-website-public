@@ -145,7 +145,7 @@ export const DefaultLayout = ({ children }) => {
                 </Col>
                 <Col xs={12} md={7} pull={{ md: 5 }}>
                   <Paragraph center={isCompact} left={!isCompact}>
-                    BioData Catalyst is a product of the National Heart, Lung,
+                    BDC is a product of the National Heart, Lung,
                     and Blood Institute of the National Institutes of Health.
                     <LineBreak count={2} />
                     For general inquiries, <Link to="/contact">contact us</Link>

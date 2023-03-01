@@ -22,9 +22,10 @@ const PrivacyPage = () => {
         <Link to="https://www.nhlbi.nih.gov/">
           National Heart Lung and Blood Institute
         </Link>{" "}
-        (NHLBI) operates the BioData Catalyst website . Protecting your privacy
-        is very important to us. The following information establishes how the
-        BioData Catalyst website will use information gathered from your visit.
+        (NHLBI) operates the NHLBI BioData Catalyst<sup>®</sup> (BDC) website. Protecting 
+        your privacyis very important to us. The following information 
+        establishes how the BDC website will use information gathered from your 
+        visit.
       </Paragraph>
 
       <section>
@@ -38,11 +39,11 @@ const PrivacyPage = () => {
         </Paragraph>
 
         <BulletedList>
-          <ListItem primary="Your computer's Internet Protocol (IP) address. (An IP address is a number that is automatically assigned to your computer whenever you go on the Web." />
+          <ListItem primary="Your computer's Internet Protocol (IP) address (an IP address is a number that is automatically assigned to your computer whenever you go on the Web)" />
           <ListItem primary="The domain from which you access the Internet (for example, aol.com, if you are connecting from an America Online account, or WFU.edu if you are connecting from Wake Forest University's domain)" />
           <ListItem primary="The Internet address of the website, if any, from which you came to our site (for example, www.nih.gov if you come to our website by clicking on an NHLBI link on the National Institutes of Health website)" />
           <ListItem primary="The date and time you arrived at our site and how long you spent visiting the site" />
-          <ListItem primary="The name and version of your computer's operating system and browser: for example, Windows 95/Netscape Navigator 4.5. (This information is supplied automatically by your computer." />
+          <ListItem primary="The name and version of your computer's operating system and browser; for example, Windows 95/Netscape Navigator 4.5 (this information is supplied automatically by your computer)" />
           <ListItem primary="The pages you visit" />
         </BulletedList>
 
@@ -98,11 +99,11 @@ const PrivacyPage = () => {
         </Paragraph>
 
         <Paragraph>
-          There are two types of cookies, single session (temporary), and
+          There are two types of cookies: single session (temporary) and
           multi-session (persistent). Session cookies last only as long as your
           Web browser is open. Once you close your browser, the cookie
           disappears. Persistent cookies are stored on your computer for longer
-          periods. The BioData Catalyst website does not use persistent cookies.
+          periods. The BDC website does not use persistent cookies.
         </Paragraph>
 
         <Subheading>Session Cookies</Subheading>
@@ -124,7 +125,7 @@ const PrivacyPage = () => {
           cookies in the most popular browsers are located at 
           <Link to="https://www.usa.gov/optout-instructions">
             https://www.usa.gov/optout-instructions.
-          </Link>
+          </Link>{" "}
           Please note that by following the instructions to opt-out of cookies,
           you will disable cookies from all sources, not just those from this
           site.
@@ -135,9 +136,9 @@ const PrivacyPage = () => {
         <Heading>Links to Other Websites</Heading>
 
         <Paragraph>
-          BioData Catalyst has links to many other websites, including some
+          BDC has links to many other websites, including some
           sites which are maintained by non-governmental organizations or
-          private companies. BioData Catalyst is not responsible for the
+          private companies. BDC is not responsible for the
           contents of any "off-site" webpage referenced from this server.
           Specifically:
         </Paragraph>
@@ -145,7 +146,7 @@ const PrivacyPage = () => {
         <BulletedList>
           <ListItem
             primary="
-                        BioData Catalyst cannot guarantee the privacy or security of information you provide to these other websites.
+                        BDC cannot guarantee the privacy or security of information you provide to these other websites.
                         You should review their privacy policies if you have concerns.
                     "
           />
@@ -153,7 +154,7 @@ const PrivacyPage = () => {
           <ListItem
             primary="
                         Reference in this website to any specific commercial products, process, service, manufacturer,
-                        or company does not constitute endorsement or recommendation by the US Government or BioData Catalyst.
+                        or company does not constitute endorsement or recommendation by the US Government or BDC.
                     "
           />
         </BulletedList>
@@ -188,7 +189,7 @@ const PrivacyPage = () => {
         </Paragraph>
 
         <Paragraph>
-          If you have questions about BioData Catalyst's privacy policy, please
+          If you have questions about BDC's privacy policy, please
           e-mail them to{" "}
           <a href="mailto:biodatacatalyst@nhlbi.nih.gov">
             biodatacatalyst@nhlbi.nih.gov

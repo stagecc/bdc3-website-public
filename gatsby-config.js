@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `BioData Catalyst`,
+    shortTitle: `BDC`,
     description: `BioData Catalyst serves as a cloud-based platform of tools, applications, and workflows to help NHLBI research investigators securely find, access, share, store, cross-link, and compute on large scale data sets,`,
     author: `BioData Catalyst`,
     keywords: [

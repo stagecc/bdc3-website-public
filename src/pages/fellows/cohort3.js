@@ -27,8 +27,7 @@ const FellowsCohort3Page = () => {
           data-focused research problems.
         </Paragraph>
         <Paragraph>
-          Cohort 3 Fellows will work on the BioData Catalyst Ecosystem from
-          March 2021 to February 2022.
+          Cohort III Fellows worked on BDC from March 2021 to February 2022.
         </Paragraph>
       </section>
 

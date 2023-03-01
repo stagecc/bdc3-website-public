@@ -11,6 +11,7 @@ const platformsQuery = graphql`
           frontmatter {
             title
             serviceTitle
+            poweredBy
             path
             links {
               homepage

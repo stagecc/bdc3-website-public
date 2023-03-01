@@ -28,12 +28,12 @@ const FellowsCohort1Page = () => {
           data-focused research problems.
         </Paragraph>
         <Paragraph>
-          Cohort I Fellows will work on the BioData Catalyst Ecosystem from
-          March 2020 to June 2021. Read what our{" "}
-          <Link to="https://drive.google.com/file/d/12MdA9L_0Ouf6CI08zVFxlAOQuN8Wxh_9/view?usp=sharing">
+          Cohort I Fellows worked on BDC from March 2020 to June 2021. Read 
+          what our{" "}
+          <Link to="https://drive.google.com/file/d/1sBC-lInfXUZnNhS7V_Q5q6aIP89ctWeP/view">
             Cohort I Fellows have said
           </Link>{" "}
-          about the NHLBI BioData Catalyst ecosystem.
+          about BDC.
         </Paragraph>
       </section>
 

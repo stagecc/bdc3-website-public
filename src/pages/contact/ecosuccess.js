@@ -19,36 +19,36 @@ const SuccessPage = () => {
       style={{ position: "relative" }}
     >
       <SEO
-        title="Thank you for joining the NHLBI BioData Catalyst Community"
-        description="Thank you for joining the NHLBI BioData Catalyst Community"
+        title="Thank you for joining the BDC Community"
+        description="Thank you for joining the BDC Community"
         keywords=""
       />
-      <Title>Thank you for joining the NHLBI BioData Catalyst Community</Title>
+      <Title>Thank you for joining the BDC Community</Title>
       <Paragraph>
         We are happy to welcome you to our community! The following resources
-        will help you become familiar with and get started using the NHLBI
-        BioData Catalyst ecosystem. <br></br>
+        will help you become familiar with and get started using the BDC
+        ecosystem. <br></br>
         <br></br>
         You will also receive an email from us with these resources and a link
         to create your password for the community help desk and forums.
       </Paragraph>
       <br></br>
       <section>
-        <Heading>DISCOVER BIODATA CATALYST</Heading>
+        <Heading>DISCOVER BDC</Heading>
 
         <BulletedList dense>
           <ListItem
             primary={
               <span>
                 <Paragraph>
-                  Use our BioData Catalyst User&nbsp;
+                  Use our BDC User&nbsp;
                   <Link
                     target="_blank"
                     to="https://drive.google.com/file/d/19S_iGRHxg8JmupHawhz8e9qR3hF8ht3H/view"
                   >
                     GUIDE
                   </Link>
-                  &nbsp;to become familiar with BioData Catalyst’s platforms and
+                  &nbsp;to become familiar with BDC's platforms and
                   services, how they interconnect, and which may be most helpful
                   to your research. For example, the GUIDE may help you choose
                   which workspace you want to start your analysis in.
@@ -71,7 +71,7 @@ const SuccessPage = () => {
                   >
                     Open PIC-SURE&nbsp;
                   </Link>
-                  (view documentation
+                  (view documentation{" "}
                   <Link
                     target="_blank"
                     to="https://docs.google.com/document/d/1oVmdBSETxHNpB2DIWAh05TH_uUMPeJQKgyFsAGXpQVU/edit#heading=h.nohmcs2v8hsa"
@@ -110,7 +110,7 @@ const SuccessPage = () => {
                     Visit the Data page
                   </Link>{" "}
                   &nbsp;on our website for a brief overview of the data
-                  available in the BioData Catalyst Ecosystem and how to access
+                  available in the BDC Ecosystem and how to access
                   it.
                 </Paragraph>
               </span>
@@ -148,14 +148,14 @@ const SuccessPage = () => {
                     target="_blank"
                     to="https://terra.biodatacatalyst.nhlbi.nih.gov/#workspaces"
                   >
-                    BioData Catalyst Powered by Terra
+                    <em>BDC Powered by Terra (BDC-Terra)</em>
                   </Link>{" "}
                   and/or{" "}
                   <Link
                     target="_blank"
                     to="https://accounts.sb.biodatacatalyst.nhlbi.nih.gov/auth/login?next=https%3A%2F%2Faccounts.sb.biodatacatalyst.nhlbi.nih.gov%2Foauth2%2Fauthorization%3Fresponse_type%3Dcode%26client_id%3D74735b722c33498cb981b6b6e24f659f%26redirect_uri%3Dhttps%253A%252F%252Fplatform.sb.biodatacatalyst.nhlbi.nih.gov%252Foauth2%252Fredirect%26state%3DYYGRQegjWMkiv8aBqE4gA9tl0pMgSc%26scope%3Dopenid%26nonce%3D56551633294225677721625106839"
                   >
-                    BioData Catalyst Powered by Seven Bridges
+                    <em>BDC Powered by Seven Bridges (BDC-Seven Bridges)</em>
                   </Link>
                   ). You are welcome to work in one or both of the workspace
                   environments.
@@ -201,12 +201,12 @@ const SuccessPage = () => {
         <Heading>STILL NOT SURE?</Heading>
         <Paragraph>
           We strive to support each other in our research endeavors. Contact the
-          BioData Catalyst Coordinating Center&nbsp;
+          BDC Coordinating Center&nbsp;
           <Link
             target="_blank"
             to="https://biodatacatalyst.nhlbi.nih.gov/contact/"
           >
-            using the BioData Catalyst Help Desk
+            using the BDC Help Desk
           </Link>{" "}
           &nbsp;if you would like help getting started.
         </Paragraph>
