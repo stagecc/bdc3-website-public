@@ -104,7 +104,7 @@ const AboutPage = ({ data }) => {
             </Col>
           </Visible>
           <Col xs={12} lg={9}>
-            <Title>About NHLBI BioData Catalyst® (BDC)</Title>
+            <Title>About NHLBI BioData Catalyst<sup>®</sup> (BDC)</Title>
 
             <Section id="what-we-offer">
               <Heading>What We Offer</Heading>
