@@ -14,8 +14,7 @@ export const Footer = styled.footer`
         &:hover, a:active {
             text-decoration-color: #eee;
         }
-    }
-    }
+    };
     position: relative;
     &::before {
         z-index: -1;
