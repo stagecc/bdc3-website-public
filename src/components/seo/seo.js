@@ -9,6 +9,7 @@ export const SEO = ({ title, description, keywords = [], meta }) => {
       query {
         site {
           siteMetadata {
+            shortTitle
             title
             description
             author
@@ -29,7 +30,7 @@ export const SEO = ({ title, description, keywords = [], meta }) => {
     <Helmet
       htmlAttributes={{ lang: "en" }}
       title={metaTitle}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s | ${site.siteMetadata.shortTitle}`}
       meta={[
         { name: `title`, content: metaTitle },
         { name: `description`, content: metaDescription },
