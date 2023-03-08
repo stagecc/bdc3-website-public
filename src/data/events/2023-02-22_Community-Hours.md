@@ -6,7 +6,7 @@ time: 1:00 - 2:00 pm EST
 display_date: Wednesday, February 22, 2023
 location: "Zoom"
 url: http://bit.ly/BDC-Feb
-forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000407340
+forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000407372
 registration_required: true
 tags: [community hours]
 seo:
