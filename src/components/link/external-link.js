@@ -25,14 +25,14 @@ export const ExternalLink = ({
 
   const triggerDialog = event => {
     event.preventDefault();
-    dialog.setTitle("Leaving BioData Catalyst");
+    dialog.setTitle("Leaving BDC");
     dialog.setContents(
       <div>
         <p>
           This graphic notice ({" "}
-          <ExternalLinkIcon size={14} fill="var(--color-blueberry)" /> ) next to
-          a link within the NHLBI BioData Catalyst ecosystem indicates that the
-          link leads to another site that is not a federal government website.
+          <ExternalLinkIcon size={14} fill="var(--color-blueberry)" /> ) next 
+          to a link within the BDC ecosystem indicates that the link leads to 
+          another site that is not a federal government website.
         </p>
         <p>
           NHLBI cannot attest to the accuracy of information provided on
