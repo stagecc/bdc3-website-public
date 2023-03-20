@@ -31,7 +31,7 @@ const IndexPage = () => {
 
 
         <Card>
-          <CardHeader size="large">What is NHLBI BioData Catalyst<sup>®</sup> (BDC)?</CardHeader>
+          <CardHeader size="large">What is NHLBI BioData Catalyst<sup>®</sup>&nbsp;(BDC)?</CardHeader>
           <CardBody image={{ placement: "right", path: SickleCellImage }}>
             <Paragraph>
               NHLBI BioData Catalyst<sup>®</sup> (BDC) is a cloud-based ecosystem providing tools,
