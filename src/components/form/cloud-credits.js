@@ -120,6 +120,9 @@ export const CloudCreditsForm = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    if(fakeField !== "") return;
+
     let prefix = testSubmission ? "[TEST] " : "";
     const description =
       `Name: ${name} ~~~~~ ` +
