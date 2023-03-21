@@ -449,7 +449,7 @@ export const CloudCreditsForm = (props) => {
         <Form onSubmit={handleSubmit}>
 
           {/* fake field for detecting bots, not visible to user */}
-          <FormControl style={{ display: 'none' }}>
+          <FormControl fake>
             <label htmlFor="website">
               Website
             </label>
