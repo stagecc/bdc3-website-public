@@ -59,6 +59,7 @@ const ErrorMessage = () => {
 };
 
 export const CloudCreditsForm = (props) => {
+  const [fakeField, setFakeField] = useState("");
   const [name, setName] = useState("");
   const [username, setUserName] = useState("");
   const [terraUsername, setTerraUserName] = useState("");
@@ -385,6 +386,7 @@ export const CloudCreditsForm = (props) => {
     }
   };
 
+  const handleChangeFakeField = (event) => setFakeField(event.target.value);
   const handleChangeName = (event) => setName(event.target.value);
   const handleChangeProjectPi = (event) => setProjectPi(event.target.value);
   const handleChangeUserName = (event) => setUserName(event.target.value);
@@ -442,6 +444,20 @@ export const CloudCreditsForm = (props) => {
           * <em>All fields are required.</em>
         </Paragraph>
         <Form onSubmit={handleSubmit}>
+
+          {/* fake field for detecting bots, not visible to user */}
+          <FormControl style={{ display: 'none' }}>
+            <label htmlFor="website">
+              Website
+            </label>
+            <TextInput
+              type="text"
+              id="website"
+              name="website"
+              value={fakeField}
+              onChange={handleChangeFakeField}
+            />
+          </FormControl>
           <FormControl>
             <label htmlFor="name" required>
               Your Name *
