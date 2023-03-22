@@ -22,7 +22,7 @@ export const Form = styled.form`
 `;
 
 export const FormControl = styled.div`
-  display: flex;
+  display: ${p => p.fake ? 'none' : 'flex'};
   flex-direction: column;
   margin: 1rem 0;
   & > label {

@@ -51,6 +51,7 @@ const ErrorMessage = () => {
 };
 
 export const EcoSystemForm = (props) => {
+  const [fakeField, setFakeField] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [commons, setCommons] = useState("");
@@ -64,6 +65,9 @@ export const EcoSystemForm = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    if(fakeField !== "") return;
+    
     const payload = {
       name: name,
       email: email,
@@ -96,6 +100,7 @@ export const EcoSystemForm = (props) => {
     submitContact();
   };
 
+  const handleChangeFakeField = (event) => setFakeField(event.target.value);
   const handleChangeName = (event) => setName(event.target.value);
   const handleChangeCommons = (event) => setCommons(event.target.value);
   const handleChangeEmail = (event) => setEmail(event.target.value);
@@ -119,6 +124,20 @@ export const EcoSystemForm = (props) => {
         </Paragraph>
         {!wasSubmitted && (
           <Form onSubmit={handleSubmit}>
+
+            {/* fake field for detecting bots, not visible to user */}
+            <FormControl fake>
+              <label htmlFor="website">
+                Website
+              </label>
+              <TextInput
+                type="text"
+                id="website"
+                name="website"
+                value={fakeField}
+                onChange={handleChangeFakeField}
+              />
+            </FormControl>
             <FormControl>
               <label htmlFor="name" required>
                 Your Full Name *
