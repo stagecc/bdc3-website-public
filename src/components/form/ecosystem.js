@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useRef, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { Paragraph } from "../typography";
@@ -51,7 +51,7 @@ const ErrorMessage = () => {
 };
 
 export const EcoSystemForm = (props) => {
-  const [fakeField, setFakeField] = useState("");
+  const honeypotFieldRef = useRef(null);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [commons, setCommons] = useState("");
@@ -66,7 +66,7 @@ export const EcoSystemForm = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if(fakeField !== "") return;
+    if(honeypotFieldRef.current?.value !== "") return;
     
     const payload = {
       name: name,
@@ -100,7 +100,6 @@ export const EcoSystemForm = (props) => {
     submitContact();
   };
 
-  const handleChangeFakeField = (event) => setFakeField(event.target.value);
   const handleChangeName = (event) => setName(event.target.value);
   const handleChangeCommons = (event) => setCommons(event.target.value);
   const handleChangeEmail = (event) => setEmail(event.target.value);
@@ -134,8 +133,10 @@ export const EcoSystemForm = (props) => {
                 type="text"
                 id="website"
                 name="website"
-                value={fakeField}
-                onChange={handleChangeFakeField}
+                defaultValue=""
+                tabIndex="-1"
+                autoComplete="off"
+                ref={honeypotFieldRef}
               />
             </FormControl>
             <FormControl>
