@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { Paragraph } from "../typography";
@@ -59,6 +59,7 @@ const ErrorMessage = () => {
 };
 
 export const CloudCreditsForm = (props) => {
+  const honeypotFieldRef = useRef(null);
   const [name, setName] = useState("");
   const [username, setUserName] = useState("");
   const [terraUsername, setTerraUserName] = useState("");
@@ -119,6 +120,9 @@ export const CloudCreditsForm = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    if(honeypotFieldRef.current?.value !== "") return;
+
     let prefix = testSubmission ? "[TEST] " : "";
     const description =
       `Name: ${name} ~~~~~ ` +
@@ -442,6 +446,22 @@ export const CloudCreditsForm = (props) => {
           * <em>All fields are required.</em>
         </Paragraph>
         <Form onSubmit={handleSubmit}>
+
+          {/* fake field for detecting bots, not visible to user */}
+          <FormControl fake>
+            <label htmlFor="website">
+              Website
+            </label>
+            <TextInput
+              type="text"
+              id="website"
+              name="website"
+              defaultValue=""
+              tabIndex="-1"
+              autoComplete="off"
+              ref={honeypotFieldRef}
+            />
+          </FormControl>
           <FormControl>
             <label htmlFor="name" required>
               Your Name *

@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useRef, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { Paragraph } from "../typography";
@@ -51,6 +51,7 @@ const ErrorMessage = () => {
 };
 
 export const EcoSystemForm = (props) => {
+  const honeypotFieldRef = useRef(null);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [commons, setCommons] = useState("");
@@ -64,6 +65,9 @@ export const EcoSystemForm = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    if(honeypotFieldRef.current?.value !== "") return;
+    
     const payload = {
       name: name,
       email: email,
@@ -119,6 +123,22 @@ export const EcoSystemForm = (props) => {
         </Paragraph>
         {!wasSubmitted && (
           <Form onSubmit={handleSubmit}>
+
+            {/* fake field for detecting bots, not visible to user */}
+            <FormControl fake>
+              <label htmlFor="website">
+                Website
+              </label>
+              <TextInput
+                type="text"
+                id="website"
+                name="website"
+                defaultValue=""
+                tabIndex="-1"
+                autoComplete="off"
+                ref={honeypotFieldRef}
+              />
+            </FormControl>
             <FormControl>
               <label htmlFor="name" required>
                 Your Full Name *
