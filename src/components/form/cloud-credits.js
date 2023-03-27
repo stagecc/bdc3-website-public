@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { Paragraph } from "../typography";
@@ -59,7 +59,7 @@ const ErrorMessage = () => {
 };
 
 export const CloudCreditsForm = (props) => {
-  const [fakeField, setFakeField] = useState("");
+  const honeypotFieldRef = useRef(null);
   const [name, setName] = useState("");
   const [username, setUserName] = useState("");
   const [terraUsername, setTerraUserName] = useState("");
@@ -121,7 +121,7 @@ export const CloudCreditsForm = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if(fakeField !== "") return;
+    if(honeypotFieldRef.current?.value !== "") return;
 
     let prefix = testSubmission ? "[TEST] " : "";
     const description =
@@ -389,7 +389,6 @@ export const CloudCreditsForm = (props) => {
     }
   };
 
-  const handleChangeFakeField = (event) => setFakeField(event.target.value);
   const handleChangeName = (event) => setName(event.target.value);
   const handleChangeProjectPi = (event) => setProjectPi(event.target.value);
   const handleChangeUserName = (event) => setUserName(event.target.value);
@@ -457,8 +456,10 @@ export const CloudCreditsForm = (props) => {
               type="text"
               id="website"
               name="website"
-              value={fakeField}
-              onChange={handleChangeFakeField}
+              defaultValue=""
+              tabIndex="-1"
+              autoComplete="off"
+              ref={honeypotFieldRef}
             />
           </FormControl>
           <FormControl>
