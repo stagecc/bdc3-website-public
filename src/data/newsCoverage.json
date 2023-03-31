@@ -1,32 +1,38 @@
 [
   {
-    "newsTitle": "A Cloud-Based Data Democratization Tool, RTI International",
+    "newsTitle": "A Cloud-Based Data Democratization Tool",
     "newsLink": "https://www.rti.org/impact/data-democratization-tool",
-    "newsDate": "March 15, 2023"
+    "newsDate": "March 15, 2023",
+    "newsSource": "RTI International"
   },
   {
     "newsTitle": "Accelerating heart failure research, NHLBI NIH",
     "newsLink": "https://www.nhlbi.nih.gov/news/2022/accelerating-heart-failure-research",
-    "newsDate": "December 14, 2022"
+    "newsDate": "December 14, 2022",
+    "newsSource": "NHLBI NIH"
+  },
+  {
+    "newsTitle": "Listen: The Open-Data Cloud Platform Transforming NIH Research, HealthCast",
+    "newsLink": "https://governmentciomedia.com/listen-open-data-cloud-platform-transforming-nih-research",
+    "newsDate": "January 25, 2022",
+    "newsSource": "GovCIO Media & Research"
   },
   {
     "newsTitle": "Listen: The Open-Data Cloud Platform Transforming NIH Research, HealthCast (GovCIO Media & Research)",
     "newsLink": "https://governmentciomedia.com/listen-open-data-cloud-platform-transforming-nih-research",
-    "newsDate": "January 25, 2022"
-  },
-  {
-    "newsTitle": "Listen: The Open-Data Cloud Platform Transforming NIH Research, HealthCast (GovCIO Media & Research)",
-    "newsLink": "https://governmentciomedia.com/listen-open-data-cloud-platform-transforming-nih-research",
-    "newsDate": "January 25, 2022"
+    "newsDate": "January 25, 2022",
+    "newsSource": "GovCIO Media & Research"
   },
   {
     "newsTitle": "A Cloud-Based Data Democratization Tool, RTI International",
     "newsLink": "https://www.rti.org/impact/data-democratization-tool",
-    "newsDate": "March 15, 2023"
+    "newsDate": "March 15, 2023",
+    "newsSource": "RTI International"
   },
   {
     "newsTitle": "Accelerating heart failure research, NHLBI NIH",
     "newsLink": "https://www.nhlbi.nih.gov/news/2022/accelerating-heart-failure-research",
-    "newsDate": "December 14, 2022"
+    "newsDate": "December 14, 2022",
+    "newsSource": "NHLBI NIH"
   }
 ]

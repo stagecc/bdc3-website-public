@@ -15,21 +15,22 @@ const NewsCardWrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, #21568a 0%, #314f6e 100%);
+  background: linear-gradient(180deg, var(--color-blueberry) 0%, #314f6e 100%);
   justify-content: space-between;
-  transition: background-color 200ms ease-out;
-  &:hover, &:focus-within {
-    background-color: rgba(33, 86, 138, 0.7);
+  transition: transform 200ms ease-out;
+  &:hover, &:focus {
+    transform: scale(1.01);
     color: rgba(255, 255,255, 0.7)
   }
 `
+//add a filter on it to change the color
 
 const NewsCardHeading = styled.h2`
   line-height: 1.5; 
   letter-spacing: 0.5px;
   text-decoration: none;
-  font-weight: '400';
-  font-size: '100%';
+  font-weight: 500;
+  font-size: 150%;
   color: #fff;
   &:hover, &:focus {
     text-decoration: none;
@@ -41,13 +42,19 @@ const NewsCardHeading = styled.h2`
 export const NewsCard = ({ newsItem }) => {
   return (
     <NewsCardWrapper >
+      <div>
         <NewsCardHeading >
           {newsItem.newsTitle}
         </NewsCardHeading>
+        <Paragraph style={{letterSpacing: "1px", color: '#fff'}}>
+          {newsItem.newsDate}
+        </Paragraph>
+
+      </div>
 
       <div style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
         <Paragraph style={{letterSpacing: "1px", color: '#fff'}}>
-          {newsItem.newsDate}
+          {newsItem.newsSource}
         </Paragraph>
         <ExternalLinkIcon
           fill={"#eee"}
