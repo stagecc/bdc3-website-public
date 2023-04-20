@@ -15,22 +15,20 @@ const NewsPage = () => (
     <Title>News Coverage</Title>
 
     <Paragraph>
-      Blurb about featured articles
+      View recent news and media coverage for BDC.
     </Paragraph>
 
-    <Row gutterWidth={ 32 } justify="center">
-      {
-        newsCoverage && newsCoverage.map((newsItem) => {
-          return (
-            <Col xs={ 12 } lg={ 4 } style={{ marginBottom: '32px' }}>
-              <Link to={newsItem.newsLink} noIcon>
-                <NewsCard newsItem={newsItem}/>
-              </Link>
-            </Col>
-          )
-        })
-      }
-    </Row>
+      <Row gutterWidth={ 32 } justify="center">
+        {
+          newsCoverage && newsCoverage.map((newsItem) => {
+            return (
+              <Col xs={ 12 } lg={ 4 } style={{ marginBottom: '32px' }}>
+                <NewsCard newsItem={newsItem} noIcon/>
+              </Col>
+            )
+          })
+        }
+      </Row>
 
   </PageContent>
 );

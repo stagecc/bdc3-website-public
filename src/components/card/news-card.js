@@ -3,25 +3,33 @@ import { Card, CardHeader, CardBody } from ".";
 import { Heading, Paragraph } from "../../components/typography";
 import styled from "styled-components";
 import { ExternalLinkIcon } from "../icons";
-
+import { Link } from "../../components/link"
 //add animation to make card grow slightly on hover
 //include onFocus state too
-const NewsCardWrapper = styled.div`
+
+//make newscard warpper a styled Link?
+
+const NewsCardLink = styled(Link)`
   overflow: hidden;
-  ${props =>
-    props.metaAlert ? `box-shadow: 0 0 8px 4px rgba(186, 194, 204, 0.5);` : `box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.25);`}
   margin-bottom: 3rem;
-  padding: 1.5rem 2rem;
   height: 100%;
-  display: flex;
-  flex-direction: column;
   background: linear-gradient(180deg, var(--color-blueberry) 0%, #314f6e 100%);
-  justify-content: space-between;
   transition: transform 200ms ease-out;
   &:hover, &:focus {
-    transform: scale(1.01);
-    color: rgba(255, 255,255, 0.7)
-  }
+    transform: scale(1.05);
+  };
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`
+
+const NewsCardWrapper = styled.div`
+  overflow: hidden;
+  margin-bottom: 3rem;
+  height: 100%;
+  padding: 1.5rem 2rem;
+
+  background: linear-gradient(180deg, var(--color-blueberry) 0%, #314f6e 100%);
 `
 //add a filter on it to change the color
 
@@ -41,7 +49,9 @@ const NewsCardHeading = styled.h2`
 
 export const NewsCard = ({ newsItem }) => {
   return (
-    <NewsCardWrapper >
+    <NewsCardWrapper>
+    <NewsCardLink to={newsItem.newsLink} noIcon>
+
       <div>
         <NewsCardHeading >
           {newsItem.newsTitle}
@@ -56,13 +66,14 @@ export const NewsCard = ({ newsItem }) => {
         <Paragraph style={{letterSpacing: "1px", color: '#fff'}}>
           {newsItem.newsSource}
         </Paragraph>
-        <ExternalLinkIcon
-          fill={"#eee"}
+        {/* <ExternalLinkIcon
+          fill={"#555"}
           size={14}
           style={{ marginLeft: "0.25rem" }}
-        />
+        /> */}
       </div>
 
+    </NewsCardLink>
     </NewsCardWrapper>
   );
 };
