@@ -9,6 +9,7 @@ export const ExternalLink = ({
   noIcon,
   lightIcon,
   children,
+  className,
   ...props
 }) => {
   const dialog = useDialog();
@@ -55,7 +56,7 @@ export const ExternalLink = ({
   };
 
   return requiresConfirmation ? (
-    <a href={to} onClick={triggerDialog} className={asButton && 'button-link' }>
+    <a href={to} onClick={triggerDialog} className={`${className} ${asButton && 'button-link'}`}>
       {children}
       {!noIcon && (
         <ExternalLinkIcon
@@ -67,7 +68,7 @@ export const ExternalLink = ({
       )}
     </a>
   ) : (
-    <a href={to} className={asButton && 'button-link'} target="_blank" rel="noopener noreferrer" {...props}>
+    <a href={to} className={`${className} ${asButton && 'button-link'}`} target="_blank" rel="noopener noreferrer" {...props}>
       {children}
     </a>
   );
