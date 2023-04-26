@@ -442,6 +442,9 @@ export const CloudCreditsForm = (props) => {
           </Link>
           .
         </Paragraph>
+        <Paragraph center>
+          By submitting the following form, you agree to receive emails from BDC. You can opt-out at any time.
+        </Paragraph>
         <Paragraph right noMargin>
           * <em>All fields are required.</em>
         </Paragraph>
