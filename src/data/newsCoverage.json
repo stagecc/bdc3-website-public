@@ -3,18 +3,21 @@
     "newsTitle": "A Cloud-Based Data Democratization Tool",
     "newsLink": "https://www.rti.org/impact/data-democratization-tool",
     "newsDate": "",
-    "newsSource": "RTI International"
+    "newsSource": "RTI International",
+    "external": true
   },
   {
     "newsTitle": "Accelerating heart failure research",
     "newsLink": "https://www.nhlbi.nih.gov/news/2022/accelerating-heart-failure-research",
     "newsDate": "December 14, 2022",
-    "newsSource": "NHLBI NIH"
+    "newsSource": "NHLBI NIH",
+    "external": false
   },
   {
     "newsTitle": "Listen: The Open-Data Cloud Platform Transforming NIH Research",
     "newsLink": "https://governmentciomedia.com/listen-open-data-cloud-platform-transforming-nih-research",
     "newsDate": "January 25, 2022",
-    "newsSource": "HealthCast Podcast, GovCIO Media & Research"
+    "newsSource": "HealthCast Podcast, GovCIO Media & Research",
+    "external": true
   }
 ]

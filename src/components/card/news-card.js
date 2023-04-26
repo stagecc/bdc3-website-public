@@ -54,15 +54,21 @@ export const NewsCard = ({ newsItem }) => {
 
       </div>
 
-      <div style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
+      <div style={{display: "block"}}>
         <Paragraph style={{letterSpacing: "1px", color: '#fff'}}>
           {newsItem.newsSource}
         </Paragraph>
-        {/* <ExternalLinkIcon
-          fill={"#555"}
-          size={14}
-          style={{ marginLeft: "0.25rem" }}
-        /> */}
+        { newsItem.external &&
+          (
+            <div style={{textAlign: "right"}}>
+              <ExternalLinkIcon
+                fill={"#fff"}
+                size={14}
+                style={{ marginLeft: "0.25rem" }}
+              />
+            </div>
+          )
+        }
       </div>
 
     </NewsCardLink>
