@@ -21,16 +21,9 @@ const NewsCardLink = styled(Link)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-`
-
-const NewsCardWrapper = styled.div`
-  overflow: hidden;
-  margin-bottom: 3rem;
-  height: 100%;
   padding: 1.5rem 2rem;
-
-  background: linear-gradient(180deg, var(--color-blueberry) 0%, #314f6e 100%);
 `
+
 //add a filter on it to change the color
 
 const NewsCardHeading = styled.h2`
@@ -49,7 +42,6 @@ const NewsCardHeading = styled.h2`
 
 export const NewsCard = ({ newsItem }) => {
   return (
-    <NewsCardWrapper>
     <NewsCardLink to={newsItem.newsLink} noIcon>
 
       <div>
@@ -74,6 +66,5 @@ export const NewsCard = ({ newsItem }) => {
       </div>
 
     </NewsCardLink>
-    </NewsCardWrapper>
   );
 };
