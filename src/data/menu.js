@@ -8,12 +8,16 @@ export const menuItems = [
         path: "/about/overview",
       },
       {
+        text: "Events",
+        path: "/about/events",
+      },
+      {
         text: "Latest Updates",
         path: "/about/latest-updates",
       },
       {
-        text: "Events",
-        path: "/about/events",
+        text: "News Coverage",
+        path: "/about/news",
       },
       {
         text: "Published Research",
