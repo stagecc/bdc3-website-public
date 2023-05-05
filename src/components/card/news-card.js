@@ -14,12 +14,12 @@ const NewsCardLink = styled(Link)`
   margin-bottom: 3rem;
   height: 100%;
   background: linear-gradient(180deg, var(--color-blueberry) 0%, #314f6e 100%);
-  transition: transform 300ms ease-out;
+  transition: transform 700ms;
   filter: drop-shadow(6px 6px 4px var(--color-lightgrey));
-  transition: filter 300ms ease-in;
+  transition: filter 100ms ease-in;
   &:hover, &:focus {
-    transform: scale(1.015);
-    filter: drop-shadow(12px 12px 6px var(--color-lightgrey));
+    transform: translateY(-1.5px);
+    filter: drop-shadow(10px 10px 6px var(--color-lightgrey));
   };
   display: flex;
   flex-direction: column;
