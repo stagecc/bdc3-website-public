@@ -34,5 +34,5 @@ function delta(oldVal, newVal) {
     ["studies.json", numOldStudies, numNewStudies, delta(numOldStudies, numNewStudies)],
     ["covid-studies.json", numOldCovidStudies, numNewCovidStudies, delta(numOldCovidStudies, numNewCovidStudies)]
   ], { align: ['l', 'l', 'l', 'c'] }));
-  console.log('\n*Note that the file may have been updated, even if the change in the number of studies is 0. Please use `git diff` or the "Files changed" tab to see in detail what was changed.*');
+  console.log('\n*Note that the file may have been updated, even if the change in the number of studies is 0. Please use \\`git diff\\` or the \\"Files changed\\" tab to see in detail what was changed.*');
 })();
