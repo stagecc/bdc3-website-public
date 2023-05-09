@@ -14,7 +14,7 @@ seo:
   description:
 ---
 
-Join us on [Wednesday, February 23rd at 1:00 pm ET for Cloud Workflow Optimization and Researcher Showcase](http://bit.ly/BDC-Feb). This session will focus on how to optimize analysis workflows in cloud-based ecosystems, including how to benchmark and make sure you are using funding appropriately. BDC Cohort 3 Fellow Daniel Harris, PhD, will also highlight how his research project optimized workflows.
+Join us on [Wednesday, February 22nd at 1:00 pm ET for Cloud Workflow Optimization and Researcher Showcase](http://bit.ly/BDC-Feb). This session will focus on how to optimize analysis workflows in cloud-based ecosystems, including how to benchmark and make sure you are using funding appropriately. BDC Cohort 3 Fellow Daniel Harris, PhD, will also highlight how his research project optimized workflows.
 
 For more information, [register now](http://bit.ly/BDC-Feb).
 
