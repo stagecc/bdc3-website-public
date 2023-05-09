@@ -1,11 +1,12 @@
 import React from "react";
 import { SEO } from "../../components/seo";
 import { PageContent } from "../../components/layout";
-import { Title, Paragraph } from "../../components/typography";
+import { Title, Paragraph, Heading, Subheading } from "../../components/typography";
 import { Container as Grid, Row, Col } from "react-grid-system";
 import { ResourceCard } from "../../components/card";
-import { BulletedList, ListItem } from "../../components/list";
 import { Link } from "../../components/link";
+import { Markdown } from "../../components/markdown"
+import { ButtonLink } from "../../components/buttons"
 import {
   DocumentsIcon,
   EstimateIcon,
@@ -86,32 +87,15 @@ const LearnPage = () => (
   <PageContent width="95%" maxWidth="1200px" center gutters>
     <SEO title="Learn" description="" keywords="" />
 
-    <Title>Learn and Support</Title>
+    <Title>Education and Support</Title>
 
-    <Paragraph>
-      BDC is an ecosystem made up of many platforms and
-      partners that support our researchers.
-    </Paragraph>
-
-    <Paragraph>
-      Get started on the BDC ecosystem with this collection of
-      documentation, videos, FAQs, community forums, tutorials, blog posts,
-      upcoming events, and more from our ecosystem partners.
-    </Paragraph>
-
-    <Paragraph>
-      Alternatively,{" "}
-      <Link to="/docs">search documentation across our entire ecosystem</Link>.
-    </Paragraph>
-
-    <Paragraph>
-      For more immediate assistance, contact our{" "}
-      <Link to="/contact">help desk</Link>.
-    </Paragraph>
-
+    <Heading center>Engagement Pathways</Heading>
+    <Subheading center>Quick Start on BDC</Subheading>
+    <Paragraph center>Download one or all of our quick start guides to get started on BDC.</Paragraph>
+    
     <Grid fluid>
       <Row>
-        {resources.map(resource => (
+        {quickStart.map(resource => (
           <Col
             key={resource.title}
             xs={12}
@@ -120,22 +104,39 @@ const LearnPage = () => (
             style={{ margin: "3rem 0" }}
           >
             <ResourceCard title={resource.title} icon={resource.icon || "ICON"}>
-              <Paragraph>{resource.description}</Paragraph>
-              <BulletedList>
-                {resource.links.map(link => (
-                  <ListItem
-                    key={link.text}
-                    primary={
-                      <Link to={link.url}>{link.text}</Link>
-                    }
-                  />
-                ))}
-              </BulletedList>
+              <Markdown src={resource.description}/>
+              <ButtonLink to={resource.buttonLink.url}>{resource.buttonLink.text}</ButtonLink>
             </ResourceCard>
           </Col>
         ))}
       </Row>
     </Grid>
+
+    <Subheading center>Training Events</Subheading>
+    <p>Display Events here</p>
+
+    <Heading center>Find More Answers</Heading>
+    <Paragraph center>View documentation, connect with others on the community forum, browse BDC Community Hours materials, or get in touch with a BDC representative.</Paragraph>
+
+    <Grid fluid>
+      <Row>
+        {moreAnswers.map(resource => (
+          <Col
+            key={resource.title}
+            xs={12}
+            md={6}
+            xl={4}
+            style={{ margin: "3rem 0" }}
+          >
+            <ResourceCard title={resource.title} icon={resource.icon || "ICON"}>
+              <Markdown src={resource.description}/>
+              <ButtonLink to={resource.buttonLink.url}>{resource.buttonLink.text}</ButtonLink>
+            </ResourceCard>
+          </Col>
+        ))}
+      </Row>
+    </Grid>
+    
   </PageContent>
 );
 
