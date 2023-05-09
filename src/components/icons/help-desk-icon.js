@@ -12,7 +12,7 @@ export const HelpDeskIcon = ({ size, fill, ...rest }) => {
       y="0px"
       width={`${size}px`}
       height={`${size}px`}
-      viewBox="0 0 152.15 114.28"
+      viewBox="0 0 175.15 114.28"
     >
       <polygon points="25.4,90.1 25.4,90.1 25.4,90.1" />
       <polygon points="151.8,90.1 151.8,90.1 151.8,90.1" />
