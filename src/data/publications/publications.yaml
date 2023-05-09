@@ -1,4 +1,44 @@
 -
+  title: "The genetic determinants of recurrent somatic mutations in 43,693 blood genomes"
+  date: 2023-04-26
+  location: Science Advances
+  url: https://www.science.org/doi/10.1126/sciadv.abm4945
+-
+  title: "Direct estimation of regional lung volume change from paired and single CT images using residual regression neural network"
+  date: 2023-03-17
+  location: Medical Physics
+  url: https://doi.org/10.1002/mp.16365
+-
+  title: "Powerful, scalable and resource-efficient meta-analysis of rare variant associations in large whole genome sequencing studies"
+  date: 2022-12-23
+  location: Nature Genetics
+  url: https://www.nature.com/articles/s41588-022-01225-6
+-
+  title: "Whole genome sequencing identifies structural variants contributing to hematologic traits in the NHLBI TOPMed program"
+  date: 2022-12-08
+  location: Nature Communications
+  url: https://www.nature.com/articles/s41467-022-35354-7
+-
+  title: "Global perspectives on CYP2D6 associations with primaquine metabolism and Plasmodium vivax radical cure"
+  date: 2022-11-15
+  location: Frontiers in Pharmacology
+  url: https://www.frontiersin.org/articles/10.3389/fphar.2022.752314/full
+-
+  title: "GAWMerge expands GWAS sample size and diversity by combining array-based genotyping and whole-genome sequencing"
+  date: 2022-08-11
+  location: Communications Biology
+  url: https://www.nature.com/articles/s42003-022-03738-6
+-
+  title: "AFA: Ancestry-specific allele frequency estimation in admixed populations: The Hispanic Community Health Study/Study of Latinos"
+  date: 2022-04-14
+  location: Human Genetics and Genomics Advances
+  url: https://www.sciencedirect.com/science/article/pii/S2666247722000124?via%3Dihub
+-
+  title: An Augmented High-Dimensional Graphical Lasso Method to Incorporate Prior Biological Knowledge for Global Network Learning
+  date: 2022-01-27
+  location: Frontiers in Genetics
+  url: https://www.frontiersin.org/articles/10.3389/fgene.2021.760299/full
+-
   title: "Streamlining statistical reproducibility: NHLBI ORCHID clinical trial results reproduction"
   date: 2022-01-14
   location: JAMIA OPEN
@@ -9,27 +49,17 @@
   location: Science
   url: https://www.science.org/doi/10.1126/science.abg8871
 -
-  title: Multiethnic genome-wide and HLA association study of total serum IgE level
-  date: 2021-09-13
-  location: The Journal of Allergy and Clinical Immunology
-  url: https://www.jacionline.org/article/S0091-6749(21)01397-X/fulltext
--
-  title: An Augmented High-Dimensional Graphical Lasso Method to Incorporate Prior Biological Knowledge for Global Network Learning
-  date: 2022-01-27
-  location: Frontiers in Genetics
-  url: https://www.frontiersin.org/articles/10.3389/fgene.2021.760299/full
--
   title: Identifying miRNA-mRNA Networks Associated With COPD Phenotypes
   date: 2021-10-28
   location: Frontiers in Genetics
   url: https://www.frontiersin.org/articles/10.3389/fgene.2021.748356/full
 -
-  title: "Whole-genome sequencing association analysis of quantitative red blood cell phenotypes: The NHLBI TOPMed program"
-  date: 2021-04-21
-  location: The American Journal of Human Genetics
-  url: https://www.cell.com/ajhg/fulltext/S0002-9297(21)00134-8
+  title: Multiethnic genome-wide and HLA association study of total serum IgE level
+  date: 2021-09-13
+  location: The Journal of Allergy and Clinical Immunology
+  url: https://www.jacionline.org/article/S0091-6749(21)01397-X/fulltext
 -
-  title: Whole-Genome Sequencing Identifies Novel Functional Loci Associated with Lung Function in Puerto Rican Youth
-  date: 2020-05-27
-  location: American Journal of Respiratory and Critical Care Medicine
-  url: https://www.atsjournals.org/doi/10.1164/rccm.202002-0351OC
+  title: "Genome Wide Association Analysis of Iron Overload in the Trans-Omics for Precision Medicine (TOPMed) Sickle Cell Disease Cohorts"
+  date: 2020-11-05
+  location: "Blood | American Society of Hematology"
+  url: https://ashpublications.org/blood/article/136/Supplement%201/52/472221/Genome-Wide-Association-Analysis-of-Iron-Overload
