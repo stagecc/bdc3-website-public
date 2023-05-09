@@ -16,7 +16,7 @@ const ResearchPage = ({ data }) => {
       />
       <Title>Published Research</Title>
 
-      {publications.map(({ id, title, date, location, url, bdcAuthors }) => (
+      {publications.map(({ id, title, date, location, url }) => (
         <Fragment key={id}>
           <Heading>
             <Link to={url}>{title}</Link>
@@ -27,18 +27,6 @@ const ResearchPage = ({ data }) => {
               paddingLeft: "1rem",
             }}
           >
-            <Paragraph>
-              {title ===
-              "Streamlining statistical reproducibility: NHLBI ORCHID clinical trial results reproduction"
-                ? "BioData Catalyst Consortium Authors:"
-                : "BioData Catalyst Contributor:"}{" "}
-              {bdcAuthors.map((author, i) => (
-                <span>
-                  {author}
-                  {i + 1 < bdcAuthors.length ? "," : ""}{" "}
-                </span>
-              ))}
-            </Paragraph>
             <Paragraph>
               Published on {date} in <em>{location}</em>
             </Paragraph>
@@ -59,7 +47,6 @@ export const query = graphql`
         date(formatString: "MMMM Do, YYYY")
         location
         url
-        bdcAuthors
       }
     }
   }
