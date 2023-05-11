@@ -11,8 +11,12 @@ export const ResourceCard = ({ title, icon, children }) => {
         fgColor="#444"
         style={{ borderBottom: "1px solid var(--color-crimson" }}
       />
-      <CardBody style={{ position: "relative", display: "flex", flexDirection: "column" }}>
-        <div style={{ position: "absolute", top: "-2.5rem", left: "2rem" }}>
+      <CardBody style={{ 
+        position: "relative", 
+        display: "flex", 
+        flexDirection: "column",
+      }}>
+        <div style={{ position: "absolute", top: "-3.7rem", left: "2rem" }}>
           <HexBadge>{icon}</HexBadge>
         </div>
         <LineBreak count={2} />

@@ -10,7 +10,7 @@ export const Button = styled.button(
     border-style: solid;
     border-color: ${light ? "var(--color-crimson)" : "transparent"};
     color: ${light ? "var(--color-crimson) !important" : "#fff"};
-    padding: ${small ? "0.5rem 1rem" : "1rem 1.5rem"};
+    padding: ${small ? "0.5rem 1rem" : "1rem 1rem"};
     font-size: ${small ? "80%" : "100%"};
     text-transform: uppercase;
     text-decoration: none !important;
