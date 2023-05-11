@@ -185,7 +185,9 @@ const LearnPage = ({data}) => {
             style={{ margin: "3rem 0" }}
           >
             <ResourceCard title={resource.title} icon={resource.icon || "ICON"}>
-              <Markdown src={resource.description}/>
+              <div style={{flex: '1'}}>
+                <Markdown src={resource.description}/>
+              </div>
               <ButtonLink to={resource.buttonLink.url}>{resource.buttonLink.text}</ButtonLink>
             </ResourceCard>
           </Col>
