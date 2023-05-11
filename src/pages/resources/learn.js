@@ -60,7 +60,7 @@ const moreAnswers = [
     description:
       "View BDC docs",
     buttonLink: {
-      text: "BDC Forum",
+      text: "View Documentation",
       url: "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/"
     }
   },
@@ -70,7 +70,7 @@ const moreAnswers = [
     description:
       "Learn about how BDC is evolving and how to use the system from the community.",
     buttonLink: {
-      text: "PIC-SURE Tutorials",
+      text: "Access Forum",
       url: 
         "https://bdcatalyst.freshdesk.com/support/discussions"
     }
@@ -80,7 +80,7 @@ const moreAnswers = [
     icon: <HelpDeskIcon size={62} fill="#fff" />,
     description: "Find upcoming BDC events or view the archive.",
     buttonLink: {
-      text: "Dockstore News & Events",
+      text: "Help Desk",
       url: "https://biodatacatalyst.nhlbi.nih.gov/contact"
     }
   }
@@ -88,39 +88,23 @@ const moreAnswers = [
 
 const EventsList = ({ title, events }) => {
   // const { isCompact } = useWindowWidth();
+  const nextEvent = events[0]
+
   return (
     <Module title={title}>
       <br />
       {events.length ? (
-        events.map((event) => {
-          const { excerpt } = event.node;
-          const {
-            title,
-            path,
-            date,
-            display_date,
-          } = event.node.frontmatter;
-          return (
-            <Fragment key={title}>
-              <Grid container spacing={2}>
-                <Grid item sm={12} md={3}>
-                  <Paragraph left noMargin>
-                    {display_date ? display_date : date}
-                  </Paragraph>
-                </Grid>
-                <Grid item sm={12} md={9}>
-                  <Subheading left>
-                    <Link 
-                      to={path}
-                    >{title}</Link>
-                  </Subheading>
-                </Grid>
-              </Grid>
-              <HorizontalRule />
+        <Fragment key={nextEvent.node.frontmatter.title}>
+            <Paragraph left noMargin>
+                Next Event: {nextEvent.node.frontmatter.display_date ? nextEvent.node.frontmatter.display_date : nextEvent.node.frontmatter.date}
+              </Paragraph>
               <br/>
-            </Fragment>
-          );
-        })
+              <Paragraph left noMargin>
+                <Link 
+                  to={nextEvent.node.frontmatter.path}
+                >{nextEvent.node.frontmatter.title}</Link>
+              </Paragraph>
+        </Fragment>
       ) : (
         <Paragraph center>
           There are no events to display at the moment. Please check back soon!
@@ -167,10 +151,16 @@ const LearnPage = ({data}) => {
     </ReactGrid>
 
     <Subheading center>Training Events</Subheading>
-    <p>Next Event:</p>
     <EventsList events={events} />
-    <ButtonLink to="/about/events/" style={{margin: 'auto'}}>See All Upcoming Events</ButtonLink>
-    
+
+    <div style={{display: "flex", justifyContent: "center"}}>
+      <ButtonLink to="/about/events/">See All Upcoming Events</ButtonLink>
+    </div>
+
+    <HorizontalRule />
+
+    <br/>
+    <br/>
     <Heading center>Find More Answers</Heading>
     <Paragraph center>View documentation, connect with others on the community forum, browse BDC Community Hours materials, or get in touch with a BDC representative.</Paragraph>
 
@@ -203,7 +193,7 @@ export default LearnPage;
 export const query = graphql`
   query {
     events: allMarkdownRemark(
-      sort: { fields: frontmatter___date, order: DESC }
+      sort: { fields: frontmatter___date, order: ASC }
       filter: {
         fileAbsolutePath: { regex: "/events/" }
       }
