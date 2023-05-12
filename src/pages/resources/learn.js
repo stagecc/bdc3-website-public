@@ -193,10 +193,11 @@ export default LearnPage;
 export const query = graphql`
   query {
     events: allMarkdownRemark(
-      sort: { fields: frontmatter___date, order: ASC }
+      sort: { fields: frontmatter___date, order: DESC }
       filter: {
         fileAbsolutePath: { regex: "/events/" }
       }
+      limit: 5
     ) {
       edges {
         node {
