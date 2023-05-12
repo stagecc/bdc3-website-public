@@ -164,10 +164,17 @@ const LearnPage = ({data}) => {
 
     <Subheading center>Training Events</Subheading>
     <EventsList events={events} />
-
-    <div style={{display: "flex", justifyContent: "center"}}>
-      <ButtonLink to="/about/events/">See All Upcoming Events</ButtonLink>
-    </div>
+    {
+      events.length ? (
+        <div style={{display: "flex", justifyContent: "center"}}>
+          <ButtonLink to="/about/events/">See All Upcoming Events</ButtonLink>
+        </div>
+      ) : (
+        <div style={{display: "flex", justifyContent: "center"}}>
+          <ButtonLink to="/about/events/archive">View Our Past Events</ButtonLink>
+        </div>
+      )
+    }
 
     <HorizontalRule />
 
