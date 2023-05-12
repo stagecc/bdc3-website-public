@@ -150,7 +150,7 @@ const LearnPage = ({data}) => {
             <ResourceCard title={resource.title} icon={resource.icon || "ICON"}>
               <Markdown src={resource.description}/>
               <Link 
-                resourceButton 
+                asFilledButton 
                 noIcon 
                 to={resource.buttonLink.url}
               >
@@ -196,7 +196,7 @@ const LearnPage = ({data}) => {
             <ResourceCard title={resource.title} icon={resource.icon || "ICON"}>
               <Markdown src={resource.description}/>
               <Link 
-                resourceButton 
+                asFilledButton 
                 noIcon 
                 to={resource.buttonLink.url}
               >

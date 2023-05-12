@@ -5,8 +5,8 @@ import { ExternalLinkIcon } from "../icons";
 
 export const ExternalLink = ({
   to,
-  asButton,
-  resourceButton,
+  asOutlinedButton,
+  asFilledButton,
   noIcon,
   lightIcon,
   children,
@@ -60,7 +60,7 @@ export const ExternalLink = ({
     <a 
       href={to} 
       onClick={triggerDialog} 
-      className={`${className} ${asButton && 'button-link'} ${resourceButton && 'resource-button-link'}`} 
+      className={`${className} ${asOutlinedButton && 'outlined-button-link'} ${asFilledButton && 'filled-button-link'}`} 
     >
       {children}
       {!noIcon && (
@@ -75,7 +75,7 @@ export const ExternalLink = ({
   ) : (
     <a 
       href={to} 
-      className={`${className} ${asButton && 'button-link'} ${resourceButton && 'resource-button-link'}`} 
+      className={`${className} ${asOutlinedButton && 'outlined-button-link'} ${asFilledButton && 'filled-button-link'}`} 
       target="_blank" 
       rel="noopener noreferrer" 
       {...props}

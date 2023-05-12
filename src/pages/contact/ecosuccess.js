@@ -216,7 +216,7 @@ const SuccessPage = () => {
             ALREADY KNOW WHICH ECOSYSTEM ELEMENT YOU WANT TO USE?
           </Paragraph>
           <Link
-          asButton={true}
+          asOutlinedButton={true}
             light
             target="_blank"
             rel="noopener noreferrer"
@@ -230,7 +230,7 @@ const SuccessPage = () => {
             GEN3
           </Link>
           <Link
-          asButton={true}
+          asOutlinedButton={true}
             light
             target="_blank"
             rel="noopener noreferrer"
@@ -244,7 +244,7 @@ const SuccessPage = () => {
             PIC-SURE
           </Link>
           <Link
-            asButton={true}
+            asOutlinedButton={true}
             light
             target="_blank"
             rel="noopener noreferrer"
@@ -258,7 +258,7 @@ const SuccessPage = () => {
             TERRA
           </Link>
           <Link
-            asButton={true}
+            asOutlinedButton={true}
             light
             target="_blank"
             rel="noopener noreferrer"

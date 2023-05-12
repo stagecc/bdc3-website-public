@@ -54,7 +54,7 @@ a:active {
   line-height: 30px;
 }
 
-.button-link {
+.outlined-button-link {
   background-color: "#fff";
   border-radius: 4px;
   display: inline-block;
@@ -72,7 +72,7 @@ a:active {
   transition: filter 250ms;
 }
 
-.resource-button-link {
+.filled-button-link {
   background-color: var(--color-crimson);
   border-radius: 4px;
   display: inline-block;
@@ -92,7 +92,7 @@ a:active {
   letter-spacing: 0.5px;
 }
 
-.button-link:hover, .button-link:focus,
-.resource-button:hover, .resource-button:focus {
+.outlined-button-link:hover, .outlined-button-link:focus,
+.filled-button:hover, .filled-button:focus {
   filter: brightness(1.2);
 }
