@@ -88,7 +88,13 @@ const moreAnswers = [
 
 const EventsList = ({ title, events }) => {
   // const { isCompact } = useWindowWidth();
-  const nextEvent = events[0]
+
+  // since the events are sorted in descending order, events[0] would 
+  // select the event that is furthest in the future.
+  // since this events array is already filtered to only display events in the future, 
+  // events[events.length - 1] selects the "last" event in the array 
+  // which would be the event that is nearest in the future, i.e., the "next event"
+  const nextEvent = events[events.length - 1]
 
   return (
     <Module title={title}>
