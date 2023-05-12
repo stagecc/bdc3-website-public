@@ -181,9 +181,7 @@ const LearnPage = ({data}) => {
             style={{ margin: "3rem 0" }}
           >
             <ResourceCard title={resource.title} icon={resource.icon || "ICON"}>
-              <div style={{flex: '1'}}>
-                <Markdown src={resource.description}/>
-              </div>
+              <Markdown src={resource.description}/>
               <Link 
                 resourceButton 
                 noIcon 
