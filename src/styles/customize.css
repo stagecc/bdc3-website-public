@@ -72,6 +72,27 @@ a:active {
   transition: filter 250ms;
 }
 
-.button-link:hover, .button-link:focus {
+.resource-button-link {
+  background-color: var(--color-crimson);
+  border-radius: 4px;
+  display: inline-block;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  color:  #fff;
+  padding: 1rem 0.7rem;
+  font-size: 90%;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  white-space: nowrap;
+  cursor: pointer;
+  position: relative;
+  transition: filter 250ms;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.button-link:hover, .button-link:focus,
+.resource-button:hover, .resource-button:focus {
   filter: brightness(1.2);
 }

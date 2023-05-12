@@ -143,7 +143,13 @@ const LearnPage = ({data}) => {
           >
             <ResourceCard title={resource.title} icon={resource.icon || "ICON"}>
               <Markdown src={resource.description}/>
-              <ButtonLink to={resource.buttonLink.url}>{resource.buttonLink.text}</ButtonLink>
+              <Link 
+                resourceButton 
+                noIcon 
+                to={resource.buttonLink.url}
+              >
+                {resource.buttonLink.text}
+              </Link>
             </ResourceCard>
           </Col>
         ))}
@@ -178,7 +184,13 @@ const LearnPage = ({data}) => {
               <div style={{flex: '1'}}>
                 <Markdown src={resource.description}/>
               </div>
-              <ButtonLink to={resource.buttonLink.url}>{resource.buttonLink.text}</ButtonLink>
+              <Link 
+                resourceButton 
+                noIcon 
+                to={resource.buttonLink.url}
+              >
+                {resource.buttonLink.text}
+              </Link>
             </ResourceCard>
           </Col>
         ))}

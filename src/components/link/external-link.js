@@ -6,6 +6,7 @@ import { ExternalLinkIcon } from "../icons";
 export const ExternalLink = ({
   to,
   asButton,
+  resourceButton,
   noIcon,
   lightIcon,
   children,
@@ -56,7 +57,11 @@ export const ExternalLink = ({
   };
 
   return requiresConfirmation ? (
-    <a href={to} onClick={triggerDialog} className={`${className} ${asButton && 'button-link'}`}>
+    <a 
+      href={to} 
+      onClick={triggerDialog} 
+      className={`${className} ${asButton && 'button-link'} ${resourceButton && 'resource-button-link'}`} 
+    >
       {children}
       {!noIcon && (
         <ExternalLinkIcon
@@ -68,7 +73,13 @@ export const ExternalLink = ({
       )}
     </a>
   ) : (
-    <a href={to} className={`${className} ${asButton && 'button-link'}`} target="_blank" rel="noopener noreferrer" {...props}>
+    <a 
+      href={to} 
+      className={`${className} ${asButton && 'button-link'} ${resourceButton && 'resource-button-link'}`} 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      {...props}
+    >
       {children}
     </a>
   );
