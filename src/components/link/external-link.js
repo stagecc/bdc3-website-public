@@ -86,6 +86,27 @@ export const ExternalLink = ({
 };
 
 ExternalLink.propTypes = {
+  asOutlinedButton: (props, propName, componentName) => {
+    if (props.asFilledButton && props.asOutlinedButton) {
+      return new Error(`Use at most one of "asFilledButton" and "asOutlinedButton."`);
+    }
+  },
+  asFilledButton: (props, propName, componentName) => {
+    if (props.asFilledButton && props.asOutlinedButton) {
+      return new Error(`Use at most one of "asFilledButton" and "asOutlinedButton."`);
+    }
+  },
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+  noIcon: (props, propName, componentName) => {
+    if (props.noIcon && props.lightIcon) {
+      return new Error(`Use at most one of "noIcon" and "lightIcon." `);
+    }
+  },
+  lightIcon: (props, propName, componentName) => {
+    if (props.noIcon && props.lightIcon) {
+      return new Error(`Use at most one of "noIcon" and "lightIcon." `);
+    }
+  },
   to: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired
 };
