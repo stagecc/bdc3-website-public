@@ -5,7 +5,8 @@ import { ExternalLinkIcon } from "../icons";
 
 export const ExternalLink = ({
   to,
-  asButton,
+  asOutlinedButton,
+  asFilledButton,
   noIcon,
   lightIcon,
   children,
@@ -56,7 +57,11 @@ export const ExternalLink = ({
   };
 
   return requiresConfirmation ? (
-    <a href={to} onClick={triggerDialog} className={`${className} ${asButton && 'button-link'}`}>
+    <a 
+      href={to} 
+      onClick={triggerDialog} 
+      className={`${className} ${asOutlinedButton && 'outlined'} ${asFilledButton && 'filled'} button-link`} 
+    >
       {children}
       {!noIcon && (
         <ExternalLinkIcon
@@ -68,13 +73,40 @@ export const ExternalLink = ({
       )}
     </a>
   ) : (
-    <a href={to} className={`${className} ${asButton && 'button-link'}`} target="_blank" rel="noopener noreferrer" {...props}>
+    <a 
+      href={to} 
+      className={`${className} ${asOutlinedButton && 'outlined'} ${asFilledButton && 'filled'} button-link`} 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      {...props}
+    >
       {children}
     </a>
   );
 };
 
 ExternalLink.propTypes = {
+  asOutlinedButton: (props, propName, componentName) => {
+    if (props.asFilledButton && props.asOutlinedButton) {
+      return new Error(`Use at most one of "asFilledButton" and "asOutlinedButton."`);
+    }
+  },
+  asFilledButton: (props, propName, componentName) => {
+    if (props.asFilledButton && props.asOutlinedButton) {
+      return new Error(`Use at most one of "asFilledButton" and "asOutlinedButton."`);
+    }
+  },
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+  noIcon: (props, propName, componentName) => {
+    if (props.noIcon && props.lightIcon) {
+      return new Error(`Use at most one of "noIcon" and "lightIcon." `);
+    }
+  },
+  lightIcon: (props, propName, componentName) => {
+    if (props.noIcon && props.lightIcon) {
+      return new Error(`Use at most one of "noIcon" and "lightIcon." `);
+    }
+  },
   to: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired
 };

@@ -1,234 +1,145 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { graphql } from "gatsby";
 import { SEO } from "../../components/seo";
 import { PageContent } from "../../components/layout";
-import { Title, Paragraph } from "../../components/typography";
-import { Container as Grid, Row, Col } from "react-grid-system";
+import { Title, Paragraph, Heading, Subheading } from "../../components/typography";
+import { Container as ReactGrid, Row, Col } from "react-grid-system";
 import { ResourceCard } from "../../components/card";
-import { BulletedList, ListItem } from "../../components/list";
 import { Link } from "../../components/link";
+import { Markdown } from "../../components/markdown"
+import { ButtonLink } from "../../components/buttons"
+import { Module } from "../../components/layout";
+import { HorizontalRule } from "../../components/horizontal-rule"
+import { Grid } from '@mui/material'
 import {
-  BlogIcon,
-  CommunityIcon,
   DocumentsIcon,
-  EventsIcon,
-  FaqsIcon,
-  VideosIcon
+  EstimateIcon,
+  HelpDeskIcon,
+  JoinIcon,
+  MicroscopeIcon,
+  UserIcon
 } from "../../components/icons";
 
-const resources = [
+const quickStart = [
+  {
+    title: "Get Started on BDC",
+    icon: <UserIcon size={52} fill="#fff" />,
+    description:
+      "Learn about the accounts and permissions you need to access BDC, as well as data access and exploration, and how to apply for pilot funds.",
+    buttonLink: {
+      text: "Get Started",
+      url:
+        "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/analyze-data/terra"
+    }
+  },
+  {
+    title: "Conduct a Feasibility Study",
+    icon: <EstimateIcon size={42} fill="#fff" />,
+    description: "A feasibility study is often conducted as an initial exploration to determine the viability of the project plan.",
+    buttonLink: {
+      text: "Set up a Feasability Study",
+      url: "https://videocast.nih.gov/watch=37703"
+    }
+  },
+  {
+    title: "Run a GWAS with NHLBI Hosted Datasets",
+    icon: <MicroscopeIcon size={42} fill="#fff" />,
+    description:
+      "Use *BDC Powered by Seven Bridges* to perform a GWAS using either NHLBI hosted datasets or your own data.",
+    buttonLink: {
+      text: "Run a GWAS",
+      url: "https://bdcatalyst.freshdesk.com/support/solutions"
+    }
+  }
+];
+
+const moreAnswers = [
   {
     title: "Documentation",
     icon: <DocumentsIcon size={52} fill="#fff" />,
     description:
-      "Find step-by-step instructions on how to use BDC services and tools.",
-    links: [
-      {
-        text: "BDC Documentation",
-        url: "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/"
-      },
-      {
-        text: "BDC Release Notes",
-        url:
-          "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/release-notes"
-      },
-      {
-        text: "Dockstore Documentation",
-        url:
-          "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/analyze-data/dockstore"
-      },
-      {
-        text: "Gen3 Documentation",
-        url:
-          "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/explore_data/gen3-discovering-data"
-      },
-      {
-        text: "PIC-SURE Documentation",
-        url: 
-          "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/getting-started/explore-available-data/pic-sure-for-biodata-catalyst-user-guide"
-      },
-      {
-        text: "Seven Bridges Documentation",
-        url:
-          "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/analyze-data/seven-bridges"
-      },
-      {
-        text: "Terra Documentation",
-        url:
-          "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/analyze-data/terra"
-      }
-    ]
+      "View BDC docs",
+    buttonLink: {
+      text: "View Documentation",
+      url: "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/"
+    }
   },
   {
-    title: "Videos",
-    icon: <VideosIcon size={42} fill="#fff" />,
-    description: "BDC webinars, workshops, and how to videos.",
-    links: [
-      {
-        text: "BDC Demonstration (1:02:53)",
-        url: "https://videocast.nih.gov/watch=37703"
-      },
-      {
-        text: "BDC Videos",
-        url: "https://www.youtube.com/channel/UCGkmY5oNK8uFZzT8vV_9KgQ"
-      },
-      {
-        text: "Dockstore Videos",
-        url: "https://www.youtube.com/channel/UCFWNYqxQvVLAuZq8rdOSE4g/videos"
-      },
-      {
-        text: "Gen3 Videos",
-        url: "https://gen3.org/community/webinars/"
-      },
-      {
-        text: "PIC-SURE Videos",
-        url: "https://www.youtube.com/watch?v=KQha_vZDgVc&list=PLJ6YccH8TEufZ5L-ctxzFF7vuZRLVacKw"
-      },
-      {
-        text: "Seven Bridges",
-        url: "https://www.sevenbridges.com/webinars/"
-      },
-      {
-        text: "Terra Videos",
-        url: "https://www.youtube.com/channel/UCkXAqpR5Hk1ZmNd2-1K2l5Q"
-      }
-    ]
-  },
-  {
-    title: "FAQs",
-    icon: <FaqsIcon size={42} fill="#fff" />,
-    description:
-      "Find answers to frequently asked questions from BDC users",
-    links: [
-      {
-        text: "BDC FAQs",
-        url: "https://bdcatalyst.freshdesk.com/support/solutions"
-      },
-      {
-        text: "Dockstore FAQs",
-        url: "https://docs.dockstore.org/en/develop/faq.html"
-      },
-      {
-        text: "Gen3 FAQs",
-        url:
-          "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/explore_data/gen3-discovering-data"
-      },
-      {
-        text: "PIC-SURE FAQs",
-        url: 
-          "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/getting-started/explore-available-data/pic-sure-for-biodata-catalyst-user-guide",
-      },
-    ]
-  },
-  {
-    title: "Community Forums",
-    icon: <CommunityIcon size={42} fill="#fff" />,
-    description:
-      "Connect with others using BDC and learn how they are using it.",
-    links: [
-      {
-        text: "BDC Forum",
-        url: "https://bdcatalyst.freshdesk.com/support/discussions/60000024585"
-      },
-      {
-        text: "Dockstore Forum",
-        url: "https://gitter.im/ga4gh/dockstore"
-      },
-      {
-        text: "Gen3 Forum",
-        url: "https://forums.gen3.org/"
-      },
-      {
-        text: "Terra Forum",
-        url: "https://support.terra.bio/hc/en-us/community/topics"
-      }
-    ]
-  },
-  {
-    title: "Blogs & Tutorials",
-    icon: <BlogIcon size={42} fill="#fff" />,
+    title: "Forum",
+    icon: <JoinIcon size={42} fill="#fff" />,
     description:
       "Learn about how BDC is evolving and how to use the system from the community.",
-    links: [
-      {
-        text: "PIC-SURE Tutorials",
-        url: 
-          "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/getting-started/explore-available-data/pic-sure-for-biodata-catalyst-user-guide/data-analysis-using-the-pic-sure-api"
-      },
-      {
-        text: "Seven Bridges Blog",
-        url: "https://www.sevenbridges.com/blog/"
-      },
-      {
-        text: "Seven Bridges Tutorials",
-        url:
-          "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/tutorials-videos-and-modules/seven-bridges-tutorials"
-      },
-      {
-        text: "Terra Tutorials",
-        url:
-          "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/tutorials-videos-and-modules/terra-tutorials"
-      },
-      {
-        text: "Terra Blog",
-        url: "https://terra.bio/blog/"
-      },
-      {
-        text: "Terra Release Notes & Service Notifications",
-        url: "https://support.terra.bio/hc/en-us/categories/360000693572"
-      }
-    ]
+    buttonLink: {
+      text: "Access Forum",
+      url: 
+        "https://bdcatalyst.freshdesk.com/support/discussions"
+    }
   },
   {
-    title: "Upcoming Events",
-    icon: <EventsIcon size={42} fill="#fff" />,
+    title: "Ask a Question",
+    icon: <HelpDeskIcon size={62} fill="#fff" />,
     description: "Find upcoming BDC events or view the archive.",
-    links: [
-      {
-        text: "Dockstore News & Events",
-        url: "https://docs.dockstore.org/en/develop/news.html"
-      },
-      {
-        text: "Gen3 Announcements",
-        url: "https://forums.gen3.org/c/announcements/6"
-      },
-      {
-        text: "Terra Community Events",
-        url: "https://support.terra.bio/hc/en-us/categories/360001430891"
-      }
-    ]
+    buttonLink: {
+      text: "Help Desk",
+      url: "https://biodatacatalyst.nhlbi.nih.gov/contact"
+    }
   }
-];
+]
 
-const LearnPage = () => (
+const EventsList = ({ title, events }) => {
+  // const { isCompact } = useWindowWidth();
+
+  // since the events are sorted in descending order, events[0] would 
+  // select the event that is furthest in the future.
+  // since this events array is already filtered to only display events in the future, 
+  // events[events.length - 1] selects the "last" event in the array 
+  // which would be the event that is nearest in the future, i.e., the "next event"
+  const nextEvent = events[events.length - 1]
+
+  return (
+    <Module title={title}>
+      <br />
+      {events.length ? (
+        <Fragment key={nextEvent.node.frontmatter.title}>
+            <Paragraph left noMargin>
+                Next Event: {nextEvent.node.frontmatter.display_date ? nextEvent.node.frontmatter.display_date : nextEvent.node.frontmatter.date}
+              </Paragraph>
+              <br/>
+              <Paragraph left noMargin>
+                <Link 
+                  to={nextEvent.node.frontmatter.path}
+                >{nextEvent.node.frontmatter.title}</Link>
+              </Paragraph>
+        </Fragment>
+      ) : (
+        <Paragraph center>
+          There are no events to display at the moment. Please check back soon!
+        </Paragraph>
+      )}
+    </Module>
+  );
+};
+
+const LearnPage = ({data}) => {
+  const todaysDate = new Date();
+
+  const events = data.events.edges.filter(
+    ({ node }) => new Date(node.frontmatter.date) >= todaysDate
+  );
+
+  return (
   <PageContent width="95%" maxWidth="1200px" center gutters>
     <SEO title="Learn" description="" keywords="" />
 
-    <Title>Learn and Support</Title>
+    <Title>Education and Support</Title>
 
-    <Paragraph>
-      BDC is an ecosystem made up of many platforms and
-      partners that support our researchers.
-    </Paragraph>
-
-    <Paragraph>
-      Get started on the BDC ecosystem with this collection of
-      documentation, videos, FAQs, community forums, tutorials, blog posts,
-      upcoming events, and more from our ecosystem partners.
-    </Paragraph>
-
-    <Paragraph>
-      Alternatively,{" "}
-      <Link to="/docs">search documentation across our entire ecosystem</Link>.
-    </Paragraph>
-
-    <Paragraph>
-      For more immediate assistance, contact our{" "}
-      <Link to="/contact">help desk</Link>.
-    </Paragraph>
-
-    <Grid fluid>
+    <Heading center>Engagement Pathways</Heading>
+    <Subheading center>Quick Start on BDC</Subheading>
+    <Paragraph center>Download one or all of our quick start guides to get started on BDC.</Paragraph>
+    
+    <ReactGrid fluid>
       <Row>
-        {resources.map(resource => (
+        {quickStart.map(resource => (
           <Col
             key={resource.title}
             xs={12}
@@ -237,23 +148,92 @@ const LearnPage = () => (
             style={{ margin: "3rem 0" }}
           >
             <ResourceCard title={resource.title} icon={resource.icon || "ICON"}>
-              <Paragraph>{resource.description}</Paragraph>
-              <BulletedList>
-                {resource.links.map(link => (
-                  <ListItem
-                    key={link.text}
-                    primary={
-                      <Link to={link.url}>{link.text}</Link>
-                    }
-                  />
-                ))}
-              </BulletedList>
+              <Markdown src={resource.description}/>
+              <Link 
+                asFilledButton 
+                noIcon 
+                to={resource.buttonLink.url}
+              >
+                {resource.buttonLink.text}
+              </Link>
             </ResourceCard>
           </Col>
         ))}
       </Row>
-    </Grid>
+    </ReactGrid>
+
+    <Subheading center>Training Events</Subheading>
+    <EventsList events={events} />
+    {
+      events.length ? (
+        <div style={{display: "flex", justifyContent: "center"}}>
+          <ButtonLink to="/about/events/">See All Upcoming Events</ButtonLink>
+        </div>
+      ) : (
+        <div style={{display: "flex", justifyContent: "center"}}>
+          <ButtonLink to="/about/events/archive">View Our Past Events</ButtonLink>
+        </div>
+      )
+    }
+
+    <HorizontalRule />
+
+    <br/>
+    <br/>
+    <Heading center>Find More Answers</Heading>
+    <Paragraph center>View documentation, connect with others on the community forum, browse BDC Community Hours materials, or get in touch with a BDC representative.</Paragraph>
+
+    <ReactGrid fluid>
+      <Row>
+        {moreAnswers.map(resource => (
+          <Col
+            key={resource.title}
+            xs={12}
+            md={6}
+            xl={4}
+            style={{ margin: "3rem 0" }}
+          >
+            <ResourceCard title={resource.title} icon={resource.icon || "ICON"}>
+              <Markdown src={resource.description}/>
+              <Link 
+                asFilledButton 
+                noIcon 
+                to={resource.buttonLink.url}
+              >
+                {resource.buttonLink.text}
+              </Link>
+            </ResourceCard>
+          </Col>
+        ))}
+      </Row>
+    </ReactGrid>
+    
   </PageContent>
 );
-
+}
 export default LearnPage;
+
+export const query = graphql`
+  query {
+    events: allMarkdownRemark(
+      sort: { fields: frontmatter___date, order: DESC }
+      filter: {
+        fileAbsolutePath: { regex: "/events/" }
+      }
+      limit: 5
+    ) {
+      edges {
+        node {
+          frontmatter {
+            date(formatString: "MMMM D, YYYY")
+            display_date
+            path
+            title
+            url
+          }
+          excerpt(pruneLength: 280)
+        }
+      }
+    }
+  }
+`;
