@@ -60,7 +60,7 @@ export const ExternalLink = ({
     <a 
       href={to} 
       onClick={triggerDialog} 
-      className={`${className} ${asOutlinedButton && 'outlined-button-link'} ${asFilledButton && 'filled-button-link'}`} 
+      className={`${className} ${asOutlinedButton && 'outlined'} ${asFilledButton && 'filled'} button-link`} 
     >
       {children}
       {!noIcon && (
@@ -75,7 +75,7 @@ export const ExternalLink = ({
   ) : (
     <a 
       href={to} 
-      className={`${className} ${asOutlinedButton && 'outlined-button-link'} ${asFilledButton && 'filled-button-link'}`} 
+      className={`${className} ${asOutlinedButton && 'outlined'} ${asFilledButton && 'filled'} button-link`} 
       target="_blank" 
       rel="noopener noreferrer" 
       {...props}
