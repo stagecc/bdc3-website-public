@@ -15,6 +15,8 @@ export const ExternalLink = ({
 }) => {
   const dialog = useDialog();
   const [requiresConfirmation, setRequiresConfirmation] = useState();
+  const asButton = asFilledButton || asOutlinedButton
+  const buttonClasses = `${ asButton && 'button-link' } ${ asOutlinedButton && 'outlined' } ${ asFilledButton && 'filled' }`
 
   useEffect(() => {
     const hostRegexPattern = new RegExp(/^https?:\/\/.+\.([a-z]{2,3})\//);
@@ -60,7 +62,7 @@ export const ExternalLink = ({
     <a 
       href={to} 
       onClick={triggerDialog} 
-      className={`${className} ${asOutlinedButton && 'outlined'} ${asFilledButton && 'filled'} button-link`} 
+      className={`${className} ${buttonClasses}`} 
     >
       {children}
       {!noIcon && (
@@ -75,7 +77,7 @@ export const ExternalLink = ({
   ) : (
     <a 
       href={to} 
-      className={`${className} ${asOutlinedButton && 'outlined'} ${asFilledButton && 'filled'} button-link`} 
+      className={`${className} ${buttonClasses}`} 
       target="_blank" 
       rel="noopener noreferrer" 
       {...props}
