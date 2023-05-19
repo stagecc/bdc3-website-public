@@ -1,6 +1,6 @@
 ---
 path: /latest-updates/2023-05-19_bdc-marker-paper-announcement
-date: 2021-05-19
+date: 2023-05-19
 title: "NHLBI BioData Catalyst® (BDC) Provides Collaborative Cloud Computing Environment to Meet Evolving Researcher Needs"
 subtitle: ""
 tags: ["news", "publication"]
