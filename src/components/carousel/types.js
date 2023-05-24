@@ -33,6 +33,7 @@ export const statsContent = PropTypes.shape({
   // Max: 130 characters *
   // Min: none
 // Stats:
+  // array of objects
   // total items: no more than 2 before needing to change the style
   // name: 35 characters *
   // value: 10 numbers without punctuation, 8-9 numbers with punctuation *
@@ -56,7 +57,8 @@ export const datasetInfoContent = PropTypes.shape({
 // Description:
   // Max: 130 characters *
   // Min: none
-// Stats:
+// datasets:
+  // array of objects
   // total items: at least 2, no more than 4
   // name: 70 characters (depends on length of other lines as well) *
 // * subject to visual confirmation because letters are not all equally sized
