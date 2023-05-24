@@ -23,11 +23,11 @@
     "key": 2,
     "type": "dataset-info",
     "content": {
-      "headline": "Prioritizing diverse data",
-      "description": "BDC provides access to the highly diverse TOPMed dataset.",
+      "headline": "In-demand datasets",
+      "description": "BDC increases access to NHLBI datasets.",
       "datasets": [
         { "name": "COVID-19 Studies" },
-        { "name": "TOPMed Parent Studies and Freeze 8" },
+        { "name": "TOPMed Parent Studies and Freeze 9" },
         { "name": "Sickle Cell Disease Studies" }
       ]
     }
@@ -49,4 +49,3 @@
     }
   }
 ]
-
