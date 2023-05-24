@@ -5,6 +5,8 @@ export const DetailsPanel = styled.div(({ compact }) => `
   height: 100%;
   width: 100%;
   position: relative;
+  display: flex;
+  justify-content: center;
 `);
 
 export const DetailWrapper = styled.div(({ dataset }) => `
@@ -47,3 +49,30 @@ export const Description = styled.p(({ compact }) => `
   letter-spacing: 0.5px;
   line-height: ${ compact ? "1.3" : "1" };
 `);
+
+export const TestimonialWrapper = styled(DetailWrapper)`
+  max-width: 1200px;
+`
+
+export const Quote = styled(Headline)`
+  font-size: 1.8rem;
+  line-height: 1.5;
+  @media screen and (min-width: 768px) {
+    font-size: 2rem;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 2.2rem;
+  }
+  @media screen and (max-width: 360px) {
+    font-size: 1.5rem;
+  }
+`
+export const Attribution = styled(Description)`
+  font-size: 1.1rem;
+  @media screen and (min-width: 768px) {
+    font-size: 1.2rem;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 1.3rem;
+  }
+`

@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { DetailsPanel, DetailWrapper, Headline, Description } from './subcomponents/LeftPanel'
+import { DetailsPanel, TestimonialWrapper, Quote, Attribution } from './subcomponents/LeftPanel'
 import { testimonialContent } from '../types'
 import { useWindowWidth } from "../../../hooks";
 
@@ -10,10 +10,10 @@ export const TestimonialPanel = ({ content }) => {
   return (
     <Fragment>
       <DetailsPanel compact={isCompact}>
-        <DetailWrapper>
-          <Headline compact={isCompact}>{content.quote}</Headline>
-          <Description compact={isCompact}>{content.attribution}</Description>
-        </DetailWrapper>
+        <TestimonialWrapper compact={isCompact}>
+          <Quote compact={isCompact}>{content.quote}</Quote>
+          <Attribution compact={isCompact}>{content.attribution}</Attribution>
+        </TestimonialWrapper>
       </DetailsPanel>
     </Fragment>
   )
