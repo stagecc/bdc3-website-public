@@ -8,7 +8,7 @@ import { Overlay, Border, Wrapper, StyledPanelWrapper } from './panels/subcompon
 import { useTransition } from "react-spring";
 import { StateNote } from './panels/subcomponents/StateNote'
 
-const INTERVAL = 5000 // ms
+const INTERVAL = 10000 // ms
 
 export const Carousel = ({ panels }) => {
   const { isCompact } = useWindowWidth();
