@@ -11,7 +11,7 @@ export const TestimonialPanel = ({ content }) => {
     <Fragment>
       <DetailsPanel compact={isCompact}>
         <TestimonialWrapper compact={isCompact}>
-          <Quote compact={isCompact}>{content.quote}</Quote>
+          <Quote compact={isCompact}>"{content.quote}"</Quote>
           <Attribution compact={isCompact}>{content.attribution}</Attribution>
         </TestimonialWrapper>
       </DetailsPanel>
