@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useMemo } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import PropTypes from 'prop-types'
 import { useWindowWidth } from "../../hooks";
 import { panelType } from './types'
@@ -10,7 +10,18 @@ import { StateNote } from './panels/subcomponents/StateNote'
 
 const INTERVAL = 10000 // ms
 
+// chatgpt wrote this function :)
+const shuffleArray = array => {
+  for (let i = array.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1)); // Generate a random index from 0 to i
+    // Swap elements at index i and j using destructuring assignment
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+
 export const Carousel = ({ panels }) => {
+  const shuffledPanels = useMemo(() => shuffleArray(panels), [panels])
   const { isCompact } = useWindowWidth();
   const [carouselIndex, setCarouselIndex] = useState(0)
   const indexRef = useRef(carouselIndex);
@@ -68,7 +79,7 @@ export const Carousel = ({ panels }) => {
   }, [isCompact])
 
   const panelTransitions = useTransition(
-    panels[carouselIndex],
+    shuffledPanels[carouselIndex],
     item => item.key,
     // then use the transform here
     { ...panelTransitionTransform }
