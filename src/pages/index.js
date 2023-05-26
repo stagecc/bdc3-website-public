@@ -11,6 +11,7 @@ import SickleCellImage from "../images/sickle-cell.jpg";
 import BlurChartCheckUpCurve from "../images/blur-chart-check-up-curve.jpg";
 import { NewsFeedModule } from "../components/modules";
 import carouselData from "../data/data-carousel.json"
+import { VideoPlayer } from "../components/video-player"
 
 const IndexPage = () => {
   return (
@@ -49,7 +50,7 @@ const IndexPage = () => {
             </Paragraph>
           </CardBody>
           <CardBody>
-            embed https://youtu.be/enWIpA0aJb4
+            <VideoPlayer url="https://youtu.be/enWIpA0aJb4" controls={ true } />
           </CardBody>
         </Card>
 
