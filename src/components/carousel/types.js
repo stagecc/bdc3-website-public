@@ -43,7 +43,7 @@ export const statsContent = PropTypes.shape({
 export const datasetInfoContent = PropTypes.shape({
   headline: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  data: PropTypes.arrayOf(
+  datasets: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
     }).isRequired,
