@@ -35,7 +35,7 @@ const IndexPage = () => {
           <CardHeader size="large">What is NHLBI BioData Catalyst<sup>®</sup>&nbsp;(BDC)?</CardHeader>
           <CardBody>
             <Paragraph>
-              NHLBI BioData Catalyst® (BDC) is a cloud-based ecosystem that
+              NHLBI BioData Catalyst<sup>®</sup> (BDC) is a cloud-based ecosystem that
               offers researchers data, analytic tools, applications, and
               workflows in secure workspaces. It is a community where
               researchers can find, access, share, store, and analyze heart,
