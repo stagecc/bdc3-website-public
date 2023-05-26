@@ -20,7 +20,7 @@ export const statsContent = PropTypes.shape({
   stats: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
-      value: PropTypes.number.isRequired,
+      value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
     }).isRequired,
   ).isRequired,
 }).isRequired
