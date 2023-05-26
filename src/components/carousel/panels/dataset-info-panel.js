@@ -19,7 +19,10 @@ export const DatasetInfoPanel = ({ content }) => {
         <DataWrapper compact={isCompact}>
           <CarouselBulletedList compact={isCompact}>
             {content.datasets.map((datum, i) => (
-              <CarouselListItem key={`carousel-dataset-item-${i}`} compact={isCompact}>{datum.name}</CarouselListItem>
+              <CarouselListItem
+                key={`carousel-dataset-item-${i}`}
+                compact={isCompact}
+              >{datum.name}</CarouselListItem>
             ))}
           </CarouselBulletedList>
         </DataWrapper>
