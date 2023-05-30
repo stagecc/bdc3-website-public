@@ -81,7 +81,7 @@ a:active {
   text-decoration: none !important;
 }
 
-.outlined-button-link:hover, .outlined-button-link:focus,
-.filled-button:hover, .filled-button:focus {
+.button-link.outlined:hover, .button-link.outlined:focus,
+.button-link.filled:hover, .button-link.filled:focus {
   filter: brightness(1.2);
 }
