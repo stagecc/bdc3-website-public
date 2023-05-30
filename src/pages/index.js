@@ -11,6 +11,7 @@ import SickleCellImage from "../images/sickle-cell.jpg";
 import BlurChartCheckUpCurve from "../images/blur-chart-check-up-curve.jpg";
 import { NewsFeedModule } from "../components/modules";
 import carouselData from "../data/data-carousel.json"
+import { VideoPlayer } from "../components/video-player"
 
 const IndexPage = () => {
   return (
@@ -32,56 +33,24 @@ const IndexPage = () => {
 
         <Card>
           <CardHeader size="large">What is NHLBI BioData Catalyst<sup>®</sup>&nbsp;(BDC)?</CardHeader>
-          <CardBody image={{ placement: "right", path: SickleCellImage }}>
+          <CardBody>
             <Paragraph>
-              NHLBI BioData Catalyst<sup>®</sup> (BDC) is a cloud-based ecosystem providing tools,
-              applications, and workflows in secure workspaces. By increasing
-              access to NHLBI datasets and innovative data analysis
-              capabilities, BDC accelerates efficient biomedical
-              research that drives discovery and scientific advancement, leading
-              to novel diagnostic tools, therapeutics, and prevention strategies
-              for heart, lung, blood, and sleep disorders.
+              NHLBI BioData Catalyst<sup>®</sup> (BDC) is a cloud-based ecosystem that
+              offers researchers data, analytic tools, applications, and
+              workflows in secure workspaces. It is a community where
+              researchers can find, access, share, store, and analyze heart,
+              lung, blood, and sleep data resources. And it is one of NHLBI’s
+              data repositories, where researchers share scientific data from
+              NHLBI-funded research so they and others can reproduce findings
+              and reuse data to advance science. By increasing access to NHLBI
+              data and innovative analytic capabilities, BDC accelerates
+              reproducible biomedical research to drive scientific advances
+              that can help prevent, diagnose, and treat heart, lung, blood,
+              and sleep disorders.
             </Paragraph>
-            <Paragraph>
-              Though the primary goal of the BDC project is to
-              build a data science ecosystem, at its core, this is a
-              people-centric endeavor. BDC is also building a
-              community of practice working collaboratively to solve technical
-              and scientific challenges.
-            </Paragraph>
-            <Paragraph>
-              BDC allows researchers to find, access, share, store,
-              and compute on large scale datasets. In this ecosystem,
-              researchers are able to:
-            </Paragraph>
-            <BulletedList>
-              <ListItem
-                primary={
-                  `Utilize the many “out of the box” tools available on BDC to ease 
-                  the burden of designing and testing individual tools`
-                }
-              />{" "}
-              <ListItem
-                primary={`Establish and use secure workspaces for collaborative analysis
-                of NHLBI datasets and HLBS research by taking advantage of an
-                ecosystem that brings the computation to the data, not the data
-                to the computation`}
-              />{" "}
-              <ListItem
-                primary={`                Design and test tools that search and analyze the unique
-              characteristics of NHLBI datasets, and that also group data
-              based on certain shared characteristics so that researchers can
-              test hypotheses`}
-              />{" "}
-              <ListItem
-                primary={`Leverage a powerful and scalable infrastructure to share
-                  workflows, tools, datasets, and results for re-use by others`}
-              />{" "}
-              <ListItem
-                primary={`                Construct and enhance annotated metadata for NHLBI datasets that
-               comply with FAIR data principles`}
-              />
-            </BulletedList>
+          </CardBody>
+          <CardBody>
+            <VideoPlayer url="https://youtu.be/enWIpA0aJb4" controls={ true } />
           </CardBody>
         </Card>
 

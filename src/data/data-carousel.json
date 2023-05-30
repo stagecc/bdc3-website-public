@@ -3,21 +3,49 @@
     "key": 0,
     "type": "stats",
     "content": {
-      "headline": "Advancing access to TOPMed data",
-      "description": "BDC provides one point of entry to the most TOPMed datasets, including Freeze 8 data.",
+      "headline": "Prioritizing diverse data",
+      "description": "BDC provides access to the highly diverse TOPMed dataset.",
       "stats": [
-        { "name": "Participants", "value": "406,853" },
-        { "name": "Petabytes of Data", "value": "3.42" }
+        { "name": "Participants with phenotypes", "value": "285,093+" },
+        { "name": "Searchable and filterable variables", "value": "148,000+" }
       ]
     }
   },
   {
     "key": 1,
-    "type": "stats",
+    "type": "testimonial",
     "content": {
-      "headline": "Prioritizing diverse data",
-      "description": "BDC provides access to the highly diverse TOPMed dataset.",
-      "stats": [{ "name": "Participants with phenotypes", "value": "285,093" }]
+      "quote": "There’s no comparison; BDC's computation speed is much faster than local resources."      ,
+      "attribution": "Laura Raffield, University of North Carolina at Chapel Hill"
+    }
+  },
+  {
+    "key": 2,
+    "type": "dataset-info",
+    "content": {
+      "headline": "In-demand datasets",
+      "description": "BDC increases access to NHLBI datasets.",
+      "datasets": [
+        { "name": "COVID-19 Studies" },
+        { "name": "TOPMed Parent Studies and Freeze 9" },
+        { "name": "Sickle Cell Disease Studies" }
+      ]
+    }
+  },
+  {
+    "key": 3,
+    "type": "testimonial",
+    "content": {
+      "quote": "BDC allows you to do analyses effortlessly and has the infrastructure set up for you."      ,
+      "attribution": "Brandon Lê, Duke University"
+    }
+  },
+  {
+    "key": 4,
+    "type": "testimonial",
+    "content": {
+      "quote": "BDC offers me easier access to data and larger-scale analysis capabilities than I might otherwise have."      ,
+      "attribution": "Kenneth Westerman, Massachusetts General Hospital"
     }
   }
 ]

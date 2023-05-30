@@ -6,6 +6,7 @@ import { Hidden } from "react-grid-system";
 const CardBodyWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  height: 100%;
 `;
 
 const CardBodyGraphic = styled.div`
@@ -21,7 +22,7 @@ const CardBodyContents = styled.div.attrs({
   className: "card-body__contents"
 })`
   flex: 1;
-  padding: 1rem 2rem;
+  padding: 1rem 2rem 2rem;
   background-color: ${props => props.bgColor};
   color: ${props => props.fgColor};
 `;
@@ -48,11 +49,9 @@ export const CardBody = ({ children, image, style }) => {
       </Hidden>
       <CardBodyContents style={style}>{children}</CardBodyContents>
       <Hidden xs>
-        {image && image.path && image.placement === "right" ? (
+        {image && image.path && image.placement === "right" && (
           <CardBodyGraphic imagePath={image.path} />
-        ) : (
-          <br />
-        )}
+        ) }
       </Hidden>
     </CardBodyWrapper>
   );

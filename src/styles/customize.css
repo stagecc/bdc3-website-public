@@ -55,23 +55,33 @@ a:active {
 }
 
 .button-link {
-  background-color: "#fff";
   border-radius: 4px;
   display: inline-block;
   border-width: 1px;
   border-style: solid;
-  border-color: var(--color-crimson);
-  color: var(--color-crimson);
   padding: 1rem 1.5rem;
-  font-size: 100%;
-  text-transform: uppercase;
   text-decoration: none !important;
   white-space: nowrap;
-  cursor: pointer;
-  position: relative;
+  text-align: center;
+  text-transform: uppercase;
   transition: filter 250ms;
 }
 
-.button-link:hover, .button-link:focus {
+.button-link.outlined {
+  background-color: "#fff";
+  border-color: var(--color-crimson);
+  color: var(--color-crimson);
+  transition: filter 250ms;
+}
+
+.button-link.filled {
+  background-color: var(--color-crimson);
+  border-color: transparent;
+  color:  #fff;
+  text-decoration: none !important;
+}
+
+.button-link.outlined:hover, .button-link.outlined:focus,
+.button-link.filled:hover, .button-link.filled:focus {
   filter: brightness(1.2);
 }
