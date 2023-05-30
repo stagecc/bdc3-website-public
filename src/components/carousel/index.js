@@ -8,7 +8,7 @@ import { Overlay, Border, Wrapper, StyledPanelWrapper } from './panels/subcompon
 import { useTransition } from "react-spring";
 import { StateNote } from './panels/subcomponents/StateNote'
 
-const INTERVAL = 10000 // ms
+const INTERVAL = 7000 // ms
 
 // chatgpt wrote this function :)
 const shuffleArray = array => {
