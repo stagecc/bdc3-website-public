@@ -11,26 +11,13 @@ export const ResourceCard = ({ title, icon, children }) => {
         fgColor="#444"
         style={{ borderBottom: "1px solid var(--color-crimson" }}
       />
-      <CardBody style={{ position: "relative", display: 'flex' }}>
+      <CardBody style={{ position: "relative" }}>
         <div style={{ position: "absolute", top: "-2.5rem", left: "2rem" }}>
           <HexBadge>{icon}</HexBadge>
         </div>
-        <div style={{ 
-          flex:"1",
-          display: "flex",
-          flexDirection: "column",
-          marginTop: "2rem"
-        }}>
-          <h3 style={{ color: "var(--color-crimson)" }}>{title}</h3>
-          <div style={{
-            flex: "1",
-            display: 'flex', 
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-          }}>
-            {children}
-          </div> 
-        </div>
+        <LineBreak count={2} />
+        <h3 style={{ color: "var(--color-crimson)" }}>{title}</h3>
+        {children}
       </CardBody>
     </Card>
   );
