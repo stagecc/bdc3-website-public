@@ -1,5 +1,5 @@
 ---
-title: "BDC Researcher Showcase: Bridging the Precision Medicine Gap: Genomic Modeling for Deciphering Congenital Heart Disease (CHD) using Massively Parallel Reporter Assays (MPRAs)"
+title: "BDC Community Hours: BDC Researcher Showcase"
 path: /events/2023-06-21/community_hours
 date: 2023-06-21
 time: 1:00 - 2:00 pm EST
@@ -14,7 +14,7 @@ seo:
   title: "BDC Researcher Showcase: Bridging the Precision Medicine Gap: Genomic Modeling for Deciphering Congenital Heart Disease (CHD) using Massively Parallel Reporter Assays (MPRAs)"
   description:
 ---
-
+## Andrew Blair | Bridging the Precision Medicine Gap: Genomic Modeling for Deciphering Congenital Heart Disease (CHD) using Massively Parallel Reporter Assays (MPRAs)
 Join us on [Wednesday, June 21st at 1:00 pm ET](https://bit.ly/BDC-June) for a researcher showcase with [Bench2Bassinet PCGC/CDDRC Fellow](https://benchtobassinet.com/?page_id=2600) Andrew Blair, whose current research focuses on building CHD candidate regulatory element models for experimental characterization and functionalization. MPRA is a high-throughput experimental technique for systematically evaluating the functional activity of candidate DNA regulatory elements, such as promoters and enhancers. He will discuss an iterative approach for genomic modeling and experimental validation for assessing the functional impact of CHD variants. This research aims to accelerate the development of targeted therapies for individuals with CHD by bridging the gap between genomics and clinical applications.
 
 Even if you cannot attend the session live, you can still [register](http://bit.ly/BDC-June) to have the session recording and slides sent to you post-event.
