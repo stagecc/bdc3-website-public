@@ -22,16 +22,16 @@ const EventMetadataWrapper = styled.div`
   }
 `;
 const SpeakerImageWrapper = styled.div`
-  @media screen and (max-width: 500px){
+  @media screen and (max-width: 650px){
     width: 100%
   }
 `
 const SpeakerImage = styled(Img)`
   margin: 0 2rem 1rem 0;
-  width: 300px;
+  width: 240px;
   filter: drop-shadow(10px 10px 8px rgba(0, 0, 0, 0.1));
   float: left;
-  @media screen and (max-width: 500px){
+  @media screen and (max-width: 650px){
     float: none;
     margin: 0 auto 1rem;
   }
