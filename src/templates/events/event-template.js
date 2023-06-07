@@ -21,7 +21,21 @@ const EventMetadataWrapper = styled.div`
     margin: 0;
   }
 `;
-
+const SpeakerImageWrapper = styled.div`
+  @media screen and (max-width: 650px){
+    width: 100%
+  }
+`
+const SpeakerImage = styled(Img)`
+  margin: 0 2rem 1rem 0;
+  width: 240px;
+  filter: drop-shadow(10px 10px 8px rgba(0, 0, 0, 0.1));
+  float: left;
+  @media screen and (max-width: 650px){
+    float: none;
+    margin: 0 auto 1rem;
+  }
+`
 const PastEventAlert = ({forum_post}) => {
   return (
       <Card metaAlert>
@@ -121,6 +135,7 @@ export default ({ data, pageContext }) => {
     forum_post,
     registration_required,
     flyer,
+    speakerImage,
     seo,
   } = frontmatter;
 
@@ -175,6 +190,12 @@ export default ({ data, pageContext }) => {
           )}
 
           <Module title="Event Details">
+            {
+              speakerImage && (
+                <SpeakerImageWrapper>
+                  <SpeakerImage fluid={speakerImage.childImageSharp.fluid}/>
+                </SpeakerImageWrapper>
+              )}
             <Markdown src={ rawMarkdownBody } />
           </Module>
 
@@ -254,6 +275,13 @@ export const newsItemQuery = graphql`
         forum_post
         tags
         registration_required
+        speakerImage {
+          childImageSharp {
+            fluid(maxWidth: 400) {
+              ...GatsbyImageSharpFluid
+            }
+          }  
+        }
         flyer {
           childImageSharp {
             fluid(maxWidth: 400) {
