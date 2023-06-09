@@ -1,18 +1,23 @@
 -
-  title: "Cloud-based biomedical data storage and analysis for genomic research: Landscape analysis of data governance in emerging NIH-supported platforms"
-  date: 2023-04-11
-  location: HGG Advances
-  url: https://www.cell.com/hgg-advances/fulltext/S2666-2477(23)00028-3
--
   title: "The genetic determinants of recurrent somatic mutations in 43,693 blood genomes"
   date: 2023-04-26
   location: Science Advances
   url: https://www.science.org/doi/10.1126/sciadv.abm4945
 -
+  title: "Cloud-based biomedical data storage and analysis for genomic research: Landscape analysis of data governance in emerging NIH-supported platforms"
+  date: 2023-04-11
+  location: HGG Advances
+  url: https://www.cell.com/hgg-advances/fulltext/S2666-2477(23)00028-3
+-
   title: "Direct estimation of regional lung volume change from paired and single CT images using residual regression neural network"
   date: 2023-03-17
   location: Medical Physics
   url: https://doi.org/10.1002/mp.16365
+-
+  title: "Genetic Modifiers of Cystic Fibrosis Lung Disease Severity: Whole-Genome Analysis of 7,840 Patients"
+  date: 2023-02-27
+  location: American Journal of Respiratory and Critical Care Medicine
+  url: https://www.atsjournals.org/doi/full/10.1164/rccm.202209-1653OC
 -
   title: "Powerful, scalable and resource-efficient meta-analysis of rare variant associations in large whole genome sequencing studies"
   date: 2022-12-23
