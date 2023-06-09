@@ -21,7 +21,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm i --legacy-peer-deps
+        run: npm ci --legacy-peer-deps
 
       - name: Write current date to environment variable
         run: echo "DATE=$(date +'%Y-%m-%d-%I.%M.%S%p')" >> $GITHUB_ENV
