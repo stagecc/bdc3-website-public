@@ -1278,6 +1278,15 @@
     "Subject Count": 2099
   },
   {
+    "Accession": "phs001961.v2.p1",
+    "Cohort Abbreviation": "MALD_GRU",
+    "Name": "LungMAP: Molecular Atlas of Lung Development – Human Lung Tissue",
+    "Description": "Mammalian fetal lung development is a complex biological process. Despite considerable progress, a comprehensive understanding of the dynamic regulatory networks that govern postnatal alveolar lung development is still lacking. The purpose of this study as part of the LungMAP consortium (www.lungmap.net) is to understand the transcriptional changes in the process of mammalian lung development. Study Weblinks: NCBI GEO GSE161383 Study Design:     Control Set Study Type:LongitudinalSubject Sample Telemetry Report (SSTR) NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/ on 2023-06-01 and may not include exact formatting or images.",
+    "Consent Code": "c1",
+    "Consent Short": "phs001961.v2.p1.c1",
+    "Subject Count": 20
+  },
+  {
     "Accession": "phs002348.v1.p1",
     "Cohort Abbreviation": "MSH",
     "Name": "Multicenter Study of Hydroxyurea (MSH)",
@@ -1348,6 +1357,15 @@
     "Consent Code": "c1",
     "Consent Short": "phs002808.v1.p1.c1",
     "Subject Count": 8872
+  },
+  {
+    "Accession": "phs003212.v1.p1",
+    "Cohort Abbreviation": "Eculizumab_GRU",
+    "Name": "Complement Inhibition Using Eculizumab to Overcome Platelet Transfusion Refractoriness in Patients with Severe Thrombocytopenia (DIR-Eculizumab_GRU)",
+    "Description": "Platelet transfusion can be a life-saving procedure in preventing or treating serious bleeding in patients who have low and/or dysfunctional platelets. Heavily transfused patients frequently develop human leukocyte antigen (HLA) allo-immunization resulting in platelet transfusion refractoriness and a high risk for life-threatening thrombocytopenia. Data suggest complement activation leading to the destruction of platelets bound by HLA allo-antibodies may play a pathophysiologic role in platelet refractoriness. We conducted a pilot trial to investigate the use of eculizumab to treat platelet transfusion refractoriness in allo-immunized patients with severe thrombocytopenia. We hypothesized that when we treated patients having platelet refractoriness with eculizumab, platelet counts would increase to higher numbers after platelet transfusions, decreasing the risk of bleeding complications associated with having a low platelet count. The response of the treatment was assessed by the corrected platelet count increment (CCI) 10 - 60 min and 18 - 24 h post transfusion, and any requirement for subsequent platelet transfusions following eculizumab. Reference 1 (PMID: 32086819) contains the main results for this trial.  Study Design:     Clinical Trial Study Type:Clinical TrialSubject Sample Telemetry Report (SSTR) NOTE: This text was scraped from https://www.ncbi.nlm.nih.gov/ on 2023-06-01 and may not include exact formatting or images.",
+    "Consent Code": "c1",
+    "Consent Short": "phs003212.v1.p1.c1",
+    "Subject Count": 10
   },
   {
     "Accession": "",
