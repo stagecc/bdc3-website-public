@@ -8,10 +8,10 @@ import { PageContent } from "../components/layout";
 import { Visible } from "react-grid-system";
 import { HorizontalRule } from "../components/horizontal-rule";
 import { Link } from "../components/link";
+import { Markdown } from '../components/markdown'
 
 export default ({ data, pageContext }) => {
-  const { markdownRemark } = data;
-  const { frontmatter, html } = markdownRemark;
+  const { markdownRemark: { frontmatter, rawMarkdownBody } } = data;
   const { prev, next } = pageContext;
 
   return (
@@ -36,10 +36,7 @@ export default ({ data, pageContext }) => {
               ))}
             />
           </Meta>
-          <div
-            className="article-content"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
+          <Markdown src={ rawMarkdownBody } />
         </div>
       </div>
 
@@ -78,7 +75,7 @@ export default ({ data, pageContext }) => {
 export const newsItemQuery = graphql`
   query($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
+      rawMarkdownBody
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         path
