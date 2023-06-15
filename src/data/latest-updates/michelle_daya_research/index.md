@@ -4,13 +4,12 @@ date: 2021-12-10
 title: "BioData Catalyst Used for Genomics Research on Link Between Genetic Risk and Allergic Disease"
 subtitle: ""
 tags: ["blog", "asthma", "GWAS", "HLA", "multiethnic", "diversity", "allergies", "cloud computing"]
+speakerImage: './daya-michelle.jpg'
 seo:
   title: "BioData Catalyst Used for Genomics Research on Link Between Genetic Risk and Allergic Disease"
   description: ""
   keywords: ["blog", "asthma", "GWAS", "HLA", "multiethnic", "diversity", "allergies", "cloud computing"]
 ---
-
-![Michelle Daya, PhD](https://biodatacatalyst.nhlbi.nih.gov/static/13bc7a10c99bbf5551019e5d8871c31d/35b9b/daya-michelle.jpg)
 
 *Michelle Daya, PhD, is a human genetics researcher, with a focus on how genetic makeup influences risk for developing common allergies such as asthma and eczema. Her research was supported in part by the BioData Catalyst Fellowship Program, which she participated in during [Cohort I](https://biodatacatalyst.nhlbi.nih.gov/fellows/cohort1/). For her study, [Multiethnic genome-wide and HLA association study of total serum IgE level](https://pubmed.ncbi.nlm.nih.gov/34536413/), she leveraged data from the National Heart, Lung and Blood Institute (NHLBI) Trans-Omics for Precision Medicine (TOPMed) program; the Consortium on Asthma among African-ancestry Populations in the Americas (CAAPA); and the Atopic Dermatitis Research Network (ADRN).*
 
