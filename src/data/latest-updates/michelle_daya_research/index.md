@@ -1,5 +1,5 @@
 ---
-path: /latest-updates/Michelle_daya_research
+path: /latest-updates/michelle_daya_research
 date: 2021-12-10
 title: "BioData Catalyst Used for Genomics Research on Link Between Genetic Risk and Allergic Disease"
 subtitle: ""
