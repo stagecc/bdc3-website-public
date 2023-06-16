@@ -21,13 +21,14 @@ export const NewsFeedModule = () => {
       {news.map((article) => (
         <ArticlePreview key={article.title}>
           <ArticleDate>{article.date}</ArticleDate>
-          <Subheading>
+          <Subheading noMargin>
             <Link to={article.path}>{article.title}</Link>
           </Subheading>
-          <Paragraph>
+          <Paragraph noMargin>
             {article.excerpt}
             &nbsp;&nbsp;&nbsp;<Link to={article.path}>Read More</Link>
           </Paragraph>
+          <br/>
         </ArticlePreview>
       ))}
     </div>
