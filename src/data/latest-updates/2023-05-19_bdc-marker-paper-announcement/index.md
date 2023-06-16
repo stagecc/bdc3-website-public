@@ -10,7 +10,7 @@ seo:
   keywords: ["news", "publication"]
 ---
 
-This week, the Journal of the American Medical Informatics Association (JAMIA) <a href="https://academic.oup.com/jamia/advance-article/doi/10.1093/jamia/ocad048/7165700?searchresult=1" target="_blank" rel="noopener noreferrer">published the BDC Consortium’s manuscript</a> about the BDC ecosystem and some of its early successes. Authored by several members of the BDC Consortium (representatives from many organizations working with the National Heart, Lung, and Blood Institute (NHLBI) to develop the ecosystem), the article offers readers a glimpse into what BDC is, what it does, and how it can help investigators attain their research goals.
+This week, the Journal of the American Medical Informatics Association (JAMIA) [published the BDC Consortium’s manuscript](https://academic.oup.com/jamia/advance-article/doi/10.1093/jamia/ocad048/7165700?searchresult=1) about the BDC ecosystem and some of its early successes. Authored by several members of the BDC Consortium (representatives from many organizations working with the National Heart, Lung, and Blood Institute (NHLBI) to develop the ecosystem), the article offers readers a glimpse into what BDC is, what it does, and how it can help investigators attain their research goals.
 
 As a cloud-based ecosystem, BDC provides tools, applications, and workflows that can be collaboratively used in secure workspaces. It helps researchers mine and properly use data resources and lets them interact with the data in various ways based on their knowledge and experience. The ecosystem provides a venue to advance our understanding of health and disease further and create novel diagnostics, therapies, and prevention strategies. 
 
