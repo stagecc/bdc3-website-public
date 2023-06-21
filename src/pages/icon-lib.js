@@ -290,7 +290,7 @@ const IconsPage = () => {
             const Icon = icon.component
 
             return (
-              <div style={{display: 'flex', flexDirection: 'column', border: '1px solid black', width: "250px",  alignItems: "center", margin: '1rem', padding: "2rem"}}>
+              <div style={{display: 'flex', flexDirection: 'column', border: '1px solid black', width: "250px",  alignItems: "center", margin: '1rem', padding: "2rem", backgroundColor: "#FFF"}}>
                 <Icon size={iconSize} fill={iconFill} style={iconStyle}></Icon>
                 <br/>
                 {icon.name}
