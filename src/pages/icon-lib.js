@@ -1,8 +1,6 @@
 import React from "react";
 import { PageContent } from "../components/layout";
 import { Title } from "../components/typography";
-import * as Icons from '../components/icons'
-import { HexBadge } from "../components/badge";
 import {
   BackspaceIcon,
   BlogIcon,
@@ -57,9 +55,8 @@ import {
   YoutubeIcon,
   EstimateIcon,
   JoinIcon} from "../components/icons";
+
 const IconsPage = () => {
-  console.log(Icons)
-  console.log(BlogIcon)
   const iconSize="120"
   const iconFill="#000"
   const iconStyle={
