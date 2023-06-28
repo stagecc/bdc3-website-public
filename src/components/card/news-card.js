@@ -1,6 +1,5 @@
 import React from "react";
-import { Card, CardHeader, CardBody } from ".";
-import { Heading, Paragraph } from "../../components/typography";
+import { Paragraph } from "../../components/typography";
 import styled from "styled-components";
 import { ExternalLinkIcon } from "../icons";
 import { Link } from "../../components/link"

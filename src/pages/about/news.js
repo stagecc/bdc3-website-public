@@ -1,10 +1,8 @@
 import React from "react";
-import styled from "styled-components";
-import { Link } from "../../components/link";
 import { PageContent } from "../../components/layout";
 import { Title, Paragraph } from "../../components/typography";
 import { SEO } from "../../components/seo";
-import { NewsCard, CardHeader, CardBody } from "../../components/card";
+import { NewsCard } from "../../components/card";
 import { Container as Grid, Row, Col } from "react-grid-system";
 import newsCoverage from '../../data/newsCoverage.json'
 

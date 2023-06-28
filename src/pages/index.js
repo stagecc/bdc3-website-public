@@ -5,9 +5,7 @@ import { Card, CardHeader, CardBody } from "../components/card";
 import { PageContent, Container } from "../components/layout";
 import { Carousel } from "../components/carousel";
 import { HexMenu } from "../components/menus";
-import { BulletedList, ListItem } from "../components/list";
 import { Hidden } from "react-grid-system";
-import SickleCellImage from "../images/sickle-cell.jpg";
 import BlurChartCheckUpCurve from "../images/blur-chart-check-up-curve.jpg";
 import { NewsFeedModule } from "../components/modules";
 import carouselData from "../data/data-carousel.json"
