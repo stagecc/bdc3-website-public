@@ -32,11 +32,6 @@ const resources = [
           "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/release-notes"
       },
       {
-        text: "Dockstore Documentation",
-        url:
-          "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/analyze-data/dockstore"
-      },
-      {
         text: "Gen3 Documentation",
         url:
           "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/explore_data/gen3-discovering-data"
@@ -72,10 +67,6 @@ const resources = [
         url: "https://www.youtube.com/channel/UCGkmY5oNK8uFZzT8vV_9KgQ"
       },
       {
-        text: "Dockstore Videos",
-        url: "https://www.youtube.com/channel/UCFWNYqxQvVLAuZq8rdOSE4g/videos"
-      },
-      {
         text: "Gen3 Videos",
         url: "https://gen3.org/community/webinars/"
       },
@@ -104,10 +95,6 @@ const resources = [
         url: "https://bdcatalyst.freshdesk.com/support/solutions"
       },
       {
-        text: "Dockstore FAQs",
-        url: "https://docs.dockstore.org/en/develop/faq.html"
-      },
-      {
         text: "Gen3 FAQs",
         url:
           "https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/explore_data/gen3-discovering-data"
@@ -128,10 +115,6 @@ const resources = [
       {
         text: "BDC Forum",
         url: "https://bdcatalyst.freshdesk.com/support/discussions/60000024585"
-      },
-      {
-        text: "Dockstore Forum",
-        url: "https://gitter.im/ga4gh/dockstore"
       },
       {
         text: "Gen3 Forum",
@@ -183,10 +166,6 @@ const resources = [
     icon: <EventsIcon size={42} fill="#fff" />,
     description: "Find upcoming BDC events or view the archive.",
     links: [
-      {
-        text: "Dockstore News & Events",
-        url: "https://docs.dockstore.org/en/develop/news.html"
-      },
       {
         text: "Gen3 Announcements",
         url: "https://forums.gen3.org/c/announcements/6"
