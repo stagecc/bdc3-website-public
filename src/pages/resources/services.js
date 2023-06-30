@@ -41,12 +41,6 @@ const ServicesPage = ({ data }) => {
         platforms.find(platform => platform.frontmatter.title.includes("Seven Bridges")),
         platforms.find(platform => platform.frontmatter.title.includes("Terra")),
       ],
-    },
-    {
-      title: "Use Community Tools on Controlled-access Datasets",
-      platforms: [
-        platforms.find(platform => platform.frontmatter.title.includes("Dockstore")),
-      ],
     }
   ];
 
