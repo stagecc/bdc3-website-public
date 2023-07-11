@@ -6,7 +6,7 @@ time: 1:00 - 2:00 pm EST
 display_date: Wednesday, June 21, 2023
 location: "Zoom"
 url: https://bit.ly/BDC-June
-forum_post: https://bdcatalyst.freshdesk.com/support/discussions/forums/60000252439
+forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000407484
 registration_required: true
 tags: [community hours]
 speakerImage: './2023-06-21_Community-Hours_Andrew-Blair.png'
