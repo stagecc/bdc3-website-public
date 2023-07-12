@@ -133,8 +133,8 @@ export const CloudCreditsForm = (props) => {
       `Company/Organization: ${organization} ~~~~~ ` +
       `Collaborators: ${collaborators} ~~~~~ ` +
       `Is your research related to HLBS?: ${relatedResearch} ~~~~~ ` +
-      `How did you learn about BioData Catalyst?: ${how} ~~~~~ ` +
-      `BioData Catalyst users may request one of the following: ${cloudCreditsRequest} ~~~~~ ` +
+      `How did you learn about BDC?: ${how} ~~~~~ ` +
+      `BDC users may request one of the following: ${cloudCreditsRequest} ~~~~~ ` +
       `Select your preferred analysis platform (or choose to explore both) ${preferedAnalysisPlatform} ~~~~~ ` +
       `Project Name & Description: ${project} ~~~~~ ` +
       `Justification for Credits: ${justification} ~~~~~ ` +
@@ -564,7 +564,7 @@ export const CloudCreditsForm = (props) => {
           </FormControl>
           <FormControl>
             <label htmlFor="how">
-              How did you learn about BioData Catalyst?
+              How did you learn about BDC?
             </label>
             <TextArea
               id="how"
@@ -575,7 +575,7 @@ export const CloudCreditsForm = (props) => {
           </FormControl>
           <FormControl>
             <label htmlFor="cloudCreditsRequest">
-              BioData Catalyst users may request one of the following: *
+              BDC users may request one of the following: *
             </label>
             <Select
               required
