@@ -40,7 +40,7 @@ const ErrorMessage = () => {
   return (
     <Fragment>
       <Paragraph center>
-        The email address provided is already associated with a BioData Catalyst
+        The email address provided is already associated with a BDC
         account. For questions, please email{" "}
         <a href="mailto: biodatacatalyst@nhlbi.nih.gov">
           biodatacatalyst@nhlbi.nih.gov
@@ -286,7 +286,7 @@ export const EcoSystemForm = (props) => {
             </FormControl>
             <FormControl>
               <label htmlFor="interest">
-                Why are you interested in NHLBI BioData Catalyst?
+                Why are you interested in NHLBI BDC?
               </label>
               <Select
                 id="interest"
@@ -308,7 +308,7 @@ export const EcoSystemForm = (props) => {
             </FormControl>
             <FormControl>
               <label htmlFor="referral">
-                How did you learn about BioData Catalyst? *
+                How did you learn about BDC? *
               </label>
               <TextArea
                 required
