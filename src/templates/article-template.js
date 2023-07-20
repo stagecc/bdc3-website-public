@@ -60,6 +60,20 @@ export default ({ data, pageContext }) => {
             </SpeakerImageWrapper>
           )}
           <Markdown src={ rawMarkdownBody } />
+          <HorizontalRule />
+
+          {/* author block */}
+          {frontmatter.authors && frontmatter.authors.map((author)=> (
+            <div>
+              {author.name && (
+                <h3>{author.name}</h3>
+              )}
+              {author.description && (
+                <Markdown src={author.description}/>
+              )}
+            </div>
+          ))}
+
         </div>
       </div>
 
@@ -116,6 +130,10 @@ export const newsItemQuery = graphql`
               ...GatsbyImageSharpFluid
             }
           }  
+        }
+        authors {
+					name
+          description
         }
       }
     }
