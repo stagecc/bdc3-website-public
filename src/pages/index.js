@@ -12,6 +12,7 @@ import BlurChartCheckUpCurve from "../images/blur-chart-check-up-curve.jpg";
 import { NewsFeedModule } from "../components/modules";
 import carouselData from "../data/data-carousel.json"
 import { VideoPlayer } from "../components/video-player"
+import { SearchForm } from "../components/search"
 
 const IndexPage = () => {
   return (
@@ -30,6 +31,9 @@ const IndexPage = () => {
           <HexMenu />
         </Hidden>
 
+        <SearchForm />
+
+        <br /><br />
 
         <Card>
           <CardHeader size="large">What is NHLBI BioData Catalyst<sup>®</sup>&nbsp;(BDC)?</CardHeader>
