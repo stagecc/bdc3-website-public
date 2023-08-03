@@ -11,7 +11,7 @@ const SearchButton = styled(Button)`
   border-bottom-left-radius: 0;
 `
 
-export const DugForm = ({ focusOnMount = false, compact, style }) => {
+export const SearchForm = ({ focusOnMount = false, compact, style }) => {
   const inputField = useRef()
 
   const doSearch = event => {
