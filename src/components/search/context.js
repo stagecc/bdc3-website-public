@@ -46,6 +46,7 @@ export const SearchProvider = ({ children }) => {
   const [resultCount, setResultsCount] = useState(0)
   const [pageCount, setPageCount] = useState(0)
   const [currentPage, setCurrentPage] = useState(1)
+  const [selectedResult, setSelectedResult] = useState(null)
 
   useEffect(() => {
     if (!location.search) {
@@ -117,6 +118,7 @@ export const SearchProvider = ({ children }) => {
       isLoading,
       results,
       resultCount, pageCount, currentPage,
+      selectedResult, setSelectedResult,
     }}>
       { children }
     </DugSearchContext.Provider>
