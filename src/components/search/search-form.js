@@ -15,7 +15,7 @@ const SearchButton = styled(Button)`
 `
 
 export const SearchForm = ({ focusOnMount = false, compact, style }) => {
-  const { doSearch, query, setQuery } = useSearch()
+  const { doSearch, query } = useSearch()
   const [formQuery, setFormQuery] = useState(query)
   const inputField = useRef()
 
