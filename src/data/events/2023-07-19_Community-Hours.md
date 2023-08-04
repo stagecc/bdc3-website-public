@@ -6,7 +6,7 @@ time: 1:00 - 2:00 pm EST
 display_date: Wednesday, July 19, 2023
 location: "Zoom"
 url: https://bit.ly/BDC-July
-forum_post: https://bdcatalyst.freshdesk.com/support/discussions/forums/60000252439
+forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000407512
 registration_required: true
 tags: [community hours]
 seo:
