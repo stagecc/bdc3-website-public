@@ -66,6 +66,14 @@ const DataPage = ({ data, location }) => {
             </span>
           }
         />
+                <ListItem
+          primary={
+            <span>
+              Hydroxyurea to Prevent Organ Damage in Children with Sickle Cell Anemia
+              (<Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002415.v1.p1 ">BABY HUG</Link>)
+            </span>
+          }
+        />
         <ListItem
           primary={
             <span>
