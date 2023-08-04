@@ -66,7 +66,7 @@ const DataPage = ({ data, location }) => {
             </span>
           }
         />
-                <ListItem
+        <ListItem
           primary={
             <span>
               Hydroxyurea to Prevent Organ Damage in Children with Sickle Cell Anemia
