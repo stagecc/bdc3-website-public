@@ -1,25 +1,29 @@
-import React, { Fragment, useCallback, useState } from "react";
+import React, { Fragment, useCallback, useMemo } from "react";
 import { useSearch } from './context'
 import {
   Box,
   Grid,
-  Pagination,
   Stack,
 } from '@mui/material'
 import { Dots } from '../loading'
+import { Link } from '../link'
 import { ResultDetails } from './result-details'
+import InfiniteScroll from 'react-infinite-scroll-component'
 
 //
 
-const ResultCard = ({ result, onClick }) => {
+const ResultCard = ({ index, result }) => {
+  const { setSelectedResult } = useSearch()
+
   return (
     <Box
+      onClick={ () => setSelectedResult(result) }
       as="pre"
       sx={{
         backgroundColor: '#eee',
         whiteSpace: 'pre-wrap',
         fontSize: '75%',
-        overflow: 'hidden',
+        overflow: 'auto',
         maxHeight: '300px',
         border: '1px solid var(--color-blueberry)',
         cursor: 'pointer',
@@ -28,79 +32,112 @@ const ResultCard = ({ result, onClick }) => {
         transition: 'filter 250ms',
         '&:hover': {
           filter: 'opacity(1.0)',
-        }
-      }}
+        },
+        display: 'block',
+        position: 'relative',
+        '&::after': {
+          position: 'absolute',
+          top: '0.5rem',
+          right: '0.5rem',
+          content: `"${ index + 1 }"`,
+          borderBottom: '1px solid var(--color-blueberry)',
+          borderLeft: '1px solid var(--color-blueberry)',
+          p: '0.25rem 0.25rem 0.5rem 0.5rem',
+        },
+    }}
     >{ JSON.stringify(result, null, 1) }</Box>
   )
 }
 
+const Loader = () => {
+  return (
+    <Box sx={{
+      minHeight: '400px',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+    }}><Dots textPlacement="top" /></Box>
+  )
+}
+
+const Suggestions = ({ concepts = [] }) => {
+  if (concepts.length) {
+    return (
+      <Box>
+        You might try continuing your search with one of these related concepts:
+        <br />
+        <ul>
+          {
+            concepts.map(concept => (
+              <li key={ `related_${ concept }` }>
+                <Link to={ `/search?q=${ concept }` }>{ concept }</Link>
+              </li>
+            ))
+          }
+        </ul>
+      </Box>
+    )
+  }
+  return <span />
+}
+
 export const Results = () => {
   const {
-    currentPage, doSearch, isLoading, pageCount, query, PER_PAGE,
-    resultCount, results, setSelectedResult,
+    currentPage, fetchConcepts, isLoading, pageCount, query, relatedConcepts, results,
   } = useSearch()
 
-  const ResultsHeader = useCallback(() => {
-    const resultSpan = `${ (currentPage - 1) * PER_PAGE + 1 } to ${ Math.min(currentPage * PER_PAGE, resultCount) }`
+  const canLoadMore = useMemo(() => currentPage < pageCount, [currentPage, pageCount])
+
+  const loadMore = useCallback(() => {
+    fetchConcepts(query, currentPage + 1)
+  }, [fetchConcepts, query, currentPage])
+
+  const EndMessage = () => {
+    if (isLoading) return <span />
     return (
-      <Stack
-        direction={{ xs: 'column', md: 'row' }}
-        sx={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          gap: '2rem',
-        }}
-      >
-        <Box>Showing { resultSpan } of { resultCount } concepts found for &ldquo;{ query }&rdquo;</Box>
-        <Pagination
-          defaultPage={ 1 }
-          page={ currentPage }
-          count={ pageCount }
-          onChange={ (event, page) => doSearch(query, page) }
-        />
+      <Stack justifyContent="center" alignItems="center" style={{ height: '300px' }} gap={ 3 }>
+        {
+          results.length ? (
+            <Fragment>
+              <Box>You've reached the end of this thread!</Box>
+              <Suggestions concepts={ relatedConcepts } />
+            </Fragment>
+          ) : <Box>No results!</Box>
+        }
       </Stack>
     )
-  }, [currentPage, doSearch, pageCount, PER_PAGE, query, resultCount])
+  }
+
+  if (query === '') {
+    return (
+      <Stack justifyContent="center" alignItems="center" style={{ height: '300px' }}>
+        Use the text field aboe to search for concepts in the BioData Catalyst ecosystem!
+      </Stack>
+    )
+  }
 
   return (
     <Fragment>
-      <br />
-  
-      {
-        isLoading ? (
-          <Box sx={{
-            minHeight: '400px',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}><Dots textPlacement="top" /></Box>
-        ) : (
-          <Fragment>
-            <ResultsHeader />
+      <InfiniteScroll
+        dataLength={ results.length }
+        next={ loadMore }
+        hasMore={ canLoadMore }
+        endMessage={ <EndMessage /> }
+      >
+        <Grid container spacing={{ xs: 2, md: 3 }}>
+          {
+            results.map((result, i) => (
+              <Grid item key={ `${i}_${result.id}` } xs={ 12 } md={ 6 }>
+                <ResultCard result={ result } index={ i } />
+              </Grid>
+            ))
+          }
+        </Grid>
+      </InfiniteScroll>
 
-            <Grid container spacing={{ xs: 2, md: 3 }}>
-              {
-                results.map((result, i) => (
-                  <Grid item key={ `${i}_${result.id}` }
-                    xs={ 12 } md={ 6 }
-                    onClick={ () => setSelectedResult(result) }
-                  >
-                    <ResultCard result={ result } />
-                  </Grid>
-                ))
-              }
-            </Grid>
-
-            <br />
-
-            <ResultsHeader />
-          </Fragment>
-        )
-      }
+      { isLoading && <Loader /> }
 
       <ResultDetails />
-      
     </Fragment>
   )
 }
