@@ -1,15 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useSearch } from './context'
 import {
-  Box,
   Button,
   Dialog, 
   DialogActions,
   DialogContent,
-  DialogContentText,
   DialogTitle,
   Divider,
-  Typography,
 } from '@mui/material'
 
 //
@@ -18,8 +15,7 @@ export const ResultDetails = () => {
   const { selectedResult, setSelectedResult } = useSearch()
   const [open, setOpen] = useState(false)
   
-  const handleOpen = () => setOpen(true)
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     setOpen(false)
     // we'll want the closing animation to finish before deselecting the result,
     // otherwise the dialog will immediately unmount. not so nice.
@@ -28,19 +24,18 @@ export const ResultDetails = () => {
     }, 150)
     // and cleanup.
     return () => clearTimeout(deselectTimeout)
-  }
+  }, [setSelectedResult])
 
   useEffect(() => {
-    // we're in here is selectedResult has changed.
+    // we're in here if selectedResult has changed.
     // if there is no selected result, then the dialog should not be open.
     if (!selectedResult) {
       handleClose()
     }
-    // then we must have a result to look at.
-    // initiate the opening of the dialog,
-    // provided it isn't already open.
-    !open && handleOpen()
-  }, [selectedResult])
+    // then we must have a result to look at,
+    // so open the dialog.
+    setOpen(true)
+  }, [handleClose, open, selectedResult])
 
   // bail out early if the dialog isn't open.
   if (!selectedResult) {
