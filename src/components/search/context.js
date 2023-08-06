@@ -35,6 +35,7 @@ export const SearchProvider = ({ children }) => {
   const [pageCount, setPageCount] = useState(0)
   const [currentPage, setCurrentPage] = useState(1)
   const [selectedResult, setSelectedResult] = useState(null)
+  const [facets, setFacets] = useState([])
 
   const relatedConcepts = useMemo(() => {
     // this is a naive ranking. improvement needed.
@@ -75,6 +76,7 @@ export const SearchProvider = ({ children }) => {
       if (result?.hits) {
         const hits = result.hits.hits.map(r => r._source)
         setPageCount(Math.ceil(result.total_items / PER_PAGE))
+        setFacets([...Object.keys(result.concept_types)])
         if (page === 1) {
           setResults(hits)
         } else {
@@ -127,7 +129,8 @@ export const SearchProvider = ({ children }) => {
     <DugSearchContext.Provider value={{
       PER_PAGE, query,
       doSearch, fetchConcepts, isLoading,
-      results, pageCount, currentPage,
+      results, facets,
+      pageCount, currentPage,
       selectedResult, setSelectedResult,
       relatedConcepts,
     }}>
