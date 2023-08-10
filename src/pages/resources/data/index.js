@@ -69,14 +69,6 @@ const DataPage = ({ data, location }) => {
         <ListItem
           primary={
             <span>
-              Hydroxyurea to Prevent Organ Damage in Children with Sickle Cell Anemia
-              (<Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002415.v1.p1 ">BABY HUG</Link>)
-            </span>
-          }
-        />
-        <ListItem
-          primary={
-            <span>
               Sickle Cell Disease Datasets
               <BulletedList>
                 <ListItem
@@ -92,6 +84,14 @@ const DataPage = ({ data, location }) => {
                     <span>
                       Hematopoietic Cell Transplant for Sickle Cell Disease
                       (<Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002385.v1.p1">HCT for SCD</Link>)
+                    </span>
+                  }
+                />
+                <ListItem
+                  primary={
+                    <span>
+                      Hydroxyurea to Prevent Organ Damage in Children with Sickle Cell Anemia
+                      (<Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002415.v1.p1 ">BABY HUG</Link>)
                     </span>
                   }
                 />
