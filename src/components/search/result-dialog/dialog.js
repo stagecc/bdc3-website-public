@@ -1,0 +1,161 @@
+import React, { useCallback, useEffect, useState } from "react";
+import {
+  Box,
+  Button,
+  Dialog, 
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  Divider,
+  Stack,
+  Tab,
+  Tabs,
+  Typography,
+} from '@mui/material'
+import { useSearch } from '../context'
+import { StudiesTab } from './tabs'
+
+//
+
+const TabPanel = ({ children, value, index, ...other }) => {
+  return (
+    <Box
+      role="tabpanel"
+      hidden={value !== index}
+      id={`tabpanel-${index}`}
+      aria-labelledby={`tab-${index}`}
+      sx={{ position: 'relative', overflow: 'scroll', maxHeight: '100%' }}
+      {...other}
+    >
+      {value === index && children}
+    </Box>
+  )
+}
+
+export const ResultDialog = () => {
+  const { fetchStudies, query, selectedResult, setSelectedResult } = useSearch()
+  const [open, setOpen] = useState(false)
+  const [tabIndex, setTabIndex] = useState(0)
+  const [studies, setStudies] = useState([])
+  const [loadingStudies, setLoadingStudies] = useState(true)
+  
+  const handleClose = useCallback(() => {
+    setOpen(false)
+    // we'll want the closing animation to finish before deselecting the result,
+    // otherwise the dialog will immediately unmount. not so nice.
+    const deselectTimeout = setTimeout(() => {
+      setSelectedResult(null)
+      setTabIndex(0)
+    }, 150)
+    // and cleanup.
+    return () => clearTimeout(deselectTimeout)
+  }, [setSelectedResult])
+
+  const handleClickTab = (event, value) => {
+    setTabIndex(value)
+  }
+
+  //
+
+  useEffect(() => {
+    // we're in here if selectedResult has changed.
+    // if there is no selected result, then the dialog should not be open.
+    if (!selectedResult) {
+      handleClose()
+      return
+    }
+    // then we must have a result to look at,
+    // so open the dialog...
+    setOpen(true)
+  }, [handleClose, open, selectedResult])
+
+  useEffect(() => {
+    // we're in here if selectedResult has changed.
+    // if there is no selected result, then we bail out now.
+    if (!selectedResult) {
+      return
+    }
+    // then we must have a result to look at,
+    // so we fire off requests for the additional data related to our result:
+    // - studies
+    const loadStudies = async () => {
+      const data = await fetchStudies(selectedResult.id, query)
+      setStudies(data)
+      setLoadingStudies(false)
+    }
+    loadStudies()
+    // - etc
+  }, [fetchStudies, handleClose, query, selectedResult])
+
+  //
+
+  // bail out early if the dialog isn't open.
+  if (!selectedResult) {
+    return <span id="result-dialog-placeholder" />
+  }
+
+  return (
+    <Dialog
+      open={open}
+      onClose={handleClose}
+      aria-labelledby="result-dialog-title"
+      aria-describedby="result-dialog-content"
+      sx={{
+        '.MuiDialog-paper': {
+          maxHeight: '75vh',
+          width: '100%',
+          maxWidth: '1200px',
+        },
+        '.MuiStack-root': { height: '600px' },
+        '#result-dialog-title': {
+          p: 0,
+          pl: 2,
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        },
+        '#result-dialog-content': {
+          p: 0,
+        },
+        '#result-dialog-description': {
+          flex: 1,
+          p: 4,
+          overflow: 'scroll',
+        },
+        '#result-dialog-details': {
+          flex: 3,
+          p: 0,
+        },
+      }}
+    >
+      <DialogTitle id="result-dialog-title">
+        { selectedResult.name }
+        <Tabs value={ tabIndex } onChange={ handleClickTab }>
+          <Tab
+            label={ `Studies (${ loadingStudies ? '...' : studies.length })`}
+            disabled={ studies.length === 0 }
+          />
+        </Tabs>
+      </DialogTitle>
+
+      <DialogContent id="result-dialog-content" dividers>
+        <Stack direction="row">
+          <Box id="result-dialog-description">
+            <Typography paragraph><strong>Description:</strong></Typography>
+            <Typography paragraph>{ selectedResult.description }</Typography>
+          </Box>
+          <Divider orientation="vertical" flexItem />
+          <Box id="result-dialog-details">
+            <TabPanel value={ tabIndex } index={ 0 }>
+              <StudiesTab studies={ studies } />
+            </TabPanel>
+          </Box>
+        </Stack>
+      </DialogContent>
+
+      <DialogActions>
+        <Button onClick={ handleClose }>Close</Button>
+      </DialogActions>
+    </Dialog>
+  )
+}

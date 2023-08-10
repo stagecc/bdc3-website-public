@@ -8,7 +8,7 @@ import { Link } from '../link'
 import { useSearch } from './context'
 import { SearchSidebar } from './sidebar'
 import { ResultCard } from './result-card'
-import { ResultDetails } from './result-details'
+import { ResultDialog } from './result-dialog'
 
 //
 
@@ -186,7 +186,7 @@ export const Results = () => {
           { isLoading && <Loader /> }
         </Grid>
       </Grid>
-      <ResultDetails />
+      <ResultDialog />
     </Fragment>
   )
 }
