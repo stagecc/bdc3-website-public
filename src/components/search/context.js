@@ -8,8 +8,12 @@ import axios from 'axios'
 export const DugSearchContext = createContext({ })
 export const useSearch = () => useContext(DugSearchContext)
 
+//
+
 const PER_PAGE = 25
-const CONCEPTS_SEARCH_URL = `https://search.biodatacatalyst.renci.org/search-api/search`
+const SEARCH_BASE_URL = `https://search.biodatacatalyst.renci.org/search-api`
+
+//
 
 const requestConcepts = async ({ query, page }) => {
   const params = {
@@ -18,12 +22,37 @@ const requestConcepts = async ({ query, page }) => {
     offset: (page - 1) * PER_PAGE,
     size: PER_PAGE,
   }
-  const response = await axios.post(CONCEPTS_SEARCH_URL, params)
+  const response = await axios.post(`${ SEARCH_BASE_URL }/search`, params)
   if (response.status === 200 && response.data.status === 'success' && response.data.result) {
     return response.data.result
   }
   return null
 }
+
+const requestStudies = async ({ conceptId, query }) => {
+  const params = {
+    concept: conceptId,
+    index: 'variables_index',
+    query: query,
+    size: 1000
+  }
+  const { data } = await axios.post(`${ SEARCH_BASE_URL }/search_var`, params)
+  if (data?.result?.total_items === 0) {
+    return []
+  }
+  // we can expect data.result to be an object shaped like:
+  //   { dbgap: [studies], anvil: [studies], ... }
+  // we'll transform this into an array, injecting the source into each study.
+  const flattenedStudies = Object.keys(data.result).reduce((acc, source) => {
+    return [
+      ...acc,
+      ...data.result[source].map(study => ({ ...study, source }))
+    ]
+  }, []).sort((s, t) => s.c_name.toLowerCase() < t.c_name.toLowerCase() ? -1 : 1)
+  return flattenedStudies
+}
+
+//
 
 export const SearchProvider = ({ children }) => {
   // the entire search flow is kicked off and determined by the location object,
@@ -94,6 +123,22 @@ export const SearchProvider = ({ children }) => {
     }
   }, [results])
 
+  const fetchStudies = useCallback(async (conceptId, query) => {
+    setIsLoading(true)
+    try {
+      const studies = await requestStudies({ conceptId, query })
+      if (!studies) {
+        return {}
+      }
+      return studies
+    } catch(error) {
+      console.error(error.message)
+    } finally {
+      setIsLoading(false)
+    }
+  }, [])
+
+
   useEffect(() => {
     // bail out if no search term
     if (!location.search) {
@@ -127,8 +172,8 @@ export const SearchProvider = ({ children }) => {
 
   return (
     <DugSearchContext.Provider value={{
-      PER_PAGE, query,
-      doSearch, fetchConcepts, isLoading,
+      query, doSearch, isLoading,
+      fetchConcepts, fetchStudies,
       results, facets,
       pageCount, currentPage,
       selectedResult, setSelectedResult,
