@@ -14,6 +14,7 @@ import {
 } from '@mui/material'
 import { useSearch } from '../context'
 import { DebugTab, StudiesTab } from './tabs'
+import { Dots } from '../../loading'
 
 //
 
@@ -39,12 +40,18 @@ const TabPanel = ({ children, value, index, ...other }) => {
   )
 }
 
+const StudiesLoadingIndicator = () => (
+  <Stack justifyContent="center" alignItems="center">
+    <Dots textPlacement="top" text="Locating studies..." />
+  </Stack>
+)
+
 export const ResultDialog = () => {
   const { fetchStudies, query, selectedResult, setSelectedResult } = useSearch()
   const [open, setOpen] = useState(false)
   const [tabIndex, setTabIndex] = useState(0)
   const [studies, setStudies] = useState([])
-  const [loadingStudies, setLoadingStudies] = useState(true)
+  const [loadingStudies, setLoadingStudies] = useState(false)
   
   const handleClose = useCallback(() => {
     setOpen(false)
@@ -52,6 +59,7 @@ export const ResultDialog = () => {
     // otherwise the dialog will immediately unmount. not so nice.
     const deselectTimeout = setTimeout(() => {
       setSelectedResult(null)
+      setStudies([])
       setTabIndex(0)
     }, 150)
     // and cleanup.
@@ -85,8 +93,14 @@ export const ResultDialog = () => {
     // then we must have a result to look at,
     // so we fire off requests for the additional data related to our result:
     // - studies
+    // 
+    // todo: improve this logic, error-handling
+    setLoadingStudies(true)
     const loadStudies = async () => {
       const data = await fetchStudies(selectedResult.id, query)
+      if (!data) {
+        return
+      }
       setStudies(data)
       setLoadingStudies(false)
     }
@@ -164,7 +178,11 @@ export const ResultDialog = () => {
           <Divider orientation="vertical" flexItem />
           
           <TabPanel value={ tabIndex } index={ 0 } className="result-dialog-details">
-            <StudiesTab studies={ studies } />
+            {
+              loadingStudies
+                ? <StudiesLoadingIndicator />
+                : <StudiesTab studies={ studies } />
+            }
           </TabPanel>
 
           {/* this debug tab can stay. the tab is rendered in development mode */}
