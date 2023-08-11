@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react'
-import { Accordion, AccordionDetails, AccordionSummary, Box, Typography } from '@mui/material'
+import React from 'react'
+import { Accordion, AccordionDetails, AccordionSummary, Box, Stack, Typography } from '@mui/material'
 import { ChevronDownIcon as ExpandIcon } from '../../../icons'
 import { Link } from '../../../link'
 
@@ -9,12 +9,11 @@ const Variable = ({ description, e_link, id, name, score }) => {
   return (
     <Box sx={{
       borderLeft: '3px solid #dde',
-      px: 2,
+      px: 2, my: 1,
+      '.var-description': { m: 0 },
     }}>
-      <Typography>
-        { name } - <Link to={ e_link }>{ id }</Link>
-      </Typography>
-      <Typography paragraph>{ description }</Typography>
+      <Typography>{ name } - <Link to={ e_link }>{ id }</Link></Typography>
+      <Typography paragraph className="var-description">{ description }</Typography>
     </Box>
   )
 }
@@ -37,7 +36,7 @@ export const StudiesTab = ({ studies }) => {
       },
       '.accordion-details': {
         backgroundColor: '#fcf9f3',
-        p: 2,
+        px: 2,
       },
     }}>
       { 
@@ -63,7 +62,7 @@ export const StudiesTab = ({ studies }) => {
                     onClick={ event => event.stopPropagation() /* prevent accordion expand/collapse on link click */ }
                   >{ study.c_id }</Link>
                 </Typography>
-                <Typography>{ study.elements.length } variables</Typography>
+                <Typography>{ study.elements.length } variable{ study.elements.length === 1 ? '' : 's' }</Typography>
               </Box>
             </AccordionSummary>
             <AccordionDetails className="accordion-details">
@@ -74,7 +73,11 @@ export const StudiesTab = ({ studies }) => {
               }
             </AccordionDetails>
           </Accordion>
-        )) : <Typography>No studies!</Typography>
+        )) : (
+          <Stack justifyContent="center" alignItems="center">
+            <Typography>No associated studies were found!</Typography>
+          </Stack>
+        )
       }
     </Box>
   )
