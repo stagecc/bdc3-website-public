@@ -13,7 +13,7 @@ import {
   Typography,
 } from '@mui/material'
 import { useSearch } from '../context'
-import { StudiesTab } from './tabs'
+import { DebugTab, StudiesTab } from './tabs'
 
 //
 
@@ -24,7 +24,14 @@ const TabPanel = ({ children, value, index, ...other }) => {
       hidden={value !== index}
       id={`tabpanel-${index}`}
       aria-labelledby={`tab-${index}`}
-      sx={{ position: 'relative', overflow: 'scroll', maxHeight: '100%' }}
+      sx={{
+        position: 'relative',
+        overflow: 'hidden',
+        overflowY: 'scroll',
+        maxHeight: '100%',
+        maxWidth: '1000px',
+        width: '100%',
+      }}
       {...other}
     >
       {value === index && children}
@@ -118,7 +125,7 @@ export const ResultDialog = () => {
           p: 0,
         },
         '#result-dialog-description': {
-          flex: 1,
+          flex: `1 0 400px`,
           p: 4,
           overflow: 'scroll',
         },
@@ -135,21 +142,36 @@ export const ResultDialog = () => {
             label={ `Studies (${ loadingStudies ? '...' : studies.length })`}
             disabled={ studies.length === 0 }
           />
+          { process.env.NODE_ENV === 'development' && <Tab label="Debug" /> }
         </Tabs>
       </DialogTitle>
 
       <DialogContent id="result-dialog-content" dividers>
         <Stack direction="row">
+
           <Box id="result-dialog-description">
             <Typography paragraph><strong>Description:</strong></Typography>
             <Typography paragraph>{ selectedResult.description }</Typography>
+
+            <Divider />
+
+            <ul>
+              <li><Typography>{ studies.length } studies</Typography></li>
+              <li><Typography>{ studies.reduce((sum, study) => sum + study.elements.length, 0) } variables</Typography></li>
+            </ul>
           </Box>
+
           <Divider orientation="vertical" flexItem />
-          <Box id="result-dialog-details">
-            <TabPanel value={ tabIndex } index={ 0 }>
-              <StudiesTab studies={ studies } />
-            </TabPanel>
-          </Box>
+          
+          <TabPanel value={ tabIndex } index={ 0 } className="result-dialog-details">
+            <StudiesTab studies={ studies } />
+          </TabPanel>
+
+          {/* this debug tab can stay. the tab is rendered in development mode */}
+          <TabPanel value={ tabIndex } index={ 1 } className="result-dialog-details">
+            <DebugTab concept={ selectedResult } studies={ studies } />
+          </TabPanel>
+
         </Stack>
       </DialogContent>
 
