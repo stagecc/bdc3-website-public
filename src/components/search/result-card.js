@@ -1,43 +1,68 @@
 import React from 'react'
+import { Box, Typography } from '@mui/material'
 import { useSearch } from './context'
-import { Box } from '@mui/material'
+import { Subheading } from '../typography'
+
+const SNIPPET_THRESHOLD = 150
+const CARD_HEIGHT = 220
+
+/*
+ * Returns an initial snippet of given text.
+ * 
+ * @param {String} sentence The text to snip.
+ * @param {Number} threshold The bounding character length.
+ * @return {String} The first `threshold` characters of `sentence`,
+ *         with the final word completed, followed by an ellipsis.
+ */
+function snipText(sentence, threshold) {
+  if (sentence.length <= threshold) {
+    return sentence
+  }
+  return sentence.split(' ')
+    .reduce((acc, word) => {
+      if (acc.join(' ').length > threshold) {
+        return acc
+      }
+      return acc.concat(word)
+    }, []).join(' ') + '...'
+}
 
 export const ResultCard = ({ index, result }) => {
   const { setSelectedResult } = useSearch()
+
+  const snippet = snipText(result.description, SNIPPET_THRESHOLD)
 
   return (
     <Box
       onClick={ () => setSelectedResult(result) }
       sx={{
         position: 'relative',
-        border: '1px solid var(--color-blueberry)',
-        m: 0,
-        filter: 'opacity(0.5)',
+        border: '1px solid #e9e6e3',
+        backgroundColor: '#f9f6f3',
+        m: 0, p: 2,
+        minHeight: `${ CARD_HEIGHT }px`,
+        maxHeight: `${ CARD_HEIGHT }px`,
+        overflow: 'hidden',
+        filter: 'saturate(0.5) brightness(0.975)',
         transition: 'filter 250ms',
-        minHeight: '300px',
-        maxHeight: '300px',
-        overflow: 'auto',
-        '&:hover': { filter: 'opacity(1.0)' },
-        '& .json': {
-          fontSize: '75%',
-          p: 1,
+        cursor: 'pointer',
+        '&:hover': {
+          filter: 'saturate(1.0) brightness(1.0)',
         },
-        '& .index': {
+        '.MuiTypography-paragraph': { my: 1 },
+        '.type': {
           position: 'absolute',
-          top: 0,
+          bottom: 0,
           right: 0,
+          backgroundColor: '#ccc',
           p: 1,
-          color: 'var(--color-blueberry)',
-          height: '2rem',
-          width: '2rem',
-          textAlign: 'center',
-          borderBottom: '1px solid var(--color-blueberry)',
-          borderLeft: '1px solid var(--color-blueberry)',
+          fontSize: '65%',
         },
       }}
     >
-      <pre className="json">{ JSON.stringify(result, null, 2) }</pre>
-      <span className="index">{ index + 1 }</span>
+      <Subheading noMargin>{ result.name }</Subheading>
+      <Typography paragraph>{ snippet }</Typography>
+      <span className="type">{ result.type }</span>
     </Box>
   )
 }
