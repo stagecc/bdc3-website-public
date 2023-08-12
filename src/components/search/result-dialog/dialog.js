@@ -169,10 +169,14 @@ export const ResultDialog = () => {
 
             <Divider />
 
-            <ul>
-              <li><Typography>{ studies.length } studies</Typography></li>
-              <li><Typography>{ studies.reduce((sum, study) => sum + study.elements.length, 0) } variables</Typography></li>
-            </ul>
+            {
+              !loadingStudies && (
+                <ul>
+                  <li><Typography>studies: { studies.length }</Typography></li>
+                  <li><Typography>variables: { studies.reduce((sum, study) => sum + study.elements.length, 0) }</Typography></li>
+                </ul>
+              )
+            }
           </Box>
 
           <Divider orientation="vertical" flexItem />

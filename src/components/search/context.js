@@ -10,7 +10,7 @@ export const useSearch = () => useContext(DugSearchContext)
 
 //
 
-const PER_PAGE = 25
+const PER_PAGE = 20
 const SEARCH_BASE_URL = `https://search.biodatacatalyst.renci.org/search-api`
 
 //
@@ -24,7 +24,11 @@ const requestConcepts = async ({ query, page }) => {
   }
   const response = await axios.post(`${ SEARCH_BASE_URL }/search`, params)
   if (response.status === 200 && response.data.status === 'success' && response.data.result) {
-    return response.data.result
+    return {
+      hits: response.data.result.hits.hits,
+      total_items: response.data.result.total_items,
+      concept_types: response.data.result.concept_types,
+    }
   }
   return null
 }
@@ -101,11 +105,11 @@ export const SearchProvider = ({ children }) => {
     setCurrentPage(page)
     // const startTime = Date.now()
     try {
-      const result = await requestConcepts({ query, page })
-      if (result?.hits) {
-        const hits = result.hits.hits.map(r => r._source)
-        setPageCount(Math.ceil(result.total_items / PER_PAGE))
-        setFacets([...Object.keys(result.concept_types)])
+      const data = await requestConcepts({ query, page })
+      if (data?.hits) {
+        const hits = data.hits.map(r => r._source)
+        setPageCount(Math.ceil(data.total_items / PER_PAGE))
+        setFacets([...Object.keys(data.concept_types)])
         if (page === 1) {
           setResults(hits)
         } else {

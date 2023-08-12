@@ -174,7 +174,7 @@ export const Results = () => {
                 filteredResults.map((result, i) => (
                   <Grid item
                     key={ `${i}_${result.id}` }
-                    sm={ 12 } lg={ 6 }
+                    xs={ 12 } lg={ 6 }
                   >
                     <ResultCard result={ result } index={ i } />
                   </Grid>
