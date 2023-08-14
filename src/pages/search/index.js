@@ -1,8 +1,8 @@
 import React from "react";
-import { PageContent } from "../components/layout";
-import { Title } from "../components/typography";
-import { SEO } from "../components/seo";
-import { Results, SearchForm } from '../components/search'
+import { PageContent } from "../../components/layout";
+import { Title } from "../../components/typography";
+import { SEO } from "../../components/seo";
+import { Results, SearchForm } from '../../components/search'
 
 const SearchPage = ({ location }) => {
 

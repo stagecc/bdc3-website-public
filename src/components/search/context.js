@@ -2,6 +2,7 @@ import React, { createContext, useCallback, useContext, useEffect, useMemo, useS
 import { navigate } from 'gatsby'
 import { useLocation } from '@reach/router'
 import axios from 'axios'
+import { useCart } from './cart'
 
 //
 
@@ -69,6 +70,7 @@ export const SearchProvider = ({ children }) => {
   const [currentPage, setCurrentPage] = useState(1)
   const [selectedResult, setSelectedResult] = useState(null)
   const [facets, setFacets] = useState([])
+  const cart = useCart(['concepts', 'studies', 'variables'])
 
   const relatedConcepts = useMemo(() => {
     // this is a naive ranking. improvement needed.
@@ -182,6 +184,7 @@ export const SearchProvider = ({ children }) => {
       pageCount, currentPage,
       selectedResult, setSelectedResult,
       relatedConcepts,
+      cart,
     }}>
       { children }
     </DugSearchContext.Provider>
