@@ -28,9 +28,19 @@ function snipText(sentence, threshold) {
 }
 
 export const ResultCard = ({ index, result }) => {
-  const { setSelectedResult } = useSearch()
+  const { cart, setSelectedResult } = useSearch()
 
   const snippet = snipText(result.description, SNIPPET_THRESHOLD)
+
+  const handleClickAddToCart = id => event => {
+    event.stopPropagation()
+    cart.add('concepts', { id })
+  }
+
+  const handleClickRemoveFromCart = id => event => {
+    event.stopPropagation()
+    cart.remove('concepts', id)
+  }
 
   return (
     <Box
@@ -54,13 +64,21 @@ export const ResultCard = ({ index, result }) => {
           position: 'absolute',
           bottom: 0,
           right: 0,
-          backgroundColor: '#ccc',
+          backgroundColor: '#d9d6e3',
           p: 1,
           fontSize: '65%',
         },
       }}
     >
-      <Subheading noMargin>{ result.name }</Subheading>
+      <Subheading noMargin>
+        { result.name }
+        &nbsp;&nbsp;
+        {
+          cart.contains('concepts', result.id)
+            ? <button onClick={ handleClickRemoveFromCart(result.id) }>-</button>
+            : <button onClick={ handleClickAddToCart(result.id) }>+</button>
+        }
+      </Subheading>
       <Typography paragraph>{ snippet }</Typography>
       <span className="type">{ result.type }</span>
     </Box>

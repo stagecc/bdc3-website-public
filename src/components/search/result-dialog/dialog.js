@@ -47,7 +47,7 @@ const StudiesLoadingIndicator = () => (
 )
 
 export const ResultDialog = () => {
-  const { fetchStudies, query, selectedResult, setSelectedResult } = useSearch()
+  const { cart, fetchStudies, query, selectedResult, setSelectedResult } = useSearch()
   const [open, setOpen] = useState(false)
   const [tabIndex, setTabIndex] = useState(0)
   const [studies, setStudies] = useState([])
@@ -150,7 +150,15 @@ export const ResultDialog = () => {
       }}
     >
       <DialogTitle id="result-dialog-title">
-        { selectedResult.name }
+        <span>
+          { selectedResult.name }
+          {' :: '}
+          {
+            cart.contains('concepts', selectedResult.id)
+              ? <button onClick={ () => cart.remove('concepts', selectedResult.id) }>-</button>
+              : <button onClick={ () => cart.add('concepts', { id: selectedResult.id }) }>+</button>
+          }
+        </span>
         <Tabs value={ tabIndex } onChange={ handleClickTab }>
           <Tab
             label={ `Studies (${ loadingStudies ? '...' : studies.length })`}
