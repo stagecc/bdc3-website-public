@@ -4,12 +4,13 @@ import {
   List, ListItem, ListItemButton, ListItemIcon, ListItemText,
   Stack, Tooltip,
 } from '@mui/material'
+import { CartPreview } from './cart'
 import { CloseIcon as ClearIcon } from '../icons'
+import { Link } from '../link'
 
 //
 
 export const SearchSidebar = ({ filters = { }, activeFilters, toggleFilter, resetFilters }) => {
-
   return (
     <Box sx={{ p: 2, position: 'sticky', top: 120 }}>
       <Stack
@@ -62,7 +63,10 @@ export const SearchSidebar = ({ filters = { }, activeFilters, toggleFilter, rese
       </List>
 
       <br />
+      <br />
       
+      <CartPreview />
+
     </Box>
   )
 }
