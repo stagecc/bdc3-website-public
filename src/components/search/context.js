@@ -2,7 +2,7 @@ import React, { createContext, useCallback, useContext, useEffect, useMemo, useS
 import { navigate } from 'gatsby'
 import { useLocation } from '@reach/router'
 import axios from 'axios'
-import { useCart } from './cart'
+import { useCart } from '../cart'
 
 //
 
@@ -12,7 +12,7 @@ export const useSearch = () => useContext(DugSearchContext)
 //
 
 const PER_PAGE = 20
-const SEARCH_BASE_URL = `https://search.biodatacatalyst.renci.org/search-api`
+const SEARCH_BASE_URL = `https://search-dev.biodatacatalyst.renci.org/search-api`
 
 //
 

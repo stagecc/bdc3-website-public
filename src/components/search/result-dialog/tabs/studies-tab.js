@@ -1,5 +1,5 @@
 import React from 'react'
-import { Accordion, AccordionDetails, AccordionSummary, Box, Stack, Typography } from '@mui/material'
+import { Accordion, AccordionDetails, AccordionSummary, Box, Stack, Tooltip, Typography } from '@mui/material'
 import { ChevronDownIcon as ExpandIcon } from '../../../icons'
 import { Link } from '../../../link'
 import { useSearch } from '../../'
@@ -9,8 +9,8 @@ import { useSearch } from '../../'
 const Variable = ({ description, e_link, id, name, score }) => {
   const { cart } = useSearch()
 
-  const handleClickAddVariableToCart = id => event => cart.add('variables', { id })
-  const handleClickRemoveVariableFromCart = id => event => cart.remove('variables', id)
+  const handleClickAddVariableToCart = () => cart.add('variables', { id, name })
+  const handleClickRemoveVariableFromCart = () => cart.remove('variables', id)
 
   return (
     <Box sx={{
@@ -23,8 +23,8 @@ const Variable = ({ description, e_link, id, name, score }) => {
         {' :: '}
         {
           cart.contains('variables', id)
-            ? <button onClick={ handleClickRemoveVariableFromCart(id) }>-</button>
-            : <button onClick={ handleClickAddVariableToCart(id) }>+</button>
+            ? <Tooltip title="Remove from cart" placement="right"><button onClick={ handleClickRemoveVariableFromCart }>-</button></Tooltip>
+            : <Tooltip title="Add to cart" placement="right"><button onClick={ handleClickAddVariableToCart }>+</button></Tooltip>
         }
       </Typography>
       <Typography paragraph className="var-description">{ description }</Typography>
@@ -35,13 +35,14 @@ const Variable = ({ description, e_link, id, name, score }) => {
 export const StudiesTab = ({ studies }) => {
   const { cart } = useSearch()
 
-  const handleClickAddStudyToCart = id => event => {
+  const handleClickAddStudyToCart = study => event => {
     event.stopPropagation()
-    cart.add('studies', { id })
+    const { c_id: id, c_name: name } = study
+    cart.add('studies', { id, name })
   }
-  const handleClickRemoveStudyFromCart = id => event => {
+  const handleClickRemoveStudyFromCart = study => event => {
     event.stopPropagation()
-    cart.remove('studies', id)
+    cart.remove('studies', study.id)
   }
 
   return (
@@ -71,6 +72,7 @@ export const StudiesTab = ({ studies }) => {
             defaultExpanded={ i === 0 }
             elevation={ 0 }
             disableGutters
+            TransitionProps={{ unmountOnExit: true }}
           >
             <AccordionSummary
               aria-controls={ `${ study.c_id }-content` }
@@ -89,8 +91,8 @@ export const StudiesTab = ({ studies }) => {
                   {' :: '}
                   {
                     cart.contains('studies', study.c_id)
-                      ? <button onClick={ handleClickRemoveStudyFromCart(study.c_id) }>-</button>
-                      : <button onClick={ handleClickAddStudyToCart(study.c_id) }>+</button>
+                      ? <Tooltip title="Remove from cart" placement="right"><button onClick={ handleClickRemoveStudyFromCart(study) }>-</button></Tooltip>
+                      : <Tooltip title="Add to cart" placement="right"><button onClick={ handleClickAddStudyToCart(study) }>+</button></Tooltip>
                   }
                 </Typography>
                 <Typography>{ study.elements.length } variable{ study.elements.length === 1 ? '' : 's' }</Typography>

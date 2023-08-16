@@ -10,6 +10,7 @@ import {
   Stack,
   Tab,
   Tabs,
+  Tooltip,
   Typography,
 } from '@mui/material'
 import { useSearch } from '../context'
@@ -70,6 +71,12 @@ export const ResultDialog = () => {
     setTabIndex(value)
   }
 
+  const handleClickRemoveFromCart = () => () => cart.remove('concepts', selectedResult.id)
+  const handleClickAddToCart = () => () => {
+    const { id, name } = selectedResult
+    cart.add('concepts', { id, name })
+  }
+
   //
 
   useEffect(() => {
@@ -123,11 +130,12 @@ export const ResultDialog = () => {
       aria-describedby="result-dialog-content"
       sx={{
         '.MuiDialog-paper': {
+          minHeight: '50vh',
           maxHeight: '75vh',
           width: '100%',
           maxWidth: '1200px',
         },
-        '.MuiStack-root': { height: '600px' },
+        '.MuiStack-root': { height: '50vh' },
         '#result-dialog-title': {
           p: 0,
           pl: 2,
@@ -150,15 +158,14 @@ export const ResultDialog = () => {
       }}
     >
       <DialogTitle id="result-dialog-title">
-        <span>
-          { selectedResult.name }
-          {' :: '}
+        <Box sx={{ flex: 1 }}>
+          { selectedResult.name }&nbsp;&nbsp;
           {
             cart.contains('concepts', selectedResult.id)
-              ? <button onClick={ () => cart.remove('concepts', selectedResult.id) }>-</button>
-              : <button onClick={ () => cart.add('concepts', { id: selectedResult.id }) }>+</button>
+              ? <Tooltip title="Remove from cart" placement="right"><button onClick={ handleClickRemoveFromCart() }>-</button></Tooltip>
+              : <Tooltip title="Add to cart" placement="right"><button onClick={ handleClickAddToCart() }>+</button></Tooltip>
           }
-        </span>
+        </Box>
         <Tabs value={ tabIndex } onChange={ handleClickTab }>
           <Tab
             label={ `Studies (${ loadingStudies ? '...' : studies.length })`}
