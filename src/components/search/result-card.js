@@ -1,10 +1,9 @@
 import React from 'react'
-import { Box, Typography } from '@mui/material'
+import { Card, CardContent, CardHeader, Divider, Tooltip, Typography, useTheme } from '@mui/material'
 import { useSearch } from './context'
-import { Subheading } from '../typography'
 
 const SNIPPET_THRESHOLD = 150
-const CARD_HEIGHT = 220
+const CARD_BODY_HEIGHT = 175
 
 /*
  * Returns an initial snippet of given text.
@@ -29,29 +28,29 @@ function snipText(sentence, threshold) {
 
 export const ResultCard = ({ index, result }) => {
   const { cart, setSelectedResult } = useSearch()
+  const theme = useTheme()
 
   const snippet = snipText(result.description, SNIPPET_THRESHOLD)
 
-  const handleClickAddToCart = id => event => {
+  const handleClickAddToCart = result => event => {
     event.stopPropagation()
-    cart.add('concepts', { id })
+    const { id, name } = result
+    cart.add('concepts', { id, name })
   }
 
-  const handleClickRemoveFromCart = id => event => {
+  const handleClickRemoveFromCart = result => event => {
     event.stopPropagation()
-    cart.remove('concepts', id)
+    cart.remove('concepts', result.id)
   }
 
   return (
-    <Box
+    <Card
       onClick={ () => setSelectedResult(result) }
       sx={{
         position: 'relative',
         border: '1px solid #e9e6e3',
         backgroundColor: '#f9f6f3',
-        m: 0, p: 2,
-        minHeight: `${ CARD_HEIGHT }px`,
-        maxHeight: `${ CARD_HEIGHT }px`,
+        m: 0, p: 0,
         overflow: 'hidden',
         filter: 'saturate(0.5) brightness(0.975)',
         transition: 'filter 250ms',
@@ -59,7 +58,12 @@ export const ResultCard = ({ index, result }) => {
         '&:hover': {
           filter: 'saturate(1.0) brightness(1.0)',
         },
-        '.MuiTypography-paragraph': { my: 1 },
+        '.MuiCardHeader-root': { p: 2 },
+        '.MuiCardContent-root': {
+          p: 2,
+          minHeight: `${ CARD_BODY_HEIGHT }px`,
+          maxHeight: `${ CARD_BODY_HEIGHT }px`,
+        },
         '.type': {
           position: 'absolute',
           bottom: 0,
@@ -67,20 +71,25 @@ export const ResultCard = ({ index, result }) => {
           backgroundColor: '#d9d6e3',
           p: 1,
           fontSize: '65%',
+          borderTopLeftRadius: '3px',
         },
       }}
     >
-      <Subheading noMargin>
-        { result.name }
-        &nbsp;&nbsp;
-        {
-          cart.contains('concepts', result.id)
-            ? <button onClick={ handleClickRemoveFromCart(result.id) }>-</button>
-            : <button onClick={ handleClickAddToCart(result.id) }>+</button>
+      <CardHeader
+        title={ result.name }
+        subheader={ result.id }
+        action={ cart.contains('concepts', result.id)
+          ? <Tooltip title="Remove from cart" placement="left"><button onClick={ handleClickRemoveFromCart(result) }>-</button></Tooltip>
+          : <Tooltip title="Add to cart" placement="left"><button onClick={ handleClickAddToCart(result) }>+</button></Tooltip>
         }
-      </Subheading>
-      <Typography paragraph>{ snippet }</Typography>
-      <span className="type">{ result.type }</span>
-    </Box>
+      />
+      
+      <Divider />
+
+      <CardContent>
+        <Typography paragraph>{ snippet }</Typography>
+        <span className="type">{ result.type || 'UNKNOWN' }</span>
+      </CardContent>
+    </Card>
   )
 }

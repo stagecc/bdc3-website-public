@@ -1,7 +1,10 @@
 import React from "react";
+import { ThemeProvider } from '@mui/material/styles';
 import { DefaultLayout } from "./src/layouts";
 import { DialogProvider } from "./src/contexts/dialog-context";
 import { SearchProvider } from './src/components/search'
+
+import { theme } from "./src/styles/theme.js";
 import "./src/styles/normalize.css";
 import "./src/styles/customize.css";
 
@@ -9,11 +12,13 @@ export const wrapPageElement = ({ element, props }) => {
   // props provide same data to Layout as Page element will get
   // including location, data, etc - you don't need to pass it
   return (
-    <SearchProvider>
-      <DialogProvider>
-        <DefaultLayout>{element}</DefaultLayout>
-      </DialogProvider>
-    </SearchProvider>
+    <ThemeProvider theme={theme}>
+      <SearchProvider>
+        <DialogProvider>
+          <DefaultLayout>{element}</DefaultLayout>
+        </DialogProvider>
+      </SearchProvider>
+    </ThemeProvider>
   );
 };
 
