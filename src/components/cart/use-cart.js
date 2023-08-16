@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useReducer } from 'react'
-import { useLocalStorage } from '../../../hooks'
+import React, { createContext, useContext, useMemo, useReducer } from 'react'
+import { useLocalStorage } from '../../hooks'
 
 const CartContext = createContext({ })
 
@@ -57,8 +57,12 @@ export const useCart = (keys) => {
     dispatch({ action: 'clear' })
   }
 
+  const count = useMemo(() => Object.keys(cart)
+    .reduce((sum, type) => sum + cart[type].length, 0), [cart])
+
   return {
     contents: cart,
     add, remove, clear, contains,
+    count,
   }
 }

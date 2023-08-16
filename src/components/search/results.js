@@ -6,9 +6,11 @@ import InfiniteScroll from 'react-infinite-scroll-component'
 import { Dots } from '../loading'
 import { Link } from '../link'
 import { useSearch } from './context'
-import { SearchSidebar } from './sidebar'
 import { ResultCard } from './result-card'
 import { ResultDialog } from './result-dialog'
+import { SearchSidebar } from './sidebar'
+import { CartPreview } from './cart-preview'
+import { FiltersCard } from './filters-card'
 
 //
 
@@ -118,13 +120,13 @@ export const Results = () => {
       <Stack
         justifyContent="center"
         alignItems="center"
-        style={{ height: '300px' }}
+        sx={{ height: '300px', mt: 8 }}
         gap={ 3 }
       >
         {
           results.length ? (
             <Fragment>
-              <Box>You've reached the end of this thread!</Box>
+              <Box>It looks like we're at the end of this thread.</Box>
               <Suggestions concepts={ relatedConcepts } />
             </Fragment>
           ) : <Box>No results!</Box>
@@ -141,7 +143,7 @@ export const Results = () => {
         alignItems="center"
         style={{ height: '300px' }}
       >
-        Use the text field above to search for concepts
+        Search concepts, stuies, and variables
         in the BioData Catalyst ecosystem!
       </Stack>
     )
@@ -152,16 +154,7 @@ export const Results = () => {
       <br />
       <br />
 
-      <Grid container spacing={ 2 }>
-        <Grid item xs={ 12 } md={ 4 } lg={ 3 }>
-          <SearchSidebar
-            filters={ filters }
-            activeFilters={ activeFilters }
-            toggleFilter={ toggleFilter }
-            resetFilters={ resetFilters }
-          />
-        </Grid>
-
+      <Grid container spacing={ 4 }>
         <Grid item xs={ 12 } md={ 8 } lg={ 9 }>
           <InfiniteScroll
             dataLength={ filteredResults.length }
@@ -185,7 +178,20 @@ export const Results = () => {
 
           { isLoading && <Loader /> }
         </Grid>
+
+        <Grid item xs={ 12 } md={ 4 } lg={ 3 }>
+          <SearchSidebar>
+            <FiltersCard
+              filters={ filters }
+              activeFilters={ activeFilters }
+              toggleFilter={ toggleFilter }
+              resetFilters={ resetFilters }
+            />
+            <CartPreview />
+          </SearchSidebar>
+        </Grid>
       </Grid>
+
       <ResultDialog />
     </Fragment>
   )
