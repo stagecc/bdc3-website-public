@@ -1,8 +1,7 @@
 import React from "react";
-import { Badge, Box, IconButton } from "@mui/material";
+import { Badge, Box, IconButton, Typography } from "@mui/material";
 import { ShoppingCart as CartIcon } from "@mui/icons-material";
 import { PageContent } from "../../components/layout";
-import { Title } from "../../components/typography";
 import { SEO } from "../../components/seo";
 import { Results, SearchForm, useSearch } from "../../components/search";
 
@@ -18,13 +17,15 @@ const SearchPage = ({ location }) => {
 
       <Box sx={{
         position: 'relative',
+        mb: '2rem',
         '.cart-button': {
           position: 'absolute',
           right: 0,
           top: 2,
         },
       }}>
-        <Title>Semantic Search</Title>
+        <Typography variant="h1">Semantic Search</Typography>
+
         <IconButton className="cart-button">
           <Badge badgeContent={ cart.count } color="primary">
             <CartIcon color="secondary" />
