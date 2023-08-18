@@ -15,7 +15,7 @@ const Variable = ({ description, e_link, id, name, score }) => {
     }}>
       <Typography>
         { name } :: <Link to={ e_link }>{ id }</Link>
-        &nbsp;nbsp;
+        &nbsp;&nbsp;
         <VariableCollectionButton variable={{ id, name }} tooltipPlacement="top" size="small" />
       </Typography>
       <Typography paragraph className="var-description">{ description }</Typography>
@@ -30,6 +30,7 @@ export const StudiesTab = ({ studies }) => {
         display: 'flex',
         justifyContent: 'space-between',
         position: 'sticky',
+        zIndex: 1,
         top: 0,
         backgroundColor: '#ece9f3',
         '.flex': {
