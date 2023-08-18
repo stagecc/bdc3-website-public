@@ -7,7 +7,7 @@ import { StudyCollectionButton, VariableCollectionButton } from '../../collectio
 //
 
 const Variable = ({ variable }) => {
-  const { description, e_link, id, name, score } = variable
+  const { description, e_link, id, name } = variable
   return (
     <Box sx={{
       borderLeft: '3px solid #dde',
