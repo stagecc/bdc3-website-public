@@ -10,12 +10,12 @@ import {
   Stack,
   Tab,
   Tabs,
-  Tooltip,
   Typography,
 } from '@mui/material'
 import { useSearch } from '../context'
 import { DebugTab, StudiesTab } from './tabs'
 import { Dots } from '../../loading'
+import { ConceptCollectionButton } from '../collection-button'
 
 //
 
@@ -48,7 +48,7 @@ const StudiesLoadingIndicator = () => (
 )
 
 export const ResultDialog = () => {
-  const { cart, fetchStudies, query, selectedResult, setSelectedResult } = useSearch()
+  const { fetchStudies, query, selectedResult, setSelectedResult } = useSearch()
   const [open, setOpen] = useState(false)
   const [tabIndex, setTabIndex] = useState(0)
   const [studies, setStudies] = useState([])
@@ -69,12 +69,6 @@ export const ResultDialog = () => {
 
   const handleClickTab = (event, value) => {
     setTabIndex(value)
-  }
-
-  const handleClickRemoveFromCart = () => () => cart.remove('concepts', selectedResult.id)
-  const handleClickAddToCart = () => () => {
-    const { id, name } = selectedResult
-    cart.add('concepts', { id, name })
   }
 
   //
@@ -160,11 +154,7 @@ export const ResultDialog = () => {
       <DialogTitle id="result-dialog-title">
         <Box sx={{ flex: 1 }}>
           { selectedResult.name }&nbsp;&nbsp;
-          {
-            cart.contains('concepts', selectedResult.id)
-              ? <Tooltip title="Remove from cart" placement="right"><button onClick={ handleClickRemoveFromCart() }>-</button></Tooltip>
-              : <Tooltip title="Add to cart" placement="right"><button onClick={ handleClickAddToCart() }>+</button></Tooltip>
-          }
+          <ConceptCollectionButton concept={ selectedResult } tooltipPlacement="right" />
         </Box>
         <Tabs value={ tabIndex } onChange={ handleClickTab }>
           <Tab

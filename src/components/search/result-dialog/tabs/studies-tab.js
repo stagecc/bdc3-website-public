@@ -1,17 +1,12 @@
 import React from 'react'
-import { Accordion, AccordionDetails, AccordionSummary, Box, Stack, Tooltip, Typography } from '@mui/material'
+import { Accordion, AccordionDetails, AccordionSummary, Box, Stack, Typography } from '@mui/material'
 import { ChevronDownIcon as ExpandIcon } from '../../../icons'
 import { Link } from '../../../link'
-import { useSearch } from '../../'
+import { StudyCollectionButton, VariableCollectionButton } from '../../collection-button'
 
 //
 
 const Variable = ({ description, e_link, id, name, score }) => {
-  const { cart } = useSearch()
-
-  const handleClickAddVariableToCart = () => cart.add('variables', { id, name })
-  const handleClickRemoveVariableFromCart = () => cart.remove('variables', id)
-
   return (
     <Box sx={{
       borderLeft: '3px solid #dde',
@@ -20,12 +15,8 @@ const Variable = ({ description, e_link, id, name, score }) => {
     }}>
       <Typography>
         { name } :: <Link to={ e_link }>{ id }</Link>
-        {' :: '}
-        {
-          cart.contains('variables', id)
-            ? <Tooltip title="Remove from cart" placement="right"><button onClick={ handleClickRemoveVariableFromCart }>-</button></Tooltip>
-            : <Tooltip title="Add to cart" placement="right"><button onClick={ handleClickAddVariableToCart }>+</button></Tooltip>
-        }
+        &nbsp;nbsp;
+        <VariableCollectionButton variable={{ id, name }} tooltipPlacement="top" size="small" />
       </Typography>
       <Typography paragraph className="var-description">{ description }</Typography>
     </Box>
@@ -33,18 +24,6 @@ const Variable = ({ description, e_link, id, name, score }) => {
 }
 
 export const StudiesTab = ({ studies }) => {
-  const { cart } = useSearch()
-
-  const handleClickAddStudyToCart = study => event => {
-    event.stopPropagation()
-    const { c_id: id, c_name: name } = study
-    cart.add('studies', { id, name })
-  }
-  const handleClickRemoveStudyFromCart = study => event => {
-    event.stopPropagation()
-    cart.remove('studies', study.id)
-  }
-
   return (
     <Box sx={{
       '.accordion-summary': {
@@ -88,12 +67,8 @@ export const StudiesTab = ({ studies }) => {
                     to={ study.c_link }
                     onClick={ event => event.stopPropagation() /* prevent accordion expand/collapse on link click */ }
                   >{ study.c_id }</Link>
-                  {' :: '}
-                  {
-                    cart.contains('studies', study.c_id)
-                      ? <Tooltip title="Remove from cart" placement="right"><button onClick={ handleClickRemoveStudyFromCart(study) }>-</button></Tooltip>
-                      : <Tooltip title="Add to cart" placement="right"><button onClick={ handleClickAddStudyToCart(study) }>+</button></Tooltip>
-                  }
+                  &nbsp;&nbsp;
+                  <StudyCollectionButton study={ study } tooltipPlacement="top" size="small" />
                 </Typography>
                 <Typography>{ study.elements.length } variable{ study.elements.length === 1 ? '' : 's' }</Typography>
               </Box>

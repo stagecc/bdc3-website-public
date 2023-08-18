@@ -1,6 +1,9 @@
 import React from 'react'
-import { Card, CardContent, CardHeader, Divider, Tooltip, Typography, useTheme } from '@mui/material'
+import { Card, CardContent, CardHeader, Divider, Typography } from '@mui/material'
 import { useSearch } from './context'
+import { ConceptCollectionButton } from './collection-button'
+
+//
 
 const SNIPPET_THRESHOLD = 150
 const CARD_BODY_HEIGHT = 175
@@ -27,21 +30,9 @@ function snipText(sentence, threshold) {
 }
 
 export const ResultCard = ({ index, result }) => {
-  const { cart, setSelectedResult } = useSearch()
-  const theme = useTheme()
+  const { setSelectedResult } = useSearch()
 
   const snippet = snipText(result.description, SNIPPET_THRESHOLD)
-
-  const handleClickAddToCart = result => event => {
-    event.stopPropagation()
-    const { id, name } = result
-    cart.add('concepts', { id, name })
-  }
-
-  const handleClickRemoveFromCart = result => event => {
-    event.stopPropagation()
-    cart.remove('concepts', result.id)
-  }
 
   return (
     <Card
@@ -58,7 +49,12 @@ export const ResultCard = ({ index, result }) => {
         '&:hover': {
           filter: 'saturate(1.0) brightness(1.0)',
         },
-        '.MuiCardHeader-root': { p: 2 },
+        '.MuiCardHeader-root': {
+          p: 2,
+          '.MuiCardHeader-title': {
+            p: 0,
+          },
+        },
         '.MuiCardContent-root': {
           p: 2,
           minHeight: `${ CARD_BODY_HEIGHT }px`,
@@ -78,9 +74,11 @@ export const ResultCard = ({ index, result }) => {
       <CardHeader
         title={ result.name }
         subheader={ result.id }
-        action={ cart.contains('concepts', result.id)
-          ? <Tooltip title="Remove from cart" placement="left"><button onClick={ handleClickRemoveFromCart(result) }>-</button></Tooltip>
-          : <Tooltip title="Add to cart" placement="left"><button onClick={ handleClickAddToCart(result) }>+</button></Tooltip>
+        action={ 
+          <ConceptCollectionButton
+            concept={ result }
+            tooltipPlacement="left"
+          />
         }
       />
       
@@ -90,6 +88,7 @@ export const ResultCard = ({ index, result }) => {
         <Typography paragraph>{ snippet }</Typography>
         <span className="type">{ result.type || 'UNKNOWN' }</span>
       </CardContent>
+      
     </Card>
   )
 }

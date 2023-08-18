@@ -1,5 +1,9 @@
-import React, { Fragment, useMemo, useState } from 'react'
-import { Card, CardActions, CardContent, CardHeader, Collapse, Divider, IconButton, List, ListItem, ListItemText, ListSubheader, Tooltip } from '@mui/material'
+import React, { Fragment, useEffect, useMemo, useState } from 'react'
+import {
+  Card, CardActions, CardContent, CardHeader, Collapse, Divider,
+  IconButton, List, ListItem, ListItemText, ListSubheader, Tooltip,
+} from '@mui/material'
+import { BookmarkBorder as CollectionIcon } from '@mui/icons-material'
 import { useSearch } from './context'
 import { Subsubheading } from '../typography'
 import { Link } from '../link'
@@ -7,7 +11,7 @@ import {
   ChevronDownIcon as ExpandIcon,
   ChevronUpIcon as CollapseIcon,
   CloseIcon as DeleteIcon,
-  DeleteIcon as EmptyCartIcon,
+  DeleteIcon as ClearCollectionIcon,
 } from '../icons'
 
 //
@@ -30,25 +34,33 @@ export const CartPreview = () => {
     cart.remove(type, id)
   }
 
+  useEffect(() => {
+    if (cart.count !== 0) {
+      return
+    }
+    setExpanded(false)
+  }, [cart.count])
+
   return (
     <Card sx={{
-      '.MuiCardContent-root': { p: 0, mb: 2 },
+      '.MuiCardContent-root': { p: 0, mb: 1 },
       '.MuiCardActions-root': {
-        p: 2,
+        p: 2, pr: 1,
         display: 'flex',
         justifyContent: 'space-between',
       },
       '.MuiCollapse-root': { backgroundColor: '#f6f6f9' },
-      '.empty-cart-button': {
+      '.clear-collection-button': {
         filter: 'opacity(0.5)',
         transition: 'filter 250ms',
         '&:hover': { filter: 'opacity(1.0)' },
       }
     }}>
       <CardHeader
-        title="Cart"
+        title="Collection"
         subheader={ `${ cart.count } item${ cart.count === 1 ? '' : 's' }` }
         titleTypographyProps={{ color: 'secondary' }}
+        avatar={ <CollectionIcon color="secondary" /> }
         action={ 
           <IconButton onClick={ clickToggleExpand }>
             {
@@ -76,9 +88,9 @@ export const CartPreview = () => {
                       <ListItem
                         key={ `cart-${ key }-${ item.id }` }
                         secondaryAction={
-                          <Tooltip title="Remove from cart" placement="left">
+                          <Tooltip title="Remove from Collection" placement="left">
                             <IconButton
-                              aria-label="remove from cart"
+                              aria-label="Remove from Collection"
                               onClick={ handleClickRemoveFromCart(key, item.id) }
                             ><DeleteIcon size={ 14 } fill="var(--color-crimson)" /></IconButton>
                           </Tooltip>
@@ -101,11 +113,11 @@ export const CartPreview = () => {
       <Divider />
       
       <CardActions>
-        <Link to="/search/cart">View cart</Link>
+        <Link to="/search/collection">View Collection</Link>
 
-        <Tooltip title="Empty cart" placement="left">
-          <IconButton onClick={ () => cart.clear() } className="empty-cart-button">
-            <EmptyCartIcon size={ 24 } fill="var(--color-crimson)" />
+        <Tooltip title="Empty Collection" placement="left">
+          <IconButton onClick={ () => cart.clear() } className="clear-collection-button">
+            <ClearCollectionIcon size={ 24 } fill="var(--color-crimson)" />
           </IconButton>
         </Tooltip>
       </CardActions>
