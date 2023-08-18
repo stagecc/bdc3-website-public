@@ -1,7 +1,4 @@
-import React, { createContext, useContext, useMemo, useReducer } from 'react'
-import { useLocalStorage } from '../../hooks'
-
-const CartContext = createContext({ })
+import { useMemo, useReducer } from 'react'
 
 function initialState(keys) {
   return keys.reduce((acc, key) => ({ ...acc, [key]: [] }), {})
@@ -9,6 +6,14 @@ function initialState(keys) {
 
 //
 
+/*
+ * Returns a "Cart" object with functions to interact with its items,
+ * e.g., ['type1', 'type2', 'type3'].
+ * 
+ * @param {Array} keys The keys for the cart object, indicating the types of items stored.
+ * @return {Object} An object with keys for keys and empty arrays for values,
+ * e.g.,  { type1: [], type2: [], type3: [] }.
+ */
 export const useCart = (keys) => {
   const [cart, dispatch] = useReducer(reducer, initialState(keys))
 
@@ -30,7 +35,6 @@ export const useCart = (keys) => {
       default:
         return { ...state }
     }
-    throw Error('Unknown action: ' + signal.action);
   }
 
   const add = (type, item) => {

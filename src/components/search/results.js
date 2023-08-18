@@ -9,7 +9,7 @@ import { useSearch } from './context'
 import { ResultCard } from './result-card'
 import { ResultDialog } from './result-dialog'
 import { SearchSidebar } from './sidebar'
-import { CartPreview } from './cart-preview'
+import { CollectionPreview } from './collection-preview'
 import { FiltersCard } from './filters-card'
 
 //
@@ -187,7 +187,7 @@ export const Results = () => {
               toggleFilter={ toggleFilter }
               resetFilters={ resetFilters }
             />
-            <CartPreview />
+            <CollectionPreview />
           </SearchSidebar>
         </Grid>
       </Grid>

@@ -1,17 +1,18 @@
-import React, { Fragment, useEffect, useMemo, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
+import { navigate } from 'gatsby'
 import {
-  Card, CardActions, CardContent, CardHeader, Collapse, Divider,
+  Button, Card, CardActions, CardContent, CardHeader, Collapse, Divider,
   IconButton, List, ListItem, ListItemText, ListSubheader, Tooltip,
 } from '@mui/material'
-import { BookmarkBorder as CollectionIcon } from '@mui/icons-material'
+import {
+  BookmarkBorder as CollectionIcon,
+  Send as NextStepsIcon,
+} from '@mui/icons-material'
 import { useSearch } from './context'
-import { Subsubheading } from '../typography'
-import { Link } from '../link'
 import {
   ChevronDownIcon as ExpandIcon,
   ChevronUpIcon as CollapseIcon,
   CloseIcon as DeleteIcon,
-  DeleteIcon as ClearCollectionIcon,
 } from '../icons'
 
 //
@@ -22,7 +23,7 @@ const textOverflowStyle = {
   whiteSpace: 'nowrap',
 }
 
-export const CartPreview = () => {
+export const CollectionPreview = () => {
   const { cart } = useSearch()
   const [expanded, setExpanded] = useState(false)
 
@@ -43,13 +44,14 @@ export const CartPreview = () => {
 
   return (
     <Card sx={{
-      '.MuiCardContent-root': { p: 0, mb: 1 },
+      '.MuiCardContent-root': { p: 0 },
+      '.contents .MuiCollapse-root': { backgroundColor: '#f6f6f9' },
       '.MuiCardActions-root': {
-        p: 2, pr: 1,
         display: 'flex',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
+        alignItems: 'center',
+        p: 2, py: 3,
       },
-      '.MuiCollapse-root': { backgroundColor: '#f6f6f9' },
       '.clear-collection-button': {
         filter: 'opacity(0.5)',
         transition: 'filter 250ms',
@@ -61,21 +63,12 @@ export const CartPreview = () => {
         subheader={ `${ cart.count } item${ cart.count === 1 ? '' : 's' }` }
         titleTypographyProps={{ color: 'secondary' }}
         avatar={ <CollectionIcon color="secondary" /> }
-        action={ 
-          <IconButton onClick={ clickToggleExpand }>
-            {
-              expanded
-                ? <CollapseIcon size={ 24 } fill="#333" />
-                : <ExpandIcon size={ 24 } fill="#333" />
-            }
-          </IconButton>
-        }
       />
 
       <Divider />
       
       <CardContent>
-        <List dense>
+        <List dense className="contents">
           {
             Object.keys(cart.contents).map(key => (
               <Fragment>
@@ -110,17 +103,27 @@ export const CartPreview = () => {
         </List>
       </CardContent>
 
-      <Divider />
+      <Collapse in={ expanded } timeout="auto">
+        <Divider />
+        <CardActions>
+          <Button
+            variant="contained"
+            size="large"
+            endIcon={ <NextStepsIcon /> }
+            onClick={ () => navigate('/search/collection') }
+            disabled={ cart.count === 0 }
+          >Next Steps</Button>
+        </CardActions>
+      </Collapse>
       
-      <CardActions>
-        <Link to="/search/collection">View Collection</Link>
-
-        <Tooltip title="Empty Collection" placement="left">
-          <IconButton onClick={ () => cart.clear() } className="clear-collection-button">
-            <ClearCollectionIcon size={ 24 } fill="var(--color-crimson)" />
-          </IconButton>
-        </Tooltip>
-      </CardActions>
+      <Divider />
+      <Button fullWidth onClick={ clickToggleExpand } color="secondary">
+        {
+          expanded
+            ? <CollapseIcon size={ 24 } fill="var(--color-eggplant-dark)" />
+            : <ExpandIcon size={ 24 } fill="var(--color-eggplant-dark)" />
+        }
+      </Button>
     </Card>
   )
 }

@@ -86,10 +86,10 @@ export const SearchProvider = ({ children }) => {
       })
       return { ...acc }
     }, {})
+    // now we'll sort by frequency,
+    // returning only the first, most frequent few.
     return Object.keys(concepts)
-      // now we'll sort by frequency...
       .sort((c, d) => concepts[c] < concepts[d] ? -1 : 1)
-      // ...only returning the first, most frequent few.
       .slice(0, 5)
   }, [results])
 

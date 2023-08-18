@@ -30,7 +30,7 @@ export const ConceptCollectionButton = ({ concept, tooltipPlacement = 'bottom', 
           className={ className }
           variant="text" color="secondary" size={ size }
           onClick={ handleClickRemoveFromCart }
-        ><AddedIcon /></IconButton>
+        ><AddedIcon fontSize={ size } /></IconButton>
       </Tooltip>
     )
   }
@@ -41,7 +41,7 @@ export const ConceptCollectionButton = ({ concept, tooltipPlacement = 'bottom', 
         className={ className }
         variant="text" color="default" size={ size }
         onClick={ handleClickAddToCart }
-      ><NotAddedIcon /></IconButton>
+      ><NotAddedIcon fontSize={ size } /></IconButton>
     </Tooltip>
   )
 }
