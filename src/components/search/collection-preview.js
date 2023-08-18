@@ -56,7 +56,16 @@ export const CollectionPreview = () => {
         filter: 'opacity(0.5)',
         transition: 'filter 250ms',
         '&:hover': { filter: 'opacity(1.0)' },
-      }
+      },
+      '.remove-button': {
+        transition: 'filter 150ms',
+      },
+      '.list-item .remove-button': {
+        filter: 'opacity(0.0)'
+      },
+      '.list-item:hover .remove-button': {
+        filter: 'opacity(1.0)'
+      },
     }}>
       <CardHeader
         title="Collection"
@@ -80,9 +89,11 @@ export const CollectionPreview = () => {
                     cart.contents[key].map(item => (
                       <ListItem
                         key={ `cart-${ key }-${ item.id }` }
+                        className="list-item"
                         secondaryAction={
                           <Tooltip title="Remove from Collection" placement="left">
                             <IconButton
+                              className="remove-button"
                               aria-label="Remove from Collection"
                               onClick={ handleClickRemoveFromCart(key, item.id) }
                             ><DeleteIcon size={ 14 } fill="var(--color-crimson)" /></IconButton>
