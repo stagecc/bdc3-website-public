@@ -12,7 +12,7 @@ export const useSearch = () => useContext(DugSearchContext)
 //
 
 const PER_PAGE = 20
-const SEARCH_BASE_URL = `https://search-dev.biodatacatalyst.renci.org/search-api`
+const SEARCH_BASE_URL = `https://search.biodatacatalyst.renci.org/search-api`
 
 //
 
