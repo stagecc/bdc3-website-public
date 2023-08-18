@@ -120,13 +120,15 @@ export const CollectionPreview = () => {
       </Collapse>
       
       <Divider />
-      <Button fullWidth onClick={ clickToggleExpand } color="secondary">
-        {
-          expanded
-            ? <CollapseIcon size={ 24 } fill="var(--color-eggplant-dark)" />
-            : <ExpandIcon size={ 24 } fill="var(--color-eggplant-dark)" />
-        }
-      </Button>
+      <Tooltip title={ `${ expanded ? 'Hide' : 'Show' } Collection Details` } placement="bottom">
+        <Button fullWidth onClick={ clickToggleExpand } color="secondary" disabled={ cart.count === 0 }>
+          {
+            expanded
+              ? <CollapseIcon size={ 24 } fill="var(--color-eggplant-dark)" />
+              : <ExpandIcon size={ 24 } fill="var(--color-eggplant-dark)" />
+          }
+        </Button>
+      </Tooltip>
     </Card>
   )
 }
