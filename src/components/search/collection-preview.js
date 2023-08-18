@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react'
 import { navigate } from 'gatsby'
 import {
   Button, Card, CardActions, CardContent, CardHeader, Collapse, Divider,
-  IconButton, List, ListItem, ListItemText, ListSubheader, Tooltip,
+  IconButton, List, ListItem, ListItemText, ListSubheader, Tooltip, Typography,
 } from '@mui/material'
 import {
   BookmarkBorder as CollectionIcon,
@@ -62,7 +62,7 @@ export const CollectionPreview = () => {
         title="Collection"
         subheader={ `${ cart.count } item${ cart.count === 1 ? '' : 's' }` }
         titleTypographyProps={{ color: 'secondary' }}
-        avatar={ <CollectionIcon color="secondary" /> }
+        avatar={ <CollectionIcon size="large" color="secondary" /> }
       />
 
       <Divider />
@@ -103,15 +103,18 @@ export const CollectionPreview = () => {
         </List>
       </CardContent>
 
-      <Collapse in={ expanded } timeout="auto">
+      <Collapse in={ expanded && cart.count !== 0 } timeout="auto">
         <Divider />
-        <CardActions>
+        <CardActions sx={{ display: 'flex', flexDirection: 'column' }}>
+          <Typography paragraph align="center" color="secondary" sx={{ fontStyle: 'italic' }}>
+            <strong>Find everything?</strong><br />
+            Click below to continue with your search & analysis!
+          </Typography>
           <Button
             variant="contained"
             size="large"
             endIcon={ <NextStepsIcon /> }
             onClick={ () => navigate('/search/collection') }
-            disabled={ cart.count === 0 }
           >Next Steps</Button>
         </CardActions>
       </Collapse>
