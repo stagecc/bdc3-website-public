@@ -6,7 +6,8 @@ import { StudyCollectionButton, VariableCollectionButton } from '../../collectio
 
 //
 
-const Variable = ({ description, e_link, id, name, score }) => {
+const Variable = ({ variable }) => {
+  const { description, e_link, id, name, score } = variable
   return (
     <Box sx={{
       borderLeft: '3px solid #dde',
@@ -16,7 +17,7 @@ const Variable = ({ description, e_link, id, name, score }) => {
       <Typography>
         { name } :: <Link to={ e_link }>{ id }</Link>
         &nbsp;&nbsp;
-        <VariableCollectionButton variable={{ id, name }} tooltipPlacement="top" size="small" />
+        <VariableCollectionButton variable={ variable } tooltipPlacement="top" size="small" />
       </Typography>
       <Typography paragraph className="var-description">{ description }</Typography>
     </Box>
@@ -82,7 +83,7 @@ export const StudiesTab = ({ studies }) => {
                     if (e.name.toLowerCase() > f.name.toLowerCase()) { return 1 }
                     return e.id < f.id ? -1 : 1
                   })
-                  .map(el => <Variable key={ `${ study.id }_${ el.id }` } { ...el } />)
+                  .map(el => <Variable key={ `${ study.id }_${ el.id }` } variable={ el } />)
               }
             </AccordionDetails>
           </Accordion>

@@ -24,8 +24,8 @@ const FavoritesPage = () => {
         <Card>
           <CardHeader title={ `Concepts (${ cart.contents.concepts.length })` } />
           <Divider />
-          <CardContent>
-            <pre>{JSON.stringify(cart.contents.concepts, null, 2)}</pre>
+          <CardContent component="pre" sx={{ backgroundColor: '#eee', fontSize: '75%', m: 0 }}>
+            { JSON.stringify(cart.contents.concepts, null, 2) }
           </CardContent>
         </Card>
 
@@ -34,8 +34,8 @@ const FavoritesPage = () => {
         <Card>
           <CardHeader title={ `Studies (${ cart.contents.studies.length })` } />
           <Divider />
-          <CardContent>
-            <pre>{JSON.stringify(cart.contents.studies, null, 2)}</pre>
+          <CardContent component="pre" sx={{ backgroundColor: '#eee', fontSize: '75%', m: 0 }}>
+            { JSON.stringify(cart.contents.studies, null, 2) }
           </CardContent>
         </Card>
 
@@ -44,8 +44,8 @@ const FavoritesPage = () => {
         <Card>
           <CardHeader title={ `Variables (${ cart.contents.variables.length })` } />
           <Divider />
-          <CardContent>
-            <pre>{JSON.stringify(cart.contents.variables, null, 2)}</pre>
+          <CardContent component="pre" sx={{ backgroundColor: '#eee', fontSize: '75%', m: 0 }}>
+            { JSON.stringify(cart.contents.variables, null, 2) }
           </CardContent>
         </Card>
 
@@ -54,7 +54,7 @@ const FavoritesPage = () => {
         <Stack direction={{ xs: 'column', md: 'row' }} justifyContent="space-around">
           <Link to="/search">Return to search</Link>
 
-          <Tooltip title="Clear Favorites" placement="left">
+          <Tooltip title="Clear Collection" placement="left">
             <IconButton onClick={ () => cart.clear() } sx={{ filter: 'opacity(0.5)', transition: 'filter 250ms', '&:hover': { filter: 'opacity(1.0)' } }}>
               <ClearCollectionIcon size={ 24 } fill="var(--color-crimson)" />
             </IconButton>
