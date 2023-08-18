@@ -1,27 +1,25 @@
 import React from 'react'
-import { Box, Card, CardActionArea, CardContent, CardHeader, Divider, IconButton, Stack, Tooltip, Typography } from '@mui/material'
+import { Card, CardActionArea, CardContent, CardHeader, Divider, IconButton, Stack, Tooltip, Typography } from '@mui/material'
 import { PageContent } from '../../components/layout'
 import { SEO } from '../../components/seo'
 import { Link } from '../../components/link'
 import { useSearch } from '../../components/search'
-import { DeleteIcon as EmptyCartIcon } from '../../components/icons'
+import { DeleteIcon as ClearCollectionIcon } from '../../components/icons'
 
-const CartPage = () => {
+const FavoritesPage = () => {
   const { cart } = useSearch()
 
   return (
     <PageContent width="95%" maxWidth="1400px" center gutters>
       <SEO
-        title="My Cart - Semantic Search"
-        description="My Cart - BioData Catalyst semantic search provided by Dug"
+        title="Favorites - Semantic Search"
+        description="Favorites - BioData Catalyst semantic search provided by Dug"
       />
 
-      <Typography variant="h1">Semantic Search: Cart</Typography>
-
-      <br /><br />
-
       <section>
-        <Typography variant="h2">Cart Contents</Typography>
+        <Typography variant="h1">Semantic Search: My Collection</Typography>
+
+        <br /><br />
 
         <Card>
           <CardHeader title={ `Concepts (${ cart.contents.concepts.length })` } />
@@ -56,9 +54,9 @@ const CartPage = () => {
         <Stack direction={{ xs: 'column', md: 'row' }} justifyContent="space-around">
           <Link to="/search">Return to search</Link>
 
-          <Tooltip title="Empty cart" placement="left">
+          <Tooltip title="Clear Favorites" placement="left">
             <IconButton onClick={ () => cart.clear() } sx={{ filter: 'opacity(0.5)', transition: 'filter 250ms', '&:hover': { filter: 'opacity(1.0)' } }}>
-              <EmptyCartIcon size={24 } fill="var(--color-crimson)" />
+              <ClearCollectionIcon size={ 24 } fill="var(--color-crimson)" />
             </IconButton>
           </Tooltip>
         </Stack>
@@ -105,4 +103,4 @@ const CartPage = () => {
   );
 }
 
-export default CartPage;
+export default FavoritesPage;
