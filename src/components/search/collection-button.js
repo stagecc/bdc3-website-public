@@ -14,8 +14,8 @@ export const ConceptCollectionButton = ({ concept, tooltipPlacement = 'bottom', 
   
   const handleClickAddToCart = event => {
     event.stopPropagation()
-    const { id, name } = concept
-    cart.add('concepts', { id, name })
+    const { id, name, description, type } = concept
+    cart.add('concepts', { id, name, description, type })
   }
 
   const handleClickRemoveFromCart = event => {
@@ -52,8 +52,8 @@ export const StudyCollectionButton = ({ study, tooltipPlacement = 'bottom', size
   
   const handleClickAddToCart = event => {
     event.stopPropagation()
-    const { c_id, c_name } = study
-    cart.add('studies', { id: c_id, name: c_name })
+    const { c_id, c_name, c_link, source } = study
+    cart.add('studies', { id: c_id, name: c_name, url: c_link, source })
   }
 
   const handleClickRemoveFromCart = event => {
@@ -91,8 +91,8 @@ export const VariableCollectionButton = ({ variable, tooltipPlacement = 'bottom'
   
   const handleClickAddToCart = event => {
     event.stopPropagation()
-    const { id, name } = variable
-    cart.add('variables', { id, name })
+    const { id, name, description, e_link } = variable
+    cart.add('variables', { id, name, description, url: e_link })
   }
 
   const handleClickRemoveFromCart = event => {
