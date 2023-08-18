@@ -1,6 +1,7 @@
 import React from "react";
+import { navigate } from 'gatsby'
 import { Badge, Box, IconButton, Typography } from "@mui/material";
-import { ShoppingCart as CartIcon } from "@mui/icons-material";
+import { BookmarkBorder as CartIcon } from "@mui/icons-material";
 import { PageContent } from "../../components/layout";
 import { SEO } from "../../components/seo";
 import { Results, SearchForm, useSearch } from "../../components/search";
@@ -26,7 +27,7 @@ const SearchPage = ({ location }) => {
       }}>
         <Typography variant="h1">Semantic Search</Typography>
 
-        <IconButton className="cart-button">
+        <IconButton className="cart-button" onClick={ () => navigate('/search/collection') }>
           <Badge badgeContent={ cart.count } color="primary">
             <CartIcon color="secondary" />
           </Badge>
