@@ -10,7 +10,7 @@ import { useSearch } from './context'
 
 export const ConceptCollectionButton = ({ concept, tooltipPlacement = 'bottom', size = 'medium', className }) => {
   const { cart } = useSearch()
-  const inCollection = useMemo(() => cart.contains('concepts', concept.id), [cart.contents, concept])
+  const inCollection = useMemo(() => cart.contains('concepts', concept.id), [cart, concept])
   
   const handleClickAddToCart = event => {
     event.stopPropagation()
@@ -48,7 +48,7 @@ export const ConceptCollectionButton = ({ concept, tooltipPlacement = 'bottom', 
 
 export const StudyCollectionButton = ({ study, tooltipPlacement = 'bottom', size = 'medium', className }) => {
   const { cart } = useSearch()
-  const inCollection = useMemo(() => cart.contains('studies', study.c_id), [cart.contents])
+  const inCollection = useMemo(() => cart.contains('studies', study.c_id), [cart, study.c_id])
   
   const handleClickAddToCart = event => {
     event.stopPropagation()
@@ -87,7 +87,7 @@ export const StudyCollectionButton = ({ study, tooltipPlacement = 'bottom', size
 
 export const VariableCollectionButton = ({ variable, tooltipPlacement = 'bottom', size = 'medium', className }) => {
   const { cart } = useSearch()
-  const inCollection = useMemo(() => cart.contains('variables', variable.id), [cart.contents])
+  const inCollection = useMemo(() => cart.contains('variables', variable.id), [cart, variable.id])
   
   const handleClickAddToCart = event => {
     event.stopPropagation()
