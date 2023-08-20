@@ -1,6 +1,4 @@
-import React, {
-  Fragment, useCallback, useEffect, useMemo, useState,
-} from 'react'
+import React, { Fragment, useCallback, useMemo } from 'react'
 import { Box, Grid, Stack } from '@mui/material'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { Dots } from '../loading'
@@ -8,9 +6,6 @@ import { Link } from '../link'
 import { useSearch } from './context'
 import { ResultCard } from './result-card'
 import { ResultDialog } from './result-dialog'
-import { SearchSidebar } from './sidebar'
-import { CollectionPreview } from './collection-preview'
-import { FiltersCard } from './filters-card'
 
 //
 
@@ -45,61 +40,11 @@ const Suggestions = ({ concepts = [] }) => {
   )
 }
 
-// this utility turns array
-//   ['item1', 'item2', 'item3', ...]
-// into filter object
-//   { item1: false, item2: false, item3: false, ...}
-const listToFilters = words => words.reduce((acc, f) => ({ ...acc, [f]: false }), {})
-
 export const Results = () => {
   const {
-    currentPage, facets, fetchConcepts, isLoading,
-    pageCount, query, relatedConcepts, results,
+    currentPage, fetchConcepts, filteredResults, isLoading,
+    pageCount, query, relatedConcepts,
   } = useSearch()
-
-  const [filters, setFilters] = useState({ })
-
-  // update filters when facets change,
-  // retain selection, as items returned
-  // are inconsistent between requests.
-  useEffect(() => {
-    if (facets.length === 0) { return }
-    const updatedFilters = listToFilters(facets)
-    setFilters(prevFilters => ({
-      ...updatedFilters,
-      ...prevFilters,
-    }))
-  }, [facets])
-
-  
-  // toggle the given filter
-  const toggleFilter = f => {
-    setFilters({
-      ...filters,
-      [f]: !filters[f],
-    })
-  }
-
-  // turn all filters off
-  const resetFilters = () => setFilters(listToFilters(facets))
-
-  // let's get an array of active filters.
-  const activeFilters = useMemo(() => {
-    return Object.keys(filters)
-      .filter(f => filters[f] === true)
-  }, [filters])
-
-  // apply filters to results
-  const filteredResults = useMemo(() => {
-    // if no filters are active...
-    if (activeFilters.length === 0) {
-      // ...show all results.
-      return [...results]
-    }
-      // otherwise, update our list, with the filtering applied.
-      return [...results]
-        .filter(result => activeFilters.includes(result.type))
-  }, [activeFilters, results])
 
   // boolean, whether more results exist beyond our current list
   // (util for infinite scroll)
@@ -124,7 +69,7 @@ export const Results = () => {
         gap={ 3 }
       >
         {
-          results.length ? (
+          filteredResults.length ? (
             <Fragment>
               <Box>It looks like we're at the end of this thread.</Box>
               <Suggestions concepts={ relatedConcepts } />
@@ -151,46 +96,27 @@ export const Results = () => {
 
   return (
     <Fragment>
-      <br />
-      <br />
-
-      <Grid container spacing={ 4 }>
-        <Grid item xs={ 12 } md={ 8 } lg={ 9 }>
-          <InfiniteScroll
-            dataLength={ filteredResults.length }
-            next={ loadMore }
-            hasMore={ canLoadMore }
-            endMessage={ <EndMessage /> }
-          >
-            <Grid container spacing={ 4 }>
-              {
-                filteredResults.map((result, i) => (
-                  <Grid item
-                    key={ `${i}_${result.id}` }
-                    xs={ 12 } lg={ 6 }
-                  >
-                    <ResultCard result={ result } index={ i } />
-                  </Grid>
-                ))
-              }
-            </Grid>
-          </InfiniteScroll>
-
-          { isLoading && <Loader /> }
+      <InfiniteScroll
+        dataLength={ filteredResults.length }
+        next={ loadMore }
+        hasMore={ canLoadMore }
+        endMessage={ <EndMessage /> }
+      >
+        <Grid container spacing={ 4 }>
+          {
+            filteredResults.map((result, i) => (
+              <Grid item
+                key={ `${i}_${result.id}` }
+                xs={ 12 } lg={ 6 }
+              >
+                <ResultCard result={ result } index={ i } />
+              </Grid>
+            ))
+          }
         </Grid>
+      </InfiniteScroll>
 
-        <Grid item xs={ 12 } md={ 4 } lg={ 3 }>
-          <SearchSidebar>
-            <FiltersCard
-              filters={ filters }
-              activeFilters={ activeFilters }
-              toggleFilter={ toggleFilter }
-              resetFilters={ resetFilters }
-            />
-            <CollectionPreview />
-          </SearchSidebar>
-        </Grid>
-      </Grid>
+      { isLoading && <Loader /> }
 
       <ResultDialog />
     </Fragment>

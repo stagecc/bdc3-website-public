@@ -3,8 +3,6 @@ import styled from 'styled-components'
 import { Hidden } from 'react-grid-system'
 import { Form, InputGroup, TextInput } from '../form'
 import { Button } from '../buttons'
-import { Link } from '../link'
-import { Paragraph } from '../typography'
 import { MagnifyingGlassIcon } from '../icons'
 import { useSearch } from './context'
 
@@ -47,7 +45,7 @@ export const SearchForm = ({ focusOnMount = false, compact, style }) => {
       <InputGroup>
         <TextInput
           type="text"
-          placeholder="Search study variables by concept"
+          placeholder="Search for concepts, studies, and variables"
           value={formQuery}
           onChange={handleChangeFormQuery}
         />
@@ -68,12 +66,6 @@ export const SearchForm = ({ focusOnMount = false, compact, style }) => {
             }
           </SearchButton>
       </InputGroup>
-      <Paragraph center style={{ fontStyle: 'italic', fontSize: '90%' }}>
-        Semantic search provided by Dug.
-        {' '}
-        <Link to="/platforms/dug">Learn more about Dug here</Link>.
-        {/* todo: get correct copy for the above. */}
-      </Paragraph>
     </Form>
   )
 }

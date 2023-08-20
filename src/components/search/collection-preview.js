@@ -7,13 +7,11 @@ import {
 import {
   BookmarkBorder as CollectionIcon,
   Send as NextStepsIcon,
+  ExpandLess as CollapseIcon,
+  ExpandMore as ExpandIcon,
+  Delete as DeleteIcon,
 } from '@mui/icons-material'
 import { useSearch } from './context'
-import {
-  ChevronDownIcon as ExpandIcon,
-  ChevronUpIcon as CollapseIcon,
-  CloseIcon as DeleteIcon,
-} from '../icons'
 
 //
 
@@ -57,14 +55,18 @@ export const CollectionPreview = () => {
         transition: 'filter 250ms',
         '&:hover': { filter: 'opacity(1.0)' },
       },
-      '.remove-button': {
-        transition: 'filter 150ms',
-      },
       '.list-item .remove-button': {
-        filter: 'opacity(0.0)'
+        transition: 'filter 150ms',
+        filter: 'opacity(0.1) saturate(0.0)',
       },
-      '.list-item:hover .remove-button': {
-        filter: 'opacity(1.0)'
+      '.list-item:hover .remove-button': { 
+        ilter: 'opacity(0.75) saturate(0.1)',
+      },
+      '.list-item:hover .remove-button:hover': {
+        filter: 'opacity(1.0) saturate(1.0)',
+      },
+      '.next-steps-button': {
+        borderRadius: '21px',
       },
     }}>
       <CardHeader
@@ -91,12 +93,13 @@ export const CollectionPreview = () => {
                         key={ `cart-${ key }-${ item.id }` }
                         className="list-item"
                         secondaryAction={
-                          <Tooltip title="Remove from Collection" placement="left">
+                          <Tooltip title="Remove from Collection" placement="right">
                             <IconButton
                               className="remove-button"
                               aria-label="Remove from Collection"
                               onClick={ handleClickRemoveFromCart(key, item.id) }
-                            ><DeleteIcon size={ 14 } fill="var(--color-crimson)" /></IconButton>
+                              color="warning" size="small"
+                            ><DeleteIcon fontSize="small" /></IconButton>
                           </Tooltip>
                         }
                       ><ListItemText
@@ -126,19 +129,19 @@ export const CollectionPreview = () => {
             size="large"
             endIcon={ <NextStepsIcon /> }
             onClick={ () => navigate('/search/collection') }
+            className="next-steps-button"
           >Next Steps</Button>
         </CardActions>
       </Collapse>
       
       <Divider />
+
       <Tooltip title={ `${ expanded ? 'Hide' : 'Show' } Collection Details` } placement="bottom">
-        <Button fullWidth onClick={ clickToggleExpand } color="secondary" disabled={ cart.count === 0 }>
-          {
-            expanded
-              ? <CollapseIcon size={ 24 } fill="var(--color-eggplant-dark)" />
-              : <ExpandIcon size={ 24 } fill="var(--color-eggplant-dark)" />
-          }
-        </Button>
+        <div> {/* catches events when button is disabled. */}
+          <Button fullWidth onClick={ clickToggleExpand } color="secondary" disabled={ cart.count === 0 }>
+            { expanded ? <CollapseIcon  /> : <ExpandIcon  /> }
+          </Button>
+        </div>
       </Tooltip>
     </Card>
   )
