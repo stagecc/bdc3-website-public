@@ -3,6 +3,7 @@ import { navigate } from 'gatsby'
 import { useLocation } from '@reach/router'
 import axios from 'axios'
 import { useCart } from '../cart'
+import { useFilter} from '../filter'
 
 //
 
@@ -11,7 +12,7 @@ export const useSearch = () => useContext(DugSearchContext)
 
 //
 
-const PER_PAGE = 20
+const PER_PAGE = 30
 const SEARCH_BASE_URL = `https://search.biodatacatalyst.renci.org/search-api`
 
 //
@@ -69,8 +70,21 @@ export const SearchProvider = ({ children }) => {
   const [pageCount, setPageCount] = useState(0)
   const [currentPage, setCurrentPage] = useState(1)
   const [selectedResult, setSelectedResult] = useState(null)
-  const [facets, setFacets] = useState([])
   const cart = useCart(['concepts', 'studies', 'variables'])
+  const typeFilters = useFilter([])
+
+  // apply filters to results
+  const filteredResults = useMemo(() => {
+    // if no filters are active...
+    const activeFilters = typeFilters.active()
+    if (activeFilters.length === 0) {
+      // ...show all results.
+      return [...results]
+    }
+    // otherwise, update our list, with the filtering applied.
+    return [...results]
+      .filter(result => activeFilters.includes(result.type))
+  }, [typeFilters, results])
 
   const relatedConcepts = useMemo(() => {
     // this is a naive ranking. improvement needed.
@@ -111,7 +125,8 @@ export const SearchProvider = ({ children }) => {
       if (data?.hits) {
         const hits = data.hits.map(r => r._source)
         setPageCount(Math.ceil(data.total_items / PER_PAGE))
-        setFacets([...Object.keys(data.concept_types)])
+        const conceptTypes = [...Object.keys(data.concept_types)]
+        typeFilters.update(conceptTypes)
         if (page === 1) {
           setResults(hits)
         } else {
@@ -127,7 +142,7 @@ export const SearchProvider = ({ children }) => {
     } finally {
       setIsLoading(false)
     }
-  }, [results])
+  }, [results, typeFilters])
 
   const fetchStudies = useCallback(async (conceptId, query) => {
     setIsLoading(true)
@@ -179,8 +194,8 @@ export const SearchProvider = ({ children }) => {
   return (
     <DugSearchContext.Provider value={{
       query, doSearch, isLoading,
-      fetchConcepts, fetchStudies,
-      results, facets,
+      fetchConcepts, fetchStudies, typeFilters,
+      results, filteredResults,
       pageCount, currentPage,
       selectedResult, setSelectedResult,
       relatedConcepts,

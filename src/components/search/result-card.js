@@ -1,36 +1,18 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { Card, CardContent, CardHeader, Divider, Typography } from '@mui/material'
 import { useSearch } from './context'
 import { ConceptCollectionButton } from './collection-button'
+import { snipText } from '../../utils'
 
 //
 
 const SNIPPET_THRESHOLD = 150
 const CARD_BODY_HEIGHT = 175
 
-/*
- * Returns an initial snippet of given text.
- * 
- * @param {String} sentence The text to snip.
- * @param {Number} threshold The bounding character length.
- * @return {String} The first `threshold` characters of `sentence`,
- *         with the final word completed, followed by an ellipsis.
- */
-function snipText(sentence, threshold) {
-  if (sentence.length <= threshold) {
-    return sentence
-  }
-  return sentence.split(' ')
-    .reduce((acc, word) => {
-      if (acc.join(' ').length > threshold) {
-        return acc
-      }
-      return acc.concat(word)
-    }, []).join(' ') + '...'
-}
-
 export const ResultCard = ({ index, result }) => {
-  const { setSelectedResult } = useSearch()
+  const { cart, setSelectedResult } = useSearch()
+
+  const inCart = useMemo(() => cart.contains('concepts', result.id), [cart, result.id])
 
   const snippet = snipText(result.description, SNIPPET_THRESHOLD)
 
@@ -69,6 +51,13 @@ export const ResultCard = ({ index, result }) => {
           fontSize: '65%',
           borderTopLeftRadius: '3px',
         },
+        '.collection-button': {
+          transition: 'filter 250ms',
+          filter: inCart ? 'opacity(0.9)' : 'opacity(0.1)',
+        },
+        '&:hover .collection-button': {
+          filter: 'opacity(1.0)',
+        },
       }}
     >
       <CardHeader
@@ -76,6 +65,7 @@ export const ResultCard = ({ index, result }) => {
         subheader={ result.id }
         action={ 
           <ConceptCollectionButton
+            className={ 'collection-button' }
             concept={ result }
             tooltipPlacement="left"
           />
