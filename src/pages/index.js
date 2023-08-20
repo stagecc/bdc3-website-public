@@ -13,6 +13,7 @@ import { NewsFeedModule } from "../components/modules";
 import carouselData from "../data/data-carousel.json"
 import { VideoPlayer } from "../components/video-player"
 import { SearchForm } from "../components/search"
+import { Link } from "../components/link"
 
 const IndexPage = () => {
   return (
@@ -32,6 +33,12 @@ const IndexPage = () => {
         </Hidden>
 
         <SearchForm />
+        <Paragraph center style={{ fontStyle: 'italic', fontSize: '90%' }}>
+          Semantic search provided by Dug.
+          {' '}
+          <Link to="/platforms/dug">Learn more about Dug here</Link>.
+          {/* todo: get correct copy for the above. */}
+        </Paragraph>
 
         <br /><br />
 

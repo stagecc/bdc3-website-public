@@ -1,14 +1,11 @@
 import React from "react";
-import { navigate } from 'gatsby'
-import { Badge, Box, IconButton, Typography } from "@mui/material";
-import { BookmarkBorder as CartIcon } from "@mui/icons-material";
+import { Grid, Stack, Typography } from "@mui/material";
 import { PageContent } from "../../components/layout";
 import { SEO } from "../../components/seo";
-import { Results, SearchForm, useSearch } from "../../components/search";
+import { CollectionPreview, FiltersTray, Results, SearchForm } from "../../components/search";
+
 
 const SearchPage = ({ location }) => {
-  const { cart } = useSearch()
-
   return (
     <PageContent width="95%" maxWidth="1400px" center gutters>
       <SEO
@@ -16,30 +13,44 @@ const SearchPage = ({ location }) => {
         description="BioData Catalyst semantic search provided by Dug"
       />
 
-      <Box sx={{
-        position: 'relative',
-        mb: '2rem',
-        '.cart-button': {
-          position: 'absolute',
-          right: 0,
-          top: 2,
-        },
-      }}>
-        <Typography variant="h1">Semantic Search</Typography>
+      <Typography variant="h1">Semantic Search</Typography>
 
-        <IconButton className="cart-button" onClick={ () => navigate('/search/collection') }>
-          <Badge badgeContent={ cart.count } color="primary">
-            <CartIcon color="secondary" />
-          </Badge>
-        </IconButton>
-      </Box>
+      <Stack gap={ 2 } sx={{ my: 2 }}>
+        <SearchForm />
+        <FiltersTray />
+      </Stack>
 
-      <SearchForm />
 
-      <Results />
+      <Grid container spacing={ 4 }>
+        <Grid item xs={ 12 } md={ 8 } lg={ 9 }>
+          <Results />
+        </Grid>
+
+        <Grid item xs={ 12 } md={ 4 } lg={ 3 }>
+          <Sidebar />
+        </Grid>
+      </Grid>
 
     </PageContent>
   );
 }
 
 export default SearchPage;
+
+const Sidebar = () => {
+  return (
+    <Stack gap={ 4 } sx={{
+      position: 'sticky',
+      top: 140,
+      '.MuiCardContent-root': { p: 0 },
+      '.MuiListSubheader-root': {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        lineHeight: '36px',
+      },
+    }}>
+      <CollectionPreview />
+    </Stack>
+  )
+}
