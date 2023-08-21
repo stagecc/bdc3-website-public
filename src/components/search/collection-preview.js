@@ -23,7 +23,12 @@ const textOverflowStyle = {
   whiteSpace: 'nowrap',
 }
 
-// invokes the mui ripple effect on `element`
+/*
+ * Invokes the MUI ripple effect on `element`.
+ * 
+ * @param {element} DOM element to receive the ripple effect.
+ * @param {ripple} The DOM element that is the ripple itself.
+ */
 const triggerRipple = (element, ripple) => {
   const rect = element.getBoundingClientRect();
 
@@ -32,11 +37,10 @@ const triggerRipple = (element, ripple) => {
       clientX: rect.left + rect.width / 2,
       clientY: rect.top + rect.height / 2,
     },
-    // when center is true, the ripple doesn't travel to the border of the container
-    { center: false },
-  );
+    { center: false }, // when center is true, the ripple doesn't travel to the border of the container
+  )
 
-  setTimeout(() => ripple.stop({ }), 320);
+  setTimeout(() => ripple.stop({ }), 500)
 };
 
 export const CollectionPreview = () => {
@@ -53,28 +57,34 @@ export const CollectionPreview = () => {
     cart.remove(type, id)
   }
 
-  useEffect(() => {
-  }, [cart.count])
-
   // this effect will be responsible for orchestrating a signal
   // to the user that the contents of their collection have updated.
   useEffect(() => {
+    // we can bail out early if the cart is empty.
     if (cart.count === 0) {
       setExpanded(false)
       return
     }
 
+    // if the collection is already expanded, there's no opening to do...
+    if (expanded) {
+      // ...but we can (todo) ripple the just-added collection item.
+      return
+    }
+
+    // we'll want to ensure the references are in place before proceeding to invoke the aimation.
     if (!rippleRef.current || !buttonRef.current) {
       return
     }
     
-    if (expanded) {
-      return
-    }
-
+    // let's draw attention to the expand/collapse button
+    // and open the collection fully.
     triggerRipple(buttonRef.current, rippleRef.current)
+    // actually open the thing.
     setExpanded(true)
-  }, [cart])
+    // (todo) do ripple effect on the just-added collection item.
+    //
+  }, [cart.count])
 
   return (
     <Card sx={{
