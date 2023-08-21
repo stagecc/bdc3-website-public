@@ -4,6 +4,7 @@ import {
   List, ListItem, ListItemButton, ListItemIcon, ListItemText, ListSubheader,
   Popover, Stack, Tooltip, Typography,
 } from '@mui/material'
+import { ClickAwayListener } from '@mui/base'
 import {
   Close as CloseIcon,
   Close as ClearIcon,
@@ -22,7 +23,7 @@ export const FiltersTray = () => {
     setOpen(!open)
   }
 
-  const handleClickClear = () => {
+  const handleClickClearFilters = () => {
     typeFilters.clear()
     setOpen(false)
   }
@@ -31,112 +32,115 @@ export const FiltersTray = () => {
   const id = open ? 'filters-popover' : undefined
 
   return (
-    <Stack
-      direction="column"
-      sx={{
-        backgroundColor: '#eee',
-        borderRadius: '23px',
-        '.top': {
-          p: 1,
-        },
-        '.bottom': {
-          backgroundColor: '#ddd',
-        },
-        '.chips-container': {
-          flex: 1,
-        },
-        '.MuiChip-root': {
-          m: 0.5,
-        },
-        '.MuiListItemButton-root': { px: 1 },
-        '.MuiListSubheader-root': { px: 2, py: 1, backgroundColor: 'transparent' },
-        '.clear-filters-button': {
-          transition: 'filter 250ms',
-          filter: 'opacity(0.25) saturate(0.1)',
-        },
-        '&:hover .clear-filters-button': {
-          filter: 'opacity(1.0) saturate(1.0)',
-        },
-        '.no-filters-note': {
-          fontStyle: 'italic',
-          m: 1, ml: 2,
-          fontSize: '75%',
-        },
-      }}
-    >
-      <Stack direction="row" gap={ 1 } className="top">
-        <Tooltip title="Filters" placement="top">
-          <IconButton
-            aria-describedby={ id }
-            onClick={ handleClickToggleTray }
-            size="small"
-            sx={{ flex: '0 0 36px' }}
-          ><FiltersIcon fontSize="small" /></IconButton>
-        </Tooltip>
+    <ClickAwayListener onClickAway={ () => setOpen(false) }>
+      <Stack
+        direction="column"
+        sx={{
+          backgroundColor: '#eee',
+          borderRadius: '23px',
+          oerflow: 'hidden',
+          '.top-bar': {
+            p: 1,
+          },
+          '.collapser': {
+            backgroundColor: '#ddd',
+            borderBottomLeftRadius: '23px',
+            borderBottomRightRadius: '23px',
+          },
+          '.chips-container': {
+            flex: 1,
+          },
+          '.MuiChip-root': {
+            m: 0.5,
+          },
+          '.MuiListItemButton-root': { px: 1 },
+          '.MuiListSubheader-root': { px: 2, py: 1, backgroundColor: 'transparent' },
+          '.clear-filters-button': {
+            transition: 'filter 250ms',
+            filter: 'opacity(0.25) saturate(0.1)',
+          },
+          '&:hover .clear-filters-button': {
+            filter: 'opacity(1.0) saturate(1.0)',
+          },
+          '.no-filters-note': {
+            fontStyle: 'italic',
+            m: 1, ml: 2,
+            fontSize: '75%',
+          },
+        }}
+      >
+        <Stack direction="row" gap={ 1 } className="top-bar">
+          <Tooltip title="Filters" placement="top">
+            <IconButton
+              aria-describedby={ id }
+              onClick={ handleClickToggleTray }
+              size="small"
+              sx={{ flex: '0 0 36px' }}
+            ><FiltersIcon fontSize="small" /></IconButton>
+          </Tooltip>
 
-        <Stack
-          direction="row"
-          alignItems="flex-start"
-          gap={ 1 }
-          className="chips-container"
-        >
+          <Stack
+            direction="row"
+            alignItems="flex-start"
+            gap={ 1 }
+            className="chips-container"
+          >
+            {
+              activeFilters.length === 0 ? (
+                <Typography
+                  color="text.disabled"
+                  className="no-filters-note"
+                >Showing everything. Select a filter to refine your results.</Typography>
+              ) : activeFilters.map(filter => (
+                <Chip
+                  label={ filter }
+                  onDelete={ () => typeFilters.toggle(filter) }
+                  color="secondary"
+                  size="small"
+                />
+              ))
+            }
+          </Stack>
+
           {
-            activeFilters.length === 0 ? (
-              <Typography
-                color="text.disabled"
-                className="no-filters-note"
-              >Showing everything. Select a filter to refine your results.</Typography>
-            ) : activeFilters.map(filter => (
-              <Chip
-                label={ filter }
-                onDelete={ () => typeFilters.toggle(filter) }
-                color="secondary"
-                size="small"
-              />
-            ))
+            activeFilters.length > 0 && (
+              <Tooltip title="Clear Filters" placement="left">
+                <IconButton
+                  color="primary"
+                  size="small"
+                  onClick={ handleClickClearFilters }
+                ><ClearIcon fontSize="small" /></IconButton>
+              </Tooltip>
+            )
           }
         </Stack>
 
-        {
-          activeFilters.length > 0 && (
-            <Tooltip title="Clear Filters" placement="left">
-              <IconButton
-                color="primary"
-                size="small"
-                onClick={ handleClickClear }
-              ><ClearIcon fontSize="small" /></IconButton>
-            </Tooltip>
-          )
-        }
+        <Collapse in={ open } className="collapser">
+          <List dense aria-label="search result filters">
+            <ListSubheader>Result Types</ListSubheader>
+            {
+              Object.keys(typeFilters.filters)
+                .sort((f, g) => f.toLowerCase() < g.toLowerCase() ? -1 : 1)
+                .map(f => (
+                  <ListItem key={ `${ f }_2-checkbox` } disablePadding>
+                    <ListItemButton onClick={ () => typeFilters.toggle(f) }>
+                      <ListItemIcon>
+                        <Checkbox
+                          disableRipple
+                          checked={ typeFilters.filters?.[f] }
+                          size="small"
+                          color="secondary"
+                        />
+                      </ListItemIcon>
+                      <ListItemText primary={ f } />
+                    </ListItemButton>
+                  </ListItem>
+                ))
+            }
+          </List>
+        </Collapse>
       </Stack>
-
-      <Collapse in={ open } className="bottom">
-        <List dense aria-label="search result filters">
-          <ListSubheader>Result Types</ListSubheader>
-          {
-            Object.keys(typeFilters.filters)
-              .sort((f, g) => f.toLowerCase() < g.toLowerCase() ? -1 : 1)
-              .map(f => (
-                <ListItem key={ `${ f }_2-checkbox` } disablePadding>
-                  <ListItemButton onClick={ () => typeFilters.toggle(f) }>
-                    <ListItemIcon>
-                      <Checkbox
-                        disableRipple
-                        checked={ typeFilters.filters?.[f] }
-                        size="small"
-                        color="secondary"
-                      />
-                    </ListItemIcon>
-                    <ListItemText primary={ f } />
-                  </ListItemButton>
-                </ListItem>
-              ))
-          }
-        </List>
-      </Collapse>
-
-
-    </Stack>
+    </ClickAwayListener>
   )
 }
 /*      <Popover
