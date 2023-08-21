@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import {
-  Box, Card, CardHeader, Checkbox, Chip, Collapse, Divider, IconButton,
+  Checkbox, Chip, Collapse, IconButton,
   List, ListItem, ListItemButton, ListItemIcon, ListItemText, ListSubheader,
-  Popover, Stack, Tooltip, Typography,
+  Stack, Tooltip, Typography,
 } from '@mui/material'
 import { ClickAwayListener } from '@mui/base'
 import {
-  Close as CloseIcon,
   Close as ClearIcon,
   Tune as FiltersIcon,
 } from '@mui/icons-material'
