@@ -13,7 +13,7 @@ import {
   Typography,
 } from '@mui/material'
 import { useSearch } from '../context'
-import { DebugTab, StudiesTab } from './tabs'
+import { DebugTab, ExplanationTab, StudiesTab } from './tabs'
 import { Dots } from '../../loading'
 import { ConceptCollectionButton } from '../collection-button'
 
@@ -120,7 +120,7 @@ export const ResultDialog = () => {
     <Dialog
       open={open}
       onClose={handleClose}
-      aria-labelledby="result-dialog-title"
+      aria-labelledby="result-dialog-title-bar"
       aria-describedby="result-dialog-content"
       sx={{
         '.MuiDialog-paper': {
@@ -130,12 +130,15 @@ export const ResultDialog = () => {
           maxWidth: '1200px',
         },
         '.MuiStack-root': { height: '50vh' },
-        '#result-dialog-title': {
+        '#result-dialog-title-bar': {
           p: 0,
           pl: 2,
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
+        },
+        '#result-dialog-title-bar .concept-name': {
+          flex: 1,
         },
         '#result-dialog-content': {
           p: 0,
@@ -151,8 +154,8 @@ export const ResultDialog = () => {
         },
       }}
     >
-      <DialogTitle id="result-dialog-title">
-        <Box sx={{ flex: 1 }}>
+      <DialogTitle id="result-dialog-title-bar">
+        <Box className="concept-name">
           { selectedResult.name }&nbsp;&nbsp;
           <ConceptCollectionButton concept={ selectedResult } tooltipPlacement="right" />
         </Box>
@@ -161,6 +164,7 @@ export const ResultDialog = () => {
             label={ `Studies (${ loadingStudies ? '...' : studies.length })`}
             disabled={ studies.length === 0 }
           />
+          <Tab label="Explanation" />
           { process.env.NODE_ENV === 'development' && <Tab label="Debug" /> }
         </Tabs>
       </DialogTitle>
@@ -182,6 +186,7 @@ export const ResultDialog = () => {
                 </ul>
               )
             }
+
           </Box>
 
           <Divider orientation="vertical" flexItem />
@@ -194,8 +199,12 @@ export const ResultDialog = () => {
             }
           </TabPanel>
 
+          <TabPanel value={ tabIndex } index={ 1 } className="result-dialog-justification">
+            <ExplanationTab />
+          </TabPanel>
+
           {/* this debug tab can stay. the tab is rendered in development mode */}
-          <TabPanel value={ tabIndex } index={ 1 } className="result-dialog-details">
+          <TabPanel value={ tabIndex } index={ 2 } className="result-dialog-details">
             <DebugTab concept={ selectedResult } studies={ studies } />
           </TabPanel>
 
