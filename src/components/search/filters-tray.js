@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import {
-  Checkbox, Chip, Collapse, IconButton,
+  ButtonBase, Checkbox, Chip, Collapse, IconButton,
   List, ListItem, ListItemButton, ListItemIcon, ListItemText, ListSubheader,
   Stack, Tooltip, Typography,
 } from '@mui/material'
 import { ClickAwayListener } from '@mui/base'
-import {
-  Close as ClearIcon,
-  Tune as FiltersIcon,
-} from '@mui/icons-material'
+import { Tune as FiltersIcon } from '@mui/icons-material'
 import { useSearch } from './context'
 
 //
@@ -24,7 +21,6 @@ export const FiltersTray = () => {
 
   const handleClickClearFilters = () => {
     typeFilters.clear()
-    setOpen(false)
   }
 
 
@@ -37,7 +33,7 @@ export const FiltersTray = () => {
         sx={{
           backgroundColor: '#eee',
           borderRadius: '23px',
-          oerflow: 'hidden',
+          overflow: 'hidden',
           '.top-bar': {
             p: 1,
           },
@@ -53,13 +49,25 @@ export const FiltersTray = () => {
             m: 0.5,
           },
           '.MuiListItemButton-root': { px: 1 },
-          '.MuiListSubheader-root': { px: 2, py: 1, backgroundColor: 'transparent' },
+          '.MuiListSubheader-root': { px: 2, py: 0, backgroundColor: 'transparent' },
           '.clear-filters-button': {
-            transition: 'filter 250ms',
-            filter: 'opacity(0.25) saturate(0.1)',
+            transition: 'filter 250ms, transform 100ms',
+            filter: 'opacity(0.7) saturate(0.25)',
+            fontSize: '75%',
+            pr: 2,
+            color: 'crimson',
           },
           '&:hover .clear-filters-button': {
-            filter: 'opacity(1.0) saturate(1.0)',
+            filter: 'opacity(0.8) saturate(0.5)',
+          },
+          '.clear-filters-button.in': {
+            transform: 'translate3d(0, 0, 0)',
+          },
+          '.clear-filters-button.out': {
+            transform: 'translate3d(120px, 0, 0)',
+          },
+          '.clear-filters-button:hover': {
+            filter: 'opacity(1.0) saturate(0.8)',
           },
           '.no-filters-note': {
             fontStyle: 'italic',
@@ -101,17 +109,12 @@ export const FiltersTray = () => {
             }
           </Stack>
 
-          {
-            activeFilters.length > 0 && (
-              <Tooltip title="Clear Filters" placement="left">
-                <IconButton
-                  color="primary"
-                  size="small"
-                  onClick={ handleClickClearFilters }
-                ><ClearIcon fontSize="small" /></IconButton>
-              </Tooltip>
-            )
-          }
+          <ButtonBase
+            disableRipple
+            disableTouchRipple
+            onClick={ handleClickClearFilters }
+            className={ activeFilters.length > 0 ? 'clear-filters-button in' : 'clear-filters-button out' }
+          >× Clear filters</ButtonBase>
         </Stack>
 
         <Collapse in={ open } className="collapser">
@@ -142,40 +145,3 @@ export const FiltersTray = () => {
     </ClickAwayListener>
   )
 }
-/*      <Popover
-        id={ id }
-        open={ open }
-        anchorEl={ anchorEl }
-        onClose={ handleClose }
-        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-        transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-      >
-        <Card>
-          <CardHeader
-            title="Refine Results"
-            titleTypographyProps={{ color: 'secondary' }}
-          />
-          <Divider />
-          <List dense aria-label="search result filters">
-            <ListSubheader className="list-subheader">Result Type</ListSubheader>
-            {
-              Object.keys(typeFilters.filters)
-                .sort((f, g) => f.toLowerCase() < g.toLowerCase() ? -1 : 1)
-                .map(f => (
-                  <ListItem key={ `${ f }_checkbox` } disablePadding>
-                    <ListItemButton onClick={ () => typeFilters.toggle(f) }>
-                      <ListItemIcon>
-                        <Checkbox
-                          disableRipple
-                          checked={ typeFilters.filters?.[f] }
-                          size="small"
-                        />
-                      </ListItemIcon>
-                      <ListItemText primary={ f } />
-                    </ListItemButton>
-                  </ListItem>
-                ))
-            }
-          </List>
-        </Card>
-      </Popover>*/

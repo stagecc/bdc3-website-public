@@ -3,11 +3,22 @@ import { Accordion, AccordionDetails, AccordionSummary, Box, Stack, Typography }
 import { ChevronDownIcon as ExpandIcon } from '../../../icons'
 import { Link } from '../../../link'
 import { StudyCollectionButton, VariableCollectionButton } from '../../collection-button'
+import { snipText } from '../../../../utils'
 
-//
+
+
+const VAR_DESCRIPTION_LENGTH = 300
 
 const Variable = ({ variable }) => {
   const { description, e_link, id, name } = variable
+
+  const snippet = React.useMemo(() => {
+    if (description.length > VAR_DESCRIPTION_LENGTH) {
+      return snipText(description, VAR_DESCRIPTION_LENGTH)
+    }
+    return description
+  }, [description,])
+
   return (
     <Box sx={{
       borderLeft: '3px solid #dde',
@@ -19,7 +30,7 @@ const Variable = ({ variable }) => {
         &nbsp;&nbsp;
         <VariableCollectionButton variable={ variable } tooltipPlacement="top" size="small" />
       </Typography>
-      <Typography paragraph className="var-description">{ description }</Typography>
+      <Typography paragraph className="var-description">{ snippet }</Typography>
     </Box>
   )
 }
