@@ -1,15 +1,17 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useRef, useState } from 'react'
 import { navigate } from 'gatsby'
 import {
-  Button, Card, CardActions, CardContent, CardHeader, Collapse, Divider,
+  Box, Button, Card, CardActions, CardContent, CardHeader, Collapse, Divider,
   IconButton, List, ListItem, ListItemText, ListSubheader, Tooltip, Typography,
 } from '@mui/material'
+import TouchRipple from '@mui/material/ButtonBase/TouchRipple'
 import {
   BookmarkBorder as CollectionIcon,
   Send as NextStepsIcon,
   ExpandLess as CollapseIcon,
   ExpandMore as ExpandIcon,
   Delete as DeleteIcon,
+  Remove as HandleIcon,
 } from '@mui/icons-material'
 import { useSearch } from './context'
 
@@ -21,9 +23,27 @@ const textOverflowStyle = {
   whiteSpace: 'nowrap',
 }
 
+// invokes the mui ripple effect on `element`
+const triggerRipple = (element, ripple) => {
+  const rect = element.getBoundingClientRect();
+
+  ripple.start(
+    {
+      clientX: rect.left + rect.width / 2,
+      clientY: rect.top + rect.height / 2,
+    },
+    // when center is true, the ripple doesn't travel to the border of the container
+    { center: false },
+  );
+
+  setTimeout(() => ripple.stop({ }), 320);
+};
+
 export const CollectionPreview = () => {
   const { cart } = useSearch()
   const [expanded, setExpanded] = useState(false)
+  const buttonRef = useRef(null)
+  const rippleRef = useRef(null)
 
   const clickToggleExpand = () => {
     setExpanded(!expanded)
@@ -34,11 +54,27 @@ export const CollectionPreview = () => {
   }
 
   useEffect(() => {
-    if (cart.count !== 0) {
+  }, [cart.count])
+
+  // this effect will be responsible for orchestrating a signal
+  // to the user that the contents of their collection have updated.
+  useEffect(() => {
+    if (cart.count === 0) {
+      setExpanded(false)
       return
     }
-    setExpanded(false)
-  }, [cart.count])
+
+    if (!rippleRef.current || !buttonRef.current) {
+      return
+    }
+    
+    if (expanded) {
+      return
+    }
+
+    triggerRipple(buttonRef.current, rippleRef.current)
+    setExpanded(true)
+  }, [cart])
 
   return (
     <Card sx={{
@@ -60,9 +96,9 @@ export const CollectionPreview = () => {
         filter: 'opacity(0.1) saturate(0.0)',
       },
       '.list-item:hover .remove-button': { 
-        ilter: 'opacity(0.75) saturate(0.1)',
+        filter: 'opacity(0.75) saturate(0.1)',
       },
-      '.list-item:hover .remove-button:hover': {
+      '.list-item .remove-button:hover': {
         filter: 'opacity(1.0) saturate(1.0)',
       },
       '.next-steps-button': {
@@ -93,7 +129,7 @@ export const CollectionPreview = () => {
                         key={ `cart-${ key }-${ item.id }` }
                         className="list-item"
                         secondaryAction={
-                          <Tooltip title="Remove from Collection" placement="right">
+                          <Tooltip title="Remove from Collection" placement="top">
                             <IconButton
                               className="remove-button"
                               aria-label="Remove from Collection"
@@ -136,13 +172,25 @@ export const CollectionPreview = () => {
       
       <Divider />
 
-      <Tooltip title={ `${ expanded ? 'Hide' : 'Show' } Collection Details` } placement="bottom">
-        <div> {/* catches events when button is disabled. */}
-          <Button fullWidth onClick={ clickToggleExpand } color="secondary" disabled={ cart.count === 0 }>
-            { expanded ? <CollapseIcon  /> : <ExpandIcon  /> }
-          </Button>
-        </div>
-      </Tooltip>
+      {
+        cart.count === 0 ? (
+          <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <HandleIcon sx={{ margin: 'auto', filter: 'opacity(0.25)' }} /> 
+          </Box>
+        ) : (
+          <Tooltip title={ `${ expanded ? 'Hide' : 'Show' } Collection Details` } placement="bottom">
+              <Button
+                fullWidth
+                onClick={ clickToggleExpand }
+                color="secondary"
+                ref={ buttonRef }
+              >
+                { expanded ? <CollapseIcon  /> : <ExpandIcon  /> }
+                <TouchRipple ref={ rippleRef } center />
+              </Button>
+          </Tooltip>
+        )
+      }
     </Card>
   )
 }
