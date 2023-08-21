@@ -13,7 +13,7 @@ const parseScoreDetail = ({ value, description, details }) => {
     const explainPattern = /^weight\((?<fieldName>.+):(?<searchTerm>.+) in (?<segmentNumber>\d+)\) \[(?<similarityMetric>.+)\], result of:$/
     const match = description.match(explainPattern)
     if (match) {
-        let { fieldName, searchTerm, segmentNumber, similarityMetric } = match.groups
+        let { fieldName, searchTerm } = match.groups
         if (searchTerm.startsWith(`"`) && searchTerm.endsWith(`"`)) searchTerm = searchTerm.slice(1, -1)
         return {
             fieldMatch: fieldName,
@@ -35,7 +35,7 @@ const parseScoreDetail = ({ value, description, details }) => {
 export const ExplanationTab = () => {
   const { selectedResult } = useSearch()
 
-  const [advancedBreakdown, setAdvancedBreakdown] = useState(false)
+  const [advancedBreakdown, ] = useState(false)
   const scoreData = useMemo(() => (parseScoreDetail(selectedResult.explanation)
       .filter((detail) => detail !== null)
       // Reduce duplicate details into single details.
