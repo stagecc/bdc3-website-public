@@ -123,7 +123,10 @@ export const SearchProvider = ({ children }) => {
     try {
       const data = await requestConcepts({ query, page })
       if (data?.hits) {
-        const hits = data.hits.map(r => r._source)
+        const hits = data.hits.map(r => ({
+          ...r._source,
+          explanation: r._explanation
+        }))
         setPageCount(Math.ceil(data.total_items / PER_PAGE))
         const conceptTypes = [...Object.keys(data.concept_types)]
         typeFilters.update(conceptTypes)
