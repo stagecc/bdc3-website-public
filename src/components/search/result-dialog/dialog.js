@@ -134,16 +134,16 @@ export const ResultDialog = () => {
           p: 0,
           pl: 2,
           display: 'flex',
-          justifyContent: 'space-between',
           alignItems: 'center',
         },
         '#result-dialog-title-bar .concept-name': {
+          p: 0,
           flex: 1,
         },
         '#result-dialog-content': {
           p: 0,
         },
-        '#result-dialog-description': {
+        '.result-dialog-description': {
           flex: `1 0 400px`,
           p: 4,
           overflow: 'scroll',
@@ -154,12 +154,12 @@ export const ResultDialog = () => {
         },
       }}
     >
-      <DialogTitle id="result-dialog-title-bar">
-        <Box className="concept-name">
+      <Box id="result-dialog-title-bar">
+        <Typography variant="h5" className="concept-name">
           { selectedResult.name }&nbsp;&nbsp;
           <ConceptCollectionButton concept={ selectedResult } tooltipPlacement="right" />
-        </Box>
-        <Tabs value={ tabIndex } onChange={ handleClickTab }>
+        </Typography>
+        <Tabs value={ tabIndex } onChange={ handleClickTab } className="tabs">
           <Tab
             label={ `Studies (${ loadingStudies ? '...' : studies.length })`}
             disabled={ studies.length === 0 }
@@ -167,12 +167,12 @@ export const ResultDialog = () => {
           <Tab label="Explanation" />
           { process.env.NODE_ENV === 'development' && <Tab label="Debug" /> }
         </Tabs>
-      </DialogTitle>
+      </Box>
 
       <DialogContent id="result-dialog-content" dividers>
         <Stack direction="row">
 
-          <Box id="result-dialog-description">
+          <Box className="result-dialog-description">
             <Typography paragraph><strong>Description:</strong></Typography>
             <Typography paragraph>{ selectedResult.description }</Typography>
 
