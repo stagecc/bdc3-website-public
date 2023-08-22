@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, Stack, Typography } from "@mui/material";
 import { PageContent } from "../../components/layout";
 import { SEO } from "../../components/seo";
-import { FiltersTray, Results, SearchForm, Sidebar } from "../../components/search";
+import { CollectionPreview, FiltersTray, Results, SearchForm, Sidebar } from "../../components/search";
 
 const SearchPage = ({ location }) => {
   return (
@@ -24,7 +24,9 @@ const SearchPage = ({ location }) => {
         </Grid>
 
         <Grid item xs={ 12 } md={ 4 } lg={ 3 }>
-          <Sidebar />
+          <Sidebar>
+            <CollectionPreview />
+          </Sidebar>
         </Grid>
       </Grid>
 

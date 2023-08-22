@@ -1,10 +1,9 @@
 import React from "react";
 import { Stack } from "@mui/material";
-import { CollectionPreview } from "../../components/search";
 
 //
 
-export const Sidebar = () => {
+export const Sidebar = ({ children }) => {
   return (
     <Stack gap={ 4 } sx={{
       position: 'sticky',
@@ -17,7 +16,7 @@ export const Sidebar = () => {
         lineHeight: '36px',
       },
     }}>
-      <CollectionPreview />
+      { children }
     </Stack>
   )
 }
