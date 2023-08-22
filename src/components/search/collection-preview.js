@@ -59,6 +59,7 @@ export const CollectionPreview = () => {
 
   // this effect will be responsible for orchestrating a signal
   // to the user that the contents of their collection have updated.
+  // es-
   useEffect(() => {
     // we can bail out early if the cart is empty.
     if (cart.count === 0) {
@@ -84,6 +85,9 @@ export const CollectionPreview = () => {
     setExpanded(true)
     // (todo) do ripple effect on the just-added collection item.
     //
+    // note the loop caused by adding `expanded` to the dependency array,
+    // so perhaps there is a better solution.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cart.count])
 
   return (
