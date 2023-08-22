@@ -1,0 +1,33 @@
+p, li {
+  text-align: inherit;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.full-width-markdown-image img {
+  margin: 1rem auto;
+}
+.full-width-markdown-image figcaption {
+  font-style: italic;
+}
+
+.partial-width-markdown-image  {
+  margin: 0 2rem 1rem 0;
+  width: 240px;
+  float: left;
+}
+
+.full-width-article-quote {
+  border-left: 8px solid var(--color-crimson);
+  padding-left: 1rem;
+  line-height: 1.5;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 110%;
+}
+
+.article-quote-attribution {
+  color: var(--color-crimson);
+  margin-top: 1rem;
+  font-weight: 600;
+}

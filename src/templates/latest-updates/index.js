@@ -2,15 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import { graphql} from "gatsby";
 import Img from "gatsby-image";
-import { SEO } from "../components/seo";
-import { Title, Subtitle, Meta } from "../components/typography";
-import { InlineList2 } from "../components/list";
-import { TagLink } from "../components/link";
-import { PageContent } from "../components/layout";
+import { SEO } from "../../components/seo";
+import { Title, Subtitle, Meta } from "../../components/typography";
+import { InlineList2 } from "../../components/list";
+import { TagLink } from "../../components/link";
+import { PageContent } from "../../components/layout";
 import { Visible } from "react-grid-system";
-import { HorizontalRule } from "../components/horizontal-rule";
-import { Link } from "../components/link";
-import { Markdown } from '../components/markdown'
+import { HorizontalRule } from "../../components/horizontal-rule";
+import { Link } from "../../components/link";
+import './module.css'
 
 const SpeakerImageWrapper = styled.div`
   @media screen and (max-width: 650px){
@@ -29,7 +29,7 @@ const SpeakerImage = styled(Img)`
 `
 
 export default ({ data, pageContext }) => {
-  const { markdownRemark: { frontmatter, rawMarkdownBody } } = data;
+  const { markdownRemark: { frontmatter, html } } = data;
   const { prev, next } = pageContext;
 
   return (
@@ -45,7 +45,7 @@ export default ({ data, pageContext }) => {
           <Subtitle className="article-subtitle">
             {frontmatter.subtitle}
           </Subtitle>
-          <Meta>Published on {frontmatter.date}</Meta>
+          <Meta>Published on {frontmatter.date} | Authored by Jane Doe</Meta>
           <Meta>
             <InlineList2
               title="Tags"
@@ -59,7 +59,8 @@ export default ({ data, pageContext }) => {
               <SpeakerImage fluid={frontmatter.speakerImage.childImageSharp.fluid}/>
             </SpeakerImageWrapper>
           )}
-          <Markdown src={ rawMarkdownBody } />
+          <div className="page-content" dangerouslySetInnerHTML={{ __html: html }} />
+
         </div>
       </div>
 
@@ -98,7 +99,7 @@ export default ({ data, pageContext }) => {
 export const newsItemQuery = graphql`
   query($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
-      rawMarkdownBody
+      html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         path
