@@ -51,20 +51,21 @@ export const FiltersTray = () => {
           '.MuiListItemButton-root': { px: 1 },
           '.MuiListSubheader-root': { px: 2, py: 0, backgroundColor: 'transparent' },
           '.clear-filters-button': {
-            transition: 'filter 250ms, transform 100ms',
-            filter: 'opacity(0.7) saturate(0.25)',
+            transition: 'filter 100ms, transform 100ms',
             fontSize: '75%',
-            pr: 2,
+            pr: 1,
             color: 'crimson',
           },
-          '&:hover .clear-filters-button': {
-            filter: 'opacity(0.8) saturate(0.5)',
-          },
           '.clear-filters-button.in': {
+            filter: 'opacity(0.4) saturate(0.0)',
             transform: 'translate3d(0, 0, 0)',
           },
           '.clear-filters-button.out': {
-            transform: 'translate3d(120px, 0, 0)',
+            filter: 'opacity(0.0) saturate(0.0)',
+            transform: 'translate3d(0, -2rem, 0)',
+          },
+          '&:hover .clear-filters-button': {
+            filter: 'opacity(0.8) saturate(0.5)',
           },
           '.clear-filters-button:hover': {
             filter: 'opacity(1.0) saturate(0.8)',

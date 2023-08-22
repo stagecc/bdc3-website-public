@@ -2,8 +2,7 @@ import React from "react";
 import { Grid, Stack, Typography } from "@mui/material";
 import { PageContent } from "../../components/layout";
 import { SEO } from "../../components/seo";
-import { CollectionPreview, FiltersTray, Results, SearchForm } from "../../components/search";
-
+import { FiltersTray, Results, SearchForm, Sidebar } from "../../components/search";
 
 const SearchPage = ({ location }) => {
   return (
@@ -15,15 +14,13 @@ const SearchPage = ({ location }) => {
 
       <Typography variant="h1">Semantic Search</Typography>
 
-      <Stack gap={ 2 } sx={{ my: 2 }}>
-        <SearchForm />
-        <FiltersTray />
-      </Stack>
-
-
       <Grid container spacing={ 4 }>
         <Grid item xs={ 12 } md={ 8 } lg={ 9 }>
-          <Results />
+          <Stack gap={ 3 }>
+            <SearchForm />
+            <FiltersTray />
+            <Results />
+          </Stack>
         </Grid>
 
         <Grid item xs={ 12 } md={ 4 } lg={ 3 }>
@@ -37,20 +34,3 @@ const SearchPage = ({ location }) => {
 
 export default SearchPage;
 
-const Sidebar = () => {
-  return (
-    <Stack gap={ 4 } sx={{
-      position: 'sticky',
-      top: 140,
-      '.MuiCardContent-root': { p: 0 },
-      '.MuiListSubheader-root': {
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        lineHeight: '36px',
-      },
-    }}>
-      <CollectionPreview />
-    </Stack>
-  )
-}
