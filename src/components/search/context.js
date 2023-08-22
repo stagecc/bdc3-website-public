@@ -73,7 +73,8 @@ export const SearchProvider = ({ children }) => {
   const cart = useCart(['concepts', 'studies', 'variables'])
   const typeFilters = useFilter([])
 
-  // apply filters to results
+  // apply filters to results.
+  // these are what we'll show to the user.
   const filteredResults = useMemo(() => {
     // if no filters are active...
     const activeFilters = typeFilters.active()
@@ -86,6 +87,7 @@ export const SearchProvider = ({ children }) => {
       .filter(result => activeFilters.includes(result.type))
   }, [typeFilters, results])
 
+  // concepts relevant to what the user may be searching for.
   const relatedConcepts = useMemo(() => {
     // this is a naive ranking. improvement needed.
     // we'll record how many times each of results'
@@ -107,6 +109,8 @@ export const SearchProvider = ({ children }) => {
       .slice(0, 5)
   }, [results])
 
+  // this function changes the params in the URL,
+  // thus kicking everything off.
   const doSearch = (queryString, page = 1) => {
     const trimmedQuery = queryString.trim()
     if (trimmedQuery === '') {
@@ -119,7 +123,6 @@ export const SearchProvider = ({ children }) => {
   const fetchConcepts = useCallback(async (query, page = 1) => {
     setIsLoading(true)
     setCurrentPage(page)
-    // const startTime = Date.now()
     try {
       const data = await requestConcepts({ query, page })
       if (data?.hits) {
@@ -163,22 +166,27 @@ export const SearchProvider = ({ children }) => {
   }, [])
 
 
+  // we do this whenever the URL parameters change.
+  // for us, there's only `q`, the query.
   useEffect(() => {
-    // bail out if no search term
+    // bail out if there are no params.
     if (!location.search) {
       setQuery('')
       return
     }
+    // so we have our search `query`, and we're going to search.
     // the user wants to start at the _top_ of their results, and
     // they may be re-searching with a link far down the page,
-    // so let's ensure they're brought to the top of the page.
+    // so let's ensure they're brought to the top of the page,
+    // and get that started before we even send the request.
     // i can't seem to get a complete scroll to the top;
-    // i think it's the suddent change in document height.
-    // waiting a moment seems to do the trick.
+    //   i think it's the suddent change in document height.
+    //   waiting a moment seems to do the trick.
     const scrollerTimeout = setTimeout(() => {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }, 100)
 
+    // we'll pull the `q` param out of the URL, and stick that into state.
     const searchParams = new URLSearchParams(location.search)
     const q = searchParams.get('q')
     setQuery(q)
@@ -192,6 +200,10 @@ export const SearchProvider = ({ children }) => {
     }
     setResults([])
     fetchConcepts(query)
+    // note the loop caused by adding `fetchConcepts` to this dependency array:
+    // there's a performance-enhancing refactor to be identitified.
+    // 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query])
 
   return (

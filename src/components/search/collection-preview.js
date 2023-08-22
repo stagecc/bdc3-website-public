@@ -132,8 +132,8 @@ export const CollectionPreview = () => {
         <List dense className="contents">
           {
             Object.keys(cart.contents).map(key => (
-              <Fragment>
-                <ListSubheader key={ `cart-${ key }` } color="secondary">
+              <Fragment key={ `cart-${ key }` }>
+                <ListSubheader color="default">
                   { cart.contents[key].length } { key }
                 </ListSubheader>
                 <Collapse in={ expanded } timeout="auto" unmountOnExit>
