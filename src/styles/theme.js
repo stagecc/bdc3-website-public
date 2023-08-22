@@ -33,8 +33,8 @@ export const theme = createTheme({
       fontWeight: 'bold',
       fontSize: '2rem',
       color: color.eggplantDark,
-      padding: '1rem 0',
-      margin: '1rem 0',
+      padding: '8px 0',
+      marginBottom: '24px',
       borderBottom: '1px solid #ccc',
     },
     h2: {
