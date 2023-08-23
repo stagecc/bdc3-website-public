@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import {
-  ButtonBase, Checkbox, Chip, Collapse, IconButton,
+  ButtonBase, Checkbox, Chip, Collapse, Fade,
   List, ListItem, ListItemButton, ListItemIcon, ListItemText, ListSubheader,
-  Stack, Tooltip, Typography,
+  Stack, Typography,
 } from '@mui/material'
 import { ClickAwayListener } from '@mui/base'
 import { Tune as FiltersIcon } from '@mui/icons-material'
@@ -19,103 +19,113 @@ export const FiltersTray = () => {
     setOpen(!open)
   }
 
-  const handleClickClearFilters = () => {
+  const handleClickClearFilters = event => {
+    event.stopPropagation()
     typeFilters.clear()
   }
-
-
-  const id = open ? 'filters-popover' : undefined
 
   return (
     <ClickAwayListener onClickAway={ () => setOpen(false) }>
       <Stack
         direction="column"
         sx={{
-          backgroundColor: '#eee',
-          borderRadius: '23px',
+          backgroundColor: open ? '#21568a22' : 'transparent',
+          '&:hover': { backgroundColor: open ? '#21568a22' : '#21568a11' },
+          m: 1,
+          my: open ? 2 : 1,
+          transition: 'background-color 400ms, margin 300ms ease-out',
           overflow: 'hidden',
+          borderRadius: '8px',
           '.top-bar': {
-            p: 1,
+            height: '34px',
+            cursor: 'pointer',
+            transition: 'padding 200ms',
+            p: open ? 1 : 0,
           },
-          '.collapser': {
-            backgroundColor: '#ddd',
-            borderBottomLeftRadius: '23px',
-            borderBottomRightRadius: '23px',
+          '.filters-icon': {
+            m: 1,
+            transition: 'margin 250ms',
           },
           '.chips-container': {
             flex: 1,
           },
-          '.MuiChip-root': {
-            m: 0.5,
+          '.MuiChip-root': { },
+          '.collapser': {
+            backgroundColor: '#fff3'
           },
           '.MuiListItemButton-root': { px: 1 },
-          '.MuiListSubheader-root': { px: 2, py: 0, backgroundColor: 'transparent' },
+          '.MuiListSubheader-root': {
+            px: 2,
+            py: 0,
+            backgroundColor: 'transparent',
+            textDecoration: 'underline',
+            lineHeight: '36px',
+          },
           '.clear-filters-button': {
-            transition: 'filter 100ms, transform 100ms',
+            transition: 'filter 250ms',
             fontSize: '75%',
-            pr: 1,
+            pr: 2,
             color: 'crimson',
+            height: '100%',
           },
-          '.clear-filters-button.in': {
-            filter: 'opacity(0.4) saturate(0.0)',
-            transform: 'translate3d(0, 0, 0)',
-          },
-          '.clear-filters-button.out': {
-            filter: 'opacity(0.0) saturate(0.0)',
-            transform: 'translate3d(0, -2rem, 0)',
-          },
-          '&:hover .clear-filters-button': {
-            filter: 'opacity(0.8) saturate(0.5)',
-          },
-          '.clear-filters-button:hover': {
-            filter: 'opacity(1.0) saturate(0.8)',
-          },
+          '.clear-filters-button.in': { filter: 'opacity(0.4) saturate(0.0)' },
+          '.clear-filters-button.out': { filter: 'opacity(0.0) saturate(0.0)' },
+          '&:hover .clear-filters-button': { filter: 'opacity(0.8) saturate(0.1)' },
+          '.clear-filters-button:hover': { filter: 'opacity(1.0) saturate(0.8)' },
           '.no-filters-note': {
             fontStyle: 'italic',
-            m: 1, ml: 2,
             fontSize: '75%',
+            pl: open ? 1.5 : 0.5,
           },
         }}
       >
-        <Stack direction="row" gap={ 1 } className="top-bar">
-          <Tooltip title="Filters" placement="top">
-            <IconButton
-              aria-describedby={ id }
-              onClick={ handleClickToggleTray }
-              size="small"
-              sx={{ flex: '0 0 36px' }}
-            ><FiltersIcon fontSize="small" /></IconButton>
-          </Tooltip>
+        <Stack
+          direction="row"
+          alignItems="center"
+          gap={ 1 }
+          className="top-bar"
+          onClick={ handleClickToggleTray }
+          role="button"
+          aria-label="show filters"
+        >
+          <FiltersIcon fontSize="small" className="filters-icon" />
 
-          <Stack
-            direction="row"
-            alignItems="flex-start"
-            gap={ 1 }
-            className="chips-container"
-          >
-            {
-              activeFilters.length === 0 ? (
-                <Typography
-                  color="text.disabled"
-                  className="no-filters-note"
-                >Showing everything. Select a filter to refine your results.</Typography>
-              ) : activeFilters.map(filter => (
-                <Chip
-                  label={ filter }
-                  onDelete={ () => typeFilters.toggle(filter) }
-                  color="secondary"
-                  size="small"
-                />
-              ))
-            }
-          </Stack>
+          {
+            activeFilters.length === 0 ? (
+              <Typography
+                color="text.disabled"
+                className="no-filters-note"
+              >Showing everything. Select a filter to refine your results.</Typography>
+            ) : (
+              <Stack
+                direction="row"
+                alignItems="center"
+                gap={ 1 }
+                className="chips-container"
+              >
+                {
+                  activeFilters.map(filter => (
+                    <Chip
+                      key={ `filter-chip-${ filter }` }
+                      label={ filter }
+                      onDelete={ () => typeFilters.toggle(filter) }
+                      color="secondary"
+                      size="small"
+                    />
+                  ))
+                }
+              </Stack>
+            )
+          }
 
-          <ButtonBase
-            disableRipple
-            disableTouchRipple
-            onClick={ handleClickClearFilters }
-            className={ activeFilters.length > 0 ? 'clear-filters-button in' : 'clear-filters-button out' }
-          >× Clear filters</ButtonBase>
+          <Fade in={ activeFilters.length !== 0 }>
+            <ButtonBase
+              disableRipple
+              disableTouchRipple
+              onClick={ handleClickClearFilters }
+              className={ activeFilters.length > 0 ? 'clear-filters-button in' : 'clear-filters-button out' }
+            >× Clear filters</ButtonBase>
+          </Fade>
         </Stack>
 
         <Collapse in={ open } className="collapser">
