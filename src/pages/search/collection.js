@@ -1,13 +1,29 @@
 import React from 'react'
-import { Card, CardActionArea, CardContent, CardHeader, Divider, IconButton, Stack, Tooltip, Typography } from '@mui/material'
+import {
+  Button, Card, CardActionArea, CardContent, CardHeader,
+  Divider, IconButton, Stack, Tooltip, Typography,
+} from '@mui/material'
 import { PageContent } from '../../components/layout'
 import { SEO } from '../../components/seo'
 import { Link } from '../../components/link'
 import { useSearch } from '../../components/search'
 import { DeleteIcon as ClearCollectionIcon } from '../../components/icons'
+import { downloadFile } from '../../utils'
 
-const FavoritesPage = () => {
+//
+
+const CollectionPage = () => {
   const { cart } = useSearch()
+
+  const handleClickDownloadAsJson = event => {
+    event.preventDefault()
+    const timestamp = new Date().toISOString()
+    downloadFile({
+      data: JSON.stringify(cart.contents, null, 2),
+      fileName: `BDC-Collection_${ timestamp }.json`,
+      filetype: 'text/json',
+    })
+  }
 
   return (
     <PageContent width="95%" maxWidth="1400px" center gutters>
@@ -19,8 +35,6 @@ const FavoritesPage = () => {
       <section>
         <Typography variant="h1">Semantic Search: My Collection</Typography>
 
-        <br /><br />
-
         <Card>
           <CardHeader title={ `Concepts (${ cart.contents.concepts.length })` } />
           <Divider />
@@ -28,8 +42,6 @@ const FavoritesPage = () => {
             { JSON.stringify(cart.contents.concepts, null, 2) }
           </CardContent>
         </Card>
-
-        <br /><br />
 
         <Card>
           <CardHeader title={ `Studies (${ cart.contents.studies.length })` } />
@@ -39,8 +51,6 @@ const FavoritesPage = () => {
           </CardContent>
         </Card>
 
-        <br /><br />
-
         <Card>
           <CardHeader title={ `Variables (${ cart.contents.variables.length })` } />
           <Divider />
@@ -48,11 +58,11 @@ const FavoritesPage = () => {
             { JSON.stringify(cart.contents.variables, null, 2) }
           </CardContent>
         </Card>
-
-        <br /><br />
-        
+      
         <Stack direction={{ xs: 'column', md: 'row' }} justifyContent="space-around">
           <Link to="/search">Return to search</Link>
+
+          <Button onClick={ handleClickDownloadAsJson }>Download as JSON</Button>
 
           <Tooltip title="Clear Collection" placement="left">
             <IconButton onClick={ () => cart.clear() } sx={{ filter: 'opacity(0.5)', transition: 'filter 250ms', '&:hover': { filter: 'opacity(1.0)' } }}>
@@ -103,4 +113,4 @@ const FavoritesPage = () => {
   );
 }
 
-export default FavoritesPage;
+export default CollectionPage;
