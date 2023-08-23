@@ -16,7 +16,7 @@ const SearchPage = ({ location }) => {
 
       <Grid container spacing={ 4 }>
         <Grid item xs={ 12 } md={ 8 } lg={ 9 }>
-          <Stack gap={ 3 }>
+          <Stack>
             <SearchForm />
             <FiltersTray />
             <Results />
