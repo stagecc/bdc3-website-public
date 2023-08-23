@@ -7,7 +7,7 @@ import { snipText } from '../../utils'
 //
 
 const SNIPPET_THRESHOLD = 150
-const CARD_BODY_HEIGHT = 175
+const CARD_BODY_HEIGHT = 120
 
 export const ResultCard = ({ index, result }) => {
   const { cart, setSelectedResult } = useSearch()
