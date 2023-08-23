@@ -8,7 +8,7 @@ import { SEO } from '../../components/seo'
 import { Link } from '../../components/link'
 import { useSearch } from '../../components/search'
 import { DeleteIcon as ClearCollectionIcon } from '../../components/icons'
-import { downloadFile } from '../../utils'
+import { downloadJson } from '../../utils'
 
 //
 
@@ -18,11 +18,7 @@ const CollectionPage = () => {
   const handleClickDownloadAsJson = event => {
     event.preventDefault()
     const timestamp = new Date().toISOString()
-    downloadFile({
-      data: JSON.stringify(cart.contents, null, 2),
-      fileName: `BDC-Collection_${ timestamp }.json`,
-      filetype: 'text/json',
-    })
+    downloadJson(cart.contents, `BDC-Collection_${ timestamp }.json`)
   }
 
   return (
