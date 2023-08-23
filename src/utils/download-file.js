@@ -14,3 +14,11 @@ export const downloadFile = ({ data, fileName, fileType }) => {
   a.dispatchEvent(clickEvt)
   a.remove()
 }
+
+export const downloadJson = (data, filename) => {
+    downloadFile({
+      data: JSON.stringify(data, null, 2),
+      fileName: filename,
+      filetype: 'text/json',
+    })
+}
