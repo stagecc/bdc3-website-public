@@ -45,7 +45,7 @@ export default ({ data, pageContext }) => {
           <Subtitle className="article-subtitle">
             {frontmatter.subtitle}
           </Subtitle>
-          <Meta>Published on {frontmatter.date} | Authored by Jane Doe</Meta>
+          <Meta>Published on {frontmatter.date} {frontmatter.author && (<span>| Authored by {frontmatter.author}</span>)}</Meta>
           <Meta>
             <InlineList2
               title="Tags"
@@ -105,6 +105,7 @@ export const newsItemQuery = graphql`
         path
         title
         subtitle
+        author
         tags
         seo {
           title
