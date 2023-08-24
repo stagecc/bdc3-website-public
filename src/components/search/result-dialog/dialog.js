@@ -25,6 +25,7 @@ const TabPanel = ({ children, value, index, ...other }) => {
       hidden={ value !== index }
       id={ `tabpanel-${index}` }
       aria-labelledby={ `tab-${index}` }
+      className="tab-panel"
       sx={{
         position: 'relative',
         overflow: 'hidden',
@@ -144,16 +145,15 @@ export const ResultDialog = () => {
           p: 0,
         },
         '.dialog-description': {
-          flex: `1 0 400px`,
+          flex: `0 1 400px`,
           p: 4,
           overflow: 'scroll',
         },
         '.dialog-description h4': {
           p: 0,
         },
-        '#result-dialog-details': {
+        '.tab-panel': {
           flex: 3,
-          p: 0,
         },
       }}
     >
