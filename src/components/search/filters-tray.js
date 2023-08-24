@@ -33,6 +33,7 @@ export const FiltersTray = () => {
           '&:hover': { backgroundColor: open ? '#21568a22' : '#21568a11' },
           m: 1,
           my: open ? 2 : 1,
+          p: 1,
           transition: 'background-color 400ms, margin 300ms ease-out',
           overflow: 'hidden',
           borderRadius: '8px',
@@ -51,8 +52,10 @@ export const FiltersTray = () => {
           },
           '.MuiChip-root': { },
           '.collapser': {
-            backgroundColor: '#fff3'
+            backgroundColor: '#fff4',
+            borderRadius: '6px',
           },
+          '.MuiList-root': { },
           '.MuiListItemButton-root': { px: 1 },
           '.MuiListSubheader-root': {
             px: 2,
