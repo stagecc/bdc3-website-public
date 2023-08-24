@@ -1,121 +1,173 @@
-import React, { useMemo, useState } from 'react'
-import { Box, Typography } from '@mui/material'
+import React, { Fragment, useMemo, useState } from 'react'
+import {
+  Box, CircularProgress, List, ListItem, ListItemAvatar, ListItemText, Typography,
+} from '@mui/material'
 import { useSearch } from '../../context'
 
 //
 
-const parseScoreDetail = ({ value, description, details }) => {
-    if (value === 0) return null
-    if (description === "sum of:") {
-        return details.flatMap((detail) => parseScoreDetail(detail))
-    }
+const LabeledProgress = ({ value }) => {
+  return (
+    <Box sx={{ position: 'relative', display: 'inline-flex' }}>
+      <CircularProgress
+        variant="determinate"
+        color="secondary"
+        value={ value }
+        size={ 60 }
+        thickness={ 5 }
+      />
+      <Box
+        sx={{
+          top: 0,
+          left: 0,
+          bottom: 0,
+          right: 0,
+          position: 'absolute',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Typography variant="caption" component="div" color="text.secondary">
+          {`${ Math.round(value) }%`}
+        </Typography>
+      </Box>
+    </Box>
+  );
+}
 
-    const explainPattern = /^weight\((?<fieldName>.+):(?<searchTerm>.+) in (?<segmentNumber>\d+)\) \[(?<similarityMetric>.+)\], result of:$/
-    const match = description.match(explainPattern)
-    if (match) {
-        let { fieldName, searchTerm } = match.groups
-        if (searchTerm.startsWith(`"`) && searchTerm.endsWith(`"`)) searchTerm = searchTerm.slice(1, -1)
-        return {
-            fieldMatch: fieldName,
-            termMatch: searchTerm,
-            source: description,
-            value
-        }
-    } else {
-        console.log("Failed to parse score explanation:", description)
-        return {
-            fieldMatch: null,
-            termMatch: null,
-            source: description,
-            value
-        }
+const ScoreBreakdownGraphic = ({ data }) => {
+  return (
+    <List sx={{
+      maxWidth: '450px',
+      width: '90%',
+      m: 'auto',
+      mt: 4,
+      '.MuiCircularProgress-circle': { fill: '#e9ecef' },
+      '.MuiListItemText-root': { pl: 4 }
+    }}>
+      {
+        data.map((d, i) => (
+          <ListItem key={ `chart-${ d.id }-${ i }` }>
+            <ListItemAvatar>
+              <LabeledProgress value={ d.value } />
+            </ListItemAvatar>
+            <ListItemText primary={ d.name } secondary={ d.label } />
+          </ListItem>
+        ))
+      }
+    </List>
+  )
+}
+
+const parseScoreDetail = ({ value, description, details }) => {
+  if (value === 0) return null
+  if (description === "sum of:") {
+    return details.flatMap((detail) => parseScoreDetail(detail))
+  }
+
+  const explainPattern = /^weight\((?<fieldName>.+):(?<searchTerm>.+) in (?<segmentNumber>\d+)\) \[(?<similarityMetric>.+)\], result of:$/
+  const match = description.match(explainPattern)
+  if (match) {
+    let { fieldName, searchTerm } = match.groups
+    if (searchTerm.startsWith(`"`) && searchTerm.endsWith(`"`)) searchTerm = searchTerm.slice(1, -1)
+    return {
+      fieldMatch: fieldName,
+      termMatch: searchTerm,
+      source: description,
+      value
     }
+  } else {
+    console.log("Failed to parse score explanation:", description)
+    return {
+      fieldMatch: null,
+      termMatch: null,
+      source: description,
+      value
+    }
+  }
 }
 
 export const ExplanationTab = () => {
-  const { selectedResult } = useSearch()
-
+  const { selectedResult: { explanation } } = useSearch()
   const [advancedBreakdown, ] = useState(false)
-  const scoreData = useMemo(() => (parseScoreDetail(selectedResult.explanation)
-      .filter((detail) => detail !== null)
-      // Reduce duplicate details into single details.
-      .reduce((acc, cur) => {
-          const existingDetail = acc.find((detail) => detail.source === cur.source)
-          if (!existingDetail) acc.push(cur)
-          else {
-              // If the exact detail already exists, add the scores.
-              existingDetail.value += cur.value
-          }
-          return acc
-      }, [])
-      // Reduce details down further into single field matches, if advanced breakdown is disabled.
-      // E.g. `name:heart` and `name:heart disease` would get merged into the same detail at this step.
-      .reduce((acc, cur) => {
-          if (advancedBreakdown) {
-              acc.push(cur)
-              return acc
-          }
-          const existingDetailWithField = acc.find((detail) => detail.fieldMatch === cur.fieldMatch)
-          if (!existingDetailWithField) acc.push(cur)
-          else {
-              // If a detail exists with the current field match, and not in advanced breakdown, add the scores.
-              if (Array.isArray(existingDetailWithField.termMatch)) existingDetailWithField.termMatch.push(cur.termMatch)
-              else existingDetailWithField.termMatch = [existingDetailWithField.termMatch, cur.termMatch]
-              existingDetailWithField.value += cur.value
-          }
-          return acc
-      }, [])
-      // Reduce details into chart data
-      .reduce((acc, cur) => {
-          const { fieldMatch, termMatch, source, value } = cur
-          const [fieldMatchName, fieldMatchDescription] = (
-                fieldMatch ===        "name"    ? ["Name", "The name of this concept"]
-              : fieldMatch === "description"    ? ["Description", "The description of this concept"]
-              : fieldMatch === "search_terms"   ? ["Search terms", "Synonymous names for this concept"]
-              : fieldMatch === "optional_terms" ? ["Related terms", "Search terms for concepts related to this concept"]
-              : ["", ""]
-          )
-          const advancedBreakdownString = ` ${ fieldMatchName.endsWith("s") ? "contain" : "contains"} the term "${ termMatch }"`
-          if (fieldMatch && termMatch) acc.push({
-              name: `${ fieldMatchName }`,
-              description: `${ fieldMatchDescription }${ advancedBreakdown ? advancedBreakdownString : ""}`,
-              key: source,
-              matchedField: fieldMatch,
-              matchedTerms: termMatch,
-              failedParse: false,
-              value
-          })
-          else acc.push({
-              name: "Unknown",
-              description: "Could not parse explanation for this score component.",
-              key: source,
-              matchedField: null,
-              matchedTerms: null,
-              failedParse: true,
-              value
-          })
-          return acc
-      }, [])
-      .sort((a, b) => b.value - a.value)
-  ), [selectedResult.explanation, advancedBreakdown])
+  const totalScore = useMemo(() => explanation.value, [explanation.value])  
+
+  const scoreData = useMemo(() => (parseScoreDetail(explanation)
+    .filter((detail) => detail !== null)
+    // Reduce duplicate details into single details.
+    .reduce((acc, cur) => {
+      const existingDetail = acc.find((detail) => detail.source === cur.source)
+      if (!existingDetail) acc.push(cur)
+      else {
+        // If the exact detail already exists, add the scores.
+        existingDetail.value += cur.value
+      }
+      return acc
+    }, [])
+    // Reduce details down further into single field matches, if advanced breakdown is disabled.
+    // E.g. `name:heart` and `name:heart disease` would get merged into the same detail at this step.
+    .reduce((acc, cur) => {
+      if (advancedBreakdown) {
+        acc.push(cur)
+        return acc
+      }
+      const existingDetailWithField = acc.find((detail) => detail.fieldMatch === cur.fieldMatch)
+      if (!existingDetailWithField) acc.push(cur)
+      else {
+        // If a detail exists with the current field match, and not in advanced breakdown, add the scores.
+        if (Array.isArray(existingDetailWithField.termMatch)) existingDetailWithField.termMatch.push(cur.termMatch)
+        else existingDetailWithField.termMatch = [existingDetailWithField.termMatch, cur.termMatch]
+        existingDetailWithField.value += cur.value
+      }
+      return acc
+    }, [])
+    // Reduce details into chart data
+    .reduce((acc, cur) => {
+      const { fieldMatch, termMatch, source, value } = cur
+      const [fieldMatchName, fieldMatchDescription] = (
+          fieldMatch ===        'name'    ? ['Name', 'The name of this concept']
+        : fieldMatch === 'description'    ? ['Description', 'The description of this concept']
+        : fieldMatch === 'search_terms'   ? ['Search terms', 'Synonymous names for this concept']
+        : fieldMatch === 'optional_terms' ? ['Related terms', 'Search terms for concepts related to this concept']
+        : ['', '']
+      )
+      const advancedBreakdownString = ` ${ fieldMatchName.endsWith("s") ? "contain" : "contains"} the term "${ termMatch }"`
+      if (fieldMatch && termMatch) acc.push({
+        id: `${ fieldMatchName }`,
+        name: `${ fieldMatchName }`,
+        label: `${ fieldMatchDescription }${ advancedBreakdown ? advancedBreakdownString : ""}`,
+        key: source,
+        matchedField: fieldMatch,
+        matchedTerms: termMatch,
+        failedParse: false,
+        value: +((value / totalScore) * 100).toFixed(0),
+      })
+      else acc.push({
+        id: 'unknown',
+        name: 'UNKNOWN',
+        label: 'Could not parse explanation for this score component.',
+        key: source,
+        matchedField: null,
+        matchedTerms: null,
+        failedParse: true,
+        value: +((value / totalScore) * 100).toFixed(0)
+      })
+      return acc
+    }, [])
+    .sort((a, b) => b.value - a.value)
+  ), [explanation, advancedBreakdown, totalScore])
 
   return (
-    <Box sx={{
-      '.tab-title': { p: 2 },
-      '.tab-description': { p: 2 },
-    }}>
-      <Typography variant="h2" className="tab-title">Why this result?</Typography>
-      <Typography paragraph className="tab-title">
-        Dug considers many factors when determining which results to send you.
+    <Fragment>
+      <Typography variant="h5" className="tab-title">Why am I seeing this result?</Typography>
+      
+      <Typography paragraph className="tab-description">
+        Several factors are considered when identifying results and how to rank them.
         Below is a breakdown of the justification for this concept appearing amongst your results.
       </Typography>
-      <Box component="pre" sx={{
-        fontSize: '75%',
-        backgroundColor: '#333',
-        color: '#ddd',
-        whiteSpace: 'pre-wrap',
-        p: 1, m: 0,
-      }}>{JSON.stringify(scoreData, null, 2)}</Box>
-    </Box>
+
+      <ScoreBreakdownGraphic data={ scoreData } />
+    </Fragment>
   )
 }

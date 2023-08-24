@@ -22,9 +22,9 @@ const TabPanel = ({ children, value, index, ...other }) => {
   return (
     <Box
       role="tabpanel"
-      hidden={value !== index}
-      id={`tabpanel-${index}`}
-      aria-labelledby={`tab-${index}`}
+      hidden={ value !== index }
+      id={ `tabpanel-${index}` }
+      aria-labelledby={ `tab-${index}` }
       sx={{
         position: 'relative',
         overflow: 'hidden',
@@ -32,10 +32,11 @@ const TabPanel = ({ children, value, index, ...other }) => {
         maxHeight: '100%',
         maxWidth: '1000px',
         width: '100%',
+        p: 4,
       }}
-      {...other}
+      { ...other }
     >
-      {value === index && children}
+      { value === index && children }
     </Box>
   )
 }
@@ -117,10 +118,10 @@ export const ResultDialog = () => {
 
   return (
     <Dialog
-      open={open}
-      onClose={handleClose}
-      aria-labelledby="result-dialog-title-bar"
-      aria-describedby="result-dialog-content"
+      open={ open }
+      onClose={ handleClose }
+      aria-labelledby="title-bar"
+      aria-describedby="dialog-content"
       sx={{
         '.MuiDialog-paper': {
           minHeight: '50vh',
@@ -129,23 +130,26 @@ export const ResultDialog = () => {
           maxWidth: '1200px',
         },
         '.MuiStack-root': { height: '50vh' },
-        '#result-dialog-title-bar': {
+        '#title-bar': {
           p: 0,
           pl: 2,
           display: 'flex',
           alignItems: 'center',
         },
-        '#result-dialog-title-bar .concept-name': {
+        '#title-bar .concept-name': {
           p: 0,
           flex: 1,
         },
-        '#result-dialog-content': {
+        '#dialog-content': {
           p: 0,
         },
-        '.result-dialog-description': {
+        '.dialog-description': {
           flex: `1 0 400px`,
           p: 4,
           overflow: 'scroll',
+        },
+        '.dialog-description h4': {
+          p: 0,
         },
         '#result-dialog-details': {
           flex: 3,
@@ -153,8 +157,8 @@ export const ResultDialog = () => {
         },
       }}
     >
-      <Box id="result-dialog-title-bar">
-        <Typography variant="h5" className="concept-name">
+      <Box id="title-bar">
+        <Typography variant="h4" className="concept-name">
           { selectedResult.name }&nbsp;&nbsp;
           <ConceptCollectionButton concept={ selectedResult } tooltipPlacement="right" />
         </Typography>
@@ -168,14 +172,18 @@ export const ResultDialog = () => {
         </Tabs>
       </Box>
 
-      <DialogContent id="result-dialog-content" dividers>
+      <DialogContent id="dialog-content" dividers>
         <Stack direction="row">
 
-          <Box className="result-dialog-description">
-            <Typography paragraph><strong>Description:</strong></Typography>
+          <Box className="dialog-description">
+            <Typography variant="h5">Description</Typography>
             <Typography paragraph>{ selectedResult.description }</Typography>
 
+            <br />
+
             <Divider />
+
+            <br />
 
             {
               !loadingStudies && (
@@ -185,12 +193,11 @@ export const ResultDialog = () => {
                 </ul>
               )
             }
-
           </Box>
 
           <Divider orientation="vertical" flexItem />
           
-          <TabPanel value={ tabIndex } index={ 0 } className="result-dialog-details">
+          <TabPanel value={ tabIndex } index={ 0 } sx={{ p: 0 }}>
             {
               loadingStudies
                 ? <StudiesLoadingIndicator />
@@ -198,12 +205,12 @@ export const ResultDialog = () => {
             }
           </TabPanel>
 
-          <TabPanel value={ tabIndex } index={ 1 } className="result-dialog-justification">
+          <TabPanel value={ tabIndex } index={ 1 }>
             <ExplanationTab />
           </TabPanel>
 
           {/* this debug tab can stay. the tab is rendered in development mode */}
-          <TabPanel value={ tabIndex } index={ 2 } className="result-dialog-details">
+          <TabPanel value={ tabIndex } index={ 2 }>
             <DebugTab concept={ selectedResult } studies={ studies } />
           </TabPanel>
 
