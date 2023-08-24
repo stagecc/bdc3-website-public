@@ -210,7 +210,7 @@ export const ResultDialog = () => {
           </TabPanel>
 
           {/* this debug tab can stay. the tab is rendered in development mode */}
-          <TabPanel value={ tabIndex } index={ 2 }>
+          <TabPanel value={ tabIndex } index={ 2 } sx={{ p: 0 }}>
             <DebugTab concept={ selectedResult } studies={ studies } />
           </TabPanel>
 
