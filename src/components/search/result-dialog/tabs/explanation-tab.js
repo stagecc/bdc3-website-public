@@ -13,7 +13,7 @@ const LabeledProgress = ({ value }) => {
         variant="determinate"
         color="secondary"
         value={ value }
-        size={ 60 }
+        size={ 50 }
         thickness={ 5 }
       />
       <Box
@@ -28,7 +28,7 @@ const LabeledProgress = ({ value }) => {
           justifyContent: 'center',
         }}
       >
-        <Typography variant="caption" component="div" color="text.secondary">
+        <Typography variant="caption" component="div" color="secondary">
           {`${ Math.round(value) }%`}
         </Typography>
       </Box>
@@ -42,7 +42,7 @@ const ScoreBreakdownGraphic = ({ data }) => {
       maxWidth: '450px',
       width: '90%',
       m: 'auto',
-      mt: 4,
+      mt: 2,
       '.MuiCircularProgress-circle': { fill: '#e9ecef' },
       '.MuiListItemText-root': { pl: 4 }
     }}>
@@ -105,17 +105,13 @@ export const ExplanationTab = () => {
       }
       return acc
     }, [])
-    // Reduce details down further into single field matches, if advanced breakdown is disabled.
+    // Reduce details down further into single field matches
     // E.g. `name:heart` and `name:heart disease` would get merged into the same detail at this step.
     .reduce((acc, cur) => {
-      if (advancedBreakdown) {
-        acc.push(cur)
-        return acc
-      }
       const existingDetailWithField = acc.find((detail) => detail.fieldMatch === cur.fieldMatch)
       if (!existingDetailWithField) acc.push(cur)
       else {
-        // If a detail exists with the current field match, and not in advanced breakdown, add the scores.
+        // If a detail exists with the current field match, add the scores.
         if (Array.isArray(existingDetailWithField.termMatch)) existingDetailWithField.termMatch.push(cur.termMatch)
         else existingDetailWithField.termMatch = [existingDetailWithField.termMatch, cur.termMatch]
         existingDetailWithField.value += cur.value
@@ -124,19 +120,19 @@ export const ExplanationTab = () => {
     }, [])
     // Reduce details into chart data
     .reduce((acc, cur) => {
+      console.log(cur)
       const { fieldMatch, termMatch, source, value } = cur
       const [fieldMatchName, fieldMatchDescription] = (
-          fieldMatch ===        'name'    ? ['Name', 'The name of this concept']
+          fieldMatch === 'name'           ? ['Name', 'The name of this concept']
         : fieldMatch === 'description'    ? ['Description', 'The description of this concept']
-        : fieldMatch === 'search_terms'   ? ['Search terms', 'Synonymous names for this concept']
-        : fieldMatch === 'optional_terms' ? ['Related terms', 'Search terms for concepts related to this concept']
+        : fieldMatch === 'search_terms'   ? ['Search Terms', 'Synonymous names for this concept']
+        : fieldMatch === 'optional_terms' ? ['Related Terms', 'Search terms for concepts related to this concept']
         : ['', '']
       )
-      const advancedBreakdownString = ` ${ fieldMatchName.endsWith("s") ? "contain" : "contains"} the term "${ termMatch }"`
       if (fieldMatch && termMatch) acc.push({
         id: `${ fieldMatchName }`,
         name: `${ fieldMatchName }`,
-        label: `${ fieldMatchDescription }${ advancedBreakdown ? advancedBreakdownString : ""}`,
+        label: `${ fieldMatchDescription }`,
         key: source,
         matchedField: fieldMatch,
         matchedTerms: termMatch,
@@ -156,15 +152,20 @@ export const ExplanationTab = () => {
       return acc
     }, [])
     .sort((a, b) => b.value - a.value)
-  ), [explanation, advancedBreakdown, totalScore])
+  ), [explanation, totalScore])
 
   return (
     <Fragment>
       <Typography variant="h5" className="tab-title">Why am I seeing this result?</Typography>
       
       <Typography paragraph className="tab-description">
-        Several factors are considered when identifying results and how to rank them.
-        Below is a breakdown of the justification for this concept appearing amongst your results.
+        Several factors are considered when identifying results and how to rank them: 
+        the <strong>name</strong> and <strong>description</strong> of this
+        concept; <strong>search terms</strong>, or synonymous concept names,
+        and <strong>related terms</strong>, or related concepts' search terms.
+      </Typography>
+      <Typography paragraph className="tab-description">
+        Here is how the above factors contributed to this concept being among your results.
       </Typography>
 
       <ScoreBreakdownGraphic data={ scoreData } />
