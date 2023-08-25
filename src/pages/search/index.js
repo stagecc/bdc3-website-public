@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, Stack, Typography } from "@mui/material";
 import { PageContent } from "../../components/layout";
 import { SEO } from "../../components/seo";
-import { CollectionPreview, DugForm, FiltersTray, Results, SearchForm, Sidebar } from "../../components/search";
+import { CollectionPreview, DugForm, FiltersTray, Results, Sidebar } from "../../components/search";
 
 const SearchPage = ({ location }) => {
   return (
