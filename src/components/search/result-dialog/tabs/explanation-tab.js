@@ -120,7 +120,6 @@ export const ExplanationTab = () => {
     }, [])
     // Reduce details into chart data
     .reduce((acc, cur) => {
-      console.log(cur)
       const { fieldMatch, termMatch, source, value } = cur
       const [fieldMatchName, fieldMatchDescription] = (
           fieldMatch === 'name'           ? ['Name', 'The name of this concept']
