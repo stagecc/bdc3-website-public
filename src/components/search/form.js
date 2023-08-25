@@ -49,6 +49,13 @@ export const DugForm = ({ focusOnMount = false, slashFocus = false }) => {
     }
   }, [focusOnMount])
 
+  // this catches in-app user-conducted query changes,
+  // like clicking a related concept,
+  // and aligns the form's query value with state.
+  useEffect(() => {
+    setFormQuery(query)
+  }, [query])
+
   useEffect(() => {
     if (!slashFocus) {
       return
