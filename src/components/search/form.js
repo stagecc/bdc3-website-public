@@ -7,7 +7,6 @@ import { MagnifyingGlassIcon } from '../icons'
 import { useSearch } from './context'
 
 import {
-  Divider,
   Fade,
   IconButton,
   InputAdornment,
@@ -16,8 +15,6 @@ import {
   Tooltip,
 } from '@mui/material'
 import {
-  Directions as DirectionsIcon,
-  Tune as FiltersIcon,
   Search as SearchIcon,
   Backspace as ClearQueryIcon,
 } from '@mui/icons-material'
@@ -78,7 +75,7 @@ export const DugForm = ({ focusOnMount = false, slashFocus = false }) => {
     }
     window.addEventListener('keydown', handleKeyPress)
     return () => window.removeEventListener('keydown', handleKeyPress)
-  }, [])
+  }, [slashFocus])
 
   return (
     <Paper

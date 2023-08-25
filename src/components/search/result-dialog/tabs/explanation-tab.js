@@ -1,4 +1,4 @@
-import React, { Fragment, useMemo, useState } from 'react'
+import React, { Fragment, useMemo } from 'react'
 import {
   Box, CircularProgress, List, ListItem, ListItemAvatar, ListItemText, Typography,
 } from '@mui/material'
@@ -90,7 +90,6 @@ const parseScoreDetail = ({ value, description, details }) => {
 
 export const ExplanationTab = () => {
   const { selectedResult: { explanation } } = useSearch()
-  const [advancedBreakdown, ] = useState(false)
   const totalScore = useMemo(() => explanation.value, [explanation.value])  
 
   const scoreData = useMemo(() => (parseScoreDetail(explanation)
