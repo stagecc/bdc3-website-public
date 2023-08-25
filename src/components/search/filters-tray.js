@@ -52,8 +52,11 @@ export const FiltersTray = () => {
           },
           '.MuiChip-root': { },
           '.collapser': {
+          },
+          '.collapser .MuiList-root': {
             backgroundColor: '#fff4',
             borderRadius: '6px',
+            mt: 1,
           },
           '.MuiList-root': { },
           '.MuiListItemButton-root': { px: 1 },
