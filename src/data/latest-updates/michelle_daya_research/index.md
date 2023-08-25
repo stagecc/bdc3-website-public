@@ -3,6 +3,7 @@ path: /latest-updates/michelle_daya_research
 date: 2021-12-10
 title: "BioData Catalyst Used for Genomics Research on Link Between Genetic Risk and Allergic Disease"
 subtitle: ""
+author: ""
 tags: ["blog", "asthma", "GWAS", "HLA", "multiethnic", "diversity", "allergies", "cloud computing"]
 speakerImage: './daya-michelle.jpg'
 seo:
