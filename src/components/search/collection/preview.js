@@ -2,16 +2,19 @@ import React, { Fragment, useEffect, useRef, useState } from 'react'
 import { navigate } from 'gatsby'
 import {
   Box, Button, Card, CardActions, CardContent, CardHeader, Collapse, Divider,
-  IconButton, List, ListItem, ListItemText, ListSubheader, Tooltip, Typography,
+  IconButton, List, ListItem, ListItemIcon, ListItemText, ListSubheader, Menu, MenuItem,
+  Tooltip, Typography,
 } from '@mui/material'
 import TouchRipple from '@mui/material/ButtonBase/TouchRipple'
 import {
   BookmarkBorder as CollectionIcon,
+  Delete as ClearCollectionIcon,
   Send as NextStepsIcon,
   ExpandLess as CollapseIcon,
   ExpandMore as ExpandIcon,
   Delete as DeleteIcon,
   Remove as HandleIcon,
+  MoreVert as MenuIcon,
 } from '@mui/icons-material'
 import { useSearch } from '../context'
 
@@ -42,6 +45,45 @@ const triggerRipple = (element, ripple) => {
 
   setTimeout(() => ripple.stop({ }), 500)
 };
+
+const CollectionActionsMenu = () => {
+  const [anchorEl, setAnchorEl] = useState(null)
+  const open = Boolean(anchorEl)
+  const { cart } = useSearch()
+
+  const handleClick = (event) => setAnchorEl(event.currentTarget)
+  const handleClose = () => setAnchorEl(null)
+
+  return (
+    <Fragment>
+      <IconButton
+        id="collection-actions-button"
+        aria-controls={ open ? 'collection-actions-menu' : undefined }
+        aria-haspopup="true"
+        aria-expanded={ open ? 'true' : undefined }
+        onClick={ handleClick }
+        sx={{ filter: 'opacity(0.5)', transition: 'filter 250ms', '&:hover': { filter: 'opacity(1.0)' } }}
+      >
+        <MenuIcon />
+      </IconButton>
+      <Menu
+        id="collection-actions-menu"
+        anchorEl={ anchorEl }
+        open={ open }
+        onClose={ handleClose }
+        onClick={ handleClose }
+        MenuListProps={{ 'aria-labelledby': 'collection-actions-button' }}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      >
+        <MenuItem onClick={ () => cart.clear() } disabled={ cart.count === 0 }>
+          <ListItemIcon><ClearCollectionIcon /></ListItemIcon>
+          <ListItemText>Empty Contents</ListItemText>
+        </MenuItem>
+      </Menu>
+    </Fragment>
+  )
+}
 
 export const CollectionPreview = () => {
   const { cart } = useSearch()
@@ -124,6 +166,7 @@ export const CollectionPreview = () => {
         subheader={ `${ cart.count } item${ cart.count === 1 ? '' : 's' }` }
         titleTypographyProps={{ color: 'secondary' }}
         avatar={ <CollectionIcon size="large" color="secondary" /> }
+        action={ <CollectionActionsMenu /> }
       />
 
       <Divider />
