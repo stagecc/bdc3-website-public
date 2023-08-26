@@ -14,7 +14,7 @@ import {
 import { useSearch } from '../context'
 import { DebugTab, ExplanationTab, StudiesTab } from './tabs'
 import { Dots } from '../../loading'
-import { ConceptCollectionButton } from '../collection-button'
+import { ConceptCollectionButton } from '../collection'
 
 //
 

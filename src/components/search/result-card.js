@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import { Card, CardContent, CardHeader, Divider, Typography } from '@mui/material'
 import { useSearch } from './context'
-import { ConceptCollectionButton } from './collection-button'
+import { ConceptCollectionButton } from './collection'
 import { snipText } from '../../utils'
 
 //
@@ -65,7 +65,7 @@ export const ResultCard = ({ index, result }) => {
         subheader={ result.id }
         action={ 
           <ConceptCollectionButton
-            className={ 'collection-button' }
+            className="collection-button"
             concept={ result }
             tooltipPlacement="left"
           />
