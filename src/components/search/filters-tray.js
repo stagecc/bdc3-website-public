@@ -73,6 +73,7 @@ export const FiltersTray = () => {
             pr: 2,
             color: 'crimson',
             height: '100%',
+            fontFamily: 'sans-serif',
           },
           '.clear-filters-button.in': { filter: 'opacity(0.4) saturate(0.0)' },
           '.clear-filters-button.out': { filter: 'opacity(0.0) saturate(0.0)' },
