@@ -13,7 +13,7 @@ import {
   Delete as DeleteIcon,
   Remove as HandleIcon,
 } from '@mui/icons-material'
-import { useSearch } from './context'
+import { useSearch } from '../context'
 
 //
 
