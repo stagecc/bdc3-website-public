@@ -4,7 +4,7 @@ import {
   Bookmark as AddedIcon,
   BookmarkBorder as NotAddedIcon,
 } from '@mui/icons-material'
-import { useSearch } from './context'
+import { useSearch } from '../context'
 
 //
 

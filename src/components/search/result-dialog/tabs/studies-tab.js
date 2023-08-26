@@ -2,7 +2,7 @@ import React from 'react'
 import { Accordion, AccordionDetails, AccordionSummary, Box, Stack, Typography } from '@mui/material'
 import { ChevronDownIcon as ExpandIcon } from '../../../icons'
 import { Link } from '../../../link'
-import { StudyCollectionButton, VariableCollectionButton } from '../../collection-button'
+import { StudyCollectionButton, VariableCollectionButton } from '../../collection'
 import { snipText } from '../../../../utils'
 
 

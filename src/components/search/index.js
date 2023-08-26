@@ -1,6 +1,6 @@
 export * from './context'
 export * from './filters-tray'
-export * from './collection-preview'
+export * from './collection'
 export * from './form'
 export * from './results'
 export * from './sidebar'
