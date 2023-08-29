@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { navigate } from 'gatsby'
 import {
   Box, Button, Card, CardActionArea, CardActions, CardContent, CardHeader,
@@ -6,6 +6,7 @@ import {
 } from '@mui/material'
 import {
   KeyboardArrowLeft as BackIcon,
+  Download as DownloadIcon,
   KeyboardArrowRight as ForwardIcon,
 } from '@mui/icons-material'
 import { PageContent } from '../../components/layout'
@@ -53,9 +54,6 @@ const StepIndicator = ({ activeIndex }) => {
         <StepLabel>Confirm Selections</StepLabel>
       </Step>
       <Step>
-        <StepLabel>Download</StepLabel>
-      </Step>
-      <Step>
         <StepLabel>Next Steps</StepLabel>
       </Step>
     </Stepper>
@@ -65,6 +63,7 @@ const StepIndicator = ({ activeIndex }) => {
 //
 
 const ReviewStep = () => {
+  const{ goToPreviousStep, goToNextStep } = useCheckout()
   const { cart } = useSearch()
 
   const { concepts, studies, variables } = cart.contents
@@ -78,70 +77,106 @@ const ReviewStep = () => {
   return (
     <Card sx={{
       height: '100%',
-      '.MuiButton-root': {
+      '.MuiButton-root.MuiButton-sizeLarge': {
         minHeight: '75px',
+      },
+      '.download-button': {
+        borderRadius: '18px',
       },
       '.MuiCardActions-root': {
         display: 'flex',
         justifyContent: 'space-between',
-      }
+      },
+      '& summary': {
+        cursor: 'pointer',
+        p: 1,
+      },
+      '.empty': {
+        backgroundColor: '#eee',
+        filter: 'opacity(0.75)',
+      },
+      '.MuiTypography-root.details': {
+        p: 1,
+        color: '#666',
+      },
     }}>
       <CardHeader title="Review Selections" />
 
       <Divider />
 
-      <CardContent sx={{
-        '.MuiTypography-root.details': {
-          p: 1,
-          color: '#666',
-        },
-      }}>
-        <Typography variant="h5">Concepts</Typography>
+      <CardContent className={ !concepts.length ? 'empty' : '' }>
+        <Typography variant="h6">Concepts</Typography>
         {
           concepts.length
             ? concepts.map(({ id, name, type, description }, i) => (
-              <Fragment key={ `cart-concepts-${ id }` }>
-                <Typography>{ i + 1 }. { name }</Typography>
+              <details key={ `cart-concepts-${ id }` }>
+                <Typography component="summary">{ i + 1 }. { name }</Typography>
                 <Typography className="details">
-                  - id: { id } <br />
-                  - type: { type } <br />
-                  - description: { description }
+                  • id: { id } <br />
+                  • type: { type } <br />
+                  • description: { description }
                 </Typography>
-              </Fragment>
+              </details>
             ))
           : <Typography paragraph className="details">None selected.</Typography>
         }
-        <Divider />
-        <Typography variant="h5">Studies</Typography>
+      </CardContent>
+      
+      <Divider />
+
+      <CardContent className={ !studies.length ? 'empty' : '' }>
+        <Typography variant="h6">Studies</Typography>
         {
           studies.length
             ? studies.map(({ id, name, url, source }, i) => (
-              <Fragment key={ `cart-concepts-${ id }` }>
-                <Typography>{ i + 1 }. { name }</Typography>
+              <details key={ `cart-concepts-${ id }` }>
+                <Typography component="summary">{ i + 1 }. { name }</Typography>
                 <Typography className="details">
-                  - source: { source } <br />
-                  - id/url: <Link to={ url }>{ id }</Link>
+                  • source: { source } <br />
+                  • id/url: <Link to={ url }>{ id }</Link>
                 </Typography>
-              </Fragment>
+              </details>
             ))
             : <Typography paragraph className="details">None selected.</Typography>
         }
-        <Divider />
-        <Typography variant="h5">Variables</Typography>
+      </CardContent>
+      
+      <Divider />
+
+      <CardContent className={ !variables.length ? 'empty' : '' }>
+        <Typography variant="h6">Variables</Typography>
         {
           variables.length
             ? variables.map(({ id, name, description, url }, i) => (
-              <Fragment key={ `cart-concepts-${ id }` }>
-                <Typography>{ i + 1 }. { name }</Typography>
+              <details key={ `cart-concepts-${ id }` }>
+                <Typography component="summary">{ i + 1 }. { name }</Typography>
                 <Typography className="details">
-                  - description: { description } <br />
-                  - id/url: <Link to={ url }>{ id }</Link>
+                  • description: { description } <br />
+                  • id/url: <Link to={ url }>{ id }</Link>
                 </Typography>
-              </Fragment>
+              </details>
             ))
             : <Typography className="details">None selected.</Typography>
         }
-        <Divider />
+      </CardContent>
+
+      <Divider />
+
+      <CardContent>
+          <br /><br />
+        <Typography paragraph align="center">
+          Several of the services available in the next steps can make use of your concept, study, and variable selections here.
+          Use the button below to download your selections as JSON. Then proceed to the next step.
+          <br /><br />
+          <Button
+            variant="contained"
+            color="info"
+            startIcon={ <DownloadIcon /> }
+            onClick={ handleClickDownloadAsJson }
+            className="download-button"
+          >Download Selections</Button>
+          <br /><br />
+        </Typography>
       </CardContent>
 
       <Divider />
@@ -156,22 +191,11 @@ const ReviewStep = () => {
         <Button
           variant="contained"
           size="large"
-          color="success"
+          color="primary"
           endIcon={ <ForwardIcon /> }
-          onClick={ handleClickDownloadAsJson }
-        >
-        Confirm Selections</Button>
+          onClick={ goToNextStep }
+        >Next Steps</Button>
       </CardActions>
-    </Card>
-  )
-}
-
-//
-
-const DownloadStep = () => {
-  return (
-    <Card>
-      download
     </Card>
   )
 }
@@ -209,6 +233,8 @@ const NextStepCard = ({ title, content, color = '#eee', onClick }) => {
 }
 
 const NextSteps = () => {
+  const{ goToPreviousStep } = useCheckout()
+
   return (
     <Box>
       <Typography variant="h4">Next Steps</Typography>
@@ -228,6 +254,15 @@ const NextSteps = () => {
             </Grid>
           ))
         }
+        <Grid item sx={ 12 }>
+          <Button
+            variant="outlined"
+            size="large"
+            startIcon={ <BackIcon /> }
+            onClick={ () => goToPreviousStep() }
+            sx={{ backgroundColor: '#fff' }}
+          >Back to Collection</Button>
+        </Grid>
       </Grid>
     </Box>
   )
@@ -235,33 +270,41 @@ const NextSteps = () => {
 
 //
 
+const STEPS = [
+  ReviewStep,
+  NextSteps,
+]
+
+const CheckoutContext = React.createContext({ })
+const useCheckout = () => React.useContext(CheckoutContext)
+
 const CollectionPage = () => {
   const [currentStep, setCurrentStep] = useState(0)
 
+  const goToNextStep = () => setCurrentStep((currentStep + 1) % 2)
+  const goToPreviousStep = () => setCurrentStep((currentStep + 1) % 2)
+
   return (
-    <PageContent width="95%" maxWidth="1400px" center gutters>
-      <SEO
-        title="Collection - Semantic Search"
-        description="Collection - BioData Catalyst semantic search provided by Dug"
-      />
+    <CheckoutContext.Provider value={{ goToPreviousStep, goToNextStep }}>
+      <PageContent width="95%" maxWidth="1400px" center gutters>
+        <SEO
+          title="Collection - Semantic Search"
+          description="Collection - BioData Catalyst semantic search provided by Dug"
+        />
 
-      <Typography variant="h1">Semantic Search: Collection</Typography>
+        <Typography hidden variant="h1">Semantic Search: Collection</Typography>
 
-      <Box sx={{
-        maxWidth: '800px',
-        margin: 'auto',
-      }}>
-        <StepIndicator activeIndex={ currentStep } />
+        <Box sx={{
+          maxWidth: '800px',
+          margin: 'auto',
+        }}>
+          <StepIndicator activeIndex={ currentStep } />
 
-        { currentStep === 0 && <ReviewStep /> }
-        { currentStep === 1 && <DownloadStep /> }
-        { currentStep === 2 && <NextSteps /> }
-      </Box>
+          { STEPS.map((Step, i) => currentStep === i && <Step />) }
+        </Box>
 
-      <button onClick={ () => setCurrentStep((currentStep + 2) % 3) } disabled={ currentStep === 0 }>prev</button>
-      <button onClick={ () => setCurrentStep((currentStep + 1) % 3) } disabled={ currentStep === 2 }>next</button>
-
-    </PageContent>
+      </PageContent>
+    </CheckoutContext.Provider>
   );
 }
 
