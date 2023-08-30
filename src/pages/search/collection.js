@@ -185,6 +185,7 @@ const ReviewStep = () => {
             startIcon={ <DownloadIcon /> }
             onClick={ handleClickDownloadAsJson }
             className="download-button"
+            disabled={ cart.count === 0 }
           >Download Selections</Button>
           <br /><br />
         </Typography>
@@ -205,6 +206,7 @@ const ReviewStep = () => {
           color="primary"
           endIcon={ <ForwardIcon /> }
           onClick={ goToNextStep }
+          disabled={ cart.count === 0 }
         >Next Steps</Button>
       </CardActions>
     </Card>
