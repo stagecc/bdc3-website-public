@@ -16,8 +16,8 @@ export const useFilter = (keys) => {
 
   useEffect(() => {
     setStoredFilters({ ...filters })
-  // adding `setStoredFilters` to this dependency array crashes the app;
-  // look for improved implementation.
+  // setStoredFilters is not needed to be in this dependency array;
+  // see https://react.dev/learn/lifecycle-of-reactive-effects.
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filters])
 
