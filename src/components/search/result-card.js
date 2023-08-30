@@ -10,9 +10,9 @@ const SNIPPET_THRESHOLD = 150
 const CARD_BODY_HEIGHT = 120
 
 export const ResultCard = ({ index, result }) => {
-  const { cart, setSelectedResult } = useSearch()
+  const { collection, setSelectedResult } = useSearch()
 
-  const inCart = useMemo(() => cart.contains('concepts', result.id), [cart, result.id])
+  const inCollection = useMemo(() => collection.contains('concepts', result.id), [collection, result.id])
 
   const snippet = snipText(result.description, SNIPPET_THRESHOLD)
 
@@ -53,7 +53,7 @@ export const ResultCard = ({ index, result }) => {
         },
         '.collection-button': {
           transition: 'filter 250ms',
-          filter: inCart ? 'opacity(0.9)' : 'opacity(0.1)',
+          filter: inCollection ? 'opacity(0.9)' : 'opacity(0.1)',
         },
         '&:hover .collection-button': {
           filter: 'opacity(1.0)',
