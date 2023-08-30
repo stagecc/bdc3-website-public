@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useReducer } from 'react'
-import { useLocalStorage } from '../../hooks'
+import { useLocalStorage } from '../../../hooks'
 
 //
 
@@ -8,23 +8,24 @@ function initialState(keys) {
 }
 
 /*
- * Returns a "Cart" object with functions to interact with its items,
+ * Returns a "Collection" object (think: shopping cart)
+ * with functions to interact with its items,
  * e.g., ['type1', 'type2', 'type3'].
  * 
- * @param {Array} keys The keys for the cart object, indicating the types of items stored.
+ * @param {Array} keys The keys for the collection object, indicating the types of items stored.
  * @return {Object} An object with keys for keys and empty arrays for values,
  * e.g.,  { type1: [], type2: [], type3: [] }.
  */
-export const useCart = (keys) => {
-  const [savedCart, saveCart] = useLocalStorage('dug-collection', initialState(keys))
-  const [cart, dispatch] = useReducer(reducer, savedCart)
+export const useCollection = (keys) => {
+  const [savedCollection, saveCollection] = useLocalStorage('dug-collection', initialState(keys))
+  const [collection, dispatch] = useReducer(reducer, savedCollection)
 
   useEffect(() => {
-    saveCart({ ...cart })
-    // saveCart is not needed to be in this dependency array;
+    saveCollection({ ...collection })
+    // saveCollection is not needed to be in this dependency array;
     // see https://react.dev/learn/lifecycle-of-reactive-effects
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cart])
+  }, [collection])
 
   function reducer(state, signal) {
     switch (signal.action) {
@@ -57,24 +58,24 @@ export const useCart = (keys) => {
   const remove = (type, id) => {
     dispatch({
       action: 'remove',
-      type, // item type. a key indicating where this item lives in the cart object.
+      type, // item type. a key indicating where this item lives in the collection object.
       id, // the id of the item to remove
     })
   }
 
   const contains = (type, id) => {
-    return cart[type].some(item => item.id === id)
+    return collection[type].some(item => item.id === id)
   }
 
   const clear = () => {
     dispatch({ action: 'clear' })
   }
 
-  const count = useMemo(() => Object.keys(cart)
-    .reduce((sum, type) => sum + cart[type].length, 0), [cart])
+  const count = useMemo(() => Object.keys(collection)
+    .reduce((sum, type) => sum + collection[type].length, 0), [collection])
 
   return {
-    contents: cart,
+    contents: collection,
     add, remove, clear, contains,
     count,
   }

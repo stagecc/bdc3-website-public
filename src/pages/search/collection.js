@@ -75,14 +75,14 @@ const StepIndicator = ({ activeIndex }) => {
 
 const ReviewStep = () => {
   const{ goToNextStep } = useCheckout()
-  const { cart } = useSearch()
+  const { collection } = useSearch()
 
-  const { concepts, studies, variables } = cart.contents
+  const { concepts, studies, variables } = collection.contents
 
   const handleClickDownloadAsJson = event => {
     event.preventDefault()
     const timestamp = new Date().toISOString()
-    downloadJson(cart.contents, `BDC-Collection_${ timestamp }.json`)
+    downloadJson(collection.contents, `BDC-Collection_${ timestamp }.json`)
   }
 
   return (
@@ -120,7 +120,7 @@ const ReviewStep = () => {
         {
           concepts.length
             ? concepts.map(({ id, name, type, description }, i) => (
-              <details key={ `cart-concepts-${ id }` }>
+              <details key={ `collection-concepts-${ id }` }>
                 <Typography component="summary">{ i + 1 }. { name }</Typography>
                 <Typography className="details">
                   • id: { id } <br />
@@ -140,7 +140,7 @@ const ReviewStep = () => {
         {
           studies.length
             ? studies.map(({ id, name, url, source }, i) => (
-              <details key={ `cart-concepts-${ id }` }>
+              <details key={ `collection-concepts-${ id }` }>
                 <Typography component="summary">{ i + 1 }. { name }</Typography>
                 <Typography className="details">
                   • source: { source } <br />
@@ -159,7 +159,7 @@ const ReviewStep = () => {
         {
           variables.length
             ? variables.map(({ id, name, description, url }, i) => (
-              <details key={ `cart-concepts-${ id }` }>
+              <details key={ `collection-concepts-${ id }` }>
                 <Typography component="summary">{ i + 1 }. { name }</Typography>
                 <Typography className="details">
                   • description: { description } <br />
@@ -185,7 +185,7 @@ const ReviewStep = () => {
             startIcon={ <DownloadIcon /> }
             onClick={ handleClickDownloadAsJson }
             className="download-button"
-            disabled={ cart.count === 0 }
+            disabled={ collection.count === 0 }
           >Download Selections</Button>
           <br /><br />
         </Typography>
@@ -206,7 +206,7 @@ const ReviewStep = () => {
           color="primary"
           endIcon={ <ForwardIcon /> }
           onClick={ goToNextStep }
-          disabled={ cart.count === 0 }
+          disabled={ collection.count === 0 }
         >Next Steps</Button>
       </CardActions>
     </Card>
