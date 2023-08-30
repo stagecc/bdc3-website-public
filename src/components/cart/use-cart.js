@@ -1,10 +1,11 @@
-import { useMemo, useReducer } from 'react'
+import { useEffect, useMemo, useReducer } from 'react'
+import { useLocalStorage } from '../../hooks'
+
+//
 
 function initialState(keys) {
   return keys.reduce((acc, key) => ({ ...acc, [key]: [] }), {})
 }
-
-//
 
 /*
  * Returns a "Cart" object with functions to interact with its items,
@@ -15,7 +16,15 @@ function initialState(keys) {
  * e.g.,  { type1: [], type2: [], type3: [] }.
  */
 export const useCart = (keys) => {
-  const [cart, dispatch] = useReducer(reducer, initialState(keys))
+  const [savedCart, saveCart] = useLocalStorage('dug-collection', initialState(keys))
+  const [cart, dispatch] = useReducer(reducer, savedCart)
+
+  useEffect(() => {
+    saveCart({ ...cart })
+    // saveCart is not needed to be in this dependency array;
+    // see https://react.dev/learn/lifecycle-of-reactive-effects
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cart])
 
   function reducer(state, signal) {
     switch (signal.action) {
