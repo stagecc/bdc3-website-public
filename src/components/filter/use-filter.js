@@ -16,6 +16,9 @@ export const useFilter = (keys) => {
 
   useEffect(() => {
     setStoredFilters({ ...filters })
+  // adding `setStoredFilters` to this dependency array crashes the app;
+  // look for improved implementation.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filters])
 
   function reducer(state, signal) {
