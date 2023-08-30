@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react'
 import { navigate } from 'gatsby'
 import {
   Box, Button, Card, CardActionArea, CardActions, CardContent, CardHeader,
-  Divider, Grid, Stack, Step, Stepper, StepLabel, Typography,
+  Divider, Grid, Stack, Step, Stepper, StepLabel, Typography, useTheme,
 } from '@mui/material'
 import {
   KeyboardArrowLeft as BackIcon,
@@ -43,11 +43,22 @@ const steps = [
 //
 
 const StepIndicator = ({ activeIndex }) => {
+  const theme = useTheme()
+
   return (
     <Stepper
       activeStep={ activeIndex }
       sx={{
         m: 4,
+        '.Mui-completed': {
+          fontWeight: 'bold',
+          color: theme.palette.secondary.dark,
+        },
+        '.Mui-active': {
+          color: theme.palette.primary.main,
+        },
+        '.Mui-disabled': {
+        },
       }}
     >
       <Step>
