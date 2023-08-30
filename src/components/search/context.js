@@ -2,7 +2,7 @@ import React, { createContext, useCallback, useContext, useEffect, useMemo, useS
 import { navigate } from 'gatsby'
 import { useLocation } from '@reach/router'
 import axios from 'axios'
-import { useCart } from '../cart'
+import { useCollection } from './collection'
 import { useFilter} from '../filter'
 
 //
@@ -70,7 +70,7 @@ export const SearchProvider = ({ children }) => {
   const [pageCount, setPageCount] = useState(0)
   const [currentPage, setCurrentPage] = useState(1)
   const [selectedResult, setSelectedResult] = useState(null)
-  const cart = useCart(['concepts', 'studies', 'variables'])
+  const collection = useCollection(['concepts', 'studies', 'variables'])
   const typeFilters = useFilter([])
 
   // apply filters to results.
@@ -214,7 +214,7 @@ export const SearchProvider = ({ children }) => {
       pageCount, currentPage,
       selectedResult, setSelectedResult,
       relatedConcepts,
-      cart,
+      collection,
     }}>
       { children }
     </DugSearchContext.Provider>

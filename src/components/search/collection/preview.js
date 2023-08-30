@@ -49,7 +49,7 @@ const triggerRipple = (element, ripple) => {
 const CollectionActionsMenu = () => {
   const [anchorEl, setAnchorEl] = useState(null)
   const open = Boolean(anchorEl)
-  const { cart } = useSearch()
+  const { collection } = useSearch()
 
   const handleClick = (event) => setAnchorEl(event.currentTarget)
   const handleClose = () => setAnchorEl(null)
@@ -76,7 +76,7 @@ const CollectionActionsMenu = () => {
         anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
         transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       >
-        <MenuItem onClick={ () => cart.clear() } disabled={ cart.count === 0 }>
+        <MenuItem onClick={ () => collection.clear() } disabled={ collection.count === 0 }>
           <ListItemIcon><ClearCollectionIcon /></ListItemIcon>
           <ListItemText>Empty Contents</ListItemText>
         </MenuItem>
@@ -86,7 +86,7 @@ const CollectionActionsMenu = () => {
 }
 
 export const CollectionPreview = () => {
-  const { cart } = useSearch()
+  const { collection } = useSearch()
   const [expanded, setExpanded] = useState(false)
   const buttonRef = useRef(null)
   const rippleRef = useRef(null)
@@ -95,16 +95,16 @@ export const CollectionPreview = () => {
     setExpanded(!expanded)
   }
 
-  const handleClickRemoveFromCart = (type, id) => () => {
-    cart.remove(type, id)
+  const handleClickRemoveFromCollection = (type, id) => () => {
+    collection.remove(type, id)
   }
 
   // this effect will be responsible for orchestrating a signal
   // to the user that the contents of their collection have updated.
   // es-
   useEffect(() => {
-    // we can bail out early if the cart is empty.
-    if (cart.count === 0) {
+    // we can bail out early if the collection is empty.
+    if (collection.count === 0) {
       setExpanded(false)
       return
     }
@@ -130,7 +130,7 @@ export const CollectionPreview = () => {
     // note the loop caused by adding `expanded` to the dependency array,
     // so perhaps there is a better solution.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cart.count])
+  }, [collection.count])
 
   return (
     <Card sx={{
@@ -163,7 +163,7 @@ export const CollectionPreview = () => {
     }}>
       <CardHeader
         title="Collection"
-        subheader={ `${ cart.count } item${ cart.count === 1 ? '' : 's' }` }
+        subheader={ `${ collection.count } item${ collection.count === 1 ? '' : 's' }` }
         titleTypographyProps={{ color: 'secondary' }}
         avatar={ <CollectionIcon size="large" color="secondary" /> }
         action={ <CollectionActionsMenu /> }
@@ -174,23 +174,23 @@ export const CollectionPreview = () => {
       <CardContent>
         <List dense className="contents">
           {
-            Object.keys(cart.contents).map(key => (
-              <Fragment key={ `cart-${ key }` }>
+            Object.keys(collection.contents).map(key => (
+              <Fragment key={ `collection-${ key }` }>
                 <ListSubheader color="default">
-                  { cart.contents[key].length } { key }
+                  { collection.contents[key].length } { key }
                 </ListSubheader>
                 <Collapse in={ expanded } timeout="auto" unmountOnExit>
                   {
-                    cart.contents[key].map(item => (
+                    collection.contents[key].map(item => (
                       <ListItem
-                        key={ `cart-${ key }-${ item.id }` }
+                        key={ `collection-${ key }-${ item.id }` }
                         className="list-item"
                         secondaryAction={
                           <Tooltip title="Remove from Collection" placement="top">
                             <IconButton
                               className="remove-button"
                               aria-label="Remove from Collection"
-                              onClick={ handleClickRemoveFromCart(key, item.id) }
+                              onClick={ handleClickRemoveFromCollection(key, item.id) }
                               color="warning" size="small"
                             ><DeleteIcon fontSize="small" /></IconButton>
                           </Tooltip>
@@ -210,7 +210,7 @@ export const CollectionPreview = () => {
         </List>
       </CardContent>
 
-      <Collapse in={ expanded && cart.count !== 0 } timeout="auto">
+      <Collapse in={ expanded && collection.count !== 0 } timeout="auto">
         <Divider />
         <CardActions sx={{ display: 'flex', flexDirection: 'column' }}>
           <Typography paragraph align="center" color="secondary" sx={{ fontStyle: 'italic' }}>
@@ -230,7 +230,7 @@ export const CollectionPreview = () => {
       <Divider />
 
       {
-        cart.count === 0 ? (
+        collection.count === 0 ? (
           <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <HandleIcon sx={{ margin: 'auto', filter: 'opacity(0.25)' }} /> 
           </Box>
