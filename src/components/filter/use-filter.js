@@ -1,16 +1,22 @@
-import { useReducer } from 'react'
+import { useEffect, useReducer } from 'react'
+import { useLocalStorage } from '../../hooks'
 
 //
 
 
-// this utility turns an array os strings, like
+// this utility turns an array of strings, like
 //   ['item1', 'item2', 'item3', ...],
 // into a filter object, like
 //   { item1: false, item2: false, item3: false, ... }.
 const listToFilters = words => words.reduce((acc, f) => ({ ...acc, [f]: false }), {})
 
 export const useFilter = (keys) => {
-  const [filters, dispatch] = useReducer(reducer, { ...listToFilters(keys) })
+  const [storedFilters, setStoredFilters] = useLocalStorage('concept-filters', { ...listToFilters(keys) })
+  const [filters, dispatch] = useReducer(reducer, { ...storedFilters })
+
+  useEffect(() => {
+    setStoredFilters({ ...filters })
+  }, [filters])
 
   function reducer(state, signal) {
     switch (signal.action) {
