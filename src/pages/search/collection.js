@@ -1,8 +1,8 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { navigate } from 'gatsby'
 import {
   Box, Button, Card, CardActionArea, CardActions, CardContent, CardHeader,
-  Divider, Grid, Stack, Step, Stepper, StepLabel, Typography, useTheme,
+  Divider, Grid, Step, Stepper, StepLabel, Typography, useTheme,
 } from '@mui/material'
 import {
   KeyboardArrowLeft as BackIcon,
@@ -74,7 +74,7 @@ const StepIndicator = ({ activeIndex }) => {
 //
 
 const ReviewStep = () => {
-  const{ goToPreviousStep, goToNextStep } = useCheckout()
+  const{ goToNextStep } = useCheckout()
   const { cart } = useSearch()
 
   const { concepts, studies, variables } = cart.contents
