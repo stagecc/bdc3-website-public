@@ -20,6 +20,7 @@ export const ResultCard = ({ index, result }) => {
     <Card
       onClick={ () => setSelectedResult(result) }
       sx={{
+        height: '100%',
         position: 'relative',
         border: '1px solid #e9e6e3',
         backgroundColor: '#f9f6f3',
