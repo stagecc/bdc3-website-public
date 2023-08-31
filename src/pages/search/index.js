@@ -2,13 +2,15 @@ import React from "react";
 import { Grid, Stack, Typography } from "@mui/material";
 import { PageContent } from "../../components/layout";
 import { SEO } from "../../components/seo";
-import { CollectionPreview, DugForm, FiltersTray, Results, Sidebar } from "../../components/search";
+import { CollectionPreview, DugForm, FiltersTray, Results, Sidebar, useSearch } from "../../components/search";
 
 const SearchPage = ({ location }) => {
+  const {  query } = useSearch()
+
   return (
     <PageContent width="95%" maxWidth="1400px" center gutters>
       <SEO
-        title="Semantic Search"
+        title={ `Semantic Search - "${ query }"` }
         description="BioData Catalyst semantic search provided by Dug"
       />
 
