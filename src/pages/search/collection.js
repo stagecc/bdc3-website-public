@@ -111,7 +111,7 @@ const ReviewStep = () => {
         color: '#666',
       },
     }}>
-      <CardHeader title="Review Selections" />
+      <CardHeader title="Review Selections" titleTypographyProps={{ align: 'center' }} />
 
       <Divider />
 
@@ -250,7 +250,10 @@ const NextSteps = () => {
 
   return (
     <Box>
-      <Typography variant="h4">Next Steps</Typography>
+      <Typography variant="h4" align="center">Next Steps</Typography>
+
+      <br />
+      
       <Grid container spacing={ 4 }>
         {
           steps.map(({ title, content, color }) => (
