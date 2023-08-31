@@ -3,7 +3,8 @@ import { navigate } from 'gatsby'
 import { useLocation } from '@reach/router'
 import axios from 'axios'
 import { useCollection } from './collection'
-import { useFilter } from './filter'
+import { useFilter} from './filter'
+import { useSearchHistory } from './history'
 
 //
 
@@ -72,6 +73,7 @@ export const SearchProvider = ({ children }) => {
   const [selectedResult, setSelectedResult] = useState(null)
   const collection = useCollection(['concepts', 'studies', 'variables'])
   const typeFilters = useFilter([])
+  const history = useSearchHistory()
 
   // apply filters to results.
   // these are what we'll show to the user.
@@ -117,6 +119,7 @@ export const SearchProvider = ({ children }) => {
       return
     }
     setQuery(trimmedQuery)
+    history.add(trimmedQuery)
     navigate(`/search/?q=${ trimmedQuery }`)
   }
 
