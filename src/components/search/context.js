@@ -3,7 +3,7 @@ import { navigate } from 'gatsby'
 import { useLocation } from '@reach/router'
 import axios from 'axios'
 import { useCollection } from './collection'
-import { useFilter} from '../filter'
+import { useFilter } from './filter'
 
 //
 
