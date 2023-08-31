@@ -274,7 +274,7 @@ const NextSteps = () => {
             startIcon={ <BackIcon /> }
             onClick={ () => goToPreviousStep() }
             sx={{ backgroundColor: '#fff' }}
-          >Back to Collection</Button>
+          >Return to Collection</Button>
         </Grid>
       </Grid>
     </Box>
