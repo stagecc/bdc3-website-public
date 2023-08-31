@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { navigate } from 'gatsby'
 import {
   Box, Button, Card, CardActionArea, CardActions, CardContent, CardHeader,
-  Divider, Grid, Step, Stepper, StepLabel, Typography, useTheme,
+  Divider, Grid, Stack, Step, Stepper, StepLabel, Typography, useTheme,
 } from '@mui/material'
 import {
   KeyboardArrowLeft as BackIcon,
@@ -50,14 +50,17 @@ const StepIndicator = ({ activeIndex }) => {
       activeStep={ activeIndex }
       sx={{
         m: 4,
-        '.Mui-completed': {
-          fontWeight: 'bold',
+        '.MuiStepLabel-label.Mui-completed': {
           color: theme.palette.secondary.dark,
         },
-        '.Mui-active': {
+        '.MuiStepLabel-iconContainer.Mui-completed svg': {
+          fill: theme.palette.secondary.main,
+        },
+        '.MuiStepLabel-label.Mui-active': {
+          fontWeight: 'bold',
           color: theme.palette.primary.main,
         },
-        '.Mui-disabled': {
+        '.MuiStepLabel-label.Mui-disabled': {
         },
       }}
     >
@@ -72,6 +75,21 @@ const StepIndicator = ({ activeIndex }) => {
 }
 
 //
+
+const CollectionContent = ({ title, children }) => {
+  return (
+    <Stack direction="row" sx={{
+      '.title': { flex: '0 0 100px' },
+      '.body': { flex: 1 },
+    }}>
+      <Typography variant="h6" className="title">{ title }</Typography>
+      <Box className="body">
+        { children }
+      </Box>
+    </Stack>
+
+  )
+}
 
 const ReviewStep = () => {
   const{ goToNextStep } = useCheckout()
@@ -107,8 +125,11 @@ const ReviewStep = () => {
         filter: 'opacity(0.75)',
       },
       '.MuiTypography-root.details': {
-        p: 1,
+        p: 1, pl: 3,
         color: '#666',
+      },
+      '.MuiTypography-root.details.none': {
+        m: 0,
       },
     }}>
       <CardHeader title="Review Selections" titleTypographyProps={{ align: 'center' }} />
@@ -116,59 +137,62 @@ const ReviewStep = () => {
       <Divider />
 
       <CardContent className={ !concepts.length ? 'empty' : '' }>
-        <Typography variant="h6">Concepts</Typography>
-        {
-          concepts.length
-            ? concepts.map(({ id, name, type, description }, i) => (
-              <details key={ `collection-concepts-${ id }` }>
-                <Typography component="summary">{ i + 1 }. { name }</Typography>
-                <Typography className="details">
-                  • id: { id } <br />
-                  • type: { type } <br />
-                  • description: { description }
-                </Typography>
-              </details>
-            ))
-          : <Typography paragraph className="details">None selected.</Typography>
-        }
+        <CollectionContent title="Concepts">
+          {
+            concepts.length
+              ? concepts.map(({ id, name, type, description }, i) => (
+                <details key={ `collection-concepts-${ id }` }>
+                  <Typography component="summary">{ i + 1 }. { name }</Typography>
+                  <Typography className="details">
+                    • id: { id } <br />
+                    • type: { type } <br />
+                    • description: { description }
+                  </Typography>
+                </details>
+              ))
+            : <Typography paragraph className="details none">None selected.</Typography>
+          }
+        </CollectionContent>
       </CardContent>
       
       <Divider />
 
       <CardContent className={ !studies.length ? 'empty' : '' }>
-        <Typography variant="h6">Studies</Typography>
-        {
-          studies.length
-            ? studies.map(({ id, name, url, source }, i) => (
-              <details key={ `collection-concepts-${ id }` }>
-                <Typography component="summary">{ i + 1 }. { name }</Typography>
-                <Typography className="details">
-                  • source: { source } <br />
-                  • id/url: <Link to={ url }>{ id }</Link>
-                </Typography>
-              </details>
-            ))
-            : <Typography paragraph className="details">None selected.</Typography>
-        }
+        <CollectionContent title="Studies">
+          {
+            studies.length
+              ? studies.map(({ id, name, url, source }, i) => (
+                <details key={ `collection-concepts-${ id }` }>
+                  <Typography component="summary">{ i + 1 }. { name }</Typography>
+                  <Typography className="details">
+                    • source: { source } <br />
+                    • link: <Link to={ url }>{ id }</Link>
+                  </Typography>
+                </details>
+              ))
+              : <Typography paragraph className="details none">None selected.</Typography>
+          }
+        </CollectionContent>
       </CardContent>
       
       <Divider />
 
       <CardContent className={ !variables.length ? 'empty' : '' }>
-        <Typography variant="h6">Variables</Typography>
-        {
-          variables.length
-            ? variables.map(({ id, name, description, url }, i) => (
-              <details key={ `collection-concepts-${ id }` }>
-                <Typography component="summary">{ i + 1 }. { name }</Typography>
-                <Typography className="details">
-                  • description: { description } <br />
-                  • id/url: <Link to={ url }>{ id }</Link>
-                </Typography>
-              </details>
-            ))
-            : <Typography className="details">None selected.</Typography>
-        }
+        <CollectionContent title="Variables">
+          {
+            variables.length
+              ? variables.map(({ id, name, description, url }, i) => (
+                <details key={ `collection-concepts-${ id }` }>
+                  <Typography component="summary">{ i + 1 }. { name }</Typography>
+                  <Typography className="details">
+                    • description: { description } <br />
+                    • link: <Link to={ url }>{ id }</Link>
+                  </Typography>
+                </details>
+              ))
+              : <Typography className="details none">None selected.</Typography>
+          }
+        </CollectionContent>
       </CardContent>
 
       <Divider />
@@ -176,8 +200,9 @@ const ReviewStep = () => {
       <CardContent>
           <br /><br />
         <Typography paragraph align="center">
-          Several of the services available in the next steps can make use of your concept, study, and variable selections here.
-          Use the button below to download your selections as JSON. Then proceed to the next step.
+          Some of the services in the next steps will make use of your selections here.
+          Use the button below to download your selections as JSON.
+          Then proceed to the next step to learn how to use your selections to continue your research.
           <br /><br />
           <Button
             variant="contained"
@@ -207,7 +232,7 @@ const ReviewStep = () => {
           endIcon={ <ForwardIcon /> }
           onClick={ goToNextStep }
           disabled={ collection.count === 0 }
-        >Next Steps</Button>
+        >Next</Button>
       </CardActions>
     </Card>
   )
