@@ -8,6 +8,24 @@ import { useSearch } from '../context'
 
 //
 
+const RemoveTooltip = ({ children, placement }) => {
+  return (
+    <Tooltip
+      title="Remove from collection"
+      placement={ placement }
+    >{ children }</Tooltip>
+  )
+}
+
+const AddTooltip = ({ children, placement }) => {
+  return (
+    <Tooltip
+      title="Add to collection"
+      placement={ placement }
+    >{ children }</Tooltip>
+  )
+}
+
 export const ConceptCollectionButton = ({ concept, tooltipPlacement = 'bottom', size = 'medium', className }) => {
   const { collection } = useSearch()
   const inCollection = useMemo(() => collection.contains('concepts', concept.id), [collection, concept])
@@ -25,13 +43,13 @@ export const ConceptCollectionButton = ({ concept, tooltipPlacement = 'bottom', 
 
   if (inCollection) {
     return (
-      <Tooltip title="Remove from Collection" placement={ tooltipPlacement }>
+      <RemoveTooltip placement={ tooltipPlacement }>
         <IconButton
           className={ className }
           variant="text" color="secondary" size={ size }
           onClick={ handleClickRemoveFromCollection }
         ><AddedIcon fontSize={ size } /></IconButton>
-      </Tooltip>
+      </RemoveTooltip>
     )
   }
 
@@ -64,24 +82,24 @@ export const StudyCollectionButton = ({ study, tooltipPlacement = 'bottom', size
 
   if (inCollection) {
     return (
-      <Tooltip title="Remove from Collection" placement={ tooltipPlacement }>
+      <RemoveTooltip placement={ tooltipPlacement }>
         <IconButton
           className={ className }
           variant="text" color="secondary" size={ size }
           onClick={ handleClickRemoveFromCollection }
         ><AddedIcon fontSize={ size } /></IconButton>
-      </Tooltip>
+      </RemoveTooltip>
     )
   }
 
   return (
-    <Tooltip title="Add to Collection" placement={ tooltipPlacement }>
+    <AddTooltip placement={ tooltipPlacement }>
       <IconButton
         className={ className }
         variant="text" color="default" size={ size }
         onClick={ handleClickAddToCollection }
       ><NotAddedIcon fontSize={ size } /></IconButton>
-    </Tooltip>
+    </AddTooltip>
   )
 }
 
@@ -103,23 +121,23 @@ export const VariableCollectionButton = ({ variable, tooltipPlacement = 'bottom'
 
   if (inCollection) {
     return (
-      <Tooltip title="Remove from Collection" placement={ tooltipPlacement }>
+      <RemoveTooltip placement={ tooltipPlacement }>
         <IconButton
           className={ className }
           variant="text" color="secondary" size={ size }
           onClick={ handleClickRemoveFromCollection }
         ><AddedIcon fontSize={ size } /></IconButton>
-      </Tooltip>
+      </RemoveTooltip>
     )
   }
 
   return (
-    <Tooltip title="Add to Collection" placement={ tooltipPlacement }>
+    <AddTooltip placement={ tooltipPlacement }>
       <IconButton
         className={ className }
         variant="text" color="default" size={ size }
         onClick={ handleClickAddToCollection }
       ><NotAddedIcon fontSize={ size } /></IconButton>
-    </Tooltip>
+    </AddTooltip>
   )
 }
