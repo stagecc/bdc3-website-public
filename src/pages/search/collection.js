@@ -1,13 +1,15 @@
 import React, { Fragment, useState } from 'react'
 import { navigate } from 'gatsby'
 import {
-  Box, Button, Card, CardActionArea, CardActions, CardContent, CardHeader,
-  Divider, Grid, Stack, Step, Stepper, StepLabel, Typography, useTheme,
+  Accordion, AccordionActions, AccordionDetails, AccordionSummary, Box, Button, Card, CardActionArea, CardActions, CardContent, CardHeader,
+  Divider, Grid, IconButton, Stack, Step, Stepper, StepLabel, Typography, useTheme,
 } from '@mui/material'
 import {
   KeyboardArrowLeft as BackIcon,
   Download as DownloadIcon,
   KeyboardArrowRight as ForwardIcon,
+  Delete as DeleteIcon,
+  ExpandMore as ExpandIcon,
 } from '@mui/icons-material'
 import { PageContent } from '../../components/layout'
 import { SEO } from '../../components/seo'
@@ -50,34 +52,88 @@ const services = [
 const CollectionContentsSection = ({ title, children, className = '' }) => {
   return (
     <CardContent className={ className } sx={{
+      p: 0,
       '&.empty': {
         backgroundColor: '#eee',
         filter: 'opacity(0.75)',
       },
-      '.title': { flex: '0 0 100px' },
+      '.title': { flex: '0 0 140px', p: 2 },
       '.body': { flex: 1 },
-      '& summary': {
-        cursor: 'pointer',
-        p: 1,
-      },
-      '.MuiStack-root': {
-        mx: 2,
-      },
-      '.MuiTypography-root.details': {
-        p: 1, pl: 3,
+      '.MuiStack-root': { m: 0 },
+      '.details': {
         color: '#666',
       },
-      '.MuiTypography-root.details.none': {
-        m: 0,
-      },
+      '.details.none': { m: 2 },
     }}>
       <Stack direction="row">
         <Typography variant="h6" className="title">{ title }</Typography>
+        <Divider orientation="vertical" flexItem />
         <Box className="body">
           { children }
         </Box>
       </Stack>
     </CardContent>
+  )
+}
+
+const CollectionItemAccordion = ({ type, id, title, children }) => {
+  const { collection } = useSearch()
+
+  return (
+    <Accordion
+      elevation={ 0 }
+      disableGutters
+      sx={{
+        pt: 1,
+        '&.MuiAccordion-root:before': { backgroundColor: '#fff' }, // removes lines between consecutive accordions
+        '.MuiCollapse-root': {
+          position: 'relative',
+          '.MuiAccordionActions-root': {
+            transition: 'filter 250ms',
+            filter: 'opacity(0.1) saturate(0.25)',
+          },
+          '&:hover .MuiAccordionActions-root': {
+            filter: 'opacity(0.5) saturate(0.5)',
+            '&:hover': {
+              filter: 'opacity(1.0) saturate(1.0)',
+            },
+          },
+        },
+        '.MuiAccordionDetails-root': {
+          m: 1, mt: 0,
+          backgroundColor: '#f3f6f9',
+          borderRadius: '4px',
+        },
+        '.MuiAccordionActions-root': {
+          position: 'absolute', top: 0, right: '16px',
+        },
+        '.MuiAccordionSummary-expandIconWrapper': {
+          transition: 'filter 150ms',
+          filter: 'opacity(0.25) saturate(0.0)',
+        },
+        '&:hover .MuiAccordionSummary-expandIconWrapper': {
+          filter: 'opacity(0.75) saturate(0.1)',
+        },
+      }}
+    >
+      <AccordionSummary
+        expandIcon={ <ExpandIcon /> }
+        aria-controls={ `${ id }-content` }
+        id={ `${ id }-header` }
+      >
+        <Typography>{ title }</Typography>
+      </AccordionSummary>
+      <AccordionActions>
+        <IconButton
+          size="small"
+          color="warning"
+          onClick={ () => collection.remove(type, id) }
+        ><DeleteIcon fontSize="small" /></IconButton>
+      </AccordionActions>
+      <AccordionDetails className="details">
+        { children }
+      </AccordionDetails>
+    </Accordion>
   )
 }
 
@@ -88,56 +144,71 @@ const ReviewStep = () => {
 
   return (
     <Fragment>
-      <CollectionContentsSection title="Concepts" className={ !concepts.length ? 'empty' : '' }>
+      <CollectionContentsSection
+        title="Concepts"
+        className={ !concepts.length ? 'empty' : '' }
+      >
         {
-          concepts.length
-            ? concepts.map(({ id, name, type, description }, i) => (
-              <details key={ `collection-concepts-${ id }` }>
-                <Typography component="summary">{ i + 1 }. { name }</Typography>
-                <Typography className="details">
-                  • id: { id } <br />
-                  • type: { type } <br />
-                  • description: { description }
-                </Typography>
-              </details>
-            ))
-          : <Typography paragraph className="details none">None selected.</Typography>
+          concepts.length ? concepts.map(({ id, name, type, description }, i) => (
+            <CollectionItemAccordion
+              key={ `accordion-${ id }` } 
+              type="concepts"
+              id={ id }
+              title={ `${ i + 1 }. ${ name }` }
+            >
+              <Typography>
+                • id: { id } <br />
+                • type: { type } <br />
+                • description: { description }
+              </Typography>
+            </CollectionItemAccordion>
+          )) : <Typography paragraph className="details none">None selected.</Typography>
         }
       </CollectionContentsSection>
       
       <Divider />
 
-      <CollectionContentsSection title="Studies" className={ !studies.length ? 'empty' : '' }>
+      <CollectionContentsSection
+        title="Studies"
+        className={ !studies.length ? 'empty' : '' }
+      >
         {
-          studies.length
-            ? studies.map(({ id, name, url, source }, i) => (
-              <details key={ `collection-concepts-${ id }` }>
-                <Typography component="summary">{ i + 1 }. { name }</Typography>
-                <Typography className="details">
-                  • source: { source } <br />
-                  • link: <Link to={ url }>{ id }</Link>
-                </Typography>
-              </details>
-            ))
-            : <Typography paragraph className="details none">None selected.</Typography>
+          studies.length ? studies.map(({ id, name, url, source }, i) => (
+            <CollectionItemAccordion
+              key={ `accordion-${ id }` } 
+              type="studies"
+              id={ id }
+              title={ `${ i + 1 }. ${ name }` }
+            >
+              <Typography>
+                • source: { source } <br />
+                • link: <Link to={ url }>{ id }</Link>
+              </Typography>
+            </CollectionItemAccordion>
+          )) : <Typography paragraph className="details none">None selected.</Typography>
         }
       </CollectionContentsSection>
       
       <Divider />
 
-      <CollectionContentsSection title="Variables" className={ !variables.length ? 'empty' : '' }>
+      <CollectionContentsSection
+        title="Variables"
+        className={ !variables.length ? 'empty' : '' }
+      >
         {
-          variables.length
-            ? variables.map(({ id, name, description, url }, i) => (
-              <details key={ `collection-concepts-${ id }` }>
-                <Typography component="summary">{ i + 1 }. { name }</Typography>
-                <Typography className="details">
-                  • description: { description } <br />
-                  • link: <Link to={ url }>{ id }</Link>
-                </Typography>
-              </details>
-            ))
-            : <Typography className="details none">None selected.</Typography>
+          variables.length ? variables.map(({ id, name, description, url }, i) => (
+            <CollectionItemAccordion
+              key={ `accordion-${ id }` } 
+              type="variables"
+              id={ id }
+              title={ `${ i + 1 }. ${ name }` }
+            >
+              <Typography>
+                • description: { description } <br />
+                • link: <Link to={ url }>{ id }</Link>
+              </Typography>
+            </CollectionItemAccordion>
+          )) : <Typography className="details none">None selected.</Typography>
         }
       </CollectionContentsSection>
 
@@ -200,7 +271,7 @@ const DownloadStep = () => {
             >Download Selections</Button>
             <br /><br />
             Proceed to the next step to learn how to use your
-            selections to continue your research with.
+            selections to continue your research.
           </Typography>
         </Box>
       </CardContent>
@@ -303,7 +374,7 @@ const NextSteps = () => {
           startIcon={ <BackIcon /> }
           onClick={ goToPreviousStep }
           sx={{ backgroundColor: '#fff', minHeight: '75px' }}
-        >Return to Collection</Button>
+        >Back</Button>
       </CardActions>
     </Fragment>
   )
