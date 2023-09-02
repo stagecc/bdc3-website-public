@@ -443,16 +443,19 @@ const CollectionPage = () => {
 
         <StepIndicator activeIndex={ currentStep } />
           
-        <Card sx={{
-          '.MuiCardActions-root': {
-            p: 2,
-            display: 'flex',
-            justifyContent: 'space-between',
-            '.MuiButton-root.MuiButton-sizeLarge': {
-              minHeight: '75px',
+        <Card
+          elevation={ 3 }
+          sx={{
+            '.MuiCardActions-root': {
+              p: 2,
+              display: 'flex',
+              justifyContent: 'space-between',
+              '.MuiButton-root.MuiButton-sizeLarge': {
+                minHeight: '75px',
+              },
             },
-          },
-        }}>
+          }}
+        >
           <CardHeader
             title={ STEPS[currentStep].title }
             titleTypographyProps={{ align: 'center' }}
