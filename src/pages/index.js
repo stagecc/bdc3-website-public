@@ -12,7 +12,7 @@ import BlurChartCheckUpCurve from "../images/blur-chart-check-up-curve.jpg";
 import { NewsFeedModule } from "../components/modules";
 import carouselData from "../data/data-carousel.json"
 import { VideoPlayer } from "../components/video-player"
-import { SearchForm } from "../components/search"
+import { DugForm } from "../components/search"
 import { Link } from "../components/link"
 
 const IndexPage = () => {
@@ -32,7 +32,10 @@ const IndexPage = () => {
           <HexMenu />
         </Hidden>
 
-        <SearchForm />
+        <br />
+
+        <DugForm />
+        
         <Paragraph center style={{ fontStyle: 'italic', fontSize: '90%' }}>
           Semantic search provided by Dug.
           {' '}
