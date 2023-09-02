@@ -460,7 +460,7 @@ const CollectionPage = () => {
           
           <Divider />
 
-          { STEPS.map(({ title, Component}, i) => currentStep === i && <Component />) }
+          { STEPS.map(({ Component}, i) => currentStep === i && <Component key={ `step-${ i }` } />) }
         </Card>
 
         <br />
