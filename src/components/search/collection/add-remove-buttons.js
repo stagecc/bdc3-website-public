@@ -13,6 +13,8 @@ const RemoveTooltip = ({ children, placement }) => {
     <Tooltip
       title="Remove from collection"
       placement={ placement }
+      enterDelay={ 500 }
+      enterNextDelay={ 500 }
     >{ children }</Tooltip>
   )
 }
@@ -22,6 +24,8 @@ const AddTooltip = ({ children, placement }) => {
     <Tooltip
       title="Add to collection"
       placement={ placement }
+      enterDelay={ 500 }
+      enterNextDelay={ 500 }
     >{ children }</Tooltip>
   )
 }
@@ -54,13 +58,13 @@ export const ConceptCollectionButton = ({ concept, tooltipPlacement = 'bottom', 
   }
 
   return (
-    <Tooltip title="Add to Collection" placement={ tooltipPlacement }>
+    <AddTooltip placement={ tooltipPlacement }>
       <IconButton
         className={ className }
         variant="text" color="default" size={ size }
         onClick={ handleClickAddToCollection }
       ><NotAddedIcon fontSize={ size } /></IconButton>
-    </Tooltip>
+    </AddTooltip>
   )
 }
 
