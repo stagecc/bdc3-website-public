@@ -24,7 +24,7 @@ const useCheckout = () => React.useContext(CheckoutContext)
 
 //
 
-const services = [
+const NEXT_STEP_SERVICES = [
   {
     title: 'Check Access',
     content: 'Log in to dbGaP with ERA Commons to determine access account voluptate minim dolore voluptate est qui adipisicing velit mollit et deserunt commodo ad laboris non consectetur.',
@@ -285,7 +285,7 @@ const DownloadStep = () => {
           color="secondary"
           startIcon={ <BackIcon /> }
           onClick={ goToPreviousStep }
-        >Back</Button>
+        >Previous</Button>
         <Button
           variant="contained"
           size="large"
@@ -347,7 +347,7 @@ const NextSteps = () => {
       <CardContent>
         <Grid container spacing={ 2 }>
           {
-            services.map(({ title, content, color }) => (
+            NEXT_STEP_SERVICES.map(({ title, content, color }) => (
               <Grid item
                 key={ `service-${ title }` }
                 xs={ 12 } md={ 6 }
@@ -374,7 +374,7 @@ const NextSteps = () => {
           startIcon={ <BackIcon /> }
           onClick={ goToPreviousStep }
           sx={{ backgroundColor: '#fff', minHeight: '75px' }}
-        >Back</Button>
+        >Previous</Button>
       </CardActions>
     </Fragment>
   )
