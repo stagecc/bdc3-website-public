@@ -2,16 +2,16 @@ import React from "react";
 import styled from "styled-components";
 import { graphql} from "gatsby";
 import Img from "gatsby-image";
-import { SEO } from "../components/seo";
-import { Title, Subtitle, Meta, Heading } from "../components/typography";
-import { InlineList2 } from "../components/list";
-import { TagLink } from "../components/link";
-import { PageContent } from "../components/layout";
+import { SEO } from "../../components/seo";
+import { Title, Subtitle, Meta, Heading } from "../../components/typography";
+import { InlineList2 } from "../../components/list";
+import { TagLink } from "../../components/link";
+import { PageContent } from "../../components/layout";
 import { Visible } from "react-grid-system";
-import { HorizontalRule } from "../components/horizontal-rule";
-import { Link } from "../components/link";
-import { Markdown } from '../components/markdown'
-import { useWindowWidth } from "../hooks";
+import { HorizontalRule } from "../../components/horizontal-rule";
+import { Link } from "../../components/link";
+import { Markdown } from "../../components/markdown"
+import { useWindowWidth } from "../../hooks";
 import './module.css'
 
 const SpeakerImageWrapper = styled.div`
