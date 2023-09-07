@@ -106,7 +106,7 @@ export default ({ data, pageContext }) => {
             <div>
                 <FlexWrapper compact={isCompact}>
                   <PhotoWrapper>
-                    <FellowPhoto fixed={frontmatter.speakerImage.childImageSharp.fluid} />
+                  <FellowPhoto fixed={author.image.childImageSharp.fluid} />
                   </PhotoWrapper>
                   <FellowDetails>
                     {author.name && (
@@ -179,6 +179,13 @@ export const newsItemQuery = graphql`
         }
         authors {
 					name
+          image {
+            childImageSharp {
+              fluid(maxWidth: 400) {
+                ...GatsbyImageSharpFluid
+              }
+            }  
+          }
           description
         }
       }
