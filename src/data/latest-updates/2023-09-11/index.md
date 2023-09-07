@@ -3,6 +3,20 @@ path: /latest-updates/SCDdatasets2023
 date: 2023-09-01
 title: "BDC supports sickle cell research by hosting key datasets"
 tags: ["blog"]
+authors:
+  -
+    name: "Sweta Ladwa"
+    image: "./SwetaLadwa.jpg"
+    description: "Sweta Ladwa has supported various U.S. Department of Health and Human Services (HHS) entities to address use cases related to scientific data management (including standards, harmonization, and aggregation) and healthcare IT over the past decade. She currently serves as Chief, Scientific Solutions Delivery Branch in the NHLBI Information Technology and Applications Center (ITAC) and is the Data Management Lead for BDC’s data science ecosystem, working with NHLBI-funded investigators, trans-NIH data science program leadership, and BDC developers to ensure data in BDC is optimized for use by the broad scientific research community to advance public health outcomes. She also supports several Trans-NIH initiatives, such as the COVID-19 RECOVER and the NIH Cloud Platform Interoperability (NCPI) programs. Ladwa has an MPH focused in Epidemiology and Biostatistics from The George Washington University and a BS in Biology and Chemistry from Virginia Commonwealth University."
+  -
+    name: "Allison Gillaspy"
+    image: "./AllisonGillaspy.jpg"
+    description: "Allison Gillaspy, Ph.D., is a program officer in the Translational Blood Science and Resources Branch (TRRB) of the Division of Blood Diseases and Resources (DBDR) at NHLBI, part of the National Institutes of Health (NIH). Areas of expertise include high throughput whole genome sequencing, RNAseq/transcriptomics, proteomics, bacterial pathogenesis, microbiome studies and next gen data analysis.\n
+    She is involved with the Cure Sickle Cell Initiative (CureSCi) as the Data Strategy Scientific Program Lead and is Program Director for the NHLBI Biological Specimen and Data Repository (BioLINCC) resource program."
+  -
+    name: "Lisbeth A. Welniak"
+    image: "./LisWelniak.jpg"
+    description: "Lisbeth Welniak, Ph.D., is a program director in the Translational Biology Branch of the Division of Blood Diseases and Resources (DBDR) at NHLBI, part of the National Institutes of Health (NIH). Welniak manages a portfolio of grants, fellowships, and cooperative agreements in the basic and translational scientific research areas of cellular therapies and the consequences of hematopoietic stem cell transplantation as well as basic and clinical immunobiology research in transfusion medicine. Welniak is also a Program Director for the NHLBI Biological Specimen and Data Repository (BioLINCC) resource program and the NHLBI Cure Sickle Cell Initiative."
 seo:
   title: "BDC supports sickle cell research by hosting key datasets"
   description: ""

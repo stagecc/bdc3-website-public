@@ -8,9 +8,11 @@ speakerImage: './daya-michelle.jpg'
 authors:
   -
     name: 'Michelle Daya'
+    image: './daya-michelle.jpg'
     description: 'Michelle Daya, PhD, is a human genetics researcher, with a focus on how genetic makeup influences risk for developing common allergies such as asthma and eczema. Her research was supported in part by the BioData Catalyst Fellowship Program, which she participated in during [Cohort I](https://biodatacatalyst.nhlbi.nih.gov/fellows/cohort1/). For her study, [Multiethnic genome-wide and HLA association study of total serum IgE level](https://pubmed.ncbi.nlm.nih.gov/34536413/), she leveraged data from the National Heart, Lung and Blood Institute (NHLBI) Trans-Omics for Precision Medicine (TOPMed) program; the Consortium on Asthma among African-ancestry Populations in the Americas (CAAPA); and the Atopic Dermatitis Research Network (ADRN).'
   -
     name: 'Michelle Daya2'
+    image: './daya-michelle.jpg'
     description: '2 Michelle Daya, PhD, is a human genetics researcher, with a focus on how genetic makeup influences risk for developing common allergies such as asthma and eczema. Her research was supported in part by the BioData Catalyst Fellowship Program, which she participated in during [Cohort I](https://biodatacatalyst.nhlbi.nih.gov/fellows/cohort1/). For her study, [Multiethnic genome-wide and HLA association study of total serum IgE level](https://pubmed.ncbi.nlm.nih.gov/34536413/), she leveraged data from the National Heart, Lung and Blood Institute (NHLBI) Trans-Omics for Precision Medicine (TOPMed) program; the Consortium on Asthma among African-ancestry Populations in the Americas (CAAPA); and the Atopic Dermatitis Research Network (ADRN).'
 seo:
   title: "BioData Catalyst Used for Genomics Research on Link Between Genetic Risk and Allergic Disease"
