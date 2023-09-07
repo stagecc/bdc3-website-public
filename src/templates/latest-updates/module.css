@@ -1,0 +1,79 @@
+p, li {
+  text-align: inherit;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.full-width-image img {
+  margin: 1rem auto;
+}
+.full-width-image figcaption {
+  font-style: italic;
+}
+.full-width-image {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.partial-width-image  {
+  margin: 0 2rem 1rem 0;
+  width: 240px;
+  float: left;
+}
+
+.quote {
+  border-left: 8px solid var(--color-crimson);
+  padding-left: 1rem;
+  margin: 1.5rem 0 1.5rem 2rem;
+}
+.quote blockquote {
+  line-height: 1.5;
+  font-style: italic;
+    font-weight: 500;
+    font-size: 110%;
+
+}
+.quote .attribution::before {
+  content: "\a";
+  white-space: pre;
+}
+
+.quote .attribution::before {
+  content: "—  ";
+}
+
+.quote .attribution {
+  color: var(--color-crimson);
+  margin-top: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.short-quote {
+  width: 25%;
+  float: right;
+  border-left: 8px solid var(--color-crimson);
+  padding-left: 0rem;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.short-quote blockquote {
+  line-height: 1.5;
+  font-size: 120%;
+  font-weight: 500;
+  padding-left: 0rem;
+  font-style: italic;
+}
+
+/* adds open double quotation mark before text of short quote */
+.short-quote blockquote::before {
+  content: "\201C";
+  font-size: 3.5rem;
+  display: block;
+  font-family:'Lucida Sans';
+  font-style: normal;
+  line-height: 1.5rem;
+  font-weight: 400;
+}
