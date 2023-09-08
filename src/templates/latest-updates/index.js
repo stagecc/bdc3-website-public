@@ -103,10 +103,18 @@ export default ({ data, pageContext }) => {
   const { markdownRemark: { frontmatter, html } } = data;
   const { prev, next } = pageContext;
   const { isCompact } = useWindowWidth();
-  const [expanded, setExpanded] = useState(false);
+  const [expandedIndices, setExpandedIndices] = useState(new Set())
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
+  const handleExpandClick = index => {
+    // copy of expandedIndices state variable
+    const newExpandedIndices = new Set([...expandedIndices])
+    //remove if there ; add if not
+    if (newExpandedIndices.has(index)) {
+      newExpandedIndices.delete(index)
+    } else {
+      newExpandedIndices.add(index)
+    }
+    setExpandedIndices(newExpandedIndices)
   };
 
   return (
@@ -154,7 +162,10 @@ export default ({ data, pageContext }) => {
             </Fragment>
           )}
 
-          {frontmatter.authors && frontmatter.authors.map((author, id)=> (
+          {frontmatter.authors && frontmatter.authors.map((author, id)=> {
+            const expanded = expandedIndices.has(id)
+
+            return (
             <div key={`author-${id}`}>
                 <FlexWrapper compact={isCompact}>
                   <PhotoWrapper>
@@ -183,7 +194,7 @@ export default ({ data, pageContext }) => {
                     <p style={{textAlign: "right", color: "#01366a"}}>Continue Reading  </p>
                     <ExpandMore
                       expand={expanded}
-                      onClick={handleExpandClick}
+                      onClick={() => handleExpandClick(id)}
                       aria-expanded={expanded}
                       aria-label="show more"
                     >
@@ -194,7 +205,8 @@ export default ({ data, pageContext }) => {
                   </div>
                 </FlexWrapper>
             </div>
-          ))}
+          )}
+          )}
         </div>
       </div>
 
