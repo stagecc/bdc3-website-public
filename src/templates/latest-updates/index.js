@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { graphql} from "gatsby";
 import Img from "gatsby-image";
 import { SEO } from "../../components/seo";
-import { Title, Subtitle, Meta, Heading } from "../../components/typography";
+import { Title, Subtitle, Meta, Heading, Paragraph } from "../../components/typography";
 import { InlineList2 } from "../../components/list";
 import { TagLink } from "../../components/link";
 import { PageContent } from "../../components/layout";
