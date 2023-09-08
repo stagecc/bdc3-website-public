@@ -16,6 +16,7 @@ import './module.css'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
+import ButtonBase from '@mui/material/ButtonBase'
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -190,16 +191,17 @@ export default ({ data, pageContext }) => {
                       )}
                     </FellowDetails>
                   </BodyContainer>
-                  <div style={{display: "flex", justifyContent: "flex-end", alignItems: "center"}}>
-                    <p style={{textAlign: "right", color: "#01366a"}}>Continue Reading  </p>
-                    <ExpandMore
-                      expand={expanded}
-                      onClick={() => handleExpandClick(id)}
-                      aria-expanded={expanded}
-                      aria-label="show more"
-                    >
-                      <ExpandMoreIcon color="primary" />
-                    </ExpandMore>
+                  <div style={{display: "flex", justifyContent: "flex-end"}}>
+                    <ButtonBase onClick={() => handleExpandClick(id)}>
+                      <p style={{color: "#01366a"}}>Read More</p>
+                      <ExpandMore
+                        expand={expanded}
+                        aria-expanded={expanded}
+                        aria-label="read more"
+                      >
+                        <ExpandMoreIcon color="primary" />
+                      </ExpandMore>
+                    </ButtonBase>
                   </div>
                   
                   </div>
