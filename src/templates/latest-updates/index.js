@@ -35,28 +35,34 @@ const FlexWrapper = styled.div`
   justify-content: center;
   align-items: ${props => (props.compact ? "center" : "flex-start")};
   margin-bottom: 3rem;
- 
+  background-color: #EFEFEF;
+  padding: 1.5rem 2.5rem;
+  border-radius: 3px;
+  filter: drop-shadow(0 0 8px 4px rgba(186, 194, 204, 0.5));
+
 `;
 
 const PhotoWrapper = styled.div`
-  margin: 2rem;
-  max-width: 231px;
+  margin: 1rem 3rem 0 0rem;
+  max-width: 200px;
   max-height: 200px;
-  min-width: 231px;
+  min-width: 200px;
   min-height: 200px;
-  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  /* clip-path: circle(60%); */
   filter: drop-shadow(0 0 0.25rem rgba(0, 0, 0, 0.2));
 `;
 
 const FellowPhoto = styled(Img)`
-  max-width: 231px;
+  max-width: 200px;
   max-height: 200px;
-  min-width: 231px;
+  min-width: 200px;
   min-height: 200px;
-  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  clip-path: circle(100%);
   transition: filter 250ms, transform 500ms;
   transform: scale(1);
   transform-origin: center center;
+  border: 6px solid #b33243;
+  border-radius: 100%;
 `;
 
 const FellowDetails = styled.div`
@@ -199,3 +205,4 @@ export const newsItemQuery = graphql`
     }
   }
 `;
+
