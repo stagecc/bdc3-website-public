@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import styled from "styled-components";
 import { graphql} from "gatsby";
 import Img from "gatsby-image";
@@ -13,6 +13,36 @@ import { Link } from "../../components/link";
 import { Markdown } from "../../components/markdown"
 import { useWindowWidth } from "../../hooks";
 import './module.css'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Collapse from '@mui/material/Collapse';
+import IconButton from '@mui/material/IconButton';
+
+const ExpandMore = styled((props) => {
+  const { expand, ...other } = props;
+  return <IconButton {...other} />;
+})(({  expand }) => ({
+  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
+  marginLeft: 'auto',
+}));
+
+const BodyContainer = styled.div`
+  /* max-height: 100px; */
+  overflow-y: hidden;
+  position: relative;
+  margin-bottom: 1rem;
+  &::after {
+    content: "";
+    position: absolute;
+    background-image: linear-gradient(#ffffff00, #e3f2fd);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3rem;
+    max-height: 3rem;
+    pointer-events: none;
+    display: ${props => (props.expand && "none")};
+  } ;
+`
 
 const SpeakerImageWrapper = styled.div`
   @media screen and (max-width: 650px){
@@ -35,21 +65,20 @@ const FlexWrapper = styled.div`
   justify-content: center;
   align-items: ${props => (props.compact ? "center" : "flex-start")};
   margin-bottom: 3rem;
-  background-color: #EFEFEF;
-  padding: 1.5rem 2.5rem;
+  background-color: #e3f2fd;
+  padding: 2rem 3rem;
   border-radius: 3px;
-  filter: drop-shadow(0 0 8px 4px rgba(186, 194, 204, 0.5));
-
 `;
 
 const PhotoWrapper = styled.div`
-  margin: 1rem 3rem 0 0rem;
-  max-width: 200px;
+  margin: 2rem;
+  max-width: 231px;
   max-height: 200px;
-  min-width: 200px;
+  min-width: 231px;
   min-height: 200px;
   /* clip-path: circle(60%); */
   filter: drop-shadow(0 0 0.25rem rgba(0, 0, 0, 0.2));
+
 `;
 
 const FellowPhoto = styled(Img)`
@@ -63,6 +92,7 @@ const FellowPhoto = styled(Img)`
   transform-origin: center center;
   border: 6px solid #b33243;
   border-radius: 100%;
+
 `;
 
 const FellowDetails = styled.div`
@@ -73,6 +103,11 @@ export default ({ data, pageContext }) => {
   const { markdownRemark: { frontmatter, html } } = data;
   const { prev, next } = pageContext;
   const { isCompact } = useWindowWidth();
+  const [expanded, setExpanded] = useState(false);
+
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
 
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters>
@@ -87,7 +122,11 @@ export default ({ data, pageContext }) => {
           <Subtitle className="article-subtitle">
             {frontmatter.subtitle}
           </Subtitle>
-          <Meta>Published on {frontmatter.date} {frontmatter.author && (<span>| Authored by {frontmatter.author}</span>)}</Meta>
+          <Meta>
+            Published on {frontmatter.date} {frontmatter.author && 
+            (<span>| Authored by {frontmatter.author}</span>)
+            }
+          </Meta>
           <Meta>
             <InlineList2
               title="Tags"
@@ -115,20 +154,44 @@ export default ({ data, pageContext }) => {
             </Fragment>
           )}
 
-          {frontmatter.authors && frontmatter.authors.map((author)=> (
-            <div>
+          {frontmatter.authors && frontmatter.authors.map((author, id)=> (
+            <div key={`author-${id}`}>
                 <FlexWrapper compact={isCompact}>
                   <PhotoWrapper>
-                  <FellowPhoto fixed={author.image.childImageSharp.fluid} />
+                    <FellowPhoto fixed={author.image.childImageSharp.fluid} />
                   </PhotoWrapper>
-                  <FellowDetails>
-                    {author.name && (
-                      <h3>{author.name}</h3>
-                    )}
-                    {author.description && (
-                      <Markdown src={author.description}/>
-                    )}
-                  </FellowDetails>
+                  <div>
+
+                  <BodyContainer expand={expanded}>
+
+                    <FellowDetails>
+                      {author.name && (
+                        <h3>{author.name}</h3>
+                      )}
+                      {author.description && (
+                        <Collapse 
+                          in={expanded}  
+                          collapsedSize="150px"
+                          orientation="vertical"
+                        >
+                          <Markdown src={author.description}/>
+                        </Collapse>
+                      )}
+                    </FellowDetails>
+                  </BodyContainer>
+                  <div style={{display: "flex", justifyContent: "flex-end", alignItems: "center"}}>
+                    <p style={{textAlign: "right", color: "#01366a"}}>Continue Reading  </p>
+                    <ExpandMore
+                      expand={expanded}
+                      onClick={handleExpandClick}
+                      aria-expanded={expanded}
+                      aria-label="show more"
+                    >
+                      <ExpandMoreIcon color="primary" />
+                    </ExpandMore>
+                  </div>
+                  
+                  </div>
                 </FlexWrapper>
             </div>
           ))}
@@ -191,7 +254,7 @@ export const newsItemQuery = graphql`
           }  
         }
         authors {
-					name
+          name
           image {
             childImageSharp {
               fluid(maxWidth: 400) {
