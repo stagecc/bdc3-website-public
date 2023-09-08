@@ -97,10 +97,17 @@ export default ({ data, pageContext }) => {
           )}
           <div className="page-content" dangerouslySetInnerHTML={{ __html: html }} />
 
-          <HorizontalRule />
-
           {/* author block */}
-          <Heading>About the Authors</Heading>
+          {frontmatter.authors && (
+            <Fragment>
+              <HorizontalRule />
+              
+              <Heading>About This Article</Heading>
+              <Paragraph>
+                This article was written with information provided by the following participants.
+              </Paragraph>
+            </Fragment>
+          )}
 
           {frontmatter.authors && frontmatter.authors.map((author)=> (
             <div>
