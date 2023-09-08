@@ -26,25 +26,6 @@ const ExpandMore = styled((props) => {
   marginLeft: 'auto',
 }));
 
-const BodyContainer = styled.div`
-  /* max-height: 100px; */
-  overflow-y: hidden;
-  position: relative;
-  margin-bottom: 1rem;
-  &::after {
-    content: "";
-    position: absolute;
-    background-image: linear-gradient(#ffffff00, #EFEFEF);
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 3rem;
-    max-height: 3rem;
-    pointer-events: none;
-    display: ${props => (props.expand && "none")};
-  } ;
-`
-
 const SpeakerImageWrapper = styled.div`
   @media screen and (max-width: 650px){
     width: 100%
@@ -53,7 +34,6 @@ const SpeakerImageWrapper = styled.div`
 const SpeakerImage = styled(Img)`
   margin: 0 2rem 1rem 0;
   width: 240px;
-  /* filter: drop-shadow(10px 10px 8px rgba(0, 0, 0, 0.1)); */
   float: left;
   @media screen and (max-width: 650px){
     float: none;
@@ -65,24 +45,24 @@ const FlexWrapper = styled.div`
   flex-direction: ${props => (props.compact ? "column" : "row")};
   justify-content: center;
   align-items: ${props => (props.compact ? "center" : "flex-start")};
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   background-color: #EFEFEF;
-  padding: 2rem 3rem;
-  border-radius: 3px;
+  padding: 0.75rem 2rem 0.5rem;
+  border-radius: 5px;
+  filter: drop-shadow(5px 5px 8px rgba(0, 0, 0, 0.1));
 `;
 
 const PhotoWrapper = styled.div`
-  margin: 2rem;
+  margin: 1.75rem 1rem;
   max-width: 231px;
   max-height: 200px;
   min-width: 231px;
   min-height: 200px;
   /* clip-path: circle(60%); */
   filter: drop-shadow(0 0 0.25rem rgba(0, 0, 0, 0.2));
-
 `;
 
-const FellowPhoto = styled(Img)`
+const AuthorPhoto = styled(Img)`
   max-width: 200px;
   max-height: 200px;
   min-width: 200px;
@@ -93,11 +73,24 @@ const FellowPhoto = styled(Img)`
   transform-origin: center center;
   border: 6px solid #b33243;
   border-radius: 100%;
-
 `;
 
-const FellowDetails = styled.div`
+const AuthorDetails = styled.div`
   flex: 1;
+  overflow-y: hidden;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    background-image: linear-gradient(#ffffff00, #EFEFEF);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2rem;
+    max-height: 2rem;
+    pointer-events: none;
+    display: ${props => (props.expand && "none")};
+  } ;
 `;
 
 export default ({ data, pageContext }) => {
@@ -170,13 +163,11 @@ export default ({ data, pageContext }) => {
             <div key={`author-${id}`}>
                 <FlexWrapper compact={isCompact}>
                   <PhotoWrapper>
-                    <FellowPhoto fixed={author.image.childImageSharp.fluid} />
+                    <AuthorPhoto fixed={author.image.childImageSharp.fluid} />
                   </PhotoWrapper>
+
                   <div>
-
-                  <BodyContainer expand={expanded}>
-
-                    <FellowDetails>
+                    <AuthorDetails expand={expanded}>
                       {author.name && (
                         <h3>{author.name}</h3>
                       )}
@@ -186,24 +177,22 @@ export default ({ data, pageContext }) => {
                           collapsedSize="150px"
                           orientation="vertical"
                         >
-                          <Markdown src={author.description}/>
+                          <Markdown src={author.description} style={{marginTop: "0"}}/>
                         </Collapse>
                       )}
-                    </FellowDetails>
-                  </BodyContainer>
-                  <div style={{display: "flex", justifyContent: "flex-end"}}>
-                    <ButtonBase onClick={() => handleExpandClick(id)}>
-                      <p style={{color: "#01366a"}}>Read More</p>
-                      <ExpandMore
-                        expand={expanded}
-                        aria-expanded={expanded}
-                        aria-label="read more"
-                      >
-                        <ExpandMoreIcon color="primary" />
-                      </ExpandMore>
-                    </ButtonBase>
-                  </div>
-                  
+                    </AuthorDetails>
+                    <div style={{display: "flex", justifyContent: "flex-end"}}>
+                      <ButtonBase onClick={() => handleExpandClick(id)} sx={{color: "#01366a"}}>
+                        Read More
+                        <ExpandMore
+                          expand={expanded}
+                          aria-expanded={expanded}
+                          aria-label="read more"
+                        >
+                          <ExpandMoreIcon />
+                        </ExpandMore>
+                      </ButtonBase>
+                    </div>
                   </div>
                 </FlexWrapper>
             </div>
