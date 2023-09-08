@@ -189,7 +189,7 @@ export default ({ data, pageContext }) => {
                     </AuthorDetails>
                     <div style={{display: "flex", justifyContent: "flex-end"}}>
                       <ButtonBase onClick={() => handleExpandClick(id)} sx={{color: "#01366a"}}>
-                        Read More
+                        {expanded ? "Read Less" : "Read More"}
                         <ExpandMore
                           expand={expanded}
                           aria-expanded={expanded}
