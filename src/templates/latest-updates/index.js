@@ -33,7 +33,7 @@ const BodyContainer = styled.div`
   &::after {
     content: "";
     position: absolute;
-    background-image: linear-gradient(#ffffff00, #e3f2fd);
+    background-image: linear-gradient(#ffffff00, #EFEFEF);
     bottom: 0;
     left: 0;
     right: 0;
@@ -65,7 +65,7 @@ const FlexWrapper = styled.div`
   justify-content: center;
   align-items: ${props => (props.compact ? "center" : "flex-start")};
   margin-bottom: 3rem;
-  background-color: #e3f2fd;
+  background-color: #EFEFEF;
   padding: 2rem 3rem;
   border-radius: 3px;
 `;
