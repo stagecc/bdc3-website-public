@@ -94,7 +94,7 @@ const AuthorDetails = styled.div`
 `;
 
 export default ({ data, pageContext }) => {
-  const { markdownRemark: { frontmatter, html } } = data;
+  const { markdownRemark: { frontmatter, html, timeToRead } } = data;
   const { prev, next } = pageContext;
   const { isCompact } = useWindowWidth();
   const [expandedIndices, setExpandedIndices] = useState(new Set())
@@ -124,11 +124,17 @@ export default ({ data, pageContext }) => {
           <Subtitle className="article-subtitle">
             {frontmatter.subtitle}
           </Subtitle>
-          <Meta>
-            Published on {frontmatter.date} {frontmatter.author && 
-            (<span>| Authored by {frontmatter.author}</span>)
-            }
-          </Meta>
+          <div style={{display: "flex", justifyContent: "space-between", flexDirection: "row"}}>
+            <Meta>
+              Published on {frontmatter.date} {frontmatter.author && 
+              (<span>| Authored by {frontmatter.author}</span>)
+              }
+            </Meta>
+            <Meta>
+              {timeToRead} minute read
+            </Meta>
+          </div>
+
           <Meta>
             <InlineList2
               title="Tags"
@@ -237,6 +243,7 @@ export const newsItemQuery = graphql`
   query($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
+      timeToRead
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         path
