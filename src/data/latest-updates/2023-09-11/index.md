@@ -2,7 +2,7 @@
 path: /latest-updates/SCDdatasets2023
 date: 2023-09-01
 title: "BDC supports sickle cell research by hosting key datasets"
-tags: ["blog"]
+tags: ["blog", "Sickle Cell Disease"]
 authors:
   -
     name: "Sweta Ladwa"
@@ -20,7 +20,7 @@ authors:
 seo:
   title: "BDC supports sickle cell research by hosting key datasets"
   description: ""
-  keywords: ["blog"]
+  keywords: ["blog", "Sickle Cell Disease"]
 ---
 
 [Sickle cell disease](https://www.nhlbi.nih.gov/health/sickle-cell-disease) is an inherited red blood cell disorder that affects over 100,000 people in the United States. The disease is characterized by sickle-shaped (elongated) red blood cells and causes multiple complications such as episodic pain, susceptibility to infections, swelling in the hands and feet, and damage to blood vessels impacting multiple organs, including the eyes, bones, kidneys, heart, lungs, and brain. Individuals living with sickle cell disease also have an increased risk for strokes and problems during pregnancy.
