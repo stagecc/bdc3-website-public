@@ -4,7 +4,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
   const platformTemplate = path.resolve(`src/templates/platform-template.js`);
   const redirectTemplate = path.resolve(`src/templates/redirect-template.js`);
-  const articleTemplate = path.resolve(`src/templates/article-template.js`);
+  const articleTemplate = path.resolve(`src/templates/latest-updates/index.js`);
   const tagTemplate = path.resolve(`src/templates/tag-template.js`);
   const eventTemplate = path.resolve(`src/templates/events/event-template.js`);
   const eventsTemplate = path.resolve(
