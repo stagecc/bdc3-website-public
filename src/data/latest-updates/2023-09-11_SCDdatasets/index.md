@@ -1,6 +1,6 @@
 ---
 path: /latest-updates/SCDdatasets2023
-date: 2023-09-01
+date: 2023-09-11
 title: "BDC supports sickle cell research by hosting key datasets"
 tags: ["blog", "Sickle Cell Disease"]
 authors:
