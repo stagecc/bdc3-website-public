@@ -154,7 +154,13 @@ const AuthorCard = ({ author }) => {
             aria-expanded={expanded }
             aria-label="read more"
             size="small"
-            sx={{color: "var(--color-blueberry-dark)"}}
+            sx={{
+              color: "var(--color-blueberry-dark)",
+              fontFamily: "inherit",
+              textTransform: "capitalize",
+              fontWeight: "inherit",
+              fontSize: "inherit"
+            }}
           >
             {expanded ? "Read Less" : "Read More"}
           </Button>
