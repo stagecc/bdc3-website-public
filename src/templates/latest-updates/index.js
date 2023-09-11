@@ -157,9 +157,6 @@ const AuthorCard = ({ author }) => {
             sx={{
               color: "var(--color-blueberry-dark)",
               fontFamily: "inherit",
-              textTransform: "capitalize",
-              fontWeight: "inherit",
-              fontSize: "inherit"
             }}
           >
             {expanded ? "Read Less" : "Read More"}
