@@ -37,10 +37,7 @@ const IndexPage = () => {
         <DugForm />
         
         <Paragraph center style={{ fontStyle: 'italic', fontSize: '90%' }}>
-          Semantic search provided by Dug.
-          {' '}
-          <Link to="/platforms/dug">Learn more about Dug here</Link>.
-          {/* todo: get correct copy for the above. */}
+          Learn more about <Link to="#">NHBLI BDC Semantic Search</Link>. 
         </Paragraph>
 
         <br /><br />
