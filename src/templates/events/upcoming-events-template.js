@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { graphql } from "gatsby";
 // import { AnimateOnMount } from "../../components/anim";
-import { SEO } from "../../components/seo";
+import { Seo } from "../../components/seo";
 import {
   Title,
   Paragraph,
@@ -69,7 +69,7 @@ export default ({ data, pageContext }) => {
 
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters>
-      <SEO
+      <Seo
         title="Upcoming Events"
         description="Come meet the BioData Catalyst team in person! Read about upcoming events that are related, inclusing conferences, workshops, and meet-ups."
         keywords={[

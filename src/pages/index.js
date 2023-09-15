@@ -1,5 +1,5 @@
 import React from "react";
-import { SEO } from "../components/seo";
+import { Seo } from "../components/seo";
 import { Paragraph } from "../components/typography";
 import { Card, CardHeader, CardBody } from "../components/card";
 import { PageContent, Container } from "../components/layout";
@@ -15,7 +15,7 @@ import carouselData from "../data/data-carousel.json"
 const IndexPage = () => {
   return (
     <PageContent>
-      <SEO title="Home" description="" keywords="" />
+      <Seo title="Home" description="" keywords="" />
 
       <Carousel panels={ carouselData } />
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { SEO } from "../../components/seo";
+import { Seo } from "../../components/seo";
 import { PageContent } from "../../components/layout";
 import { graphql, Link } from "gatsby";
 import styled from "styled-components";
@@ -68,7 +68,7 @@ const NewsPage = ({ data }) => {
 
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters>
-      <SEO
+      <Seo
         title="BioData Catalyst News"
         description="Read about news and current events that are related to BioData Catalyst."
         keywords={["news", "events", "press"]}

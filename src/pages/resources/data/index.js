@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql} from "gatsby";
 import Img from "gatsby-image";
-import { SEO } from "../../../components/seo";
+import { Seo } from "../../../components/seo";
 import { PageContent } from "../../../components/layout";
 import {
   Title,
@@ -28,7 +28,7 @@ const DataPage = ({ data, location }) => {
       gutters
       style={{ position: "relative" }}
     >
-      <SEO title="BioData Catalyst Data Access" description="" keywords="" />
+      <Seo title="BioData Catalyst Data Access" description="" keywords="" />
 
       <Title>BioData Catalyst Data</Title>
 

@@ -1,12 +1,12 @@
 import React from "react";
-import { SEO } from "../../components/seo";
+import { Seo } from "../../components/seo";
 import { PageContent } from "../../components/layout";
 import { Title, Heading, Paragraph } from "../../components/typography";
 import { Link} from "../../components/link";
 
 const ByodPage = () => (
   <PageContent width="95%" maxWidth="1200px" center gutters>
-    <SEO title="Bring Your Own Data" description="" keywords="" />
+    <Seo title="Bring Your Own Data" description="" keywords="" />
 
     <Title>Bring Your Own Data</Title>
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { PageContent } from "../components/layout";
-import { SEO } from "../components/seo";
+import { Seo } from "../components/seo";
 import {
   Title,
   Heading,
@@ -13,7 +13,7 @@ import { BulletedList, ListItem } from "../components/list";
 const PrivacyPage = () => {
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters>
-      <SEO title="Privacy Policy" description="" keywords="" />
+      <Seo title="Privacy Policy" description="" keywords="" />
 
       <Title>Privacy Policy</Title>
 

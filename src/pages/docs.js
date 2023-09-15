@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { SEO } from "../components/seo";
+import { Seo } from "../components/seo";
 import styled, { css, keyframes } from "styled-components";
 import { useLocation } from "@reach/router";
 import { PageContent } from "../components/layout";
@@ -137,7 +137,7 @@ const DocSearchPage = () => {
 
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters>
-      <SEO title="Search BioData Catalyst" description="" keywords="" />
+      <Seo title="Search BioData Catalyst" description="" keywords="" />
 
       <DocSearch>
         <div

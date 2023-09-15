@@ -1,5 +1,5 @@
 import React from "react";
-import { SEO } from "../../components/seo";
+import { Seo } from "../../components/seo";
 import { PageContent } from "../../components/layout";
 import { Title } from "../../components/typography";
 import { DataTable, CovidExpansionPanel } from "../../components/data-table";
@@ -18,7 +18,7 @@ const CovidStudiesPage = () => {
       gutters
       style={{ position: "relative" }}
     >
-      <SEO title="BioData Catalyst COVID Studies" description="" keywords="" />
+      <Seo title="BioData Catalyst COVID Studies" description="" keywords="" />
 
       <Title>BioData Catalyst COVID Studies</Title>
 

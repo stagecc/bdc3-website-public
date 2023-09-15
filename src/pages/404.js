@@ -2,7 +2,7 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import { PageContent } from "../components/layout";
 import { Title, Paragraph } from "../components/typography";
-import { SEO } from "../components/seo";
+import { Seo } from "../components/seo";
 
 const INTERVAL = 3000; // milliseconds
 
@@ -57,7 +57,7 @@ const NotFoundAnimation = ({ color }) => {
 
 const NotFoundPage = () => (
   <PageContent width="95%" maxWidth="1200px" center gutters>
-    <SEO title="404: Not found" />
+    <Seo title="404: Not found" />
 
     <Title center>Oh no!</Title>
 

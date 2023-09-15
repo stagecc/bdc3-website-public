@@ -1,5 +1,5 @@
 import React from "react";
-import { SEO } from "../../components/seo";
+import { Seo } from "../../components/seo";
 import { PageContent } from "../../components/layout";
 import {
   Title,
@@ -18,7 +18,7 @@ const SuccessPage = () => {
       gutters
       style={{ position: "relative" }}
     >
-      <SEO
+      <Seo
         title="Thank you for joining the NHLBI BioData Catalyst Community"
         description="Thank you for joining the NHLBI BioData Catalyst Community"
         keywords=""

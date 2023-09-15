@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "../components/link";
 import { PageContent } from "../components/layout";
 import { Title, Paragraph } from "../components/typography";
-import { SEO } from "../components/seo";
+import { Seo } from "../components/seo";
 
 const AccessibilityPage = () => (
   <PageContent width="95%" maxWidth="1200px" center gutters>
-    <SEO title="Web Accessibility" description="" keywords="" />
+    <Seo title="Web Accessibility" description="" keywords="" />
 
     <Title>Accessibility</Title>
 

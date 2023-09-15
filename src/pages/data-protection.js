@@ -1,12 +1,12 @@
 import React from "react";
 import { PageContent } from "../components/layout";
-import { SEO } from "../components/seo";
+import { Seo } from "../components/seo";
 import { Title, Heading, Paragraph } from "../components/typography";
 import { Link } from "../components/link";
 
 const DataProtectionPage = () => (
   <PageContent width="95%" maxWidth="1200px" center gutters>
-    <SEO title="Data Protection" description="" keywords="" />
+    <Seo title="Data Protection" description="" keywords="" />
 
     <Title>Data Protection</Title>
 

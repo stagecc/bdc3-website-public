@@ -2,7 +2,7 @@ import React from "react";
 // import { AnimateOnMount } from "../../components/anim";
 import { graphql } from "gatsby";
 import { Link } from "../../components/link";
-import { SEO } from "../../components/seo";
+import { Seo } from "../../components/seo";
 import { Title, Paragraph, Meta } from "../../components/typography";
 import { ButtonLink } from "../../components/buttons";
 import { Container as Grid, Row, Col } from "react-grid-system";
@@ -50,7 +50,7 @@ export default ({ data, pageContext }) => {
 
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters>
-      <SEO
+      <Seo
         title="Past RENCI Events"
         description="Read about upcoming events that are related to RENCI and the RENCI team, inclusing conferences, workshops, and meet-ups."
         keywords={[
@@ -62,7 +62,7 @@ export default ({ data, pageContext }) => {
           "hackathon",
         ]}
       />
-      <SEO title="Events" />
+      <Seo title="Events" />
 
       <Title>Event Archive</Title>
 

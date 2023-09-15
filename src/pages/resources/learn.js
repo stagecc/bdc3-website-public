@@ -1,5 +1,5 @@
 import React from "react";
-import { SEO } from "../../components/seo";
+import { Seo } from "../../components/seo";
 import { PageContent } from "../../components/layout";
 import { Title, Paragraph } from "../../components/typography";
 import { Container as Grid, Row, Col } from "react-grid-system";
@@ -201,7 +201,7 @@ const resources = [
 
 const LearnPage = () => (
   <PageContent width="95%" maxWidth="1200px" center gutters>
-    <SEO title="Learn and Support" description="" keywords="" />
+    <Seo title="Learn and Support" description="" keywords="" />
 
     <Title>Learn and Support</Title>
 

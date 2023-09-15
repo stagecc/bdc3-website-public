@@ -1,5 +1,5 @@
 import React from "react";
-import { SEO } from "../components/seo";
+import { Seo } from "../components/seo";
 import { PageContent } from "../components/layout";
 import { Title, Heading, Paragraph } from "../components/typography";
 import { List, ListItem } from "../components/list";
@@ -12,7 +12,7 @@ const Covid19Page = () => {
 
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters>
-      <SEO title="COVID-19" description="" keywords="" />
+      <Seo title="COVID-19" description="" keywords="" />
 
       <Title>About BioData Catalyst COVID-19 Data</Title>
 

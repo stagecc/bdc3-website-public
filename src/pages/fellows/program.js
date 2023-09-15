@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { SEO } from "../../components/seo";
+import { Seo } from "../../components/seo";
 import { PageContent } from "../../components/layout";
 import {
   Title,
@@ -30,7 +30,7 @@ const FellowsPage = () => {
 
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters>
-      <SEO title="Fellows Program" description="" keywords="" />
+      <Seo title="Fellows Program" description="" keywords="" />
 
       <Title>Fellows Program Call for Proposals</Title>
 

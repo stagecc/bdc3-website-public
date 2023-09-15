@@ -1,5 +1,5 @@
 import React from "react";
-import { SEO } from "../components/seo";
+import { Seo } from "../components/seo";
 import { Link } from "../components/link";
 import { graphql } from "gatsby";
 import { Title, Heading, Paragraph, Meta } from "../components/typography";
@@ -15,7 +15,7 @@ export default ({ data, pageContext }) => {
 
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters>
-      <SEO
+      <Seo
         title={`News and Events Tagged with '${tag}'`}
         description={`News and Events Tagged with '${tag}'`}
         keywords={[tag]}

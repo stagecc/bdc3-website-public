@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql} from "gatsby";
-import { SEO } from "../components/seo";
+import { Seo } from "../components/seo";
 import { Title, Subtitle, Meta } from "../components/typography";
 import { InlineList2 } from "../components/list";
 import { TagLink } from "../components/link";
@@ -16,7 +16,7 @@ export default ({ data, pageContext }) => {
 
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters>
-      <SEO
+      <Seo
         title={frontmatter.seo.title}
         description={frontmatter.seo.description}
         keywords={frontmatter.seo.keywords}

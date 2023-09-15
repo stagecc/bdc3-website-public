@@ -1,5 +1,5 @@
 import React from "react";
-import { SEO } from "../../components/seo";
+import { Seo } from "../../components/seo";
 import { PageContent } from "../../components/layout";
 import { Title, Heading, Paragraph } from "../../components/typography";
 import { Link } from "../../components/link";
@@ -8,7 +8,7 @@ import { BulletedList, ListItem } from "../../components/list";
 
 const RegistrationPage = () => (
   <PageContent width="95%" maxWidth="1200px" center gutters>
-    <SEO title="NHLBI BioData Catalyst Access" description="" keywords="" />
+    <Seo title="NHLBI BioData Catalyst Access" description="" keywords="" />
 
     <Title>Join the NHLBI BioData Catalyst Community</Title>
 

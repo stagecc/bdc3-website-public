@@ -1,5 +1,5 @@
 import React from "react";
-import { SEO } from "../components/seo";
+import { Seo } from "../components/seo";
 import { PageContent } from "../components/layout";
 import {
   Title,
@@ -29,7 +29,7 @@ const FaqPage = () => {
 
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters>
-      <SEO title="Frequently Asked Questions" description="" keywords="" />
+      <Seo title="Frequently Asked Questions" description="" keywords="" />
 
       <Title>Frequently Asked Questions</Title>
 

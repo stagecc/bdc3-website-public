@@ -1,5 +1,5 @@
 import React from "react";
-import { SEO } from "../../components/seo";
+import { Seo } from "../../components/seo";
 import { PageContent } from "../../components/layout";
 import { Title, Heading, Paragraph } from "../../components/typography";
 import { useFellows } from "../../hooks";
@@ -16,7 +16,7 @@ const FellowsCohort1Page = () => {
 
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters>
-      <SEO title="Cohort I Fellows" description="" keywords="" />
+      <Seo title="Cohort I Fellows" description="" keywords="" />
 
       <Title>Cohort I Fellows</Title>
 

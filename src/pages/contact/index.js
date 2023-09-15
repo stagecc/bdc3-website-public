@@ -1,11 +1,11 @@
 import React from "react";
-import { SEO } from "../../components/seo";
+import { Seo } from "../../components/seo";
 import { PageContent } from "../../components/layout";
 import { Title, Paragraph } from "../../components/typography";
 import { Link } from "../../components/link";
 const ContactPage = () => (
   <PageContent width="95%" maxWidth="1200px" center gutters>
-    <SEO title="Contact" description="" keywords="" />
+    <Seo title="Contact" description="" keywords="" />
 
     <Title>Contact</Title>
 

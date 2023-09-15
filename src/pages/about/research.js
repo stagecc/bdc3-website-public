@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { SEO } from "../../components/seo";
+import { Seo } from "../../components/seo";
 import { PageContent } from "../../components/layout";
 import { Heading, Paragraph, Title } from "../../components/typography";
 import { Link } from "../../components/link";
@@ -10,7 +10,7 @@ const ResearchPage = ({ data }) => {
 
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters>
-      <SEO
+      <Seo
         title="BioData Catalyst Published Research"
         description="View published research that has been built on BioData Catalyst"
         keywords={["pubilsh", "research"]}

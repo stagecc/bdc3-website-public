@@ -3,7 +3,7 @@ import styled from "styled-components";
 import PropTypes from 'prop-types'
 import Img from "gatsby-image";
 // import { AnimateOnMount } from "../../components/anim"
-import { SEO } from "../../components/seo";
+import { Seo } from "../../components/seo";
 import { graphql} from "gatsby";
 import { Link } from "../../components/link";
 import { Title, Meta } from "../../components/typography";
@@ -144,7 +144,7 @@ export default ({ data, pageContext }) => {
   
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters>
-      <SEO
+      <Seo
         title={seo.title}
         description={seo.description}
       />

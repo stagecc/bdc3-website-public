@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import Img from "gatsby-image";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
-import { SEO } from "../../components/seo";
+import { Seo } from "../../components/seo";
 import styled from "styled-components";
 import { PageContent } from "../../components/layout";
 import {
@@ -36,7 +36,7 @@ const AboutPage = ({ data }) => {
 
   return (
     <PageContent width="95%" maxWidth="1200px" center gutters>
-      <SEO title="About BioData Catalyst" description="" keywords="" />
+      <Seo title="About BioData Catalyst" description="" keywords="" />
 
       <Grid fluid>
         <Row>
