@@ -6,7 +6,7 @@ import { Link } from "../link";
 import { IconButton } from "../buttons";
 import { DocumentRemoveIcon, DocumentAddIcon } from "../icons";
 import { Visible } from "react-grid-system";
-import ReactTooltip from "react-tooltip";
+import { ReactTooltip } from "react-tooltip";
 
 const Wrapper = styled.article(
   ({ highlight }) => `
