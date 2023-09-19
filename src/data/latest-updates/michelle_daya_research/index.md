@@ -5,14 +5,15 @@ title: "BioData Catalyst Used for Genomics Research on Link Between Genetic Risk
 subtitle: ""
 author: ""
 tags: ["blog", "asthma", "GWAS", "HLA", "multiethnic", "diversity", "allergies", "cloud computing"]
-speakerImage: './daya-michelle.jpg'
+contributor:
+  name: "Michelle Daya"
+  image: "./daya-michelle.jpg"
+  description: "Michelle Daya, PhD, is a human genetics researcher, with a focus on how genetic makeup influences risk for developing common allergies such as asthma and eczema. Her research was supported in part by the BioData Catalyst Fellowship Program, which she participated in during [Cohort I](https://biodatacatalyst.nhlbi.nih.gov/fellows/cohort1/). For her study, [Multiethnic genome-wide and HLA association study of total serum IgE level](https://pubmed.ncbi.nlm.nih.gov/34536413/), she leveraged data from the National Heart, Lung and Blood Institute (NHLBI) Trans-Omics for Precision Medicine (TOPMed) program; the Consortium on Asthma among African-ancestry Populations in the Americas (CAAPA); and the Atopic Dermatitis Research Network (ADRN)."
 seo:
   title: "BioData Catalyst Used for Genomics Research on Link Between Genetic Risk and Allergic Disease"
   description: ""
   keywords: ["blog", "asthma", "GWAS", "HLA", "multiethnic", "diversity", "allergies", "cloud computing"]
 ---
-
-*Michelle Daya, PhD, is a human genetics researcher, with a focus on how genetic makeup influences risk for developing common allergies such as asthma and eczema. Her research was supported in part by the BioData Catalyst Fellowship Program, which she participated in during [Cohort I](https://biodatacatalyst.nhlbi.nih.gov/fellows/cohort1/). For her study, [Multiethnic genome-wide and HLA association study of total serum IgE level](https://pubmed.ncbi.nlm.nih.gov/34536413/), she leveraged data from the National Heart, Lung and Blood Institute (NHLBI) Trans-Omics for Precision Medicine (TOPMed) program; the Consortium on Asthma among African-ancestry Populations in the Americas (CAAPA); and the Atopic Dermatitis Research Network (ADRN).*
 
 Do you enjoy the smell of freshly cut grass, or do you fall victim to sneezing and an incessantly runny nose from pollen? Do you jump at the chance to scratch household pets such as cats and dogs, or do you fear constant coughing and a scratchy throat from their coats? If you’re the latter in these questions, you're not alone. These symptoms aren’t unheard of for those that suffer from common allergies. Common allergies have markers in the body that scientists are studying to learn more about how to alleviate these types of symptoms. But, in order to understand the markers and how to treat them, researchers also need to understand who is affected.
 
