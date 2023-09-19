@@ -1,4 +1,44 @@
 -
+  title: "Building a collaborative cloud platform to accelerate heart, lung, blood, and sleep research"
+  date: 2023-06-20
+  location: Journal of American Medical Informatics Association
+  url: https://pubmed.ncbi.nlm.nih.gov/37192819/
+-
+  title: "Identification of novel and rare variants associated with handgrip strength using whole genome sequence data from the NHLBI Trans-Omics in Precision Medicine (TOPMed) Program"
+  date: 2021-07-02
+  location: PLOS One
+  url: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0253611
+-
+  title: "BinomiRare: A robust test for association of a rare genetic variant with a binary outcome for mixed models and any case-control proportion"
+  date: 2021-07-08
+  location: Human Genetics and Genomics Advances
+  url: https://www.sciencedirect.com/science/article/pii/S266624772100021X?via%3Dihub
+-
+  title: "Investigating Gene–Diet Interactions Impacting the Association Between Macronutrient Intake and Glycemic Traits"
+  date: 2023-02-15
+  location: Diabetes
+  url: https://diabetesjournals.org/diabetes/article-abstract/72/5/653/148451/Investigating-Gene-Diet-Interactions-Impacting-the?redirectedFrom=fulltext
+-
+  title: "STAAR workflow: a cloud-based workflow for scalable and reproducible rare variant analysis"
+  date: 2022-05-26
+  location: Bioinformatics
+  url: https://academic.oup.com/bioinformatics/article/38/11/3116/6571143?login=false
+-
+  title: "Dug: a semantic search engine leveraging peer-reviewed knowledge to query biomedical data repositories"
+  date: 2022-06-13
+  location: Bioinformatics
+  url: https://academic.oup.com/bioinformatics/article/38/12/3252/6571145?login=false
+-
+  title: "Elucidating the genetic architecture of DNA methylation to identify promising molecular mechanisms of disease"
+  date: 2022-11-15
+  location: Scientific Reports
+  url: https://www.nature.com/articles/s41598-022-24100-0
+-
+  title: "Whole genome DNA and RNA sequencing of whole blood elucidates the genetic architecture of gene expression underlying a wide range of diseases"
+  date: 2022-11-23
+  location: Scientific Reports
+  url: https://www.nature.com/articles/s41598-022-24611-w
+-
   title: "The genetic determinants of recurrent somatic mutations in 43,693 blood genomes"
   date: 2023-04-26
   location: Science Advances
