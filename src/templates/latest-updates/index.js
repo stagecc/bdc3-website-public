@@ -39,18 +39,22 @@ const SpeakerImage = styled(Img)`
     margin: 0 auto 1rem;
   }
 `
-const FlexWrapper = styled.div(({ compact }) => (`
+const FlexWrapper = styled.div(({ compact, partial }) => (`
   display: flex;
   gap: 1rem;
-  flex-direction: ${compact ? 'column' : 'row'};
+  flex-direction: ${compact ? 'column' : partial ? 'column' : 'row'};
+  max-width: ${partial ? '400px' : '100%'};
+  float: ${partial ? 'left' : 'none'};
   justify-content: center;
-  align-items: ${compact ? 'center' : 'flex-start'};
+  align-items: ${compact ? 'center' : partial ? 'center': 'flex-start'};
   margin-bottom: 2rem;
   background-color: #EFEFEF;
   padding: 1rem;
   border-radius: 5px;
   filter: drop-shadow(5px 5px 8px rgba(0, 0, 0, 0.1));
-`));
+  margin-right: ${partial ? '2rem' : 'inherit'};
+  text-align: ${partial ? 'center' : 'inherit'};
+  `));
 
 const PhotoWrapper = styled.div`
   margin: 1rem;
@@ -86,6 +90,7 @@ const AuthorDetails = styled.div`
     display: ${props => (props.expand && "none")};
   } ;
 `;
+
 
 const ArticleNavigation = ({ prev, next }) => {
   return (
@@ -167,6 +172,54 @@ const AuthorCard = ({ author }) => {
   )
 }
 
+
+const ContributorWrapper = styled.div(({ compact, partial }) => (`
+display: flex;
+flex-direction: column;
+max-width: ${compact ? '100%' : '350px'};
+float: left;
+justify-content: center;
+align-items: center;
+margin-bottom: 0.5rem;
+background-color: #EFEFEF;
+padding: 0 1rem 0 ;
+border-radius: 5px;
+filter: drop-shadow(5px 5px 8px rgba(0, 0, 0, 0.1));
+margin-right: 2rem;
+`));
+
+const ContributorDetails = styled.div`
+flex: 1;
+`;
+
+const ContributorCard = ({contributor, partial}) => {
+  const { isCompact } = useWindowWidth()
+  const [expanded, setExpanded] = useState()
+
+  const handleExpandClick = () => {
+    setExpanded(!expanded)
+  };
+
+  return (
+    <ContributorWrapper compact={isCompact} partial={partial}>
+      <PhotoWrapper>
+        <AuthorPhoto fluid={contributor.image.childImageSharp.fluid} />
+      </PhotoWrapper>
+
+        <ContributorDetails >
+          {contributor.name && (
+            <Fragment>
+              <h3 style={{color: '#b33243', fontSize: '1.3rem', textAlign: 'center', margin: "0 auto 0.5rem"}}> About Dr. {contributor.name}</h3>
+              <h4 style={{fontStyle: 'italic', fontSize: '1.2rem', fontWeight: '400', textAlign: 'center', margin: "0"}}>Researcher, University of Colorado</h4>
+              <Markdown src={contributor.description} style={{marginTop: "0"}}/>
+            </Fragment>
+          )}
+        </ContributorDetails>
+
+    </ContributorWrapper>
+  )
+}
+
 const TagsList = ({ tags }) => (
   <Meta>
     <InlineList2
@@ -188,9 +241,14 @@ export default ({ data, pageContext }) => {
         keywords={frontmatter.seo.keywords}
       />
       <Title>{frontmatter.title}</Title>
-      <Subtitle className="article-subtitle">
-        {frontmatter.subtitle}
-      </Subtitle>
+      {
+        frontmatter.subtitle && (
+          <Subtitle className="article-subtitle">
+          {frontmatter.subtitle}
+          </Subtitle>
+        )
+      }
+
       <Stack justifyContent="space-between" flexDirection="row">
         <Meta>
           Published on {frontmatter.date} {' '}
@@ -208,6 +266,12 @@ export default ({ data, pageContext }) => {
           <SpeakerImage fluid={frontmatter.speakerImage.childImageSharp.fluid}/>
         </SpeakerImageWrapper>
       )}
+
+      {
+        frontmatter.contributor && (
+          <ContributorCard contributor={frontmatter.contributor} partial/>
+        )
+      }
       <div className="page-content" dangerouslySetInnerHTML={{ __html: html }} />
 
       {/* author block */}
@@ -248,6 +312,17 @@ export const newsItemQuery = graphql`
         subtitle
         author
         tags
+        contributor {
+          name
+          image {
+            childImageSharp {
+              fluid(maxWidth: 400) {
+                ...GatsbyImageSharpFluid
+              }
+            }  
+          }
+          description
+        }
         seo {
           title
           description
