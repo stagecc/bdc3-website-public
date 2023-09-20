@@ -144,6 +144,15 @@ const ReviewStep = () => {
 
   return (
     <Fragment>
+      <Box sx={{ p: 2, pt: 3 }}>
+        <Typography paragraph align="center">
+          Review your selections ipsum eiusmod laboris labore ut nostrud aliqua occaecat ad ut commodo cillum quis.
+          Duis in laborum minim irure et ut aute sint nulla amet quis consequat proident.
+        </Typography>
+      </Box>
+
+      <Divider />
+
       <CollectionContentsSection
         title="Concepts"
         className={ !concepts.length ? 'empty' : '' }
