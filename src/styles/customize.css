@@ -49,6 +49,7 @@ a:active {
 
 .article-subtitle {
   line-height: 30px;
+  font-style: italic;
 }
 .news-snippet {
   line-height: 30px;
