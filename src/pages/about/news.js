@@ -18,8 +18,8 @@ const NewsPage = () => (
       View recent news and media coverage for BDC.
     </Paragraph>
 
-    <Grid>
-      <Row gutterWidth={ 32 } justify="center">
+    <Grid >
+      <Row gutterWidth={ 32 } justify="start">
         {
           newsCoverage && newsCoverage.map((newsItem) => {
             return (
