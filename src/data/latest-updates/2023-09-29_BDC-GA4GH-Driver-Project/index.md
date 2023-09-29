@@ -7,7 +7,7 @@ tags: ["news", "GA4GH"]
 seo:
   title: "NHLBI BioData Catalyst® named as a 2023 GA4GH Driver Project"
   description: ""
-  keywords: "news", "GA4GH"
+  keywords: ["news", "GA4GH"]
 ---
 
 <div class="twothirds-width-image">
