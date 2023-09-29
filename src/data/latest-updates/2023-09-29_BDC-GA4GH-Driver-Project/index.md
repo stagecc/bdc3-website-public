@@ -11,7 +11,7 @@ seo:
 ---
 
 <div class="twothirds-width-image">
-  <img src='./IMG_7625.jpg' alt=""/>
+  <img src='./IMG_7625.jpg' alt="An individual standing behind a lectern addresses a large audience at a conference."/>
   <figcaption>BDC was named as a GA4GH Driver Project during the GA4GH 11th Plenary meeting in San Francisco. Pictured is GA4GH CEO Peter Goodhand making the announcement. Photo Credit: Jaclyn Ryan</figcaption>
 </div>
 
@@ -22,7 +22,7 @@ According to GA4GH, "projects were evaluated on their ability to expand GA4GH's 
 "BDC is pleased to have been selected as a GA4GH Driver Project. Our goals as a Driver Project include contributing to standards development for multimodal data and working to support international interoperability," said Regina Bures, Ph.D., Scientific Program Director for BioData Catalyst and Senior Scientific Advisor in the Division of Cardiovascular Sciences at the National Heart, Lung, and Blood Institute.
 
 <div class="partial-width-image">
-  <img src='./Driver Project Badge-compact.png' alt=""/>
+  <img src='./Driver Project Badge-compact.png' alt="GA4GH Driver Project Badge"/>
 </div>
 
 [National Institutes of Health (NIH) Cloud Platform Interoperability (NCPI)](https://anvilproject.org/ncpi), to which BDC actively contributes, was also named a 2023 GA4GH Driver Project. "We look forward to working with NCPI, the other Driver Projects, and GA4GH," continued Bures.
