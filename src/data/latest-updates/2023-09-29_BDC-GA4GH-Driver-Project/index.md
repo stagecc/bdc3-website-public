@@ -3,11 +3,11 @@ path: /latest-updates/BDC-GA4GH-Driver-Project
 date: 2023-09-28
 title: "NHLBI BioData Catalyst® named as a 2023 GA4GH Driver Project"
 subtitle: "Participation in the Driver Project initiative builds upon BDC's previous work in the GA4GH community and formalizes collaboration between the two organizations."
-tags: ["GA4GH Driver Project"]
+tags: ["news", "GA4GH"]
 seo:
   title: "NHLBI BioData Catalyst® named as a 2023 GA4GH Driver Project"
   description: ""
-  keywords: 
+  keywords: "news", "GA4GH"
 ---
 
 <div class="twothirds-width-image">
