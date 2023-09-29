@@ -188,9 +188,13 @@ export default ({ data, pageContext }) => {
         keywords={frontmatter.seo.keywords}
       />
       <Title>{frontmatter.title}</Title>
-      <Subtitle className="article-subtitle">
-        {frontmatter.subtitle}
-      </Subtitle>
+      {
+        frontmatter.subtitle && (
+          <Subtitle className="article-subtitle">
+            {frontmatter.subtitle}
+          </Subtitle>
+        )
+      }
       <Stack justifyContent="space-between" flexDirection="row">
         <Meta>
           Published on {frontmatter.date} {' '}
