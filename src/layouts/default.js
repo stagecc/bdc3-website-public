@@ -21,7 +21,8 @@ import hexBackgroundLeftSvg from "../images/hex-background-left.svg";
 import hexBackgroundRightSvg from "../images/hex-background-right.svg";
 import { Link } from "../components/link";
 import { logLogo } from "../utils";
-
+import { Banner } from "../components/banner"
+import { MagnifyingGlassIcon, CloseIcon, InfoIcon, WarningIcon } from '../components/icons'
 import "../styles/normalize.css";
 import "../styles/customize.css";
 
@@ -85,6 +86,24 @@ export const DefaultLayout = ({ children }) => {
       <LayoutWrapper compact={isCompact}>
         <SkipLink href="#main-content">Skip to main content</SkipLink>
         <StickyWrapper stuck={true}>
+          <Banner 
+            openedIcon={ <CloseIcon fill="var(--color-white)" size={24} /> }
+            closedIcon={ <InfoIcon fill="var(--color-white)" size={24} /> }
+          >
+            <Paragraph style={{margin:"0", padding:"0.5rem 1rem", fontSize:"85%"}}>
+              Because of a lapse in government funding, the information on this website 
+              may not be up to date, transactions submitted via the website may not be 
+              processed, and the agency may not be able to respond to inquiries until 
+              appropriations are enacted.
+
+              The NIH Clinical Center (the research hospital of NIH) is open. For more 
+              details about its operating status, please visit <Link to="http://cc.nih.gov/">
+              cc.nih.gov</Link>.
+              
+              Updates regarding government operating status and resumption of normal 
+              operations can be found at <Link to="OPM.gov">OPM.gov</Link>.
+            </Paragraph>
+          </Banner>
           <Header>
             <Brand width="380px" compact={isCompact} />
             <Visible xs sm md>
