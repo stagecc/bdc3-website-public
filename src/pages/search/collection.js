@@ -27,22 +27,22 @@ const useCheckout = () => React.useContext(CheckoutContext)
 const NEXT_STEP_SERVICES = [
   {
     title: 'Check Access',
-    content: 'Log in to dbGaP with ERA Commons to determine access account voluptate minim dolore voluptate est qui adipisicing velit mollit et deserunt commodo ad laboris non consectetur.',
+    content: 'Take your study accession IDs of interest and visit the BDC Discovery Page to determine which datasets are accessible to you and which require additional permissions to work with.',
     color: '#efece3',
   },
   {
-    title: 'Build a Cohort',
-    content: 'By building a cohort, Lorem ipsum magna aliqua adipisicing dolore ullamco est magna reprehenderit laborum anim est nisi elit.',
+    title: 'Build a Cohort within a Set of Studies',
+    content: 'Take your study accession IDs of interest and continue your data discovery journey by building cohorts across datasets',
     color: '#ece3ef',
   },
   {
-    title: 'Begin Analysis',
-    content: 'Utilize Seven Bridges to start your analysis, laboris ad magna sunt in adipisicing deserunt occaecat nulla magna dolore laboris irure esse ex adipisicing sunt laborum amet ex.',
+    title: 'Build a Cohort around a Concept of Interest',
+    content: 'Take the concept or variable results of interest to build cohorts with them.',
     color: '#e3efec',
   },
   {
-    title: 'Continue Search',
-    content: 'Find more data with PIC-SURE or Gen3, eu minim sint proident magna cupidatat sit dolore exercitation veniam pariatur minim sunt est culpa.',
+    title: 'Begin Analysis',
+    content: 'Use a secure, collaborative workspace to analyze genomic data at scale. Build workflows for repeatable and reusable analysis, or use Jupyterlab or an Rstudio notebook to quickly and easily start working with your data.',
     color: '#e3ecef',
   },
 ]
