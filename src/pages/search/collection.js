@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react'
 import { navigate } from 'gatsby'
 import {
   Accordion, AccordionActions, AccordionDetails, AccordionSummary, Box, Button, Card, CardActionArea, CardActions, CardContent, CardHeader,
-  Divider, Grid, IconButton, Stack, Step, Stepper, StepLabel, Typography, useTheme,
+  Collapse, Divider, Grid, IconButton, Stack, Step, Stepper, StepLabel, Typography, useTheme,
 } from '@mui/material'
 import {
   KeyboardArrowLeft as BackIcon,
@@ -17,37 +17,122 @@ import { useSearch } from '../../components/search'
 import { downloadJson } from '../../utils'
 import { Link } from '../../components/link'
 
-//
 
-const CheckoutContext = React.createContext({ })
-const useCheckout = () => React.useContext(CheckoutContext)
-
-//
-
-const NEXT_STEP_SERVICES = [
+const NEXT_STEP_OPTIONS = [
   {
     title: 'Check Access',
-    content: 'Take your study accession IDs of interest and visit the BDC Discovery Page to determine which datasets are accessible to you and which require additional permissions to work with.',
+    content: (
+      <Typography>
+        Take your study accession IDs of interest and visit
+        the <Link to="https://gen3.biodatacatalyst.nhlbi.nih.gov/discovery">BDC Discovery Page</Link> to
+        determine which datasets are accessible to you and which require additional permissions to work with.
+      </Typography>
+    ),
     color: '#efece3',
+    accessor: collection => collection.contents.studies.map(study => study.id),
   },
   {
     title: 'Build a Cohort within a Set of Studies',
-    content: 'Take your study accession IDs of interest and continue your data discovery journey by building cohorts across datasets',
+    content: (
+      <Typography>
+        Take your study accession IDs of interest and continue your data discovery journey
+        by <Link to="https://picsure.biodatacatalyst.nhlbi.nih.gov/psamaui/login">building cohorts across datasets</Link>.
+      </Typography>
+    ),
     color: '#ece3ef',
+    accessor: collection => collection.contents.studies.map(study => study.id),
   },
   {
     title: 'Build a Cohort around a Concept of Interest',
-    content: 'Take the concept or variable results of interest to build cohorts with them.',
+    content: (
+      <Typography>
+        Take the concept or variable results of interest
+        to <Link to="https://picsure.biodatacatalyst.nhlbi.nih.gov/psamaui/login">build cohorts</Link> with them.
+      </Typography>
+    ),
     color: '#e3efec',
+    accessor: collection => [...collection.contents.studies.map(concept => concept.id), ...collection.contents.variables.map(variable => variable.id)],
   },
   {
     title: 'Begin Analysis',
-    content: 'Use a secure, collaborative workspace to analyze genomic data at scale. Build workflows for repeatable and reusable analysis, or use Jupyterlab or an Rstudio notebook to quickly and easily start working with your data.',
+    content: (
+      <Typography>
+        Use a <Link to="https://accounts.sb.biodatacatalyst.nhlbi.nih.gov/">secure, collaborative workspace</Link> to
+        analyze genomic data at scale. Build workflows for repeatable and reusable analysis, or use Jupyterlab or
+        an Rstudio notebook to quickly and easily start working with your data.
+      </Typography>
+    ),
     color: '#e3ecef',
+    accessor: () => [],
   },
 ]
 
-// REVIEW SELECTIONS step
+const NextStepCard = ({ title, content, color = '#eee', clickHandler, data, expanded }) => {
+  const { collection } = useSearch()
+
+  return (
+    <Card
+      className="next-step-card"
+      sx={{
+        height: '100%',
+        backgroundColor: color,
+        '.MuiCardHeader-root': {
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        },
+        '.MuiCardHeader-title': { },
+        '.MuiCardHeader-action': {
+          alignSelf: 'center',
+        },
+        '.MuiCardContent-root': {
+          p: 4,
+          backgroundColor: '#fff6',
+          lineHeight: 1.5,
+        },
+        '.MuiCardActionArea-root': {
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'stretch',
+        },
+      }}
+    >
+      <CardActionArea onClick={ clickHandler }>
+        <CardHeader
+          title={ title }
+          action={ <ExpandIcon /> }
+        />
+      </CardActionArea>
+      <Collapse in={ expanded }>
+        <CardContent>
+          { content }
+
+          {
+            data && (
+              <ul>
+                {
+                  data.map((d ,i) => <li key={ `${ title }-data-${ i }` }>{ d }</li>)
+                }
+              </ul>
+            )
+          }
+        </CardContent>
+
+        <CardContent
+          component={ Stack }
+          justifyContent="center"
+          alignItems="center"
+          sx={{ '.MuiButton-root': { width: '50%', maxWidth: '300px', p: 2, m: 4 } }}
+        >
+          <Button size="large" variant="contained" fullWidth>Proceed</Button>
+        </CardContent>
+      </Collapse>
+    </Card>
+  )
+}
+
+//
 
 const CollectionContentsSection = ({ title, children, className = '' }) => {
   return (
@@ -65,13 +150,10 @@ const CollectionContentsSection = ({ title, children, className = '' }) => {
       },
       '.details.none': { m: 2 },
     }}>
-      <Stack direction="row">
-        <Typography variant="h6" className="title">{ title }</Typography>
-        <Divider orientation="vertical" flexItem />
-        <Box className="body">
-          { children }
-        </Box>
-      </Stack>
+      <Typography variant="h6" className="title">{ title }</Typography>
+      <Box className="body">
+        { children }
+      </Box>
     </CardContent>
   )
 }
@@ -105,7 +187,7 @@ const CollectionItemAccordion = ({ type, id, title, children }) => {
           borderRadius: '4px',
         },
         '.MuiAccordionActions-root': {
-          position: 'absolute', top: 0, right: '16px',
+          position: 'absolute', bottom: '16px', right: '16px',
         },
         '.MuiAccordionSummary-expandIconWrapper': {
           transition: 'filter 150ms',
@@ -137,22 +219,12 @@ const CollectionItemAccordion = ({ type, id, title, children }) => {
   )
 }
 
-const ReviewStep = () => {
-  const{ goToNextStep } = useCheckout()
+const CollectionContents = () => {
   const { collection } = useSearch()
   const { concepts, studies, variables } = collection.contents
 
   return (
     <Fragment>
-      <Box sx={{ p: 2, pt: 3 }}>
-        <Typography paragraph align="center">
-          Review your selections ipsum eiusmod laboris labore ut nostrud aliqua occaecat ad ut commodo cillum quis.
-          Duis in laborum minim irure et ut aute sint nulla amet quis consequat proident.
-        </Typography>
-      </Box>
-
-      <Divider />
-
       <CollectionContentsSection
         title="Concepts"
         className={ !concepts.length ? 'empty' : '' }
@@ -220,266 +292,83 @@ const ReviewStep = () => {
           )) : <Typography className="details none">None selected.</Typography>
         }
       </CollectionContentsSection>
-
-      <Divider />
-      
-      <CardActions>
-        <Button
-          variant="outlined"
-          size="large"
-          color="secondary"
-          startIcon={ <BackIcon /> }
-          onClick={ () => navigate(-1) }
-        >Return to Search</Button>
-        <Button
-          variant="contained"
-          size="large"
-          color="primary"
-          endIcon={ <ForwardIcon /> }
-          onClick={ goToNextStep }
-          disabled={ collection.count === 0 }
-        >Next</Button>
-      </CardActions>
     </Fragment>
   )
 }
 
-const DownloadStep = () => {
+const CollectionPage = () => {
   const { collection } = useSearch()
-  const{ goToPreviousStep, goToNextStep } = useCheckout()
+  const { concepts, studies, variables } = collection.contents
+  const [activeIndex, setActiveIndex] = useState(0)
 
-  const handleClickDownloadAsJson = event => {
-    event.preventDefault()
-    const timestamp = new Date().toISOString()
-    downloadJson(collection.contents, `BDC-Collection_${ timestamp }.json`)
+  const handleClickStep = newIndex => () => {
+    setActiveIndex(newIndex)
   }
 
   return (
-    <Fragment>
-      <CardContent>
-        <Box sx={{
-          maxWidth: '500px',
-          margin: 'auto',
-          my: 4,
-          '.download-button': {
-            borderRadius: '18px',
-            my: 4,
-          },
-        }}>
-          <Typography paragraph align="center">
-            Your selections here will be useful in the next steps of your research.
-            Download your selections in JSON format now.
-            <br /><br />
-            <Button
-              variant="contained"
-              color="info"
-              startIcon={ <DownloadIcon /> }
-              onClick={ handleClickDownloadAsJson }
-              className="download-button"
-              disabled={ collection.count === 0 }
-            >Download Selections</Button>
-            <br /><br />
-            Proceed to the next step to learn how to use your
-            selections to continue your research.
-          </Typography>
-        </Box>
-      </CardContent>
+    <PageContent width="95%" maxWidth="1200px" center gutters>
+      <SEO
+        title="Collection - Semantic Search"
+        description="Collection - BioData Catalyst semantic search provided by Dug"
+      />
 
-      <Divider />
+      <Typography hidden variant="h1">Semantic Search: Collection</Typography>
 
-      <CardActions>
-        <Button
-          variant="outlined"
-          size="large"
-          color="secondary"
-          startIcon={ <BackIcon /> }
-          onClick={ goToPreviousStep }
-        >Previous</Button>
-        <Button
-          variant="contained"
-          size="large"
-          color="primary"
-          endIcon={ <ForwardIcon /> }
-          onClick={ goToNextStep }
-          disabled={ collection.count === 0 }
-        >Next</Button>
-      </CardActions>
-    </Fragment>
-  )
-}
+      <br />
 
-// NEXT STEPS step
-
-const NextStepCard = ({ title, content, color = '#eee', onClick }) => {
-  return (
-    <Card
-      className="next-step-card"
-      sx={{
-        height: '100%',
-        backgroundColor: color,
-        '.MuiCardHeader-root': {
-          minHeight: '120px',
-        },
-        '.MuiCardHeader-title': {
-          fontSize: '1.8rem',
-          textAlign: 'center',
-        },
-        '.MuiCardContent-root': {
-          p: 6,
-          backgroundColor: '#fff6',
-          lineHeight: 1.5,
-        },
-        '.MuiCardActionArea-root': {
-          height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'stretch',
-        },
-      }}
-    >
-      <CardActionArea onClick={ onClick }>
-        <CardHeader title={ title } />
-        <Divider />
-        <CardContent sx={{ height: '100%' }}>
-          { content }
-        </CardContent>
-      </CardActionArea>
-    </Card>
-  )
-}
-
-const NextSteps = () => {
-  const{ goToPreviousStep } = useCheckout()
-
-  return (
-    <Fragment>
-      <CardContent>
-        <Grid container spacing={ 2 }>
-          {
-            NEXT_STEP_SERVICES.map(({ title, content, color }) => (
-              <Grid item
-                key={ `service-${ title }` }
-                xs={ 12 } md={ 6 }
-              >
-                <NextStepCard
-                  title={ title }
-                  content={ content }
-                  color={ color }
-                  onClick={ console.log }
-                />
-              </Grid>
-            ))
-          }
-        </Grid>
-      </CardContent>
-
-      <Divider />
-
-      <CardActions>
-        <Button
-          variant="outlined"
-          size="large"
-          color="secondary"
-          startIcon={ <BackIcon /> }
-          onClick={ goToPreviousStep }
-          sx={{ backgroundColor: '#fff', minHeight: '75px' }}
-        >Previous</Button>
-      </CardActions>
-    </Fragment>
-  )
-}
-
-//
-
-const STEPS = [
-  { title: 'Confirm Selections', Component: ReviewStep },
-  { title: 'Download Selections', Component: DownloadStep },
-  { title: 'Next Steps', Component: NextSteps },
-]
-
-//
-
-const StepIndicator = ({ activeIndex }) => {
-  const theme = useTheme()
-
-  return (
-    <Stepper
-      activeStep={ activeIndex }
-      sx={{
-        m: 4,
-        '.MuiStepLabel-label.Mui-completed': {
-          color: theme.palette.secondary.dark,
-        },
-        '.MuiStepLabel-iconContainer.Mui-completed svg': {
-          fill: theme.palette.secondary.main,
-        },
-        '.MuiStepLabel-label.Mui-active': {
-          fontWeight: 'bold',
-          color: theme.palette.primary.main,
-        },
-        '.MuiStepLabel-label.Mui-disabled': {
-        },
-      }}
-    >
-      {
-        STEPS.map(step => (
-          <Step key={ `step-${ step.title }` }>
-            <StepLabel>{ step.title }</StepLabel>
-          </Step>
-        ))
-      }
-    </Stepper>
-  )
-}
-
-//
-
-const CollectionPage = () => {
-  const [currentStep, setCurrentStep] = useState(0)
-
-  const goToPreviousStep = () => setCurrentStep((currentStep + STEPS.length - 1) % STEPS.length)
-  const goToNextStep = () => setCurrentStep((currentStep + 1) % STEPS.length)
-
-  return (
-    <CheckoutContext.Provider value={{ goToPreviousStep, goToNextStep }}>
-      <PageContent width="95%" maxWidth="800px" center gutters>
-        <SEO
-          title="Collection - Semantic Search"
-          description="Collection - BioData Catalyst semantic search provided by Dug"
-        />
-
-        <Typography hidden variant="h1">Semantic Search: Collection</Typography>
-
-        <StepIndicator activeIndex={ currentStep } />
-          
-        <Card
-          elevation={ 3 }
-          sx={{
-            '.MuiCardActions-root': {
-              p: 2,
-              display: 'flex',
-              justifyContent: 'space-between',
-              '.MuiButton-root.MuiButton-sizeLarge': {
-                minHeight: '75px',
-              },
+      <Card
+        elevation={ 3 }
+        sx={{
+          '.MuiCardActions-root': {
+            p: 2,
+            display: 'flex',
+            justifyContent: 'space-between',
+            '.MuiButton-root.MuiButton-sizeLarge': {
+              minHeight: '75px',
             },
-          }}
-        >
-          <CardHeader
-            title={ STEPS[currentStep].title }
-            titleTypographyProps={{ align: 'center' }}
-          />
-          
-          <Divider />
+          },
+        }}
+      >
+        <CardHeader
+          title="Next Steps"
+          titleTypographyProps={{ align: 'center' }}
+        />
+        
+        <Divider />
 
-          { STEPS.map(({ Component}, i) => currentStep === i && <Component key={ `step-${ i }` } />) }
-        </Card>
+        <Stack direction="row">
+          <CardContent sx={{ flex: 1, }}>
+            <CollectionContents />
+          </CardContent>
 
-        <br />
+          <Divider flexItem orientation="vertical" />
+
+          <CardContent sx={{ flex: 2, }}>
+            <Stack gap={ 2 }>
+              {
+                NEXT_STEP_OPTIONS.map((option, i) => (
+                  <Step key={ `option-${ option.title }` }>
+                    <NextStepCard
+                      title={ option.title }
+                      content={ option.content }
+                      color={ option.color }
+                      data={ option.accessor(collection) }
+                      expanded={ i === activeIndex }
+                      clickHandler={ handleClickStep(i) }
+                    />
+                  </Step>
+                ))
+              }
+            </Stack>
+          </CardContent>
+        </Stack>
 
 
-      </PageContent>
-    </CheckoutContext.Provider>
+      </Card>
+
+      <br />
+
+    </PageContent>
   );
 }
 
