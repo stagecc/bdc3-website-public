@@ -142,6 +142,7 @@ const ContentsSectionAccordion = ({ title, children, open }) => {
         id={ `${ title }-header` }
         sx={{
           flexDirection: 'row-reverse',
+          gap: 1,
           alignItems: 'center',
           '.MuiAccordionSummary-expandIconWrapper': {
             transform: 'rotate(-90deg)',
@@ -161,7 +162,15 @@ const ContentsSectionAccordion = ({ title, children, open }) => {
         <Typography>{ title }</Typography>
       </AccordionSummary>
       <AccordionDetails className="details">
-        { children ?? <Typography paragraph className="details none">None selected.</Typography> }
+        {
+          React.Children.count(children) > 0 ? children : (
+            <Typography
+              paragraph
+              className="details none"
+              sx={{ pl: 2, fontStyle: 'italic', color: 'grey' }}
+            >None selected.</Typography>
+          )
+        }
       </AccordionDetails>
     </Accordion>
   )
@@ -172,14 +181,14 @@ const CollectionPage = () => {
   const { concepts, studies, variables } = collection.contents
   const [activeIndex, setActiveIndex] = useState(0)
 
-  const visibleContentsSections = useMemo(() => {
+  const visibleContentSections = useMemo(() => {
     switch (activeIndex) {
       case 2:
         return ['concepts', 'variables']
       case 1:
         return ['studies']
       case 0:
-        return ['concepts']
+        return ['studies']
       default:
         return []
     }
@@ -210,44 +219,50 @@ const CollectionPage = () => {
 
         <Stack direction="row">
           <CardContent sx={{ p: 0, flex: 1 }}>
-            <ContentsSectionAccordion title="Concepts" open={ visibleContentsSections.includes('concepts') }>
-              <List dense>
-                {
-                  concepts.map(({ id, name, type, description }) => (
-                    <ListItem key={ `contents-concepts-${ id }` }>
-                      <ListItemText primary={ name } secondary={ id } />
-                    </ListItem>
-                  ))
-                }
-              </List>
+            <ContentsSectionAccordion title="Concepts" open={ visibleContentSections.includes('concepts') }>
+              { concepts.length > 0 ? (
+                <List dense>
+                  {
+                    concepts.map(({ id, name, type, description }) => (
+                      <ListItem key={ `contents-concepts-${ id }` }>
+                        <ListItemText primary={ name } secondary={ id } />
+                      </ListItem>
+                    ))
+                  }
+                </List>
+              ) : null }
             </ContentsSectionAccordion>
             
             <Divider />
 
-            <ContentsSectionAccordion title="Studies" open={ visibleContentsSections.includes('studies') }>
-              <List dense>
-                {
-                  studies.map(({ id, name, url, source }) => (
-                    <ListItem key={ `contents-studies-${ id }` }>
-                      <ListItemText primary={ name } secondary={ id } />
-                    </ListItem>
-                  ))
-                }
-              </List>
+            <ContentsSectionAccordion title="Studies" open={ visibleContentSections.includes('studies') }>
+              { studies.length > 0 ? (
+                <List dense>
+                  {
+                    studies.map(({ id, name, url, source }) => (
+                      <ListItem key={ `contents-studies-${ id }` }>
+                        <ListItemText primary={ name } secondary={ id } />
+                      </ListItem>
+                    ))
+                  }
+                </List>
+              ) : null }
             </ContentsSectionAccordion>
             
             <Divider />
 
-            <ContentsSectionAccordion title="Variables" open={ visibleContentsSections.includes('variables') }>
-              <List dense>
-                {
-                  variables.map(({ id, name, description, url }) => (
-                    <ListItem key={ `contents-variables-${ id }` }>
-                      <ListItemText primary={ name } secondary={ id } />
-                    </ListItem>
-                  ))
-                }
-              </List>
+            <ContentsSectionAccordion title="Variables" open={ visibleContentSections.includes('variables') }>
+              { variables.length > 0 ? (
+                <List dense>
+                  {
+                    variables.map(({ id, name, description, url }) => (
+                      <ListItem key={ `contents-variables-${ id }` }>
+                        <ListItemText primary={ name } secondary={ id } />
+                      </ListItem>
+                    ))
+                  }
+                </List>
+              ) : null }
             </ContentsSectionAccordion>
           </CardContent>
 
