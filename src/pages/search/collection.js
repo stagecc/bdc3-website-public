@@ -6,6 +6,8 @@ import {
 } from '@mui/material'
 import {
   // Download as DownloadIcon,
+  BookmarkBorder as CollectionIcon,
+  Bookmark as CollectionIconActive,
   ExpandMore as ExpandIcon,
 } from '@mui/icons-material'
 import { PageContent } from '../../components/layout'
@@ -27,6 +29,7 @@ const NEXT_STEP_OPTIONS = [
     ),
     color: '#efece3',
     accessor: collection => collection.contents.studies.map(study => study.id),
+    sections: ['studies'],
   },
   {
     title: 'Build a Cohort within a Set of Studies',
@@ -38,6 +41,7 @@ const NEXT_STEP_OPTIONS = [
     ),
     color: '#ece3ef',
     accessor: collection => collection.contents.studies.map(study => study.id),
+    sections: ['studies'],
   },
   {
     title: 'Build a Cohort around a Concept of Interest',
@@ -49,6 +53,7 @@ const NEXT_STEP_OPTIONS = [
     ),
     color: '#e3efec',
     accessor: collection => [...collection.contents.studies.map(concept => concept.id), ...collection.contents.variables.map(variable => variable.id)],
+    sections: ['concepts', 'variables'],
   },
   {
     title: 'Begin Analysis',
@@ -61,6 +66,7 @@ const NEXT_STEP_OPTIONS = [
     ),
     color: '#e3ecef',
     accessor: () => [],
+    sections: [],
   },
 ]
 
@@ -137,7 +143,10 @@ const ContentsSectionAccordion = ({ title, children, open }) => {
       expanded={ open }
     >
       <AccordionSummary
-        expandIcon={ <ExpandIcon sx={{ fontSize: '90%', }}/> }
+        expandIcon={ open
+          ? <CollectionIconActive color="secondary" />
+          : <CollectionIcon color="disabled" />
+        }
         aria-controls={ `${ title }-content-section` }
         id={ `${ title }-header` }
         sx={{
@@ -145,21 +154,22 @@ const ContentsSectionAccordion = ({ title, children, open }) => {
           gap: 1,
           alignItems: 'center',
           '.MuiAccordionSummary-expandIconWrapper': {
-            transform: 'rotate(-90deg)',
+            transform: 'rotate(0deg)',
           },
           '.MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
             transform: 'rotate(0deg)',
           },
           '.MuiAccordionSummary-content': {
             cursor: 'default',
-            marginLeft: '8px',
           },
           '.MuiAccordionDetails-root': {
             p: 0,
           }
         }}
       >
-        <Typography>{ title }</Typography>
+        <Typography sx={{
+          color: open ? 'secondary' : 'var(--color-lightgrey)'
+        }}>{ title }</Typography>
       </AccordionSummary>
       <AccordionDetails className="details">
         {
@@ -181,18 +191,7 @@ const CollectionPage = () => {
   const { concepts, studies, variables } = collection.contents
   const [activeIndex, setActiveIndex] = useState(0)
 
-  const visibleContentSections = useMemo(() => {
-    switch (activeIndex) {
-      case 2:
-        return ['concepts', 'variables']
-      case 1:
-        return ['studies']
-      case 0:
-        return ['studies']
-      default:
-        return []
-    }
-  }, [activeIndex])
+  const visibleContentSections = useMemo(() => NEXT_STEP_OPTIONS[activeIndex].sections, [activeIndex])
 
   const handleClickStep = newIndex => () => {
     setActiveIndex(newIndex)
@@ -214,6 +213,25 @@ const CollectionPage = () => {
           title="Next Steps"
           titleTypographyProps={{ align: 'center' }}
         />
+
+        <Divider />
+
+        <CardContent sx={{ p: 4 }}>
+          <Typography paragraph>
+            Sed irure laboris sed ut excepteur officia aute dolor.
+            Nisi aute anim pariatur aliqua dolore do cupidatat nulla eiusmod incididunt eu mollit.
+            Ad eiusmod amet proident commodo culpa minim sunt occaecat.
+            Voluptate dolor irure ullamco eiusmod enim non quis eu proident quis amet anim proident.
+          </Typography>
+          <Typography paragraph>
+            Lorem ipsum ut deserunt officia veniam est sit ad minim voluptate.
+            Sunt proident labore culpa do consequat est voluptate labore sint proident in cupidatat culpa sunt in qui adipisicing aliqua.
+            Veniam labore magna esse qui ea sit consequat id consequat ut voluptate ad est qui et commodo velit.
+            Lorem ipsum ea in magna mollit ullamco officia dolore in amet reprehenderit dolore duis excepteur ut.
+            Exercitation pariatur in in id sed minim dolor nisi tempor ex ullamco eiusmod sunt aliquip eu occaecat quis.
+            Sed irure laboris sed ut excepteur officia aute dolor.
+          </Typography>
+        </CardContent>
         
         <Divider />
 
@@ -268,7 +286,7 @@ const CollectionPage = () => {
 
           <Divider flexItem orientation="vertical" />
 
-          <CardContent sx={{ flex: 3 }}>
+          <CardContent sx={{ flex: 2 }}>
             <Stack gap={ 2 }>
               {
                 NEXT_STEP_OPTIONS.map((option, i) => (
