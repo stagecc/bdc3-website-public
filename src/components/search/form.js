@@ -1,6 +1,5 @@
 import React, { Fragment, useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
-import { Hidden } from 'react-grid-system'
 import { Form, InputGroup, TextInput } from '../form'
 import { Button } from '../buttons'
 import { MagnifyingGlassIcon } from '../icons'
@@ -212,20 +211,7 @@ export const SearchForm = ({ focusOnMount = false, compact, style }) => {
           onChange={handleChangeFormQuery}
         />
           <SearchButton small={ compact }>
-            {
-              compact ? (
-                <MagnifyingGlassIcon size={ 20 } fill="var(--color-white)"/>
-              ) : (
-                <Fragment>
-                  <Hidden xs>
-                    Search <Hidden xs sm>BDC Data</Hidden>
-                  </Hidden>
-                  <Hidden sm md lg xl>
-                    <MagnifyingGlassIcon size={ 20 } fill="var(--color-white)"/>
-                  </Hidden>
-                </Fragment>
-              )
-            }
+            <MagnifyingGlassIcon size={ 20 } fill="var(--color-white)"/>
           </SearchButton>
       </InputGroup>
     </Form>
