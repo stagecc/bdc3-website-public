@@ -36,6 +36,7 @@ const NEXT_STEP_OPTIONS = [
     color: '#efece3',
     accessor: collection => collection.contents.studies.map(study => 'study.id'),
     sections: ['studies'],
+    url: 'https://picsure.biodatacatalyst.nhlbi.nih.gov/psamaui/login'
   },
   {
     title: 'Build a Cohort',
@@ -54,6 +55,7 @@ const NEXT_STEP_OPTIONS = [
       ...collection.contents.variables.map(variable => variable.id),
     ],
     sections: ['concepts', 'studies', 'variables'],
+    url: 'https://picsure.biodatacatalyst.nhlbi.nih.gov/psamaui/login'
   },
   {
     title: 'Begin Analyzing the Data',
@@ -67,11 +69,13 @@ const NEXT_STEP_OPTIONS = [
     color: '#e3ecef',
     accessor: () => [],
     sections: [],
+    url: 'https://accounts.sb.biodatacatalyst.nhlbi.nih.gov/'
   },
 ]
 
 const DataDisplay = ({ data = [] }) => {
   const [copied, setCopied] = useState(false)
+
 
   useEffect(() => {
     const alertTimeout = setTimeout(() => setCopied(false), 3000)
@@ -82,6 +86,8 @@ const DataDisplay = ({ data = [] }) => {
     navigator.clipboard.writeText(data.join(', '))
     setCopied(true)
   }
+  
+  if (data.length === 0) { return <div /> }
 
   return (
     <Box
@@ -148,7 +154,7 @@ const DataDisplay = ({ data = [] }) => {
         <Typography
           variant="caption"
           sx={{ color: 'var(--color-sea)' }}
-        >{ copied ? 'Copied!' : 'Copy to Clipboard' }</Typography>
+        >{ copied ? 'Copied!' : 'Copy to clipboard' }</Typography>
         <IconButton
           disabled={ !data.length || copied }
           onClick={ handleClickCopy }
@@ -161,7 +167,7 @@ const DataDisplay = ({ data = [] }) => {
   )
 }
 
-const NextStepCard = ({ title, content, color = '#eee', clickHandler, data, expanded }) => {
+const NextStepCard = ({ clickHandler, color = '#eee', content, data, expanded, title, url }) => {
   return (
     <Card
       className="next-step-card"
@@ -191,7 +197,7 @@ const NextStepCard = ({ title, content, color = '#eee', clickHandler, data, expa
         },
       }}
     >
-      <CardActionArea onClick={ clickHandler }>
+      <CardActionArea onClick={ clickHandler } disabled={ expanded }>
         <CardHeader
           title={ title }
           action={ <ExpandIcon color={ expanded ? 'disabled' : 'secondary' } /> }
@@ -211,7 +217,12 @@ const NextStepCard = ({ title, content, color = '#eee', clickHandler, data, expa
           alignItems="center"
           sx={{ '.MuiButton-root': { width: '50%', maxWidth: '300px', p: 2, m: 4 } }}
         >
-          <Button size="large" variant="contained" fullWidth>Proceed</Button>
+          <Button
+            size="large"
+            variant="contained"
+            fullWidth
+            href={ url }
+          >Proceed</Button>
         </CardContent>
       </Collapse>
     </Card>
@@ -434,13 +445,11 @@ const CollectionPage = () => {
           <CardContent sx={{ flex: 2 }}>
             <Stack gap={ 2 }>
               {
-                NEXT_STEP_OPTIONS.map((option, i) => (
+                NEXT_STEP_OPTIONS.map(({ accessor, ...etc }, i) => (
                   <NextStepCard
-                    key={ `option-${ option.title }` }
-                    title={ option.title }
-                    content={ option.content }
-                    color={ option.color }
-                    data={ option.accessor(collection) }
+                    key={ `option-${ etc.title }` }
+                    data={ accessor(collection) }
+                    { ...etc }
                     expanded={ i === activeIndex }
                     clickHandler={ handleClickStep(i) }
                   />
