@@ -158,7 +158,7 @@ export const CollectionPreview = () => {
         filter: 'opacity(1.0) saturate(1.0)',
       },
       '.next-button': {
-        borderRadius: '11px',
+        borderRadius: '21px',
       },
     }}>
       <CardHeader
