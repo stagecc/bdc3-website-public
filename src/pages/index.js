@@ -37,7 +37,7 @@ const IndexPage = () => {
         <DugForm />
         
         <Paragraph center style={{ fontStyle: 'italic', fontSize: '90%' }}>
-          Learn more about <Link to="#">BDC Semantic Search</Link>. 
+          Learn more about <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/data-access/submitting-a-dbgap-data-access-request">BDC Semantic Search</Link>. 
         </Paragraph>
 
         <br /><br />
