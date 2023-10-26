@@ -37,7 +37,7 @@ const IndexPage = () => {
         <DugForm />
         
         <Paragraph center style={{ fontStyle: 'italic', fontSize: '90%' }}>
-          Learn more about <Link to="#">NHBLI BDC Semantic Search</Link>. 
+          Learn more about <Link to="#">BDC Semantic Search</Link>. 
         </Paragraph>
 
         <br /><br />

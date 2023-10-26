@@ -133,7 +133,7 @@ export const DugForm = ({ focusOnMount = false, slashFocus = false }) => {
     >
       <InputBase
         sx={{ ml: 1, flex: 1, p: 1 }}
-        placeholder="Search for biomedical concepts"
+        placeholder="Search for BDC studies related to your research (e.g., disease names, diagnoses, etc.)"
         inputProps={{ 'aria-label': 'search google maps' }}
         value={ formQuery }
         onChange={ handleChangeFormQuery }
