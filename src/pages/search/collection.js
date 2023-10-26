@@ -5,7 +5,7 @@ import {
   Collapse, Divider, List, ListItem, ListItemText, Stack, Typography,
 } from '@mui/material'
 import {
-  // Download as DownloadIcon,
+  Download as DownloadIcon,
   BookmarkBorder as CollectionIcon,
   Bookmark as CollectionIconActive,
   ExpandMore as ExpandIcon,
@@ -13,7 +13,7 @@ import {
 import { PageContent } from '../../components/layout'
 import { SEO } from '../../components/seo'
 import { useSearch } from '../../components/search'
-// import { downloadJson } from '../../utils'
+import { downloadFile } from '../../utils'
 import { Link } from '../../components/link'
 
 
@@ -145,31 +145,28 @@ const ContentsSectionAccordion = ({ title, children, open }) => {
       <AccordionSummary
         expandIcon={ open
           ? <CollectionIconActive color="secondary" />
-          : <CollectionIcon color="disabled" />
+          : <CollectionIcon color="secondary" />
         }
         aria-controls={ `${ title }-content-section` }
         id={ `${ title }-header` }
         sx={{
           flexDirection: 'row-reverse',
-          gap: 1,
           alignItems: 'center',
-          '.MuiAccordionSummary-expandIconWrapper': {
-            transform: 'rotate(0deg)',
-          },
-          '.MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
-            transform: 'rotate(0deg)',
-          },
-          '.MuiAccordionSummary-content': {
-            cursor: 'default',
-          },
+          gap: 1,
+          filter: open ? 'opacity(1) saturate(1)' : 'opacity(0.5) saturate(0.5)',
+          transition: 'filter 250ms',
+          '.MuiAccordionSummary-expandIconWrapper': { transform: 'rotate(0deg)' },
+          '.MuiAccordionSummary-expandIconWrapper.Mui-expanded': { transform: 'rotate(0deg)' },
+          '.MuiAccordionSummary-content': { cursor: 'default' },
           '.MuiAccordionDetails-root': {
             p: 0,
-          }
+            '& *': { py: 0 },
+            '.MuiListItem-root.MuiListItem-dense': { py: 0 },
+            '.MuiListItemText-root.MuiListItemText-dense': { m: 0 },
+          },
         }}
       >
-        <Typography sx={{
-          color: open ? 'secondary' : 'var(--color-lightgrey)'
-        }}>{ title }</Typography>
+        <Typography color="secondary">{ title }</Typography>
       </AccordionSummary>
       <AccordionDetails className="details">
         {
@@ -195,6 +192,16 @@ const CollectionPage = () => {
 
   const handleClickStep = newIndex => () => {
     setActiveIndex(newIndex)
+  }
+
+  const handleClickDownloadAsJson = event => {
+    event.preventDefault()
+    const timestamp = new Date().toISOString()
+    downloadFile({
+      data: JSON.stringify(collection.contents, null, 2),
+      fileName: `BDC-Collection_${ timestamp }.json`,
+      filetype: 'text/json',
+    })
   }
 
   return (
@@ -235,8 +242,11 @@ const CollectionPage = () => {
         
         <Divider />
 
-        <Stack direction="row">
-          <CardContent sx={{ p: 0, flex: 1 }}>
+        <Stack direction="row" sx={{
+          '.MuiList-root': { p: 0 },
+          '.MuiListItem-root.MuiListItem-dense': { py: 0 },
+        }}>
+          <CardContent sx={{ p: 0, flex: 1 }} component={ Stack }>
             <ContentsSectionAccordion title="Concepts" open={ visibleContentSections.includes('concepts') }>
               { concepts.length > 0 ? (
                 <List dense>
@@ -282,6 +292,22 @@ const CollectionPage = () => {
                 </List>
               ) : null }
             </ContentsSectionAccordion>
+
+            <Divider />
+
+            <Stack
+              justifyContent="flex-end"
+              alignItems="center"
+              sx={{ flex: 1, py: 4 }}
+            >
+              <Button
+                variant="outlined"
+                color="secondary"
+                startIcon={ <DownloadIcon /> }
+                onClick={ handleClickDownloadAsJson }
+              >Download Selections as JSON</Button>
+            </Stack>
+
           </CardContent>
 
           <Divider flexItem orientation="vertical" />
