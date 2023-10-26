@@ -62,7 +62,7 @@ const NEXT_STEP_OPTIONS = [
     content: (
       <Typography>
         Use a <Link to="https://accounts.sb.biodatacatalyst.nhlbi.nih.gov/">secure, collaborative workspace</Link> to
-        analyze genomic data at scale. Build workflows for repeatable and reusable analysis, or use Jupyterlab or
+        analyze data at scale. Build workflows for repeatable and reusable analysis, or use Jupyterlab or
         an Rstudio notebook to quickly and easily start working with your data.
       </Typography>
     ),
