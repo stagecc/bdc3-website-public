@@ -158,7 +158,7 @@ export const CollectionPreview = () => {
         filter: 'opacity(1.0) saturate(1.0)',
       },
       '.next-steps-button': {
-        borderRadius: '21px',
+        borderRadius: '11px',
       },
     }}>
       <CardHeader
@@ -214,8 +214,7 @@ export const CollectionPreview = () => {
         <Divider />
         <CardActions sx={{ display: 'flex', flexDirection: 'column' }}>
           <Typography paragraph align="center" color="secondary" sx={{ fontStyle: 'italic' }}>
-            <strong>Find everything?</strong><br />
-            Click below to continue with your search & analysis!
+            <strong>Finished Selecting Items?</strong><br />
           </Typography>
           <Button
             variant="contained"
@@ -223,7 +222,7 @@ export const CollectionPreview = () => {
             endIcon={ <NextStepsIcon /> }
             onClick={ () => navigate('/search/collection') }
             className="next-steps-button"
-          >Next Steps</Button>
+          >Next</Button>
         </CardActions>
       </Collapse>
       
