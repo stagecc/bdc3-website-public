@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import {
   Accordion, AccordionDetails, AccordionSummary,
   Button, Card, CardActionArea, CardContent, CardHeader,
@@ -19,44 +19,41 @@ import { Link } from '../../components/link'
 
 const NEXT_STEP_OPTIONS = [
   {
-    title: 'Check Access',
+    title: 'Check Your Data Access',
     content: (
       <Typography>
-        Take your study accession IDs of interest and visit
+        Click the "Download Selections as JSON" button or
+        note the study accession IDs of your selections and visit
         the <Link to="https://gen3.biodatacatalyst.nhlbi.nih.gov/discovery">BDC Discovery Page</Link> to
-        determine which datasets are accessible to you and which require additional permissions to work with.
+        see if you have data access permissions.
+        If you need to request access, follow the instructions
+        in <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/data-access/submitting-a-dbgap-data-access-request">BDC Documentation</Link>.
       </Typography>
     ),
     color: '#efece3',
-    accessor: collection => collection.contents.studies.map(study => study.id),
+    accessor: collection => collection.contents.studies.map(study => 'study.id'),
     sections: ['studies'],
   },
   {
-    title: 'Build a Cohort within a Set of Studies',
+    title: 'Build a Cohort',
     content: (
       <Typography>
-        Take your study accession IDs of interest and continue your data discovery journey
-        by <Link to="https://picsure.biodatacatalyst.nhlbi.nih.gov/psamaui/login">building cohorts across datasets</Link>.
+        Click the "Download Selections as JSON" button or
+        note the study accession IDs
+        and concept or variable results of your selections
+        and <Link to="https://picsure.biodatacatalyst.nhlbi.nih.gov/psamaui/login">build cohorts across datasets</Link>.
       </Typography>
     ),
     color: '#ece3ef',
-    accessor: collection => collection.contents.studies.map(study => study.id),
-    sections: ['studies'],
+    accessor: collection => [
+      ...collection.contents.concepts.map(concept => concept.id),
+      ...collection.contents.studies.map(study => study.id),
+      ...collection.contents.variables.map(variable => variable.id),
+    ],
+    sections: ['concepts', 'studies', 'variables'],
   },
   {
-    title: 'Build a Cohort around a Concept of Interest',
-    content: (
-      <Typography>
-        Take the concept or variable results of interest
-        to <Link to="https://picsure.biodatacatalyst.nhlbi.nih.gov/psamaui/login">build cohorts</Link> with them.
-      </Typography>
-    ),
-    color: '#e3efec',
-    accessor: collection => [...collection.contents.studies.map(concept => concept.id), ...collection.contents.variables.map(variable => variable.id)],
-    sections: ['concepts', 'variables'],
-  },
-  {
-    title: 'Begin Analysis',
+    title: 'Begin Analyzing the Data',
     content: (
       <Typography>
         Use a <Link to="https://accounts.sb.biodatacatalyst.nhlbi.nih.gov/">secure, collaborative workspace</Link> to
@@ -109,7 +106,8 @@ const NextStepCard = ({ title, content, color = '#eee', clickHandler, data, expa
       <Collapse in={ expanded }>
         <CardContent>
           { content }
-
+        </CardContent>
+        <CardContent>
           {
             data && (
               <ul>
@@ -141,6 +139,26 @@ const ContentsSectionAccordion = ({ title, children, open }) => {
     <Accordion
       elevation={ 0 }
       expanded={ open }
+      sx={{
+        '*': { cursor: 'default !important', }, // i couldn't seem to make this work on single classes
+        '.MuiAccordionSummary-root': {
+          flexDirection: 'row-reverse',
+          alignItems: 'center',
+          gap: -1,
+          filter: open ? 'opacity(1) saturate(1)' : 'opacity(0.5) saturate(0.5)',
+          transition: 'filter 250ms 100ms',          
+        },
+        '.MuiAccordionSummary-expandIconWrapper': { transform: 'rotate(0deg)', ml: 1 },
+        '.MuiAccordionSummary-content': { cursor: 'default !important', ml: 1, },
+        '.MuiAccordionDetails-root': {
+          p: 0,
+          pl: 3,
+          '& *': { py: 0 },
+          '.MuiListItem-root': { py: 0 },
+          '.MuiListItemText': { m: 0 },
+          '.MuiListItemText-root': { pl: 2 },
+        },
+      }}
     >
       <AccordionSummary
         expandIcon={ open
@@ -150,20 +168,6 @@ const ContentsSectionAccordion = ({ title, children, open }) => {
         aria-controls={ `${ title }-content-section` }
         id={ `${ title }-header` }
         sx={{
-          flexDirection: 'row-reverse',
-          alignItems: 'center',
-          gap: 1,
-          filter: open ? 'opacity(1) saturate(1)' : 'opacity(0.5) saturate(0.5)',
-          transition: 'filter 250ms',
-          '.MuiAccordionSummary-expandIconWrapper': { transform: 'rotate(0deg)' },
-          '.MuiAccordionSummary-expandIconWrapper.Mui-expanded': { transform: 'rotate(0deg)' },
-          '.MuiAccordionSummary-content': { cursor: 'default' },
-          '.MuiAccordionDetails-root': {
-            p: 0,
-            '& *': { py: 0 },
-            '.MuiListItem-root.MuiListItem-dense': { py: 0 },
-            '.MuiListItemText-root.MuiListItemText-dense': { m: 0 },
-          },
         }}
       >
         <Typography color="secondary">{ title }</Typography>
@@ -174,7 +178,7 @@ const ContentsSectionAccordion = ({ title, children, open }) => {
             <Typography
               paragraph
               className="details none"
-              sx={{ pl: 2, fontStyle: 'italic', color: 'grey' }}
+              sx={{ pl: 4, fontStyle: 'italic', color: 'var(--color-lightgrey)' }}
             >None selected.</Typography>
           )
         }
@@ -186,9 +190,20 @@ const ContentsSectionAccordion = ({ title, children, open }) => {
 const CollectionPage = () => {
   const { collection } = useSearch()
   const { concepts, studies, variables } = collection.contents
-  const [activeIndex, setActiveIndex] = useState(0)
+  const [activeIndex, setActiveIndex] = useState(-1)
 
-  const visibleContentSections = useMemo(() => NEXT_STEP_OPTIONS[activeIndex].sections, [activeIndex])
+  console.log(collection)
+
+  const visibleContentSections = useMemo(() => {
+    return activeIndex in NEXT_STEP_OPTIONS
+      ? NEXT_STEP_OPTIONS[activeIndex].sections
+      : []
+  }, [activeIndex])
+
+  useEffect(() => {
+    const defaultIndexTimer = setTimeout(() => setActiveIndex(0), 1000)
+    return () => clearTimeout(defaultIndexTimer)
+  }, [])
 
   const handleClickStep = newIndex => () => {
     setActiveIndex(newIndex)
@@ -247,7 +262,10 @@ const CollectionPage = () => {
           '.MuiListItem-root.MuiListItem-dense': { py: 0 },
         }}>
           <CardContent sx={{ p: 0, flex: 1 }} component={ Stack }>
-            <ContentsSectionAccordion title="Concepts" open={ visibleContentSections.includes('concepts') }>
+            <ContentsSectionAccordion
+              title={ `Concepts (${ concepts.length })` }
+              open={ visibleContentSections.includes('concepts') }
+            >
               { concepts.length > 0 ? (
                 <List dense>
                   {
@@ -263,7 +281,10 @@ const CollectionPage = () => {
             
             <Divider />
 
-            <ContentsSectionAccordion title="Studies" open={ visibleContentSections.includes('studies') }>
+            <ContentsSectionAccordion
+              title={ `Studies (${ studies.length })` }
+              open={ visibleContentSections.includes('studies') }
+            >
               { studies.length > 0 ? (
                 <List dense>
                   {
@@ -279,7 +300,10 @@ const CollectionPage = () => {
             
             <Divider />
 
-            <ContentsSectionAccordion title="Variables" open={ visibleContentSections.includes('variables') }>
+            <ContentsSectionAccordion
+              title={ `Variables (${ variables.length })` }
+              open={ visibleContentSections.includes('variables') }
+            >
               { variables.length > 0 ? (
                 <List dense>
                   {
