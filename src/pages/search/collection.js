@@ -86,7 +86,7 @@ const DataDisplay = ({ data = [] }) => {
     navigator.clipboard.writeText(data.join(', '))
     setCopied(true)
   }
-  
+
   if (data.length === 0) { return <div /> }
 
   return (
@@ -335,22 +335,13 @@ const CollectionPage = () => {
           titleTypographyProps={{ align: 'center' }}
         />
 
-        <Divider />
-
-        <CardContent sx={{ p: 4 }}>
+        <CardContent sx={{ py: 4, px: { xs: 4, md: 20 } }}>
           <Typography paragraph>
-            Sed irure laboris sed ut excepteur officia aute dolor.
-            Nisi aute anim pariatur aliqua dolore do cupidatat nulla eiusmod incididunt eu mollit.
-            Ad eiusmod amet proident commodo culpa minim sunt occaecat.
-            Voluptate dolor irure ullamco eiusmod enim non quis eu proident quis amet anim proident.
-          </Typography>
-          <Typography paragraph>
-            Lorem ipsum ut deserunt officia veniam est sit ad minim voluptate.
-            Sunt proident labore culpa do consequat est voluptate labore sint proident in cupidatat culpa sunt in qui adipisicing aliqua.
-            Veniam labore magna esse qui ea sit consequat id consequat ut voluptate ad est qui et commodo velit.
-            Lorem ipsum ea in magna mollit ullamco officia dolore in amet reprehenderit dolore duis excepteur ut.
-            Exercitation pariatur in in id sed minim dolor nisi tempor ex ullamco eiusmod sunt aliquip eu occaecat quis.
-            Sed irure laboris sed ut excepteur officia aute dolor.
+            On this page, find information about your selections that can be used
+            to take further actions in the BioData Catalyst ecosystem.
+            Note that each of these actions requires
+            an <Link to="https://www.era.nih.gov/register-accounts/understanding-era-commons-accounts.htm">eRA Commons ID</Link>.
+            You can also download the full list of your selections.
           </Typography>
         </CardContent>
         
