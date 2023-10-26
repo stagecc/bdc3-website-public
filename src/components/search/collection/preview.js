@@ -9,7 +9,7 @@ import TouchRipple from '@mui/material/ButtonBase/TouchRipple'
 import {
   BookmarkBorder as CollectionIcon,
   Delete as ClearCollectionIcon,
-  Send as NextStepsIcon,
+  ArrowForward as NextIcon,
   ExpandLess as CollapseIcon,
   ExpandMore as ExpandIcon,
   Delete as DeleteIcon,
@@ -157,7 +157,7 @@ export const CollectionPreview = () => {
       '.list-item .remove-button:hover': {
         filter: 'opacity(1.0) saturate(1.0)',
       },
-      '.next-steps-button': {
+      '.next-button': {
         borderRadius: '11px',
       },
     }}>
@@ -219,9 +219,9 @@ export const CollectionPreview = () => {
           <Button
             variant="contained"
             size="large"
-            endIcon={ <NextStepsIcon /> }
+            endIcon={ <NextIcon /> }
             onClick={ () => navigate('/search/collection') }
-            className="next-steps-button"
+            className="next-button"
           >Next</Button>
         </CardActions>
       </Collapse>

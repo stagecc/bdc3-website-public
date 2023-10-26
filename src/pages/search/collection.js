@@ -1,14 +1,17 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { Fragment, useEffect, useMemo, useState } from 'react'
+import { navigate } from 'gatsby'
 import {
-  Accordion, AccordionDetails, AccordionSummary,
-  Button, Card, CardActionArea, CardContent, CardHeader,
-  Collapse, Divider, List, ListItem, ListItemText, Stack, Typography,
+  Accordion, AccordionDetails, AccordionSummary, Box, Button,
+  Card, CardActionArea, CardContent, CardHeader, Collapse,
+  Divider, IconButton, List, ListItem, ListItemText, Stack, Typography,
 } from '@mui/material'
 import {
+  CopyAll as CopyIcon,
   Download as DownloadIcon,
   BookmarkBorder as CollectionIcon,
   Bookmark as CollectionIconActive,
   ExpandMore as ExpandIcon,
+  ArrowBack as ReturnIcon,
 } from '@mui/icons-material'
 import { PageContent } from '../../components/layout'
 import { SEO } from '../../components/seo'
@@ -67,6 +70,97 @@ const NEXT_STEP_OPTIONS = [
   },
 ]
 
+const DataDisplay = ({ data = [] }) => {
+  const [copied, setCopied] = useState(false)
+
+  useEffect(() => {
+    const alertTimeout = setTimeout(() => setCopied(false), 3000)
+    return () => clearTimeout(alertTimeout)
+  }, [copied])
+
+  const handleClickCopy = () => {
+    navigator.clipboard.writeText(data.join(', '))
+    setCopied(true)
+  }
+
+  return (
+    <Box
+      className={ copied ? 'data copied' : 'data'}
+      sx={{
+        backgroundColor: '#fff6',
+        borderRadius: 1,
+        border: '1px solid',
+        borderColor: '#fff9',
+        transition: 'border-color 250ms',
+        p: 2,
+        fontFamily: 'monospace',
+        minHeight: '64px',
+        '.datum': {
+          position: 'relative',
+          pl: 2,
+          lineHeight: 1,
+          '&::before': {
+            content: '"- "',
+            fontFamily: 'monospace',
+            lineHeight: 1,
+            position: 'absolute',
+            left: 0,
+            top: 0,
+          },
+        },
+        position: 'relative',
+        '.copy-container': {
+          position: 'absolute',
+          top: '8px',
+          right: '8px',
+          '.MuiTypography-root': {
+            transition: 'filter 250ms',
+            filter: 'opacity(1.0) saturate(0.0)',
+          },
+        },
+        '&:hover .copy-container .MuiTypography-root': {
+          filter: 'opacity(1.0) saturate(0.0)',
+        },
+        '&.copied': {
+          borderColor: 'var(--color-sea)',
+          '.copy-container': {
+            '.MuiTypography-root': {
+              filter: 'opacity(1.0) saturate(1.0)',
+            },
+          },
+        },
+      }}
+    >
+      {
+        data.map(d => (
+          <Fragment key={ d }>
+            <span className="datum">{ d }</span><br />
+          </Fragment>
+        ))
+      }
+      <Stack
+        direction="row"
+        alignItems="center"
+        justifyContent="flex-end"
+        gap={ 1 }
+        className="copy-container"
+      >
+        <Typography
+          variant="caption"
+          sx={{ color: 'var(--color-sea)' }}
+        >{ copied ? 'Copied!' : 'Copy to Clipboard' }</Typography>
+        <IconButton
+          disabled={ !data.length || copied }
+          onClick={ handleClickCopy }
+          size="small"
+        >
+          <CopyIcon fontSize="small" />
+        </IconButton>
+      </Stack>
+    </Box>
+  )
+}
+
 const NextStepCard = ({ title, content, color = '#eee', clickHandler, data, expanded }) => {
   return (
     <Card
@@ -100,7 +194,7 @@ const NextStepCard = ({ title, content, color = '#eee', clickHandler, data, expa
       <CardActionArea onClick={ clickHandler }>
         <CardHeader
           title={ title }
-          action={ <ExpandIcon /> }
+          action={ <ExpandIcon color={ expanded ? 'disabled' : 'secondary' } /> }
         />
       </CardActionArea>
       <Collapse in={ expanded }>
@@ -108,15 +202,7 @@ const NextStepCard = ({ title, content, color = '#eee', clickHandler, data, expa
           { content }
         </CardContent>
         <CardContent>
-          {
-            data && (
-              <ul>
-                {
-                  data.map((d ,i) => <li key={ `${ title }-data-${ i }` }>{ d }</li>)
-                }
-              </ul>
-            )
-          }
+          <DataDisplay data={ data } />
         </CardContent>
 
         <CardContent
@@ -192,8 +278,6 @@ const CollectionPage = () => {
   const { concepts, studies, variables } = collection.contents
   const [activeIndex, setActiveIndex] = useState(-1)
 
-  console.log(collection)
-
   const visibleContentSections = useMemo(() => {
     return activeIndex in NEXT_STEP_OPTIONS
       ? NEXT_STEP_OPTIONS[activeIndex].sections
@@ -217,6 +301,10 @@ const CollectionPage = () => {
       fileName: `BDC-Collection_${ timestamp }.json`,
       filetype: 'text/json',
     })
+  }
+
+  const handleClickReturnToSearch = () => {
+    navigate(-1)
   }
 
   return (
@@ -327,9 +415,16 @@ const CollectionPage = () => {
               <Button
                 variant="outlined"
                 color="secondary"
-                startIcon={ <DownloadIcon /> }
                 onClick={ handleClickDownloadAsJson }
-              >Download Selections as JSON</Button>
+                sx={{ gap: 2, p: 4, pr: 6, maxWidth: '100%', '.button-text': { display: 'inline-block' } }}
+              >
+                <DownloadIcon size="large" />
+                <span className="button-text">
+                  Download<br />
+                  Selections<br />
+                  as JSON<br />
+                </span>
+              </Button>
             </Stack>
 
           </CardContent>
@@ -355,10 +450,15 @@ const CollectionPage = () => {
           </CardContent>
         </Stack>
 
-
       </Card>
 
       <br />
+
+      <Button
+        variant="outlined"
+        startIcon={ <ReturnIcon /> }
+        onClick={ handleClickReturnToSearch }
+      >Return to Semantic Search</Button>
 
     </PageContent>
   );
