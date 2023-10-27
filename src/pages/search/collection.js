@@ -25,7 +25,7 @@ const NEXT_STEP_OPTIONS = [
     title: 'Check Your Data Access',
     content: (
       <Typography>
-        Click the "Download Selections as JSON" button or
+        Click on "Download List" or
         note the study accession IDs of your selections and visit
         the <Link to="https://gen3.biodatacatalyst.nhlbi.nih.gov/discovery">BDC Discovery Page</Link> to
         see if you have data access permissions.
@@ -42,7 +42,7 @@ const NEXT_STEP_OPTIONS = [
     title: 'Build a Cohort',
     content: (
       <Typography>
-        Click the "Download Selections as JSON" button or
+        Click on "Download List" or
         note the study accession IDs
         and concept or variable results of your selections
         and <Link to="https://picsure.biodatacatalyst.nhlbi.nih.gov/psamaui/login">build cohorts across datasets</Link>.
@@ -418,14 +418,10 @@ const CollectionPage = () => {
                 variant="outlined"
                 color="secondary"
                 onClick={ handleClickDownloadAsJson }
-                sx={{ gap: 2, p: 4, pr: 6, maxWidth: '100%', '.button-text': { display: 'inline-block' } }}
+                sx={{ gap: 2, maxWidth: '100%', '.button-text': { display: 'inline-block' } }}
               >
                 <DownloadIcon size="large" />
-                <span className="button-text">
-                  Download<br />
-                  Selections<br />
-                  as JSON<br />
-                </span>
+                <span className="button-text">Download List</span>
               </Button>
             </Stack>
 
