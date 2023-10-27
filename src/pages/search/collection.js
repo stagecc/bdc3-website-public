@@ -34,7 +34,7 @@ const NEXT_STEP_OPTIONS = [
       </Typography>
     ),
     color: '#efece3',
-    accessor: collection => collection.contents.studies.map(study => 'study.id'),
+    accessor: collection => collection.contents.studies.map(study => study.id),
     sections: ['studies'],
     url: 'https://picsure.biodatacatalyst.nhlbi.nih.gov/psamaui/login'
   },
