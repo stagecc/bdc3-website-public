@@ -11,6 +11,7 @@ import {
   BookmarkBorder as CollectionIcon,
   Bookmark as CollectionIconActive,
   ExpandMore as ExpandIcon,
+  KeyboardDoubleArrowRight as ProceedIcon,
   ArrowBack as ReturnIcon,
 } from '@mui/icons-material'
 import { PageContent } from '../../components/layout'
@@ -222,6 +223,7 @@ const NextStepCard = ({ clickHandler, color = '#eee', content, data, expanded, t
             variant="contained"
             fullWidth
             href={ url }
+            endIcon={ <ProceedIcon />}
           >Proceed</Button>
         </CardContent>
       </Collapse>
