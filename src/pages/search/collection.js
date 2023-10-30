@@ -69,8 +69,8 @@ const NEXT_STEP_OPTIONS = [
       </Typography>
     ),
     color: '#e3ecef',
-    accessor: () => [],
-    sections: [],
+    accessor: collection => collection.contents.studies.map(study => study.id),
+    sections: ['studies'],
     url: 'https://accounts.sb.biodatacatalyst.nhlbi.nih.gov/'
   },
 ]
