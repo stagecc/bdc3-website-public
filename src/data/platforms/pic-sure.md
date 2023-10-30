@@ -10,7 +10,7 @@ links:
   launch: https://picsure.biodatacatalyst.nhlbi.nih.gov
   documentation: https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/explore_data/pic-sure-for-biodata-catalyst-user-guide
 about: The Patient Information Commons Standard Unification of Research Elements (PIC-SURE) user interface gives  investigators the ability to search available data and conduct feasibility queries, allowing for cohorts to be built in real-time and results to be exported via the PIC-SURE API for analysis.
-service: Explore available data through <em>BDC-PIC-SURE</em> with interactive search and visualizations for feasibility assessment. Use query results to create a cohort, with the ability to choose specific variables of interest to export into an analysis environment.
+service: Explore available data through <em>BDC-PIC-SURE</em> with interactive search and visualizations for feasibility assessment. Use query results to create a cohort, with the ability to choose specific variables of interest to export into an analysis environment.<br/><br/><a href="https://openpicsure.biodatacatalyst.nhlbi.nih.gov/picsureui/">Launch Open PIC-SURE</a> (eRA login not required)*<br/><span style="font-size:80%; padding-left:0.5rem"><em>*Open PIC-SURE does not export data to analysis environments.</em></span>
 ---
 
 - Search ALL phenotypic data by typing terms directly in the search bar to find variables of interest across all available studies
