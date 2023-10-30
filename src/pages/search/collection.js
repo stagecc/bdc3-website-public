@@ -62,7 +62,8 @@ const NEXT_STEP_OPTIONS = [
     title: 'Begin Analyzing the Data',
     content: (
       <Typography>
-        Use a <Link to="https://accounts.sb.biodatacatalyst.nhlbi.nih.gov/">secure, collaborative workspace</Link> to
+        Click on "Download List" or note the study accession IDs of your selections
+        and then use a <Link to="https://accounts.sb.biodatacatalyst.nhlbi.nih.gov/">secure, collaborative workspace</Link> to
         analyze data at scale. Build workflows for repeatable and reusable analysis, or use Jupyterlab or
         an Rstudio notebook to quickly and easily start working with your data.
       </Typography>
