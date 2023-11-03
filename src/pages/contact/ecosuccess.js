@@ -10,6 +10,11 @@ import { BulletedList, ListItem } from "../../components/list";
 import { Link } from "../../components/link";
 
 const SuccessPage = () => {
+
+  const handleClick = () => {
+    window.gtag("event", "click", { send_to: "G-2M4JYYSBD3", ...data })
+  }
+  
   return (
     <PageContent
       width="95%"
@@ -45,6 +50,7 @@ const SuccessPage = () => {
                   <Link
                     target="_blank"
                     to="https://drive.google.com/file/d/19S_iGRHxg8JmupHawhz8e9qR3hF8ht3H/view"
+                    onClick={() => handleClick()}
                   >
                     GUIDE
                   </Link>
