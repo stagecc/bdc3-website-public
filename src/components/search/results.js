@@ -72,6 +72,7 @@ export const Results = () => {
           variant="outlined"
           size="large"
           onClick={ loadMore }
+          aria-label="Load more results"
         >Load More Results</Button>
       </Stack>
     )
