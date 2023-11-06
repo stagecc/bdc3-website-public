@@ -1,22 +1,24 @@
 import React, { Fragment, useCallback, useMemo } from 'react'
-import { Box, Grid, Stack } from '@mui/material'
-import InfiniteScroll from 'react-infinite-scroll-component'
+import { Box, Button, Grid, Stack } from '@mui/material'
 import { Dots } from '../loading'
 import { Link } from '../link'
 import { useSearch } from './context'
 import { ResultCard } from './result-card'
 import { ResultDialog } from './result-dialog'
+import { ControlledFetcher } from './controlled-fetcher'
 
 //
 
-const Loader = () => (
-  <Box sx={{
-    minHeight: '400px',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  }}><Dots textPlacement="top" text="Searching..." /></Box>
+const LoadingIndicator = () => (
+  <Stack
+    justifyContent="center"
+    alignItems="center"
+    sx={{ height: '300px', mt: 8 }}
+    gap={ 3 }
+  ><Dots textPlacement="top" text="Searching..." /></Stack>
 )
+
+//
 
 const Suggestions = ({ concepts = [] }) => {
   if (concepts.length === 0) {
@@ -40,6 +42,8 @@ const Suggestions = ({ concepts = [] }) => {
   )
 }
 
+//
+
 export const Results = () => {
   const {
     currentPage, fetchConcepts, filteredResults, isLoading,
@@ -47,20 +51,36 @@ export const Results = () => {
   } = useSearch()
 
   // boolean, whether more results exist beyond our current list
-  // (util for infinite scroll)
+  // (util for controlled fetcher)
   const canLoadMore = useMemo(() => currentPage < pageCount, [currentPage, pageCount])
 
   // function to handle fetching new results to list
-  // (util for infinite scroll)
-  const loadMore = useCallback(() => {
-    fetchConcepts(query, currentPage + 1)
-  }, [fetchConcepts, query, currentPage])
+  // (util for controlled fetcher)
+  const loadMore = useCallback(() => fetchConcepts(query, currentPage + 1), [fetchConcepts, query, currentPage])
+
+  // this gets rendered when the bottom of our list,
+  // when more data are available to fetch.
+  const MoreMessage = () => {
+    return (
+      <Stack
+        justifyContent="center"
+        alignItems="center"
+        sx={{ height: '300px', mt: 8 }}
+        gap={ 3 }
+      >
+        <Button
+          variant="outlined"
+          size="large"
+          onClick={ loadMore }
+        >Load More Results</Button>
+      </Stack>
+    )
+  }
 
   // this gets rendered when the bottom of
   // the infinite scroll container is reached.
-  // (util for infinite scroll)
-  const EndMessage = () => {
-    if (isLoading) return <span />
+  // (util for controlled fetcher)
+  const NoMoreMessage = () => {
     return (
       <Stack
         justifyContent="center"
@@ -71,7 +91,7 @@ export const Results = () => {
         {
           filteredResults.length ? (
             <Fragment>
-              <Box>It looks like we're at the end of this thread.</Box>
+              <Box>It looks like we're at the end of this road.</Box>
               <Suggestions concepts={ relatedConcepts } />
             </Fragment>
           ) : <Box>No results!</Box>
@@ -96,11 +116,14 @@ export const Results = () => {
 
   return (
     <Fragment>
-      <InfiniteScroll
+      <ControlledFetcher
         dataLength={ filteredResults.length }
-        next={ loadMore }
         hasMore={ canLoadMore }
-        endMessage={ <EndMessage /> }
+        fetchMore={ loadMore }
+        loading={ isLoading }
+        moreMessage={ <MoreMessage /> }
+        loadingMessage={ <LoadingIndicator /> }
+        noMoreMessage={ <NoMoreMessage /> }
       >
         <Grid container spacing={ 4 }>
           {
@@ -114,9 +137,7 @@ export const Results = () => {
             ))
           }
         </Grid>
-      </InfiniteScroll>
-
-      { isLoading && <Loader /> }
+      </ControlledFetcher>
 
       <ResultDialog />
     </Fragment>
