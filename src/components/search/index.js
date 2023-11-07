@@ -1,3 +1,4 @@
+export * from './back-to-top-button'
 export * from './context'
 export * from './filters-tray'
 export * from './collection'

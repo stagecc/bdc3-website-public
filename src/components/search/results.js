@@ -60,6 +60,7 @@ export const Results = () => {
 
   // this gets rendered when the bottom of our list,
   // when more data are available to fetch.
+  // (util for controlled fetcher)
   const MoreMessage = () => {
     return (
       <Stack

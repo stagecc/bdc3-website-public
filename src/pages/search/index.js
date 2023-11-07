@@ -2,10 +2,13 @@ import React from "react";
 import { Grid, Stack, Typography } from "@mui/material";
 import { PageContent } from "../../components/layout";
 import { SEO } from "../../components/seo";
-import { CheckoutCta, CollectionPreview, DugForm, FiltersTray, Results, Sidebar, useSearch } from "../../components/search";
+import {
+  BackToTopButton, CheckoutCta, CollectionPreview, DugForm,
+  FiltersTray, Results, Sidebar, useSearch,
+} from "../../components/search";
 
 const SearchPage = ({ location }) => {
-  const {  query } = useSearch()
+  const { query } = useSearch()
 
   return (
     <PageContent width="95%" maxWidth="1400px" center gutters>
@@ -18,10 +21,11 @@ const SearchPage = ({ location }) => {
 
       <Grid container spacing={ 4 }>
         <Grid item xs={ 12 } md={ 8 } lg={ 9 }>
-          <Stack>
+          <Stack sx={{ position: 'relative' }}>
             <DugForm focusOnMount slashFocus />
             <FiltersTray />
             <Results />
+            <BackToTopButton />
           </Stack>
         </Grid>
 
