@@ -16,7 +16,7 @@ const RegistrationPage = () => (
       <Paragraph>
         Thank you for your interest in joining the BDC
         community of practice. The ecosystem provides{" "}
-        <Link to="https://biodatacatalyst.nhlbi.nih.gov/resources/services/">
+        <Link to="https://biodatacatalyst.nhlbi.nih.gov/resources/services/" className="test-link">
           tools, applications, and workflows
         </Link>{" "}
         in secure workspaces to support data analysis on a range of{" "}
