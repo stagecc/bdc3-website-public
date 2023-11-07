@@ -1,15 +1,12 @@
 import React, { Fragment, useEffect, useRef, useState } from 'react'
-import { navigate } from 'gatsby'
 import {
-  Box, Button, Card, CardActions, CardContent, CardHeader, Collapse, Divider,
-  IconButton, List, ListItem, ListItemIcon, ListItemText, ListSubheader, Menu, MenuItem,
-  Tooltip, Typography,
+  Box, Button, Card, CardContent, CardHeader, Collapse, Divider,
+  IconButton, List, ListItem, ListItemIcon, ListItemText, ListSubheader, Menu, MenuItem, Tooltip,
 } from '@mui/material'
 import TouchRipple from '@mui/material/ButtonBase/TouchRipple'
 import {
   BookmarkBorder as CollectionIcon,
   Delete as ClearCollectionIcon,
-  ArrowForward as NextIcon,
   ExpandLess as CollapseIcon,
   ExpandMore as ExpandIcon,
   Delete as DeleteIcon,
@@ -142,10 +139,11 @@ export const CollectionPreview = () => {
         alignItems: 'center',
         p: 2, py: 3,
       },
-      '.clear-collection-button': {
-        filter: 'opacity(0.5)',
-        transition: 'filter 250ms',
-        '&:hover': { filter: 'opacity(1.0)' },
+      '.list-item': {
+        py: 0,
+        '.MuiListItemText-root': {
+          my: '2px',
+        },
       },
       '.list-item .remove-button': {
         transition: 'filter 150ms',
@@ -156,9 +154,6 @@ export const CollectionPreview = () => {
       },
       '.list-item .remove-button:hover': {
         filter: 'opacity(1.0) saturate(1.0)',
-      },
-      '.next-button': {
-        borderRadius: '21px',
       },
     }}>
       <CardHeader
@@ -177,7 +172,7 @@ export const CollectionPreview = () => {
             Object.keys(collection.contents).map(key => (
               <Fragment key={ `collection-${ key }` }>
                 <ListSubheader color="default">
-                  { collection.contents[key].length } { key }
+                  { key[0].toUpperCase() + key.slice(1) } ({ collection.contents[key].length })
                 </ListSubheader>
                 <Collapse in={ expanded } timeout="auto" unmountOnExit>
                   {
@@ -210,22 +205,6 @@ export const CollectionPreview = () => {
         </List>
       </CardContent>
 
-      <Collapse in={ expanded && collection.count !== 0 } timeout="auto">
-        <Divider />
-        <CardActions sx={{ display: 'flex', flexDirection: 'column' }}>
-          <Typography paragraph align="center" color="secondary" sx={{ fontStyle: 'italic' }}>
-            <strong>Finished Selecting Items?</strong><br />
-          </Typography>
-          <Button
-            variant="contained"
-            size="large"
-            endIcon={ <NextIcon /> }
-            onClick={ () => navigate('/search/collection') }
-            className="next-button"
-          >Next</Button>
-        </CardActions>
-      </Collapse>
-      
       <Divider />
 
       {
