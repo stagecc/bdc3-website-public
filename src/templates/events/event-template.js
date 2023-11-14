@@ -122,7 +122,7 @@ return (
 }
 
 export default ({ data, pageContext }) => {
-  const { markdownRemark: { frontmatter, rawMarkdownBody } } = data;
+  const { markdownRemark: { frontmatter, html } } = data;
   const { prev, next } = pageContext;
   const {
     title,
@@ -190,13 +190,12 @@ export default ({ data, pageContext }) => {
           )}
 
           <Module title="Event Details">
-            {
-              speakerImage && (
-                <SpeakerImageWrapper>
-                  <SpeakerImage fluid={speakerImage.childImageSharp.fluid}/>
-                </SpeakerImageWrapper>
-              )}
-            <Markdown src={ rawMarkdownBody } />
+            {speakerImage && (
+              <SpeakerImageWrapper>
+                <SpeakerImage fluid={speakerImage.childImageSharp.fluid}/>
+              </SpeakerImageWrapper>
+            )}
+            <div className="page-content" dangerouslySetInnerHTML={{ __html: html }} />
           </Module>
 
           {flyer && (
@@ -265,7 +264,7 @@ export default ({ data, pageContext }) => {
 export const newsItemQuery = graphql`
   query($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
-      rawMarkdownBody
+      html
       frontmatter {
         date(formatString: "MMMM D, YYYY")
         display_date

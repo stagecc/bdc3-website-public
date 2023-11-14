@@ -15,6 +15,10 @@ seo:
 ---
 Join us on Wednesday, November 15 at 1 PM ET for BDC November Community Hours: Researching the Genetics of Lung Diseases and Building Custom Workflows on BDC. Joe Chiles and Alison Rocco from the [McDonald Laboratory of Integrative 'Omics](https://sites.uab.edu/mcdonaldlab/) at the University of Alabama at Birmingham will be presenting their research into the genetic risk factors for weight loss in people living with chronic obstructive pulmonary disease (COPD).
 
+<div class="twothirds-width-image">
+  <img src='./2023-11-15_community-hours-graphic.png' alt="Quote from Alison Rocco, saying, Having access to TOPMed genomic data and the tools to preform complex analyses all in BDC allows us to efficiently execute and document all stages of our research." />
+</div>
+
 They will highlight the availability of pulmonary data in different studies from the Trans-Omics for Precision Medicine (TOPMed) initiative and demonstrate how they deployed this data to study genetic risk variants for weight loss in the COPD population.  They will also describe how to create tools that customize the output of public workflows on BDC to facilitate further analysis.
 
 Even if you cannot attend the session live, you can still [register](http://bit.ly/BDC-Nov) to have the session recording and slides sent to you post-event.
