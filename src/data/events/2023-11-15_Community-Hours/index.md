@@ -13,7 +13,7 @@ seo:
   title: "BDC Community Hours: Researching the Genetics of Lung Diseases and Building Custom Workflows on BDC"
   description:
 ---
-Join us on Wednesday, November 15 at 1 PM ET for BDC November Community Hours: Researching the Genetics of Lung Diseases and Building Custom Workflows on BDC. Joe Chiles and Alison Rocco from the [McDonald Laboratory of Integrative 'Omics](https://sites.uab.edu/mcdonaldlab/) at the University of Alabama at Birmingham will be presenting their research into the genetic risk factors for weight loss in people living with chronic obstructive pulmonary disease (COPD).
+Join us on Wednesday, November 15 at 1 PM ET for BDC November Community Hours: Researching the Genetics of Lung Diseases and Building Custom Workflows on BDC. Joe Chiles and Alison Rocco from the [McDonald Laboratory of Integrative 'Omics](https://sites.uab.edu/mcdonaldlab/) at the University of Alabama at Birmingham will be presenting their research into the genetic risk factors for weight loss in people living with chronic obstructive pulmonary disease (COPD). Rocco, a research intern and undergraduate bioinformatician in the McDonald Lab of Integrative Omics, describes the benefits of using BDC saying that, "having access to TOPMed genomic data and the tools to preform complex analyses all in BDC allows us to efficiently execute and document all stages of our research."
 
 <div class="twothirds-width-image">
   <img src='./2023-11-15_community-hours-graphic.png' alt="Quote from Alison Rocco, saying, Having access to TOPMed genomic data and the tools to preform complex analyses all in BDC allows us to efficiently execute and document all stages of our research." />
