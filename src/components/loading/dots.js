@@ -100,3 +100,7 @@ Dots.propTypes = {
   textPlacement: PropTypes.oneOf(["top", "bottom"]),
   color: PropTypes.string
 };
+
+Dots.defaultProps = {
+  color: 'var(--color-crimson)'
+}

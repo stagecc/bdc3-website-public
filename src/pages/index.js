@@ -12,6 +12,8 @@ import BlurChartCheckUpCurve from "../images/blur-chart-check-up-curve.jpg";
 import { NewsFeedModule } from "../components/modules";
 import carouselData from "../data/data-carousel.json"
 import { VideoPlayer } from "../components/video-player"
+import { DugForm } from "../components/search"
+import { Link } from "../components/link"
 
 const IndexPage = () => {
   return (
@@ -30,6 +32,15 @@ const IndexPage = () => {
           <HexMenu />
         </Hidden>
 
+        <br />
+
+        <DugForm />
+        
+        <Paragraph center style={{ fontStyle: 'italic', fontSize: '90%' }}>
+          Learn more about <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/data-access/submitting-a-dbgap-data-access-request">BDC Semantic Search</Link>. 
+        </Paragraph>
+
+        <br /><br />
 
         <Card>
           <CardHeader size="large">What is NHLBI BioData Catalyst<sup>®</sup>&nbsp;(BDC)?</CardHeader>
