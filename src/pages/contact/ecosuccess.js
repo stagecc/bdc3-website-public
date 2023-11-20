@@ -45,6 +45,7 @@ const SuccessPage = () => {
                   <Link
                     target="_blank"
                     to="https://drive.google.com/file/d/19S_iGRHxg8JmupHawhz8e9qR3hF8ht3H/view"
+                    className="GTM-GUIDE-link"
                   >
                     GUIDE
                   </Link>
