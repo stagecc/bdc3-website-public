@@ -66,7 +66,7 @@ export const Hexagon = ({
   const Icon = icon;
 
   return (
-    <HexagonWrapper to={path} className={`GTM-hexMenu GTM-hexMenu-${text}`}>
+    <HexagonWrapper to={path} className="GTM-hexMenu">
       <HexagonInterior
         active={active}
         growOnActive={growOnActive}
