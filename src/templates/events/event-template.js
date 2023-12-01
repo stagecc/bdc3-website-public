@@ -89,22 +89,24 @@ return (
     
     {time && <EventInfoLine title='Time'> {time} </EventInfoLine>}
        
-    {registration_required ? (
+    { past ? (
       <EventInfoLine title="Location">
-      Zoom (
-      <Link to={url} >
-        Click Here to Register
-      </Link>)
-    </EventInfoLine>
-
+        Zoom
+      </EventInfoLine>
+    ) : registration_required ? (
+      <EventInfoLine title="Location">
+        Zoom (
+        <Link to={url} >
+          Click Here to Register
+        </Link>)
+      </EventInfoLine>
     ) : (
       <EventInfoLine title="Location">
-      Zoom (
-      <Link to={url} >
-        Click Here to Join
-      </Link>)
-    </EventInfoLine>
-
+        Zoom (
+        <Link to={url} >
+          Click Here to Join
+        </Link>)
+      </EventInfoLine>
     )}
 
     <EventInfoLine title="Tags">
