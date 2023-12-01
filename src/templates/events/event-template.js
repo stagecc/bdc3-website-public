@@ -79,7 +79,7 @@ EventInfoLine.propTypes = {
   title: PropTypes.string,
 }
 
-const EventInfo = ({date, display_date, time, tags, url, registration_required }) => {
+const EventInfo = ({date, display_date, time, tags, url, registration_required, past }) => {
 return (
   <Fragment>
     
@@ -89,22 +89,24 @@ return (
     
     {time && <EventInfoLine title='Time'> {time} </EventInfoLine>}
        
-    {registration_required ? (
+    { past ? (
       <EventInfoLine title="Location">
-      Zoom (
-      <Link to={url} >
-        Click Here to Register
-      </Link>)
-    </EventInfoLine>
-
+        Zoom
+      </EventInfoLine>
+    ) : registration_required ? (
+      <EventInfoLine title="Location">
+        Zoom (
+        <Link to={url} >
+          Click Here to Register
+        </Link>)
+      </EventInfoLine>
     ) : (
       <EventInfoLine title="Location">
-      Zoom (
-      <Link to={url} >
-        Click Here to Join
-      </Link>)
-    </EventInfoLine>
-
+        Zoom (
+        <Link to={url} >
+          Click Here to Join
+        </Link>)
+      </EventInfoLine>
     )}
 
     <EventInfoLine title="Tags">
@@ -178,10 +180,11 @@ export default ({ data, pageContext }) => {
                   url={zoom ? zoom.url : url}
                   tags={tags}
                   registration_required={registration_required}
+                  past={past}
             />
           </EventMetadataWrapper>
 
-          {registration_required && (
+          {( registration_required && !past ) && (
             <div style={{ textAlign: "center", paddingTop: '2rem'}}>
               <ButtonCta href={url} target="_blank">
                 Register Now!
