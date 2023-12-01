@@ -79,7 +79,7 @@ EventInfoLine.propTypes = {
   title: PropTypes.string,
 }
 
-const EventInfo = ({date, display_date, time, tags, url, registration_required }) => {
+const EventInfo = ({date, display_date, time, tags, url, registration_required, past }) => {
 return (
   <Fragment>
     
@@ -180,6 +180,7 @@ export default ({ data, pageContext }) => {
                   url={zoom ? zoom.url : url}
                   tags={tags}
                   registration_required={registration_required}
+                  past={past}
             />
           </EventMetadataWrapper>
 
