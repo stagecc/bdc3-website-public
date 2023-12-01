@@ -181,7 +181,7 @@ export default ({ data, pageContext }) => {
             />
           </EventMetadataWrapper>
 
-          {registration_required && (
+          {( registration_required && !past ) && (
             <div style={{ textAlign: "center", paddingTop: '2rem'}}>
               <ButtonCta href={url} target="_blank">
                 Register Now!
