@@ -27,7 +27,9 @@ const FellowsCohort2Page = () => {
           data-focused research problems.
         </Paragraph>
         <Paragraph>
-          Cohort II Fellows worked on BDC from September 2020 to September 2021.
+          Cohort II Fellowships began in September 2020 and ended in September 
+          2021. The following content includes biographical information and 
+          research project details from that time.
         </Paragraph>
       </section>
 
