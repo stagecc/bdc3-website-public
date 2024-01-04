@@ -137,7 +137,7 @@ const ServicesPage = ({ data }) => {
               </ExternalToolLink>
               |
               <ExternalToolLink
-                to="https://imputationserver.readthedocs.io/en/latest/"
+                to="https://topmedimpute.readthedocs.io/en/latest/"
                 aria-label="View imputation server documentation"
               >
                 Documentation
