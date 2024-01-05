@@ -1,5 +1,5 @@
 ---
-title: "BDC January Community Hours"
+title: "BDC Community Hours: Art of the Start"
 path: /events/2024-01-17/community_hours
 date: 2024-01-17
 time: 2:00 - 3:00 pm EST
@@ -10,15 +10,12 @@ forum_post: https://bdcatalyst.freshdesk.com/support/discussions/forums/60000252
 registration_required: true
 tags: [community hours]
 seo:
-  title: "BDC January Community Hours"
+  title: "BDC Community Hours: Art of the Start"
   description:
 ---
 Join us on [Wednesday, January 17 2pm ET](https://renci.zoom.us/webinar/register/6517025718497/WN_O0SRkPrnREqb5RN-Gz_lQg) for a session on the Art of the Start.
 
-For our first Community Hours of 2024, we'll be featuring:
-
--   A great way to get started on BDC: Explore aggregate, obfuscated, destigmatizing, de-identified phenotypic data with PIC-SURE Open Access.
--   A reflection by early career researchers on their career journey, BDC's role in their success, and tips for those starting out.
+For our first Community Hours of 2024, Dr. Jasmine Olvany will talk to current and potential BDC users about her experience with the ecosystem’s data, analytical tools, and secure workspaces for her malaria research. Plus, view an interactive demo on searching data and building cohorts without needing an eRA Commons ID or logins with Emily Hughes.
 
 Do you have an aspiring or early career researcher in your life? Forward this invitation on and invite them to the session.
 
