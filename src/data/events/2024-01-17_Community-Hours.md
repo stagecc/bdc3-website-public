@@ -1,5 +1,5 @@
 ---
-title: "BDC January Community Hours"
+title: "BDC Community Hours: Art of the Start"
 path: /events/2024-01-17/community_hours
 date: 2024-01-17
 time: 2:00 - 3:00 pm EST
@@ -10,7 +10,7 @@ forum_post: https://bdcatalyst.freshdesk.com/support/discussions/forums/60000252
 registration_required: true
 tags: [community hours]
 seo:
-  title: "BDC January Community Hours"
+  title: "BDC Community Hours: Art of the Start"
   description:
 ---
 Join us on [Wednesday, January 17 2pm ET](https://renci.zoom.us/webinar/register/6517025718497/WN_O0SRkPrnREqb5RN-Gz_lQg) for a session on the Art of the Start.
