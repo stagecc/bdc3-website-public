@@ -13,6 +13,7 @@ Date:  [Date]
 Time: [Time including time zone]
 Location: Zoom 
 Registration Link: [Zoom Registration Link]
+Tags: [i.e. community hours]
 
 # Event Details:
 [Paste Details or provide link to event details text]
