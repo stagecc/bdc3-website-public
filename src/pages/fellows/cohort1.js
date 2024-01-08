@@ -28,8 +28,9 @@ const FellowsCohort1Page = () => {
           data-focused research problems.
         </Paragraph>
         <Paragraph>
-          Cohort I Fellows worked on BDC from March 2020 to June 2021. Read 
-          what our{" "}
+          Cohort I Fellowships began in March 2020 and ended in June 2021. The 
+          following content includes biographical information and research 
+          project details from that time. Read what our{" "}
           <Link to="https://drive.google.com/file/d/1sBC-lInfXUZnNhS7V_Q5q6aIP89ctWeP/view">
             Cohort I Fellows have said
           </Link>{" "}
