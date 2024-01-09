@@ -16,7 +16,8 @@ Registration Link: [Zoom Registration Link]
 Tags: [i.e. community hours]
 
 # Event Details:
-[Paste Details or provide link to event details text]
+[Paste details in markdown or provide link to event details text]
 
-# Featured Image:
-[If there is a featured image, please provide a link to the image, or file.]
+# Links to other relevant files or sites
+Featured Image: [If there is a featured image, please provide a link to the image, or file.]
+Other
