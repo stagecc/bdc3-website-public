@@ -57,12 +57,12 @@ const DataPage = ({ data, location }) => {
           primary={
             <span>
               COVID-19 data (
-              <Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs003063.v1.p1">ACTIV4c</Link>,{' '}
-              <Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002299.v1.p1">ORCHID</Link>,{' '}
-              <Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002363.v1.p1">RED CORAL</Link>,{' '}
               <Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002694.v1.p1">ACTIV4a</Link>,{' '}
               <Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002710.v1.p1">ACTIV4b</Link>,{' '}
-              <Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002752.v1.p1">C3PO</Link>
+              <Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs003063.v1.p1">ACTIV4c</Link>,{' '}
+              <Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002752.v1.p1">C3PO</Link>,{' '}
+              <Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002299.v1.p1">ORCHID</Link>,{' '}
+              <Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002363.v1.p1">RED CORAL</Link>
               )
             </span>
           }
