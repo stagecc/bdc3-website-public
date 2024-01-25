@@ -68,14 +68,14 @@ const AboutPage = ({ data }) => {
                 <ListItem
                   primary={
                     <a href="#what-we-offer" onClick={() => navigate("#what-we-offer")}>
-                      What we Offer
+                      What We Offer
                     </a>
                   }
                 />
                 <ListItem
                   primary={
                     <a href="#who-we-are" onClick={() => navigate("#who-we-are")}>
-                      Who we Are
+                      Who We Are
                     </a>
                   }
                 />
