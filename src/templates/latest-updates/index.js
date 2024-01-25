@@ -191,7 +191,7 @@ filter: drop-shadow(5px 5px 8px rgba(0, 0, 0, 0.1));
 const ContributorDetails = styled.div`
 flex: 1;
 padding: 0 1rem;
-text-align: justify;
+text-align: left;
 font-size: 80%;
 `;
 
