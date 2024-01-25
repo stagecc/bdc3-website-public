@@ -247,11 +247,10 @@ export default ({ data, pageContext }) => {
       {
         frontmatter.subtitle && (
           <Subtitle className="article-subtitle">
-          {frontmatter.subtitle}
+            {frontmatter.subtitle}
           </Subtitle>
         )
       }
-
       <Stack justifyContent="space-between" flexDirection="row">
         <Meta>
           Published on {frontmatter.date} {' '}

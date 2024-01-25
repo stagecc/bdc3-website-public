@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { useDialog } from "../../hooks";
 import { ExternalLinkIcon } from "../icons";
+import { OutboundLink } from "gatsby-plugin-google-gtag"
 
 export const ExternalLink = ({
   to,
@@ -59,7 +60,7 @@ export const ExternalLink = ({
   };
 
   return requiresConfirmation ? (
-    <a 
+    <OutboundLink 
       href={to} 
       onClick={triggerDialog} 
       className={`${className} ${buttonClasses}`} 
@@ -73,9 +74,9 @@ export const ExternalLink = ({
           style={{ marginLeft: "0.25rem" }}
         />
       )}
-    </a>
+    </OutboundLink>
   ) : (
-    <a 
+    <OutboundLink 
       href={to} 
       className={`${className} ${buttonClasses}`} 
       target="_blank" 
@@ -83,7 +84,7 @@ export const ExternalLink = ({
       {...props}
     >
       {children}
-    </a>
+    </OutboundLink>
   );
 };
 
