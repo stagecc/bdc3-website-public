@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { graphql} from "gatsby";
 import Img from "gatsby-image";
 import { SEO } from "../../components/seo";
-import { Title, Subtitle, Meta, Heading, Paragraph } from "../../components/typography";
+import { Title, Subtitle, Meta, Heading, Paragraph, Subheading, Subsubheading } from "../../components/typography";
 import { InlineList2 } from "../../components/list";
 import { TagLink } from "../../components/link";
 import { PageContent } from "../../components/layout";
@@ -176,25 +176,23 @@ const AuthorCard = ({ author }) => {
 const ContributorWrapper = styled.div(({ compact, partial }) => (`
 display: flex;
 flex-direction: column;
-max-width: ${compact ? '100%' : '450px'};
+max-width: ${compact ? '100%' : '400px'};
 float: left;
 justify-content: center;
 align-items: center;
-margin-bottom: 1.5rem;
-margin-right: ${compact ? '0' : '1rem'};
+margin-bottom: 1rem;
+margin-right: ${compact ? '0' : '2rem'};
 background-color: #EFEFEF;
 padding: 0 1rem 0 ;
 border-radius: 5px;
 filter: drop-shadow(5px 5px 8px rgba(0, 0, 0, 0.1));
-margin-right: 2rem;
 `));
 
 const ContributorDetails = styled.div`
 flex: 1;
 padding: 0 1rem;
 text-align: justify;
-font-size: 85%;
-word-break: break-all;
+font-size: 80%;
 `;
 
 const ContributorCard = ({contributor, partial}) => {
@@ -214,9 +212,9 @@ const ContributorCard = ({contributor, partial}) => {
         <ContributorDetails >
           {contributor.name && (
             <Fragment>
-              <h3 style={{color: '#b33243', fontSize: '1.3rem', textAlign: 'center', margin: "0 auto 0.5rem"}}> About {contributor.name}</h3>
-              <h4 style={{fontStyle: 'italic', fontSize: '1.2rem', fontWeight: '400', textAlign: 'center', margin: "0"}}>Researcher, University of Colorado</h4>
-              <Markdown src={contributor.description} style={{marginTop: "0", fontSize: "1rem"}}/>
+              <Heading style={{color: '#b33243', marginBottom: 0, paddingBottom: 0}}> About {contributor.name}</Heading>
+              <Subheading style={{color: '#444444', fontStyle: 'italic', fontWeight: '500'}}>Researcher, University of Colorado</Subheading>
+              <Markdown src={contributor.description} style={{marginTop: "0"}}/>
             </Fragment>
           )}
         </ContributorDetails>
