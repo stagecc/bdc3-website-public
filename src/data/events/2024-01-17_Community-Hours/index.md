@@ -13,11 +13,15 @@ seo:
   title: "BDC Community Hours: Art of the Start"
   description:
 ---
+<div class="twothirds-width-image">
+  <img src='./2024-01-17_Community-Hours-graphic.png' alt="View enlarged image"/>
+</div>
+
 Join us on [Wednesday, January 17 2pm ET](https://renci.zoom.us/webinar/register/6517025718497/WN_O0SRkPrnREqb5RN-Gz_lQg) for a session on the Art of the Start.
 
 For our first Community Hours of 2024, Dr. Jasmine Olvany spoke to current and potential BDC users about her experience with the ecosystem's data, analytical tools, and secure workspaces for her malaria research.
 
-Plus, hosted a demo on searching data and building cohorts without needing an eRA Commons ID or logins with Emily Hughes.
+We also hosted a demo on searching data and building cohorts without needing an eRA Commons ID or logins with Emily Hughes.
 
 [Access session materials](https://bdcatalyst.freshdesk.com/support/discussions/topics/60000407644), including videos and links.
 
