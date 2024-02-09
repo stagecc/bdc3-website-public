@@ -89,7 +89,7 @@ return (
     
     {time && <EventInfoLine title='Time'> {time} </EventInfoLine>}
        
-    { past ? (
+    { (!url || past )? (
       <EventInfoLine title="Location">
         Zoom
       </EventInfoLine>
@@ -184,7 +184,7 @@ export default ({ data, pageContext }) => {
             />
           </EventMetadataWrapper>
 
-          {( registration_required && !past ) && (
+          {( registration_required && !past && url) && (
             <div style={{ textAlign: "center", paddingTop: '2rem'}}>
               <ButtonCta href={url} target="_blank">
                 Register Now!
