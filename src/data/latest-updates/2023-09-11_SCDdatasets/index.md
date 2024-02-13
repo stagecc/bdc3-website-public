@@ -27,7 +27,7 @@ seo:
 
 There are limited disease-modifying therapies available to individuals living with sickle cell disease. For the most common complication of the disease, vaso-occlusive episodes (severe pain that occurs when the sickle-shaped cells block blood flow to a part of the body), supportive therapies remain the mainstay of treatment. Curative therapies available for individuals with sickle cell disease include hematopoietic stem cell transplant (a blood or bone marrow transplant) and emerging data supporting gene therapy (therapies that aim to treat or cure conditions by modifying the DNA in a person's blood cells) from clinical trials.
 
-<div class="twothirds-width-image">
+<div class="twothirds-width-image blog-image-right">
   <img src='./BDDEP_SC-Awareness-Month-Kit_Card-3_2022-08-17.jpg' alt="Sickle cell disease is the most common inherited blood disorder in the United States and affects millions of people worldwide."/>
   <figcaption>September is National Sickle Cell Awareness Month: Sickle cell disease is the most common inherited blood disorder in the United States. It affects approximately 100,000 Americans and more than 20 million people worldwide. Learn more about sickle cell disease and National Sickle Cell Awareness Month: <a href="https://www.nhlbi.nih.gov/education/sickle-cell-month">https://www.nhlbi.nih.gov/education/sickle-cell-month</a> </figcaption>
 </div>
