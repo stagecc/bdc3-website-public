@@ -10,7 +10,7 @@ seo:
   keywords: ["news", "GA4GH"]
 ---
 
-<div class="twothirds-width-image">
+<div class="blog-image-section twothirds-width-image blog-image-right">
   <img src='./ga4gh-11th-plenary-meeting.jpg' alt="An individual standing behind a lectern addresses a large audience at a conference."/>
   <figcaption>BDC was named as a GA4GH Driver Project during the GA4GH 11th Plenary meeting in San Francisco. Pictured is GA4GH CEO Peter Goodhand making the announcement. Photo Credit: Jaclyn Ryan</figcaption>
 </div>
@@ -21,7 +21,7 @@ According to GA4GH, "projects were evaluated on their ability to expand GA4GH's 
 
 "BDC is pleased to have been selected as a GA4GH Driver Project. Our goals as a Driver Project include contributing to standards development for multimodal data and working to support international interoperability," said Regina Bures, Ph.D., Scientific Program Director for BioData Catalyst and Senior Scientific Advisor in the Division of Cardiovascular Sciences at the National Heart, Lung, and Blood Institute.
 
-<div class="partial-width-image">
+<div class="blog-image-section partial-width-image blog-image-left">
   <img src='./ga4gh-driver-project-logo.png' alt="GA4GH Driver Project Badge"/>
 </div>
 
