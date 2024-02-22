@@ -1,9 +1,10 @@
 ---
 title: "BDC Community Hours: Art of the Start"
+bdcHosted: true
 path: /events/2024-01-17/community_hours
 date: 2024-01-17
 time: 2:00 - 3:00 pm EST
-display_date: Wednesday, January 17, 2024
+display_date: January 17, 2024
 location: "Zoom"
 url: https://renci.zoom.us/webinar/register/6517025718497/WN_O0SRkPrnREqb5RN-Gz_lQg
 forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000407644

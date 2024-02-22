@@ -3,7 +3,7 @@ title: "BDC Community Hours: Researching the Genetics of Lung Diseases and Build
 path: /events/2023-11-15/community_hours
 date: 2023-11-15
 time: 1:00 - 2:00 pm ET
-display_date: Wednesday, November 15, 2023
+display_date: November 15, 2023
 location: "Zoom"
 url: http://bit.ly/BDC-Nov
 forum_post: https://bdcatalyst.freshdesk.com/support/discussions/forums/60000252439
