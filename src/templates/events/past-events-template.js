@@ -7,43 +7,7 @@ import { Title, Paragraph, Meta } from "../../components/typography";
 import { ButtonLink } from "../../components/buttons";
 import { Container as Grid, Row, Col } from "react-grid-system";
 import { Module, PageContent } from "../../components/layout";
-
-const EventsList = ({ title, events }) => {
-  return (
-    <Module title={title}>
-      <Grid fluid>
-        {events.length ? (
-          events.map((event) => {
-            const {
-              title,
-              path,
-              date,
-              display_date,
-              // fabricHosted,
-            } = event.node.frontmatter;
-            return (
-              <Row key={title}>
-                <Col xs={12} sm={3}>
-                  <Meta>{display_date ? display_date : date}</Meta>
-                </Col>
-                <Col xs={12} sm={9}>
-                  <h5 style={{ lineHeight: 1.5 }}>
-                    <Link to={path}>{title}</Link>
-                  </h5>
-                </Col>
-              </Row>
-            );
-          })
-        ) : (
-          <Paragraph center>
-            There are no events to display at the moment. Please check back
-            soon!
-          </Paragraph>
-        )}
-      </Grid>
-    </Module>
-  );
-};
+import { EventsList } from "../../components/events/past-event-list-grid"
 
 export default ({ data, pageContext }) => {
   const events = data.events.edges;
@@ -98,7 +62,10 @@ export const allEventsQuery = graphql`
             display_date
             path
             title
-            tags
+            url
+            time
+            location
+            bdcHosted
           }
         }
       }
