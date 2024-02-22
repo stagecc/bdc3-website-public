@@ -1,10 +1,11 @@
 ---
 title: "BDC Community Hours: Insights from Genome-Wide Association Studies: Linking Genetics and Imaging"
+bdcHosted: true
 path: /events/2024-02-28/community_hours
 date: 2024-02-28
 time: 1:00 - 2:00 pm ET
-display_date: Wednesday, February 28, 2024
-location: "Zoom"
+display_date: February 28, 2024
+location: "Virtual via Zoom"
 url: https://renci.zoom.us/webinar/register/8017053302720/WN_D9w_HA-XRM-zMCMIuCSVPQ
 forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000407673
 registration_required: true

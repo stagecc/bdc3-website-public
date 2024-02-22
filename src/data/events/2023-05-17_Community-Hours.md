@@ -1,9 +1,10 @@
 ---
 title: "BDC Community Hours: Newly Published Apps and Workflows"
+bdcHosted: true
 path: /events/2023-05-17/community_hours
 date: 2023-05-17
 time: 1:00 - 2:00 pm EST
-display_date: Wednesday, May 17, 2023
+display_date: May 17, 2023
 location: "Zoom"
 url: http://bit.ly/BDC-May
 forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000407458

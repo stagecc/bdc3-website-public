@@ -1,9 +1,10 @@
 ---
 title: "BDC Community Hours: BDC Researcher Showcase"
+bdcHosted: true
 path: /events/2023-06-21/community_hours
 date: 2023-06-21
 time: 1:00 - 2:00 pm EST
-display_date: Wednesday, June 21, 2023
+display_date: June 21, 2023
 location: "Zoom"
 url: https://bit.ly/BDC-June
 forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000407484
