@@ -78,6 +78,9 @@ export const allEventsQuery = graphql`
             path
             title
             url
+            time
+            location
+            bdcHosted
           }
           excerpt(pruneLength: 280)
         }
