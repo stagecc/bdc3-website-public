@@ -1,20 +1,13 @@
 import React, { Fragment } from "react";
 import { graphql } from "gatsby";
-// import { AnimateOnMount } from "../../components/anim";
 import { SEO } from "../../components/seo";
 import {
   Title,
   Paragraph,
-  Subheading,
-  // Meta,
 } from "../../components/typography";
-import { Link } from "../../components/link";
 import { ButtonLink } from "../../components/buttons";
 import { Module, PageContent } from "../../components/layout";
-import { HorizontalRule } from "../../components/horizontal-rule"
-// import { LinkIcon } from "../../components/icons";
-// import { useWindowWidth } from "../../hooks";
-import { Grid } from '@mui/material'
+import { EventListPreview } from '../../components/events/upcoming-event-list-preview'
 
 const EventsList = ({ title, events }) => {
   // const { isCompact } = useWindowWidth();
@@ -22,39 +15,8 @@ const EventsList = ({ title, events }) => {
     <Module title={title}>
       <br />
       {events.length ? (
-        events.map((event) => {
-          const { excerpt } = event.node;
-          const {
-            title,
-            path,
-            date,
-            display_date,
-          } = event.node.frontmatter;
-          return (
-            <Fragment key={title}>
-              <Grid container spacing={2}>
-                <Grid item sm={12} md={3}>
-                  <Paragraph left noMargin>
-                    {display_date ? display_date : date}
-                  </Paragraph>
-                </Grid>
-                <Grid item sm={12} md={9}>
-                  <Subheading left>
-                    <Link 
-                      to={path}
-                    >{title}</Link>
-                  </Subheading>
-                  <Paragraph style={{fontSize: '85%'}}>{excerpt} <Link to={path}>
-                    Read More
-                    </Link>
-                  </Paragraph>
-                </Grid>
-              </Grid>
-              <HorizontalRule />
-              <br/>
-            </Fragment>
-          );
-        })
+        events.map((event) => (<EventListPreview event={event}/>)
+        )
       ) : (
         <Paragraph center>
           There are no events to display at the moment. Please check back soon!
