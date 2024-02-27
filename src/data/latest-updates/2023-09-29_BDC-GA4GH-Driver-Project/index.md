@@ -27,6 +27,6 @@ According to GA4GH, "projects were evaluated on their ability to expand GA4GH's 
 
 [National Institutes of Health (NIH) Cloud Platform Interoperability (NCPI)](https://anvilproject.org/ncpi), to which BDC actively contributes, was also named a 2023 GA4GH Driver Project. "We look forward to working with NCPI, the other Driver Projects, and GA4GH," continued Bures.
 
-BDC and NCPI join several other NIH initiatives as [GA4GH Driver Projects](https://www.ga4gh.org/our-community/driver-projects/). GA4GH Driver Projects collaborate with other GA4GH partners, contributing to the development of GA4GH standards and piloting those standards.
+[BDC and NCPI join several other NIH initiatives](https://www.ga4gh.org/news_item/nih-and-ga4gh-commit-to-ongoing-collaboration/) as [GA4GH Driver Projects](https://www.ga4gh.org/our-community/driver-projects/). GA4GH Driver Projects collaborate with other GA4GH partners, contributing to the development of GA4GH standards and piloting those standards.
 
 [Read the full release](https://www.ga4gh.org/news_item/2023-driver-projects/) outlining this year's selected GA4GH Driver Projects.
