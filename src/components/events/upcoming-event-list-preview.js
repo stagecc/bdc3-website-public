@@ -4,8 +4,7 @@ import {
   Subheading,
 } from "../typography";
 import { Link } from "../link";
-import { HorizontalRule } from "../horizontal-rule"
-import { Grid, Stack, Typography, Box } from '@mui/material'
+import { Grid, Stack, Typography, Box, Divider } from '@mui/material'
 import BDCLogo from '../../images/favicon.png'
 import styled from 'styled-components'
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
@@ -95,7 +94,7 @@ export const EventListPreview = ({event}) => {
         </Box>
 
       </Stack>
-      <HorizontalRule sx={{margin: '1rem 0'}}/>
+      <Divider sx={{margin: '1rem 0 2rem'}}/>
     </Fragment>
   )
 }
