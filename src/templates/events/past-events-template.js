@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 // import { AnimateOnMount } from "../../components/anim";
 import { graphql } from "gatsby";
 import { Link } from "../../components/link";
@@ -8,6 +8,8 @@ import { ButtonLink } from "../../components/buttons";
 import { Container as Grid, Row, Col } from "react-grid-system";
 import { Module, PageContent } from "../../components/layout";
 import { EventsList } from "../../components/events/past-event-list-grid"
+import Avatar from '@mui/material/Avatar';
+import BDCLogo from '../../images/favicon.png'
 
 export default ({ data, pageContext }) => {
   const events = data.events.edges;
@@ -31,9 +33,16 @@ export default ({ data, pageContext }) => {
       <Title>Event Archive</Title>
 
       <Module>
-        <Paragraph>
-          The following are past events supported by the BDC ecosystem.
-        </Paragraph>
+        <Fragment>
+          The following are past events supported by the BDC ecosystem. Items denoted with a <Avatar src={BDCLogo} sx={{
+            width: 20, height: 20,
+            border: '1px solid #c5cfe8',
+            display: 'inline-block',
+            margin: '0 0.2rem'
+          }}/> {" "}indicate events hosted by BDC.
+        </Fragment>
+        <br/>
+        <br/>
         <EventsList events={events} />
       </Module>
 
@@ -66,6 +75,7 @@ export const allEventsQuery = graphql`
             time
             location
             bdcHosted
+            forum_post
           }
         }
       }
