@@ -8,6 +8,8 @@ import {
 import { ButtonLink } from "../../components/buttons";
 import { Module, PageContent } from "../../components/layout";
 import { EventListPreview } from '../../components/events/upcoming-event-list-preview'
+import { Avatar } from '@mui/material/';
+import BDCLogo from '../../images/favicon.png'
 
 const EventsList = ({ title, events }) => {
   // const { isCompact } = useWindowWidth();
@@ -46,9 +48,14 @@ export default ({ data, pageContext }) => {
 
       <Title>Upcoming Events</Title>
 
-      <Paragraph>
-        The following is a list of upcoming events supported by the BDC ecosystem.
-      </Paragraph>
+      <Fragment>
+        The following is a list of upcoming events supported by the BDC ecosystem. Items denoted with a <Avatar src={BDCLogo} sx={{
+          width: 20, height: 20,
+          border: '1px solid #c5cfe8',
+          display: 'inline-block',
+          margin: '0 0.2rem'
+        }}/> {" "}indicate events hosted by BDC.
+      </Fragment>
 
       <EventsList events={events} />
 
