@@ -15,6 +15,16 @@ import { HorizontalRule } from "../../components/horizontal-rule";
 import { ButtonCta } from "../../components/buttons";
 import { Markdown } from '../../components/markdown'
 import { Card, CardBody } from "../../components/card";
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import { Grid, Stack, Typography, Box, Divider } from '@mui/material'
+
+const EventMeta = styled.p`
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: 1;
+  margin-top: 0;
+`
 
 const EventMetadataWrapper = styled.div`
   ${Meta} {
@@ -139,6 +149,7 @@ export default ({ data, pageContext }) => {
     flyer,
     speakerImage,
     seo,
+    location
   } = frontmatter;
 
   const todaysDate = new Date();
@@ -172,7 +183,7 @@ export default ({ data, pageContext }) => {
         {
           past && <PastEventAlert forum_post={forum_post}/>
         }
-          <EventMetadataWrapper>
+          {/* <EventMetadataWrapper>
             <EventInfo
                   date={date}
                   display_date={display_date}
@@ -182,8 +193,42 @@ export default ({ data, pageContext }) => {
                   registration_required={registration_required}
                   past={past}
             />
-          </EventMetadataWrapper>
-
+          </EventMetadataWrapper> */}
+          <Stack 
+            direction={{ xs: 'column', sm: 'row' }} 
+            gap={{ xs: 1, sm: 2, md: 4 }}
+            flex
+          >
+            <Grid container spacing={2}>
+              <Grid item>
+                <CalendarTodayIcon color="#21568a" sx={{fontSize:"1.2rem", margin: 0}}/> 
+              </Grid>
+              <Grid item>
+                <EventMeta> {display_date}</EventMeta>
+                <EventMeta>{time}</EventMeta>
+              </Grid>
+            </Grid>
+            <Grid container spacing={2}>
+              <Grid item>
+                <LocationOnOutlinedIcon color="var(--color-blueberry)" sx={{fontSize:"1.2rem", margin: 0}}/> 
+              </Grid>
+              <Grid item>
+                <Box>
+                  {
+                    (!past && url) ? (
+                      <EventMeta>
+                        {location}: <Link to={url}>Register Here</Link>
+                      </EventMeta>
+                    ) : (
+                      <EventMeta>
+                        {location}
+                      </EventMeta>
+                    )
+                  }
+                </Box>
+              </Grid>
+            </Grid>
+          </Stack>
           {( registration_required && !past && url) && (
             <div style={{ textAlign: "center", paddingTop: '2rem'}}>
               <ButtonCta href={url} target="_blank">
@@ -277,6 +322,7 @@ export const newsItemQuery = graphql`
         forum_post
         tags
         registration_required
+        location
         speakerImage {
           childImageSharp {
             fluid(maxWidth: 400) {
