@@ -20,7 +20,8 @@ const PastEventListItem = ({event}) => {
     time,
     location,
     url,
-    bdcHosted
+    bdcHosted,
+    forum_post
   } = event.node.frontmatter;
 
   return (
@@ -48,7 +49,9 @@ const PastEventListItem = ({event}) => {
       </Col>
       <Col xs={3} sm={3}>
         <Box sx={{display: 'flex', justifyContent: 'center'}}>
-          <SourceOutlinedIcon sx={{fontSize: '1rem'}}/>
+          <Link to={forum_post} noIcon>
+            <SourceOutlinedIcon sx={{fontSize: '1.2rem'}}/>
+          </Link>
         </Box>
       </Col>
     </Row>
