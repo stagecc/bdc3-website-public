@@ -58,7 +58,7 @@ export const EventListPreview = ({event}) => {
           >
             <Grid container spacing={2}>
               <Grid item>
-                <CalendarTodayIcon color="var(--color-blueberry)" sx={{fontSize:"1.2rem", margin: 0}}/> 
+                <CalendarTodayIcon color="#21568a" sx={{fontSize:"1.2rem", margin: 0}}/> 
               </Grid>
               <Grid item>
                 <EventMeta> {display_date}</EventMeta>
@@ -67,7 +67,7 @@ export const EventListPreview = ({event}) => {
             </Grid>
             <Grid container spacing={2}>
               <Grid item>
-                <LocationOnOutlinedIcon color="var(--color-blueberry)" sx={{fontSize:"1.2rem", margin: 0}}/> 
+                <LocationOnOutlinedIcon color="#21568a" sx={{fontSize:"1.2rem", margin: 0}}/> 
               </Grid>
               <Grid item>
                 <Box>
