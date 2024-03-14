@@ -48,14 +48,14 @@ export default ({ data, pageContext }) => {
 
       <Title>Upcoming Events</Title>
 
-      <Fragment>
-        The following is a list of upcoming events supported by the BDC ecosystem. Items denoted with a <Avatar src={BDCLogo} sx={{
+        <Paragraph>
+          The following is a list of upcoming events supported by the BDC ecosystem. Items denoted with a <Avatar src={BDCLogo} sx={{
           width: 20, height: 20,
           border: '1px solid #c5cfe8',
           display: 'inline-block',
           margin: '0 0.2rem'
         }}/> {" "}indicate events hosted by BDC.
-      </Fragment>
+        </Paragraph>
 
       <EventsList events={events} />
 
@@ -88,6 +88,7 @@ export const allEventsQuery = graphql`
             time
             location
             bdcHosted
+            externalEvent
           }
           excerpt(pruneLength: 280)
         }
