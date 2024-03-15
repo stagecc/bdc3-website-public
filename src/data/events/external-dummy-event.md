@@ -1,6 +1,6 @@
 ---
 title: "American Society of Human Genetics Annual Meeting"
-bdcHosted: false
+externalEvent: true
 path: /events/2024-11-09/ASHG-Annual-Meeting-2024
 date: 2024-11-09
 display_date: November 5 - 9, 2024
