@@ -3,7 +3,7 @@ title: "NHLBI BioData Catalyst Workflow and Development Interest Group"
 path: /events/2022-08-29/interest-groups/workflow-and-development
 date: 2022-08-29
 time: 1:30 - 2:30 p.m. EDT
-display_date: Monday, August 29th, 2022
+display_date: August 29, 2022
 location: "Zoom (no registration required)"
 url: https://renci.zoom.us/j/99606818968?pwd=S2kwdW5ZbCtabjRYcHRQYWM4NnZkUT09 
 tags: [interest groups, workflow and development]
