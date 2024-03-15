@@ -11,14 +11,14 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import Avatar from '@mui/material/Avatar';
 import { styled } from '@mui/system';
 
-const EventMeta = styled.p`
+const EventMeta = styled(Paragraph)`
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
   line-height: 1;
   margin-top: 0;
 `
 
-const IconTitleSection = ({externalEvent, title}) => {
+const IconTitleSection = ({externalEvent, title, path}) => {
   return (
     <Fragment>
       {
@@ -27,7 +27,9 @@ const IconTitleSection = ({externalEvent, title}) => {
             {/* Empty grid placeholder section */}
             <Grid item xs={0} sm={0} md={1}></Grid>
             <Grid item xs={16} sm={16} md={15}>
-              <Subheading left noMargin>{title}</Subheading>
+              <Link to={path}>
+                <Subheading left noMargin>{title}</Subheading>
+              </Link>
             </Grid>
           </Fragment>
         ) : (
@@ -40,7 +42,9 @@ const IconTitleSection = ({externalEvent, title}) => {
               }}/>
             </Grid>
             <Grid item xs={14} sm={15} md={15}>
-              <Subheading left noMargin>{title}</Subheading>
+              <Link to={path}>
+                <Subheading left noMargin>{title}</Subheading>
+              </Link>
             </Grid>
           </Fragment>
         )
@@ -116,7 +120,7 @@ export const EventListPreview = ({event}) => {
   return (
     <Fragment>
       <Grid container columns={16}>
-        <IconTitleSection externalEvent={externalEvent} title={title}/>
+        <IconTitleSection externalEvent={externalEvent} title={title} path={path}/>
 
         <SpacerSection item xs={0} sm={0} md={1}/>
         <DateTimeLocationSection item xs={16} sm={16} md={15}
