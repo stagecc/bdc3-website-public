@@ -3,7 +3,7 @@ title: "BDC Community Hours: Citations and Publications"
 path: /events/2023-03-15/community_hours
 date: 2023-03-15
 time: 1:00 - 2:00 pm EST
-display_date: Wednesday, March 15, 2023
+display_date: March 15, 2023
 location: "Zoom"
 url: https://bit.ly/BDC-March
 forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000407394

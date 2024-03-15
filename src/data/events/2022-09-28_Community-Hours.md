@@ -3,7 +3,7 @@ title: "NHLBI BioData Catalyst Community Hours: Using BioData Catalyst Powered b
 path: /events/2022-09-28/community_hours
 date: 2022-09-28
 time: 1:00 - 2:00 pm EDT
-display_date: Wednesday, September 28, 2022
+display_date: September 28, 2022
 location: "Zoom"
 url: https://bit.ly/3wmFoIs
 forum_post: https://bdcatalyst.freshdesk.com/support/discussions/forums/60000122778

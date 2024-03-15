@@ -3,7 +3,7 @@ title: "NHLBI BioData Catalyst Community Hours: SAS Studio on BioData Catalyst a
 path: /events/2022-06-22/community_hours
 date: 2022-06-22
 time: 1:00 - 2:00 pm EDT
-display_date: Wednesday, June 22nd, 2022
+display_date: June 22, 2022
 location: "Zoom"
 url: https://bit.ly/3Mv0YAy
 forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000407031

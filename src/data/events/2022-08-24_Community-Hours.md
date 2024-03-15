@@ -3,7 +3,7 @@ title: "NHLBI BioData Catalyst Community Hours: Demonstration of SAS on BioData 
 path: /events/2022-08-24/community_hours
 date: 2022-08-24
 time: 2:00 - 3:00 pm EDT
-display_date: Wednesday, August 24, 2022
+display_date: August 24, 2022
 location: "Zoom"
 url: https://bit.ly/3PnUMvz
 forum_post: https://bdcatalyst.freshdesk.com/support/discussions/forums/60000122778

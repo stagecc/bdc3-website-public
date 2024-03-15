@@ -3,7 +3,7 @@ title: "NHLBI BioData Catalyst GWAS/TOPMed Interest Group"
 path: /events/2022-06-22/interest-groups/GWAS-TOPMed
 date: 2022-06-22
 time: 11:00 a.m. - 12:00 p.m. EDT
-display_date: Wednesday, June 22nd, 2022
+display_date: June 22, 2022
 location: "Zoom (no registration required)"
 url: https://renci.zoom.us/j/92679200774?pwd=VzhoQithMERENzVWakR2Ym5Rd0tydz09
 tags: [interest groups, GWAS, TOPMed]
