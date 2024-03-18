@@ -40,7 +40,7 @@ const PastEventListItem = ({event}) => {
   } = event.node.frontmatter;
 
   return (
-    <Grid container columns={16} key={title} style={{margin: '1rem 0'}} spacing={2} >
+    <Grid container columns={16} key={title} spacing={2} sx={{marginTop: '1rem'}}>
       <Grid xs={columns.xs.col1} sm={columns.sm.col1}>
         <Box sx={{display: 'flex', justifyContent: 'center', marginTop: '3px' }} >
           {bdcHosted && (
@@ -77,14 +77,14 @@ export const EventsList = ({ title, events }) => {
   return (
     <Module title={title} style={{marginTop: '2.5rem'}}>
       <Grid container columns={16} spacing={2}>
-        <Grid xs={columns.xs.col1} sm={columns.sm.col1}></Grid>
-        <Grid xs={columns.xs.col2} sm={columns.sm.col2}>
-          <Subheading center noMargin>Date</Subheading>
+        <Grid sm={columns.sm.col1}></Grid>
+        <Grid sm={columns.sm.col2}>
+          <Subheading left noMargin>Date</Subheading>
         </Grid>
-        <Grid xs={columns.xs.col3} sm={columns.sm.col3}>
-          <Subheading center noMargin>Event Page</Subheading>
+        <Grid sm={columns.sm.col3}>
+          <Subheading left noMargin>Event Page</Subheading>
         </Grid>
-        <Grid xs={columns.xs.col4} sm={columns.sm.col4}>
+        <Grid sm={columns.sm.col4}>
           <Subheading center noMargin>Materials</Subheading>
         </Grid>
       </Grid>
