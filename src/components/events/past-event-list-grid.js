@@ -3,13 +3,28 @@ import React from "react";
 import { graphql } from "gatsby";
 import { Link } from "../link";
 import { SEO } from "../seo";
-import { Title, Paragraph, Meta, Subsubheading } from "../typography";
+import { Title, Paragraph, Meta, Subsubheading, Subheading } from "../typography";
 import { ButtonLink } from "../buttons";
-import { Container as Grid, Row, Col } from "react-grid-system";
+// import { Container as Grid, Row, Col } from "react-grid-system";
 import { Module, PageContent } from "../layout";
 import BDCLogo from '../../images/favicon.png'
-import { Avatar, Divider, Box } from '@mui/material/';
+import { Avatar, Divider, Box, Grid } from '@mui/material/';
 import SourceOutlinedIcon from '@mui/icons-material/SourceOutlined';
+
+export const columns = {
+  "xs": {
+    "col1": 3,
+    "col2": 9,
+    "col3": 9,
+    "col4": 3
+  },
+  "sm": {
+    "col1": 1,
+    "col2": 4,
+    "col3": 9,
+    "col4": 2
+  }
+}
 
 const PastEventListItem = ({event}) => {
   const {
@@ -25,8 +40,8 @@ const PastEventListItem = ({event}) => {
   } = event.node.frontmatter;
 
   return (
-    <Row key={title} style={{margin: '1rem 0'}}>
-      <Col xs={3} sm={1}>
+    <Grid container columns={16} key={title} style={{margin: '1rem 0'}} spacing={2} >
+      <Grid xs={columns.xs.col1} sm={columns.sm.col1}>
         <Box sx={{display: 'flex', justifyContent: 'center', marginTop: '3px' }} >
           {bdcHosted && (
             <Avatar
@@ -38,58 +53,51 @@ const PastEventListItem = ({event}) => {
             />
           )}
         </Box>
-      </Col>
-      <Col xs={9} sm={2}>
-        <Meta style={{margin: 0, fontWeight: 500}}>{display_date ? display_date : date}</Meta>
-      </Col>
-      <Col xs={9} sm={6}>
-        <Subsubheading style={{margin: 0}}>
+      </Grid>
+      <Grid xs={columns.xs.col2} sm={columns.sm.col2}>
+        <Subsubheading style={{margin: 0, fontWeight: 500}}>{display_date ? display_date : date}</Subsubheading>
+      </Grid>
+      <Grid xs={columns.xs.col3} sm={columns.sm.col3}>
+        <Subsubheading noMargin style={{margin: 0}}>
           <Link to={path}>{title}</Link>
         </Subsubheading>
-      </Col>
-      <Col xs={3} sm={3}>
+      </Grid>
+      <Grid xs={columns.xs.col4} sm={columns.sm.col4}>
         <Box sx={{display: 'flex', justifyContent: 'center'}}>
           <Link to={forum_post} noIcon>
             <SourceOutlinedIcon sx={{fontSize: '1.2rem'}}/>
           </Link>
         </Box>
-      </Col>
-    </Row>
+      </Grid>
+    </Grid>
   )
 }
 
 export const EventsList = ({ title, events }) => {
   return (
-    <Module title={title}>
-      <Grid fluid>
-        <Row>
-          <Col sm={1}></Col>
-          <Col sm={2}>
-          <Paragraph left noMargin>
-              DATE
-            </Paragraph>
-          </Col>
-          <Col sm={6}>
-          <Paragraph left noMargin>
-              LINK TO EVENT PAGE
-            </Paragraph>
-          </Col>
-          <Col sm={3}>
-            <Paragraph center noMargin>
-              LINK TO MATERIALS
-            </Paragraph>
-          </Col>
-        </Row>
-        <Divider sx={{margin: '0.5rem 0 1rem'}}/>
-        {events.length ? (
-          events.map((event) => (<PastEventListItem event={event}/>))
-        ) : (
-          <Paragraph center>
-            There are no events to display at the moment. Please check back
-            soon!
-          </Paragraph>
-        )}
+    <Module title={title} style={{marginTop: '2.5rem'}}>
+      <Grid container columns={16} spacing={2}>
+        <Grid xs={columns.xs.col1} sm={columns.sm.col1}></Grid>
+        <Grid xs={columns.xs.col2} sm={columns.sm.col2}>
+          <Subheading center noMargin>Date</Subheading>
+        </Grid>
+        <Grid xs={columns.xs.col3} sm={columns.sm.col3}>
+          <Subheading center noMargin>Event Page</Subheading>
+        </Grid>
+        <Grid xs={columns.xs.col4} sm={columns.sm.col4}>
+          <Subheading center noMargin>Materials</Subheading>
+        </Grid>
       </Grid>
+      <Divider sx={{margin: '0 0 1rem'}}/>
+
+      {events.length ? (
+        events.map((event) => (<PastEventListItem event={event}/>))
+      ) : (
+        <Paragraph center>
+          There are no events to display at the moment. Please check back
+          soon!
+        </Paragraph>
+      )}
     </Module>
   );
 };
