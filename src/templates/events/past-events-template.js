@@ -33,16 +33,15 @@ export default ({ data, pageContext }) => {
       <Title>Event Archive</Title>
 
       <Module>
-        <Fragment>
+        <Paragraph>
           The following are past events supported by the BDC ecosystem. Items denoted with a <Avatar src={BDCLogo} sx={{
             width: 20, height: 20,
             border: '1px solid #c5cfe8',
             display: 'inline-block',
             margin: '0 0.2rem'
           }}/> {" "}indicate events hosted by BDC.
-        </Fragment>
-        <br/>
-        <br/>
+        </Paragraph>
+
         <EventsList events={events} />
       </Module>
 
