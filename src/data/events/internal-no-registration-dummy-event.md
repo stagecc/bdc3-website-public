@@ -1,11 +1,10 @@
 ---
-title: "BDC June Community Hours"
-bdcHosted: true
-path: /events/2024-06-13/community_hours
-date: 2024-06-13
-time: 1:00 - 2:00 pm ET
-display_date: June 13, 2024
-location: "Virtual via Zoom"
+title: "BDC Coffee Hours"
+path: /events/2024-08-13/community_hours
+date: 2024-08-13
+time: 10:00 ET
+display_date: August 13, 2024
+location: "Virtual via Zoom (registration not required)"
 forum_post: https://bdcatalyst.freshdesk.com/support/discussions/forums/60000252439
 registration_required: true
 tags: [community hours]

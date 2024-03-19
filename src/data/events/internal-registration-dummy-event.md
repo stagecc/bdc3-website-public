@@ -1,6 +1,5 @@
 ---
 title: "BDC Community Hours: Researcher Showcase with TOPMed Fellow Matthew Goodman, PhD"
-bdcHosted: true
 path: /events/2024-07-23/community_hours
 date: 2024-07-23
 time: 1:00 - 2:00 pm EST
