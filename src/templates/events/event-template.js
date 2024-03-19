@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import styled from "styled-components";
 import PropTypes from 'prop-types'
 import Img from "gatsby-image";
+import './module.css'
 // import { AnimateOnMount } from "../../components/anim"
 import { SEO } from "../../components/seo";
 import { graphql} from "gatsby";
@@ -92,49 +93,48 @@ EventInfoLine.propTypes = {
 const EventInfo = ({date, display_date, time, tags, url, registration_required, location, past }) => {
 return (
   <Fragment>
-    
     <Stack 
-            direction={{ xs: 'column', sm: 'row' }} 
-            gap={{ xs: 1, sm: 2, md: 4 }}
-            flex
-            sx={{width: '100%', marginBottom: '1rem'}}
-          >
-            <Stack direction="column" sx={{flex: 1}} gap={1}>
-              <Subheading noMargin left>Date and Time</Subheading>
-              <Grid container spacing={2}>
-                <Grid item>
-                  <CalendarTodayIcon sx={{fontSize:"1.2rem", margin: 0, color:"#21568a"}}/> 
-                </Grid>
-                <Grid item>
-                  <EventMeta> {display_date}</EventMeta>
-                  <EventMeta>{time}</EventMeta>
-                </Grid>
-              </Grid>
-            </Stack>
-            <Stack direction="column" sx={{flex: 1}} gap={1}>
-              <Subheading noMargin left>Location</Subheading>
-              <Grid container spacing={2}>
-                <Grid item>
-                  <LocationOnOutlinedIcon sx={{fontSize:"1.2rem", margin: 0, color:"#21568a"}}/> 
-                </Grid>
-                <Grid item>
-                  <Box>
-                    {
-                      (!past && url) ? (
-                        <EventMeta>
-                          {location}: <Link to={url}>Register Here</Link>
-                        </EventMeta>
-                      ) : (
-                        <EventMeta>
-                          {location}
-                        </EventMeta>
-                      )
-                    }
-                  </Box>
-                </Grid>
-              </Grid>
-            </Stack>
-          </Stack>
+      direction={{ xs: 'column', sm: 'row' }} 
+      gap={{ xs: 1, sm: 2, md: 4 }}
+      flex
+      sx={{width: '100%', marginBottom: '1rem'}}
+    >
+      <Stack direction="column" sx={{flex: 1}} gap={1}>
+        <Subheading noMargin left>Date and Time</Subheading>
+        <Grid container spacing={2}>
+          <Grid item>
+            <CalendarTodayIcon sx={{fontSize:"1.2rem", margin: 0, color:"#21568a"}}/> 
+          </Grid>
+          <Grid item>
+            <EventMeta> {display_date}</EventMeta>
+            <EventMeta>{time}</EventMeta>
+          </Grid>
+        </Grid>
+      </Stack>
+      <Stack direction="column" sx={{flex: 1}} gap={1}>
+        <Subheading noMargin left>Location</Subheading>
+        <Grid container spacing={2}>
+          <Grid item>
+            <LocationOnOutlinedIcon sx={{fontSize:"1.2rem", margin: 0, color:"#21568a"}}/> 
+          </Grid>
+          <Grid item>
+            <Box>
+              {
+                (!past && url) ? (
+                  <EventMeta>
+                    {location}: <Link to={url}>Register Here</Link>
+                  </EventMeta>
+                ) : (
+                  <EventMeta>
+                    {location}
+                  </EventMeta>
+                )
+              }
+            </Box>
+          </Grid>
+        </Grid>
+      </Stack>
+    </Stack>
 
     <EventInfoLine title="Tags">
       <InlineList2
