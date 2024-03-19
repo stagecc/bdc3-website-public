@@ -13,11 +13,10 @@ seo:
 ---
 *NHLBI-Supported Research at ASHG 2024*
 
-The National Heart, Lung, and Blood Institute (NHLBI) of the National Institutes of health (NIH) is participating in ASHG 2025, the American Society of Human Genetics Annual Meeting. Visit NHLBI at booth #1206 in the Exhibition Hall from Thursday, November 6 - Saturday, November 8.
+The National Heart, Lung, and Blood Institute (NHLBI) of the National Institutes of Health (NIH) is participating in ASHG 2024, the American Society of Human Genetics Annual Meeting. Visit NHLBI at booth #1206 in the Exhibition Hall from Thursday, November 6 - Saturday, November 8.
 
-Featured NHLBI-supported research can be found here.
+<a href="www.example.com">Featured NHLBI-supported research can be found here.</a><br/>
 (Note: Presentation times are subject to change. Please consult the official ASHG 2024 schedule.)
-
-
-
-
+<div class="external-event-button-container">
+<a href="www.example.com" class="external-event-button">View NHLBI Website for full details</a>
+</div>
