@@ -6,10 +6,12 @@ export const Subsubheading = styled.h4`
   line-height: 1.5;
   color: ${(props) => (props.light ? "#ccd" : "var(--color-blueberry)")};
   text-align: center;
+  ${(props) => props.left && "text-align: left;"}
   @media screen and (min-width: 767px) {
     text-align: left;
     ${(props) => props.center && "text-align: center;"}
     ${(props) => props.right && "text-align: right;"}
+    ${(props) => props.left && "text-align: left;"}
   }
 `;
 
