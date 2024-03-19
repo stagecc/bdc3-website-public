@@ -1,6 +1,5 @@
 ---
 title: "BDC Community Hours: Insights from Genome-Wide Association Studies: Linking Genetics and Imaging"
-bdcHosted: true
 path: /events/2024-02-28/community_hours
 date: 2024-02-28
 time: 1:00 - 2:00 pm ET

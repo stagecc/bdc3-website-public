@@ -1,6 +1,5 @@
 ---
 title: "BDC Community Hours: What to do While Waiting for Funding"
-bdcHosted: true
 path: /events/2023-04-26/community_hours
 date: 2023-04-26
 time: 1:00 - 2:00 pm EST

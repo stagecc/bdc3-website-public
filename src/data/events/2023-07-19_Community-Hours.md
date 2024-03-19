@@ -1,6 +1,5 @@
 ---
 title: "BDC Community Hours: Linking Phenotypic Data to Genomic Data Files"
-bdcHosted: true
 path: /events/2023-07-19/community_hours
 date: 2023-07-19
 time: 1:00 - 2:00 pm EST

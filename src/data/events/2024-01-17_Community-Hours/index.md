@@ -1,6 +1,5 @@
 ---
 title: "BDC Community Hours: Art of the Start"
-bdcHosted: true
 path: /events/2024-01-17/community_hours
 date: 2024-01-17
 time: 2:00 - 3:00 pm EST

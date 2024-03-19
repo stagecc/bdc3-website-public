@@ -1,6 +1,5 @@
 ---
 title: "BDC March Community Hours"
-bdcHosted: true
 path: /events/2024-03-13/community_hours
 date: 2024-03-13
 time: 1:00 - 2:00 pm ET

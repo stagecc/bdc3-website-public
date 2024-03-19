@@ -1,6 +1,5 @@
 ---
 title: "BDC Community Hours: BDC Researcher Showcase"
-bdcHosted: true
 path: /events/2023-06-21/community_hours
 date: 2023-06-21
 time: 1:00 - 2:00 pm EST
