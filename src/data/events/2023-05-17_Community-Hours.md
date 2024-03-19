@@ -1,6 +1,5 @@
 ---
 title: "BDC Community Hours: Newly Published Apps and Workflows"
-bdcHosted: true
 path: /events/2023-05-17/community_hours
 date: 2023-05-17
 time: 1:00 - 2:00 pm EST
