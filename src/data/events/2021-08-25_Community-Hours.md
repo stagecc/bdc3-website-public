@@ -3,7 +3,7 @@ title: "NHLBI BioData Catalyst Community Hours: A Tour of the Analysis Workspace
 path: /events/2022-08-25/community_hours
 date: 2021-08-25
 time: 1:00 - 2:00 pm EDT
-display_date: Wednesday, August 25, 2021
+display_date: August 25, 2021
 location: " "
 url: https://bit.ly/3ArDjuj
 forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000406463
