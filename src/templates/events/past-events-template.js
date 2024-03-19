@@ -73,8 +73,8 @@ export const allEventsQuery = graphql`
             url
             time
             location
-            bdcHosted
             forum_post
+            externalEvent
           }
         }
       }

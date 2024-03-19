@@ -87,7 +87,6 @@ export const allEventsQuery = graphql`
             url
             time
             location
-            bdcHosted
             externalEvent
           }
           excerpt(pruneLength: 280)
