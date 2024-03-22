@@ -5,22 +5,21 @@ date: 2024-03-13
 time: 1:00 - 2:00 pm ET
 display_date: Wednesday, March 13, 2024
 location: "Zoom"
-forum_post: https://bdcatalyst.freshdesk.com/support/discussions/forums/60000252439
+url: https://renci.zoom.us/webinar/register/2117093062319/WN_qWm4svX0T36KwiIAO-mORA
+forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000407674
 registration_required: true
 tags: [community hours]
 seo:
-  title: "BDC Community Hours: Insights from Genome-Wide Association Studies: Linking Genetics and Imaging"
+  title: "BDC March Community Hours"
   description:
 ---
 Join us on Wednesday, March 13 1pm ET for a data update on BDC with Sweta Ladwa, Chief, Scientific Solutions Delivery Branch, NHLBI.
 
-Even if you cannot attend the session live, you can still register have the session recording and slides sent to you post-event.
-
-Revisit this page to register, or join our community for an invitation emailed to your inbox.
-
+Even if you cannot attend the session live, you can still [register](https://renci.zoom.us/webinar/register/2117093062319/WN_qWm4svX0T36KwiIAO-mORA) to have the session recording and slides sent to you post-event.
 
 All users are invited to attend, whether you are new to BDC or have been using it for some time. If you are not yet registered for the ecosystem, we welcome you to [join our community](https://biodatacatalyst.nhlbi.nih.gov/contact/ecosystem/).
 
+Make sure to [register now](https://renci.zoom.us/webinar/register/2117093062319/WN_qWm4svX0T36KwiIAO-mORA) - we look forward to seeing you!
 
 ### What are Community Hours?
 

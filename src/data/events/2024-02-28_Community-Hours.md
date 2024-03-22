@@ -6,7 +6,7 @@ time: 1:00 - 2:00 pm ET
 display_date: Wednesday, February 28, 2024
 location: "Zoom"
 url: https://renci.zoom.us/webinar/register/8017053302720/WN_D9w_HA-XRM-zMCMIuCSVPQ
-forum_post: https://bdcatalyst.freshdesk.com/support/discussions/forums/60000252439
+forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000407673
 registration_required: true
 tags: [community hours]
 seo:
