@@ -27,9 +27,9 @@ const FellowsCohort3Page = () => {
           data-focused research problems.
         </Paragraph>
         <Paragraph>
-          Cohort III Fellowships began in March 2021 and ended in February 2022 
-          2021. The following content includes biographical information and 
-          research project details from that time.
+          Cohort III Fellowships began in March 2021 and ended in February 2022. 
+          The following content includes biographical information and research
+          project details from that time.
         </Paragraph>
       </section>
 
