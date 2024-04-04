@@ -23,9 +23,28 @@ For the study, Daya used whole genome genetics data collected by various studies
 
 Daya was also able to look more closely at the relationship between **human leukocyte** antigen (HLA) genes and levels of tIgE. Of the GWAS associations identified for elevated tIgE, the HLA locus is the most consistently associated. One of the aspects of her study was to use whole genome sequence data to determine which HLA alleles a person carries. This type of analysis is very costly in terms of cloud storage and in terms of computer and memory. Reflecting on her fellowship, Daya noted that without the data and analysis tools that BioData Catalyst provides, it would have been difficult to perform this type of research and it would have taken much longer. 
 
+<div class="quote">
+  <blockquote>
+    Reflecting on her fellowship, Daya noted that without the data and analysis tools that BioData Catalyst provides, it would have been difficult to perform this type of research and it would have taken much longer.
+    
+  </blockquote>
+</div>
+
 To date, Daya believes her study is the largest GWAS and HLA association study of tIgE focused on ancestrally diverse populations. Her team combined existing tIgE and genome-wide data from three large NIH–funded initiatives, including whole genome sequence (WGS) data from the NHLBI TOPMed program and GWAS array data from the CAAPA and the ADRN, and conducted a GWAS of tIgE in more than 20,000 subjects from 16 studies. For a complete breakdown of ancestry, disease group, and genotyping platform across studies Daya used, refer to [Figure 1: Clinical Characteristics](https://els-jbs-prod-cdn.jbs.elsevierhealth.com/cms/attachment/48ffd166-2b2a-4d17-9e6b-4df2653a35a1/gr1_lrg.jpg).
 
+<div class="blog-image-section half-width-image blog-image-right">
+  <img src='./clinical-characteristics.png' alt="Clinical Characteristics Figure">
+  <figcaption><span style="font-weight: 600">Figure 1. Clinical characteristics.</span> 1A) Breakdown of ancestry, disease group and genotyping platform across studies. 1B) Barplot of the total serum IgE IU/ml geometric mean by study, stratified by allergic/non-allergic group, colored by ancestry. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8665111/figure/F1/</figcaption>
+</div> 
+
 Daya’s research was supported in part by the NIH and the NHLBI through the [BioData Catalyst](https://biodatacatalyst.nhlbi.nih.gov/) Fellowship program, as well as by additional NHLBI and NIH/National Institute of Allergy and Infectious Diseases grants. Using BioData Catalyst, Daya had convenient access to large genetic datasets and could very easily run analysis using tools available on the platform, spending time on interpreting results rather than writing tools for analysis. For more custom analyses, she had the ability to write her own tools for the platform - the development of standardized analysis pipelines allowed for the re-use by other members of her team and the wider research community. “One thing that is very important in science is reproducible research,” she said. “Working in BioData Catalyst, I was confident that the analysis done could be easily reproduced by others.”
+
+<div class="short-quote quote-left">
+  <blockquote>
+    One thing that is very important in science is reproducible research.
+    <p class="attribution">Michelle Daya, Human Genetics Researcher</p>
+  </blockquote>
+</div>
 
 Rather than recommending individuals adopt BioData Catalyst, she encourages academic research institutions to adopt the platform and encourage their students, staff, and faculty to use it. Speaking on her time as a Fellow, she said “I think that federal research money would go much further if institutions adopt cloud computing. You only pay for what you use, and long term it is more cost effective. One of the major additional benefits to moving to BioData Catalyst specifically is that all of the technical details of moving analysis to the cloud have already been taken care of.”
 

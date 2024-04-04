@@ -176,7 +176,7 @@ const AuthorCard = ({ author }) => {
 const ContributorWrapper = styled.div(({ compact, partial }) => (`
 display: flex;
 flex-direction: column;
-max-width: ${compact ? '100%' : '400px'};
+max-width: ${compact ? '100%' : '350px'};
 float: left;
 justify-content: center;
 align-items: center;
@@ -192,7 +192,8 @@ const ContributorDetails = styled.div`
 flex: 1;
 padding: 0 1rem;
 text-align: left;
-font-size: 80%;
+font-size: 85%;
+line-height: 1.7;
 `;
 
 const ContributorCard = ({contributor, partial}) => {
@@ -213,7 +214,7 @@ const ContributorCard = ({contributor, partial}) => {
           {contributor.name && (
             <Fragment>
               <Heading style={{color: '#b33243', marginBottom: 0, paddingBottom: 0}}> About {contributor.name}</Heading>
-              <Subheading style={{color: '#444444', fontStyle: 'italic', fontWeight: '500'}}>Researcher, University of Colorado</Subheading>
+              <Subheading style={{color: '#444444', fontStyle: 'italic', fontWeight: '500', fontSize: '1rem'}}>Researcher, University of Colorado</Subheading>
               <Markdown src={contributor.description} style={{marginTop: "0"}}/>
             </Fragment>
           )}
