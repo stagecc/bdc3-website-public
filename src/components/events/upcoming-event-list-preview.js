@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import {
   Paragraph,
-  Subheading,
+  Heading,
   Meta
 } from "../typography";
 import { Link } from "../link";
@@ -30,7 +30,7 @@ const IconTitleSection = ({externalEvent, title, path}) => {
             <Grid item xs={0} sm={0} md={1}></Grid>
             <Grid item xs={16} sm={16} md={15}>
               <Link to={path}>
-                <Subheading left noMargin>{title}</Subheading>
+                <Heading left noMargin eventHeading>{title}</Heading>
               </Link>
             </Grid>
           </Fragment>
@@ -45,7 +45,7 @@ const IconTitleSection = ({externalEvent, title, path}) => {
             </Grid>
             <Grid item xs={14} sm={15} md={15}>
               <Link to={path}>
-                <Subheading left noMargin>{title}</Subheading>
+                <Heading left noMargin eventHeading>{title}</Heading>
               </Link>
             </Grid>
           </Fragment>
@@ -62,13 +62,13 @@ const MobileIconTitleSection = ({externalEvent, title, path}) => {
         externalEvent ? (
           <Grid item xs={16} sm={16}>
             <Link to={path}>
-              <Subheading left noMargin>{title}</Subheading>
+              <Heading left noMargin eventHeading>{title}</Heading>
             </Link>
           </Grid>
         ) : (
           <Grid item xs={16} sm={16} sx={{marginLeft: '1px'}}>
             <Link to={path}>
-              <Subheading left noMargin>{title}</Subheading>
+              <Heading left noMargin>{title}</Heading>
             </Link>
             <Grid container columns={24} sx={{}}>
               <Grid item xs={2} sm={1} sx={{display: 'flex', justifyContent: 'center'}}>

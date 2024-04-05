@@ -11,6 +11,7 @@ export const Subheading = styled.h3`
   text-align: center;
   ${props => props.left && "text-align: left;"}
   ${props => props.noMargin && "margin: 0;"}
+  ${props => props.eventHeading && "font-size: 13pt;"}
   @media screen and (min-width: 767px) {
     text-align: left;
     ${props => props.center && "text-align: center;"}
