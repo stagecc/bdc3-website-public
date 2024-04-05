@@ -37,7 +37,7 @@ const IconTitleSection = ({externalEvent, title, path}) => {
         ) : (
           <Fragment>
             <Grid item xs={2} sm={1} md={1} sx={{display: 'flex'}}>
-              <Avatar src={BDCLogo} sx={{
+              <Avatar src={BDCLogo} alt='BDC-hosted event' sx={{
                 width: 24, height: 24,
                 border: '1px solid #c5cfe8',
                 margin: '4px auto'
@@ -72,7 +72,7 @@ const MobileIconTitleSection = ({externalEvent, title, path}) => {
             </Link>
             <Grid container columns={24} sx={{}}>
               <Grid item xs={2} sm={1} sx={{display: 'flex', justifyContent: 'center'}}>
-                <Avatar src={BDCLogo} sx={{
+                <Avatar src={BDCLogo} alt="" sx={{
                   width: 20, height: 20,
                   border: '1px solid #c5cfe8',
                 }}/>

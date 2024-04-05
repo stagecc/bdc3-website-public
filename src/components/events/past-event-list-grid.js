@@ -69,6 +69,7 @@ const PastEventListItem = ({event}) => {
             {!externalEvent && (
               <Avatar
                 src={BDCLogo}
+                    alt='BDC-hosted event'
                 sx={{
                   width: 18, height: 18,
                   border: '1px solid #c5cfe8'

@@ -34,12 +34,16 @@ export default ({ data, pageContext }) => {
 
       <Module>
         <Paragraph>
-          The following are past events supported by the BDC ecosystem. Items denoted with a <Avatar src={BDCLogo} sx={{
-            width: 20, height: 20,
-            border: '1px solid #c5cfe8',
-            display: 'inline-block',
-            margin: '0 0.2rem'
-          }}/> {" "}indicate events hosted by BDC.
+          The following are past events supported by the BDC ecosystem. Items denoted with a <Avatar 
+            src={BDCLogo} 
+            alt='BDC logo' 
+            component="span" 
+            sx={{
+              width: 20, height: 20,
+              border: '1px solid #c5cfe8',
+              display: 'inline-block',
+              margin: '0 0.2rem'
+            }}/> {" "}indicate events hosted by BDC.
         </Paragraph>
 
         <EventsList events={events} />
