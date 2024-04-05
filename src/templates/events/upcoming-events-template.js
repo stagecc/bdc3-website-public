@@ -17,7 +17,7 @@ const EventsList = ({ title, events }) => {
     <Module title={title}>
       <br />
       {events.length ? (
-        events.map((event) => (<EventListPreview event={event}/>)
+        events.map((event) => (<EventListPreview event={event} key={event.node.frontmatter.title}/>)
         )
       ) : (
         <Paragraph center>

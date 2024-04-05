@@ -134,7 +134,7 @@ export const EventsList = ({ title, events }) => {
       <Divider sx={{margin: '0 0 1rem'}}/>
 
       {events.length ? (
-        events.map((event) => (<PastEventListItem event={event}/>))
+        events.map((event) => (<PastEventListItem event={event} key={`${event.node.frontmatter.title}-${event.node.frontmatter.date}`}/>))
       ) : (
         <Paragraph center>
           There are no events to display at the moment. Please check back
