@@ -42,7 +42,7 @@ const PastEventListItem = ({event}) => {
             {
               !externalEvent &&(
                 <Stack direction="row" spacing={3} sx={{}}>
-                  <Avatar src={BDCLogo} sx={{
+                  <Avatar src={BDCLogo} alt='BDC-hosted event' sx={{
                     width: 20, height: 20,
                     border: '1px solid #c5cfe8',
                   }}/>
