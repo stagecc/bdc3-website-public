@@ -14,11 +14,10 @@ import { Module, PageContent } from "../../components/layout";
 import { Visible } from "react-grid-system";
 import { HorizontalRule } from "../../components/horizontal-rule";
 import { ButtonCta } from "../../components/buttons";
-import { Markdown } from '../../components/markdown'
 import { Card, CardBody } from "../../components/card";
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
-import { Grid, Stack, Typography, Box, Divider } from '@mui/material'
+import { Grid, Stack, Box } from '@mui/material'
 
 const EventMeta = styled.p`
   margin-bottom: 0.5rem;

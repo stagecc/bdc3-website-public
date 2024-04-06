@@ -175,7 +175,6 @@ export const EventListPreview = ({event}) => {
   const {
     title,
     path,
-    date,
     display_date,
     time,
     location,

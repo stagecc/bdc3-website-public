@@ -1,11 +1,8 @@
 import React, {Fragment} from "react";
 // import { AnimateOnMount } from "../../components/anim";
-import { graphql } from "gatsby";
 import { Link } from "../link";
-import { SEO } from "../seo";
-import { Title, Paragraph, Meta, Subsubheading, Subheading, Heading } from "../typography";
+import {  Paragraph, Meta, Subheading, Heading } from "../typography";
 import { ButtonLink } from "../buttons";
-// import { Container as Grid, Row, Col } from "react-grid-system";
 import { Module, PageContent } from "../layout";
 import BDCLogo from '../../images/favicon.png'
 import { Avatar, Divider, Box, Grid, useMediaQuery, Stack, IconButton } from '@mui/material/';
@@ -18,9 +15,6 @@ const PastEventListItem = ({event}) => {
     path,
     date,
     display_date,
-    time,
-    location,
-    url,
     externalEvent,
     forum_post
   } = event.node.frontmatter;

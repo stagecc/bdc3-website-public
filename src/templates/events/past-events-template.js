@@ -1,11 +1,9 @@
-import React, { Fragment } from "react";
+import React from "react";
 // import { AnimateOnMount } from "../../components/anim";
 import { graphql } from "gatsby";
-import { Link } from "../../components/link";
 import { SEO } from "../../components/seo";
-import { Title, Paragraph, Meta } from "../../components/typography";
+import { Title, Paragraph } from "../../components/typography";
 import { ButtonLink } from "../../components/buttons";
-import { Container as Grid, Row, Col } from "react-grid-system";
 import { Module, PageContent } from "../../components/layout";
 import { EventsList } from "../../components/events/past-event-list-grid"
 import Avatar from '@mui/material/Avatar';
