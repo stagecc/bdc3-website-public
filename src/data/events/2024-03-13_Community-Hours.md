@@ -3,8 +3,8 @@ title: "BDC March Community Hours"
 path: /events/2024-03-13/community_hours
 date: 2024-03-13
 time: 1:00 - 2:00 pm ET
-display_date: Wednesday, March 13, 2024
-location: "Zoom"
+display_date: March 13, 2024
+location: "Virtual via Zoom"
 url: https://renci.zoom.us/webinar/register/2117093062319/WN_qWm4svX0T36KwiIAO-mORA
 forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000407674
 registration_required: true

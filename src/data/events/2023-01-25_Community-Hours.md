@@ -3,7 +3,7 @@ title: "NHLBI BioData Catalyst Community Hours: Finding Data"
 path: /events/2023-01-25/community_hours
 date: 2023-01-25
 time: 1:00 - 2:00 pm EST
-display_date: Wednesday, January 25, 2023
+display_date: January 25, 2023
 location: "Zoom"
 url: http://bit.ly/BDC-JanCommHours2023
 forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000407340

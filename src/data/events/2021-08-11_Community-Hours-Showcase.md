@@ -3,7 +3,7 @@ title: "NHLBI BioData Catalyst Community Hours: Exploring and Accessing Data"
 path: /events/2022-08-11/community_hours
 date: 2021-08-11
 time: 1:00 - 2:00 pm EDT
-display_date: Wednesday, August 11, 2021
+display_date: August 11, 2021
 location: " "
 url: https://bit.ly/3ijOkr9
 forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000406457

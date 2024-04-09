@@ -3,7 +3,7 @@ title: "BDC Community Hours: Linking Phenotypic Data to Genomic Data Files"
 path: /events/2023-07-19/community_hours
 date: 2023-07-19
 time: 1:00 - 2:00 pm EST
-display_date: Wednesday, July 19, 2023
+display_date: July 19, 2023
 location: "Zoom"
 url: https://bit.ly/BDC-July
 forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000407512

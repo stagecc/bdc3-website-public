@@ -1,5 +1,6 @@
 ---
 title: "May Community Hours: Gut microbiota and genetic associations with asthma and among US Hispanic/Latino adults"
+externalEvent: false
 path: /events/2024-05-22/community_hours
 date: 2024-05-22
 time: 1:00 - 2:00 pm EST
