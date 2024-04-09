@@ -1,0 +1,31 @@
+.external-event-button-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.external-event-button {
+  background-color: var(--color-crimson);
+  border-radius: 4px;
+  display: inline-block;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-crimson);
+  color: #fff;
+  padding: 1rem 2rem;
+  font-size: 100%;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  white-space: nowrap;
+  cursor: pointer;
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-align: center;
+  transition: filter 250ms;
+  filter: drop-shadow(0 0.25rem 0.5rem rgba(0, 0, 0, 0.2)) brightness(1);
+}
+
+.external-event-button:hover {
+  filter: drop-shadow(0 0.25rem 0.5rem rgba(0, 0, 0, 0.4)) brightness(1.25);
+}

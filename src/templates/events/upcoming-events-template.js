@@ -1,20 +1,15 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { graphql } from "gatsby";
-// import { AnimateOnMount } from "../../components/anim";
 import { SEO } from "../../components/seo";
 import {
   Title,
   Paragraph,
-  Subheading,
-  // Meta,
 } from "../../components/typography";
-import { Link } from "../../components/link";
 import { ButtonLink } from "../../components/buttons";
 import { Module, PageContent } from "../../components/layout";
-import { HorizontalRule } from "../../components/horizontal-rule"
-// import { LinkIcon } from "../../components/icons";
-// import { useWindowWidth } from "../../hooks";
-import { Grid } from '@mui/material'
+import { EventListPreview } from '../../components/events/upcoming-event-list-preview'
+import { Avatar } from '@mui/material/';
+import BDCLogo from '../../images/favicon.png'
 
 const EventsList = ({ title, events }) => {
   // const { isCompact } = useWindowWidth();
@@ -22,39 +17,8 @@ const EventsList = ({ title, events }) => {
     <Module title={title}>
       <br />
       {events.length ? (
-        events.map((event) => {
-          const { excerpt } = event.node;
-          const {
-            title,
-            path,
-            date,
-            display_date,
-          } = event.node.frontmatter;
-          return (
-            <Fragment key={title}>
-              <Grid container spacing={2}>
-                <Grid item sm={12} md={3}>
-                  <Paragraph left noMargin>
-                    {display_date ? display_date : date}
-                  </Paragraph>
-                </Grid>
-                <Grid item sm={12} md={9}>
-                  <Subheading left>
-                    <Link 
-                      to={path}
-                    >{title}</Link>
-                  </Subheading>
-                  <Paragraph style={{fontSize: '85%'}}>{excerpt} <Link to={path}>
-                    Read More
-                    </Link>
-                  </Paragraph>
-                </Grid>
-              </Grid>
-              <HorizontalRule />
-              <br/>
-            </Fragment>
-          );
-        })
+        events.map((event) => (<EventListPreview event={event} key={event.node.frontmatter.title}/>)
+        )
       ) : (
         <Paragraph center>
           There are no events to display at the moment. Please check back soon!
@@ -84,9 +48,18 @@ export default ({ data, pageContext }) => {
 
       <Title>Upcoming Events</Title>
 
-      <Paragraph>
-        The following is a list of upcoming events supported by the BDC ecosystem.
-      </Paragraph>
+        <Paragraph>
+          The following is a list of upcoming events supported by the BDC ecosystem. Items denoted with a <Avatar 
+            src={BDCLogo} 
+            alt='BDC logo' 
+            component="span" 
+            sx={{
+              width: 20, height: 20,
+              border: '1px solid #c5cfe8',
+              display: 'inline-block',
+              margin: '0 0.2rem'
+            }}/> {" "}indicate events hosted by BDC.
+        </Paragraph>
 
       <EventsList events={events} />
 
@@ -116,6 +89,9 @@ export const allEventsQuery = graphql`
             path
             title
             url
+            time
+            location
+            externalEvent
           }
           excerpt(pruneLength: 280)
         }

@@ -1,49 +1,13 @@
 import React from "react";
 // import { AnimateOnMount } from "../../components/anim";
 import { graphql } from "gatsby";
-import { Link } from "../../components/link";
 import { SEO } from "../../components/seo";
-import { Title, Paragraph, Meta } from "../../components/typography";
+import { Title, Paragraph } from "../../components/typography";
 import { ButtonLink } from "../../components/buttons";
-import { Container as Grid, Row, Col } from "react-grid-system";
 import { Module, PageContent } from "../../components/layout";
-
-const EventsList = ({ title, events }) => {
-  return (
-    <Module title={title}>
-      <Grid fluid>
-        {events.length ? (
-          events.map((event) => {
-            const {
-              title,
-              path,
-              date,
-              display_date,
-              // fabricHosted,
-            } = event.node.frontmatter;
-            return (
-              <Row key={title}>
-                <Col xs={12} sm={3}>
-                  <Meta>{display_date ? display_date : date}</Meta>
-                </Col>
-                <Col xs={12} sm={9}>
-                  <h5 style={{ lineHeight: 1.5 }}>
-                    <Link to={path}>{title}</Link>
-                  </h5>
-                </Col>
-              </Row>
-            );
-          })
-        ) : (
-          <Paragraph center>
-            There are no events to display at the moment. Please check back
-            soon!
-          </Paragraph>
-        )}
-      </Grid>
-    </Module>
-  );
-};
+import { EventsList } from "../../components/events/past-event-list-grid"
+import Avatar from '@mui/material/Avatar';
+import BDCLogo from '../../images/favicon.png'
 
 export default ({ data, pageContext }) => {
   const events = data.events.edges;
@@ -68,8 +32,18 @@ export default ({ data, pageContext }) => {
 
       <Module>
         <Paragraph>
-          The following are past events supported by the BDC ecosystem.
+          The following are past events supported by the BDC ecosystem. Items denoted with a <Avatar 
+            src={BDCLogo} 
+            alt='BDC logo' 
+            component="span" 
+            sx={{
+              width: 20, height: 20,
+              border: '1px solid #c5cfe8',
+              display: 'inline-block',
+              margin: '0 0.2rem'
+            }}/> {" "}indicate events hosted by BDC.
         </Paragraph>
+
         <EventsList events={events} />
       </Module>
 
@@ -98,7 +72,11 @@ export const allEventsQuery = graphql`
             display_date
             path
             title
-            tags
+            url
+            time
+            location
+            forum_post
+            externalEvent
           }
         }
       }

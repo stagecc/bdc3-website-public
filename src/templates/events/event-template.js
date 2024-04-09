@@ -2,19 +2,29 @@ import React, { Fragment } from "react";
 import styled from "styled-components";
 import PropTypes from 'prop-types'
 import Img from "gatsby-image";
+import './module.css'
 // import { AnimateOnMount } from "../../components/anim"
 import { SEO } from "../../components/seo";
 import { graphql} from "gatsby";
 import { Link } from "../../components/link";
-import { Title, Meta } from "../../components/typography";
+import { Title, Meta, Subheading } from "../../components/typography";
 import { InlineList2 } from "../../components/list";
 import { TagLink } from "../../components/link";
 import { Module, PageContent } from "../../components/layout";
 import { Visible } from "react-grid-system";
 import { HorizontalRule } from "../../components/horizontal-rule";
 import { ButtonCta } from "../../components/buttons";
-import { Markdown } from '../../components/markdown'
 import { Card, CardBody } from "../../components/card";
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import { Grid, Stack, Box } from '@mui/material'
+
+const EventMeta = styled.p`
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: 1;
+  margin-top: 0;
+`
 
 const EventMetadataWrapper = styled.div`
   ${Meta} {
@@ -79,35 +89,51 @@ EventInfoLine.propTypes = {
   title: PropTypes.string,
 }
 
-const EventInfo = ({date, display_date, time, tags, url, registration_required, past }) => {
+const EventInfo = ({date, display_date, time, tags, url, registration_required, location, past }) => {
 return (
   <Fragment>
-    
-    <EventInfoLine title="Date">
-      {display_date ? display_date : date}
-    </EventInfoLine>
-    
-    {time && <EventInfoLine title='Time'> {time} </EventInfoLine>}
-       
-    { (!url || past )? (
-      <EventInfoLine title="Location">
-        Zoom
-      </EventInfoLine>
-    ) : registration_required ? (
-      <EventInfoLine title="Location">
-        Zoom (
-        <Link to={url} >
-          Click Here to Register
-        </Link>)
-      </EventInfoLine>
-    ) : (
-      <EventInfoLine title="Location">
-        Zoom (
-        <Link to={url} >
-          Click Here to Join
-        </Link>)
-      </EventInfoLine>
-    )}
+    <Stack 
+      direction={{ xs: 'column', sm: 'row' }} 
+      gap={{ xs: 1, sm: 2, md: 4 }}
+      flex
+      sx={{width: '100%', marginBottom: '1rem'}}
+    >
+      <Stack direction="column" sx={{flex: 1}} gap={1}>
+        <Subheading noMargin left>Date and Time</Subheading>
+        <Grid container spacing={2}>
+          <Grid item>
+            <CalendarTodayIcon sx={{fontSize:"1.2rem", margin: 0, color:"#21568a"}}/> 
+          </Grid>
+          <Grid item>
+            <EventMeta> {display_date}</EventMeta>
+            <EventMeta>{time}</EventMeta>
+          </Grid>
+        </Grid>
+      </Stack>
+      <Stack direction="column" sx={{flex: 1}} gap={1}>
+        <Subheading noMargin left>Location</Subheading>
+        <Grid container spacing={2}>
+          <Grid item>
+            <LocationOnOutlinedIcon sx={{fontSize:"1.2rem", margin: 0, color:"#21568a"}}/> 
+          </Grid>
+          <Grid item>
+            <Box>
+              {
+                (!past && url) ? (
+                  <EventMeta>
+                    {location}: <Link to={url}>Register Here</Link>
+                  </EventMeta>
+                ) : (
+                  <EventMeta>
+                    {location}
+                  </EventMeta>
+                )
+              }
+            </Box>
+          </Grid>
+        </Grid>
+      </Stack>
+    </Stack>
 
     <EventInfoLine title="Tags">
       <InlineList2
@@ -139,6 +165,7 @@ export default ({ data, pageContext }) => {
     flyer,
     speakerImage,
     seo,
+    location
   } = frontmatter;
 
   const todaysDate = new Date();
@@ -181,9 +208,9 @@ export default ({ data, pageContext }) => {
                   tags={tags}
                   registration_required={registration_required}
                   past={past}
+                  location={location}
             />
           </EventMetadataWrapper>
-
           {( registration_required && !past && url) && (
             <div style={{ textAlign: "center", paddingTop: '2rem'}}>
               <ButtonCta href={url} target="_blank">
@@ -277,6 +304,7 @@ export const newsItemQuery = graphql`
         forum_post
         tags
         registration_required
+        location
         speakerImage {
           childImageSharp {
             fluid(maxWidth: 400) {

@@ -3,7 +3,7 @@ title: "BDC Community Hours: Sickle Cell Disease Datasets and Research"
 path: /events/2023-09-13/community_hours
 date: 2023-09-13
 time: 1:00 - 2:00 pm ET
-display_date: Wednesday, September 13, 2023
+display_date: September 13, 2023
 location: "Zoom"
 url: https://renci.zoom.us/meeting/register/tJcoc-2vrzouGdXVpgP_l5DCXVd1ONu-nNgj
 forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000407567

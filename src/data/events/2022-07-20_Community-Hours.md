@@ -3,7 +3,7 @@ title: "NHLBI BioData Catalyst Community Hours: Sickle Cell Disease Data and Res
 path: /events/2022-07-20/community_hours
 date: 2022-07-20
 time: 1:00 - 2:00 pm EDT
-display_date: Wednesday, July 20, 2022
+display_date: July 20, 2022
 location: "Zoom"
 url: https://renci.zoom.us/meeting/register/tJcoc-2vrzouGdXVpgP_l5DCXVd1ONu-nNgj
 forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000407032

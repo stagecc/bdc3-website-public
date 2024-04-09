@@ -3,7 +3,7 @@ title: "BDC Community Hours: What to do While Waiting for Funding"
 path: /events/2023-04-26/community_hours
 date: 2023-04-26
 time: 1:00 - 2:00 pm EST
-display_date: Wednesday, April 26, 2023
+display_date: April 26, 2023
 location: "Zoom"
 url: https://bit.ly/BDC-April
 forum_post: https://bdcatalyst.freshdesk.com/support/discussions/topics/60000407425
