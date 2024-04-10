@@ -1,4 +1,4 @@
-import React, { Fragment, useRef, useState } from "react";
+import React, { Fragment, useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { Paragraph } from "../typography";
@@ -20,6 +20,9 @@ import {
   CheckBoxLabel,
   // ErrorText,
 } from "./inputs";
+import { loadCaptchaEnginge, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 
 const FRESHDESK_USER_NAME = process.env.GATSBY_FRESHDESK_API_KEY;
 const FRESHDESK_PASSWORD = process.env.GATSBY_FRESHDESK_PASSWORD;
@@ -62,42 +65,63 @@ export const EcoSystemForm = (props) => {
   const [interest, setInterest] = useState("");
   const [wasSubmitted, setWasSubmitted] = useState(false);
   const [error, setError] = useState();
+  const [captchaValue, setCaptchaValue] = useState('');
+  useEffect(() => {
+    loadCaptchaEnginge(6);
+  }, []);
+
+  const handleCaptcha = (event) => {
+    if (validateCaptcha(captchaValue) == true) {
+      alert('Captcha Matched');
+    }
+
+    else {
+      alert('Captcha Does Not Match');
+    }
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if(honeypotFieldRef.current?.value !== "") return;
-    
-    const payload = {
-      name: name,
-      email: email,
-      custom_fields: {
-        era_commons_id: commons,
-        contacts_organization: organization,
-        contacts_field: field.toString(),
-        contacts_referral: referral,
-        contacts_other: other,
-        contacts_interest: interest,
-      },
-    };
+    if (validateCaptcha(captchaValue) == true) {
 
-    const submitContact = async () => {
-      setWasSubmitted(true);
-      await axios
-        .post(FRESHDESK_API_CREATE_CONTACT, payload, requestOptions)
-        .then((response) => {
-          if (![200, 201].includes(response.status)) {
-            throw new Error(`Unsuccessful HTTP response, ${response.status}`);
-          } else {
-            navigate("/contact/ecosuccess");
-          }
-        })
-        .catch((error) => {
-          console.log("error");
-          setError(error);
-        });
-    };
-    submitContact();
+      if (honeypotFieldRef.current?.value !== "") return;
+
+      const payload = {
+        name: name,
+        email: email,
+        custom_fields: {
+          era_commons_id: commons,
+          contacts_organization: organization,
+          contacts_field: field.toString(),
+          contacts_referral: referral,
+          contacts_other: other,
+          contacts_interest: interest,
+        },
+      };
+
+      const submitContact = async () => {
+        setWasSubmitted(true);
+        await axios
+          .post(FRESHDESK_API_CREATE_CONTACT, payload, requestOptions)
+          .then((response) => {
+            if (![200, 201].includes(response.status)) {
+              throw new Error(`Unsuccessful HTTP response, ${response.status}`);
+            } else {
+              navigate("/contact/ecosuccess");
+            }
+          })
+          .catch((error) => {
+            console.log("error");
+            setError(error);
+          });
+      };
+      submitContact();
+    }
+
+    else {
+      alert('Captcha Does Not Match');
+    }
   };
 
   const handleChangeName = (event) => setName(event.target.value);
@@ -320,7 +344,28 @@ export const EcoSystemForm = (props) => {
               />
             </FormControl>
             <br />
-            <SubmitButton>Submit</SubmitButton>
+            <div>
+              <LoadCanvasTemplateNoReload />
+              <Box
+                component="form"
+                sx={{
+                  '& > :not(style)': { m: 1, width: '25ch' },
+                }}
+                noValidate
+                autoComplete="off"
+              >
+                <TextField
+                  id="outlined-controlled"
+                  label="I'm not a robot"
+                  value={captchaValue}
+                  onInput={(event) => {
+                    setCaptchaValue(event.target.value);
+                  }}
+                />
+                <SubmitButton>Submit</SubmitButton>
+              </Box>
+            </div>
+            
           </Form>
         )}
         {wasSubmitted && error && <ErrorMessage />}
