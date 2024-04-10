@@ -180,3 +180,18 @@ This automated build and deployment are managed via the `buildspec.yml` file in 
     - [Build Specification Reference](https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html)
   - [Console](console.aws.amazon.com/)
   - [S3](https://aws.amazon.com/s3/)
+
+## SSL Cerificate Replacement:
+
+1. The SSL Certificate will be received through email.
+2. Once logged in to AWS, search AWS Certificate Manager.
+3. Click the white import button.
+4. Here you will paste the certificate body, private key, and the certificate chain. All which can be found either inside the SSL certificate you received or inside the directory received.
+5. Click Next. Your certificate if installed correctly will now be imported.
+6. Once your certificate is successfully imported you will need to manually put it into to use.
+7. Search for CloudFront in the search bar.
+8. Under Distributions, click on the ID of the distribution you want to update the SSL for.
+9. Under Settings click Edit.
+10. Where it says Custom SSL certificate click the dropdown and choose the newly updated SSL certificate.
+11. Click Save changes.
+12. The website should now be using the new SSL certificate.
