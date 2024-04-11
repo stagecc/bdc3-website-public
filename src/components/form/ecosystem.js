@@ -1,4 +1,4 @@
-import React, { Fragment, useRef, useState } from "react";
+import React, { Fragment, useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { Paragraph } from "../typography";
@@ -20,6 +20,9 @@ import {
   CheckBoxLabel,
   // ErrorText,
 } from "./inputs";
+import { loadCaptchaEnginge, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 
 const FRESHDESK_USER_NAME = process.env.GATSBY_FRESHDESK_API_KEY;
 const FRESHDESK_PASSWORD = process.env.GATSBY_FRESHDESK_PASSWORD;
@@ -58,46 +61,57 @@ export const EcoSystemForm = (props) => {
   const [organization, setOrganization] = useState("");
   const [referral, setReferralSource] = useState("");
   const [other, setOther] = useState("");
+  const [otherTextField, setOtherTextField] = useState(false);
   const [field, setField] = useState("");
   const [interest, setInterest] = useState("");
   const [wasSubmitted, setWasSubmitted] = useState(false);
   const [error, setError] = useState();
+  const [captchaValue, setCaptchaValue] = useState('');
+  useEffect(() => {
+    loadCaptchaEnginge(6);
+  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if(honeypotFieldRef.current?.value !== "") return;
-    
-    const payload = {
-      name: name,
-      email: email,
-      custom_fields: {
-        era_commons_id: commons,
-        contacts_organization: organization,
-        contacts_field: field.toString(),
-        contacts_referral: referral,
-        contacts_other: other,
-        contacts_interest: interest,
-      },
-    };
+    if (validateCaptcha(captchaValue) == true) {
 
-    const submitContact = async () => {
-      setWasSubmitted(true);
-      await axios
-        .post(FRESHDESK_API_CREATE_CONTACT, payload, requestOptions)
-        .then((response) => {
-          if (![200, 201].includes(response.status)) {
-            throw new Error(`Unsuccessful HTTP response, ${response.status}`);
-          } else {
-            navigate("/contact/ecosuccess");
-          }
-        })
-        .catch((error) => {
-          console.log("error");
-          setError(error);
-        });
-    };
-    submitContact();
+      if (honeypotFieldRef.current?.value !== "") return;
+
+      const payload = {
+        name: name,
+        email: email,
+        custom_fields: {
+          era_commons_id: commons,
+          contacts_organization: organization,
+          contacts_field: field.toString(),
+          contacts_referral: referral,
+          contacts_other: other,
+          contacts_interest: interest,
+        },
+      };
+
+      const submitContact = async () => {
+        setWasSubmitted(true);
+        await axios
+          .post(FRESHDESK_API_CREATE_CONTACT, payload, requestOptions)
+          .then((response) => {
+            if (![200, 201].includes(response.status)) {
+              throw new Error(`Unsuccessful HTTP response, ${response.status}`);
+            } else {
+              navigate("/contact/ecosuccess");
+            }
+          })
+          .catch((error) => {
+            setError(error);
+          });
+      };
+      submitContact();
+    }
+
+    else {
+      alert('Captcha Does Not Match');
+    }
   };
 
   const handleChangeName = (event) => setName(event.target.value);
@@ -111,6 +125,9 @@ export const EcoSystemForm = (props) => {
   };
 
   const handleChangeField = (event) => {
+    if ( event.target.value == "Other") {
+      setOtherTextField(true)
+    }
     setField([...field, event.target.value]);
   };
   const handleChangeInterest = (event) => setInterest(event.target.value);
@@ -123,7 +140,6 @@ export const EcoSystemForm = (props) => {
         </Paragraph>
         {!wasSubmitted && (
           <Form onSubmit={handleSubmit}>
-
             {/* fake field for detecting bots, not visible to user */}
             <FormControl fake>
               <label htmlFor="website">
@@ -153,11 +169,12 @@ export const EcoSystemForm = (props) => {
               />
             </FormControl>
             <FormControl>
-              <label htmlFor="commons">eRA Commons ID</label>
+              <label required htmlFor="commons">eRA Commons ID *</label>
               <TextInput
                 type="commons"
                 id="commons"
                 name="commons"
+                required
                 value={commons}
                 onChange={handleChangeCommons}
               />
@@ -272,23 +289,27 @@ export const EcoSystemForm = (props) => {
                 </CheckBoxLabel>
               </FieldSet>
             </FormControl>
+            {otherTextField && (
+              <FormControl>
+                <label required htmlFor="other">
+                  If Other, please provide a brief description. *
+                </label>
+                <TextArea
+                  id="other"
+                  required
+                  name="other"
+                  value={other}
+                  onChange={handleChangeOther}
+                  maxLength="3000"
+                />
+              </FormControl>
+            )}
             <FormControl>
-              <label htmlFor="other">
-                If Other, please provide a brief description.
-              </label>
-              <TextArea
-                id="other"
-                name="other"
-                value={other}
-                onChange={handleChangeOther}
-                maxLength="3000"
-              />
-            </FormControl>
-            <FormControl>
-              <label htmlFor="interest">
-                Why are you interested in NHLBI BDC?
+              <label required htmlFor="interest">
+                Why are you interested in BDC? *
               </label>
               <Select
+                required
                 id="interest"
                 name="interest"
                 value={interest}
@@ -303,6 +324,9 @@ export const EcoSystemForm = (props) => {
                 </Option>
                 <Option value="I am ready to start using the ecosystem!">
                   I am ready to start using the ecosystem!
+                </Option>
+                <Option value="Not sure / I am just exploring.">
+                  Not sure / I am just exploring.
                 </Option>
               </Select>
             </FormControl>
@@ -320,7 +344,28 @@ export const EcoSystemForm = (props) => {
               />
             </FormControl>
             <br />
-            <SubmitButton>Submit</SubmitButton>
+            <div>
+              <LoadCanvasTemplateNoReload />
+              <Box
+                component="form"
+                sx={{
+                  '& > :not(style)': { m: 1, width: '25ch' },
+                }}
+                noValidate
+                autoComplete="off"
+              >
+                <TextField
+                  id="outlined-controlled"
+                  label="I'm not a robot"
+                  value={captchaValue}
+                  onInput={(event) => {
+                    setCaptchaValue(event.target.value);
+                  }}
+                />
+                <SubmitButton>Submit</SubmitButton>
+              </Box>
+            </div>
+
           </Form>
         )}
         {wasSubmitted && error && <ErrorMessage />}
@@ -328,3 +373,4 @@ export const EcoSystemForm = (props) => {
     </Card>
   );
 };
+
