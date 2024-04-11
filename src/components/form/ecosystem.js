@@ -61,6 +61,7 @@ export const EcoSystemForm = (props) => {
   const [organization, setOrganization] = useState("");
   const [referral, setReferralSource] = useState("");
   const [other, setOther] = useState("");
+  const [otherTextField, setOtherTextField] = useState(false);
   const [field, setField] = useState("");
   const [interest, setInterest] = useState("");
   const [wasSubmitted, setWasSubmitted] = useState(false);
@@ -69,16 +70,6 @@ export const EcoSystemForm = (props) => {
   useEffect(() => {
     loadCaptchaEnginge(6);
   }, []);
-
-  const handleCaptcha = (event) => {
-    if (validateCaptcha(captchaValue) == true) {
-      alert('Captcha Matched');
-    }
-
-    else {
-      alert('Captcha Does Not Match');
-    }
-  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -112,7 +103,6 @@ export const EcoSystemForm = (props) => {
             }
           })
           .catch((error) => {
-            console.log("error");
             setError(error);
           });
       };
@@ -135,6 +125,9 @@ export const EcoSystemForm = (props) => {
   };
 
   const handleChangeField = (event) => {
+    if ( event.target.value == "Other") {
+      setOtherTextField(true)
+    }
     setField([...field, event.target.value]);
   };
   const handleChangeInterest = (event) => setInterest(event.target.value);
@@ -147,7 +140,6 @@ export const EcoSystemForm = (props) => {
         </Paragraph>
         {!wasSubmitted && (
           <Form onSubmit={handleSubmit}>
-
             {/* fake field for detecting bots, not visible to user */}
             <FormControl fake>
               <label htmlFor="website">
@@ -177,11 +169,12 @@ export const EcoSystemForm = (props) => {
               />
             </FormControl>
             <FormControl>
-              <label htmlFor="commons">eRA Commons ID</label>
+              <label required htmlFor="commons">eRA Commons ID *</label>
               <TextInput
                 type="commons"
                 id="commons"
                 name="commons"
+                required
                 value={commons}
                 onChange={handleChangeCommons}
               />
@@ -296,23 +289,27 @@ export const EcoSystemForm = (props) => {
                 </CheckBoxLabel>
               </FieldSet>
             </FormControl>
+            {otherTextField && (
+              <FormControl>
+                <label required htmlFor="other">
+                  If Other, please provide a brief description. *
+                </label>
+                <TextArea
+                  id="other"
+                  required
+                  name="other"
+                  value={other}
+                  onChange={handleChangeOther}
+                  maxLength="3000"
+                />
+              </FormControl>
+            )}
             <FormControl>
-              <label htmlFor="other">
-                If Other, please provide a brief description.
-              </label>
-              <TextArea
-                id="other"
-                name="other"
-                value={other}
-                onChange={handleChangeOther}
-                maxLength="3000"
-              />
-            </FormControl>
-            <FormControl>
-              <label htmlFor="interest">
-                Why are you interested in NHLBI BDC?
+              <label required htmlFor="interest">
+                Why are you interested in BDC? *
               </label>
               <Select
+                required
                 id="interest"
                 name="interest"
                 value={interest}
@@ -327,6 +324,9 @@ export const EcoSystemForm = (props) => {
                 </Option>
                 <Option value="I am ready to start using the ecosystem!">
                   I am ready to start using the ecosystem!
+                </Option>
+                <Option value="Not sure / I am just exploring.">
+                  Not sure / I am just exploring.
                 </Option>
               </Select>
             </FormControl>
@@ -365,7 +365,7 @@ export const EcoSystemForm = (props) => {
                 <SubmitButton>Submit</SubmitButton>
               </Box>
             </div>
-            
+
           </Form>
         )}
         {wasSubmitted && error && <ErrorMessage />}
