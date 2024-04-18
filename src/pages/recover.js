@@ -66,6 +66,13 @@ const RECOVERPage = () => {
                     </a>
                   }
                 />
+                <ListItem
+                  primary={
+                    <a href="#related-resources" onClick={() => navigate("#related-resources")}>
+                      Related Resources
+                    </a>
+                  }
+                />
               </List>
             </Col>
           </Visible>
@@ -449,6 +456,52 @@ const RECOVERPage = () => {
 
             </Section>
 
+            <Section id="related-resources">
+              <Heading>Related Resources</Heading>
+
+                <BulletedList>
+                  <ListItem
+                    primary={
+                      <Fragment>
+                        <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/nih-recover-release-notes">
+                          Read the RECOVER Release notes
+                        </Link>
+                      </Fragment>
+                    }
+                  />
+                  <ListItem
+                    primary={
+                      <Fragment>
+                        <Link to="https://biodatacatalyst.nhlbi.nih.gov/contact/ecosystem/">
+                          Join the Community
+                        </Link>{" "}to stay up-to-date on data availability and 
+                        releases, receive information about BDC events and 
+                        trainings, and get access to the <Link to="https://bdcatalyst.freshdesk.com/support/discussions">
+                          Community Forum
+                        </Link>.
+                      </Fragment>
+                    }
+                  />
+                  <ListItem
+                    primary={
+                      <Fragment>
+                        <Link to="https://biodatacatalyst.nhlbi.nih.gov/contact">
+                          Use the BDC Help Desk / Contact BDC
+                        </Link>
+                      </Fragment>
+                    }
+                  />
+                  <ListItem
+                    primary={
+                      <Fragment>
+                        <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation">
+                          Read BDC Documentation
+                        </Link>
+                      </Fragment>
+                    }
+                  />
+                </BulletedList>
+            </Section>
           </Col>
         </Row>
       </Grid>
