@@ -70,7 +70,7 @@ const RECOVERPage = () => {
           <Col xs={12} lg={9}>
             <Section id="about-recover-at-bdc">
               <Heading>About RECOVER and its Research Community</Heading>
-              
+
               <Paragraph>
                 <Link to="https://recovercovid.org/">
                   RECOVER
@@ -129,6 +129,36 @@ const RECOVERPage = () => {
 
             <Section id="recover-data-in-bdc">
               <Heading>RECOVER Data in BDC</Heading>
+
+              <Paragraph>
+                RECOVER researchers use BDC to analyze scientific data they 
+                collect from their research protocols. Once ready for broader 
+                availability, the data are made available in BDC to other 
+                authorized researchers. 
+              </Paragraph>
+
+              <Paragraph>
+                Currently, BDC hosts a subset of data from the RECOVER adult 
+                cohort study, representing over 14,600 participants who 
+                participated in over 92,350 study visits at 79 enrolling 
+                sites across the country.
+              </Paragraph>
+
+              <Paragraph>
+                To maintain the integrity of the data and ensure that participant 
+                privacy is protected, access to the data requires investigators 
+                to have <Link to="https://public.era.nih.gov/commonsplus/public/login.era?TARGET=https%3A%2F%2Fpublic.era.nih.gov%3A443%2Fcommons">
+                  NIH Electronic Research Administration (eRA)
+                </Link>{" "}credentials and receive permissions through the Data 
+                Access Request (DAR) process of the <Link to="https://www.ncbi.nlm.nih.gov/gap/">
+                  NIH’s Database of Genotypes and Phenotypes (dbGaP)
+                </Link>{" "}. 
+              </Paragraph>
+
+              <Paragraph>
+                Users may access aggregated study information about the data 
+                without going through an approval process.
+              </Paragraph>
 
             </Section>
 
