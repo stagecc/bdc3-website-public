@@ -366,6 +366,23 @@ const RECOVERPage = () => {
                             primary={
                               <Fragment>
                                 <em>BDC Powered by Seven Bridges (BDC-Seven Bridges)</em>
+                                <br/>
+                                <Link to="https://accounts.sb.biodatacatalyst.nhlbi.nih.gov/auth/register?visible=eraCommons">
+                                  Launch</Link> | <Link to="https://sb-biodatacatalyst.readme.io/docs/sign-up-for-biodata-catalyst-powered-by-seven-bridges">
+                                  Create an Account</Link> | <Link to="https://sb-biodatacatalyst.readme.io/docs/create-a-project">
+                                  Create a Project</Link>
+                              </Fragment>
+                            }
+                          />
+                          <ListItem
+                            primary={
+                              <Fragment>
+                                <em>BDC Powered by Terra (BDC-Terra)</em>
+                                <br/>
+                                <Link to="https://terra.biodatacatalyst.nhlbi.nih.gov/">
+                                  Launch</Link> | <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/analyze-data-1/terra/account-setup">
+                                  Create an Account</Link> | <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/analyze-data-1/terra/workspace-setup">
+                                  Create a Workspace</Link>
                               </Fragment>
                             }
                           />
@@ -373,7 +390,60 @@ const RECOVERPage = () => {
                       </Fragment>
                     }
                   />
-
+                  <ListItem
+                    primary={
+                      <Fragment>
+                        Once granted access to the dataset, bring it into your 
+                        workspace:
+                        <BulletedList>
+                          <ListItem
+                            primary={
+                              <Fragment>
+                                <Link to="https://sb-biodatacatalyst.readme.io/docs/import-data-from-biodata-catalyst-powered-by-gen3">
+                                  Import Data from <em>BDC-Gen3</em> to <em>BDC-Seven 
+                                  Bridges</em>
+                                </Link>
+                                <br/>
+                                <em>Note: On or about May 3, 2024, those who have 
+                                  been granted access to phs003463.v1.p1 will see 
+                                  it available in BDC-Seven Bridges workspaces 
+                                  without needing to import it.</em>
+                              </Fragment>
+                            }
+                          />
+                          <ListItem
+                            primary={
+                              <Fragment>
+                                <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/analyze-data-1/terra/bringing-data-into-a-workspace/bringing-in-data-from-gen3">
+                                  Import Data from <em>BDC-Gen3</em> to <em>BDC-Terra</em>
+                                </Link>
+                              </Fragment>
+                            }
+                          />
+                        </BulletedList>
+                      </Fragment>
+                    }
+                  />
+                  <ListItem
+                    primary={
+                      <Fragment>
+                        Researchers may request <Link to="https://biodatacatalyst.nhlbi.nih.gov/resources/cloud-credits">
+                          Pilot Funding ($500 in cloud credits)
+                        </Link>{" "}to test and evaluate BDC for their research needs.
+                      </Fragment>
+                    }
+                  />
+                  <ListItem
+                    primary={
+                      <Fragment>
+                        Use the RECOVER Author Acknowledgements and <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/community/citation-and-acknowledgement">
+                          BDC acknowledgment/citation
+                        </Link>{" "}language in publications and external 
+                        presentations resulting from analyses using RECOVER data 
+                        on BDC.
+                      </Fragment>
+                    }
+                  />
                 </OrderedList>
               </Subsection>
 
