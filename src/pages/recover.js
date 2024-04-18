@@ -23,6 +23,8 @@ const Section = styled.section`
   }
 `
 
+const Subsection = styled(Section)``
+
 const RECOVERPage = () => {
 
   return (
@@ -166,6 +168,214 @@ const RECOVERPage = () => {
 
             <Section id="get-started-with-recover-data">
               <Heading>Get Started with RECOVER Data in BDC</Heading>
+              <Subsection>
+                <BulletedList>
+                  <ListItem
+                    primary={
+                      <a href="#get-started-no-sign-in" onClick={() => navigate("#get-started-no-sign-in")}>
+                        I want to see the aggregate study information without 
+                        having to sign in.
+                      </a>
+                    }
+                  />
+                  <ListItem
+                    primary={
+                      <a href="#get-started-explore" onClick={() => navigate("#get-started-explore")}>
+                        I have an eRA Commons account and want to explore the 
+                        aggregate study information in preparation for requesting 
+                        individual-level data access.
+                      </a>
+                    }
+                  />
+                  <ListItem
+                    primary={
+                      <a href="#get-started-request-access" onClick={() => navigate("#get-started-request-access")}>
+                        I have an eRA Commons account. I want to request access 
+                        to the individual-level data and be prepared to analyze 
+                        it if granted access.
+                      </a>
+                    }
+                  />
+                </BulletedList>
+              </Subsection>
+
+              <br/>
+
+              <Subsection id="get-started-no-sign-in">
+                <Subheading eventHeading>
+                  I want to see the aggregate study information without having 
+                  to sign in.
+                </Subheading>
+
+                <Paragraph>
+                  Follow these steps to access aggregated study information (no 
+                  accounts or sign-in required):
+                </Paragraph>
+
+                <OrderedList>
+                  <ListItem
+                    primary={
+                      <Fragment>
+                        Go to this website: <Link to="https://openpicsure.biodatacatalyst.nhlbi.nih.gov/picsureui/">
+                          https://openpicsure.biodatacatalyst.nhlbi.nih.gov/picsureui/
+                        </Link>{" "} and type “RECOVER” into the search bar.
+                      </Fragment>
+                    }
+                  />
+                  <ListItem
+                    primary={
+                      <Fragment>
+                        On the new page, hover over the right side of the button 
+                        on the top left that says “RECOVER Adult (4876),” and 
+                        click on the plus sign. This limits the data search to 
+                        the RECOVER dataset.
+                      </Fragment>
+                    }
+                  />
+                  <ListItem
+                    primary={
+                      <Fragment>
+                        Delete “RECOVER” from the search bar, type a search term 
+                        of interest, like “fever,” and click the search button. 
+                        This limits the list of variable names to those that 
+                        include your search term. Each row represents a variable 
+                        that includes your search term, and the variable name 
+                        includes things like the visit number. 
+                      </Fragment>
+                    }
+                  />
+                  <ListItem
+                    primary={
+                      <Fragment>
+                        Use the filter icons to the right on each row to see the 
+                        available values associated with the variable and select 
+                        those you want to include. Then click on the “Add Filter 
+                        to Query.”
+                      </Fragment>
+                    }
+                  />
+                  <ListItem
+                    primary={
+                      <Fragment>
+                        Look in the results panel to see the total number of 
+                        RECOVER participants whose data is currently in BDC that 
+                        aligns with the values you selected.
+                      </Fragment>
+                    }
+                  />
+                </OrderedList>
+
+                <Paragraph>
+                  <Link to="https://openpicsure.biodatacatalyst.nhlbi.nih.gov/picsureui/openAccess">
+                    A brief tour of this functionality is available here
+                  </Link>.
+                </Paragraph>
+              </Subsection>
+              
+              <br/>
+
+              <Subsection id="get-started-explore">
+                <Subheading eventHeading >
+                  I have an eRA Commons account and want to explore the 
+                  aggregate study information in preparation for requesting 
+                  individual-level data access.
+                </Subheading>
+
+                <Paragraph>
+                  Follow these steps to use your eRA Commons ID to explore the 
+                  aggregate study information in preparation for requesting 
+                  individual-level data access:
+                </Paragraph>
+
+                <OrderedList>
+                  <ListItem
+                    primary={
+                      <Fragment>
+                        Go to this website: <Link to="https://picsure.biodatacatalyst.nhlbi.nih.gov/psamaui/login">
+                          https://picsure.biodatacatalyst.nhlbi.nih.gov/psamaui/login
+                        </Link>{" "} and select Log in with eRA Commons. Log in 
+                        using your eRA Commons ID and agree to authorize Gen3 to 
+                        authorize your access.
+                      </Fragment>
+                    }
+                  />
+                  <ListItem
+                    primary={
+                      <Fragment>
+                        Find variables of interest (<Link to="https://www.youtube.com/watch?v=UVPTwAbwtlo&list=PLJ6YccH8TEufZ5L-ctxzFF7vuZRLVacKw&index=2">
+                          video tutorial
+                        </Link>)
+                      </Fragment>
+                    }
+                  />
+                  <ListItem
+                    primary={
+                      <Fragment>
+                        Filter on one or more variables (<Link to="https://www.youtube.com/watch?v=-YWo-_lFpTA&list=PLJ6YccH8TEufZ5L-ctxzFF7vuZRLVacKw&index=3">
+                          video tutorial
+                        </Link>) and edit variable filters (<Link to="https://www.youtube.com/watch?v=QO-KWrWfdpw&list=PLJ6YccH8TEufZ5L-ctxzFF7vuZRLVacKw&index=4">
+                          video tutorial
+                        </Link>)
+                      </Fragment>
+                    }
+                  />
+                </OrderedList>
+              </Subsection>
+
+              <Subsection id="get-started-request-access">
+                <Subheading eventHeading >
+                  I have an eRA Commons account. I want to request access to the 
+                  individual-level data and be prepared to analyze it if granted 
+                  access.
+                
+                </Subheading>
+
+                <OrderedList>
+                  <ListItem
+                    primary={
+                      <Fragment>
+                        <Link to="https://dbgap.ncbi.nlm.nih.gov/aa/wga.cgi?page=login">
+                          Submit a data access request (DAR) in the NIH Database 
+                          of Genotypes and Phenotypes (dbGaP)
+                        </Link>{" "} using the phs number for each dataset of 
+                        interest. Currently available RECOVER datasets include the 
+                        following:
+                        <BulletedList>
+                          <ListItem
+                            primary={
+                              <Fragment>
+                                <Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs003463.v1.p1">
+                                  NIH RECOVER: A Multi-Site Observational Study of 
+                                  Post-Acute Sequelae of SARS-CoV-2 Infection in 
+                                  Adults; dbGaP Study Accession: phs003463.v1.p1
+                                </Link>
+                              </Fragment>
+                            }
+                          />
+                        </BulletedList>
+                      </Fragment>
+                    }
+                  />
+                  <ListItem
+                    primary={
+                      <Fragment>
+                        Create an account in a BDC analysis platform (if you do 
+                        not already have one):
+                        <BulletedList>
+                          <ListItem
+                            primary={
+                              <Fragment>
+                                <em>BDC Powered by Seven Bridges (BDC-Seven Bridges)</em>
+                              </Fragment>
+                            }
+                          />
+                        </BulletedList>
+                      </Fragment>
+                    }
+                  />
+
+                </OrderedList>
+              </Subsection>
 
             </Section>
 
