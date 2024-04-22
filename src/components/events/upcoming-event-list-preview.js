@@ -19,72 +19,59 @@ const EventMeta = styled(Paragraph)`
   line-height: 1;
   margin-top: 0;
 `
-
 const IconTitleSection = ({externalEvent, title, path}) => {
-  return (
+  return externalEvent ? (
     <Fragment>
-      {
-        externalEvent ? (
-          <Fragment>
-            {/* Empty grid placeholder section */}
-            <Grid item xs={0} sm={0} md={1}></Grid>
-            <Grid item xs={16} sm={16} md={15}>
-              <Link to={path}>
-                <Heading left noMargin eventHeading>{title}</Heading>
-              </Link>
-            </Grid>
-          </Fragment>
-        ) : (
-          <Fragment>
-            <Grid item xs={2} sm={1} md={1} sx={{display: 'flex'}}>
-              <Avatar src={BDCLogo} alt='BDC-hosted event' sx={{
-                width: 24, height: 24,
-                border: '1px solid #c5cfe8',
-                margin: '4px auto'
-              }}/>
-            </Grid>
-            <Grid item xs={14} sm={15} md={15}>
-              <Link to={path}>
-                <Heading left noMargin eventHeading>{title}</Heading>
-              </Link>
-            </Grid>
-          </Fragment>
-        )
-      }
+      {/* Empty grid placeholder section */}
+      <Grid item xs={0} sm={0} md={1}></Grid>
+      <Grid item xs={16} sm={16} md={15}>
+        <Link to={path}>
+          <Heading left noMargin eventHeading>{title}</Heading>
+        </Link>
+      </Grid>
+    </Fragment>
+  ) : (
+    <Fragment>
+      <Grid item xs={2} sm={1} md={1} sx={{display: 'flex'}}>
+        <Avatar src={BDCLogo} alt='BDC-hosted event' sx={{
+          width: 24, height: 24,
+          border: '1px solid #c5cfe8',
+          margin: '4px auto'
+        }}/>
+      </Grid>
+      <Grid item xs={14} sm={15} md={15}>
+        <Link to={path}>
+          <Heading left noMargin eventHeading>{title}</Heading>
+        </Link>
+      </Grid>
     </Fragment>
   )
 }
 
 const MobileIconTitleSection = ({externalEvent, title, path}) => {
-  return (
-    <Fragment>
-      {
-        externalEvent ? (
-          <Grid item xs={16} sm={16}>
-            <Link to={path}>
-              <Heading left noMargin eventHeading>{title}</Heading>
-            </Link>
-          </Grid>
-        ) : (
-          <Grid item xs={16} sm={16} sx={{marginLeft: '1px'}}>
-            <Link to={path}>
-              <Heading left noMargin>{title}</Heading>
-            </Link>
-            <Grid container columns={24} sx={{}}>
-              <Grid item xs={2} sm={1} sx={{display: 'flex', justifyContent: 'center'}}>
-                <Avatar src={BDCLogo} alt="" sx={{
-                  width: 20, height: 20,
-                  border: '1px solid #c5cfe8',
-                }}/>
-              </Grid>
-              <Grid item xs={22} sm={11}>
-                <Meta noMargin>{" "}hosted by BDC</Meta>
-              </Grid>
-            </Grid>
-          </Grid>
-        )
-      }
-    </Fragment>
+  return externalEvent ? (
+    <Grid item xs={16} sm={16}>
+      <Link to={path}>
+        <Heading left noMargin eventHeading>{title}</Heading>
+      </Link>
+    </Grid>
+  ) : (
+    <Grid item xs={16} sm={16} sx={{marginLeft: '1px'}}>
+      <Link to={path}>
+        <Heading left noMargin>{title}</Heading>
+      </Link>
+      <Grid container columns={24} sx={{}}>
+        <Grid item xs={2} sm={1} sx={{display: 'flex', justifyContent: 'center'}}>
+          <Avatar src={BDCLogo} alt="" sx={{
+            width: 20, height: 20,
+            border: '1px solid #c5cfe8',
+          }}/>
+        </Grid>
+        <Grid item xs={22} sm={11}>
+          <Meta noMargin>{" "}hosted by BDC</Meta>
+        </Grid>
+      </Grid>
+    </Grid>
   )
 }
 
@@ -94,8 +81,6 @@ const DateTimeLocationSection = ({display_date, time, location, url, xs, sm, md}
 
   return (
     <Grid item xs={xs} sm={sm} md={md} sx={{marginTop: '0.5rem'}}>
-
-      {/*Date/time and location section */}
       <Grid container columns={24}>
         <Grid item xs={2} sm={1} sx={{display: 'flex', justifyContent: 'center'}}>
           <CalendarTodayIcon sx={{fontSize:"0.9rem", margin: 0, color: '#21568a'}}/> 
@@ -125,11 +110,8 @@ const DateTimeLocationSection = ({display_date, time, location, url, xs, sm, md}
   )
 }
 const MobileDateTimeLocationSection = ({display_date, time, location, url, xs, sm, md}) => {
-
   return (
     <Grid item xs={xs} sm={sm} md={md} sx={{marginTop: '0.5rem'}}>
-
-      {/*Date/time and location section */}
       <Grid container columns={24}>
         <Grid item xs={2} sm={1} sx={{display: 'flex', justifyContent: 'center'}}>
           <CalendarTodayIcon sx={{fontSize:"0.9rem", margin: 0, color: '#21568a'}}/> 
@@ -159,7 +141,6 @@ const MobileDateTimeLocationSection = ({display_date, time, location, url, xs, s
 }
 
 const DescriptionSection = ({excerpt, path, xs, sm, md}) => {
-
   return (
     <Grid item xs={xs} sm={sm} md={md}>
       {/*Event excerpt section and link to read more */}
@@ -224,5 +205,3 @@ export const EventListPreview = ({event}) => {
     </Fragment>
   )
 }
-
-
