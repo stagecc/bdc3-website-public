@@ -307,7 +307,7 @@ const RECOVERPage = () => {
                   </Paragraph>
                 </AccordionDetails>
               </Accordion>
-              <Accordion
+              {/* <Accordion
                 expanded={expanded === 'panel2'} 
                 onChange={handleChange('panel2')}
               >
@@ -363,7 +363,7 @@ const RECOVERPage = () => {
                     />
                   </OrderedList>
                 </AccordionDetails>
-              </Accordion>
+              </Accordion> */}
               <Accordion
                 expanded={expanded === 'panel3'} 
                 onChange={handleChange('panel3')}
