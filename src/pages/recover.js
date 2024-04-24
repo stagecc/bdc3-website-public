@@ -464,7 +464,7 @@ const RECOVERPage = () => {
                   <ListItem
                     primary={
                       <Fragment>
-                        Researchers may request <Link to="https://biodatacatalyst.nhlbi.nih.gov/resources/cloud-credits">
+                        Researchers may request <Link to="/resources/cloud-credits">
                           Pilot Funding ($500 in cloud credits)
                         </Link>{" "}for their research needs.
                       </Fragment>
@@ -504,7 +504,7 @@ const RECOVERPage = () => {
                   <ListItem
                     primary={
                       <Fragment>
-                        <Link to="https://biodatacatalyst.nhlbi.nih.gov/contact/ecosystem/">
+                        <Link to="/contact/ecosystem/">
                           Join the Community
                         </Link>{" "}to stay up-to-date on data availability and 
                         releases, receive information about BDC events and 
@@ -517,7 +517,7 @@ const RECOVERPage = () => {
                   <ListItem
                     primary={
                       <Fragment>
-                        <Link to="https://biodatacatalyst.nhlbi.nih.gov/contact">
+                        <Link to="/contact">
                           Use the BDC Help Desk / Contact BDC
                         </Link>
                       </Fragment>
