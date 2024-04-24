@@ -60,9 +60,9 @@ const SecondaryText = styled.span`
   font-size: 90%;
 `;
 
-export const ListItem = ({ primary, secondary }) => {
+export const ListItem = ({ primary, secondary, ...props }) => {
   return (
-    <ListItemContainer>
+    <ListItemContainer {...props}>
       <PrimaryText>{primary}</PrimaryText>
       {secondary && <SecondaryText>{secondary}</SecondaryText>}
     </ListItemContainer>
@@ -115,3 +115,7 @@ InlineList.propTypes = {
   // separator: PropTypes.string.isRequired,
   noItemsIndicator: PropTypes.any,
 };
+
+export const StickyMenuItem = styled(ListItem)`
+  margin-bottom: 1.75rem;
+`
