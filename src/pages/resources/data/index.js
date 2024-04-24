@@ -56,6 +56,22 @@ const DataPage = ({ data, location }) => {
         <ListItem
           primary={
             <span>
+              Long COVID data: Researching COVID to Enhance Recovery (RECOVER)
+              <BulletedList>
+                <ListItem
+                  primary={
+                    <span>
+                      <Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002362.v1.p1">Subset of the Adult Cohort Study</Link>
+                    </span>
+                  }
+                />
+              </BulletedList>
+            </span>
+          }
+        />
+        <ListItem
+          primary={
+            <span>
               COVID-19 data (
               <Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002694.v1.p1">ACTIV4a</Link>,{' '}
               <Link to="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002710.v1.p1">ACTIV4b</Link>,{' '}
