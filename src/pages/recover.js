@@ -21,13 +21,13 @@ const Section = styled.section`
     display: block; 
     position: relative;
     width: 0;
-    height: 120px;
-    margin-top: -120px;
+    height: 170px;
+    margin-top: -170px;
   }
-
   &:first-of-type {
-    margin-top: -140px;
+    margin-top: -170px;
   }
+  margin-bottom: 1.5rem;
 `
 const Accordion = MUIStyled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -308,15 +308,16 @@ const RECOVERPage = () => {
                       }
                     />
                   </OrderedList>
-
+                  <br/>
                   <Paragraph noMargin>
                     <Link to="https://openpicsure.biodatacatalyst.nhlbi.nih.gov/picsureui/openAccess">
                       A brief tour of this functionality is available here
                     </Link>.
                   </Paragraph>
+                  <br/>
                   <Paragraph>
                   The following video tutorials for this functionality are available:
-                  <BulletedList dense>
+                  <BulletedList dense style={{paddingLeft: '1rem'}}>
                     <ListItem
                       dense
                       primary={
