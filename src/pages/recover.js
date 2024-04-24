@@ -65,8 +65,6 @@ const AccordionDetails = MUIStyled(MuiAccordionDetails)(({ theme }) => ({
   fontSize: '85%'
 }));
 
-const Subsection = styled(Section)``
-
 const AccordionSubheading = styled(Subheading)`
   font-size: 0.9rem;
   margin-bottom: 0;
