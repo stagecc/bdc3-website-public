@@ -61,8 +61,8 @@ const RECOVERPage = () => {
                 />
                 <ListItem
                   primary={
-                    <a href="#get-started-with-recover-data" onClick={() => navigate("#get-started-with-recover-data")}>
-                      Get Started with RECOVER Data in BDC
+                    <a href="#get-started" onClick={() => navigate("#get-started")}>
+                      Get Started
                     </a>
                   }
                 />
@@ -173,33 +173,25 @@ const RECOVERPage = () => {
 
             <br />
 
-            <Section id="get-started-with-recover-data">
+            <Section id="get-started">
               <Heading>Get Started with RECOVER Data in BDC</Heading>
               <Subsection>
+                <Paragraph>Select one:</Paragraph>
                 <BulletedList>
                   <ListItem
                     primary={
                       <a href="#get-started-no-sign-in" onClick={() => navigate("#get-started-no-sign-in")}>
-                        I want to see the aggregate study information without 
-                        having to sign in.
-                      </a>
-                    }
-                  />
-                  <ListItem
-                    primary={
-                      <a href="#get-started-explore" onClick={() => navigate("#get-started-explore")}>
-                        I have an eRA Commons account and want to explore the 
-                        aggregate study information in preparation for requesting 
-                        individual-level data access.
+                        I want to explore the aggregate study information (no 
+                        login required).
                       </a>
                     }
                   />
                   <ListItem
                     primary={
                       <a href="#get-started-request-access" onClick={() => navigate("#get-started-request-access")}>
-                        I have an eRA Commons account. I want to request access 
-                        to the individual-level data and be prepared to analyze 
-                        it if granted access.
+                        I want to request access to the individual-level data and be 
+                        prepared to analyze it if granted access (eRA Commons login 
+                        required)
                       </a>
                     }
                   />
@@ -210,32 +202,40 @@ const RECOVERPage = () => {
 
               <Subsection id="get-started-no-sign-in">
                 <Subheading eventHeading>
-                  I want to see the aggregate study information without having 
-                  to sign in.
+                  I want to explore the aggregate study information (no login 
+                  required).
                 </Subheading>
 
                 <Paragraph>
-                  Follow these steps to access aggregated study information (no 
-                  accounts or sign-in required):
+                  Follow these steps to access aggregated study information:
                 </Paragraph>
 
                 <OrderedList>
                   <ListItem
                     primary={
                       <Fragment>
-                        Go to this website: <Link to="https://openpicsure.biodatacatalyst.nhlbi.nih.gov/picsureui/">
+                        Start by going to this website: <Link to="https://openpicsure.biodatacatalyst.nhlbi.nih.gov/picsureui/">
                           https://openpicsure.biodatacatalyst.nhlbi.nih.gov/picsureui/
-                        </Link>{" "} and type “RECOVER” into the search bar.
+                        </Link>.
                       </Fragment>
                     }
                   />
                   <ListItem
                     primary={
                       <Fragment>
-                        On the new page, hover over the right side of the button 
-                        on the top left that says “RECOVER Adult (4876),” and 
-                        click on the plus sign. This limits the data search to 
-                        the RECOVER dataset.
+                        Type “RECOVER” into the search bar, then click “Search”. 
+                      </Fragment>
+                    }
+                  />
+                  <ListItem
+                    primary={
+                      <Fragment>
+                        On the page that displays, hover over the button in the 
+                        “Filter Search Results by Study Tags” panel that says 
+                        “RECOVER_Adult,” then click on the plus sign. This will 
+                        limit the data search to the RECOVER dataset. The number 
+                        that appears in the parentheses after “RECOVER_Adult” 
+                        refers to the number of variables associated with the dataset.
                       </Fragment>
                     }
                   />
@@ -243,30 +243,29 @@ const RECOVERPage = () => {
                     primary={
                       <Fragment>
                         Delete “RECOVER” from the search bar, type a search term 
-                        of interest, like “fever,” and click the search button. 
-                        This limits the list of variable names to those that 
-                        include your search term. Each row represents a variable 
-                        that includes your search term, and the variable name 
-                        includes things like the visit number. 
+                        of interest, such as “fever,” and click Search. This will 
+                        limit the results to any variable that includes your term 
+                        of interest in the dataset. Each row represents a variable 
+                        that includes your search term. The variable name includes 
+                        things like the visit number.
                       </Fragment>
                     }
                   />
                   <ListItem
                     primary={
                       <Fragment>
-                        Use the filter icons to the right on each row to see the 
-                        available values associated with the variable and select 
-                        those you want to include. Then click on the “Add Filter 
-                        to Query.”
+                        In a row’s “Actions” column, click the filter icon to view 
+                        the available values associated with the variable. Select 
+                        those you want to include and click “Add Filter to Query.”
                       </Fragment>
                     }
                   />
                   <ListItem
                     primary={
                       <Fragment>
-                        Look in the results panel to see the total number of 
-                        RECOVER participants whose data is currently in BDC that 
-                        aligns with the values you selected.
+                        In the “Results Panel,” the “Data Summary” will display 
+                        the total number of RECOVER participants whose data is 
+                        currently in BDC that aligns with the values you selected.
                       </Fragment>
                     }
                   />
@@ -277,64 +276,41 @@ const RECOVERPage = () => {
                     A brief tour of this functionality is available here
                   </Link>.
                 </Paragraph>
+
+                <Paragraph>
+                  The following video tutorials for this functionality are available:
+                  <BulletedList>
+                    <ListItem
+                      primary={
+                        <Fragment>
+                          Find variables of interest (<Link to="https://www.youtube.com/watch?v=UVPTwAbwtlo&list=PLJ6YccH8TEufZ5L-ctxzFF7vuZRLVacKw&index=2">
+                            video tutorial
+                          </Link>)
+                        </Fragment>
+                      }
+                    />
+                    <ListItem
+                      primary={
+                        <Fragment>
+                          Filter on one or more variables (<Link to="https://www.youtube.com/watch?v=-YWo-_lFpTA&list=PLJ6YccH8TEufZ5L-ctxzFF7vuZRLVacKw&index=3">
+                            video tutorial
+                          </Link>) and edit variable filters (<Link to="https://www.youtube.com/watch?v=QO-KWrWfdpw&list=PLJ6YccH8TEufZ5L-ctxzFF7vuZRLVacKw&index=4">
+                            video tutorial
+                          </Link>)
+                        </Fragment>
+                      }
+                    />
+                  </BulletedList>
+                  </Paragraph>
               </Subsection>
               
               <br/>
 
-              <Subsection id="get-started-explore">
-                <Subheading eventHeading >
-                  I have an eRA Commons account and want to explore the 
-                  aggregate study information in preparation for requesting 
-                  individual-level data access.
-                </Subheading>
-
-                <Paragraph>
-                  Follow these steps to use your eRA Commons ID to explore the 
-                  aggregate study information in preparation for requesting 
-                  individual-level data access:
-                </Paragraph>
-
-                <OrderedList>
-                  <ListItem
-                    primary={
-                      <Fragment>
-                        Go to this website: <Link to="https://picsure.biodatacatalyst.nhlbi.nih.gov/psamaui/login">
-                          https://picsure.biodatacatalyst.nhlbi.nih.gov/psamaui/login
-                        </Link>{" "} and select Log in with eRA Commons. Log in 
-                        using your eRA Commons ID and agree to authorize Gen3 to 
-                        authorize your access.
-                      </Fragment>
-                    }
-                  />
-                  <ListItem
-                    primary={
-                      <Fragment>
-                        Find variables of interest (<Link to="https://www.youtube.com/watch?v=UVPTwAbwtlo&list=PLJ6YccH8TEufZ5L-ctxzFF7vuZRLVacKw&index=2">
-                          video tutorial
-                        </Link>)
-                      </Fragment>
-                    }
-                  />
-                  <ListItem
-                    primary={
-                      <Fragment>
-                        Filter on one or more variables (<Link to="https://www.youtube.com/watch?v=-YWo-_lFpTA&list=PLJ6YccH8TEufZ5L-ctxzFF7vuZRLVacKw&index=3">
-                          video tutorial
-                        </Link>) and edit variable filters (<Link to="https://www.youtube.com/watch?v=QO-KWrWfdpw&list=PLJ6YccH8TEufZ5L-ctxzFF7vuZRLVacKw&index=4">
-                          video tutorial
-                        </Link>)
-                      </Fragment>
-                    }
-                  />
-                </OrderedList>
-              </Subsection>
-
               <Subsection id="get-started-request-access">
                 <Subheading eventHeading >
-                  I have an eRA Commons account. I want to request access to the 
-                  individual-level data and be prepared to analyze it if granted 
-                  access.
-                
+                  I want to request access to the individual-level data and be 
+                  prepared to analyze it if granted access (eRA Commons login 
+                  required).
                 </Subheading>
 
                 <OrderedList>
@@ -366,8 +342,7 @@ const RECOVERPage = () => {
                   <ListItem
                     primary={
                       <Fragment>
-                        Create an account in a BDC analysis platform (if you do 
-                        not already have one):
+                        Sign in or create an account in a BDC analysis platform:
                         <BulletedList>
                           <ListItem
                             primary={
@@ -375,7 +350,7 @@ const RECOVERPage = () => {
                                 <em>BDC Powered by Seven Bridges (BDC-Seven Bridges)</em>
                                 <br/>
                                 <Link to="https://accounts.sb.biodatacatalyst.nhlbi.nih.gov/auth/register?visible=eraCommons">
-                                  Launch</Link> | <Link to="https://sb-biodatacatalyst.readme.io/docs/sign-up-for-biodata-catalyst-powered-by-seven-bridges">
+                                  Launch the Application</Link> | <Link to="https://sb-biodatacatalyst.readme.io/docs/sign-up-for-biodata-catalyst-powered-by-seven-bridges">
                                   Create an Account</Link> | <Link to="https://sb-biodatacatalyst.readme.io/docs/create-a-project">
                                   Create a Project</Link>
                               </Fragment>
@@ -387,7 +362,7 @@ const RECOVERPage = () => {
                                 <em>BDC Powered by Terra (BDC-Terra)</em>
                                 <br/>
                                 <Link to="https://terra.biodatacatalyst.nhlbi.nih.gov/">
-                                  Launch</Link> | <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/analyze-data-1/terra/account-setup">
+                                  Launch the Application</Link> | <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/analyze-data-1/terra/account-setup">
                                   Create an Account</Link> | <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/analyze-data-1/terra/workspace-setup">
                                   Create a Workspace</Link>
                               </Fragment>
@@ -400,7 +375,7 @@ const RECOVERPage = () => {
                   <ListItem
                     primary={
                       <Fragment>
-                        Once granted access to the dataset, bring it into your 
+                        Once granted access to the dataset, bring it into your project or
                         workspace:
                         <BulletedList>
                           <ListItem
@@ -423,7 +398,16 @@ const RECOVERPage = () => {
                               <Fragment>
                                 <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/analyze-data-1/terra/bringing-data-into-a-workspace/bringing-in-data-from-gen3">
                                   Import Data from <em>BDC-Gen3</em> to <em>BDC-Terra</em>
-                                </Link>
+                                </Link>{" "}(use to move raw data files)
+                              </Fragment>
+                            }
+                          />
+                          <ListItem
+                            primary={
+                              <Fragment>
+                                <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/analyze-data-1/terra/bringing-data-into-a-workspace/bringing-in-data-from-gen3">
+                                  Import Data from <em>BDC-PIC-SURE</em> to <em>BDC-Seven Bridges</em> or <em>BDC-Terra</em>
+                                </Link>{" "}(use to move raw data files)
                               </Fragment>
                             }
                           />
@@ -436,14 +420,16 @@ const RECOVERPage = () => {
                       <Fragment>
                         Researchers may request <Link to="https://biodatacatalyst.nhlbi.nih.gov/resources/cloud-credits">
                           Pilot Funding ($500 in cloud credits)
-                        </Link>{" "}to test and evaluate BDC for their research needs.
+                        </Link>{" "}for their research needs.
                       </Fragment>
                     }
                   />
                   <ListItem
                     primary={
                       <Fragment>
-                        Use the RECOVER Author Acknowledgements and <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/community/citation-and-acknowledgement">
+                        Use the <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/nih-recover-release-notes">
+                          RECOVER Author Acknowledgements
+                        </Link> and <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/community/citation-and-acknowledgement">
                           BDC acknowledgment/citation
                         </Link>{" "}language in publications and external 
                         presentations resulting from analyses using RECOVER data 
