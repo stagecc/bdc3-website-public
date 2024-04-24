@@ -24,8 +24,9 @@ By sharing the data throughBDC, researchers can use an ecosystem built by the Na
 
 As more RECOVER data go through NIH's normative process for sharing de-identified research results, they will also be made available in BDC to authorized researchers. Those interested in learning more about RECOVER data in BDC, reading the RECOVER data release notes, exploring aggregated study information about the data, or accessing individual-level data will find more information and instructions on the [RECOVER @ BDC webpage](/recover).
 
-For more information about the RECOVER Initiative, visit this website: <https://recovercovid.org/>.
+<p>For more information about the RECOVER Initiative, visit this website: <a href="https://recovercovid.org/" target="__blank" rel="noopener noreferrer">https://recovercovid.org/</a>.</p>
 
 To stay up to date on RECOVER data in BDC and other BDC news, [join the BDC community](/contact/ecosystem).
 
-**Previously, a de-identified data file of RECOVER data from the* JAMA *publication, "Development of a Definition of Postacute Sequelae of SARS-CoV-2 Infection," published on May 25, 2023,* [*was made available*](https://recovercovid.org/data) *to those who requested and received data access.*
+<p><em>
+Previously, a de-identified data file of RECOVER data from the JAMA publication, "Development of a Definition of Postacute Sequelae of SARS-CoV-2 Infection," published on May 25, 2023, <a href="https://recovercovid.org/data" target="__blank" rel="noopener noreferrer">was made available</a> to those who requested and received data access.</em></p>
