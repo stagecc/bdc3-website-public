@@ -207,7 +207,7 @@ const RECOVERPage = () => {
                 To maintain the integrity of the data and ensure that participant 
                 privacy is protected, access to the data requires investigators 
                 to have <Link to="https://public.era.nih.gov/commonsplus/public/login.era?TARGET=https%3A%2F%2Fpublic.era.nih.gov%3A443%2Fcommons">
-                  NIH Electronic Research Administration (eRA)
+                  NIH Electronic Research Administration (eRA) Commons
                 </Link>{" "}credentials and receive permissions through the Data 
                 Access Request (DAR) process of the <Link to="https://www.ncbi.nlm.nih.gov/gap/">
                   NIH’s Database of Genotypes and Phenotypes (dbGaP)
@@ -252,7 +252,7 @@ const RECOVERPage = () => {
                 </AccordionSummary>
                 <AccordionDetails>
                   <Paragraph noMargin>
-                    Follow these steps to access aggregated study information:
+                    Follow these steps to see aggregated study information:
                   </Paragraph>
 
                   <OrderedList noPadding>
@@ -268,7 +268,7 @@ const RECOVERPage = () => {
                     <ListItem
                       primary={
                         <Fragment>
-                          Type “RECOVER” into the search bar, then click “Search”. 
+                          Type “RECOVER” into the search bar, then click “Search.” 
                         </Fragment>
                       }
                     />
@@ -288,7 +288,7 @@ const RECOVERPage = () => {
                       primary={
                         <Fragment>
                           Delete “RECOVER” from the search bar, type a search term 
-                          of interest, such as “fever,” and click Search. This will 
+                          of interest, such as “fever,” and click "Search." This will 
                           limit the results to any variable that includes your term 
                           of interest in the dataset. Each row represents a variable 
                           that includes your search term. The variable name includes 
@@ -357,8 +357,8 @@ const RECOVERPage = () => {
                 </AccordionDetails>
               </Accordion>
               <Accordion
-                expanded={expanded === 'panel3'} 
-                onChange={handleChange('panel3')}
+                expanded={expanded === 'panel2'} 
+                onChange={handleChange('panel2')}
               >
                 <AccordionSummary
                   aria-controls={"get-started-request-access-content"}
@@ -378,9 +378,9 @@ const RECOVERPage = () => {
                         <Link to="https://dbgap.ncbi.nlm.nih.gov/aa/wga.cgi?page=login">
                           Submit a data access request (DAR) in the NIH Database 
                           of Genotypes and Phenotypes (dbGaP)
-                        </Link>{" "} using the phs number for each dataset of 
-                        interest. Currently available RECOVER datasets include the 
-                        following:
+                        </Link>{" "}using the study accession (phs number) for each 
+                        dataset of interest. Currently available RECOVER datasets  
+                        include the following:
                         <BulletedList>
                           <ListItem
                             primary={
@@ -442,11 +442,11 @@ const RECOVERPage = () => {
                                 <Link to="https://sb-biodatacatalyst.readme.io/docs/import-data-from-biodata-catalyst-powered-by-gen3">
                                   Import Data from <em>BDC-Gen3</em> to <em>BDC-Seven 
                                   Bridges</em>
-                                </Link>
+                                </Link>{" "}(use to move raw data files)
                                 <br/>
                                 <em>Note: On or about May 3, 2024, those who have 
                                   been granted access to phs003463.v1.p1 will see 
-                                  it available in BDC-Seven Bridges workspaces 
+                                  it available in BDC-Seven Bridges projects  
                                   without needing to import it.</em>
                               </Fragment>
                             }
@@ -465,7 +465,7 @@ const RECOVERPage = () => {
                               <Fragment>
                                 <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/analyze-data-1/terra/bringing-data-into-a-workspace/bringing-in-data-from-gen3">
                                   Import Data from <em>BDC-PIC-SURE</em> to <em>BDC-Seven Bridges</em> or <em>BDC-Terra</em>
-                                </Link>{" "}(use to move raw data files)
+                                </Link>{" "}(user selects variable(s) they want to export) 
                               </Fragment>
                             }
                           />
@@ -495,7 +495,8 @@ const RECOVERPage = () => {
                       </Fragment>
                     }
                   />
-                </OrderedList>                </AccordionDetails>
+                </OrderedList>
+                </AccordionDetails>
               </Accordion>
             </Section>
             <br/>
@@ -507,8 +508,8 @@ const RECOVERPage = () => {
                   <ListItem
                     primary={
                       <Fragment>
-                        <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/nih-recover-release-notes">
-                          Read the RECOVER Release notes
+                        <Link to="https://www.era.nih.gov/register-accounts/create-and-edit-an-account.htm">
+                          Create and Manage an eRA Commons Account
                         </Link>
                       </Fragment>
                     }
@@ -518,11 +519,8 @@ const RECOVERPage = () => {
                       <Fragment>
                         <Link to="/contact/ecosystem/">
                           Join the Community
-                        </Link>{" "}to stay up-to-date on data availability and 
-                        releases, receive information about BDC events and 
-                        trainings, and get access to the <Link to="https://bdcatalyst.freshdesk.com/support/discussions">
-                          Community Forum
-                        </Link>.
+                        </Link>{" "}to stay up-to-date on data releases and 
+                        BDC news.
                       </Fragment>
                     }
                   />
