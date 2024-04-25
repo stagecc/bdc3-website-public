@@ -53,6 +53,22 @@ const DataPage = ({ data, location }) => {
 
       
       <BulletedList>
+      <ListItem
+          primary={
+            <span>
+              Long COVID data: Researching COVID to Enhance Recovery (RECOVER)
+              <BulletedList>
+                <ListItem
+                  primary={
+                    <span>
+                      <Link to="/recover">Subset of the Adult Cohort Study</Link>
+                    </span>
+                  }
+                />
+              </BulletedList>
+            </span>
+          }
+        />
         <ListItem
           primary={
             <span>
