@@ -7,6 +7,7 @@ import styled from "styled-components";
 export const OrderedList = styled.ol`
   line-height: ${(props) => (props.dense ? "1.0" : "1.5")};
   padding: 1rem;
+  ${props => props.noPadding && "padding-top: 0; padding-bottom: 0;"};
   // & > li::before {
   //   content: counter(item, decimal) '. ';
   //   counter-increment: item;
@@ -59,9 +60,9 @@ const SecondaryText = styled.span`
   font-size: 90%;
 `;
 
-export const ListItem = ({ primary, secondary }) => {
+export const ListItem = ({ primary, secondary, ...props }) => {
   return (
-    <ListItemContainer>
+    <ListItemContainer {...props}>
       <PrimaryText>{primary}</PrimaryText>
       {secondary && <SecondaryText>{secondary}</SecondaryText>}
     </ListItemContainer>
@@ -114,3 +115,7 @@ InlineList.propTypes = {
   // separator: PropTypes.string.isRequired,
   noItemsIndicator: PropTypes.any,
 };
+
+export const StickyMenuItem = styled(ListItem)`
+  margin-bottom: 1.75rem;
+`

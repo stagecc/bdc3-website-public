@@ -21,7 +21,8 @@ import hexBackgroundLeftSvg from "../images/hex-background-left.svg";
 import hexBackgroundRightSvg from "../images/hex-background-right.svg";
 import { Link } from "../components/link";
 import { logLogo } from "../utils";
-
+import { Banner } from "../components/banner"
+import { MagnifyingGlassIcon, CloseIcon, InfoIcon, WarningIcon } from '../components/icons'
 import "../styles/normalize.css";
 import "../styles/customize.css";
 
@@ -85,6 +86,14 @@ export const DefaultLayout = ({ children }) => {
       <LayoutWrapper compact={isCompact}>
         <SkipLink href="#main-content">Skip to main content</SkipLink>
         <StickyWrapper stuck={true}>
+        <Banner 
+            openedIcon={ <CloseIcon fill="var(--color-white)" size={24} /> }
+            closedIcon={ <InfoIcon fill="var(--color-white)" size={24} /> }
+          >
+            <Paragraph style={{margin:"0", padding:"1rem 1rem", textAlign: 'center', fontWeight: '600'}}>
+              Some RECOVER (Long COVID) data is now available in BDC. <Link to="/recover">Learn more</Link>.
+            </Paragraph>
+          </Banner>
           <Header>
             <Brand width="380px" compact={isCompact} />
             <Visible xs sm md>
