@@ -218,7 +218,18 @@ const RECOVERPage = () => {
                 Users may access aggregated study information about the data 
                 without going through an approval process.
               </Paragraph>
-
+              <Paragraph>
+                Learn more about the RECOVER data in BDC using these resources:
+              </Paragraph>
+              <Paragraph style={{marginLeft:'1.08rem'}}>
+                <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/nih-recover-release-notes">
+                  Read the RECOVER Release notes
+                </Link>, which include the de-identification protocols, information 
+                about the data in each release, and information for authoring 
+                publications. There is also information about the RECOVER Data 
+                Dictionaries/REDCap Codebooks and a link to the codebook for each 
+                data release in BDC.
+              </Paragraph>
             </Section>
 
             <br />
