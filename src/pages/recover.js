@@ -226,9 +226,8 @@ const RECOVERPage = () => {
                   Read the RECOVER Release notes
                 </Link>, which include the de-identification protocols, information 
                 about the data in each release, and information for authoring 
-                publications. There is also information about the RECOVER Data 
-                Dictionaries/REDCap Codebooks and a link to the codebook for each 
-                data release in BDC.
+                publications. There is also a link to the RECOVER Data Dictionary/REDCap 
+                Codebook.
               </Paragraph>
             </Section>
 
