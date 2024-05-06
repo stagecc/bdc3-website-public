@@ -14,6 +14,8 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
+import { VideoPlayer } from "../components/video-player"
+import { Box } from '@mui/material'
 
 const Section = styled.section`
   &:before { 
@@ -68,6 +70,18 @@ const AccordionDetails = MUIStyled(MuiAccordionDetails)(({ theme }) => ({
 const AccordionSubheading = styled(Subheading)`
   font-size: 0.9rem;
   margin-bottom: 0;
+`
+
+const VideoWrapper = MUIStyled(Box)`
+  width: 45%;
+  float: right;
+  padding-left: 1.5rem;
+  margin: 0.5rem 0 1rem;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    float: none;
+    padding: 0;
+  }
 `
 
 const RECOVERPage = () => {
@@ -195,6 +209,10 @@ const RECOVERPage = () => {
                 availability, the data are made available in BDC to other 
                 authorized researchers. 
               </Paragraph>
+
+              <VideoWrapper>
+                <VideoPlayer url="https://www.youtube.com/watch?v=gHeiMYOwPD8" controls={ true } />
+              </VideoWrapper>
 
               <Paragraph>
                 Currently, BDC hosts a subset of data from the RECOVER adult 
