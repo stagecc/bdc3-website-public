@@ -226,8 +226,9 @@ const RECOVERPage = () => {
                   Read the RECOVER Release notes
                 </Link>, which include the de-identification protocols, information 
                 about the data in each release, and information for authoring 
-                publications. There is also a link to the RECOVER Data Dictionary/REDCap 
-                Codebook.
+                publications. There is also information about the RECOVER Data 
+                Dictionaries/REDCap Codebooks and a link to the codebook for each 
+                data release in BDC.
               </Paragraph>
             </Section>
 
@@ -464,7 +465,7 @@ const RECOVERPage = () => {
                               <Fragment>
                                 <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/analyze-data-1/terra/bringing-data-into-a-workspace/bringing-in-data-from-gen3">
                                   Import Data from <em>BDC-PIC-SURE</em> to <em>BDC-Seven Bridges</em> or <em>BDC-Terra</em>
-                                </Link>{" "}(user selects variable(s) they want to export) 
+                                </Link>{" "}(user builds cohorts and selects variable(s) they want to export) 
                               </Fragment>
                             }
                           />
