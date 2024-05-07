@@ -14,8 +14,6 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
-import { VideoPlayer } from "../components/video-player"
-import { Box } from '@mui/material'
 
 const Section = styled.section`
   &:before { 
@@ -70,18 +68,6 @@ const AccordionDetails = MUIStyled(MuiAccordionDetails)(({ theme }) => ({
 const AccordionSubheading = styled(Subheading)`
   font-size: 0.9rem;
   margin-bottom: 0;
-`
-
-const VideoWrapper = MUIStyled(Box)`
-  width: 45%;
-  float: right;
-  padding-left: 1.5rem;
-  margin: 0.5rem 0 1rem;
-  @media screen and (max-width: 768px) {
-    width: 100%;
-    float: none;
-    padding: 0;
-  }
 `
 
 const RECOVERPage = () => {
@@ -210,10 +196,6 @@ const RECOVERPage = () => {
                 authorized researchers. 
               </Paragraph>
 
-              <VideoWrapper>
-                <VideoPlayer url="https://www.youtube.com/watch?v=gHeiMYOwPD8" controls={ true } />
-              </VideoWrapper>
-
               <Paragraph>
                 Currently, BDC hosts a subset of data from the RECOVER adult 
                 cohort study, representing over 14,600 participants who 
@@ -244,8 +226,9 @@ const RECOVERPage = () => {
                   Read the RECOVER Release notes
                 </Link>, which include the de-identification protocols, information 
                 about the data in each release, and information for authoring 
-                publications. There is also a link to the RECOVER Data Dictionary/REDCap 
-                Codebook.
+                publications. There is also information about the RECOVER Data 
+                Dictionaries/REDCap Codebooks and a link to the codebook for each 
+                data release in BDC.
               </Paragraph>
             </Section>
 
@@ -482,7 +465,7 @@ const RECOVERPage = () => {
                               <Fragment>
                                 <Link to="https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/written-documentation/analyze-data-1/terra/bringing-data-into-a-workspace/bringing-in-data-from-gen3">
                                   Import Data from <em>BDC-PIC-SURE</em> to <em>BDC-Seven Bridges</em> or <em>BDC-Terra</em>
-                                </Link>{" "}(user selects variable(s) they want to export) 
+                                </Link>{" "}(user builds cohorts and selects variable(s) they want to export) 
                               </Fragment>
                             }
                           />
