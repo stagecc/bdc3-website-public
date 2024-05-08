@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { graphql} from "gatsby";
 import Img from "gatsby-image";
 import { SEO } from "../../components/seo";
-import { Title, Subtitle, Meta, Heading, Paragraph } from "../../components/typography";
+import { Title, Subtitle, Meta, Heading, Paragraph, Subheading, Subsubheading } from "../../components/typography";
 import { InlineList2 } from "../../components/list";
 import { TagLink } from "../../components/link";
 import { PageContent } from "../../components/layout";
@@ -39,18 +39,22 @@ const SpeakerImage = styled(Img)`
     margin: 0 auto 1rem;
   }
 `
-const FlexWrapper = styled.div(({ compact }) => (`
+const FlexWrapper = styled.div(({ compact, partial }) => (`
   display: flex;
   gap: 1rem;
-  flex-direction: ${compact ? 'column' : 'row'};
+  flex-direction: ${compact ? 'column' : partial ? 'column' : 'row'};
+  max-width: ${partial ? '400px' : '100%'};
+  float: ${partial ? 'left' : 'none'};
   justify-content: center;
-  align-items: ${compact ? 'center' : 'flex-start'};
+  align-items: ${compact ? 'center' : partial ? 'center': 'flex-start'};
   margin-bottom: 2rem;
   background-color: #EFEFEF;
   padding: 1rem;
   border-radius: 5px;
   filter: drop-shadow(5px 5px 8px rgba(0, 0, 0, 0.1));
-`));
+  margin-right: ${partial ? '2rem' : 'inherit'};
+  text-align: ${partial ? 'center' : 'inherit'};
+  `));
 
 const PhotoWrapper = styled.div`
   margin: 1rem;
@@ -86,6 +90,7 @@ const AuthorDetails = styled.div`
     display: ${props => (props.expand && "none")};
   } ;
 `;
+
 
 const ArticleNavigation = ({ prev, next }) => {
   return (
@@ -167,6 +172,58 @@ const AuthorCard = ({ author }) => {
   )
 }
 
+
+const ContributorWrapper = styled.div(({ compact, partial }) => (`
+display: flex;
+flex-direction: column;
+max-width: ${compact ? '100%' : '350px'};
+float: left;
+justify-content: center;
+align-items: center;
+margin-bottom: 1rem;
+margin-right: ${compact ? '0' : '2rem'};
+background-color: #EFEFEF;
+padding: 0 1rem 0 ;
+border-radius: 5px;
+filter: drop-shadow(5px 5px 8px rgba(0, 0, 0, 0.1));
+`));
+
+const ContributorDetails = styled.div`
+flex: 1;
+padding: 0 1rem;
+text-align: left;
+font-size: 85%;
+line-height: 1.7;
+`;
+
+const ContributorCard = ({contributor, partial}) => {
+  const { isCompact } = useWindowWidth()
+  const [expanded, setExpanded] = useState()
+
+  const handleExpandClick = () => {
+    setExpanded(!expanded)
+  };
+
+  return (
+    <ContributorWrapper compact={isCompact} partial={partial}>
+      <PhotoWrapper>
+        <AuthorPhoto fluid={contributor.image.childImageSharp.fluid} />
+      </PhotoWrapper>
+
+        <ContributorDetails >
+          {contributor.name && (
+            <Fragment>
+              <Heading style={{color: '#b33243', marginBottom: 0, paddingBottom: 0}}> About {contributor.name}</Heading>
+              <Subheading style={{color: '#444444', fontStyle: 'italic', fontWeight: '500', fontSize: '1rem'}}>Researcher, University of Colorado</Subheading>
+              <Markdown src={contributor.description} style={{marginTop: "0"}}/>
+            </Fragment>
+          )}
+        </ContributorDetails>
+
+    </ContributorWrapper>
+  )
+}
+
 const TagsList = ({ tags }) => (
   <Meta>
     <InlineList2
@@ -212,6 +269,12 @@ export default ({ data, pageContext }) => {
           <SpeakerImage fluid={frontmatter.speakerImage.childImageSharp.fluid}/>
         </SpeakerImageWrapper>
       )}
+
+      {
+        frontmatter.contributor && (
+          <ContributorCard contributor={frontmatter.contributor} partial/>
+        )
+      }
       <div className="page-content" dangerouslySetInnerHTML={{ __html: html }} />
 
       {/* author block */}
@@ -252,6 +315,17 @@ export const newsItemQuery = graphql`
         subtitle
         author
         tags
+        contributor {
+          name
+          image {
+            childImageSharp {
+              fluid(maxWidth: 400) {
+                ...GatsbyImageSharpFluid
+              }
+            }  
+          }
+          description
+        }
         seo {
           title
           description
