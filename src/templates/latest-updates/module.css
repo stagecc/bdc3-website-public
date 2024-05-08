@@ -1,7 +1,7 @@
 p, li {
   text-align: inherit;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .blog-image-section {
@@ -74,8 +74,7 @@ p, li {
   line-height: 1.5;
   font-style: italic;
   font-weight: 500;
-  font-size: 110%;
-
+  font-size: 105%;
 }
 .quote .attribution::before {
   content: "\a";
@@ -95,12 +94,29 @@ p, li {
 }
 
 .short-quote {
-  width: 25%;
-  float: right;
+  width: 30%;
   border-left: 8px solid var(--color-crimson);
   padding-left: 0rem;
+}
+@media screen and (max-width: 900px) {
+  .short-quote {
+    width: 50%
+  }
+}
+@media screen and (max-width: 500px) {
+  .short-quote {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+.quote-right {
+  float: right;
   margin-left: 2rem;
-  margin-bottom: 1rem;
+}
+
+.quote-left {
+  float: left;
 }
 
 .short-quote blockquote {
@@ -109,6 +125,11 @@ p, li {
   font-weight: 500;
   padding-left: 0rem;
   font-style: italic;
+}
+
+.short-quote .attribution {
+  font-size: 0.8rem;
+  letter-spacing: 0.2px;
 }
 
 /* adds open double quotation mark before text of short quote */
