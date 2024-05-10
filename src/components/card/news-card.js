@@ -50,7 +50,7 @@ export const NewsCard = ({ newsItem }) => {
     newsDate, 
     newsSource, 
     external, 
-    paywall } = newsItem
+    loginRequired } = newsItem
 
   return (
     <Link to={newsLink} noIcon>
@@ -70,7 +70,7 @@ export const NewsCard = ({ newsItem }) => {
           </Paragraph>
           <div style={{display:'flex', flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'flex-end'}}>
             {
-              paywall && (
+              loginRequired && (
               <Paragraph style={{
                 letterSpacing: "0.5px", 
                 color: '#fff', 
