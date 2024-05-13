@@ -1,26 +1,22 @@
-import React, { Fragment, useRef, useState, useEffect } from "react";
+import React, { Fragment, useCallback, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
+import { GoogleReCaptcha, renderRecaptcha, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { Paragraph } from "../typography";
 import { Button } from "../buttons";
 import { Card, CardHeader, CardBody } from "../card";
-// import { Dots as LoadingDots } from "../loading";
-// import { Link } from "../link";
 import { navigate } from "gatsby";
 import {
   Form,
   FormControl,
   TextInput,
   HelpText,
-  // AdornedInput,
   Select,
   Option,
   TextArea,
   FieldSet,
   CheckBoxLabel,
-  // ErrorText,
 } from "./inputs";
-import { loadCaptchaEnginge, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
@@ -54,6 +50,9 @@ const ErrorMessage = () => {
 };
 
 export const EcoSystemForm = (props) => {
+  const formRef = useRef(null)
+  const token = useRef('')
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const honeypotFieldRef = useRef(null);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -67,51 +66,55 @@ export const EcoSystemForm = (props) => {
   const [wasSubmitted, setWasSubmitted] = useState(false);
   const [error, setError] = useState();
   const [captchaValue, setCaptchaValue] = useState('');
+
+  // recaptcha token-fetching function
+  const handleReCaptchaVerify = useCallback(async () => {
+    if (!executeRecaptcha) {
+      console.log('Execute recaptcha not yet available');
+      return;
+    }
+    token.current = await executeRecaptcha('formSubmit');
+  }, [executeRecaptcha]);
+
+  // fetch token on first render
   useEffect(() => {
-    loadCaptchaEnginge(6);
-  }, []);
+    handleReCaptchaVerify();
+  }, [handleReCaptchaVerify]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (validateCaptcha(captchaValue) == true) {
+    if (honeypotFieldRef.current?.value !== "") return;
 
-      if (honeypotFieldRef.current?.value !== "") return;
+    const payload = {
+      name: name,
+      email: email,
+      custom_fields: {
+        era_commons_id: commons,
+        contacts_organization: organization,
+        contacts_field: field.toString(),
+        contacts_referral: referral,
+        contacts_other: other,
+        contacts_interest: interest,
+      },
+    };
 
-      const payload = {
-        name: name,
-        email: email,
-        custom_fields: {
-          era_commons_id: commons,
-          contacts_organization: organization,
-          contacts_field: field.toString(),
-          contacts_referral: referral,
-          contacts_other: other,
-          contacts_interest: interest,
-        },
-      };
-
-      const submitContact = async () => {
-        setWasSubmitted(true);
-        await axios
-          .post(FRESHDESK_API_CREATE_CONTACT, payload, requestOptions)
-          .then((response) => {
-            if (![200, 201].includes(response.status)) {
-              throw new Error(`Unsuccessful HTTP response, ${response.status}`);
-            } else {
-              navigate("/contact/ecosuccess");
-            }
-          })
-          .catch((error) => {
-            setError(error);
-          });
-      };
-      submitContact();
-    }
-
-    else {
-      alert('Captcha Does Not Match');
-    }
+    const submitContact = async () => {
+      setWasSubmitted(true);
+      await axios
+        .post(FRESHDESK_API_CREATE_CONTACT, payload, requestOptions)
+        .then((response) => {
+          if (![200, 201].includes(response.status)) {
+            throw new Error(`Unsuccessful HTTP response, ${response.status}`);
+          } else {
+            navigate("/contact/ecosuccess");
+          }
+        })
+        .catch((error) => {
+          setError(error);
+        });
+    };
+    submitContact();
   };
 
   const handleChangeName = (event) => setName(event.target.value);
@@ -125,7 +128,7 @@ export const EcoSystemForm = (props) => {
   };
 
   const handleChangeField = (event) => {
-    if ( event.target.value == "Other") {
+    if ( event.target.value === "Other") {
       setOtherTextField(true)
     }
     setField([...field, event.target.value]);
@@ -139,7 +142,7 @@ export const EcoSystemForm = (props) => {
           <em>Fields with an asterisk (*) are required.</em>
         </Paragraph>
         {!wasSubmitted && (
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit} ref={ formRef }>
             {/* fake field for detecting bots, not visible to user */}
             <FormControl fake>
               <label htmlFor="website">
@@ -343,29 +346,12 @@ export const EcoSystemForm = (props) => {
                 onChange={handleChangeRefferal}
               />
             </FormControl>
-            <br />
-            <div>
-              <LoadCanvasTemplateNoReload />
-              <Box
-                component="form"
-                sx={{
-                  '& > :not(style)': { m: 1, width: '25ch' },
-                }}
-                noValidate
-                autoComplete="off"
-              >
-                <TextField
-                  id="outlined-controlled"
-                  label="I'm not a robot"
-                  value={captchaValue}
-                  onInput={(event) => {
-                    setCaptchaValue(event.target.value);
-                  }}
-                />
-                <SubmitButton>Submit</SubmitButton>
-              </Box>
-            </div>
 
+            <GoogleReCaptcha
+              onVerify={handleReCaptchaVerify}
+            />
+
+            <SubmitButton>Submit</SubmitButton>
           </Form>
         )}
         {wasSubmitted && error && <ErrorMessage />}
