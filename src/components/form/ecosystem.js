@@ -319,10 +319,10 @@ export const EcoSystemForm = (props) => {
               >
                 <Option value="">Select One</Option>
                 <Option value="I want to keep up with the latest news on the ecosystem">
-                  I want to keep up with the latest news on the ecosystem
+                  I want to keep up with the latest news on the ecosystem.
                 </Option>
                 <Option value="I hope to learn how the ecosystem can help me with my research">
-                  I hope to learn how the ecosystem can help me with my research
+                  I hope to learn how the ecosystem can help me with my research.
                 </Option>
                 <Option value="I am ready to start using the ecosystem!">
                   I am ready to start using the ecosystem!
