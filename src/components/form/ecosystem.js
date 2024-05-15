@@ -1,7 +1,7 @@
 import React, { Fragment, useCallback, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
-import { GoogleReCaptcha, renderRecaptcha, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { GoogleReCaptcha, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { Paragraph } from "../typography";
 import { Button } from "../buttons";
 import { Card, CardHeader, CardBody } from "../card";
@@ -17,8 +17,6 @@ import {
   FieldSet,
   CheckBoxLabel,
 } from "./inputs";
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
 
 const FRESHDESK_USER_NAME = process.env.GATSBY_FRESHDESK_API_KEY;
 const FRESHDESK_PASSWORD = process.env.GATSBY_FRESHDESK_PASSWORD;
@@ -65,7 +63,6 @@ export const EcoSystemForm = (props) => {
   const [interest, setInterest] = useState("");
   const [wasSubmitted, setWasSubmitted] = useState(false);
   const [error, setError] = useState();
-  const [captchaValue, setCaptchaValue] = useState('');
 
   // recaptcha token-fetching function
   const handleReCaptchaVerify = useCallback(async () => {
