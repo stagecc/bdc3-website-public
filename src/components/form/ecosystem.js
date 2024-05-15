@@ -172,12 +172,11 @@ export const EcoSystemForm = (props) => {
               />
             </FormControl>
             <FormControl>
-              <label required htmlFor="commons">eRA Commons ID *</label>
+              <label required htmlFor="commons">eRA Commons ID</label>
               <TextInput
                 type="commons"
                 id="commons"
                 name="commons"
-                required
                 value={commons}
                 onChange={handleChangeCommons}
               />
