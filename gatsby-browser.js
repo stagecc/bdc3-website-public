@@ -10,7 +10,7 @@ export const wrapPageElement = ({ element, props }) => {
   // including location, data, etc - you don't need to pass it
   return (
     <GoogleReCaptchaProvider
-      reCaptchaKey="6LeY7dYpAAAAAAYfHY0YUo2pILu66Ix7YleaKmLU"
+      reCaptchaKey="6Lewit0pAAAAAKLPKLEwOuX6qzbAAd03w4VFA4gp"
     >
       <DialogProvider>
         <DefaultLayout>{element}</DefaultLayout>
