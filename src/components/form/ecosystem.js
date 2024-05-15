@@ -128,8 +128,8 @@ export const EcoSystemForm = (props) => {
   };
 
   const handleChangeField = (event) => {
-    if ( event.target.value === "Other") {
-      setOtherTextField(true)
+    if (event.target.value === "Other") {
+      setOtherTextField(!otherTextField)
     }
     setField([...field, event.target.value]);
   };
