@@ -1,4 +1,5 @@
 import React from "react";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import { DefaultLayout } from "./src/layouts";
 import { DialogProvider } from "./src/contexts/dialog-context";
 import "./src/styles/normalize.css";
@@ -8,9 +9,13 @@ export const wrapPageElement = ({ element, props }) => {
   // props provide same data to Layout as Page element will get
   // including location, data, etc - you don't need to pass it
   return (
-    <DialogProvider>
-      <DefaultLayout>{element}</DefaultLayout>
-    </DialogProvider>
+    <GoogleReCaptchaProvider
+      reCaptchaKey="6Lewit0pAAAAAKLPKLEwOuX6qzbAAd03w4VFA4gp"
+    >
+      <DialogProvider>
+        <DefaultLayout>{element}</DefaultLayout>
+      </DialogProvider>
+    </GoogleReCaptchaProvider>
   );
 };
 

@@ -1,24 +1,21 @@
-import React, { Fragment, useRef, useState } from "react";
+import React, { Fragment, useCallback, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
+import { GoogleReCaptcha, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { Paragraph } from "../typography";
 import { Button } from "../buttons";
 import { Card, CardHeader, CardBody } from "../card";
-// import { Dots as LoadingDots } from "../loading";
-// import { Link } from "../link";
 import { navigate } from "gatsby";
 import {
   Form,
   FormControl,
   TextInput,
   HelpText,
-  // AdornedInput,
   Select,
   Option,
   TextArea,
   FieldSet,
   CheckBoxLabel,
-  // ErrorText,
 } from "./inputs";
 
 const FRESHDESK_USER_NAME = process.env.GATSBY_FRESHDESK_API_KEY;
@@ -51,6 +48,9 @@ const ErrorMessage = () => {
 };
 
 export const EcoSystemForm = (props) => {
+  const formRef = useRef(null)
+  const token = useRef('')
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const honeypotFieldRef = useRef(null);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -58,16 +58,31 @@ export const EcoSystemForm = (props) => {
   const [organization, setOrganization] = useState("");
   const [referral, setReferralSource] = useState("");
   const [other, setOther] = useState("");
+  const [otherTextField, setOtherTextField] = useState(false);
   const [field, setField] = useState("");
   const [interest, setInterest] = useState("");
   const [wasSubmitted, setWasSubmitted] = useState(false);
   const [error, setError] = useState();
 
+  // recaptcha token-fetching function
+  const handleReCaptchaVerify = useCallback(async () => {
+    if (!executeRecaptcha) {
+      console.log('Execute recaptcha not yet available');
+      return;
+    }
+    token.current = await executeRecaptcha('formSubmit');
+  }, [executeRecaptcha]);
+
+  // fetch token on first render
+  useEffect(() => {
+    handleReCaptchaVerify();
+  }, [handleReCaptchaVerify]);
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if(honeypotFieldRef.current?.value !== "") return;
-    
+    if (honeypotFieldRef.current?.value !== "") return;
+
     const payload = {
       name: name,
       email: email,
@@ -93,7 +108,6 @@ export const EcoSystemForm = (props) => {
           }
         })
         .catch((error) => {
-          console.log("error");
           setError(error);
         });
     };
@@ -111,6 +125,9 @@ export const EcoSystemForm = (props) => {
   };
 
   const handleChangeField = (event) => {
+    if (event.target.value === "Other") {
+      setOtherTextField(!otherTextField)
+    }
     setField([...field, event.target.value]);
   };
   const handleChangeInterest = (event) => setInterest(event.target.value);
@@ -122,8 +139,7 @@ export const EcoSystemForm = (props) => {
           <em>Fields with an asterisk (*) are required.</em>
         </Paragraph>
         {!wasSubmitted && (
-          <Form onSubmit={handleSubmit}>
-
+          <Form onSubmit={handleSubmit} ref={ formRef }>
             {/* fake field for detecting bots, not visible to user */}
             <FormControl fake>
               <label htmlFor="website">
@@ -153,7 +169,7 @@ export const EcoSystemForm = (props) => {
               />
             </FormControl>
             <FormControl>
-              <label htmlFor="commons">eRA Commons ID</label>
+              <label required htmlFor="commons">eRA Commons ID</label>
               <TextInput
                 type="commons"
                 id="commons"
@@ -272,23 +288,27 @@ export const EcoSystemForm = (props) => {
                 </CheckBoxLabel>
               </FieldSet>
             </FormControl>
+            {otherTextField && (
+              <FormControl>
+                <label required htmlFor="other">
+                  If Other, please provide a brief description. *
+                </label>
+                <TextArea
+                  id="other"
+                  required
+                  name="other"
+                  value={other}
+                  onChange={handleChangeOther}
+                  maxLength="3000"
+                />
+              </FormControl>
+            )}
             <FormControl>
-              <label htmlFor="other">
-                If Other, please provide a brief description.
-              </label>
-              <TextArea
-                id="other"
-                name="other"
-                value={other}
-                onChange={handleChangeOther}
-                maxLength="3000"
-              />
-            </FormControl>
-            <FormControl>
-              <label htmlFor="interest">
-                Why are you interested in NHLBI BDC?
+              <label required htmlFor="interest">
+                Why are you interested in BDC? *
               </label>
               <Select
+                required
                 id="interest"
                 name="interest"
                 value={interest}
@@ -296,13 +316,16 @@ export const EcoSystemForm = (props) => {
               >
                 <Option value="">Select One</Option>
                 <Option value="I want to keep up with the latest news on the ecosystem">
-                  I want to keep up with the latest news on the ecosystem
+                  I want to keep up with the latest news on the ecosystem.
                 </Option>
                 <Option value="I hope to learn how the ecosystem can help me with my research">
-                  I hope to learn how the ecosystem can help me with my research
+                  I hope to learn how the ecosystem can help me with my research.
                 </Option>
                 <Option value="I am ready to start using the ecosystem!">
                   I am ready to start using the ecosystem!
+                </Option>
+                <Option value="Not sure / I am just exploring.">
+                  Not sure / I am just exploring.
                 </Option>
               </Select>
             </FormControl>
@@ -319,7 +342,11 @@ export const EcoSystemForm = (props) => {
                 onChange={handleChangeRefferal}
               />
             </FormControl>
-            <br />
+
+            <GoogleReCaptcha
+              onVerify={handleReCaptchaVerify}
+            />
+
             <SubmitButton>Submit</SubmitButton>
           </Form>
         )}
@@ -328,3 +355,4 @@ export const EcoSystemForm = (props) => {
     </Card>
   );
 };
+
