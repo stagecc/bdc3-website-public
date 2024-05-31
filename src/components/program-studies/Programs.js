@@ -51,7 +51,7 @@ export const Programs = ({
 const getProgramList = async () => {
   const { href } = new URL(
     "/search-api/program_list",
-    process.env.DUG_SEARCH_API
+    process.env.GATSBY_DUG_SEARCH_API
   );
 
   const res = await fetch(href, {

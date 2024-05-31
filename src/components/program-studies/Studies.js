@@ -63,7 +63,7 @@ export const Studies = ({ programKey }) => {
 
 // API
 const getStudiesList = async (programName) => {
-  const url = new URL("/search-api/search_program", process.env.DUG_SEARCH_API);
+  const url = new URL("/search-api/search_program", process.env.GATSBY_DUG_SEARCH_API);
   url.searchParams.append("program_name", programName);
 
   const res = await fetch(url.href, {
