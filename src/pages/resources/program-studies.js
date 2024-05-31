@@ -1,0 +1,62 @@
+import React, { useState } from "react";
+import { SEO } from "../../components/seo";
+import { PageContent } from "../../components/layout";
+import { Paper } from "@mui/material";
+import { CardSection, Programs } from "../../components/program-studies";
+import { Studies } from "../../components/program-studies/Studies";
+import styled from "styled-components";
+import { kebabCase } from "../../utils/casing";
+import { QueryCacheProvider } from "../../hooks";
+
+const ProgramStudies = () => {
+  const [program, setProgram] = useState(null);
+
+  return (
+    <PageContent width="95%" maxWidth="1600px" center gutters>
+      <SEO title="Program Studies" description="" keywords="" />
+
+      <Paper
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "stretch",
+          height: "calc(100dvh - 250px)",
+
+          "--color-white": "#eeeeee",
+          "--color-lightgrey": "#edeff4",
+          "--color-grey": "#cccccc",
+        }}
+        elevation={4}
+      >
+        <CardSection title={<div id="programs-title">Programs</div>}>
+          <Programs
+            selectedProgram={program}
+            setSelectedProgram={setProgram}
+          />
+        </CardSection>
+        <CardSection
+          title={
+            <StudiesHeader>
+              {`Studies${program === null ? "" : ` - ${program}`}`}
+            </StudiesHeader>
+          }
+          ariaLabeledBy={
+            program === null ? undefined : `tab-${kebabCase(program)}`
+          }
+          id={program === null ? undefined : `tabpanel-${kebabCase(program)}`}
+          >
+            <Studies programKey={program} />
+        </CardSection>
+      </Paper>
+    </PageContent>
+  );
+};
+
+export default ProgramStudies;
+
+const StudiesHeader = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`;
