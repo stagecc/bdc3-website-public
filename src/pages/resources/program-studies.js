@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { SEO } from "../../components/seo";
 import { PageContent } from "../../components/layout";
 import { Paper } from "@mui/material";
@@ -7,9 +7,10 @@ import { Studies } from "../../components/program-studies/Studies";
 import styled from "styled-components";
 import { kebabCase } from "../../utils/casing";
 import { QueryCacheProvider } from "../../hooks";
+import { useQueryParams } from "../../hooks/use-query-params";
 
 const ProgramStudies = () => {
-  const [program, setProgram] = useState(null);
+  const [program, setProgram] = useQueryParams(null, "program");
 
   return (
     <PageContent width="95%" maxWidth="1600px" center gutters>
