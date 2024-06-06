@@ -31,10 +31,12 @@ export const Tabs = ({
     { key }
   ) => {
     const { length } = tabRefs.current;
-    if (key === "ArrowDown") focusTab((tabIndex + 1) % length);
-    else if (key === "ArrowUp") focusTab((tabIndex - 1 + length) % length);
-    else if (key === "Home") focusTab(0);
-    else if (key === "End") focusTab(length - 1);
+    switch (key) {
+      case "ArrowDown": focusTab((tabIndex + 1) % length);          break;
+      case "ArrowUp":   focusTab((tabIndex - 1 + length) % length); break;
+      case "Home":      focusTab(0);                                break;
+      case "End":       focusTab(length - 1);                       break;
+    }
   };
 
   return (
@@ -55,7 +57,8 @@ export const Tabs = ({
             setSelectedTab(key);
           }}
           onKeyDown={(e) => {
-            if (e.key === "ArrowDown" || e.key === "ArrowUp" || e.key === "Home" || e.key === "End") e.preventDefault()
+            if (["ArrowDown", "ArrowUp", "Home", "End"].includes(e.key))
+              e.preventDefault();
             handleKeyDown(tabIndex, e);
           }}
           selected={key === selectedTab}
