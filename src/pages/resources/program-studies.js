@@ -14,7 +14,7 @@ const ProgramStudies = () => {
 
   return (
     <PageContent width="95%" maxWidth="1600px" center gutters>
-      <SEO title="Program Studies" description="" keywords="" />
+      <SEO title={program ?? "Program Studies"} description="" keywords="" />
 
       <Paper
         sx={{
