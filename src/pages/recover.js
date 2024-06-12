@@ -233,7 +233,7 @@ const RECOVERPage = () => {
               </Paragraph>
 
               <Paragraph>
-                Users may access aggregated study information about the data 
+                Users may explore study data (aggregate counts returned only) 
                 without going through an approval process.
               </Paragraph>
               <Paragraph>
@@ -263,13 +263,14 @@ const RECOVERPage = () => {
                   id="get-started-no-sign-in"
                 >
                   <AccordionSubheading>
-                    I want to explore the aggregate study information (no login 
-                    required).
+                    I want to explore study data (aggregate counts returned only – 
+                    no login required).
                   </AccordionSubheading>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Paragraph noMargin>
-                    Follow these steps to see aggregated study information:
+                    Follow these steps to explore study data (aggregate counts 
+                    returned only):
                   </Paragraph>
 
                   <OrderedList noPadding>
