@@ -1,41 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Table } from "./Table";
 import { Link } from "../link/link";
 import { LoadingPanel } from "./LoadingPanel";
 import { DescriptorPanel } from "./DescriptorPanel";
+import { useQuery } from "../../hooks";
 
 export const Studies = ({ programKey }) => {
-  const [data, setData] = useState(null);
-  const [isPending, setIsPending] = useState(true);
-  const [isError, setIsError] = useState(false);
+  const {
+    data,
+    error,
+    isLoading,
+  } = useQuery({
+    queryFn: () => getStudiesList(programKey),
+    queryKey: `study-${programKey}`,
+  });
 
-  useEffect(() => {
-    (async () => {
-      setIsPending(true);
-      setIsError(false);
-
-      if (programKey === null) return;
-      try {
-        const studies = await getStudiesList(programKey);
-        setData(studies);
-      } catch (e) {
-        console.error(e);
-        setIsError(true);
-      } finally {
-        setIsPending(false);
-      }
-    })();
-  }, [programKey, setData]);
-
-  if (programKey === null || data === null)
+  if (programKey === null)
     return (
       <DescriptorPanel>
         Please select a program to view available studies.
       </DescriptorPanel>
     );
 
-  if (isPending) return <LoadingPanel />;
-  if (isError)
+  if (isLoading || !data) return <LoadingPanel />;
+  if (error)
     return (
       <DescriptorPanel>
         Something went wrong! Please reload the page.

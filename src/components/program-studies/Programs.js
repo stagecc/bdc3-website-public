@@ -1,35 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { compactNum } from "../../utils";
 import { LoadingPanel } from "./LoadingPanel";
 import { Tabs } from "./Tabs";
+import { useQuery } from "../../hooks";
 
 export const Programs = ({
   selectedProgram,
   setSelectedProgram,
 }) => {
-  const [data, setData] = useState(null);
-  const [isPending, setIsPending] = useState(true);
-  const [isError, setIsError] = useState(false);
+  const {
+    data,
+    error,
+    isLoading,
+  } = useQuery({
+    queryFn: getProgramList,
+    queryKey: "programs",
+  });
 
-  useEffect(() => {
-    (async () => {
-      setIsPending(true);
-      setIsError(false);
-
-      try {
-        const programs = await getProgramList();
-        setData(programs);
-      } catch (e) {
-        console.error(e);
-        setIsError(true);
-      } finally {
-        setIsPending(false);
-      }
-    })();
-  }, [setData]);
-
-  if (isPending || !data) return <LoadingPanel />;
-  if (isError) return "Something went wrong!";
+  if (isLoading || !data) return <LoadingPanel />;
+  if (error) return "Something went wrong!";
 
   const tabData = data.map(({ name, numberOfStudies }) => ({
     key: name,
