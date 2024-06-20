@@ -6,7 +6,7 @@ time: 1:00 - 2:00 pm EST
 display_date: Wednesday, April 17, 2024
 location: "Zoom"
 url: https://renci.zoom.us/webinar/register/6017103574726/WN_zfMDQHXWQu-vn6XLfprwjw
-forum_post: https://bdcatalyst.freshdesk.com/support/discussions/forums/60000252439
+forum_post: https://bdcatalyst.freshdesk.com/support/discussions/forums/60000407702
 registration_required: true
 tags: [community hours]
 seo:
