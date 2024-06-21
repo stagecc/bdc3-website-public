@@ -7,7 +7,7 @@ time: 1:00 - 2:00 pm EST
 display_date: Wednesday, May 22, 2024
 location: "Zoom"
 url: https://renci.zoom.us/webinar/register/2517110288834/WN_0Y88g4nPTbatp8iJRENXoA
-forum_post: https://bdcatalyst.freshdesk.com/support/discussions/forums/60000252439
+forum_post: https://bdcatalyst.freshdesk.com/support/discussions/forums/60000407745
 registration_required: true
 tags: [community hours]
 seo:
