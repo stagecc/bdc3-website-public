@@ -9,3 +9,4 @@ export * from "./use-platforms";
 export * from "./use-window-width";
 export * from "./use-studies";
 export * from "./use-news";
+export * from "./use-query";
