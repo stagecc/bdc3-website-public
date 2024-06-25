@@ -215,10 +215,9 @@ const RECOVERPage = () => {
               </VideoWrapper>
 
               <Paragraph>
-                Currently, BDC hosts a subset of data from the RECOVER adult 
-                cohort study, representing over 14,600 participants who 
-                participated in over 92,350 study visits at 79 enrolling 
-                sites across the country.
+                Currently, BDC hosts a dataset from the RECOVER adult cohort 
+                study, representing over 15,200 participants attending 121,209 
+                study visits at 79 enrolling sites across the country.
               </Paragraph>
 
               <Paragraph>
