@@ -61,7 +61,7 @@ const DataPage = ({ data, location }) => {
                 <ListItem
                   primary={
                     <span>
-                      <Link to="/recover">Subset of the Adult Cohort Study</Link>
+                      <Link to="/recover">Adult Cohort Study Dataset</Link>
                     </span>
                   }
                 />
