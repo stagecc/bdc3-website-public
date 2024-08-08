@@ -3,7 +3,7 @@ title: "August Community Hours: BDC Mid-2024 Data Update"
 externalEvent: false
 path: /events/2024-08-21/community_hours
 date: 2024-08-21
-time: 1:00 - 2:00 pm EST
+time: 3:00 - 4:00 pm EST
 display_date: Wednesday, August 21, 2024
 location: "Zoom"
 url: https://renci.zoom.us/webinar/register/3317183108638/WN_SQ8iDYjHS0iHi-Zi15-tgA
